@@ -1,0 +1,790 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionView::Helpers::FormTagHelper</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActionView::Helpers::FormTagHelper 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/actionpack/lib/action_view/helpers/form_tag_helper_rb.html">rails/actionpack/lib/action_view/helpers/form_tag_helper.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Provides a number of methods for creating form tags that doesn’t rely on
+conventions with an object assigned to the template like <a
+href="FormHelper.html">FormHelper</a> does. With the <a
+href="FormTagHelper.html">FormTagHelper</a>, you provide the names and
+values yourself.</p>
+
+<p>NOTE: The html options disabled, readonly, and multiple can all be treated
+as booleans. So specifying <code>:disabled =&gt; true</code> will give
+<code>disabled=&quot;disabled&quot;</code>.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-check_box_tag">check_box_tag</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-end_form_tag">end_form_tag</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-file_field_tag">file_field_tag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-form_tag">form_tag</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-hidden_field_tag">hidden_field_tag</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-image_submit_tag">image_submit_tag</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-password_field_tag">password_field_tag</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-radio_button_tag">radio_button_tag</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-select_tag">select_tag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-start_form_tag">start_form_tag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-submit_tag">submit_tag</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-text_area_tag">text_area_tag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-text_field_tag">text_field_tag</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-check_box_tag">
+            
+              <a name="method-i-check_box_tag"></a><b>check_box_tag</b>(name, value = &quot;1&quot;, checked = false, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a check box.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-check_box_tag_source')" id="l_method-i-check_box_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-check_box_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">check_box_tag</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-identifier">checked</span> = <span class="ruby-keyword">false</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">html_options</span> = { <span class="ruby-string">&quot;type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;checkbox&quot;</span>, <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">value</span> }.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">stringify_keys</span>)
+  <span class="ruby-identifier">html_options</span>[<span class="ruby-string">&quot;checked&quot;</span>] = <span class="ruby-string">&quot;checked&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">checked</span>
+  <span class="ruby-identifier">tag</span> <span class="ruby-value">:input</span>, <span class="ruby-identifier">html_options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-end_form_tag">
+            
+              <a name="method-i-end_form_tag"></a><b>end_form_tag</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Outputs “&lt;/form&gt;”</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-end_form_tag_source')" id="l_method-i-end_form_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-end_form_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">end_form_tag</span>
+  <span class="ruby-string">&quot;&lt;/form&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-file_field_tag">
+            
+              <a name="method-i-file_field_tag"></a><b>file_field_tag</b>(name, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a file upload field.</p>
+
+<p>If you are using file uploads then you will also need to set the multipart
+option for the form:</p>
+
+<pre>&lt;%= form_tag { :action =&gt; &quot;post&quot; }, { :multipart =&gt; true } %&gt;
+  &lt;label for=&quot;file&quot;&gt;File to Upload&lt;/label&gt; &lt;%= file_field_tag &quot;file&quot; %&gt;
+  &lt;%= submit_tag %&gt;
+&lt;%= end_form_tag %&gt;</pre>
+
+<p>The specified URL will then be passed a <a href="../../File.html">File</a>
+object containing the selected file, or if the field  was left blank, a
+StringIO object.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-file_field_tag_source')" id="l_method-i-file_field_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-file_field_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">file_field_tag</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">text_field_tag</span>(<span class="ruby-identifier">name</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">update</span>(<span class="ruby-string">&quot;type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;file&quot;</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-form_tag">
+            
+              <a name="method-i-form_tag"></a><b>form_tag</b>(url_for_options = {}, options = {}, *parameters_for_url, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Starts a form tag that points the action to an url configured with
+<code>url_for_options</code> just like <a
+href="../../ActionController/Base.html#method-i-url_for">ActionController::Base#url_for</a>.
+The method for the form defaults to POST.</p>
+
+<p>Examples:</p>
+<ul><li>
+<p><code>form_tag('/posts') =&gt; &lt;form action=&quot;/posts&quot;
+method=&quot;post&quot;&gt;</code></p>
+</li><li>
+<p><code>form_tag('/posts/1', :method =&gt; :put) =&gt; &lt;form
+action=&quot;/posts/1&quot; method=&quot;put&quot;&gt;</code></p>
+</li><li>
+<p><code>form_tag('/upload', :multipart =&gt; true) =&gt; &lt;form
+action=&quot;/upload&quot; method=&quot;post&quot;
+enctype=&quot;multipart/form-data&quot;&gt;</code></p>
+</li></ul>
+
+<p>ERb example:</p>
+
+<pre>&lt;% form_tag '/posts' do -%&gt;
+  &lt;div&gt;&lt;%= submit_tag 'Save' %&gt;&lt;/div&gt;
+&lt;% end -%&gt;</pre>
+
+<p>Will output:</p>
+
+<pre>&lt;form action=&quot;/posts&quot; method=&quot;post&quot;&gt;&lt;div&gt;&lt;input type=&quot;submit&quot; name=&quot;submit&quot; value=&quot;Save&quot; /&gt;&lt;/div&gt;&lt;/form&gt;</pre>
+
+<p>Options:</p>
+<ul><li>
+<p><code>:multipart</code> - If set to true, the enctype is set to
+"multipart/form-data".</p>
+</li><li>
+<p><code>:method</code>    - The method to use when submitting the form,
+usually either "get" or "post".</p>
+
+<pre>If &quot;put&quot;, &quot;delete&quot;, or another verb is used, a hidden input with name _method 
+is added to simulate the verb over post.</pre>
+</li></ul>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="FormTagHelper.html#method-i-start_form_tag">start_form_tag</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-form_tag_source')" id="l_method-i-form_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-form_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">form_tag</span>(<span class="ruby-identifier">url_for_options</span> = {}, <span class="ruby-identifier">options</span> = {}, *<span class="ruby-identifier">parameters_for_url</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">html_options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">stringify_keys</span>
+  <span class="ruby-identifier">html_options</span>[<span class="ruby-string">&quot;enctype&quot;</span>] = <span class="ruby-string">&quot;multipart/form-data&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">html_options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;multipart&quot;</span>)
+  <span class="ruby-identifier">html_options</span>[<span class="ruby-string">&quot;action&quot;</span>]  = <span class="ruby-identifier">url_for</span>(<span class="ruby-identifier">url_for_options</span>, *<span class="ruby-identifier">parameters_for_url</span>)
+
+  <span class="ruby-identifier">method_tag</span> = <span class="ruby-string">&quot;&quot;</span>
+  
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">method</span> = <span class="ruby-identifier">html_options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;method&quot;</span>).<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^get$/</span> <span class="ruby-comment"># must be case-insentive, but can't use downcase as might be nil</span>
+      <span class="ruby-identifier">html_options</span>[<span class="ruby-string">&quot;method&quot;</span>] = <span class="ruby-string">&quot;get&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^post$/</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">html_options</span>[<span class="ruby-string">&quot;method&quot;</span>] = <span class="ruby-string">&quot;post&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">html_options</span>[<span class="ruby-string">&quot;method&quot;</span>] = <span class="ruby-string">&quot;post&quot;</span>
+      <span class="ruby-identifier">method_tag</span> = <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:div</span>, <span class="ruby-identifier">tag</span>(<span class="ruby-value">:input</span>, <span class="ruby-value">:type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hidden&quot;</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;_method&quot;</span>, <span class="ruby-value">:value</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>), <span class="ruby-value">:style</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'margin:0;padding:0'</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">content</span> = <span class="ruby-identifier">capture</span>(&amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-identifier">concat</span>(<span class="ruby-identifier">tag</span>(<span class="ruby-value">:form</span>, <span class="ruby-identifier">html_options</span>, <span class="ruby-keyword">true</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">method_tag</span>, <span class="ruby-identifier">block</span>.<span class="ruby-identifier">binding</span>)
+    <span class="ruby-identifier">concat</span>(<span class="ruby-identifier">content</span>, <span class="ruby-identifier">block</span>.<span class="ruby-identifier">binding</span>)
+    <span class="ruby-identifier">concat</span>(<span class="ruby-string">&quot;&lt;/form&gt;&quot;</span>, <span class="ruby-identifier">block</span>.<span class="ruby-identifier">binding</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">tag</span>(<span class="ruby-value">:form</span>, <span class="ruby-identifier">html_options</span>, <span class="ruby-keyword">true</span>) <span class="ruby-operator">+</span> <span class="ruby-identifier">method_tag</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hidden_field_tag">
+            
+              <a name="method-i-hidden_field_tag"></a><b>hidden_field_tag</b>(name, value = nil, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a hidden field.</p>
+
+<p>Takes the same options as <a
+href="FormTagHelper.html#method-i-text_field_tag">#text_field_tag</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hidden_field_tag_source')" id="l_method-i-hidden_field_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-hidden_field_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hidden_field_tag</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">text_field_tag</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">stringify_keys</span>.<span class="ruby-identifier">update</span>(<span class="ruby-string">&quot;type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hidden&quot;</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-image_submit_tag">
+            
+              <a name="method-i-image_submit_tag"></a><b>image_submit_tag</b>(source, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Displays an image which when clicked will submit the form.</p>
+
+<p><code>source</code> is passed to <a
+href="AssetTagHelper.html#method-i-image_path">ActionView::Helpers::AssetTagHelper#image_path</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-image_submit_tag_source')" id="l_method-i-image_submit_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-image_submit_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">image_submit_tag</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">tag</span> <span class="ruby-value">:input</span>, { <span class="ruby-string">&quot;type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;image&quot;</span>, <span class="ruby-string">&quot;src&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">image_path</span>(<span class="ruby-identifier">source</span>) }.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">stringify_keys</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-password_field_tag">
+            
+              <a name="method-i-password_field_tag"></a><b>password_field_tag</b>(name = &quot;password&quot;, value = nil, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a password field.</p>
+
+<p>Takes the same options as <a
+href="FormTagHelper.html#method-i-text_field_tag">#text_field_tag</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-password_field_tag_source')" id="l_method-i-password_field_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-password_field_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">password_field_tag</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;password&quot;</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">text_field_tag</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">update</span>(<span class="ruby-string">&quot;type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;password&quot;</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-radio_button_tag">
+            
+              <a name="method-i-radio_button_tag"></a><b>radio_button_tag</b>(name, value, checked = false, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a radio button.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-radio_button_tag_source')" id="l_method-i-radio_button_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-radio_button_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">radio_button_tag</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>, <span class="ruby-identifier">checked</span> = <span class="ruby-keyword">false</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">pretty_tag_value</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r\s/</span>, <span class="ruby-string">&quot;_&quot;</span>).<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r(?!-)\W/</span>, <span class="ruby-string">&quot;&quot;</span>).<span class="ruby-identifier">downcase</span>
+  <span class="ruby-identifier">html_options</span> = { <span class="ruby-string">&quot;type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;radio&quot;</span>, <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{name}_#{pretty_tag_value}&quot;</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">value</span> }.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">stringify_keys</span>)
+  <span class="ruby-identifier">html_options</span>[<span class="ruby-string">&quot;checked&quot;</span>] = <span class="ruby-string">&quot;checked&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">checked</span>
+  <span class="ruby-identifier">tag</span> <span class="ruby-value">:input</span>, <span class="ruby-identifier">html_options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-select_tag">
+            
+              <a name="method-i-select_tag"></a><b>select_tag</b>(name, option_tags = nil, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a dropdown selection box, or if the <code>:multiple</code> option
+is set to true, a multiple choice selection box.</p>
+
+<p>Helpers::FormOptions can be used to create common select boxes such as
+countries, time zones, or associated records.</p>
+
+<p><code>option_tags</code> is a string containing the option tags for the
+select box:</p>
+
+<pre># Outputs &lt;select id=&quot;people&quot; name=&quot;people&quot;&gt;&lt;option&gt;David&lt;/option&gt;&lt;/select&gt;
+select_tag &quot;people&quot;, &quot;&lt;option&gt;David&lt;/option&gt;&quot;</pre>
+
+<p>Options:</p>
+<ul><li>
+<p><code>:multiple</code> - If set to true the selection will allow multiple
+choices.</p>
+</li></ul>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-select_tag_source')" id="l_method-i-select_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-select_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">select_tag</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">option_tags</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">content_tag</span> <span class="ruby-value">:select</span>, <span class="ruby-identifier">option_tags</span>, { <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span> }.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">stringify_keys</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-start_form_tag">
+            
+              <a name="method-i-start_form_tag"></a><b>start_form_tag</b>(url_for_options = {}, options = {}, *parameters_for_url, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-submit_tag">
+            
+              <a name="method-i-submit_tag"></a><b>submit_tag</b>(value = &quot;Save changes&quot;, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a submit button with the text <code>value</code> as the caption. If
+options contains a pair with the key of “disable_with”, then the value will
+be used to rename a disabled version of the submit button.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-submit_tag_source')" id="l_method-i-submit_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-submit_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">submit_tag</span>(<span class="ruby-identifier">value</span> = <span class="ruby-string">&quot;Save changes&quot;</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">stringify_keys!</span>
+  
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">disable_with</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;disable_with&quot;</span>)
+    <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;onclick&quot;</span>] = <span class="ruby-node">&quot;this.disabled=true;this.value='#{disable_with}';this.form.submit();#{options[&quot;onclick&quot;]}&quot;</span>
+  <span class="ruby-keyword">end</span>
+    
+  <span class="ruby-identifier">tag</span> <span class="ruby-value">:input</span>, { <span class="ruby-string">&quot;type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;submit&quot;</span>, <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;commit&quot;</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">value</span> }.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">stringify_keys</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-text_area_tag">
+            
+              <a name="method-i-text_area_tag"></a><b>text_area_tag</b>(name, content = nil, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a text input area.</p>
+
+<p>Options:</p>
+<ul><li>
+<p><code>:size</code> - <a href="../../A.html">A</a> string specifying the
+dimensions of the textarea.</p>
+
+<pre># Outputs &lt;textarea name=&quot;body&quot; id=&quot;body&quot; cols=&quot;25&quot; rows=&quot;10&quot;&gt;&lt;/textarea&gt;
+&lt;%= text_area_tag &quot;body&quot;, nil, :size =&gt; &quot;25x10&quot; %&gt;</pre>
+</li></ul>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-text_area_tag_source')" id="l_method-i-text_area_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-text_area_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">text_area_tag</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">content</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">stringify_keys!</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">size</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;size&quot;</span>)
+    <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;cols&quot;</span>], <span class="ruby-identifier">options</span>[<span class="ruby-string">&quot;rows&quot;</span>] = <span class="ruby-identifier">size</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;x&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">content_tag</span> <span class="ruby-value">:textarea</span>, <span class="ruby-identifier">content</span>, { <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span> }.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">stringify_keys</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-text_field_tag">
+            
+              <a name="method-i-text_field_tag"></a><b>text_field_tag</b>(name, value = nil, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a standard text field.</p>
+
+<p>Options:</p>
+<ul><li>
+<p><code>:disabled</code> - If set to true, the user will not be able to use
+this input.</p>
+</li><li>
+<p><code>:size</code> - The number of visible characters that will fit in the
+input.</p>
+</li><li>
+<p><code>:maxlength</code> - The maximum number of characters that the browser
+will allow the user to enter.</p>
+</li></ul>
+
+<p><a href="../../A.html">A</a> hash of standard <a
+href="../../HTML.html">HTML</a> options for the tag.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-text_field_tag_source')" id="l_method-i-text_field_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-text_field_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_tag_helper.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">text_field_tag</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">tag</span> <span class="ruby-value">:input</span>, { <span class="ruby-string">&quot;type&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text&quot;</span>, <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">value</span> }.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">stringify_keys</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

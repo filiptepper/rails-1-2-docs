@@ -1,0 +1,522 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::Acts::NestedSet::InstanceMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActiveRecord::Acts::NestedSet::InstanceMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/rails/activerecord/lib/active_record/acts/nested_set_rb.html">rails/activerecord/lib/active_record/acts/nested_set.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_child">add_child</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-all_children">all_children</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-before_destroy">before_destroy</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-child-3F">child?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-children_count">children_count</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-direct_children">direct_children</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-full_set">full_set</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-root-3F">root?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-unknown-3F">unknown?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_child">
+            
+              <a name="method-i-add_child"></a><b>add_child</b>( child )
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Adds a child to this object in the tree.  If this object hasn’t been
+initialized, it gets set up as a root node.  Otherwise, this method will
+update all of the other elements in the tree and shift them to the right,
+keeping everything balanced.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_child_source')" id="l_method-i-add_child_source">show</a>
+                
+              </p>
+              <div id="method-i-add_child_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/acts/nested_set.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_child</span>( <span class="ruby-identifier">child</span> )     
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">child</span>.<span class="ruby-identifier">reload</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">root?</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Adding sub-tree isn\'t currently supported&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">if</span> ( (<span class="ruby-keyword">self</span>[<span class="ruby-identifier">left_col_name</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>) <span class="ruby-operator">||</span> (<span class="ruby-keyword">self</span>[<span class="ruby-identifier">right_col_name</span>] <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>) )
+      <span class="ruby-comment"># Looks like we're now the root node!  Woo</span>
+      <span class="ruby-keyword">self</span>[<span class="ruby-identifier">left_col_name</span>] = <span class="ruby-number">1</span>
+      <span class="ruby-keyword">self</span>[<span class="ruby-identifier">right_col_name</span>] = <span class="ruby-number">4</span>
+      
+      <span class="ruby-comment"># What do to do about validation?</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">save</span>
+      
+      <span class="ruby-identifier">child</span>[<span class="ruby-identifier">parent_column</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span>
+      <span class="ruby-identifier">child</span>[<span class="ruby-identifier">left_col_name</span>] = <span class="ruby-number">2</span>
+      <span class="ruby-identifier">child</span>[<span class="ruby-identifier">right_col_name</span>]= <span class="ruby-number">3</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-identifier">child</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment"># OK, we need to add and shift everything else to the right</span>
+      <span class="ruby-identifier">child</span>[<span class="ruby-identifier">parent_column</span>] = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">id</span>
+      <span class="ruby-identifier">right_bound</span> = <span class="ruby-keyword">self</span>[<span class="ruby-identifier">right_col_name</span>]
+      <span class="ruby-identifier">child</span>[<span class="ruby-identifier">left_col_name</span>] = <span class="ruby-identifier">right_bound</span>
+      <span class="ruby-identifier">child</span>[<span class="ruby-identifier">right_col_name</span>] = <span class="ruby-identifier">right_bound</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>
+      <span class="ruby-keyword">self</span>[<span class="ruby-identifier">right_col_name</span>] <span class="ruby-operator">+=</span> <span class="ruby-number">2</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">base_class</span>.<span class="ruby-identifier">transaction</span> {
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">base_class</span>.<span class="ruby-identifier">update_all</span>( <span class="ruby-node">&quot;#{left_col_name} = (#{left_col_name} + 2)&quot;</span>,  <span class="ruby-node">&quot;#{scope_condition} AND #{left_col_name} &gt;= #{right_bound}&quot;</span> )
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">base_class</span>.<span class="ruby-identifier">update_all</span>( <span class="ruby-node">&quot;#{right_col_name} = (#{right_col_name} + 2)&quot;</span>,  <span class="ruby-node">&quot;#{scope_condition} AND #{right_col_name} &gt;= #{right_bound}&quot;</span> )
+        <span class="ruby-keyword">self</span>.<span class="ruby-identifier">save</span>
+        <span class="ruby-identifier">child</span>.<span class="ruby-identifier">save</span>
+      }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>                                   
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-all_children">
+            
+              <a name="method-i-all_children"></a><b>all_children</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a set of all of its children and nested children</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-all_children_source')" id="l_method-i-all_children_source">show</a>
+                
+              </p>
+              <div id="method-i-all_children_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/acts/nested_set.rb, line 187</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">all_children</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">base_class</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{scope_condition} AND (#{left_col_name} &gt; #{self[left_col_name]}) and (#{right_col_name} &lt; #{self[right_col_name]})&quot;</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-before_destroy">
+            
+              <a name="method-i-before_destroy"></a><b>before_destroy</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Prunes a branch off of the tree, shifting all of the elements on the right
+back to the left so the counts still work.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-before_destroy_source')" id="l_method-i-before_destroy_source">show</a>
+                
+              </p>
+              <div id="method-i-before_destroy_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/acts/nested_set.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">before_destroy</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">right_col_name</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">left_col_name</span>].<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">dif</span> = <span class="ruby-keyword">self</span>[<span class="ruby-identifier">right_col_name</span>] <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">left_col_name</span>] <span class="ruby-operator">+</span> <span class="ruby-number">1</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">base_class</span>.<span class="ruby-identifier">transaction</span> {
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">base_class</span>.<span class="ruby-identifier">delete_all</span>( <span class="ruby-node">&quot;#{scope_condition} and #{left_col_name} &gt; #{self[left_col_name]} and #{right_col_name} &lt; #{self[right_col_name]}&quot;</span> )
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">base_class</span>.<span class="ruby-identifier">update_all</span>( <span class="ruby-node">&quot;#{left_col_name} = (#{left_col_name} - #{dif})&quot;</span>,  <span class="ruby-node">&quot;#{scope_condition} AND #{left_col_name} &gt;= #{self[right_col_name]}&quot;</span> )
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">base_class</span>.<span class="ruby-identifier">update_all</span>( <span class="ruby-node">&quot;#{right_col_name} = (#{right_col_name} - #{dif} )&quot;</span>,  <span class="ruby-node">&quot;#{scope_condition} AND #{right_col_name} &gt;= #{self[right_col_name]}&quot;</span> )
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-child-3F">
+            
+              <a name="method-i-child-3F"></a><b>child?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true is this is a child node</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-child-3F_source')" id="l_method-i-child-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-child-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/acts/nested_set.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">child?</span>                          
+  <span class="ruby-identifier">parent_id</span> = <span class="ruby-keyword">self</span>[<span class="ruby-identifier">parent_column</span>]
+  <span class="ruby-operator">!</span>(<span class="ruby-identifier">parent_id</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">parent_id</span>.<span class="ruby-identifier">nil?</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-keyword">self</span>[<span class="ruby-identifier">left_col_name</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-keyword">self</span>[<span class="ruby-identifier">right_col_name</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">left_col_name</span>])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-children_count">
+            
+              <a name="method-i-children_count"></a><b>children_count</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the number of nested children of this object.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-children_count_source')" id="l_method-i-children_count_source">show</a>
+                
+              </p>
+              <div id="method-i-children_count_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/acts/nested_set.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">children_count</span>
+  <span class="ruby-keyword">return</span> (<span class="ruby-keyword">self</span>[<span class="ruby-identifier">right_col_name</span>] <span class="ruby-operator">-</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">left_col_name</span>] <span class="ruby-operator">-</span> <span class="ruby-number">1</span>)<span class="ruby-operator">/</span><span class="ruby-number">2</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-direct_children">
+            
+              <a name="method-i-direct_children"></a><b>direct_children</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a set of only this entry’s immediate children</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-direct_children_source')" id="l_method-i-direct_children_source">show</a>
+                
+              </p>
+              <div id="method-i-direct_children_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/acts/nested_set.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">direct_children</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">base_class</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{scope_condition} and #{parent_column} = #{self.id}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-full_set">
+            
+              <a name="method-i-full_set"></a><b>full_set</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a set of itself and all of its nested children</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-full_set_source')" id="l_method-i-full_set_source">show</a>
+                
+              </p>
+              <div id="method-i-full_set_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/acts/nested_set.rb, line 182</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">full_set</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">base_class</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{scope_condition} AND (#{left_col_name} BETWEEN #{self[left_col_name]} and #{self[right_col_name]})&quot;</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-root-3F">
+            
+              <a name="method-i-root-3F"></a><b>root?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true is this is a root node.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-root-3F_source')" id="l_method-i-root-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-root-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/acts/nested_set.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">root?</span>
+  <span class="ruby-identifier">parent_id</span> = <span class="ruby-keyword">self</span>[<span class="ruby-identifier">parent_column</span>]
+  (<span class="ruby-identifier">parent_id</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">parent_id</span>.<span class="ruby-identifier">nil?</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-keyword">self</span>[<span class="ruby-identifier">left_col_name</span>] <span class="ruby-operator">==</span> <span class="ruby-number">1</span>) <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-keyword">self</span>[<span class="ruby-identifier">right_col_name</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">left_col_name</span>])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-unknown-3F">
+            
+              <a name="method-i-unknown-3F"></a><b>unknown?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if we have no idea what this is</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-unknown-3F_source')" id="l_method-i-unknown-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-unknown-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/acts/nested_set.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">unknown?</span>
+  <span class="ruby-operator">!</span><span class="ruby-identifier">root?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">child?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

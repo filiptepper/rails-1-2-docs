@@ -1,0 +1,706 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ScaffoldGenerator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ScaffoldGenerator 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Rails/Generator/NamedBase.html">Rails::Generator::NamedBase</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator_rb.html">rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-banner">banner</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-create_sandbox">create_sandbox</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-manifest">manifest</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-model_instance">model_instance</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-model_name">model_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-scaffold_actions">scaffold_actions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-scaffold_views">scaffold_views</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-suffix">suffix</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-unscaffolded_actions">unscaffolded_actions</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>controller_class_name</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>controller_class_nesting</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>controller_class_nesting_depth</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>controller_class_path</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>controller_file_name</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>controller_file_path</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>controller_name</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>controller_plural_name</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>controller_singular_name</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>controller_table_name</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(runtime_args, runtime_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">runtime_args</span>, <span class="ruby-identifier">runtime_options</span> = {})
+  <span class="ruby-keyword">super</span>
+
+  <span class="ruby-comment"># Take controller name from the next argument.  Default to the pluralized model name.</span>
+  <span class="ruby-ivar">@controller_name</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>
+  <span class="ruby-ivar">@controller_name</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">pluralize_table_names</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@name</span>.<span class="ruby-identifier">pluralize</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@name</span>
+
+  <span class="ruby-identifier">base_name</span>, <span class="ruby-ivar">@controller_class_path</span>, <span class="ruby-ivar">@controller_file_path</span>, <span class="ruby-ivar">@controller_class_nesting</span>, <span class="ruby-ivar">@controller_class_nesting_depth</span> = <span class="ruby-identifier">extract_modules</span>(<span class="ruby-ivar">@controller_name</span>)
+  <span class="ruby-ivar">@controller_class_name_without_nesting</span>, <span class="ruby-ivar">@controller_singular_name</span>, <span class="ruby-ivar">@controller_plural_name</span> = <span class="ruby-identifier">inflect_names</span>(<span class="ruby-identifier">base_name</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@controller_class_nesting</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-ivar">@controller_class_name</span> = <span class="ruby-ivar">@controller_class_name_without_nesting</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@controller_class_name</span> = <span class="ruby-node">&quot;#{@controller_class_nesting}::#{@controller_class_name_without_nesting}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-manifest">
+            
+              <a name="method-i-manifest"></a><b>manifest</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-manifest_source')" id="l_method-i-manifest_source">show</a>
+                
+              </p>
+              <div id="method-i-manifest_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">manifest</span>
+  <span class="ruby-identifier">record</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Check for class naming collisions.</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">class_collisions</span> <span class="ruby-identifier">controller_class_path</span>, <span class="ruby-node">&quot;#{controller_class_name}Controller&quot;</span>, <span class="ruby-node">&quot;#{controller_class_name}ControllerTest&quot;</span>, <span class="ruby-node">&quot;#{controller_class_name}Helper&quot;</span>
+
+    <span class="ruby-comment"># Controller, helper, views, and test directories.</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">directory</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/controllers'</span>, <span class="ruby-identifier">controller_class_path</span>)
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">directory</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/helpers'</span>, <span class="ruby-identifier">controller_class_path</span>)
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">directory</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/views'</span>, <span class="ruby-identifier">controller_class_path</span>, <span class="ruby-identifier">controller_file_name</span>)
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">directory</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/views/layouts'</span>, <span class="ruby-identifier">controller_class_path</span>)
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">directory</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'test/functional'</span>, <span class="ruby-identifier">controller_class_path</span>)
+
+    <span class="ruby-comment"># Depend on model generator but skip if the model exists.</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">dependency</span> <span class="ruby-string">'model'</span>, [<span class="ruby-identifier">singular_name</span>], <span class="ruby-value">:collision</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:skip</span>, <span class="ruby-value">:skip_migration</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+
+    <span class="ruby-comment"># Scaffolded forms.</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">complex_template</span> <span class="ruby-string">&quot;form.rhtml&quot;</span>,
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/views'</span>,
+                <span class="ruby-identifier">controller_class_path</span>,
+                <span class="ruby-identifier">controller_file_name</span>,
+                <span class="ruby-string">&quot;_form.rhtml&quot;</span>),
+      <span class="ruby-value">:insert</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'form_scaffolding.rhtml'</span>,
+      <span class="ruby-value">:sandbox</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">lambda</span> { <span class="ruby-identifier">create_sandbox</span> },
+      <span class="ruby-value">:begin_mark</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'form'</span>,
+      <span class="ruby-value">:end_mark</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'eoform'</span>,
+      <span class="ruby-value">:mark_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">singular_name</span>
+
+
+    <span class="ruby-comment"># Scaffolded views.</span>
+    <span class="ruby-identifier">scaffold_views</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">action</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-node">&quot;view_#{action}.rhtml&quot;</span>,
+                 <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/views'</span>,
+                           <span class="ruby-identifier">controller_class_path</span>,
+                           <span class="ruby-identifier">controller_file_name</span>,
+                           <span class="ruby-node">&quot;#{action}.rhtml&quot;</span>),
+                 <span class="ruby-value">:assigns</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">action</span> }
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Controller class, functional test, helper, and views.</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">'controller.rb'</span>,
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/controllers'</span>,
+                          <span class="ruby-identifier">controller_class_path</span>,
+                          <span class="ruby-node">&quot;#{controller_file_name}_controller.rb&quot;</span>)
+
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">'functional_test.rb'</span>,
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'test/functional'</span>,
+                          <span class="ruby-identifier">controller_class_path</span>,
+                          <span class="ruby-node">&quot;#{controller_file_name}_controller_test.rb&quot;</span>)
+
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">'helper.rb'</span>,
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/helpers'</span>,
+                          <span class="ruby-identifier">controller_class_path</span>,
+                          <span class="ruby-node">&quot;#{controller_file_name}_helper.rb&quot;</span>)
+
+    <span class="ruby-comment"># Layout and stylesheet.</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">'layout.rhtml'</span>,
+                <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/views/layouts'</span>,
+                          <span class="ruby-identifier">controller_class_path</span>,
+                          <span class="ruby-node">&quot;#{controller_file_name}.rhtml&quot;</span>)
+
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">'style.css'</span>,     <span class="ruby-string">'public/stylesheets/scaffold.css'</span>
+
+
+    <span class="ruby-comment"># Unscaffolded views.</span>
+    <span class="ruby-identifier">unscaffolded_actions</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">action</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/views'</span>,
+                        <span class="ruby-identifier">controller_class_path</span>,
+                        <span class="ruby-identifier">controller_file_name</span>,
+                        <span class="ruby-node">&quot;#{action}.rhtml&quot;</span>)
+      <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">&quot;controller:view.rhtml&quot;</span>, <span class="ruby-identifier">path</span>,
+                 <span class="ruby-value">:assigns</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">action</span>, <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-banner">
+            
+              <a name="method-i-banner"></a><b>banner</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Override with your own usage banner.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-banner_source')" id="l_method-i-banner_source">show</a>
+                
+              </p>
+              <div id="method-i-banner_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">banner</span>
+  <span class="ruby-node">&quot;Usage: #{$0} scaffold ModelName [ControllerName] [action, ...]&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-create_sandbox">
+            
+              <a name="method-i-create_sandbox"></a><b>create_sandbox</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-create_sandbox_source')" id="l_method-i-create_sandbox_source">show</a>
+                
+              </p>
+              <div id="method-i-create_sandbox_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">create_sandbox</span>
+  <span class="ruby-identifier">sandbox</span> = <span class="ruby-constant">ScaffoldingSandbox</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">sandbox</span>.<span class="ruby-identifier">singular_name</span> = <span class="ruby-identifier">singular_name</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">sandbox</span>.<span class="ruby-identifier">model_instance</span> = <span class="ruby-identifier">model_instance</span>
+    <span class="ruby-identifier">sandbox</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-node">&quot;@#{singular_name}&quot;</span>, <span class="ruby-identifier">sandbox</span>.<span class="ruby-identifier">model_instance</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;Before updating scaffolding from new DB schema, try creating a table for your model (#{class_name}) named #{class_name.tableize}.&quot;</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">SystemExit</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">sandbox</span>.<span class="ruby-identifier">suffix</span> = <span class="ruby-identifier">suffix</span>
+  <span class="ruby-identifier">sandbox</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-model_instance">
+            
+              <a name="method-i-model_instance"></a><b>model_instance</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-model_instance_source')" id="l_method-i-model_instance_source">show</a>
+                
+              </p>
+              <div id="method-i-model_instance_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">model_instance</span>
+  <span class="ruby-identifier">base</span> = <span class="ruby-identifier">class_nesting</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'::'</span>).<span class="ruby-identifier">inject</span>(<span class="ruby-constant">Object</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">base</span>, <span class="ruby-identifier">nested</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">break</span> <span class="ruby-identifier">base</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">nested</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">base</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">nested</span>)
+    <span class="ruby-identifier">base</span>.<span class="ruby-identifier">const_set</span>(<span class="ruby-identifier">nested</span>, <span class="ruby-constant">Module</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">base</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-ivar">@class_name_without_nesting</span>)
+    <span class="ruby-identifier">base</span>.<span class="ruby-identifier">const_set</span>(<span class="ruby-ivar">@class_name_without_nesting</span>, <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">class_name</span>.<span class="ruby-identifier">constantize</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-model_name">
+            
+              <a name="method-i-model_name"></a><b>model_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-model_name_source')" id="l_method-i-model_name_source">show</a>
+                
+              </p>
+              <div id="method-i-model_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">model_name</span> 
+  <span class="ruby-identifier">class_name</span>.<span class="ruby-identifier">demodulize</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-scaffold_actions">
+            
+              <a name="method-i-scaffold_actions"></a><b>scaffold_actions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-scaffold_actions_source')" id="l_method-i-scaffold_actions_source">show</a>
+                
+              </p>
+              <div id="method-i-scaffold_actions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">scaffold_actions</span>
+  <span class="ruby-identifier">scaffold_views</span> <span class="ruby-operator">+</span> <span class="ruby-node">%w(index create update destroy)</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-scaffold_views">
+            
+              <a name="method-i-scaffold_views"></a><b>scaffold_views</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-scaffold_views_source')" id="l_method-i-scaffold_views_source">show</a>
+                
+              </p>
+              <div id="method-i-scaffold_views_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">scaffold_views</span>
+  <span class="ruby-node">%w(list show new edit)</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-suffix">
+            
+              <a name="method-i-suffix"></a><b>suffix</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-suffix_source')" id="l_method-i-suffix_source">show</a>
+                
+              </p>
+              <div id="method-i-suffix_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">suffix</span>
+  <span class="ruby-node">&quot;_#{singular_name}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:suffix</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-unscaffolded_actions">
+            
+              <a name="method-i-unscaffolded_actions"></a><b>unscaffolded_actions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-unscaffolded_actions_source')" id="l_method-i-unscaffolded_actions_source">show</a>
+                
+              </p>
+              <div id="method-i-unscaffolded_actions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/scaffold/scaffold_generator.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">unscaffolded_actions</span>
+  <span class="ruby-identifier">args</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">scaffold_actions</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

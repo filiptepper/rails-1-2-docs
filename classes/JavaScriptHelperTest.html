@@ -1,0 +1,515 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>JavaScriptHelperTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            JavaScriptHelperTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/template/javascript_helper_test_rb.html">rails/actionpack/test/template/javascript_helper_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_button_to_function">test_button_to_function</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_button_to_function_with_rjs_block">test_button_to_function_with_rjs_block</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_button_to_function_with_rjs_block_and_options">test_button_to_function_with_rjs_block_and_options</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_define_javascript_functions">test_define_javascript_functions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_escape_javascript">test_escape_javascript</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_link_to_function">test_link_to_function</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_link_to_function_with_existing_onclick">test_link_to_function_with_existing_onclick</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_link_to_function_with_rjs_block">test_link_to_function_with_rjs_block</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_link_to_function_with_rjs_block_and_options">test_link_to_function_with_rjs_block_and_options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/JavaScriptHelper.html">
+              ActionView::Helpers::JavaScriptHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/UrlHelper.html">
+              ActionView::Helpers::UrlHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/TagHelper.html">
+              ActionView::Helpers::TagHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/TextHelper.html">
+              ActionView::Helpers::TextHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/FormHelper.html">
+              ActionView::Helpers::FormHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/CaptureHelper.html">
+              ActionView::Helpers::CaptureHelper
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_button_to_function">
+            
+              <a name="method-i-test_button_to_function"></a><b>test_button_to_function</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_button_to_function_source')" id="l_method-i-test_button_to_function_source">show</a>
+                
+              </p>
+              <div id="method-i-test_button_to_function_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/javascript_helper_test.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_button_to_function</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;input type=&quot;button&quot; onclick=&quot;alert('Hello world!');&quot; value=&quot;Greeting&quot; /&gt;)</span>, 
+    <span class="ruby-identifier">button_to_function</span>(<span class="ruby-string">&quot;Greeting&quot;</span>, <span class="ruby-string">&quot;alert('Hello world!')&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_button_to_function_with_rjs_block">
+            
+              <a name="method-i-test_button_to_function_with_rjs_block"></a><b>test_button_to_function_with_rjs_block</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_button_to_function_with_rjs_block_source')" id="l_method-i-test_button_to_function_with_rjs_block_source">show</a>
+                
+              </p>
+              <div id="method-i-test_button_to_function_with_rjs_block_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/javascript_helper_test.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_button_to_function_with_rjs_block</span>
+  <span class="ruby-identifier">html</span> = <span class="ruby-identifier">button_to_function</span>( <span class="ruby-string">&quot;Greet me!&quot;</span> ) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">'header'</span>, <span class="ruby-string">&quot;&lt;h1&gt;Greetings&lt;/h1&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%q(&lt;input type=&quot;button&quot; onclick=&quot;Element.update(&amp;quot;header&amp;quot;, &amp;quot;\074h1\076Greetings\074/h1\076&amp;quot;);;&quot; value=&quot;Greet me!&quot; /&gt;)</span>, <span class="ruby-identifier">html</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_button_to_function_with_rjs_block_and_options">
+            
+              <a name="method-i-test_button_to_function_with_rjs_block_and_options"></a><b>test_button_to_function_with_rjs_block_and_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_button_to_function_with_rjs_block_and_options_source')" id="l_method-i-test_button_to_function_with_rjs_block_and_options_source">show</a>
+                
+              </p>
+              <div id="method-i-test_button_to_function_with_rjs_block_and_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/javascript_helper_test.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_button_to_function_with_rjs_block_and_options</span>
+  <span class="ruby-identifier">html</span> = <span class="ruby-identifier">button_to_function</span>( <span class="ruby-string">&quot;Greet me!&quot;</span>, <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;greeter&quot;</span> ) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">'header'</span>, <span class="ruby-string">&quot;&lt;h1&gt;Greetings&lt;/h1&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%q(&lt;input type=&quot;button&quot; class=&quot;greeter&quot; onclick=&quot;Element.update(&amp;quot;header&amp;quot;, &amp;quot;\074h1\076Greetings\074/h1\076&amp;quot;);;&quot; value=&quot;Greet me!&quot; /&gt;)</span>, <span class="ruby-identifier">html</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_define_javascript_functions">
+            
+              <a name="method-i-test_define_javascript_functions"></a><b>test_define_javascript_functions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_define_javascript_functions_source')" id="l_method-i-test_define_javascript_functions_source">show</a>
+                
+              </p>
+              <div id="method-i-test_define_javascript_functions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/javascript_helper_test.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_define_javascript_functions</span>
+  <span class="ruby-comment"># check if prototype.js is included first</span>
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">define_javascript_functions</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>)[<span class="ruby-number">1</span>].<span class="ruby-identifier">match</span>(<span class="ruby-regexp">%rPrototype JavaScript framework/</span>)
+  
+  <span class="ruby-comment"># check that scriptaculous.js is not in here, only needed if loaded remotely</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">define_javascript_functions</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;\n&quot;</span>)[<span class="ruby-number">1</span>].<span class="ruby-identifier">match</span>(<span class="ruby-regexp">%rvar Scriptaculous = \{/</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_escape_javascript">
+            
+              <a name="method-i-test_escape_javascript"></a><b>test_escape_javascript</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_escape_javascript_source')" id="l_method-i-test_escape_javascript_source">show</a>
+                
+              </p>
+              <div id="method-i-test_escape_javascript_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/javascript_helper_test.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_escape_javascript</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q(This \\&quot;thing\\&quot; is really\\n netos\\')</span>, <span class="ruby-identifier">escape_javascript</span>(<span class="ruby-string">%Q(This &quot;thing&quot; is really\n netos')</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q(backslash\\\\test)</span>, <span class="ruby-identifier">escape_javascript</span>( <span class="ruby-string">%Q(backslash\\test)</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_link_to_function">
+            
+              <a name="method-i-test_link_to_function"></a><b>test_link_to_function</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_link_to_function_source')" id="l_method-i-test_link_to_function_source">show</a>
+                
+              </p>
+              <div id="method-i-test_link_to_function_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/javascript_helper_test.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_link_to_function</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;a href=&quot;#&quot; onclick=&quot;alert('Hello world!'); return false;&quot;&gt;Greeting&lt;/a&gt;)</span>, 
+    <span class="ruby-identifier">link_to_function</span>(<span class="ruby-string">&quot;Greeting&quot;</span>, <span class="ruby-string">&quot;alert('Hello world!')&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_link_to_function_with_existing_onclick">
+            
+              <a name="method-i-test_link_to_function_with_existing_onclick"></a><b>test_link_to_function_with_existing_onclick</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_link_to_function_with_existing_onclick_source')" id="l_method-i-test_link_to_function_with_existing_onclick_source">show</a>
+                
+              </p>
+              <div id="method-i-test_link_to_function_with_existing_onclick_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/javascript_helper_test.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_link_to_function_with_existing_onclick</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;a href=&quot;#&quot; onclick=&quot;confirm('Sanity!'); alert('Hello world!'); return false;&quot;&gt;Greeting&lt;/a&gt;)</span>, 
+    <span class="ruby-identifier">link_to_function</span>(<span class="ruby-string">&quot;Greeting&quot;</span>, <span class="ruby-string">&quot;alert('Hello world!')&quot;</span>, <span class="ruby-value">:onclick</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;confirm('Sanity!')&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_link_to_function_with_rjs_block">
+            
+              <a name="method-i-test_link_to_function_with_rjs_block"></a><b>test_link_to_function_with_rjs_block</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_link_to_function_with_rjs_block_source')" id="l_method-i-test_link_to_function_with_rjs_block_source">show</a>
+                
+              </p>
+              <div id="method-i-test_link_to_function_with_rjs_block_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/javascript_helper_test.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_link_to_function_with_rjs_block</span>
+  <span class="ruby-identifier">html</span> = <span class="ruby-identifier">link_to_function</span>( <span class="ruby-string">&quot;Greet me!&quot;</span> ) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">'header'</span>, <span class="ruby-string">&quot;&lt;h1&gt;Greetings&lt;/h1&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%q(&lt;a href=&quot;#&quot; onclick=&quot;Element.update(&amp;quot;header&amp;quot;, &amp;quot;\074h1\076Greetings\074/h1\076&amp;quot;);; return false;&quot;&gt;Greet me!&lt;/a&gt;)</span>, <span class="ruby-identifier">html</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_link_to_function_with_rjs_block_and_options">
+            
+              <a name="method-i-test_link_to_function_with_rjs_block_and_options"></a><b>test_link_to_function_with_rjs_block_and_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_link_to_function_with_rjs_block_and_options_source')" id="l_method-i-test_link_to_function_with_rjs_block_and_options_source">show</a>
+                
+              </p>
+              <div id="method-i-test_link_to_function_with_rjs_block_and_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/javascript_helper_test.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_link_to_function_with_rjs_block_and_options</span>
+  <span class="ruby-identifier">html</span> = <span class="ruby-identifier">link_to_function</span>( <span class="ruby-string">&quot;Greet me!&quot;</span>, <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;updater&quot;</span> ) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">'header'</span>, <span class="ruby-string">&quot;&lt;h1&gt;Greetings&lt;/h1&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%q(&lt;a href=&quot;#&quot; class=&quot;updater&quot; onclick=&quot;Element.update(&amp;quot;header&amp;quot;, &amp;quot;\074h1\076Greetings\074/h1\076&amp;quot;);; return false;&quot;&gt;Greet me!&lt;/a&gt;)</span>, <span class="ruby-identifier">html</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

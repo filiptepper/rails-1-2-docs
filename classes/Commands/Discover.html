@@ -1,0 +1,366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Commands::Discover</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Commands::Discover 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/railties/lib/commands/plugin_rb.html">rails/railties/lib/commands/plugin.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-extract_repository_uri">extract_repository_uri</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-options">options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-parse-21">parse!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-scrape">scrape</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(base_command)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/plugin.rb, line 636</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">base_command</span>)
+  <span class="ruby-ivar">@base_command</span> = <span class="ruby-identifier">base_command</span>
+  <span class="ruby-ivar">@list</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@prompt</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-extract_repository_uri">
+            
+              <a name="method-i-extract_repository_uri"></a><b>extract_repository_uri</b>(uri)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-extract_repository_uri_source')" id="l_method-i-extract_repository_uri_source">show</a>
+                
+              </p>
+              <div id="method-i-extract_repository_uri_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/plugin.rb, line 703</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">extract_repository_uri</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-identifier">uri</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">%r(svn|https?):.*\/plugins\//</span>)[<span class="ruby-number">0</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-options">
+            
+              <a name="method-i-options"></a><b>options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-options_source')" id="l_method-i-options_source">show</a>
+                
+              </p>
+              <div id="method-i-options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/plugin.rb, line 642</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">options</span>
+  <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">o</span>.<span class="ruby-identifier">set_summary_indent</span>(<span class="ruby-string">'  '</span>)
+    <span class="ruby-identifier">o</span>.<span class="ruby-identifier">banner</span> =    <span class="ruby-node">&quot;Usage: #{@base_command.script_name} discover URI [URI [URI]...]&quot;</span>
+    <span class="ruby-identifier">o</span>.<span class="ruby-identifier">define_head</span> <span class="ruby-string">&quot;Discover repositories referenced on a page.&quot;</span>
+    <span class="ruby-identifier">o</span>.<span class="ruby-identifier">separator</span>   <span class="ruby-string">&quot;&quot;</span>        
+    <span class="ruby-identifier">o</span>.<span class="ruby-identifier">separator</span>   <span class="ruby-string">&quot;Options:&quot;</span>
+    <span class="ruby-identifier">o</span>.<span class="ruby-identifier">separator</span>   <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">o</span>.<span class="ruby-identifier">on</span>(         <span class="ruby-string">&quot;-l&quot;</span>, <span class="ruby-string">&quot;--list&quot;</span>, 
+                  <span class="ruby-string">&quot;List but don't prompt or add discovered repositories.&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-ivar">@list</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@prompt</span> = <span class="ruby-operator">!</span><span class="ruby-ivar">@list</span> }
+    <span class="ruby-identifier">o</span>.<span class="ruby-identifier">on</span>(         <span class="ruby-string">&quot;-n&quot;</span>, <span class="ruby-string">&quot;--no-prompt&quot;</span>, 
+                  <span class="ruby-string">&quot;Add all new repositories without prompting.&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-ivar">@prompt</span> = <span class="ruby-operator">!</span><span class="ruby-identifier">v</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-parse-21">
+            
+              <a name="method-i-parse-21"></a><b>parse!</b>(args)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-parse-21_source')" id="l_method-i-parse-21_source">show</a>
+                
+              </p>
+              <div id="method-i-parse-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/plugin.rb, line 657</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">parse!</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">parse!</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">args</span> = [<span class="ruby-string">'http://wiki.rubyonrails.org/rails/pages/Plugins'</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">args</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">uri</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">scrape</span>(<span class="ruby-identifier">uri</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">repo_uri</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">catch</span>(<span class="ruby-value">:next_uri</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-ivar">@prompt</span>
+          <span class="ruby-keyword">begin</span>
+            <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">print</span> <span class="ruby-node">&quot;Add #{repo_uri}? [Y/n] &quot;</span>
+            <span class="ruby-identifier">throw</span> <span class="ruby-value">:next_uri</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$stdin</span>.<span class="ruby-identifier">gets</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r^y?$/</span>
+          <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Interrupt</span>
+            <span class="ruby-identifier">$stdout</span>.<span class="ruby-identifier">puts</span>
+            <span class="ruby-identifier">exit</span> <span class="ruby-number">1</span>
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-ivar">@list</span>
+          <span class="ruby-identifier">puts</span> <span class="ruby-identifier">repo_uri</span>
+          <span class="ruby-identifier">throw</span> <span class="ruby-value">:next_uri</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-constant">Repositories</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">add</span>(<span class="ruby-identifier">repo_uri</span>)
+        <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;discovered: #{repo_uri}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$verbose</span> <span class="ruby-keyword">or</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@prompt</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Repositories</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">save</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-scrape">
+            
+              <a name="method-i-scrape"></a><b>scrape</b>(uri)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-scrape_source')" id="l_method-i-scrape_source">show</a>
+                
+              </p>
+              <div id="method-i-scrape_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/plugin.rb, line 683</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">scrape</span>(<span class="ruby-identifier">uri</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'open-uri'</span>
+  <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Scraping #{uri}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">$verbose</span>
+  <span class="ruby-identifier">dupes</span> = []
+  <span class="ruby-identifier">content</span> = <span class="ruby-identifier">open</span>(<span class="ruby-identifier">uri</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r&lt;a[^&gt;]*href=['&quot;]([^'&quot;]*)['&quot;]/</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r(svn:\/\/[^&lt;|\n]*)/</span>
+        <span class="ruby-identifier">uri</span> = <span class="ruby-node">$1</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">uri</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^\w+:\/\//</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">uri</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\/plugins\//</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">uri</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r\/browser\//</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">uri</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r^http:\/\/wiki\.rubyonrails/</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">uri</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%rhttp:\/\/instiki/</span>
+          <span class="ruby-identifier">uri</span> = <span class="ruby-identifier">extract_repository_uri</span>(<span class="ruby-identifier">uri</span>)
+          <span class="ruby-keyword">yield</span> <span class="ruby-identifier">uri</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">dupes</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">uri</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">Repositories</span>.<span class="ruby-identifier">instance</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">uri</span>)
+          <span class="ruby-identifier">dupes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">uri</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">rescue</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Problems scraping '#{uri}': #{$!.to_s}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

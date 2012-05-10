@@ -1,0 +1,370 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecordStoreTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecordStoreTest 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="ActiveRecordTestCase.html">ActiveRecordTestCase</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/activerecord/active_record_store_test_rb.html">rails/actionpack/test/activerecord/active_record_store_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-session_class">session_class</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-session_id_column">session_id_column</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-teardown">teardown</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_model_attribute">test_model_attribute</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_save_unloaded_session">test_save_unloaded_session</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="CommonActiveRecordStoreTests.html">
+              CommonActiveRecordStoreTests
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-session_class">
+            
+              <a name="method-i-session_class"></a><b>session_class</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-session_class_source')" id="l_method-i-session_class_source">show</a>
+                
+              </p>
+              <div id="method-i-session_class_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_store_test.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">session_class</span>
+  <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span><span class="ruby-operator">::</span><span class="ruby-constant">ActiveRecordStore</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-session_id_column">
+            
+              <a name="method-i-session_id_column"></a><b>session_id_column</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-session_id_column_source')" id="l_method-i-session_id_column_source">show</a>
+                
+              </p>
+              <div id="method-i-session_id_column_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_store_test.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">session_id_column</span>
+  <span class="ruby-string">&quot;session_id&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_store_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-identifier">session_class</span>.<span class="ruby-identifier">create_table!</span>
+
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'REQUEST_METHOD'</span>] = <span class="ruby-string">'GET'</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'REQUEST_URI'</span>] = <span class="ruby-string">'/'</span>
+  <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span><span class="ruby-operator">::</span><span class="ruby-constant">ActiveRecordStore</span>.<span class="ruby-identifier">session_class</span> = <span class="ruby-identifier">session_class</span>
+
+  <span class="ruby-ivar">@cgi</span> = <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@new_session</span> = <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@cgi</span>, <span class="ruby-string">'database_manager'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span><span class="ruby-operator">::</span><span class="ruby-constant">ActiveRecordStore</span>, <span class="ruby-string">'new_session'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+  <span class="ruby-ivar">@new_session</span>[<span class="ruby-string">'foo'</span>] = <span class="ruby-string">'bar'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-teardown">
+            
+              <a name="method-i-teardown"></a><b>teardown</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-teardown_source')" id="l_method-i-teardown_source">show</a>
+                
+              </p>
+              <div id="method-i-teardown_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_store_test.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">teardown</span>
+  <span class="ruby-identifier">session_class</span>.<span class="ruby-identifier">drop_table!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_model_attribute">
+            
+              <a name="method-i-test_model_attribute"></a><b>test_model_attribute</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>this test only applies for eager sesssion saving</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">test_another_instance</span>
+  <span class="ruby-ivar">@another</span> = <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@cgi</span>, <span class="ruby-string">'session_id'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@new_session</span>.<span class="ruby-identifier">session_id</span>, <span class="ruby-string">'database_manager'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span><span class="ruby-operator">::</span><span class="ruby-constant">ActiveRecordStore</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-ivar">@new_session</span>.<span class="ruby-identifier">session_id</span>, <span class="ruby-ivar">@another</span>.<span class="ruby-identifier">session_id</span>
+<span class="ruby-keyword">end</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_model_attribute_source')" id="l_method-i-test_model_attribute_source">show</a>
+                
+              </p>
+              <div id="method-i-test_model_attribute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_store_test.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_model_attribute</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span><span class="ruby-operator">::</span><span class="ruby-constant">ActiveRecordStore</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span>, <span class="ruby-ivar">@new_session</span>.<span class="ruby-identifier">model</span>
+  <span class="ruby-identifier">assert_equal</span>({ <span class="ruby-string">'foo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'bar'</span> }, <span class="ruby-ivar">@new_session</span>.<span class="ruby-identifier">model</span>.<span class="ruby-identifier">data</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_save_unloaded_session">
+            
+              <a name="method-i-test_save_unloaded_session"></a><b>test_save_unloaded_session</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_save_unloaded_session_source')" id="l_method-i-test_save_unloaded_session_source">show</a>
+                
+              </p>
+              <div id="method-i-test_save_unloaded_session_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_store_test.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_save_unloaded_session</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-identifier">session_class</span>.<span class="ruby-identifier">connection</span>
+  <span class="ruby-identifier">bogus_class</span> = <span class="ruby-identifier">c</span>.<span class="ruby-identifier">quote</span>(<span class="ruby-constant">Base64</span>.<span class="ruby-identifier">encode64</span>(<span class="ruby-string">&quot;\0004\0010o:\vBlammo\0000&quot;</span>))
+  <span class="ruby-identifier">c</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-node">&quot;INSERT INTO #{session_class.table_name} ('#{session_id_column}', 'data') VALUES ('abcdefghijklmnop', #{bogus_class})&quot;</span>)
+
+  <span class="ruby-identifier">sess</span> = <span class="ruby-identifier">session_class</span>.<span class="ruby-identifier">find_by_session_id</span>(<span class="ruby-string">'abcdefghijklmnop'</span>)
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">sess</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">sess</span>.<span class="ruby-identifier">loaded?</span>
+
+  <span class="ruby-comment"># because the session is not loaded, the save should be a no-op. If it</span>
+  <span class="ruby-comment"># isn't, this'll try and unmarshall the bogus class, and should get an error.</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">sess</span>.<span class="ruby-identifier">save</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

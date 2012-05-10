@@ -1,0 +1,226 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>StaticSegmentTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            StaticSegmentTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/routing_test_rb.html">rails/actionpack/test/controller/routing_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_interpolation_chunk_should_respect_raw">test_interpolation_chunk_should_respect_raw</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_regexp_chunk_should_add_question_mark_for_optionals">test_regexp_chunk_should_add_question_mark_for_optionals</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_regexp_chunk_should_escape_specials">test_regexp_chunk_should_escape_specials</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_interpolation_chunk_should_respect_raw">
+            
+              <a name="method-i-test_interpolation_chunk_should_respect_raw"></a><b>test_interpolation_chunk_should_respect_raw</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_interpolation_chunk_should_respect_raw_source')" id="l_method-i-test_interpolation_chunk_should_respect_raw_source">show</a>
+                
+              </p>
+              <div id="method-i-test_interpolation_chunk_should_respect_raw_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 563</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_interpolation_chunk_should_respect_raw</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticSegment</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">value</span> = <span class="ruby-string">'Hello/World'</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">raw?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'Hello/World'</span>, <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">s</span>.<span class="ruby-identifier">interpolation_chunk</span>)
+  
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">raw</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">raw?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'Hello/World'</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">interpolation_chunk</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_regexp_chunk_should_add_question_mark_for_optionals">
+            
+              <a name="method-i-test_regexp_chunk_should_add_question_mark_for_optionals"></a><b>test_regexp_chunk_should_add_question_mark_for_optionals</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_regexp_chunk_should_add_question_mark_for_optionals_source')" id="l_method-i-test_regexp_chunk_should_add_question_mark_for_optionals_source">show</a>
+                
+              </p>
+              <div id="method-i-test_regexp_chunk_should_add_question_mark_for_optionals_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 584</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_regexp_chunk_should_add_question_mark_for_optionals</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticSegment</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">value</span> = <span class="ruby-string">&quot;/&quot;</span>
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">is_optional</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;/?&quot;</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">regexp_chunk</span>
+  
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">value</span> = <span class="ruby-string">&quot;hello&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;(?:hello)?&quot;</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">regexp_chunk</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_regexp_chunk_should_escape_specials">
+            
+              <a name="method-i-test_regexp_chunk_should_escape_specials"></a><b>test_regexp_chunk_should_escape_specials</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_regexp_chunk_should_escape_specials_source')" id="l_method-i-test_regexp_chunk_should_escape_specials_source">show</a>
+                
+              </p>
+              <div id="method-i-test_regexp_chunk_should_escape_specials_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 574</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_regexp_chunk_should_escape_specials</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticSegment</span>.<span class="ruby-identifier">new</span>
+  
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">value</span> = <span class="ruby-string">'Hello*World'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'Hello\*World'</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">regexp_chunk</span>
+  
+  <span class="ruby-identifier">s</span>.<span class="ruby-identifier">value</span> = <span class="ruby-string">'HelloWorld'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'HelloWorld'</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">regexp_chunk</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

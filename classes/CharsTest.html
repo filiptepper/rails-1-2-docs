@@ -1,0 +1,750 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CharsTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            CharsTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/test/multibyte_chars_test_rb.html">rails/activesupport/test/multibyte_chars_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_comparability">test_comparability</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_destructiveness">test_destructiveness</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_gsub">test_gsub</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_handler_setting">test_handler_setting</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_method_chaining">test_method_chaining</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_passthrough_on_kcode">test_passthrough_on_kcode</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_pragma">test_pragma</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_regexp">test_regexp</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_resilience">test_resilience</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_sanity">test_sanity</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_split">test_split</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_utf8-3F">test_utf8?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-with_kcode">with_kcode</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@s</span> = {
+    <span class="ruby-value">:utf8</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Abcd Блå ﬃ блa  埋&quot;</span>,
+    <span class="ruby-value">:ascii</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;asci ias c iia s&quot;</span>,
+    <span class="ruby-value">:bytes</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;\2270\2236\0010\2210\2245&quot;</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_comparability">
+            
+              <a name="method-i-test_comparability"></a><b>test_comparability</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_comparability_source')" id="l_method-i-test_comparability_source">show</a>
+                
+              </p>
+              <div id="method-i-test_comparability_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_comparability</span>
+  <span class="ruby-ivar">@s</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span>, <span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">s</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-node">&quot;Chars#to_s should return enclosed string unchanged&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-string">&quot;Normal string comparisons should be unaffected&quot;</span>
+    <span class="ruby-identifier">assert_not_equal</span> <span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-string">&quot;b&quot;</span>, <span class="ruby-string">&quot;Normal string comparisons should be unaffected&quot;</span>
+    <span class="ruby-identifier">assert_not_equal</span> <span class="ruby-string">&quot;a&quot;</span>.<span class="ruby-identifier">chars</span>, <span class="ruby-string">&quot;b&quot;</span>.<span class="ruby-identifier">chars</span>, <span class="ruby-string">&quot;Chars objects should be comparable&quot;</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;a&quot;</span>.<span class="ruby-identifier">chars</span>, <span class="ruby-string">&quot;A&quot;</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">chars</span>, <span class="ruby-string">&quot;Chars objects should be comparable to each other&quot;</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;a&quot;</span>.<span class="ruby-identifier">chars</span>, <span class="ruby-string">&quot;A&quot;</span>.<span class="ruby-identifier">downcase</span>, <span class="ruby-string">&quot;Chars objects should be comparable to strings coming from elsewhere&quot;</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>].<span class="ruby-identifier">eql?</span>(<span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>].<span class="ruby-identifier">chars</span>), <span class="ruby-string">&quot;Strict comparison is not supported&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>], <span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>].<span class="ruby-identifier">chars</span>, <span class="ruby-string">&quot;Chars should be compared by their enclosed string&quot;</span>
+
+  <span class="ruby-identifier">other_string</span> = <span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>].<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">other_string</span>, <span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>].<span class="ruby-identifier">chars</span>, <span class="ruby-string">&quot;Chars should be compared by their enclosed string&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">other_string</span>.<span class="ruby-identifier">chars</span>, <span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>].<span class="ruby-identifier">chars</span>, <span class="ruby-string">&quot;Chars should be compared by their enclosed string&quot;</span>
+  
+  <span class="ruby-identifier">strings</span> = [<span class="ruby-string">'builder'</span>.<span class="ruby-identifier">chars</span>, <span class="ruby-string">'armor'</span>.<span class="ruby-identifier">chars</span>, <span class="ruby-string">'zebra'</span>.<span class="ruby-identifier">chars</span>]
+  <span class="ruby-identifier">strings</span>.<span class="ruby-identifier">sort!</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'armor'</span>, <span class="ruby-string">'builder'</span>, <span class="ruby-string">'zebra'</span>], <span class="ruby-identifier">strings</span>, <span class="ruby-string">&quot;Chars should be sortable based on their enclosed string&quot;</span>
+
+  <span class="ruby-comment"># This leads to a StackLevelTooDeep exception if the comparison is not wired properly</span>
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">NameError</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Chars</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_destructiveness">
+            
+              <a name="method-i-test_destructiveness"></a><b>test_destructiveness</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_destructiveness_source')" id="l_method-i-test_destructiveness_source">show</a>
+                
+              </p>
+              <div id="method-i-test_destructiveness_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_destructiveness</span>  
+  <span class="ruby-comment"># Note that we're testing the destructiveness here and not the correct behaviour of the methods</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">'ac'</span>
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-number">1</span>, <span class="ruby-string">'b'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'abc'</span>, <span class="ruby-identifier">str</span>, <span class="ruby-string">'Insert should be destructive for a string'</span>
+  
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">'ac'</span>
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">reverse!</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'ca'</span>, <span class="ruby-identifier">str</span>, <span class="ruby-string">'reverse! should be destructive for a string'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_gsub">
+            
+              <a name="method-i-test_gsub"></a><b>test_gsub</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>The test for the following methods are defined here because they can only
+be defined on the Chars class for various reasons</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_gsub_source')" id="l_method-i-test_gsub_source">show</a>
+                
+              </p>
+              <div id="method-i-test_gsub_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_gsub</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'éxa'</span>, <span class="ruby-string">'éda'</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%rd/</span>, <span class="ruby-string">'x'</span>)
+  <span class="ruby-identifier">with_kcode</span>(<span class="ruby-string">'none'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'éxa'</span>, <span class="ruby-string">'éda'</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%rd/</span>, <span class="ruby-string">'x'</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_handler_setting">
+            
+              <a name="method-i-test_handler_setting"></a><b>test_handler_setting</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_handler_setting_source')" id="l_method-i-test_handler_setting_source">show</a>
+                
+              </p>
+              <div id="method-i-test_handler_setting_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_handler_setting</span>
+  <span class="ruby-identifier">handler</span> = <span class="ruby-string">''</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">handler</span>
+  
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Chars</span>.<span class="ruby-identifier">handler</span> = <span class="ruby-value">:first</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:first</span>, <span class="ruby-string">''</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">handler</span>
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Chars</span>.<span class="ruby-identifier">handler</span> = <span class="ruby-value">:second</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:second</span>, <span class="ruby-string">''</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">handler</span>
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">NoMethodError</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-string">''</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">handler</span>.<span class="ruby-identifier">split</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Chars</span>.<span class="ruby-identifier">handler</span> = <span class="ruby-identifier">handler</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_method_chaining">
+            
+              <a name="method-i-test_method_chaining"></a><b>test_method_chaining</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_method_chaining_source')" id="l_method-i-test_method_chaining_source">show</a>
+                
+              </p>
+              <div id="method-i-test_method_chaining_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_method_chaining</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Chars</span>, <span class="ruby-string">''</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">downcase</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Chars</span>, <span class="ruby-string">''</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">strip</span>, <span class="ruby-string">&quot;Strip should return a Chars object&quot;</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Chars</span>, <span class="ruby-string">''</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">strip</span>, <span class="ruby-string">&quot;The Chars object should be &quot;</span> <span class="ruby-operator">+</span>
+      <span class="ruby-string">&quot;forwarded down the call path for chaining&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'foo'</span>, <span class="ruby-string">&quot;  FOO   &quot;</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">normalize</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">strip</span>, <span class="ruby-string">&quot;The Chars that results from the &quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot; operations should be comparable to the string value of the result&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_passthrough_on_kcode">
+            
+              <a name="method-i-test_passthrough_on_kcode"></a><b>test_passthrough_on_kcode</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_passthrough_on_kcode_source')" id="l_method-i-test_passthrough_on_kcode_source">show</a>
+                
+              </p>
+              <div id="method-i-test_passthrough_on_kcode_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_passthrough_on_kcode</span>
+  <span class="ruby-comment"># The easiest way to check if the passthrough is in place is through #size</span>
+  <span class="ruby-identifier">with_kcode</span>(<span class="ruby-string">'nonce'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">26</span>, <span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>].<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">with_kcode</span>(<span class="ruby-string">'UTF8'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">17</span>, <span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>].<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_pragma">
+            
+              <a name="method-i-test_pragma"></a><b>test_pragma</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_pragma_source')" id="l_method-i-test_pragma_source">show</a>
+                
+              </p>
+              <div id="method-i-test_pragma_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_pragma</span>
+  <span class="ruby-identifier">with_kcode</span>(<span class="ruby-string">'UTF8'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-string">&quot; &quot;</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:utf8_pragma?</span>), <span class="ruby-string">&quot;UTF8 pragma should be on because KCODE is UTF8&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">with_kcode</span>(<span class="ruby-string">'none'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-string">&quot; &quot;</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:utf8_pragma?</span>), <span class="ruby-string">&quot;UTF8 pragma should be off&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_regexp">
+            
+              <a name="method-i-test_regexp"></a><b>test_regexp</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_regexp_source')" id="l_method-i-test_regexp_source">show</a>
+                
+              </p>
+              <div id="method-i-test_regexp_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_regexp</span>
+  <span class="ruby-identifier">with_kcode</span>(<span class="ruby-string">'none'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">12</span>, (<span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>].<span class="ruby-identifier">chars</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%rﬃ/</span>),
+      <span class="ruby-string">&quot;Regex matching should be bypassed to String&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">with_kcode</span>(<span class="ruby-string">'UTF8'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">9</span>, (<span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>].<span class="ruby-identifier">chars</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%rﬃ/</span>),
+      <span class="ruby-string">&quot;Regex matching should be unicode aware&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_resilience">
+            
+              <a name="method-i-test_resilience"></a><b>test_resilience</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_resilience_source')" id="l_method-i-test_resilience_source">show</a>
+                
+              </p>
+              <div id="method-i-test_resilience_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_resilience</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-ivar">@s</span>[<span class="ruby-value">:bytes</span>].<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">size</span>, <span class="ruby-string">&quot;The sequence contains five interpretable bytes&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">reversed</span> = [<span class="ruby-number">0xb8</span>, <span class="ruby-number">0x17e</span>, <span class="ruby-number">0x8</span>, <span class="ruby-number">0x2c6</span>, <span class="ruby-number">0xa5</span>].<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>)
+  <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">reversed</span>, <span class="ruby-ivar">@s</span>[<span class="ruby-value">:bytes</span>].<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-string">&quot;Reversing the string should only yield interpretable bytes&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@s</span>[<span class="ruby-value">:bytes</span>].<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">reverse!</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">reversed</span>, <span class="ruby-ivar">@s</span>[<span class="ruby-value">:bytes</span>].<span class="ruby-identifier">to_s</span>, <span class="ruby-string">&quot;Reversing the string should only yield interpretable bytes&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_sanity">
+            
+              <a name="method-i-test_sanity"></a><b>test_sanity</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_sanity_source')" id="l_method-i-test_sanity_source">show</a>
+                
+              </p>
+              <div id="method-i-test_sanity_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_sanity</span>
+  <span class="ruby-ivar">@s</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span>, <span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:chars</span>), <span class="ruby-node">&quot;All string should have the chars method (#{t})&quot;</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_s</span>), <span class="ruby-node">&quot;All string should have the to_s method (#{t})&quot;</span>
+    <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Chars</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">chars</span>, <span class="ruby-node">&quot;#chars should return an instance of Chars (#{t})&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_split">
+            
+              <a name="method-i-test_split"></a><b>test_split</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_split_source')" id="l_method-i-test_split_source">show</a>
+                
+              </p>
+              <div id="method-i-test_split_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_split</span>
+  <span class="ruby-identifier">word</span> = <span class="ruby-string">&quot;eﬃcient&quot;</span>
+  <span class="ruby-identifier">chars</span> = [<span class="ruby-string">&quot;e&quot;</span>, <span class="ruby-string">&quot;ﬃ&quot;</span>, <span class="ruby-string">&quot;c&quot;</span>, <span class="ruby-string">&quot;i&quot;</span>, <span class="ruby-string">&quot;e&quot;</span>, <span class="ruby-string">&quot;n&quot;</span>, <span class="ruby-string">&quot;t&quot;</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">chars</span>, <span class="ruby-identifier">word</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r/</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">chars</span>, <span class="ruby-identifier">word</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r/</span>)
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Chars</span>, <span class="ruby-identifier">word</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r/</span>).<span class="ruby-identifier">first</span>, <span class="ruby-string">&quot;Split should return Chars instances&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_utf8-3F">
+            
+              <a name="method-i-test_utf8-3F"></a><b>test_utf8?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_utf8-3F_source')" id="l_method-i-test_utf8-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-test_utf8-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_utf8?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-ivar">@s</span>[<span class="ruby-value">:utf8</span>].<span class="ruby-identifier">is_utf8?</span>, <span class="ruby-string">&quot;UTF-8 strings are UTF-8&quot;</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-ivar">@s</span>[<span class="ruby-value">:ascii</span>].<span class="ruby-identifier">is_utf8?</span>, <span class="ruby-string">&quot;All ASCII strings are also valid UTF-8&quot;</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@s</span>[<span class="ruby-value">:bytes</span>].<span class="ruby-identifier">is_utf8?</span>, <span class="ruby-string">&quot;This bytestring isn't UTF-8&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-with_kcode">
+            
+              <a name="method-i-with_kcode"></a><b>with_kcode</b>(kcode)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-with_kcode_source')" id="l_method-i-with_kcode_source">show</a>
+                
+              </p>
+              <div id="method-i-with_kcode_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_chars_test.rb, line 156</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">with_kcode</span>(<span class="ruby-identifier">kcode</span>)
+  <span class="ruby-identifier">old_kcode</span>, <span class="ruby-identifier">$KCODE</span> = <span class="ruby-identifier">$KCODE</span>, <span class="ruby-identifier">kcode</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-identifier">$KCODE</span> = <span class="ruby-identifier">old_kcode</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

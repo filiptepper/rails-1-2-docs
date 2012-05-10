@@ -1,0 +1,259 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>GoogleSearchService</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            GoogleSearchService 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="ActionWebService/Base.html">ActionWebService::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionwebservice/examples/googlesearch/delegated/google_search_service_rb.html">rails/actionwebservice/examples/googlesearch/delegated/google_search_service.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-doGetCachedPage">doGetCachedPage</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-doGoogleSearch">doGoogleSearch</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-doSpellingSuggestion">doSpellingSuggestion</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">URL</td>
+            <td>=</td>
+            <td class="attr-value">&quot;http://www.onlamp.com/pub/a/onlamp/2005/01/20/rails.html&quot;</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-doGetCachedPage">
+            
+              <a name="method-i-doGetCachedPage"></a><b>doGetCachedPage</b>(key, url)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-doGetCachedPage_source')" id="l_method-i-doGetCachedPage_source">show</a>
+                
+              </p>
+              <div id="method-i-doGetCachedPage_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/examples/googlesearch/delegated/google_search_service.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">doGetCachedPage</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">url</span>)
+  <span class="ruby-string">&quot;&lt;html&gt;&lt;body&gt;i am a cached page&lt;/body&gt;&lt;/html&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-doGoogleSearch">
+            
+              <a name="method-i-doGoogleSearch"></a><b>doGoogleSearch</b>(key, q, start, maxResults, filter, restrict, safeSearch, lr, ie, oe)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-doGoogleSearch_source')" id="l_method-i-doGoogleSearch_source">show</a>
+                
+              </p>
+              <div id="method-i-doGoogleSearch_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/examples/googlesearch/delegated/google_search_service.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">doGoogleSearch</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">q</span>, <span class="ruby-identifier">start</span>, <span class="ruby-identifier">maxResults</span>, <span class="ruby-identifier">filter</span>, <span class="ruby-identifier">restrict</span>, <span class="ruby-identifier">safeSearch</span>, <span class="ruby-identifier">lr</span>, <span class="ruby-identifier">ie</span>, <span class="ruby-identifier">oe</span>)
+  <span class="ruby-identifier">resultElement</span> = <span class="ruby-constant">ResultElement</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">resultElement</span>.<span class="ruby-identifier">summary</span> = <span class="ruby-string">&quot;ONlamp.com: Rolling with Ruby on Rails&quot;</span>
+  <span class="ruby-identifier">resultElement</span>.<span class="ruby-constant">URL</span> = <span class="ruby-string">&quot;http://www.onlamp.com/pub/a/onlamp/2005/01/20/rails.html&quot;</span>
+  <span class="ruby-identifier">resultElement</span>.<span class="ruby-identifier">snippet</span> = <span class="ruby-string">&quot;Curt Hibbs shows off Ruby on Rails by building a simple application that requires &quot;</span> <span class="ruby-operator">+</span>
+                          <span class="ruby-string">&quot;almost no Ruby experience. ... Rolling with Ruby on Rails. ...&quot;</span>
+  <span class="ruby-identifier">resultElement</span>.<span class="ruby-identifier">title</span> = <span class="ruby-string">&quot;Teh Railz0r&quot;</span>
+  <span class="ruby-identifier">resultElement</span>.<span class="ruby-identifier">cachedSize</span> = <span class="ruby-string">&quot;Almost no lines of code!&quot;</span>
+  <span class="ruby-identifier">resultElement</span>.<span class="ruby-identifier">relatedInformationPresent</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">resultElement</span>.<span class="ruby-identifier">hostName</span> = <span class="ruby-string">&quot;rubyonrails.com&quot;</span>
+  <span class="ruby-identifier">resultElement</span>.<span class="ruby-identifier">directoryCategory</span> = <span class="ruby-identifier">category</span>(<span class="ruby-string">&quot;Web Development&quot;</span>, <span class="ruby-string">&quot;UTF-8&quot;</span>)
+
+  <span class="ruby-identifier">result</span> = <span class="ruby-constant">GoogleSearchResult</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">documentFiltering</span> = <span class="ruby-identifier">filter</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">searchComments</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">estimatedTotalResultsCount</span> = <span class="ruby-number">322000</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">estimateIsExact</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">resultElements</span> = [<span class="ruby-identifier">resultElement</span>]
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">searchQuery</span> = <span class="ruby-string">&quot;http://www.google.com/search?q=ruby+on+rails&quot;</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">startIndex</span> = <span class="ruby-identifier">start</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">endIndex</span> = <span class="ruby-identifier">start</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">maxResults</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">searchTips</span> = <span class="ruby-string">&quot;\&quot;on\&quot; is a very common word and was not included in your search [details]&quot;</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">searchTime</span> = <span class="ruby-number">0.000001</span>
+
+  <span class="ruby-comment"># For Mono, we have to clone objects if they're referenced by more than one place, otherwise</span>
+  <span class="ruby-comment"># the Ruby SOAP collapses them into one instance and uses references all over the</span>
+  <span class="ruby-comment"># place, confusing Mono. </span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># This has recently been fixed:</span>
+  <span class="ruby-comment">#   http://bugzilla.ximian.com/show_bug.cgi?id=72265</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">directoryCategories</span> = [
+    <span class="ruby-identifier">category</span>(<span class="ruby-string">&quot;Web Development&quot;</span>, <span class="ruby-string">&quot;UTF-8&quot;</span>),
+    <span class="ruby-identifier">category</span>(<span class="ruby-string">&quot;Programming&quot;</span>, <span class="ruby-string">&quot;US-ASCII&quot;</span>),
+  ]
+
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-doSpellingSuggestion">
+            
+              <a name="method-i-doSpellingSuggestion"></a><b>doSpellingSuggestion</b>(key, phrase)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-doSpellingSuggestion_source')" id="l_method-i-doSpellingSuggestion_source">show</a>
+                
+              </p>
+              <div id="method-i-doSpellingSuggestion_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/examples/googlesearch/delegated/google_search_service.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">doSpellingSuggestion</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">phrase</span>)
+  <span class="ruby-string">&quot;Did you mean 'teh'?&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

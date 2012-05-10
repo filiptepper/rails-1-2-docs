@@ -1,0 +1,470 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>SessionManagementTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            SessionManagementTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/session_management_test_rb.html">rails/actionpack/test/controller/session_management_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="SessionManagementTest/AssociationCachingTestController.html">SessionManagementTest::AssociationCachingTestController</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="SessionManagementTest/SessionOffController.html">SessionManagementTest::SessionOffController</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="SessionManagementTest/SpecializedController.html">SessionManagementTest::SpecializedController</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="SessionManagementTest/TestController.html">SessionManagementTest::TestController</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_controller_specialization_overrides_settings">test_controller_specialization_overrides_settings</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_process_cleanup_with_session_management_support">test_process_cleanup_with_session_management_support</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_session_is_enabled">test_session_is_enabled</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_session_off_conditionally">test_session_off_conditionally</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_session_off_globally">test_session_off_globally</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_session_off_with_if">test_session_off_with_if</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_session_store_setting">test_session_store_setting</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/session_management_test.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@request</span>, <span class="ruby-ivar">@response</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>,
+    <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_controller_specialization_overrides_settings">
+            
+              <a name="method-i-test_controller_specialization_overrides_settings"></a><b>test_controller_specialization_overrides_settings</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_controller_specialization_overrides_settings_source')" id="l_method-i-test_controller_specialization_overrides_settings_source">show</a>
+                
+              </p>
+              <div id="method-i-test_controller_specialization_overrides_settings_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/session_management_test.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_controller_specialization_overrides_settings</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">SpecializedController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:something</span>
+  <span class="ruby-identifier">assert_instance_of</span> <span class="ruby-constant">Hash</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">session_options</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:another</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">session_options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_process_cleanup_with_session_management_support">
+            
+              <a name="method-i-test_process_cleanup_with_session_management_support"></a><b>test_process_cleanup_with_session_management_support</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_process_cleanup_with_session_management_support_source')" id="l_method-i-test_process_cleanup_with_session_management_support_source">show</a>
+                
+              </p>
+              <div id="method-i-test_process_cleanup_with_session_management_support_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/session_management_test.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_process_cleanup_with_session_management_support</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">AssociationCachingTestController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:show</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;has cached associations&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">body</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:tell</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;does not have cached associations&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">body</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_session_is_enabled">
+            
+              <a name="method-i-test_session_is_enabled"></a><b>test_session_is_enabled</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_session_is_enabled_source')" id="l_method-i-test_session_is_enabled_source">show</a>
+                
+              </p>
+              <div id="method-i-test_session_is_enabled_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/session_management_test.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_session_is_enabled</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">TestController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:show</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">session_enabled?</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:tell</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">session_enabled?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_session_off_conditionally">
+            
+              <a name="method-i-test_session_off_conditionally"></a><b>test_session_off_conditionally</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_session_off_conditionally_source')" id="l_method-i-test_session_off_conditionally_source">show</a>
+                
+              </p>
+              <div id="method-i-test_session_off_conditionally_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/session_management_test.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_session_off_conditionally</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">TestController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:show</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">session_options</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:tell</span>
+  <span class="ruby-identifier">assert_instance_of</span> <span class="ruby-constant">Hash</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">session_options</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">session_options</span>[<span class="ruby-value">:session_secure</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_session_off_globally">
+            
+              <a name="method-i-test_session_off_globally"></a><b>test_session_off_globally</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_session_off_globally_source')" id="l_method-i-test_session_off_globally_source">show</a>
+                
+              </p>
+              <div id="method-i-test_session_off_globally_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/session_management_test.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_session_off_globally</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">SessionOffController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:show</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">session_options</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:tell</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">session_options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_session_off_with_if">
+            
+              <a name="method-i-test_session_off_with_if"></a><b>test_session_off_with_if</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_session_off_with_if_source')" id="l_method-i-test_session_off_with_if_source">show</a>
+                
+              </p>
+              <div id="method-i-test_session_off_with_if_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/session_management_test.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_session_off_with_if</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">TestController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:conditional</span>
+  <span class="ruby-identifier">assert_instance_of</span> <span class="ruby-constant">Hash</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">session_options</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:conditional</span>, <span class="ruby-value">:ws</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;ws&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">session_options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_session_store_setting">
+            
+              <a name="method-i-test_session_store_setting"></a><b>test_session_store_setting</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_session_store_setting_source')" id="l_method-i-test_session_store_setting_source">show</a>
+                
+              </p>
+              <div id="method-i-test_session_store_setting_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/session_management_test.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_session_store_setting</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">session_store</span> = <span class="ruby-value">:drb_store</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span><span class="ruby-operator">::</span><span class="ruby-constant">DRbStore</span>, <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">session_store</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-value">:ActiveRecord</span>)
+    <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">session_store</span> = <span class="ruby-value">:active_record_store</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span><span class="ruby-operator">::</span><span class="ruby-constant">ActiveRecordStore</span>, <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">session_store</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

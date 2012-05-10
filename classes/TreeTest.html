@@ -1,0 +1,569 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TreeTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TreeTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/test/mixin_test_rb.html">rails/activerecord/test/mixin_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_ancestors">test_ancestors</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_children">test_children</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_delete">test_delete</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_has_child">test_has_child</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_has_parent">test_has_parent</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_insert">test_insert</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_parent">test_parent</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_root">test_root</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_roots">test_roots</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_self_and_siblings">test_self_and_siblings</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_siblings">test_siblings</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_ancestors">
+            
+              <a name="method-i-test_ancestors"></a><b>test_ancestors</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_ancestors_source')" id="l_method-i-test_ancestors_source">show</a>
+                
+              </p>
+              <div id="method-i-test_ancestors_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_ancestors</span>
+  <span class="ruby-identifier">assert_equal</span> [], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">ancestors</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>).<span class="ruby-identifier">ancestors</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_3</span>).<span class="ruby-identifier">ancestors</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>).<span class="ruby-identifier">ancestors</span>
+  <span class="ruby-identifier">assert_equal</span> [], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>).<span class="ruby-identifier">ancestors</span>
+  <span class="ruby-identifier">assert_equal</span> [], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>).<span class="ruby-identifier">ancestors</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_children">
+            
+              <a name="method-i-test_children"></a><b>test_children</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_children_source')" id="l_method-i-test_children_source">show</a>
+                
+              </p>
+              <div id="method-i-test_children_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 275</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_children</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">children</span>, [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>)]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>).<span class="ruby-identifier">children</span>, [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_3</span>)]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_3</span>).<span class="ruby-identifier">children</span>, []
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>).<span class="ruby-identifier">children</span>, []
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_delete">
+            
+              <a name="method-i-test_delete"></a><b>test_delete</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_delete_source')" id="l_method-i-test_delete_source">show</a>
+                
+              </p>
+              <div id="method-i-test_delete_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 297</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_delete</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">6</span>, <span class="ruby-constant">TreeMixin</span>.<span class="ruby-identifier">count</span>
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-constant">TreeMixin</span>.<span class="ruby-identifier">count</span>
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>).<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>).<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-constant">TreeMixin</span>.<span class="ruby-identifier">count</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_has_child">
+            
+              <a name="method-i-test_has_child"></a><b>test_has_child</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_has_child_source')" id="l_method-i-test_has_child_source">show</a>
+                
+              </p>
+              <div id="method-i-test_has_child_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 266</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_has_child</span>
+  <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-string">'has_children?'</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">has_children?</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>).<span class="ruby-identifier">has_children?</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_3</span>).<span class="ruby-identifier">has_children?</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>).<span class="ruby-identifier">has_children?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_has_parent">
+            
+              <a name="method-i-test_has_parent"></a><b>test_has_parent</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_has_parent_source')" id="l_method-i-test_has_parent_source">show</a>
+                
+              </p>
+              <div id="method-i-test_has_parent_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 282</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_has_parent</span>
+  <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-string">'has_parent?'</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">has_parent?</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>).<span class="ruby-identifier">has_parent?</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_3</span>).<span class="ruby-identifier">has_parent?</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>).<span class="ruby-identifier">has_parent?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_insert">
+            
+              <a name="method-i-test_insert"></a><b>test_insert</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_insert_source')" id="l_method-i-test_insert_source">show</a>
+                
+              </p>
+              <div id="method-i-test_insert_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 306</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_insert</span>
+  <span class="ruby-ivar">@extra</span> = <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">children</span>.<span class="ruby-identifier">create</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-ivar">@extra</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-ivar">@extra</span>.<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">children</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">children</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-ivar">@extra</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">children</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>))
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">children</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_parent">
+            
+              <a name="method-i-test_parent"></a><b>test_parent</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_parent_source')" id="l_method-i-test_parent_source">show</a>
+                
+              </p>
+              <div id="method-i-test_parent_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 291</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_parent</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>).<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>).<span class="ruby-identifier">parent</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>).<span class="ruby-identifier">parent</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">parent</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_root">
+            
+              <a name="method-i-test_root"></a><b>test_root</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_root_source')" id="l_method-i-test_root_source">show</a>
+                
+              </p>
+              <div id="method-i-test_root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_root</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-constant">TreeMixin</span>.<span class="ruby-identifier">root</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">root</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>).<span class="ruby-identifier">root</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_3</span>).<span class="ruby-identifier">root</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>).<span class="ruby-identifier">root</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>).<span class="ruby-identifier">root</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>).<span class="ruby-identifier">root</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_roots">
+            
+              <a name="method-i-test_roots"></a><b>test_roots</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_roots_source')" id="l_method-i-test_roots_source">show</a>
+                
+              </p>
+              <div id="method-i-test_roots_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 338</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_roots</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>)], <span class="ruby-constant">TreeMixin</span>.<span class="ruby-identifier">roots</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_self_and_siblings">
+            
+              <a name="method-i-test_self_and_siblings"></a><b>test_self_and_siblings</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_self_and_siblings_source')" id="l_method-i-test_self_and_siblings_source">show</a>
+                
+              </p>
+              <div id="method-i-test_self_and_siblings_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 351</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_self_and_siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">self_and_siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>).<span class="ruby-identifier">self_and_siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_3</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_3</span>).<span class="ruby-identifier">self_and_siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>).<span class="ruby-identifier">self_and_siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>).<span class="ruby-identifier">self_and_siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>).<span class="ruby-identifier">self_and_siblings</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_siblings">
+            
+              <a name="method-i-test_siblings"></a><b>test_siblings</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_siblings_source')" id="l_method-i-test_siblings_source">show</a>
+                
+              </p>
+              <div id="method-i-test_siblings_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 342</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>).<span class="ruby-identifier">siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>).<span class="ruby-identifier">siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_3</span>).<span class="ruby-identifier">siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_2</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_4</span>).<span class="ruby-identifier">siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>).<span class="ruby-identifier">siblings</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>)], <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>).<span class="ruby-identifier">siblings</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

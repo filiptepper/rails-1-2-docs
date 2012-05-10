@@ -1,0 +1,1658 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TextHelperTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TextHelperTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/template/text_helper_test_rb.html">rails/actionpack/test/template/text_helper_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_auto_link_at_eol">test_auto_link_at_eol</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_auto_link_parsing">test_auto_link_parsing</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_auto_link_with_block">test_auto_link_with_block</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_auto_linking">test_auto_linking</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_cycle">test_cycle</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_cycle_class">test_cycle_class</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_cycle_class_with_no_arguments">test_cycle_class_with_no_arguments</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_cycle_no_instance_variable_clashes">test_cycle_no_instance_variable_clashes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_cycle_resets_with_new_values">test_cycle_resets_with_new_values</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_cycle_with_no_arguments">test_cycle_with_no_arguments</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_default_named_cycle">test_default_named_cycle</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_excerpt">test_excerpt</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_excerpt_with_regex">test_excerpt_with_regex</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_excerpt_with_utf8">test_excerpt_with_utf8</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_highlighter">test_highlighter</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_highlighter_with_regexp">test_highlighter_with_regexp</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_named_cycles">test_named_cycles</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_pluralization">test_pluralization</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_recet_named_cycle">test_recet_named_cycle</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_reset_cycle">test_reset_cycle</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_reset_unknown_cycle">test_reset_unknown_cycle</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_sanitize_form">test_sanitize_form</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_sanitize_image_src">test_sanitize_image_src</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_sanitize_javascript_href">test_sanitize_javascript_href</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_sanitize_js_handlers">test_sanitize_js_handlers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_sanitize_plaintext">test_sanitize_plaintext</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_sanitize_script">test_sanitize_script</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_simple_format">test_simple_format</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_strip_links">test_strip_links</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_strip_tags">test_strip_tags</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_truncate">test_truncate</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_truncate_multibyte">test_truncate_multibyte</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_word_wrap">test_word_wrap</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/TextHelper.html">
+              ActionView::Helpers::TextHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/TagHelper.html">
+              ActionView::Helpers::TagHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="TestingSandbox.html">
+              TestingSandbox
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-comment"># This simulates the fact that instance variables are reset every time</span>
+  <span class="ruby-comment"># a view is rendered.  The cycle helper depends on this behavior.</span>
+  <span class="ruby-ivar">@_cycles</span> = <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> (<span class="ruby-keyword">defined?</span> <span class="ruby-ivar">@_cycles</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_auto_link_at_eol">
+            
+              <a name="method-i-test_auto_link_at_eol"></a><b>test_auto_link_at_eol</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_auto_link_at_eol_source')" id="l_method-i-test_auto_link_at_eol_source">show</a>
+                
+              </p>
+              <div id="method-i-test_auto_link_at_eol_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_auto_link_at_eol</span>
+  <span class="ruby-identifier">url1</span> = <span class="ruby-string">&quot;http://api.rubyonrails.com/Foo.html&quot;</span>
+  <span class="ruby-identifier">url2</span> = <span class="ruby-string">&quot;http://www.ruby-doc.org/core/Bar.html&quot;</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;&lt;a href=&quot;#{url1}&quot;&gt;#{url1}&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;#{url2}&quot;&gt;#{url2}&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;#{url1}&lt;br /&gt;#{url2}&lt;br /&gt;&lt;/p&gt;&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_auto_link_parsing">
+            
+              <a name="method-i-test_auto_link_parsing"></a><b>test_auto_link_parsing</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_auto_link_parsing_source')" id="l_method-i-test_auto_link_parsing_source">show</a>
+                
+              </p>
+              <div id="method-i-test_auto_link_parsing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_auto_link_parsing</span>
+  <span class="ruby-identifier">urls</span> = <span class="ruby-node">%w(http://www.rubyonrails.com
+            http://www.rubyonrails.com:80
+            http://www.rubyonrails.com/~minam
+            https://www.rubyonrails.com/~minam
+            http://www.rubyonrails.com/~minam/url%20with%20spaces
+            http://www.rubyonrails.com/foo.cgi?something=here
+            http://www.rubyonrails.com/foo.cgi?something=here&amp;and=here
+            http://www.rubyonrails.com/contact;new
+            http://www.rubyonrails.com/contact;new%20with%20spaces
+            http://www.rubyonrails.com/contact;new?with=query&amp;string=params
+            http://www.rubyonrails.com/~minam/contact;new?with=query&amp;string=params
+            http://en.wikipedia.org/wiki/Wikipedia:Today%27s_featured_picture_%28animation%29/January_20%2C_2007
+          )</span>
+
+  <span class="ruby-identifier">urls</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">url</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;a href=&quot;#{url}&quot;&gt;#{url}&lt;/a&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-identifier">url</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_auto_link_with_block">
+            
+              <a name="method-i-test_auto_link_with_block"></a><b>test_auto_link_with_block</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_auto_link_with_block_source')" id="l_method-i-test_auto_link_with_block_source">show</a>
+                
+              </p>
+              <div id="method-i-test_auto_link_with_block_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_auto_link_with_block</span>
+  <span class="ruby-identifier">url</span> = <span class="ruby-string">&quot;http://api.rubyonrails.com/Foo.html&quot;</span>
+  <span class="ruby-identifier">email</span> = <span class="ruby-string">&quot;fantabulous@shiznadel.ic&quot;</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;&lt;a href=&quot;#{url}&quot;&gt;#{url[0...7]}...&lt;/a&gt;&lt;br /&gt;&lt;a href=&quot;mailto:#{email}&quot;&gt;#{email[0...7]}...&lt;/a&gt;&lt;br /&gt;&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;#{url}&lt;br /&gt;#{email}&lt;br /&gt;&lt;/p&gt;&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">url</span><span class="ruby-operator">|</span> <span class="ruby-identifier">truncate</span>(<span class="ruby-identifier">url</span>, <span class="ruby-number">10</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_auto_linking">
+            
+              <a name="method-i-test_auto_linking"></a><b>test_auto_linking</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_auto_linking_source')" id="l_method-i-test_auto_linking_source">show</a>
+                
+              </p>
+              <div id="method-i-test_auto_linking_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_auto_linking</span>
+  <span class="ruby-identifier">email_raw</span>    = <span class="ruby-string">'david@loudthinking.com'</span>
+  <span class="ruby-identifier">email_result</span> = <span class="ruby-node">%Q{&lt;a href=&quot;mailto:#{email_raw}&quot;&gt;#{email_raw}&lt;/a&gt;}</span>
+  <span class="ruby-identifier">link_raw</span>     = <span class="ruby-string">'http://www.rubyonrails.com'</span>
+  <span class="ruby-identifier">link_result</span>  = <span class="ruby-node">%Q{&lt;a href=&quot;#{link_raw}&quot;&gt;#{link_raw}&lt;/a&gt;}</span>
+  <span class="ruby-identifier">link_result_with_options</span>  = <span class="ruby-node">%Q{&lt;a href=&quot;#{link_raw}&quot; target=&quot;_blank&quot;&gt;#{link_raw}&lt;/a&gt;}</span>
+  <span class="ruby-identifier">link2_raw</span>    = <span class="ruby-string">'www.rubyonrails.com'</span>
+  <span class="ruby-identifier">link2_result</span> = <span class="ruby-node">%Q{&lt;a href=&quot;http://#{link2_raw}&quot;&gt;#{link2_raw}&lt;/a&gt;}</span>
+  <span class="ruby-identifier">link3_raw</span>    = <span class="ruby-string">'http://manuals.ruby-on-rails.com/read/chapter.need_a-period/103#page281'</span>
+  <span class="ruby-identifier">link3_result</span> = <span class="ruby-node">%Q{&lt;a href=&quot;#{link3_raw}&quot;&gt;#{link3_raw}&lt;/a&gt;}</span>
+  <span class="ruby-identifier">link4_raw</span>    = <span class="ruby-string">'http://foo.example.com/controller/action?parm=value&amp;p2=v2#anchor123'</span>
+  <span class="ruby-identifier">link4_result</span> = <span class="ruby-node">%Q{&lt;a href=&quot;#{link4_raw}&quot;&gt;#{link4_raw}&lt;/a&gt;}</span>
+  <span class="ruby-identifier">link5_raw</span>    = <span class="ruby-string">'http://foo.example.com:3000/controller/action'</span>
+  <span class="ruby-identifier">link5_result</span> = <span class="ruby-node">%Q{&lt;a href=&quot;#{link5_raw}&quot;&gt;#{link5_raw}&lt;/a&gt;}</span>
+  <span class="ruby-identifier">link6_raw</span>    = <span class="ruby-string">'http://foo.example.com:3000/controller/action+pack'</span>
+  <span class="ruby-identifier">link6_result</span> = <span class="ruby-node">%Q{&lt;a href=&quot;#{link6_raw}&quot;&gt;#{link6_raw}&lt;/a&gt;}</span>
+  <span class="ruby-identifier">link7_raw</span>    = <span class="ruby-string">'http://foo.example.com/controller/action?parm=value&amp;p2=v2#anchor-123'</span>
+  <span class="ruby-identifier">link7_result</span> = <span class="ruby-node">%Q{&lt;a href=&quot;#{link7_raw}&quot;&gt;#{link7_raw}&lt;/a&gt;}</span>
+  <span class="ruby-identifier">link8_raw</span>    = <span class="ruby-string">'http://foo.example.com:3000/controller/action.html'</span>
+  <span class="ruby-identifier">link8_result</span> = <span class="ruby-node">%Q{&lt;a href=&quot;#{link8_raw}&quot;&gt;#{link8_raw}&lt;/a&gt;}</span>
+  <span class="ruby-identifier">link9_raw</span>    = <span class="ruby-string">'http://business.timesonline.co.uk/article/0,,9065-2473189,00.html'</span>
+  <span class="ruby-identifier">link9_result</span> = <span class="ruby-node">%Q{&lt;a href=&quot;#{link9_raw}&quot;&gt;#{link9_raw}&lt;/a&gt;}</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(hello #{email_result})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;hello #{email_raw}&quot;</span>, <span class="ruby-value">:email_addresses</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link_result})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;Go to #{link_raw}&quot;</span>, <span class="ruby-value">:urls</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link_raw})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;Go to #{link_raw}&quot;</span>, <span class="ruby-value">:email_addresses</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link_result} and say hello to #{email_result})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;Go to #{link_raw} and say hello to #{email_raw}&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Link #{link_result}&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;Link #{link_raw}&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;#{link_result} Link&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;#{link_raw} Link&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Link #{link_result_with_options}&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;Link #{link_raw}&lt;/p&gt;&quot;</span>, <span class="ruby-value">:all</span>, {<span class="ruby-value">:target</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;_blank&quot;</span>})
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link_result}.)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">%Q(Go to #{link_raw}.)</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Go to #{link_result}, then say hello to #{email_result}.&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">%Q(&lt;p&gt;Go to #{link_raw}, then say hello to #{email_raw}.&lt;/p&gt;)</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link2_result})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;Go to #{link2_raw}&quot;</span>, <span class="ruby-value">:urls</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link2_raw})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;Go to #{link2_raw}&quot;</span>, <span class="ruby-value">:email_addresses</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Link #{link2_result}&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;Link #{link2_raw}&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;#{link2_result} Link&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;#{link2_raw} Link&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link2_result}.)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">%Q(Go to #{link2_raw}.)</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Say hello to #{email_result}, then go to #{link2_result}.&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">%Q(&lt;p&gt;Say hello to #{email_raw}, then go to #{link2_raw}.&lt;/p&gt;)</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link3_result})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;Go to #{link3_raw}&quot;</span>, <span class="ruby-value">:urls</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link3_raw})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;Go to #{link3_raw}&quot;</span>, <span class="ruby-value">:email_addresses</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Link #{link3_result}&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;Link #{link3_raw}&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;#{link3_result} Link&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;#{link3_raw} Link&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link3_result}.)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">%Q(Go to #{link3_raw}.)</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Go to #{link3_result}. seriously, #{link3_result}? i think I'll say hello to #{email_result}. instead.&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">%Q(&lt;p&gt;Go to #{link3_raw}. seriously, #{link3_raw}? i think I'll say hello to #{email_raw}. instead.&lt;/p&gt;)</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Link #{link4_result}&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;Link #{link4_raw}&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;#{link4_result} Link&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;#{link4_raw} Link&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;#{link5_result} Link&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;#{link5_raw} Link&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;#{link6_result} Link&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;#{link6_raw} Link&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;#{link7_result} Link&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;#{link7_raw} Link&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link8_result})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;Go to #{link8_raw}&quot;</span>, <span class="ruby-value">:urls</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link8_raw})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;Go to #{link8_raw}&quot;</span>, <span class="ruby-value">:email_addresses</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Link #{link8_result}&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;Link #{link8_raw}&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;#{link8_result} Link&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;#{link8_raw} Link&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link8_result}.)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">%Q(Go to #{link8_raw}.)</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Go to #{link8_result}. seriously, #{link8_result}? i think I'll say hello to #{email_result}. instead.&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">%Q(&lt;p&gt;Go to #{link8_raw}. seriously, #{link8_raw}? i think I'll say hello to #{email_raw}. instead.&lt;/p&gt;)</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link9_result})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;Go to #{link9_raw}&quot;</span>, <span class="ruby-value">:urls</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link9_raw})</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;Go to #{link9_raw}&quot;</span>, <span class="ruby-value">:email_addresses</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Link #{link9_result}&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;Link #{link9_raw}&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;#{link9_result} Link&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">&quot;&lt;p&gt;#{link9_raw} Link&lt;/p&gt;&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(Go to #{link9_result}.)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">%Q(Go to #{link9_raw}.)</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;p&gt;Go to #{link9_result}. seriously, #{link9_result}? i think I'll say hello to #{email_result}. instead.&lt;/p&gt;)</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-node">%Q(&lt;p&gt;Go to #{link9_raw}. seriously, #{link9_raw}? i think I'll say hello to #{email_raw}. instead.&lt;/p&gt;)</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-identifier">auto_link</span>(<span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cycle">
+            
+              <a name="method-i-test_cycle"></a><b>test_cycle</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cycle_source')" id="l_method-i-test_cycle_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cycle_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cycle</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-number">2</span>, <span class="ruby-string">&quot;3&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-number">2</span>, <span class="ruby-string">&quot;3&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-number">2</span>, <span class="ruby-string">&quot;3&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-number">2</span>, <span class="ruby-string">&quot;3&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-number">2</span>, <span class="ruby-string">&quot;3&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-number">2</span>, <span class="ruby-string">&quot;3&quot;</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cycle_class">
+            
+              <a name="method-i-test_cycle_class"></a><b>test_cycle_class</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cycle_class_source')" id="l_method-i-test_cycle_class_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cycle_class_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 257</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cycle_class</span>
+  <span class="ruby-identifier">value</span> = <span class="ruby-constant">Cycle</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-number">2</span>, <span class="ruby-string">&quot;3&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">value</span>.<span class="ruby-identifier">reset</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cycle_class_with_no_arguments">
+            
+              <a name="method-i-test_cycle_class_with_no_arguments"></a><b>test_cycle_class_with_no_arguments</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cycle_class_with_no_arguments_source')" id="l_method-i-test_cycle_class_with_no_arguments_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cycle_class_with_no_arguments_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 269</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cycle_class_with_no_arguments</span>
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ArgumentError</span>) { <span class="ruby-identifier">value</span> = <span class="ruby-constant">Cycle</span>.<span class="ruby-identifier">new</span>() }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cycle_no_instance_variable_clashes">
+            
+              <a name="method-i-test_cycle_no_instance_variable_clashes"></a><b>test_cycle_no_instance_variable_clashes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cycle_no_instance_variable_clashes_source')" id="l_method-i-test_cycle_no_instance_variable_clashes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cycle_no_instance_variable_clashes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 332</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cycle_no_instance_variable_clashes</span>
+  <span class="ruby-ivar">@cycles</span> = <span class="ruby-node">%w{Specialized Fuji Giant}</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-string">&quot;blue&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;blue&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-string">&quot;blue&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-string">&quot;blue&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-node">%w{Specialized Fuji Giant}</span>, <span class="ruby-ivar">@cycles</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cycle_resets_with_new_values">
+            
+              <a name="method-i-test_cycle_resets_with_new_values"></a><b>test_cycle_resets_with_new_values</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cycle_resets_with_new_values_source')" id="l_method-i-test_cycle_resets_with_new_values_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cycle_resets_with_new_values_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 286</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cycle_resets_with_new_values</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;even&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;even&quot;</span>, <span class="ruby-string">&quot;odd&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;odd&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;even&quot;</span>, <span class="ruby-string">&quot;odd&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;even&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;even&quot;</span>, <span class="ruby-string">&quot;odd&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cycle_with_no_arguments">
+            
+              <a name="method-i-test_cycle_with_no_arguments"></a><b>test_cycle_with_no_arguments</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cycle_with_no_arguments_source')" id="l_method-i-test_cycle_with_no_arguments_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cycle_with_no_arguments_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 282</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cycle_with_no_arguments</span>
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ArgumentError</span>) { <span class="ruby-identifier">value</span> = <span class="ruby-identifier">cycle</span>() }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_default_named_cycle">
+            
+              <a name="method-i-test_default_named_cycle"></a><b>test_default_named_cycle</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_default_named_cycle_source')" id="l_method-i-test_default_named_cycle_source">show</a>
+                
+              </p>
+              <div id="method-i-test_default_named_cycle_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 305</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_default_named_cycle</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;default&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_excerpt">
+            
+              <a name="method-i-test_excerpt"></a><b>test_excerpt</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_excerpt_source')" id="l_method-i-test_excerpt_source">show</a>
+                
+              </p>
+              <div id="method-i-test_excerpt_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_excerpt</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;...is a beautiful morni...&quot;</span>, <span class="ruby-identifier">excerpt</span>(<span class="ruby-string">&quot;This is a beautiful morning&quot;</span>, <span class="ruby-string">&quot;beautiful&quot;</span>, <span class="ruby-number">5</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;This is a...&quot;</span>, <span class="ruby-identifier">excerpt</span>(<span class="ruby-string">&quot;This is a beautiful morning&quot;</span>, <span class="ruby-string">&quot;this&quot;</span>, <span class="ruby-number">5</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;...iful morning&quot;</span>, <span class="ruby-identifier">excerpt</span>(<span class="ruby-string">&quot;This is a beautiful morning&quot;</span>, <span class="ruby-string">&quot;morning&quot;</span>, <span class="ruby-number">5</span>))
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">excerpt</span>(<span class="ruby-string">&quot;This is a beautiful morning&quot;</span>, <span class="ruby-string">&quot;day&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_excerpt_with_regex">
+            
+              <a name="method-i-test_excerpt_with_regex"></a><b>test_excerpt_with_regex</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_excerpt_with_regex_source')" id="l_method-i-test_excerpt_with_regex_source">show</a>
+                
+              </p>
+              <div id="method-i-test_excerpt_with_regex_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_excerpt_with_regex</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">'...is a beautiful! morn...'</span>, <span class="ruby-identifier">excerpt</span>(<span class="ruby-string">'This is a beautiful! morning'</span>, <span class="ruby-string">'beautiful'</span>, <span class="ruby-number">5</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">'...is a beautiful? morn...'</span>, <span class="ruby-identifier">excerpt</span>(<span class="ruby-string">'This is a beautiful? morning'</span>, <span class="ruby-string">'beautiful'</span>, <span class="ruby-number">5</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_excerpt_with_utf8">
+            
+              <a name="method-i-test_excerpt_with_utf8"></a><b>test_excerpt_with_utf8</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_excerpt_with_utf8_source')" id="l_method-i-test_excerpt_with_utf8_source">show</a>
+                
+              </p>
+              <div id="method-i-test_excerpt_with_utf8_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 99</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_excerpt_with_utf8</span>
+  <span class="ruby-identifier">with_kcode</span>(<span class="ruby-string">'u'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;...ﬃciency could not be h...&quot;</span>, <span class="ruby-identifier">excerpt</span>(<span class="ruby-string">&quot;That's why eﬃciency could not be helped&quot;</span>, <span class="ruby-string">'could'</span>, <span class="ruby-number">8</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">with_kcode</span>(<span class="ruby-string">'none'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;...\2203ciency could not be h...&quot;</span>, <span class="ruby-identifier">excerpt</span>(<span class="ruby-string">&quot;That's why eﬃciency could not be helped&quot;</span>, <span class="ruby-string">'could'</span>, <span class="ruby-number">8</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_highlighter">
+            
+              <a name="method-i-test_highlighter"></a><b>test_highlighter</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_highlighter_source')" id="l_method-i-test_highlighter_source">show</a>
+                
+              </p>
+              <div id="method-i-test_highlighter_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_highlighter</span>
+  <span class="ruby-identifier">assert_equal</span>(
+    <span class="ruby-string">&quot;This is a &lt;strong class=\&quot;highlight\&quot;&gt;beautiful&lt;/strong&gt; morning&quot;</span>,
+    <span class="ruby-identifier">highlight</span>(<span class="ruby-string">&quot;This is a beautiful morning&quot;</span>, <span class="ruby-string">&quot;beautiful&quot;</span>)
+  )
+
+  <span class="ruby-identifier">assert_equal</span>(
+    <span class="ruby-string">&quot;This is a &lt;strong class=\&quot;highlight\&quot;&gt;beautiful&lt;/strong&gt; morning, but also a &lt;strong class=\&quot;highlight\&quot;&gt;beautiful&lt;/strong&gt; day&quot;</span>,
+    <span class="ruby-identifier">highlight</span>(<span class="ruby-string">&quot;This is a beautiful morning, but also a beautiful day&quot;</span>, <span class="ruby-string">&quot;beautiful&quot;</span>)
+  )
+
+  <span class="ruby-identifier">assert_equal</span>(
+    <span class="ruby-string">&quot;This is a &lt;b&gt;beautiful&lt;/b&gt; morning, but also a &lt;b&gt;beautiful&lt;/b&gt; day&quot;</span>,
+    <span class="ruby-identifier">highlight</span>(<span class="ruby-string">&quot;This is a beautiful morning, but also a beautiful day&quot;</span>, <span class="ruby-string">&quot;beautiful&quot;</span>, <span class="ruby-string">'&lt;b&gt;\1&lt;/b&gt;'</span>)
+  )
+  
+  <span class="ruby-identifier">assert_equal</span>(
+    <span class="ruby-string">&quot;This text is not changed because we supplied an empty phrase&quot;</span>,
+    <span class="ruby-identifier">highlight</span>(<span class="ruby-string">&quot;This text is not changed because we supplied an empty phrase&quot;</span>, <span class="ruby-keyword">nil</span>)
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_highlighter_with_regexp">
+            
+              <a name="method-i-test_highlighter_with_regexp"></a><b>test_highlighter_with_regexp</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_highlighter_with_regexp_source')" id="l_method-i-test_highlighter_with_regexp_source">show</a>
+                
+              </p>
+              <div id="method-i-test_highlighter_with_regexp_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_highlighter_with_regexp</span>
+  <span class="ruby-identifier">assert_equal</span>(
+    <span class="ruby-string">&quot;This is a &lt;strong class=\&quot;highlight\&quot;&gt;beautiful!&lt;/strong&gt; morning&quot;</span>,
+    <span class="ruby-identifier">highlight</span>(<span class="ruby-string">&quot;This is a beautiful! morning&quot;</span>, <span class="ruby-string">&quot;beautiful!&quot;</span>)
+  )
+
+  <span class="ruby-identifier">assert_equal</span>(
+    <span class="ruby-string">&quot;This is a &lt;strong class=\&quot;highlight\&quot;&gt;beautiful! morning&lt;/strong&gt;&quot;</span>,
+    <span class="ruby-identifier">highlight</span>(<span class="ruby-string">&quot;This is a beautiful! morning&quot;</span>, <span class="ruby-string">&quot;beautiful! morning&quot;</span>)
+  )
+
+  <span class="ruby-identifier">assert_equal</span>(
+    <span class="ruby-string">&quot;This is a &lt;strong class=\&quot;highlight\&quot;&gt;beautiful? morning&lt;/strong&gt;&quot;</span>,
+    <span class="ruby-identifier">highlight</span>(<span class="ruby-string">&quot;This is a beautiful? morning&quot;</span>, <span class="ruby-string">&quot;beautiful? morning&quot;</span>)
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_named_cycles">
+            
+              <a name="method-i-test_named_cycles"></a><b>test_named_cycles</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_named_cycles_source')" id="l_method-i-test_named_cycles_source">show</a>
+                
+              </p>
+              <div id="method-i-test_named_cycles_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_named_cycles</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;numbers&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-string">&quot;blue&quot;</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;colors&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;numbers&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;blue&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-string">&quot;blue&quot;</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;colors&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;3&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;numbers&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-string">&quot;blue&quot;</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;colors&quot;</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_pluralization">
+            
+              <a name="method-i-test_pluralization"></a><b>test_pluralization</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_pluralization_source')" id="l_method-i-test_pluralization_source">show</a>
+                
+              </p>
+              <div id="method-i-test_pluralization_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_pluralization</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1 count&quot;</span>, <span class="ruby-identifier">pluralize</span>(<span class="ruby-number">1</span>, <span class="ruby-string">&quot;count&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2 counts&quot;</span>, <span class="ruby-identifier">pluralize</span>(<span class="ruby-number">2</span>, <span class="ruby-string">&quot;count&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1 count&quot;</span>, <span class="ruby-identifier">pluralize</span>(<span class="ruby-string">'1'</span>, <span class="ruby-string">&quot;count&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2 counts&quot;</span>, <span class="ruby-identifier">pluralize</span>(<span class="ruby-string">'2'</span>, <span class="ruby-string">&quot;count&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1,066 counts&quot;</span>, <span class="ruby-identifier">pluralize</span>(<span class="ruby-string">'1,066'</span>, <span class="ruby-string">&quot;count&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1.25 counts&quot;</span>, <span class="ruby-identifier">pluralize</span>(<span class="ruby-string">'1.25'</span>, <span class="ruby-string">&quot;count&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2 counters&quot;</span>, <span class="ruby-identifier">pluralize</span>(<span class="ruby-number">2</span>, <span class="ruby-string">&quot;count&quot;</span>, <span class="ruby-string">&quot;counters&quot;</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_recet_named_cycle">
+            
+              <a name="method-i-test_recet_named_cycle"></a><b>test_recet_named_cycle</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_recet_named_cycle_source')" id="l_method-i-test_recet_named_cycle_source">show</a>
+                
+              </p>
+              <div id="method-i-test_recet_named_cycle_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 322</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_recet_named_cycle</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;numbers&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-string">&quot;blue&quot;</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;colors&quot;</span>))
+  <span class="ruby-identifier">reset_cycle</span>(<span class="ruby-string">&quot;numbers&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;numbers&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;blue&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-string">&quot;blue&quot;</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;colors&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;numbers&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-string">&quot;red&quot;</span>, <span class="ruby-string">&quot;blue&quot;</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;colors&quot;</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_reset_cycle">
+            
+              <a name="method-i-test_reset_cycle"></a><b>test_reset_cycle</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_reset_cycle_source')" id="l_method-i-test_reset_cycle_source">show</a>
+                
+              </p>
+              <div id="method-i-test_reset_cycle_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 311</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_reset_cycle</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;2&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>))
+  <span class="ruby-identifier">reset_cycle</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-identifier">cycle</span>(<span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_reset_unknown_cycle">
+            
+              <a name="method-i-test_reset_unknown_cycle"></a><b>test_reset_unknown_cycle</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_reset_unknown_cycle_source')" id="l_method-i-test_reset_unknown_cycle_source">show</a>
+                
+              </p>
+              <div id="method-i-test_reset_unknown_cycle_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_reset_unknown_cycle</span>
+  <span class="ruby-identifier">reset_cycle</span>(<span class="ruby-string">&quot;colors&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_sanitize_form">
+            
+              <a name="method-i-test_sanitize_form"></a><b>test_sanitize_form</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_sanitize_form_source')" id="l_method-i-test_sanitize_form_source">show</a>
+                
+              </p>
+              <div id="method-i-test_sanitize_form_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_sanitize_form</span>
+  <span class="ruby-identifier">raw</span> = <span class="ruby-string">&quot;&lt;form action=\&quot;/foo/bar\&quot; method=\&quot;post\&quot;&gt;&lt;input&gt;&lt;/form&gt;&quot;</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">raw</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q(&amp;lt;form action=&quot;/foo/bar&quot; method=&quot;post&quot;&gt;&lt;input&gt;&amp;lt;/form&gt;)</span>, <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_sanitize_image_src">
+            
+              <a name="method-i-test_sanitize_image_src"></a><b>test_sanitize_image_src</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_sanitize_image_src_source')" id="l_method-i-test_sanitize_image_src_source">show</a>
+                
+              </p>
+              <div id="method-i-test_sanitize_image_src_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_sanitize_image_src</span>
+  <span class="ruby-identifier">raw</span> = <span class="ruby-string">%Q{src=&quot;javascript:bang&quot; &lt;img src=&quot;javascript:bang&quot; width=&quot;5&quot;&gt;foo&lt;/img&gt;, &lt;span src=&quot;javascript:bang&quot;&gt;bar&lt;/span&gt;}</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">raw</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q{src=&quot;javascript:bang&quot; &lt;img width=&quot;5&quot;&gt;foo&lt;/img&gt;, &lt;span&gt;bar&lt;/span&gt;}</span>, <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_sanitize_javascript_href">
+            
+              <a name="method-i-test_sanitize_javascript_href"></a><b>test_sanitize_javascript_href</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_sanitize_javascript_href_source')" id="l_method-i-test_sanitize_javascript_href_source">show</a>
+                
+              </p>
+              <div id="method-i-test_sanitize_javascript_href_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_sanitize_javascript_href</span>
+  <span class="ruby-identifier">raw</span> = <span class="ruby-string">%Q{href=&quot;javascript:bang&quot; &lt;a href=&quot;javascript:bang&quot; name=&quot;hello&quot;&gt;foo&lt;/a&gt;, &lt;span href=&quot;javascript:bang&quot;&gt;bar&lt;/span&gt;}</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">raw</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q{href=&quot;javascript:bang&quot; &lt;a name=&quot;hello&quot;&gt;foo&lt;/a&gt;, &lt;span&gt;bar&lt;/span&gt;}</span>, <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_sanitize_js_handlers">
+            
+              <a name="method-i-test_sanitize_js_handlers"></a><b>test_sanitize_js_handlers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_sanitize_js_handlers_source')" id="l_method-i-test_sanitize_js_handlers_source">show</a>
+                
+              </p>
+              <div id="method-i-test_sanitize_js_handlers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 239</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_sanitize_js_handlers</span>
+  <span class="ruby-identifier">raw</span> = <span class="ruby-node">%Q{onthis=&quot;do that&quot; &lt;a href=&quot;#&quot; onclick=&quot;hello&quot; name=&quot;foo&quot; onbogus=&quot;remove me&quot;&gt;hello&lt;/a&gt;}</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">raw</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q{onthis=&quot;do that&quot; &lt;a name=&quot;foo&quot; href=&quot;#&quot;&gt;hello&lt;/a&gt;}</span>, <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_sanitize_plaintext">
+            
+              <a name="method-i-test_sanitize_plaintext"></a><b>test_sanitize_plaintext</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_sanitize_plaintext_source')" id="l_method-i-test_sanitize_plaintext_source">show</a>
+                
+              </p>
+              <div id="method-i-test_sanitize_plaintext_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_sanitize_plaintext</span>
+  <span class="ruby-identifier">raw</span> = <span class="ruby-string">&quot;&lt;plaintext&gt;&lt;span&gt;foo&lt;/span&gt;&lt;/plaintext&gt;&quot;</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">raw</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&amp;lt;plaintext&gt;&lt;span&gt;foo&lt;/span&gt;&amp;lt;/plaintext&gt;&quot;</span>, <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_sanitize_script">
+            
+              <a name="method-i-test_sanitize_script"></a><b>test_sanitize_script</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_sanitize_script_source')" id="l_method-i-test_sanitize_script_source">show</a>
+                
+              </p>
+              <div id="method-i-test_sanitize_script_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 233</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_sanitize_script</span>
+  <span class="ruby-identifier">raw</span> = <span class="ruby-string">&quot;&lt;script language=\&quot;Javascript\&quot;&gt;blah blah blah&lt;/script&gt;&quot;</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">sanitize</span>(<span class="ruby-identifier">raw</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q(&amp;lt;script language=&quot;Javascript&quot;&gt;blah blah blah&amp;lt;/script&gt;)</span>, <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_simple_format">
+            
+              <a name="method-i-test_simple_format"></a><b>test_simple_format</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_simple_format_source')" id="l_method-i-test_simple_format_source">show</a>
+                
+              </p>
+              <div id="method-i-test_simple_format_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_simple_format</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;p&gt;&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">simple_format</span>(<span class="ruby-keyword">nil</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;p&gt;crazy\n&lt;br /&gt; cross\n&lt;br /&gt; platform linebreaks&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">simple_format</span>(<span class="ruby-string">&quot;crazy\r\n cross\r platform linebreaks&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;p&gt;A paragraph&lt;/p&gt;\n\n&lt;p&gt;and another one!&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">simple_format</span>(<span class="ruby-string">&quot;A paragraph\n\nand another one!&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;p&gt;A paragraph\n&lt;br /&gt; With a newline&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">simple_format</span>(<span class="ruby-string">&quot;A paragraph\n With a newline&quot;</span>)
+
+  <span class="ruby-identifier">text</span> = <span class="ruby-string">&quot;A\nB\nC\nD&quot;</span>.<span class="ruby-identifier">freeze</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;p&gt;A\n&lt;br /&gt;B\n&lt;br /&gt;C\n&lt;br /&gt;D&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">simple_format</span>(<span class="ruby-identifier">text</span>)
+
+  <span class="ruby-identifier">text</span> = <span class="ruby-string">&quot;A\r\n  \nB\n\n\r\n\t\nC\nD&quot;</span>.<span class="ruby-identifier">freeze</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;p&gt;A\n&lt;br /&gt;  \n&lt;br /&gt;B&lt;/p&gt;\n\n&lt;p&gt;\t\n&lt;br /&gt;C\n&lt;br /&gt;D&lt;/p&gt;&quot;</span>, <span class="ruby-identifier">simple_format</span>(<span class="ruby-identifier">text</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_strip_links">
+            
+              <a name="method-i-test_strip_links"></a><b>test_strip_links</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_strip_links_source')" id="l_method-i-test_strip_links_source">show</a>
+                
+              </p>
+              <div id="method-i-test_strip_links_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_strip_links</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;on my mind\nall day long&quot;</span>, <span class="ruby-identifier">strip_links</span>(<span class="ruby-string">&quot;&lt;a href='almost'&gt;on my mind&lt;/a&gt;\n&lt;A href='almost'&gt;all day long&lt;/A&gt;&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_strip_tags">
+            
+              <a name="method-i-test_strip_tags"></a><b>test_strip_tags</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_strip_tags_source')" id="l_method-i-test_strip_tags_source">show</a>
+                
+              </p>
+              <div id="method-i-test_strip_tags_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 340</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_strip_tags</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;This is a test.&quot;</span>, <span class="ruby-identifier">strip_tags</span>(<span class="ruby-string">&quot;&lt;p&gt;This &lt;u&gt;is&lt;u&gt; a &lt;a href='test.html'&gt;&lt;strong&gt;test&lt;/strong&gt;&lt;/a&gt;.&lt;/p&gt;&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;This is a test.&quot;</span>, <span class="ruby-identifier">strip_tags</span>(<span class="ruby-string">&quot;This is a test.&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>(
+  <span class="ruby-string">%Q{This is a test.\n\n\nIt no longer contains any HTML.\n}</span>, <span class="ruby-identifier">strip_tags</span>(
+  <span class="ruby-string">%Q{&lt;title&gt;This is &lt;b&gt;a &lt;a href=&quot;&quot; target=&quot;_blank&quot;&gt;test&lt;/a&gt;&lt;/b&gt;.&lt;/title&gt;\n\n&lt;!-- it has a comment --&gt;\n\n&lt;p&gt;It no &lt;b&gt;longer &lt;strong&gt;contains &lt;em&gt;any &lt;strike&gt;HTML&lt;/strike&gt;&lt;/em&gt;.&lt;/strong&gt;&lt;/b&gt;&lt;/p&gt;\n}</span>))
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;This has a  here.&quot;</span>, <span class="ruby-identifier">strip_tags</span>(<span class="ruby-string">&quot;This has a &lt;!-- comment --&gt; here.&quot;</span>)
+  [<span class="ruby-keyword">nil</span>, <span class="ruby-string">''</span>, <span class="ruby-string">'   '</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">blank</span><span class="ruby-operator">|</span> <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">blank</span>, <span class="ruby-identifier">strip_tags</span>(<span class="ruby-identifier">blank</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_truncate">
+            
+              <a name="method-i-test_truncate"></a><b>test_truncate</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_truncate_source')" id="l_method-i-test_truncate_source">show</a>
+                
+              </p>
+              <div id="method-i-test_truncate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_truncate</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;Hello World!&quot;</span>, <span class="ruby-identifier">truncate</span>(<span class="ruby-string">&quot;Hello World!&quot;</span>, <span class="ruby-number">12</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;Hello Wor...&quot;</span>, <span class="ruby-identifier">truncate</span>(<span class="ruby-string">&quot;Hello World!!&quot;</span>, <span class="ruby-number">12</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_truncate_multibyte">
+            
+              <a name="method-i-test_truncate_multibyte"></a><b>test_truncate_multibyte</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_truncate_multibyte_source')" id="l_method-i-test_truncate_multibyte_source">show</a>
+                
+              </p>
+              <div id="method-i-test_truncate_multibyte_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_truncate_multibyte</span>
+  <span class="ruby-identifier">with_kcode</span> <span class="ruby-string">'none'</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;\3354\2225\2210\3353\2205\2225\3355...&quot;</span>, <span class="ruby-identifier">truncate</span>(<span class="ruby-string">&quot;\3354\2225\2210\3353\2205\2225\3355\2225\2230\3354\2204\2270\3354\2232\2224&quot;</span>, <span class="ruby-number">10</span>) 
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">with_kcode</span> <span class="ruby-string">'u'</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;\3354\2225\2204\3353\2246\2254\3353\2236\2221 \3354\2225\2204\3353\2246\2254 ...&quot;</span>,
+      <span class="ruby-identifier">truncate</span>(<span class="ruby-string">&quot;\3354\2225\2204\3353\2246\2254\3353\2236\2221 \3354\2225\2204\3353\2246\2254 \3354\2225\2204\3353\2235\2274\3353\2246\2254\3354\2230\2244&quot;</span>, <span class="ruby-number">10</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_word_wrap">
+            
+              <a name="method-i-test_word_wrap"></a><b>test_word_wrap</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_word_wrap_source')" id="l_method-i-test_word_wrap_source">show</a>
+                
+              </p>
+              <div id="method-i-test_word_wrap_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/text_helper_test.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_word_wrap</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;my very very\nvery long\nstring&quot;</span>, <span class="ruby-identifier">word_wrap</span>(<span class="ruby-string">&quot;my very very very long string&quot;</span>, <span class="ruby-number">15</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

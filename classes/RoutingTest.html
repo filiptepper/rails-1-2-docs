@@ -1,0 +1,331 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>RoutingTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            RoutingTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/routing_test_rb.html">rails/actionpack/test/controller/routing_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_normalize_unix_paths">test_normalize_unix_paths</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_normalize_windows_paths">test_normalize_windows_paths</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_possible_controllers">test_possible_controllers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_possible_controllers_are_reset_on_each_load">test_possible_controllers_are_reset_on_each_load</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_with_controllers">test_with_controllers</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_normalize_unix_paths">
+            
+              <a name="method-i-test_normalize_unix_paths"></a><b>test_normalize_unix_paths</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_normalize_unix_paths_source')" id="l_method-i-test_normalize_unix_paths_source">show</a>
+                
+              </p>
+              <div id="method-i-test_normalize_unix_paths_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1789</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_normalize_unix_paths</span>
+  <span class="ruby-identifier">load_paths</span> = <span class="ruby-node">%w(. config/../app/controllers config/../app//helpers script/../config/../vendor/rails/actionpack/lib vendor/rails/railties/builtin/rails_info app/models lib script/../config/../foo/bar/../../app/models)</span>
+  <span class="ruby-identifier">paths</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">normalize_paths</span>(<span class="ruby-identifier">load_paths</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%w(vendor/rails/railties/builtin/rails_info vendor/rails/actionpack/lib app/controllers app/helpers app/models lib .)</span>, <span class="ruby-identifier">paths</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_normalize_windows_paths">
+            
+              <a name="method-i-test_normalize_windows_paths"></a><b>test_normalize_windows_paths</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_normalize_windows_paths_source')" id="l_method-i-test_normalize_windows_paths_source">show</a>
+                
+              </p>
+              <div id="method-i-test_normalize_windows_paths_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1795</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_normalize_windows_paths</span>
+  <span class="ruby-identifier">load_paths</span> = <span class="ruby-node">%w(. config\\..\\app\\controllers config\\..\\app\\\\helpers script\\..\\config\\..\\vendor\\rails\\actionpack\\lib vendor\\rails\\railties\\builtin\\rails_info app\\models lib script\\..\\config\\..\\foo\\bar\\..\\..\\app\\models)</span>
+  <span class="ruby-identifier">paths</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">normalize_paths</span>(<span class="ruby-identifier">load_paths</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%w(vendor\\rails\\railties\\builtin\\rails_info vendor\\rails\\actionpack\\lib app\\controllers app\\helpers app\\models lib .)</span>, <span class="ruby-identifier">paths</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_possible_controllers">
+            
+              <a name="method-i-test_possible_controllers"></a><b>test_possible_controllers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_possible_controllers_source')" id="l_method-i-test_possible_controllers_source">show</a>
+                
+              </p>
+              <div id="method-i-test_possible_controllers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1735</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_possible_controllers</span>
+  <span class="ruby-identifier">true_controller_paths</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_paths</span>
+
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">use_controllers!</span> <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">silence_warnings</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Object</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:const_set</span>, <span class="ruby-value">:RAILS_ROOT</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/controller_fixtures'</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_paths</span> = [
+    <span class="ruby-constant">RAILS_ROOT</span>, <span class="ruby-constant">RAILS_ROOT</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/app/controllers'</span>, <span class="ruby-constant">RAILS_ROOT</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/vendor/plugins/bad_plugin/lib'</span>
+  ]
+  
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">&quot;admin/user&quot;</span>, <span class="ruby-string">&quot;plugin&quot;</span>, <span class="ruby-string">&quot;user&quot;</span>], <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">possible_controllers</span>.<span class="ruby-identifier">sort</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">true_controller_paths</span>
+    <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_paths</span> = <span class="ruby-identifier">true_controller_paths</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">use_controllers!</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Object</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:remove_const</span>, <span class="ruby-value">:RAILS_ROOT</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_possible_controllers_are_reset_on_each_load">
+            
+              <a name="method-i-test_possible_controllers_are_reset_on_each_load"></a><b>test_possible_controllers_are_reset_on_each_load</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_possible_controllers_are_reset_on_each_load_source')" id="l_method-i-test_possible_controllers_are_reset_on_each_load_source">show</a>
+                
+              </p>
+              <div id="method-i-test_possible_controllers_are_reset_on_each_load_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1757</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_possible_controllers_are_reset_on_each_load</span>
+  <span class="ruby-identifier">true_possible_controllers</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">possible_controllers</span>
+  <span class="ruby-identifier">true_controller_paths</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_paths</span>
+  
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">use_controllers!</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">root</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/controller_fixtures'</span>
+  
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_paths</span> = []
+  <span class="ruby-identifier">assert_equal</span> [], <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">possible_controllers</span>
+  
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">load!</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_paths</span> = [
+    <span class="ruby-identifier">root</span>, <span class="ruby-identifier">root</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/app/controllers'</span>, <span class="ruby-identifier">root</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/vendor/plugins/bad_plugin/lib'</span>
+  ]
+  
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">&quot;admin/user&quot;</span>, <span class="ruby-string">&quot;plugin&quot;</span>, <span class="ruby-string">&quot;user&quot;</span>], <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">possible_controllers</span>.<span class="ruby-identifier">sort</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_paths</span> = <span class="ruby-identifier">true_controller_paths</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">use_controllers!</span> <span class="ruby-identifier">true_possible_controllers</span>
+  <span class="ruby-constant">Object</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:remove_const</span>, <span class="ruby-value">:RAILS_ROOT</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">clear!</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">load_routes!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_with_controllers">
+            
+              <a name="method-i-test_with_controllers"></a><b>test_with_controllers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_with_controllers_source')" id="l_method-i-test_with_controllers_source">show</a>
+                
+              </p>
+              <div id="method-i-test_with_controllers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1782</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_with_controllers</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-node">%w(admin/accounts admin/users account pages)</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">with_controllers</span> <span class="ruby-identifier">c</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">c</span>, <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">possible_controllers</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

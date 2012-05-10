@@ -1,0 +1,314 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecordAssertionsController</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecordAssertionsController 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="ActionController/Base.html">ActionController::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/activerecord/active_record_assertions_test_rb.html">rails/actionpack/test/activerecord/active_record_assertions_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-bad_company">bad_company</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-good_company">good_company</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-nasty_columns_1">nasty_columns_1</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-nasty_columns_2">nasty_columns_2</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rescue_action">rescue_action</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-bad_company">
+            
+              <a name="method-i-bad_company"></a><b>bad_company</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>this will fail validation</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bad_company_source')" id="l_method-i-bad_company_source">show</a>
+                
+              </p>
+              <div id="method-i-bad_company_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_assertions_test.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">bad_company</span>
+  <span class="ruby-ivar">@company</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">new</span> 
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:inline</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Who's Bad?&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-good_company">
+            
+              <a name="method-i-good_company"></a><b>good_company</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>this will pass validation</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-good_company_source')" id="l_method-i-good_company_source">show</a>
+                
+              </p>
+              <div id="method-i-good_company_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_assertions_test.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">good_company</span>
+  <span class="ruby-ivar">@company</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@company</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;A&quot;</span>
+  <span class="ruby-ivar">@company</span>.<span class="ruby-identifier">rating</span> = <span class="ruby-number">69</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:inline</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Goodness Gracious!&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-nasty_columns_1">
+            
+              <a name="method-i-nasty_columns_1"></a><b>nasty_columns_1</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>fail with 1 bad column</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-nasty_columns_1_source')" id="l_method-i-nasty_columns_1_source">show</a>
+                
+              </p>
+              <div id="method-i-nasty_columns_1_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_assertions_test.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">nasty_columns_1</span>
+  <span class="ruby-ivar">@company</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@company</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;B&quot;</span>
+  <span class="ruby-ivar">@company</span>.<span class="ruby-identifier">rating</span> = <span class="ruby-number">2</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:inline</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;snicker....&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-nasty_columns_2">
+            
+              <a name="method-i-nasty_columns_2"></a><b>nasty_columns_2</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>fail with 2 bad columns</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-nasty_columns_2_source')" id="l_method-i-nasty_columns_2_source">show</a>
+                
+              </p>
+              <div id="method-i-nasty_columns_2_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_assertions_test.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">nasty_columns_2</span>
+  <span class="ruby-ivar">@company</span> = <span class="ruby-constant">Company</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@company</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-ivar">@company</span>.<span class="ruby-identifier">rating</span> = <span class="ruby-number">2</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:inline</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;double snicker....&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rescue_action">
+            
+              <a name="method-i-rescue_action"></a><b>rescue_action</b>(e)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>the safety dance.…..</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rescue_action_source')" id="l_method-i-rescue_action_source">show</a>
+                
+              </p>
+              <div id="method-i-rescue_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_assertions_test.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rescue_action</span>(<span class="ruby-identifier">e</span>) <span class="ruby-identifier">raise</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

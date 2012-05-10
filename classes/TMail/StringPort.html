@@ -1,0 +1,841 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TMail::StringPort</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TMail::StringPort 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Port.html">TMail::Port</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionmailer/lib/action_mailer/vendor/tmail/port_rb.html">rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="StringPort.html">StringPort</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-3D-3D">==</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-aopen">aopen</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-copy_to">copy_to</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-cp">cp</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-eql-3F">eql?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-hash">hash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inspect">inspect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-move_to">move_to</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read_all">read_all</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-remove">remove</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-reproducible-3F">reproducible?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rm">rm</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ropen">ropen</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-size">size</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-string">string</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-wopen">wopen</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>( str = '' )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 299</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>( <span class="ruby-identifier">str</span> = <span class="ruby-string">''</span> )
+  <span class="ruby-ivar">@buffer</span> = <span class="ruby-identifier">str</span>
+  <span class="ruby-keyword">super</span>()
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-3D-3D">
+            
+              <a name="method-i-3D-3D"></a><b>==</b>( other )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="StringPort.html#method-i-eql-3F">eql?</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-3D-3D_source')" id="l_method-i-3D-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-3D-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>( <span class="ruby-keyword ruby-title">other</span> )
+  <span class="ruby-constant">StringPort</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">other</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">equal?</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-aopen">
+            
+              <a name="method-i-aopen"></a><b>aopen</b>( &amp;block )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-aopen_source')" id="l_method-i-aopen_source">show</a>
+                
+              </p>
+              <div id="method-i-aopen_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 346</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">aopen</span>( &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-ivar">@buffer</span> <span class="ruby-operator">||=</span> <span class="ruby-string">''</span>
+  <span class="ruby-constant">StringOutput</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@buffer</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-copy_to">
+            
+              <a name="method-i-copy_to"></a><b>copy_to</b>( port )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="StringPort.html#method-i-cp">cp</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-copy_to_source')" id="l_method-i-copy_to_source">show</a>
+                
+              </p>
+              <div id="method-i-copy_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 357</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">copy_to</span>( <span class="ruby-identifier">port</span> )
+  <span class="ruby-identifier">port</span>.<span class="ruby-identifier">wopen</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-ivar">@buffer</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-cp">
+            
+              <a name="method-i-cp"></a><b>cp</b>( port )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eql-3F">
+            
+              <a name="method-i-eql-3F"></a><b>eql?</b>( other )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hash">
+            
+              <a name="method-i-hash"></a><b>hash</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hash_source')" id="l_method-i-hash_source">show</a>
+                
+              </p>
+              <div id="method-i-hash_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 324</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hash</span>
+  <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">object_id</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect">
+            
+              <a name="method-i-inspect"></a><b>inspect</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_source')" id="l_method-i-inspect_source">show</a>
+                
+              </p>
+              <div id="method-i-inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect</span>
+  <span class="ruby-node">&quot;#&lt;#{self.class}:id=#{sprintf '0x%x', @buffer.object_id}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-move_to">
+            
+              <a name="method-i-move_to"></a><b>move_to</b>( port )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-move_to_source')" id="l_method-i-move_to_source">show</a>
+                
+              </p>
+              <div id="method-i-move_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 365</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">move_to</span>( <span class="ruby-identifier">port</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">StringPort</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">port</span>
+    <span class="ruby-identifier">str</span> = <span class="ruby-ivar">@buffer</span>
+    <span class="ruby-identifier">port</span>.<span class="ruby-identifier">instance_eval</span> { <span class="ruby-ivar">@buffer</span> = <span class="ruby-identifier">str</span> }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">copy_to</span> <span class="ruby-identifier">port</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">remove</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read_all">
+            
+              <a name="method-i-read_all"></a><b>read_all</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove">
+            
+              <a name="method-i-remove"></a><b>remove</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="StringPort.html#method-i-rm">rm</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-remove_source')" id="l_method-i-remove_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 351</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">remove</span>
+  <span class="ruby-ivar">@buffer</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reproducible-3F">
+            
+              <a name="method-i-reproducible-3F"></a><b>reproducible?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reproducible-3F_source')" id="l_method-i-reproducible-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-reproducible-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 332</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reproducible?</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rm">
+            
+              <a name="method-i-rm"></a><b>rm</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ropen">
+            
+              <a name="method-i-ropen"></a><b>ropen</b>( &amp;block )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ropen_source')" id="l_method-i-ropen_source">show</a>
+                
+              </p>
+              <div id="method-i-ropen_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 336</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ropen</span>( &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-ivar">@buffer</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">ENOENT</span>, <span class="ruby-node">&quot;#{inspect} is already removed&quot;</span>
+  <span class="ruby-constant">StringInput</span>.<span class="ruby-identifier">open</span>(<span class="ruby-ivar">@buffer</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-size">
+            
+              <a name="method-i-size"></a><b>size</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-size_source')" id="l_method-i-size_source">show</a>
+                
+              </p>
+              <div id="method-i-size_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 314</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">size</span>
+  <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-string">
+            
+              <a name="method-i-string"></a><b>string</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-string_source')" id="l_method-i-string_source">show</a>
+                
+              </p>
+              <div id="method-i-string_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">string</span>
+  <span class="ruby-ivar">@buffer</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <a name="method-i-to_s"></a><b>to_s</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="StringPort.html#method-i-read_all">read_all</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 308</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+  <span class="ruby-ivar">@buffer</span>.<span class="ruby-identifier">dup</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-wopen">
+            
+              <a name="method-i-wopen"></a><b>wopen</b>( &amp;block )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-wopen_source')" id="l_method-i-wopen_source">show</a>
+                
+              </p>
+              <div id="method-i-wopen_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/port.rb, line 341</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">wopen</span>( &amp;<span class="ruby-identifier">block</span> )
+  <span class="ruby-ivar">@buffer</span> = <span class="ruby-string">''</span>
+  <span class="ruby-constant">StringOutput</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@buffer</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

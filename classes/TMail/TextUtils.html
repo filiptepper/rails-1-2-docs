@@ -1,0 +1,856 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TMail::TextUtils</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            TMail::TextUtils 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionmailer/lib/action_mailer/vendor/tmail/utils_rb.html">rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-atom_safe-3F">atom_safe?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-decode_RFC2231">decode_RFC2231</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-decode_params">decode_params</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>J</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-join_domain">join_domain</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-message_id-3F">message_id?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-mime_encoded-3F">mime_encoded?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>Q</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-quote_atom">quote_atom</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-quote_phrase">quote_phrase</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-quote_token">quote_token</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-time2str">time2str</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-timezone_string_to_unixtime">timezone_string_to_unixtime</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_kcode">to_kcode</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-token_safe-3F">token_safe?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">ATOM_UNSAFE</td>
+            <td>=</td>
+            <td class="attr-value">/[#{Regexp.quote aspecial}#{control}#{lwsp}]/n</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">PHRASE_UNSAFE</td>
+            <td>=</td>
+            <td class="attr-value">/[#{Regexp.quote aspecial}#{control}]/n</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">TOKEN_UNSAFE</td>
+            <td>=</td>
+            <td class="attr-value">/[#{Regexp.quote tspecial}#{control}#{lwsp}]/n</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CONTROL_CHAR</td>
+            <td>=</td>
+            <td class="attr-value">/[#{control}]/n</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ZONESTR_TABLE</td>
+            <td>=</td>
+            <td class="attr-value">{
+'jst' =&gt;   9 * 60,
+'eet' =&gt;   2 * 60,
+'bst' =&gt;   1 * 60,
+'met' =&gt;   1 * 60,
+'gmt' =&gt;   0,
+'utc' =&gt;   0,
+'ut'  =&gt;   0,
+'nst' =&gt; -(3 * 60 + 30),
+'ast' =&gt;  -4 * 60,
+'edt' =&gt;  -4 * 60,
+'est' =&gt;  -5 * 60,
+'cdt' =&gt;  -5 * 60,
+'cst' =&gt;  -6 * 60,
+'mdt' =&gt;  -6 * 60,
+'mst' =&gt;  -7 * 60,
+'pdt' =&gt;  -7 * 60,
+'pst' =&gt;  -8 * 60,
+'a'   =&gt;  -1 * 60,
+'b'   =&gt;  -2 * 60,
+'c'   =&gt;  -3 * 60,
+'d'   =&gt;  -4 * 60,
+'e'   =&gt;  -5 * 60,
+'f'   =&gt;  -6 * 60,
+'g'   =&gt;  -7 * 60,
+'h'   =&gt;  -8 * 60,
+'i'   =&gt;  -9 * 60,
+# j not use
+'k'   =&gt; -10 * 60,
+'l'   =&gt; -11 * 60,
+'m'   =&gt; -12 * 60,
+'n'   =&gt;   1 * 60,
+'o'   =&gt;   2 * 60,
+'p'   =&gt;   3 * 60,
+'q'   =&gt;   4 * 60,
+'r'   =&gt;   5 * 60,
+'s'   =&gt;   6 * 60,
+'t'   =&gt;   7 * 60,
+'u'   =&gt;   8 * 60,
+'v'   =&gt;   9 * 60,
+'w'   =&gt;  10 * 60,
+'x'   =&gt;  11 * 60,
+'y'   =&gt;  12 * 60,
+'z'   =&gt;   0 * 60
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">WDAY</td>
+            <td>=</td>
+            <td class="attr-value">%w( Sun Mon Tue Wed Thu Fri Sat TMailBUG )</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MONTH</td>
+            <td>=</td>
+            <td class="attr-value">%w( TMailBUG Jan Feb Mar Apr May Jun
+Jul Aug Sep Oct Nov Dec TMailBUG )</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MESSAGE_ID</td>
+            <td>=</td>
+            <td class="attr-value">/&lt;[^\@&gt;]+\@[^&gt;\@]+&gt;/</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MIME_ENCODED</td>
+            <td>=</td>
+            <td class="attr-value">/=\?[^\s?=]+\?[QB]\?[^\s?=]+\?=/i</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NKF_FLAGS</td>
+            <td>=</td>
+            <td class="attr-value">{
+'EUC'  =&gt; '-e -m',
+'SJIS' =&gt; '-s -m'
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">RFC2231_ENCODED</td>
+            <td>=</td>
+            <td class="attr-value">/\A(?:iso-2022-jp|euc-jp|shift_jis|us-ascii)?'[a-z]*'/in</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-atom_safe-3F">
+            
+              <a name="method-i-atom_safe-3F"></a><b>atom_safe?</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-atom_safe-3F_source')" id="l_method-i-atom_safe-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-atom_safe-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">atom_safe?</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-keyword">not</span> <span class="ruby-constant">ATOM_UNSAFE</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-decode_RFC2231">
+            
+              <a name="method-i-decode_RFC2231"></a><b>decode_RFC2231</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-decode_RFC2231_source')" id="l_method-i-decode_RFC2231_source">show</a>
+                
+              </p>
+              <div id="method-i-decode_RFC2231_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">decode_RFC2231</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">m</span> = <span class="ruby-constant">RFC2231_ENCODED</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">str</span>) <span class="ruby-keyword">or</span> <span class="ruby-keyword">return</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">NKF</span>.<span class="ruby-identifier">nkf</span>(<span class="ruby-constant">NKF_FLAGS</span>[<span class="ruby-identifier">$KCODE</span>],
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">post_match</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r%[\da-f]{2}/</span><span class="ruby-identifier">n</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>[<span class="ruby-number">1</span>,<span class="ruby-number">2</span>].<span class="ruby-identifier">hex</span>.<span class="ruby-identifier">chr</span> })
+  <span class="ruby-keyword">rescue</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">post_match</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r%[\da-f]{2}/</span><span class="ruby-identifier">n</span>, <span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-decode_params">
+            
+              <a name="method-i-decode_params"></a><b>decode_params</b>( hash )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-decode_params_source')" id="l_method-i-decode_params_source">show</a>
+                
+              </p>
+              <div id="method-i-decode_params_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">decode_params</span>( <span class="ruby-identifier">hash</span> )
+  <span class="ruby-identifier">new</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">encoded</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">hash</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span> = <span class="ruby-regexp">%r\*(?:(\d+)\*)?\z/</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">key</span>)
+      ((<span class="ruby-identifier">encoded</span> <span class="ruby-operator">||=</span> {})[<span class="ruby-identifier">m</span>.<span class="ruby-identifier">pre_match</span>] <span class="ruby-operator">||=</span> [])[(<span class="ruby-identifier">m</span>[<span class="ruby-number">1</span>] <span class="ruby-operator">||</span> <span class="ruby-number">0</span>).<span class="ruby-identifier">to_i</span>] = <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">new</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">to_kcode</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">encoded</span>
+    <span class="ruby-identifier">encoded</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">strings</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">new</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">decode_RFC2231</span>(<span class="ruby-identifier">strings</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">''</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-join_domain">
+            
+              <a name="method-i-join_domain"></a><b>join_domain</b>( arr )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-join_domain_source')" id="l_method-i-join_domain_source">show</a>
+                
+              </p>
+              <div id="method-i-join_domain_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">join_domain</span>( <span class="ruby-identifier">arr</span> )
+  <span class="ruby-identifier">arr</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-regexp">%r\A\[.*\]\z/</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">i</span>
+        <span class="ruby-identifier">i</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">quote_atom</span>(<span class="ruby-identifier">i</span>)
+      <span class="ruby-keyword">end</span>
+  }.<span class="ruby-identifier">join</span>(<span class="ruby-string">'.'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-message_id-3F">
+            
+              <a name="method-i-message_id-3F"></a><b>message_id?</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-message_id-3F_source')" id="l_method-i-message_id-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-message_id-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">message_id?</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-constant">MESSAGE_ID</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mime_encoded-3F">
+            
+              <a name="method-i-mime_encoded-3F"></a><b>mime_encoded?</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mime_encoded-3F_source')" id="l_method-i-mime_encoded-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-mime_encoded-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mime_encoded?</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-constant">MIME_ENCODED</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quote_atom">
+            
+              <a name="method-i-quote_atom"></a><b>quote_atom</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-quote_atom_source')" id="l_method-i-quote_atom_source">show</a>
+                
+              </p>
+              <div id="method-i-quote_atom_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">quote_atom</span>( <span class="ruby-identifier">str</span> )
+  (<span class="ruby-constant">ATOM_UNSAFE</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">dquote</span>(<span class="ruby-identifier">str</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quote_phrase">
+            
+              <a name="method-i-quote_phrase"></a><b>quote_phrase</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-quote_phrase_source')" id="l_method-i-quote_phrase_source">show</a>
+                
+              </p>
+              <div id="method-i-quote_phrase_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">quote_phrase</span>( <span class="ruby-identifier">str</span> )
+  (<span class="ruby-constant">PHRASE_UNSAFE</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">dquote</span>(<span class="ruby-identifier">str</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quote_token">
+            
+              <a name="method-i-quote_token"></a><b>quote_token</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-quote_token_source')" id="l_method-i-quote_token_source">show</a>
+                
+              </p>
+              <div id="method-i-quote_token_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">quote_token</span>( <span class="ruby-identifier">str</span> )
+  (<span class="ruby-constant">TOKEN_UNSAFE</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">dquote</span>(<span class="ruby-identifier">str</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-time2str">
+            
+              <a name="method-i-time2str"></a><b>time2str</b>( tm )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-time2str_source')" id="l_method-i-time2str_source">show</a>
+                
+              </p>
+              <div id="method-i-time2str_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">time2str</span>( <span class="ruby-identifier">tm</span> )
+  <span class="ruby-comment"># [ruby-list:7928]</span>
+  <span class="ruby-identifier">gmt</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-identifier">tm</span>.<span class="ruby-identifier">to_i</span>)
+  <span class="ruby-identifier">gmt</span>.<span class="ruby-identifier">gmtime</span>
+  <span class="ruby-identifier">offset</span> = <span class="ruby-identifier">tm</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(*<span class="ruby-identifier">gmt</span>.<span class="ruby-identifier">to_a</span>[<span class="ruby-number">0</span>,<span class="ruby-number">6</span>].<span class="ruby-identifier">reverse</span>).<span class="ruby-identifier">to_i</span>
+
+  <span class="ruby-comment"># DO NOT USE strftime: setlocale() breaks it</span>
+  <span class="ruby-identifier">sprintf</span> <span class="ruby-string">'%s, %s %s %d %02d:%02d:%02d %+.2d%.2d'</span>,
+          <span class="ruby-constant">WDAY</span>[<span class="ruby-identifier">tm</span>.<span class="ruby-identifier">wday</span>], <span class="ruby-identifier">tm</span>.<span class="ruby-identifier">mday</span>, <span class="ruby-constant">MONTH</span>[<span class="ruby-identifier">tm</span>.<span class="ruby-identifier">month</span>],
+          <span class="ruby-identifier">tm</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">tm</span>.<span class="ruby-identifier">hour</span>, <span class="ruby-identifier">tm</span>.<span class="ruby-identifier">min</span>, <span class="ruby-identifier">tm</span>.<span class="ruby-identifier">sec</span>,
+          *(<span class="ruby-identifier">offset</span> <span class="ruby-operator">/</span> <span class="ruby-number">60</span>).<span class="ruby-identifier">divmod</span>(<span class="ruby-number">60</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-timezone_string_to_unixtime">
+            
+              <a name="method-i-timezone_string_to_unixtime"></a><b>timezone_string_to_unixtime</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-timezone_string_to_unixtime_source')" id="l_method-i-timezone_string_to_unixtime_source">show</a>
+                
+              </p>
+              <div id="method-i-timezone_string_to_unixtime_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">timezone_string_to_unixtime</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span> = <span class="ruby-regexp">%r([\+\-])(\d\d?)(\d\d)/</span>.<span class="ruby-identifier">match</span>(<span class="ruby-identifier">str</span>)
+    <span class="ruby-identifier">sec</span> = (<span class="ruby-identifier">m</span>[<span class="ruby-number">2</span>].<span class="ruby-identifier">to_i</span> * <span class="ruby-number">60</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">m</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">to_i</span>) * <span class="ruby-number">60</span>
+    <span class="ruby-identifier">m</span>[<span class="ruby-number">1</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'-'</span> <span class="ruby-operator">?</span> <span class="ruby-operator">-</span><span class="ruby-identifier">sec</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">sec</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">min</span> = <span class="ruby-constant">ZONESTR_TABLE</span>[<span class="ruby-identifier">str</span>.<span class="ruby-identifier">downcase</span>] <span class="ruby-keyword">or</span>
+            <span class="ruby-identifier">raise</span> <span class="ruby-constant">SyntaxError</span>, <span class="ruby-node">&quot;wrong timezone format '#{str}'&quot;</span>
+    <span class="ruby-identifier">min</span> * <span class="ruby-number">60</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_kcode">
+            
+              <a name="method-i-to_kcode"></a><b>to_kcode</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_kcode_source')" id="l_method-i-to_kcode_source">show</a>
+                
+              </p>
+              <div id="method-i-to_kcode_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_kcode</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">flag</span> = <span class="ruby-constant">NKF_FLAGS</span>[<span class="ruby-identifier">$KCODE</span>] <span class="ruby-keyword">or</span> <span class="ruby-keyword">return</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-constant">NKF</span>.<span class="ruby-identifier">nkf</span>(<span class="ruby-identifier">flag</span>, <span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-token_safe-3F">
+            
+              <a name="method-i-token_safe-3F"></a><b>token_safe?</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-token_safe-3F_source')" id="l_method-i-token_safe-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-token_safe-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/utils.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">token_safe?</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-keyword">not</span> <span class="ruby-constant">TOKEN_UNSAFE</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

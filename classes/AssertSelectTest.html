@@ -1,0 +1,1690 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>AssertSelectTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            AssertSelectTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/assert_select_test_rb.html">rails/actionpack/test/controller/assert_select_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="AssertSelectTest/AssertSelectController.html">AssertSelectTest::AssertSelectController</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="AssertSelectTest/AssertSelectMailer.html">AssertSelectTest::AssertSelectMailer</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-render_html">render_html</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_rjs">render_rjs</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_xml">render_xml</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-teardown">teardown</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select">test_assert_select</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_email">test_assert_select_email</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_from_rjs_with_multiple_results">test_assert_select_from_rjs_with_multiple_results</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_from_rjs_with_single_result">test_assert_select_from_rjs_with_single_result</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_rjs_fails_if_nothing_to_pick">test_assert_select_rjs_fails_if_nothing_to_pick</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_rjs_for_chained_replace">test_assert_select_rjs_for_chained_replace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_rjs_for_nonpositioned_insert">test_assert_select_rjs_for_nonpositioned_insert</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_rjs_for_positioned_insert">test_assert_select_rjs_for_positioned_insert</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_rjs_for_replace">test_assert_select_rjs_for_replace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_rjs_picks_up_all_statements">test_assert_select_rjs_picks_up_all_statements</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_rjs_with_id">test_assert_select_rjs_with_id</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_rjs_with_unicode">test_assert_select_rjs_with_unicode</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assert_select_text_match">test_assert_select_text_match</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_css_select">test_css_select</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_css_select_from_rjs_with_multiple_results">test_css_select_from_rjs_with_multiple_results</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_css_select_from_rjs_with_single_result">test_css_select_from_rjs_with_single_result</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_equality_of_html">test_equality_of_html</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_equality_of_instances">test_equality_of_instances</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_equality_string_and_regexp">test_equality_string_and_regexp</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_equality_true_false">test_equality_true_false</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_feed_item_encoded">test_feed_item_encoded</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_nested_assert_select">test_nested_assert_select</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_nested_assert_select_rjs_with_single_result">test_nested_assert_select_rjs_with_single_result</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_nested_assert_select_rjs_with_two_results">test_nested_assert_select_rjs_with_two_results</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_nested_css_select">test_nested_css_select</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_substitution_values">test_substitution_values</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">AssertionFailedError</td>
+            <td>=</td>
+            <td class="attr-value">Test::Unit::AssertionFailedError</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">AssertSelectController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@request</span>    = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@response</span>   = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-constant">ActionMailer</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">delivery_method</span> = <span class="ruby-value">:test</span>
+  <span class="ruby-constant">ActionMailer</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">perform_deliveries</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-constant">ActionMailer</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">deliveries</span> = []
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-teardown">
+            
+              <a name="method-i-teardown"></a><b>teardown</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-teardown_source')" id="l_method-i-teardown_source">show</a>
+                
+              </p>
+              <div id="method-i-teardown_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">teardown</span>
+  <span class="ruby-constant">ActionMailer</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">deliveries</span>.<span class="ruby-identifier">clear</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select">
+            
+              <a name="method-i-test_assert_select"></a><b>test_assert_select</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Test assert select.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_source')" id="l_method-i-test_assert_select_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select</span>
+  <span class="ruby-identifier">render_html</span> <span class="ruby-string">%Q{&lt;div id=&quot;1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;2&quot;&gt;&lt;/div&gt;}</span>
+  <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">2</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">3</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>){ <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_email">
+            
+              <a name="method-i-test_assert_select_email"></a><b>test_assert_select_email</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Test assert_select_email</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_email_source')" id="l_method-i-test_assert_select_email_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_email_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 549</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_email</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select_email</span> {} }
+  <span class="ruby-constant">AssertSelectMailer</span>.<span class="ruby-identifier">deliver_test</span> <span class="ruby-string">&quot;&lt;div&gt;&lt;p&gt;foo&lt;/p&gt;&lt;p&gt;bar&lt;/p&gt;&lt;/div&gt;&quot;</span>
+  <span class="ruby-identifier">assert_select_email</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div:root&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p:first-child&quot;</span>, <span class="ruby-string">&quot;foo&quot;</span>
+      <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p:last-child&quot;</span>, <span class="ruby-string">&quot;bar&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_from_rjs_with_multiple_results">
+            
+              <a name="method-i-test_assert_select_from_rjs_with_multiple_results"></a><b>test_assert_select_from_rjs_with_multiple_results</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>With multiple results.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_from_rjs_with_multiple_results_source')" id="l_method-i-test_assert_select_from_rjs_with_multiple_results_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_from_rjs_with_multiple_results_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 223</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_from_rjs_with_multiple_results</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test2&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-number">2</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_from_rjs_with_single_result">
+            
+              <a name="method-i-test_assert_select_from_rjs_with_single_result"></a><b>test_assert_select_from_rjs_with_single_result</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>With single result.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_from_rjs_with_single_result_source')" id="l_method-i-test_assert_select_from_rjs_with_single_result_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_from_rjs_with_single_result_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_from_rjs_with_single_result</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;\n&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-number">2</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;div#?&quot;</span>, <span class="ruby-regexp">%r\d+/</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_rjs_fails_if_nothing_to_pick">
+            
+              <a name="method-i-test_assert_select_rjs_fails_if_nothing_to_pick"></a><b>test_assert_select_rjs_fails_if_nothing_to_pick</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Test that we fail if there is nothing to pick.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_rjs_fails_if_nothing_to_pick_source')" id="l_method-i-test_assert_select_rjs_fails_if_nothing_to_pick_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_rjs_fails_if_nothing_to_pick_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 314</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_rjs_fails_if_nothing_to_pick</span>
+  <span class="ruby-identifier">render_rjs</span> { }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select_rjs</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_rjs_for_chained_replace">
+            
+              <a name="method-i-test_assert_select_rjs_for_chained_replace"></a><b>test_assert_select_rjs_for_chained_replace</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_rjs_for_chained_replace_source')" id="l_method-i-test_assert_select_rjs_for_chained_replace_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_rjs_for_chained_replace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 383</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_rjs_for_chained_replace</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>[<span class="ruby-string">'test1'</span>].<span class="ruby-identifier">replace</span> <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>[<span class="ruby-string">'test2'</span>].<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">insert_html</span> <span class="ruby-value">:top</span>, <span class="ruby-string">&quot;test3&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;3\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># Replace.</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:chained_replace</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:chained_replace</span>, <span class="ruby-string">&quot;test1&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:chained_replace</span>, <span class="ruby-string">&quot;test2&quot;</span> }
+  <span class="ruby-comment"># Replace HTML.</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:chained_replace_html</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:chained_replace_html</span>, <span class="ruby-string">&quot;test2&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:replace_html</span>, <span class="ruby-string">&quot;test1&quot;</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_rjs_for_nonpositioned_insert">
+            
+              <a name="method-i-test_assert_select_rjs_for_nonpositioned_insert"></a><b>test_assert_select_rjs_for_nonpositioned_insert</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Non-positioned insert.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_rjs_for_nonpositioned_insert_source')" id="l_method-i-test_assert_select_rjs_for_nonpositioned_insert_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_rjs_for_nonpositioned_insert_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 412</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_rjs_for_nonpositioned_insert</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace</span> <span class="ruby-string">&quot;test1&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test2&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">insert_html</span> <span class="ruby-value">:top</span>, <span class="ruby-string">&quot;test3&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;3\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:insert_html</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#3&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:insert_html</span>, <span class="ruby-string">&quot;test3&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#3&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:insert_html</span>, <span class="ruby-string">&quot;test1&quot;</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_rjs_for_positioned_insert">
+            
+              <a name="method-i-test_assert_select_rjs_for_positioned_insert"></a><b>test_assert_select_rjs_for_positioned_insert</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Positioned insert.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_rjs_for_positioned_insert_source')" id="l_method-i-test_assert_select_rjs_for_positioned_insert_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_rjs_for_positioned_insert_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 430</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_rjs_for_positioned_insert</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">insert_html</span> <span class="ruby-value">:top</span>, <span class="ruby-string">&quot;test1&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">insert_html</span> <span class="ruby-value">:bottom</span>, <span class="ruby-string">&quot;test2&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">insert_html</span> <span class="ruby-value">:before</span>, <span class="ruby-string">&quot;test3&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;3\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">insert_html</span> <span class="ruby-value">:after</span>, <span class="ruby-string">&quot;test4&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;4\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:insert</span>, <span class="ruby-value">:top</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:insert</span>, <span class="ruby-value">:bottom</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:insert</span>, <span class="ruby-value">:before</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#3&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:insert</span>, <span class="ruby-value">:after</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#4&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:insert_html</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">4</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_rjs_for_replace">
+            
+              <a name="method-i-test_assert_select_rjs_for_replace"></a><b>test_assert_select_rjs_for_replace</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_rjs_for_replace_source')" id="l_method-i-test_assert_select_rjs_for_replace_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_rjs_for_replace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 355</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_rjs_for_replace</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace</span> <span class="ruby-string">&quot;test1&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test2&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">insert_html</span> <span class="ruby-value">:top</span>, <span class="ruby-string">&quot;test3&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;3\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># Replace.</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:replace</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:replace</span>, <span class="ruby-string">&quot;test1&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:replace</span>, <span class="ruby-string">&quot;test2&quot;</span> }
+  <span class="ruby-comment"># Replace HTML.</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:replace_html</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:replace_html</span>, <span class="ruby-string">&quot;test2&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-value">:replace_html</span>, <span class="ruby-string">&quot;test1&quot;</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_rjs_picks_up_all_statements">
+            
+              <a name="method-i-test_assert_select_rjs_picks_up_all_statements"></a><b>test_assert_select_rjs_picks_up_all_statements</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Test that we can pick up all statements in the result.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_rjs_picks_up_all_statements_source')" id="l_method-i-test_assert_select_rjs_picks_up_all_statements_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_rjs_picks_up_all_statements_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_rjs_picks_up_all_statements</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace</span> <span class="ruby-string">&quot;test&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test2&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">insert_html</span> <span class="ruby-value">:top</span>, <span class="ruby-string">&quot;test3&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;3\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">found</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#3&quot;</span>
+    <span class="ruby-identifier">found</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">found</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_rjs_with_id">
+            
+              <a name="method-i-test_assert_select_rjs_with_id"></a><b>test_assert_select_rjs_with_id</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_rjs_with_id_source')" id="l_method-i-test_assert_select_rjs_with_id_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_rjs_with_id_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 332</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_rjs_with_id</span>
+  <span class="ruby-comment"># Test that we can pick up all statements in the result.</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace</span> <span class="ruby-string">&quot;test1&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test2&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">insert_html</span> <span class="ruby-value">:top</span>, <span class="ruby-string">&quot;test3&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;3\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-string">&quot;test1&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-string">&quot;test2&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-string">&quot;test3&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#3&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-string">&quot;test4&quot;</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_rjs_with_unicode">
+            
+              <a name="method-i-test_assert_select_rjs_with_unicode"></a><b>test_assert_select_rjs_with_unicode</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_rjs_with_unicode_source')" id="l_method-i-test_assert_select_rjs_with_unicode_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_rjs_with_unicode_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_rjs_with_unicode</span>
+  <span class="ruby-comment"># Test that non-ascii characters (which are converted into \uXXXX in RJS) are decoded correctly.</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace</span> <span class="ruby-string">&quot;test&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;\3343\2203\2201\3343\2202\2261\3343\2203\2203\3343\2203\2210&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>, <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;\3343\2203\2201\3343\2202\2261\3343\2203\2203\3343\2203\2210&quot;</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>, <span class="ruby-string">&quot;\3343\2203\2201\3343\2202\2261\3343\2203\2203\3343\2203\2210&quot;</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>, <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;\3343\2203\2201..\3343\2203\2210&quot;</span>,<span class="ruby-number">0</span>,<span class="ruby-string">'U'</span>)
+    <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>, <span class="ruby-constant">Regexp</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;\3343\2203\2201.\3343\2203\2210&quot;</span>,<span class="ruby-number">0</span>,<span class="ruby-string">'U'</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assert_select_text_match">
+            
+              <a name="method-i-test_assert_select_text_match"></a><b>test_assert_select_text_match</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assert_select_text_match_source')" id="l_method-i-test_assert_select_text_match_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assert_select_text_match_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assert_select_text_match</span>
+  <span class="ruby-identifier">render_html</span> <span class="ruby-string">%Q{&lt;div id=&quot;1&quot;&gt;&lt;span&gt;foo&lt;/span&gt;&lt;/div&gt;&lt;div id=&quot;2&quot;&gt;&lt;span&gt;bar&lt;/span&gt;&lt;/div&gt;}</span>
+  <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-string">&quot;foo&quot;</span> }
+    <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-string">&quot;bar&quot;</span> }
+    <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-regexp">%r\w*/</span> }
+    <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-regexp">%r\w*/</span>, <span class="ruby-value">:count=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">2</span> }
+    <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:text=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;foo&quot;</span>, <span class="ruby-value">:count=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">2</span> }
+    <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:html=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;&lt;span&gt;bar&lt;/span&gt;&quot;</span> }
+    <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:html=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;&lt;span&gt;bar&lt;/span&gt;&quot;</span> }
+    <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:html=</span><span class="ruby-operator">&gt;</span><span class="ruby-regexp">%r\w*/</span> }
+    <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:html=</span><span class="ruby-operator">&gt;</span><span class="ruby-regexp">%r\w*/</span>, <span class="ruby-value">:count=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">2</span> }
+    <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:html=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;&lt;span&gt;foo&lt;/span&gt;&quot;</span>, <span class="ruby-value">:count=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">2</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_css_select">
+            
+              <a name="method-i-test_css_select"></a><b>test_css_select</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Test css_select.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_css_select_source')" id="l_method-i-test_css_select_source">show</a>
+                
+              </p>
+              <div id="method-i-test_css_select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_css_select</span>
+  <span class="ruby-identifier">render_html</span> <span class="ruby-string">%Q{&lt;div id=&quot;1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;2&quot;&gt;&lt;/div&gt;}</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">css_select</span>(<span class="ruby-string">&quot;div&quot;</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">css_select</span>(<span class="ruby-string">&quot;p&quot;</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_css_select_from_rjs_with_multiple_results">
+            
+              <a name="method-i-test_css_select_from_rjs_with_multiple_results"></a><b>test_css_select_from_rjs_with_multiple_results</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>With multiple results.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_css_select_from_rjs_with_multiple_results_source')" id="l_method-i-test_css_select_from_rjs_with_multiple_results_source">show</a>
+                
+              </p>
+              <div id="method-i-test_css_select_from_rjs_with_multiple_results_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_css_select_from_rjs_with_multiple_results</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test2&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">css_select</span>(<span class="ruby-string">&quot;div&quot;</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">css_select</span>(<span class="ruby-node">&quot;#1&quot;</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">css_select</span>(<span class="ruby-node">&quot;#2&quot;</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_css_select_from_rjs_with_single_result">
+            
+              <a name="method-i-test_css_select_from_rjs_with_single_result"></a><b>test_css_select_from_rjs_with_single_result</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>With one result.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_css_select_from_rjs_with_single_result_source')" id="l_method-i-test_css_select_from_rjs_with_single_result_source">show</a>
+                
+              </p>
+              <div id="method-i-test_css_select_from_rjs_with_single_result_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_css_select_from_rjs_with_single_result</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;\n&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">css_select</span>(<span class="ruby-string">&quot;div&quot;</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">css_select</span>(<span class="ruby-node">&quot;#1&quot;</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">css_select</span>(<span class="ruby-node">&quot;#2&quot;</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_equality_of_html">
+            
+              <a name="method-i-test_equality_of_html"></a><b>test_equality_of_html</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_equality_of_html_source')" id="l_method-i-test_equality_of_html_source">show</a>
+                
+              </p>
+              <div id="method-i-test_equality_of_html_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_equality_of_html</span>
+  <span class="ruby-identifier">render_html</span> <span class="ruby-string">%Q{&lt;p&gt;\n&lt;em&gt;&quot;This is &lt;strong&gt;not&lt;/strong&gt; a big problem,&quot;&lt;/em&gt; he said.\n&lt;/p&gt;}</span>
+  <span class="ruby-identifier">text</span> = <span class="ruby-string">&quot;\&quot;This is not a big problem,\&quot; he said.&quot;</span>
+  <span class="ruby-identifier">html</span> = <span class="ruby-string">&quot;&lt;em&gt;\&quot;This is &lt;strong&gt;not&lt;/strong&gt; a big problem,\&quot;&lt;/em&gt; he said.&quot;</span>
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-identifier">text</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-identifier">html</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-value">:html=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">html</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-value">:html=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">text</span> }
+  <span class="ruby-comment"># No stripping for pre.</span>
+  <span class="ruby-identifier">render_html</span> <span class="ruby-string">%Q{&lt;pre&gt;\n&lt;em&gt;&quot;This is &lt;strong&gt;not&lt;/strong&gt; a big problem,&quot;&lt;/em&gt; he said.\n&lt;/pre&gt;}</span>
+  <span class="ruby-identifier">text</span> = <span class="ruby-string">&quot;\n\&quot;This is not a big problem,\&quot; he said.\n&quot;</span>
+  <span class="ruby-identifier">html</span> = <span class="ruby-string">&quot;\n&lt;em&gt;\&quot;This is &lt;strong&gt;not&lt;/strong&gt; a big problem,\&quot;&lt;/em&gt; he said.\n&quot;</span>
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;pre&quot;</span>, <span class="ruby-identifier">text</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;pre&quot;</span>, <span class="ruby-identifier">html</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;pre&quot;</span>, <span class="ruby-value">:html=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">html</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;pre&quot;</span>, <span class="ruby-value">:html=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">text</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_equality_of_instances">
+            
+              <a name="method-i-test_equality_of_instances"></a><b>test_equality_of_instances</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_equality_of_instances_source')" id="l_method-i-test_equality_of_instances_source">show</a>
+                
+              </p>
+              <div id="method-i-test_equality_of_instances_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_equality_of_instances</span>
+  <span class="ruby-identifier">render_html</span> <span class="ruby-string">%Q{&lt;div id=&quot;1&quot;&gt;foo&lt;/div&gt;&lt;div id=&quot;2&quot;&gt;foo&lt;/div&gt;}</span>
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">2</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">3</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">2</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-number">3</span><span class="ruby-operator">..</span><span class="ruby-number">4</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:count=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">2</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:count=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">3</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:minimum=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">1</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:minimum=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">2</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:minimum=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">3</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:maximum=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">2</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:maximum=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">3</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:maximum=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">1</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:minimum=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">1</span>, <span class="ruby-value">:maximum=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">2</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:minimum=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">3</span>, <span class="ruby-value">:maximum=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">4</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_equality_string_and_regexp">
+            
+              <a name="method-i-test_equality_string_and_regexp"></a><b>test_equality_string_and_regexp</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_equality_string_and_regexp_source')" id="l_method-i-test_equality_string_and_regexp_source">show</a>
+                
+              </p>
+              <div id="method-i-test_equality_string_and_regexp_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_equality_string_and_regexp</span>
+  <span class="ruby-identifier">render_html</span> <span class="ruby-string">%Q{&lt;div id=&quot;1&quot;&gt;foo&lt;/div&gt;&lt;div id=&quot;2&quot;&gt;foo&lt;/div&gt;}</span>
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-string">&quot;foo&quot;</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-string">&quot;bar&quot;</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:text=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;foo&quot;</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:text=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;bar&quot;</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-regexp">%r(foo|bar)/</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-regexp">%rfoobar/</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:text=</span><span class="ruby-operator">&gt;</span><span class="ruby-regexp">%r(foo|bar)/</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-value">:text=</span><span class="ruby-operator">&gt;</span><span class="ruby-regexp">%rfoobar/</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-value">:text=</span><span class="ruby-operator">&gt;</span><span class="ruby-regexp">%rfoobar/</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_equality_true_false">
+            
+              <a name="method-i-test_equality_true_false"></a><b>test_equality_true_false</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_equality_true_false_source')" id="l_method-i-test_equality_true_false_source">show</a>
+                
+              </p>
+              <div id="method-i-test_equality_true_false_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_equality_true_false</span>
+  <span class="ruby-identifier">render_html</span> <span class="ruby-string">%Q{&lt;div id=&quot;1&quot;&gt;&lt;/div&gt;&lt;div id=&quot;2&quot;&gt;&lt;/div&gt;}</span>
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-keyword">true</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-keyword">true</span> }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">AssertionFailedError</span>) { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-keyword">false</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span>               { <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-keyword">false</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_feed_item_encoded">
+            
+              <a name="method-i-test_feed_item_encoded"></a><b>test_feed_item_encoded</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_feed_item_encoded_source')" id="l_method-i-test_feed_item_encoded_source">show</a>
+                
+              </p>
+              <div id="method-i-test_feed_item_encoded_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 491</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_feed_item_encoded</span>
+    <span class="ruby-identifier">render_xml</span> <span class="ruby-string">&quot;&lt;rss version=&quot;2.0&quot;&gt;
+  &lt;channel&gt;
+    &lt;item&gt;
+      &lt;description&gt;
+        &lt;![CDATA[
+          &lt;p&gt;Test 1&lt;/p&gt;
+        ]]&gt;
+      &lt;/description&gt;
+    &lt;/item&gt;
+    &lt;item&gt;
+      &lt;description&gt;
+        &lt;![CDATA[
+          &lt;p&gt;Test 2&lt;/p&gt;
+        ]]&gt;
+      &lt;/description&gt;
+    &lt;/item&gt;
+  &lt;/channel&gt;
+&lt;/rss&gt;
+&quot;</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;channel item description&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-comment"># Test element regardless of wrapper.</span>
+      <span class="ruby-identifier">assert_select_encoded</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-value">:count=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">2</span>, <span class="ruby-value">:text=</span><span class="ruby-operator">&gt;</span><span class="ruby-regexp">%rTest/</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># Test through encoded wrapper.</span>
+      <span class="ruby-identifier">assert_select_encoded</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;encoded p&quot;</span>, <span class="ruby-value">:count=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">2</span>, <span class="ruby-value">:text=</span><span class="ruby-operator">&gt;</span><span class="ruby-regexp">%rTest/</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># Use :root instead (recommended)</span>
+      <span class="ruby-identifier">assert_select_encoded</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;:root p&quot;</span>, <span class="ruby-value">:count=</span><span class="ruby-operator">&gt;</span><span class="ruby-number">2</span>, <span class="ruby-value">:text=</span><span class="ruby-operator">&gt;</span><span class="ruby-regexp">%rTest/</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-comment"># Test individually.</span>
+      <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;description&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">assert_select_encoded</span> <span class="ruby-identifier">elements</span>[<span class="ruby-number">0</span>] <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-string">&quot;Test 1&quot;</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">assert_select_encoded</span> <span class="ruby-identifier">elements</span>[<span class="ruby-number">1</span>] <span class="ruby-keyword">do</span>
+          <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-string">&quot;Test 2&quot;</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Test that we only un-encode element itself.</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;channel item&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">assert_select_encoded</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-number">0</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_nested_assert_select">
+            
+              <a name="method-i-test_nested_assert_select"></a><b>test_nested_assert_select</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_nested_assert_select_source')" id="l_method-i-test_nested_assert_select_source">show</a>
+                
+              </p>
+              <div id="method-i-test_nested_assert_select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 168</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_nested_assert_select</span>
+  <span class="ruby-identifier">render_html</span> <span class="ruby-string">%Q{&lt;div id=&quot;1&quot;&gt;foo&lt;/div&gt;&lt;div id=&quot;2&quot;&gt;foo&lt;/div&gt;}</span>
+  <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-identifier">elements</span>[<span class="ruby-number">0</span>], <span class="ruby-node">&quot;#1&quot;</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-identifier">elements</span>[<span class="ruby-number">1</span>], <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-comment"># Testing in a group is one thing</span>
+      <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1,#2&quot;</span>
+      <span class="ruby-comment"># Testing individually is another.</span>
+      <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+      <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+      <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#3&quot;</span>, <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_nested_assert_select_rjs_with_single_result">
+            
+              <a name="method-i-test_nested_assert_select_rjs_with_single_result"></a><b>test_nested_assert_select_rjs_with_single_result</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Simple selection from a single result.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_nested_assert_select_rjs_with_single_result_source')" id="l_method-i-test_nested_assert_select_rjs_with_single_result_source">show</a>
+                
+              </p>
+              <div id="method-i-test_nested_assert_select_rjs_with_single_result_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 460</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_nested_assert_select_rjs_with_single_result</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;\n&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-string">&quot;test&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_nested_assert_select_rjs_with_two_results">
+            
+              <a name="method-i-test_nested_assert_select_rjs_with_two_results"></a><b>test_nested_assert_select_rjs_with_two_results</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Deal with two results.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_nested_assert_select_rjs_with_two_results_source')" id="l_method-i-test_nested_assert_select_rjs_with_two_results_source">show</a>
+                
+              </p>
+              <div id="method-i-test_nested_assert_select_rjs_with_two_results_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 473</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_nested_assert_select_rjs_with_two_results</span>
+  <span class="ruby-identifier">render_rjs</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;1\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">&quot;test2&quot;</span>, <span class="ruby-string">&quot;&lt;div id=\&quot;2\&quot;&gt;foo&lt;/div&gt;&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-string">&quot;test&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_select_rjs</span> <span class="ruby-string">&quot;test2&quot;</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_nested_css_select">
+            
+              <a name="method-i-test_nested_css_select"></a><b>test_nested_css_select</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_nested_css_select_source')" id="l_method-i-test_nested_css_select_source">show</a>
+                
+              </p>
+              <div id="method-i-test_nested_css_select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_nested_css_select</span>
+  <span class="ruby-identifier">render_html</span> <span class="ruby-string">%Q{&lt;div id=&quot;1&quot;&gt;foo&lt;/div&gt;&lt;div id=&quot;2&quot;&gt;foo&lt;/div&gt;}</span>
+  <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;div#?&quot;</span>, <span class="ruby-regexp">%r\d+/</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">css_select</span>(<span class="ruby-identifier">elements</span>[<span class="ruby-number">0</span>], <span class="ruby-string">&quot;div&quot;</span>).<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">css_select</span>(<span class="ruby-identifier">elements</span>[<span class="ruby-number">1</span>], <span class="ruby-string">&quot;div&quot;</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">css_select</span>(<span class="ruby-string">&quot;div&quot;</span>).<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">css_select</span>(<span class="ruby-string">&quot;div&quot;</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">element</span><span class="ruby-operator">|</span>
+      <span class="ruby-comment"># Testing as a group is one thing</span>
+      <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">css_select</span>(<span class="ruby-node">&quot;#1,#2&quot;</span>).<span class="ruby-identifier">empty?</span>
+      <span class="ruby-comment"># Testing individually is another</span>
+      <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">css_select</span>(<span class="ruby-node">&quot;#1&quot;</span>).<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">css_select</span>(<span class="ruby-node">&quot;#2&quot;</span>).<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_substitution_values">
+            
+              <a name="method-i-test_substitution_values"></a><b>test_substitution_values</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_substitution_values_source')" id="l_method-i-test_substitution_values_source">show</a>
+                
+              </p>
+              <div id="method-i-test_substitution_values_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_substitution_values</span>
+  <span class="ruby-identifier">render_html</span> <span class="ruby-string">%Q{&lt;div id=&quot;1&quot;&gt;foo&lt;/div&gt;&lt;div id=&quot;2&quot;&gt;foo&lt;/div&gt;}</span>
+  <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;div#?&quot;</span>, <span class="ruby-regexp">%r\d+/</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_select</span> <span class="ruby-string">&quot;div&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;div#?&quot;</span>, <span class="ruby-regexp">%r\d+/</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">elements</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">elements</span>.<span class="ruby-identifier">size</span>
+      <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#1&quot;</span>
+      <span class="ruby-identifier">assert_select</span> <span class="ruby-node">&quot;#2&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-render_html">
+            
+              <a name="method-i-render_html"></a><b>render_html</b>(html)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_html_source')" id="l_method-i-render_html_source">show</a>
+                
+              </p>
+              <div id="method-i-render_html_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 562</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_html</span>(<span class="ruby-identifier">html</span>)
+  <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">response_with</span> = <span class="ruby-identifier">html</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:html</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_rjs">
+            
+              <a name="method-i-render_rjs"></a><b>render_rjs</b>(&amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_rjs_source')" id="l_method-i-render_rjs_source">show</a>
+                
+              </p>
+              <div id="method-i-render_rjs_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 567</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_rjs</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">response_with</span> &amp;<span class="ruby-identifier">block</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:rjs</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_xml">
+            
+              <a name="method-i-render_xml"></a><b>render_xml</b>(xml)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_xml_source')" id="l_method-i-render_xml_source">show</a>
+                
+              </p>
+              <div id="method-i-render_xml_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/assert_select_test.rb, line 572</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_xml</span>(<span class="ruby-identifier">xml</span>)
+  <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">response_with</span> = <span class="ruby-identifier">xml</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:xml</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

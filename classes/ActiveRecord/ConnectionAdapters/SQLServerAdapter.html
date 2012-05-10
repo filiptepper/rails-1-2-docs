@@ -1,0 +1,1564 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::ConnectionAdapters::SQLServerAdapter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecord::ConnectionAdapters::SQLServerAdapter 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter_rb.html">rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>In ADO mode, this adapter will ONLY work on Windows systems,  since it
+relies on Win32OLE, which, to my knowledge, is only  available on Windows.</p>
+
+<p>This mode also relies on the ADO support in the DBI module. If you are
+using the one-click installer of Ruby, then you already have DBI installed,
+but the ADO module is <strong>NOT</strong> installed. You will need to get
+the latest source distribution of Ruby-DBI from <a
+href="http://ruby-dbi.sourceforge.net/">ruby-dbi.sourceforge.net/</a> unzip
+it, and copy the file  <code>src/lib/dbd_ado/ADO.rb</code>  to
+<code>X:/Ruby/lib/ruby/site_ruby/1.8/DBD/ADO/ADO.rb</code>  (you will more
+than likely need to create the ADO directory). Once you’ve installed that
+file, you are ready to go.</p>
+
+<p>In ODBC mode, the adapter requires the ODBC support in the DBI module which
+requires the Ruby ODBC module.  Ruby ODBC 0.996 was used in development and
+testing, and it is available at <a
+href="http://www.ch-werner.de/rubyodbc/">www.ch-werner.de/rubyodbc/</a></p>
+
+<p>Options:</p>
+<ul><li>
+<p><code>:mode</code>      -- ADO or ODBC. Defaults to ADO.</p>
+</li><li>
+<p><code>:username</code>  -- Defaults to sa.</p>
+</li><li>
+<p><code>:password</code>  -- Defaults to empty string.</p>
+</li></ul>
+
+<p>ADO specific options:</p>
+<ul><li>
+<p><code>:host</code>      -- Defaults to localhost.</p>
+</li><li>
+<p><code>:database</code>  -- The name of the database. No default, must be
+provided.</p>
+</li></ul>
+
+<p>ODBC specific options:</p>
+<ul><li>
+<p><code>:dsn</code>       -- Defaults to nothing.</p>
+</li></ul>
+
+<p>ADO code tested on Windows 2000 and higher systems, running ruby 1.8.2
+(2004-07-29) [i386-mswin32], and SQL Server 2000 SP3.</p>
+
+<p>ODBC code tested on a Fedora Core 4 system, running FreeTDS 0.63,  unixODBC
+2.2.11, Ruby ODBC 0.996, Ruby DBI 0.0.23 and Ruby 1.8.2.</p>
+<dl class="rdoc-list label-list"><dt>Linux strongmad 2.6.11-1.1369_FC4 #1 Thu Jun 2 22:55:56 EDT 2005 i686 i686 i386 GNU/Linux
+<dd></dd></dl>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-active-3F">active?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-adapter_name">adapter_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-add_column">add_column</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-add_limit_offset-21">add_limit_offset!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-begin_db_transaction">begin_db_transaction</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-columns">columns</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-commit_db_transaction">commit_db_transaction</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-create_database">create_database</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-current_database">current_database</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-delete">delete</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-disconnect-21">disconnect!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-drop_database">drop_database</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-execute">execute</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-indexes">indexes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-insert">insert</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-native_database_types">native_database_types</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>Q</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-quote">quote</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-quote_column_name">quote_column_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-quote_string">quote_string</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-reconnect-21">reconnect!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-recreate_database">recreate_database</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-remove_check_constraints">remove_check_constraints</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-remove_column">remove_column</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-remove_default_constraint">remove_default_constraint</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-remove_index">remove_index</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rename_column">rename_column</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rename_table">rename_table</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rollback_db_transaction">rollback_db_transaction</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-tables">tables</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update">update</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(connection, logger, connection_options=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">connection</span>, <span class="ruby-identifier">logger</span>, <span class="ruby-identifier">connection_options</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">connection</span>, <span class="ruby-identifier">logger</span>)
+  <span class="ruby-ivar">@connection_options</span> = <span class="ruby-identifier">connection_options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-active-3F">
+            
+              <a name="method-i-active-3F"></a><b>active?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if the connection is active.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-active-3F_source')" id="l_method-i-active-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-active-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 234</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">active?</span>
+  <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-string">&quot;SELECT 1&quot;</span>).<span class="ruby-identifier">finish</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">DBI</span><span class="ruby-operator">::</span><span class="ruby-constant">DatabaseError</span>, <span class="ruby-constant">DBI</span><span class="ruby-operator">::</span><span class="ruby-constant">InterfaceError</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-adapter_name">
+            
+              <a name="method-i-adapter_name"></a><b>adapter_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-adapter_name_source')" id="l_method-i-adapter_name_source">show</a>
+                
+              </p>
+              <div id="method-i-adapter_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 211</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">adapter_name</span>
+  <span class="ruby-string">'SQLServer'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-add_column">
+            
+              <a name="method-i-add_column"></a><b>add_column</b>(table_name, column_name, type, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Adds a new column to the named table. See <a
+href="TableDefinition.html#method-i-column">ActiveRecord::ConnectionAdapters::TableDefinition#column</a>
+for details of the options you can use.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_column_source')" id="l_method-i-add_column_source">show</a>
+                
+              </p>
+              <div id="method-i-add_column_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 448</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_column</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">add_column_sql</span> = <span class="ruby-node">&quot;ALTER TABLE #{table_name} ADD #{quote_column_name(column_name)} #{type_to_sql(type, options[:limit], options[:precision], options[:scale])}&quot;</span>
+  <span class="ruby-identifier">add_column_options!</span>(<span class="ruby-identifier">add_column_sql</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-comment"># TODO: Add support to mimic date columns, using constraints to mark them as such in the database</span>
+  <span class="ruby-comment"># add_column_sql &lt;&lt; &quot; CONSTRAINT ck__#{table_name}__#{column_name}__date_only CHECK ( CONVERT(CHAR(12), #{quote_column_name(column_name)}, 14)='00:00:00:000' )&quot; if type == :date       </span>
+  <span class="ruby-identifier">execute</span>(<span class="ruby-identifier">add_column_sql</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-add_limit_offset-21">
+            
+              <a name="method-i-add_limit_offset-21"></a><b>add_limit_offset!</b>(sql, options)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_limit_offset-21_source')" id="l_method-i-add_limit_offset-21_source">show</a>
+                
+              </p>
+              <div id="method-i-add_limit_offset-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 364</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_limit_offset!</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:limit</span>] <span class="ruby-keyword">and</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:offset</span>]
+    <span class="ruby-identifier">total_rows</span> = <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">select_all</span>(<span class="ruby-node">&quot;SELECT count(*) as TotalRows from (#{sql.gsub(/\bSELECT(\s+DISTINCT)?\b/i, &quot;SELECT#{$1} TOP 1000000000&quot;)}) tally&quot;</span>)[<span class="ruby-number">0</span>][<span class="ruby-value">:TotalRows</span>].<span class="ruby-identifier">to_i</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">options</span>[<span class="ruby-value">:limit</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:offset</span>]) <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">total_rows</span>
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:limit</span>] = (<span class="ruby-identifier">total_rows</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:offset</span>] <span class="ruby-operator">&gt;=</span> <span class="ruby-number">0</span>) <span class="ruby-operator">?</span> (<span class="ruby-identifier">total_rows</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:offset</span>]) <span class="ruby-operator">:</span> <span class="ruby-number">0</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">sql</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">%r^\s*SELECT(\s+DISTINCT)?/</span>, <span class="ruby-node">&quot;SELECT * FROM (SELECT TOP #{options[:limit]} * FROM (SELECT#{$1} TOP #{options[:limit] + options[:offset]} &quot;</span>)
+    <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;) AS tmp1&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:order</span>]
+      <span class="ruby-identifier">options</span>[<span class="ruby-value">:order</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:order</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">','</span>).<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">parts</span> = <span class="ruby-identifier">field</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot; &quot;</span>)
+        <span class="ruby-identifier">tc</span> = <span class="ruby-identifier">parts</span>[<span class="ruby-number">0</span>]
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">sql</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\.\[/</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">tc</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\./</span> <span class="ruby-comment"># if column quoting used in query</span>
+          <span class="ruby-identifier">tc</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r\./</span>, <span class="ruby-string">'\.\['</span>)
+          <span class="ruby-identifier">tc</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'\]'</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">sql</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r#{tc} AS (t\d_r\d\d?)/</span>
+          <span class="ruby-identifier">parts</span>[<span class="ruby-number">0</span>] = <span class="ruby-node">$1</span>
+        <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">parts</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\w+\.(\w+)/</span>
+          <span class="ruby-identifier">parts</span>[<span class="ruby-number">0</span>] = <span class="ruby-node">$1</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">parts</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>)
+      <span class="ruby-keyword">end</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>)
+      <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot; ORDER BY #{change_order_direction(options[:order])}) AS tmp2 ORDER BY #{options[:order]}&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">sql</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot; ) AS tmp2&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">sql</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r^\s*SELECT (@@|COUNT\()/</span>
+    <span class="ruby-identifier">sql</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">%r^\s*SELECT(\s+DISTINCT)?/</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-node">&quot;SELECT#{$1} TOP #{options[:limit]}&quot;</span>
+    <span class="ruby-keyword">end</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:limit</span>].<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-begin_db_transaction">
+            
+              <a name="method-i-begin_db_transaction"></a><b>begin_db_transaction</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-begin_db_transaction_source')" id="l_method-i-begin_db_transaction_source">show</a>
+                
+              </p>
+              <div id="method-i-begin_db_transaction_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">begin_db_transaction</span>
+  <span class="ruby-ivar">@connection</span>[<span class="ruby-string">&quot;AutoCommit&quot;</span>] = <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-ivar">@connection</span>[<span class="ruby-string">&quot;AutoCommit&quot;</span>] = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-columns">
+            
+              <a name="method-i-columns"></a><b>columns</b>(table_name, name = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-columns_source')" id="l_method-i-columns_source">show</a>
+                
+              </p>
+              <div id="method-i-columns_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">columns</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">return</span> [] <span class="ruby-keyword">if</span> <span class="ruby-identifier">table_name</span>.<span class="ruby-identifier">blank?</span>
+  <span class="ruby-identifier">table_name</span> = <span class="ruby-identifier">table_name</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">table_name</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>)
+  <span class="ruby-identifier">table_name</span> = <span class="ruby-identifier">table_name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'.'</span>)[<span class="ruby-number">-1</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">table_name</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">table_name</span> = <span class="ruby-identifier">table_name</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r[\[\]]/</span>, <span class="ruby-string">''</span>)
+  <span class="ruby-identifier">sql</span> = <span class="ruby-node">%Q{
+    SELECT 
+      cols.COLUMN_NAME as ColName,  
+      cols.COLUMN_DEFAULT as DefaultValue,
+      cols.NUMERIC_SCALE as numeric_scale,
+      cols.NUMERIC_PRECISION as numeric_precision, 
+      cols.DATA_TYPE as ColType, 
+      cols.IS_NULLABLE As IsNullable,  
+      COL_LENGTH(cols.TABLE_NAME, cols.COLUMN_NAME) as Length,  
+      COLUMNPROPERTY(OBJECT_ID(cols.TABLE_NAME), cols.COLUMN_NAME, 'IsIdentity') as IsIdentity,  
+      cols.NUMERIC_SCALE as Scale 
+    FROM INFORMATION_SCHEMA.COLUMNS cols 
+    WHERE cols.TABLE_NAME = '#{table_name}'   
+  }</span>
+  <span class="ruby-comment"># Comment out if you want to have the Columns select statment logged.</span>
+  <span class="ruby-comment"># Personally, I think it adds unnecessary bloat to the log. </span>
+  <span class="ruby-comment"># If you do comment it out, make sure to un-comment the &quot;result&quot; line that follows</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">log</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>) { <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">select_all</span>(<span class="ruby-identifier">sql</span>) }
+  <span class="ruby-comment">#result = @connection.select_all(sql)</span>
+  <span class="ruby-identifier">columns</span> = []
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">default</span> = <span class="ruby-identifier">field</span>[<span class="ruby-value">:DefaultValue</span>].<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">gsub!</span>(<span class="ruby-regexp">%r[()\']/</span>,<span class="ruby-string">&quot;&quot;</span>) <span class="ruby-operator">=~</span> <span class="ruby-regexp">%rnull/</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">field</span>[<span class="ruby-value">:DefaultValue</span>]
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">field</span>[<span class="ruby-value">:ColType</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">%rnumeric|decimal/</span>
+      <span class="ruby-identifier">type</span> = <span class="ruby-node">&quot;#{field[:ColType]}(#{field[:numeric_precision]},#{field[:numeric_scale]})&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">type</span> = <span class="ruby-node">&quot;#{field[:ColType]}(#{field[:Length]})&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">is_identity</span> = <span class="ruby-identifier">field</span>[<span class="ruby-value">:IsIdentity</span>] <span class="ruby-operator">==</span> <span class="ruby-number">1</span>
+    <span class="ruby-identifier">is_nullable</span> = <span class="ruby-identifier">field</span>[<span class="ruby-value">:IsNullable</span>] <span class="ruby-operator">==</span> <span class="ruby-string">'YES'</span>
+    <span class="ruby-identifier">columns</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">SQLServerColumn</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">field</span>[<span class="ruby-value">:ColName</span>], <span class="ruby-identifier">default</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">is_identity</span>, <span class="ruby-identifier">is_nullable</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">columns</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-commit_db_transaction">
+            
+              <a name="method-i-commit_db_transaction"></a><b>commit_db_transaction</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-commit_db_transaction_source')" id="l_method-i-commit_db_transaction_source">show</a>
+                
+              </p>
+              <div id="method-i-commit_db_transaction_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 332</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">commit_db_transaction</span>
+  <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">commit</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@connection</span>[<span class="ruby-string">&quot;AutoCommit&quot;</span>] = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-create_database">
+            
+              <a name="method-i-create_database"></a><b>create_database</b>(name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-create_database_source')" id="l_method-i-create_database_source">show</a>
+                
+              </p>
+              <div id="method-i-create_database_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 407</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">create_database</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;CREATE DATABASE #{name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-current_database">
+            
+              <a name="method-i-current_database"></a><b>current_database</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-current_database_source')" id="l_method-i-current_database_source">show</a>
+                
+              </p>
+              <div id="method-i-current_database_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 411</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">current_database</span>
+  <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">select_one</span>(<span class="ruby-string">&quot;select DB_NAME()&quot;</span>)[<span class="ruby-number">0</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delete">
+            
+              <a name="method-i-delete"></a><b>delete</b>(sql, name = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-disconnect-21">
+            
+              <a name="method-i-disconnect-21"></a><b>disconnect!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Disconnects from the database</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-disconnect-21_source')" id="l_method-i-disconnect-21_source">show</a>
+                
+              </p>
+              <div id="method-i-disconnect-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 252</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">disconnect!</span>
+  <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">disconnect</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-drop_database">
+            
+              <a name="method-i-drop_database"></a><b>drop_database</b>(name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-drop_database_source')" id="l_method-i-drop_database_source">show</a>
+                
+              </p>
+              <div id="method-i-drop_database_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 403</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">drop_database</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;DROP DATABASE #{name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-execute">
+            
+              <a name="method-i-execute"></a><b>execute</b>(sql, name = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-execute_source')" id="l_method-i-execute_source">show</a>
+                
+              </p>
+              <div id="method-i-execute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 308</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">execute</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">sql</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r^\s*INSERT/</span> <span class="ruby-operator">&amp;&amp;</span> (<span class="ruby-identifier">table_name</span> = <span class="ruby-identifier">query_requires_identity_insert?</span>(<span class="ruby-identifier">sql</span>))
+    <span class="ruby-identifier">log</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">with_identity_insert_enabled</span>(<span class="ruby-identifier">table_name</span>) <span class="ruby-keyword">do</span> 
+        <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">sql</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">handle</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">handle</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">log</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-identifier">sql</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">handle</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">handle</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-indexes">
+            
+              <a name="method-i-indexes"></a><b>indexes</b>(table_name, name = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-indexes_source')" id="l_method-i-indexes_source">show</a>
+                
+              </p>
+              <div id="method-i-indexes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 425</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">indexes</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-string">&quot;@connection&quot;</span>)[<span class="ruby-string">&quot;AutoCommit&quot;</span>] = <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">indexes</span> = []        
+  <span class="ruby-identifier">execute</span>(<span class="ruby-node">&quot;EXEC sp_helpindex '#{table_name}'&quot;</span>, <span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sth</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">sth</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">index</span><span class="ruby-operator">|</span> 
+      <span class="ruby-identifier">unique</span> = <span class="ruby-identifier">index</span>[<span class="ruby-number">1</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">%runique/</span>
+      <span class="ruby-identifier">primary</span> = <span class="ruby-identifier">index</span>[<span class="ruby-number">1</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">%rprimary key/</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">primary</span>
+        <span class="ruby-identifier">indexes</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">IndexDefinition</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">index</span>[<span class="ruby-number">0</span>], <span class="ruby-identifier">unique</span>, <span class="ruby-identifier">index</span>[<span class="ruby-number">2</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;, &quot;</span>))
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">indexes</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-string">&quot;@connection&quot;</span>)[<span class="ruby-string">&quot;AutoCommit&quot;</span>] = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-insert">
+            
+              <a name="method-i-insert"></a><b>insert</b>(sql, name = nil, pk = nil, id_value = nil, sequence_name = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-insert_source')" id="l_method-i-insert_source">show</a>
+                
+              </p>
+              <div id="method-i-insert_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 295</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">insert</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">pk</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">id_value</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">sequence_name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">execute</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">id_value</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">select_one</span>(<span class="ruby-string">&quot;SELECT @@IDENTITY AS Ident&quot;</span>)[<span class="ruby-string">&quot;Ident&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-native_database_types">
+            
+              <a name="method-i-native_database_types"></a><b>native_database_types</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-native_database_types_source')" id="l_method-i-native_database_types_source">show</a>
+                
+              </p>
+              <div id="method-i-native_database_types_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">native_database_types</span>
+  {
+    <span class="ruby-value">:primary_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;int NOT NULL IDENTITY(1, 1) PRIMARY KEY&quot;</span>,
+    <span class="ruby-value">:string</span>      =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;varchar&quot;</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">255</span>  },
+    <span class="ruby-value">:text</span>        =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text&quot;</span> },
+    <span class="ruby-value">:integer</span>     =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;int&quot;</span> },
+    <span class="ruby-value">:float</span>       =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;float&quot;</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">8</span> },
+    <span class="ruby-value">:decimal</span>     =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;decimal&quot;</span> },
+    <span class="ruby-value">:datetime</span>    =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;datetime&quot;</span> },
+    <span class="ruby-value">:timestamp</span>   =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;datetime&quot;</span> },
+    <span class="ruby-value">:time</span>        =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;datetime&quot;</span> },
+    <span class="ruby-value">:date</span>        =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;datetime&quot;</span> },
+    <span class="ruby-value">:binary</span>      =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;image&quot;</span>},
+    <span class="ruby-value">:boolean</span>     =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;bit&quot;</span>}
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quote">
+            
+              <a name="method-i-quote"></a><b>quote</b>(value, column = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-quote_source')" id="l_method-i-quote_source">show</a>
+                
+              </p>
+              <div id="method-i-quote_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 344</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">quote</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">column</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">quoted_id</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:quoted_id</span>)
+
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">TrueClass</span>             <span class="ruby-keyword">then</span> <span class="ruby-string">'1'</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">FalseClass</span>            <span class="ruby-keyword">then</span> <span class="ruby-string">'0'</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Time</span>, <span class="ruby-constant">DateTime</span>        <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;'#{value.strftime(&quot;%Y%m%d %H:%M:%S&quot;)}'&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-constant">Date</span>                  <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;'#{value.strftime(&quot;%Y%m%d&quot;)}'&quot;</span>
+    <span class="ruby-keyword">else</span>                       <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quote_column_name">
+            
+              <a name="method-i-quote_column_name"></a><b>quote_column_name</b>(name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-quote_column_name_source')" id="l_method-i-quote_column_name_source">show</a>
+                
+              </p>
+              <div id="method-i-quote_column_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 360</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">quote_column_name</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-node">&quot;[#{name}]&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quote_string">
+            
+              <a name="method-i-quote_string"></a><b>quote_string</b>(string)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-quote_string_source')" id="l_method-i-quote_string_source">show</a>
+                
+              </p>
+              <div id="method-i-quote_string_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 356</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">quote_string</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">string</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r\'/</span>, <span class="ruby-string">&quot;''&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reconnect-21">
+            
+              <a name="method-i-reconnect-21"></a><b>reconnect!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Reconnects to the database, returns false if no connection could be made.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reconnect-21_source')" id="l_method-i-reconnect-21_source">show</a>
+                
+              </p>
+              <div id="method-i-reconnect-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reconnect!</span>
+  <span class="ruby-identifier">disconnect!</span>
+  <span class="ruby-ivar">@connection</span> = <span class="ruby-constant">DBI</span>.<span class="ruby-identifier">connect</span>(*<span class="ruby-ivar">@connection_options</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">DBI</span><span class="ruby-operator">::</span><span class="ruby-constant">DatabaseError</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;#{adapter_name} reconnection failed: #{e.message}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@logger</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-recreate_database">
+            
+              <a name="method-i-recreate_database"></a><b>recreate_database</b>(name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-recreate_database_source')" id="l_method-i-recreate_database_source">show</a>
+                
+              </p>
+              <div id="method-i-recreate_database_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 398</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">recreate_database</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">drop_database</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">create_database</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove_check_constraints">
+            
+              <a name="method-i-remove_check_constraints"></a><b>remove_check_constraints</b>(table_name, column_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-remove_check_constraints_source')" id="l_method-i-remove_check_constraints_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_check_constraints_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 485</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">remove_check_constraints</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>)
+  <span class="ruby-comment"># TODO remove all constraints in single method</span>
+  <span class="ruby-identifier">constraints</span> = <span class="ruby-identifier">select</span> <span class="ruby-node">&quot;SELECT CONSTRAINT_NAME FROM INFORMATION_SCHEMA.CONSTRAINT_COLUMN_USAGE where TABLE_NAME = '#{table_name}' and COLUMN_NAME = '#{column_name}'&quot;</span>
+  <span class="ruby-identifier">constraints</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">constraint</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;ALTER TABLE #{table_name} DROP CONSTRAINT #{constraint[&quot;CONSTRAINT_NAME&quot;]}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove_column">
+            
+              <a name="method-i-remove_column"></a><b>remove_column</b>(table_name, column_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-remove_column_source')" id="l_method-i-remove_column_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_column_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 471</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">remove_column</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>)
+  <span class="ruby-identifier">remove_check_constraints</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>)
+  <span class="ruby-identifier">remove_default_constraint</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>)
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;ALTER TABLE [#{table_name}] DROP COLUMN [#{column_name}]&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove_default_constraint">
+            
+              <a name="method-i-remove_default_constraint"></a><b>remove_default_constraint</b>(table_name, column_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-remove_default_constraint_source')" id="l_method-i-remove_default_constraint_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_default_constraint_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 477</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">remove_default_constraint</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">column_name</span>)
+  <span class="ruby-identifier">constraints</span> = <span class="ruby-identifier">select</span> <span class="ruby-node">&quot;select def.name from sysobjects def, syscolumns col, sysobjects tab where col.cdefault = def.id and col.name = '#{column_name}' and tab.name = '#{table_name}' and col.id = tab.id&quot;</span>
+  
+  <span class="ruby-identifier">constraints</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">constraint</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;ALTER TABLE #{table_name} DROP CONSTRAINT #{constraint[&quot;name&quot;]}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove_index">
+            
+              <a name="method-i-remove_index"></a><b>remove_index</b>(table_name, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-remove_index_source')" id="l_method-i-remove_index_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_index_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 493</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">remove_index</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;DROP INDEX #{table_name}.#{quote_column_name(index_name(table_name, options))}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rename_column">
+            
+              <a name="method-i-rename_column"></a><b>rename_column</b>(table, column, new_column_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rename_column_source')" id="l_method-i-rename_column_source">show</a>
+                
+              </p>
+              <div id="method-i-rename_column_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 456</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rename_column</span>(<span class="ruby-identifier">table</span>, <span class="ruby-identifier">column</span>, <span class="ruby-identifier">new_column_name</span>)
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;EXEC sp_rename '#{table}.#{column}', '#{new_column_name}'&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rename_table">
+            
+              <a name="method-i-rename_table"></a><b>rename_table</b>(name, new_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rename_table_source')" id="l_method-i-rename_table_source">show</a>
+                
+              </p>
+              <div id="method-i-rename_table_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 442</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rename_table</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">new_name</span>)
+  <span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;EXEC sp_rename '#{name}', '#{new_name}'&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rollback_db_transaction">
+            
+              <a name="method-i-rollback_db_transaction"></a><b>rollback_db_transaction</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rollback_db_transaction_source')" id="l_method-i-rollback_db_transaction_source">show</a>
+                
+              </p>
+              <div id="method-i-rollback_db_transaction_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 338</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rollback_db_transaction</span>
+  <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">rollback</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-ivar">@connection</span>[<span class="ruby-string">&quot;AutoCommit&quot;</span>] = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tables">
+            
+              <a name="method-i-tables"></a><b>tables</b>(name = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tables_source')" id="l_method-i-tables_source">show</a>
+                
+              </p>
+              <div id="method-i-tables_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 415</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tables</span>(<span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">execute</span>(<span class="ruby-string">&quot;SELECT TABLE_NAME FROM INFORMATION_SCHEMA.TABLES WHERE TABLE_TYPE = 'BASE TABLE'&quot;</span>, <span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sth</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">sth</span>.<span class="ruby-identifier">inject</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">tables</span>, <span class="ruby-identifier">field</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">table_name</span> = <span class="ruby-identifier">field</span>[<span class="ruby-number">0</span>]
+      <span class="ruby-identifier">tables</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">table_name</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">table_name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'dtproperties'</span>
+      <span class="ruby-identifier">tables</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update">
+            
+              <a name="method-i-update"></a><b>update</b>(sql, name = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="SQLServerAdapter.html#method-i-delete">delete</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-update_source')" id="l_method-i-update_source">show</a>
+                
+              </p>
+              <div id="method-i-update_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sqlserver_adapter.rb, line 300</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">update</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">execute</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">handle</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">handle</span>.<span class="ruby-identifier">rows</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">select_one</span>(<span class="ruby-string">&quot;SELECT @@ROWCOUNT AS AffectedRows&quot;</span>)[<span class="ruby-string">&quot;AffectedRows&quot;</span>]        
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

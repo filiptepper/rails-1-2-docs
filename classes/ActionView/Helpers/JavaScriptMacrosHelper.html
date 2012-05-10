@@ -1,0 +1,536 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionView::Helpers::JavaScriptMacrosHelper</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActionView::Helpers::JavaScriptMacrosHelper 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/actionpack/lib/action_view/helpers/java_script_macros_helper_rb.html">rails/actionpack/lib/action_view/helpers/java_script_macros_helper.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Provides a set of helpers for creating JavaScript macros that rely on and
+often bundle methods from <a
+href="JavaScriptHelper.html">JavaScriptHelper</a> into larger units. These
+macros also rely on counterparts in the controller that provide them with
+their backing. The in-place editing relies on
+ActionController::Base.in_place_edit_for and the autocompletion relies on 
+ActionController::Base.auto_complete_for.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-auto_complete_field">auto_complete_field</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-auto_complete_result">auto_complete_result</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-in_place_editor">in_place_editor</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-in_place_editor_field">in_place_editor_field</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-text_field_with_auto_complete">text_field_with_auto_complete</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-auto_complete_field">
+            
+              <a name="method-i-auto_complete_field"></a><b>auto_complete_field</b>(field_id, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>DEPRECATION WARNING: This method will become a separate plugin when <a
+href="../../Rails.html">Rails</a> 2.0 ships.</p>
+
+<p>Adds AJAX autocomplete functionality to the text input field with the  DOM
+ID specified by <code>field_id</code>.</p>
+
+<p>This function expects that the called action returns an <a
+href="../../HTML.html">HTML</a> &lt;ul&gt; list, or nothing if no entries
+should be displayed for autocompletion.</p>
+
+<p>You’ll probably want to turn the browser’s built-in autocompletion off, so
+be sure to include an <code>autocomplete=&quot;off&quot;</code> attribute
+with your text input field.</p>
+
+<p>The autocompleter object is assigned to a Javascript variable named
+<code>field_id</code>_auto_completer. This object is useful if you for
+example want to trigger the auto-complete suggestions through other means
+than user input (for that specific case, call the <code>activate</code>
+method on that object).</p>
+
+<p>Required <code>options</code> are:</p>
+<dl class="rdoc-list note-list"><dt><code>:url</code>
+<dd>
+<p>URL to call for autocompletion results in url_for format.</p>
+</dd></dl>
+
+<p>Addtional <code>options</code> are:</p>
+<dl class="rdoc-list note-list"><dt><code>:update</code>
+<dd>
+<p>Specifies the DOM ID of the element whose  inner<a
+href="../../HTML.html">HTML</a> should be updated with the autocomplete
+entries returned by the AJAX request.  Defaults to <code>field_id</code> +
+‘_auto_complete’</p>
+</dd><dt><code>:with</code>
+<dd>
+<p><a href="../../A.html">A</a> JavaScript expression specifying the
+parameters for the XMLHttpRequest. This defaults to 'fieldname=value'.</p>
+</dd><dt><code>:frequency</code>
+<dd>
+<p>Determines the time to wait after the last keystroke for the AJAX request
+to be initiated.</p>
+</dd><dt><code>:indicator</code>
+<dd>
+<p>Specifies the DOM ID of an element which will be displayed while
+autocomplete is running.</p>
+</dd><dt><code>:tokens</code>
+<dd>
+<p><a href="../../A.html">A</a> string or an array of strings containing
+separator tokens for tokenized incremental  autocompletion. Example:
+<code>:tokens =&gt; ','</code> would allow multiple autocompletion entries,
+separated by commas.</p>
+</dd><dt><code>:min_chars</code>
+<dd>
+<p>The minimum number of characters that should be in the input field before
+an Ajax call is made to the server.</p>
+</dd><dt><code>:on_hide</code>
+<dd>
+<p><a href="../../A.html">A</a> Javascript expression that is called when the
+autocompletion div is hidden. The expression should take two variables:
+element and update. Element is a DOM element for the field, update is a DOM
+element for the div from which the inner<a href="../../HTML.html">HTML</a>
+is replaced.</p>
+</dd><dt><code>:on_show</code>
+<dd>
+<p>Like on_hide, only now the expression is called then the div is shown.</p>
+</dd><dt><code>:after_update_element</code>
+<dd>
+<p><a href="../../A.html">A</a> Javascript expression that is called when the
+user has selected one of the proposed values.  The expression should take
+two variables: element and value. Element is a DOM element for the field,
+value is the value selected by the user.</p>
+</dd><dt><code>:select</code>
+<dd>
+<p>Pick the class of the element from which the value for  insertion should be
+extracted. If this is not specified, the entire element is used.</p>
+</dd></dl>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-auto_complete_field_source')" id="l_method-i-auto_complete_field_source">show</a>
+                
+              </p>
+              <div id="method-i-auto_complete_field_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/java_script_macros_helper.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">auto_complete_field</span>(<span class="ruby-identifier">field_id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">function</span> =  <span class="ruby-node">&quot;var #{field_id}_auto_completer = new Ajax.Autocompleter(&quot;</span>
+  <span class="ruby-identifier">function</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;'#{field_id}', &quot;</span>
+  <span class="ruby-identifier">function</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;'&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">options</span>[<span class="ruby-value">:update</span>] <span class="ruby-operator">||</span> <span class="ruby-node">&quot;#{field_id}_auto_complete&quot;</span>) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;', &quot;</span>
+  <span class="ruby-identifier">function</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;'#{url_for(options[:url])}'&quot;</span>
+  
+  <span class="ruby-identifier">js_options</span> = {}
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-value">:tokens</span>] = <span class="ruby-identifier">array_or_string_for_javascript</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:tokens</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:tokens</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-value">:callback</span>]   = <span class="ruby-node">&quot;function(element, value) { return #{options[:with]} }&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:with</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-value">:indicator</span>]  = <span class="ruby-node">&quot;'#{options[:indicator]}'&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:indicator</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-value">:select</span>]     = <span class="ruby-node">&quot;'#{options[:select]}'&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:select</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-value">:paramName</span>]  = <span class="ruby-node">&quot;'#{options[:param_name]}'&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:param_name</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-value">:frequency</span>]  = <span class="ruby-node">&quot;#{options[:frequency]}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:frequency</span>]
+
+  { <span class="ruby-value">:after_update_element</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:afterUpdateElement</span>, 
+    <span class="ruby-value">:on_show</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:onShow</span>, <span class="ruby-value">:on_hide</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:onHide</span>, <span class="ruby-value">:min_chars</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:minChars</span> }.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">js_options</span>[<span class="ruby-identifier">v</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-identifier">k</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-identifier">k</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">function</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-string">', '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">options_for_javascript</span>(<span class="ruby-identifier">js_options</span>) <span class="ruby-operator">+</span> <span class="ruby-string">')'</span>)
+
+  <span class="ruby-identifier">javascript_tag</span>(<span class="ruby-identifier">function</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-auto_complete_result">
+            
+              <a name="method-i-auto_complete_result"></a><b>auto_complete_result</b>(entries, field, phrase = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>DEPRECATION WARNING: This method will become a separate plugin when <a
+href="../../Rails.html">Rails</a> 2.0 ships.</p>
+
+<p>Use this method in your view to generate a return for the AJAX autocomplete
+requests.</p>
+
+<p>Example action:</p>
+
+<pre>def auto_complete_for_item_title
+  @items = Item.find(:all, 
+    :conditions =&gt; [ 'LOWER(description) LIKE ?', 
+    '%' + request.raw_post.downcase + '%' ])
+  render :inline =&gt; &quot;&lt;%= auto_complete_result(@items, 'description') %&gt;&quot;
+end</pre>
+
+<p>The <a
+href="JavaScriptMacrosHelper.html#method-i-auto_complete_result">#auto_complete_result</a>
+can of course also be called from a view belonging to the  auto_complete
+action if you need to decorate it further.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-auto_complete_result_source')" id="l_method-i-auto_complete_result_source">show</a>
+                
+              </p>
+              <div id="method-i-auto_complete_result_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/java_script_macros_helper.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">auto_complete_result</span>(<span class="ruby-identifier">entries</span>, <span class="ruby-identifier">field</span>, <span class="ruby-identifier">phrase</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">entries</span>
+  <span class="ruby-identifier">items</span> = <span class="ruby-identifier">entries</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">entry</span><span class="ruby-operator">|</span> <span class="ruby-identifier">content_tag</span>(<span class="ruby-string">&quot;li&quot;</span>, <span class="ruby-identifier">phrase</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">highlight</span>(<span class="ruby-identifier">entry</span>[<span class="ruby-identifier">field</span>], <span class="ruby-identifier">phrase</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">h</span>(<span class="ruby-identifier">entry</span>[<span class="ruby-identifier">field</span>])) }
+  <span class="ruby-identifier">content_tag</span>(<span class="ruby-string">&quot;ul&quot;</span>, <span class="ruby-identifier">items</span>.<span class="ruby-identifier">uniq</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-in_place_editor">
+            
+              <a name="method-i-in_place_editor"></a><b>in_place_editor</b>(field_id, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>DEPRECATION WARNING: This method will become a separate plugin when <a
+href="../../Rails.html">Rails</a> 2.0 ships.</p>
+
+<p>Makes an <a href="../../HTML.html">HTML</a> element specified by the DOM ID
+<code>field_id</code> become an in-place editor of a property.</p>
+
+<p><a href="../../A.html">A</a> form is automatically created and displayed
+when the user clicks the element, something like this:</p>
+
+<pre>&lt;form id=&quot;myElement-in-place-edit-form&quot; target=&quot;specified url&quot;&gt;
+  &lt;input name=&quot;value&quot; text=&quot;The content of myElement&quot;/&gt;
+  &lt;input type=&quot;submit&quot; value=&quot;ok&quot;/&gt;
+  &lt;a onclick=&quot;javascript to cancel the editing&quot;&gt;cancel&lt;/a&gt;
+&lt;/form&gt;</pre>
+
+<p>The form is serialized and sent to the server using an AJAX call, the
+action on the server should process the value and return the updated value
+in the body of the reponse. The element will automatically be updated with
+the changed value (as returned from the server).</p>
+
+<p>Required <code>options</code> are:</p>
+<dl class="rdoc-list note-list"><dt><code>:url</code>
+<dd>
+<p>Specifies the url where the updated value should be sent after the user
+presses “ok”.</p>
+</dd></dl>
+
+<p>Addtional <code>options</code> are:</p>
+<dl class="rdoc-list note-list"><dt><code>:rows</code>
+<dd>
+<p>Number of rows (more than 1 will use a TEXTAREA)</p>
+</dd><dt><code>:cols</code>
+<dd>
+<p>Number of characters the text input should span (works for both INPUT and
+TEXTAREA)</p>
+</dd><dt><code>:size</code>
+<dd>
+<p>Synonym for :cols when using a single line text input.</p>
+</dd><dt><code>:cancel_text</code>
+<dd>
+<p>The text on the cancel link. (default: “cancel”)</p>
+</dd><dt><code>:save_text</code>
+<dd>
+<p>The text on the save link. (default: “ok”)</p>
+</dd><dt><code>:loading_text</code>
+<dd>
+<p>The text to display while the data is being loaded from the server
+(default: “Loading…”)</p>
+</dd><dt><code>:saving_text</code>
+<dd>
+<p>The text to display when submitting to the server (default: “Saving…”)</p>
+</dd><dt><code>:external_control</code>
+<dd>
+<p>The id of an external control used to enter edit mode.</p>
+</dd><dt><code>:load_text_url</code>
+<dd>
+<p>URL where initial value of editor (content) is retrieved.</p>
+</dd><dt><code>:options</code>
+<dd>
+<p>Pass through options to the AJAX call (see prototype’s Ajax.Updater)</p>
+</dd><dt><code>:with</code>
+<dd>
+<p>JavaScript snippet that should return what is to be sent in the AJAX call,
+<code>form</code> is an implicit parameter</p>
+</dd><dt><code>:script</code>
+<dd>
+<p>Instructs the in-place editor to evaluate the remote JavaScript response
+(default: false)</p>
+</dd></dl>
+
+<p><code>:click_to_edit_text</code>::The text shown during mouseover the
+editable text (default: "Click to edit")</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-in_place_editor_source')" id="l_method-i-in_place_editor_source">show</a>
+                
+              </p>
+              <div id="method-i-in_place_editor_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/java_script_macros_helper.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">in_place_editor</span>(<span class="ruby-identifier">field_id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">function</span> =  <span class="ruby-string">&quot;new Ajax.InPlaceEditor(&quot;</span>
+  <span class="ruby-identifier">function</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;'#{field_id}', &quot;</span>
+  <span class="ruby-identifier">function</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;'#{url_for(options[:url])}'&quot;</span>
+
+  <span class="ruby-identifier">js_options</span> = {}
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'cancelText'</span>] = <span class="ruby-node">%Q('#{options[:cancel_text]}')</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:cancel_text</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'okText'</span>] = <span class="ruby-node">%Q('#{options[:save_text]}')</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:save_text</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'loadingText'</span>] = <span class="ruby-node">%Q('#{options[:loading_text]}')</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:loading_text</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'savingText'</span>] = <span class="ruby-node">%Q('#{options[:saving_text]}')</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:saving_text</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'rows'</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:rows</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:rows</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'cols'</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:cols</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:cols</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'size'</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:size</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:size</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'externalControl'</span>] = <span class="ruby-node">&quot;'#{options[:external_control]}'&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:external_control</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'loadTextURL'</span>] = <span class="ruby-node">&quot;'#{url_for(options[:load_text_url])}'&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:load_text_url</span>]        
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'ajaxOptions'</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'evalScripts'</span>] = <span class="ruby-identifier">options</span>[<span class="ruby-value">:script</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:script</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'callback'</span>]   = <span class="ruby-node">&quot;function(form) { return #{options[:with]} }&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:with</span>]
+  <span class="ruby-identifier">js_options</span>[<span class="ruby-string">'clickToEditText'</span>] = <span class="ruby-node">%Q('#{options[:click_to_edit_text]}')</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:click_to_edit_text</span>]
+  <span class="ruby-identifier">function</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-string">', '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">options_for_javascript</span>(<span class="ruby-identifier">js_options</span>)) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">js_options</span>.<span class="ruby-identifier">empty?</span>
+  
+  <span class="ruby-identifier">function</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">')'</span>
+
+  <span class="ruby-identifier">javascript_tag</span>(<span class="ruby-identifier">function</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-in_place_editor_field">
+            
+              <a name="method-i-in_place_editor_field"></a><b>in_place_editor_field</b>(object, method, tag_options = {}, in_place_editor_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>DEPRECATION WARNING: This method will become a separate plugin when <a
+href="../../Rails.html">Rails</a> 2.0 ships.</p>
+
+<p>Renders the value of the specified object and method with in-place editing
+capabilities.</p>
+
+<p>See the RDoc on ActionController::InPlaceEditing to learn more about this.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-in_place_editor_field_source')" id="l_method-i-in_place_editor_field_source">show</a>
+                
+              </p>
+              <div id="method-i-in_place_editor_field_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/java_script_macros_helper.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">in_place_editor_field</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">tag_options</span> = {}, <span class="ruby-identifier">in_place_editor_options</span> = {})
+  <span class="ruby-identifier">tag</span> = <span class="ruby-operator">::</span><span class="ruby-constant">ActionView</span><span class="ruby-operator">::</span><span class="ruby-constant">Helpers</span><span class="ruby-operator">::</span><span class="ruby-constant">InstanceTag</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-keyword">self</span>)
+  <span class="ruby-identifier">tag_options</span> = {<span class="ruby-value">:tag</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;span&quot;</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{object}_#{method}_#{tag.object.id}_in_place_editor&quot;</span>, <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;in_place_editor_field&quot;</span>}.<span class="ruby-identifier">merge!</span>(<span class="ruby-identifier">tag_options</span>)
+  <span class="ruby-identifier">in_place_editor_options</span>[<span class="ruby-value">:url</span>] = <span class="ruby-identifier">in_place_editor_options</span>[<span class="ruby-value">:url</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">url_for</span>({ <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;set_#{object}_#{method}&quot;</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">tag</span>.<span class="ruby-identifier">object</span>.<span class="ruby-identifier">id</span> })
+  <span class="ruby-identifier">tag</span>.<span class="ruby-identifier">to_content_tag</span>(<span class="ruby-identifier">tag_options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:tag</span>), <span class="ruby-identifier">tag_options</span>) <span class="ruby-operator">+</span>
+  <span class="ruby-identifier">in_place_editor</span>(<span class="ruby-identifier">tag_options</span>[<span class="ruby-value">:id</span>], <span class="ruby-identifier">in_place_editor_options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-text_field_with_auto_complete">
+            
+              <a name="method-i-text_field_with_auto_complete"></a><b>text_field_with_auto_complete</b>(object, method, tag_options = {}, completion_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>DEPRECATION WARNING: This method will become a separate plugin when <a
+href="../../Rails.html">Rails</a> 2.0 ships.</p>
+
+<p>Wrapper for text_field with added AJAX autocompletion functionality.</p>
+
+<p>In your controller, you’ll need to define an action called
+auto_complete_for to respond the AJAX calls,</p>
+
+<p>See the RDoc on <a
+href="../../ActionController/Macros/AutoComplete.html">ActionController::Macros::AutoComplete</a>
+to learn more about this.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-text_field_with_auto_complete_source')" id="l_method-i-text_field_with_auto_complete_source">show</a>
+                
+              </p>
+              <div id="method-i-text_field_with_auto_complete_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/java_script_macros_helper.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">text_field_with_auto_complete</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">tag_options</span> = {}, <span class="ruby-identifier">completion_options</span> = {})
+  (<span class="ruby-identifier">completion_options</span>[<span class="ruby-value">:skip_style</span>] <span class="ruby-operator">?</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">auto_complete_stylesheet</span>) <span class="ruby-operator">+</span>
+  <span class="ruby-identifier">text_field</span>(<span class="ruby-identifier">object</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">tag_options</span>) <span class="ruby-operator">+</span>
+  <span class="ruby-identifier">content_tag</span>(<span class="ruby-string">&quot;div&quot;</span>, <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{object}_#{method}_auto_complete&quot;</span>, <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;auto_complete&quot;</span>) <span class="ruby-operator">+</span>
+  <span class="ruby-identifier">auto_complete_field</span>(<span class="ruby-node">&quot;#{object}_#{method}&quot;</span>, { <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;auto_complete_for_#{object}_#{method}&quot;</span> } }.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">completion_options</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

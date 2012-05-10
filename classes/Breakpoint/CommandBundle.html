@@ -1,0 +1,299 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Breakpoint::CommandBundle</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Breakpoint::CommandBundle 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/activesupport/lib/active_support/breakpoint_rb.html">rails/activesupport/lib/active_support/breakpoint.rb</a></li>
+            
+            <li><a href="../../files/rails/railties/lib/breakpoint_rb.html">rails/railties/lib/breakpoint.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="CommandBundle/Client.html">Breakpoint::CommandBundle::Client</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-client">client</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-show_call_stack">show_call_stack</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-show_source_list">show_source_list</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-source_lines">source_lines</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-client">
+            
+              <a name="method-i-client"></a><b>client</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Lets an object that will forward method calls to the breakpoint client.
+This is useful for outputting longer things at the client and so on. You
+can for example do these things:</p>
+
+<pre class="ruby"><span class="ruby-identifier">client</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Hello&quot;</span> <span class="ruby-comment"># outputs &quot;Hello&quot; at client console</span>
+<span class="ruby-comment"># outputs &quot;Hello&quot; into the file temp.txt at the client</span>
+<span class="ruby-identifier">client</span>.<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-string">&quot;temp.txt&quot;</span>, <span class="ruby-string">&quot;w&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">&quot;Hello&quot;</span> }
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-client_source')" id="l_method-i-client_source">show</a>
+                
+              </p>
+              <div id="method-i-client_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/breakpoint.rb, line 218</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">client</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Breakpoint</span>.<span class="ruby-identifier">use_drb?</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">sleep</span>(<span class="ruby-number">0.5</span>) <span class="ruby-keyword">until</span> <span class="ruby-constant">Breakpoint</span>.<span class="ruby-identifier">drb_service</span>.<span class="ruby-identifier">eval_handler</span>
+    <span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Breakpoint</span>.<span class="ruby-identifier">drb_service</span>.<span class="ruby-identifier">eval_handler</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Client</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">lambda</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">code</span><span class="ruby-operator">|</span> <span class="ruby-identifier">eval</span>(<span class="ruby-identifier">code</span>, <span class="ruby-constant">TOPLEVEL_BINDING</span>) })
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-show_call_stack">
+            
+              <a name="method-i-show_call_stack"></a><b>show_call_stack</b>(depth = 10)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Prints the call stack.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-show_call_stack_source')" id="l_method-i-show_call_stack_source">show</a>
+                
+              </p>
+              <div id="method-i-show_call_stack_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/breakpoint.rb, line 200</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">show_call_stack</span>(<span class="ruby-identifier">depth</span> = <span class="ruby-number">10</span>)
+  <span class="ruby-identifier">base</span> = <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">RAILS_ROOT</span>).<span class="ruby-identifier">cleanpath</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">caller</span>[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">depth</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">line</span>.<span class="ruby-identifier">sub!</span>(<span class="ruby-regexp">%r^[^:]*/</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">cleanpath</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">client</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-identifier">line</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">base</span>) <span class="ruby-operator">==</span> <span class="ruby-number">0</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">line</span>[(<span class="ruby-identifier">base</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>)<span class="ruby-operator">..</span><span class="ruby-number">-1</span>] <span class="ruby-operator">:</span> <span class="ruby-identifier">line</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-node">&quot;#{Pathname.new(@__bp_file).cleanpath.to_s}:#{@__bp_line}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-show_source_list">
+            
+              <a name="method-i-show_source_list"></a><b>show_source_list</b>(context = 5)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Prints the source code surrounding the location where the breakpoint was
+issued.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-show_source_list_source')" id="l_method-i-show_source_list_source">show</a>
+                
+              </p>
+              <div id="method-i-show_source_list_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/breakpoint.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">show_source_list</span>(<span class="ruby-identifier">context</span> = <span class="ruby-number">5</span>)
+  <span class="ruby-identifier">start_line</span>, <span class="ruby-identifier">break_line</span>, <span class="ruby-identifier">result</span> = <span class="ruby-identifier">source_lines</span>(<span class="ruby-identifier">context</span>, <span class="ruby-keyword">true</span>)
+  <span class="ruby-identifier">offset</span> = [(<span class="ruby-identifier">break_line</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">context</span>).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">length</span>, <span class="ruby-number">4</span>].<span class="ruby-identifier">max</span>
+  <span class="ruby-identifier">result</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">line</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">mark</span> = (<span class="ruby-identifier">start_line</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">break_line</span> <span class="ruby-operator">?</span> <span class="ruby-string">'-&gt;'</span> <span class="ruby-operator">:</span> <span class="ruby-string">'  '</span>)
+    <span class="ruby-identifier">client</span>.<span class="ruby-identifier">puts</span>(<span class="ruby-node">&quot;%0#{offset}d%s#{line}&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">start_line</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">i</span>, <span class="ruby-identifier">mark</span>])
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@__bp_file</span>).<span class="ruby-identifier">cleanpath</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-source_lines">
+            
+              <a name="method-i-source_lines"></a><b>source_lines</b>(context = 5, return_line_numbers = false)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the source code surrounding the location where the breakpoint was
+issued.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-source_lines_source')" id="l_method-i-source_lines_source">show</a>
+                
+              </p>
+              <div id="method-i-source_lines_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/breakpoint.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">source_lines</span>(<span class="ruby-identifier">context</span> = <span class="ruby-number">5</span>, <span class="ruby-identifier">return_line_numbers</span> = <span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">lines</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">readlines</span>(<span class="ruby-ivar">@__bp_file</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">line</span><span class="ruby-operator">|</span> <span class="ruby-identifier">line</span>.<span class="ruby-identifier">chomp</span> }
+
+  <span class="ruby-identifier">break_line</span> = <span class="ruby-ivar">@__bp_line</span>
+  <span class="ruby-identifier">start_line</span> = [<span class="ruby-identifier">break_line</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">context</span>, <span class="ruby-number">1</span>].<span class="ruby-identifier">max</span>
+  <span class="ruby-identifier">end_line</span> = <span class="ruby-identifier">break_line</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">context</span>
+
+  <span class="ruby-identifier">result</span> = <span class="ruby-identifier">lines</span>[(<span class="ruby-identifier">start_line</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>) <span class="ruby-operator">..</span> (<span class="ruby-identifier">end_line</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>)]
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">return_line_numbers</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">return</span> [<span class="ruby-identifier">start_line</span>, <span class="ruby-identifier">break_line</span>, <span class="ruby-identifier">result</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

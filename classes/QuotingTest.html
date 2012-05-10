@@ -1,0 +1,221 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>QuotingTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            QuotingTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionmailer/test/quoting_test_rb.html">rails/actionmailer/test/quoting_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_email_quoted_with_0d0a">test_email_quoted_with_0d0a</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_email_with_partially_quoted_subject">test_email_with_partially_quoted_subject</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_quote_multibyte_chars">test_quote_multibyte_chars</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_email_quoted_with_0d0a">
+            
+              <a name="method-i-test_email_quoted_with_0d0a"></a><b>test_email_quoted_with_0d0a</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>test an email that has been created using rn newlines, instead of n
+newlines.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_email_quoted_with_0d0a_source')" id="l_method-i-test_email_quoted_with_0d0a_source">show</a>
+                
+              </p>
+              <div id="method-i-test_email_quoted_with_0d0a_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/test/quoting_test.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_email_quoted_with_0d0a</span>
+  <span class="ruby-identifier">mail</span> = <span class="ruby-constant">TMail</span><span class="ruby-operator">::</span><span class="ruby-constant">Mail</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-node">&quot;#{File.dirname(__FILE__)}/fixtures/raw_email_quoted_with_0d0a&quot;</span>))
+  <span class="ruby-identifier">assert_match</span> <span class="ruby-regexp">%r{Elapsed time}</span>, <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">body</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_email_with_partially_quoted_subject">
+            
+              <a name="method-i-test_email_with_partially_quoted_subject"></a><b>test_email_with_partially_quoted_subject</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_email_with_partially_quoted_subject_source')" id="l_method-i-test_email_with_partially_quoted_subject_source">show</a>
+                
+              </p>
+              <div id="method-i-test_email_with_partially_quoted_subject_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/test/quoting_test.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_email_with_partially_quoted_subject</span>
+  <span class="ruby-identifier">mail</span> = <span class="ruby-constant">TMail</span><span class="ruby-operator">::</span><span class="ruby-constant">Mail</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-node">&quot;#{File.dirname(__FILE__)}/fixtures/raw_email_with_partially_quoted_subject&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;Re: Test: \&quot;\3346\2274\2242\3345\2255\2227\&quot; mid \&quot;\3346\2274\2242\3345\2255\2227\&quot; tail&quot;</span>, <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">subject</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_quote_multibyte_chars">
+            
+              <a name="method-i-test_quote_multibyte_chars"></a><b>test_quote_multibyte_chars</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_quote_multibyte_chars_source')" id="l_method-i-test_quote_multibyte_chars_source">show</a>
+                
+              </p>
+              <div id="method-i-test_quote_multibyte_chars_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/test/quoting_test.rb, line 6</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_quote_multibyte_chars</span>
+    <span class="ruby-identifier">original</span> = <span class="ruby-string">&quot;\3303\2246 \3303\2270 and \3303\2245&quot;</span>
+
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">execute_in_sandbox</span>(<span class="ruby-string">&quot;      $:.unshift(File.dirname(__FILE__) + &quot;/../lib/&quot;)
+      $KCODE = 'u'
+      require 'jcode'
+      require 'action_mailer/quoting'
+      include ActionMailer::Quoting
+      quoted_printable(#{original.inspect}, &quot;UTF-8&quot;)
+&quot;</span>)
+
+    <span class="ruby-identifier">unquoted</span> = <span class="ruby-constant">TMail</span><span class="ruby-operator">::</span><span class="ruby-constant">Unquoter</span>.<span class="ruby-identifier">unquote_and_convert_to</span>(<span class="ruby-identifier">result</span>, <span class="ruby-keyword">nil</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">unquoted</span>, <span class="ruby-identifier">original</span>
+  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

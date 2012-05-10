@@ -1,0 +1,356 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ObjectInstanceVariableTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ObjectInstanceVariableTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/test/core_ext/object_and_class_ext_test_rb.html">rails/activesupport/test/core_ext/object_and_class_ext_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_copy_instance_variables_automatically_excludes_protected_instance_variables">test_copy_instance_variables_automatically_excludes_protected_instance_variables</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_copy_instance_variables_from_with_explicit_excludes">test_copy_instance_variables_from_with_explicit_excludes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_copy_instance_variables_from_without_explicit_excludes">test_copy_instance_variables_from_without_explicit_excludes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_instance_exec_passes_arguments_to_block">test_instance_exec_passes_arguments_to_block</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_instance_values">test_instance_values</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/object_and_class_ext_test.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@source</span>, <span class="ruby-ivar">@dest</span> = <span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>, <span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@bar</span>, <span class="ruby-string">'bar'</span>)
+  <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@baz</span>, <span class="ruby-string">'baz'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_copy_instance_variables_automatically_excludes_protected_instance_variables">
+            
+              <a name="method-i-test_copy_instance_variables_automatically_excludes_protected_instance_variables"></a><b>test_copy_instance_variables_automatically_excludes_protected_instance_variables</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_copy_instance_variables_automatically_excludes_protected_instance_variables_source')" id="l_method-i-test_copy_instance_variables_automatically_excludes_protected_instance_variables_source">show</a>
+                
+              </p>
+              <div id="method-i-test_copy_instance_variables_automatically_excludes_protected_instance_variables_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/object_and_class_ext_test.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_copy_instance_variables_automatically_excludes_protected_instance_variables</span>
+  <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">instance_variable_set</span>(<span class="ruby-value">:@quux</span>, <span class="ruby-string">'quux'</span>)
+  <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword ruby-title">@source</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">protected_instance_variables</span>
+      [<span class="ruby-string">'@bar'</span>, <span class="ruby-value">:@quux</span>]
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@dest</span>.<span class="ruby-identifier">copy_instance_variables_from</span>(<span class="ruby-ivar">@source</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@dest</span>.<span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'@bar'</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@dest</span>.<span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'@quux'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'baz'</span>, <span class="ruby-ivar">@dest</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-string">'@baz'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_copy_instance_variables_from_with_explicit_excludes">
+            
+              <a name="method-i-test_copy_instance_variables_from_with_explicit_excludes"></a><b>test_copy_instance_variables_from_with_explicit_excludes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_copy_instance_variables_from_with_explicit_excludes_source')" id="l_method-i-test_copy_instance_variables_from_with_explicit_excludes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_copy_instance_variables_from_with_explicit_excludes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/object_and_class_ext_test.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_copy_instance_variables_from_with_explicit_excludes</span>
+  <span class="ruby-ivar">@dest</span>.<span class="ruby-identifier">copy_instance_variables_from</span>(<span class="ruby-ivar">@source</span>, [<span class="ruby-string">'@baz'</span>])
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-ivar">@dest</span>.<span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'@baz'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'bar'</span>, <span class="ruby-ivar">@dest</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-string">'@bar'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_copy_instance_variables_from_without_explicit_excludes">
+            
+              <a name="method-i-test_copy_instance_variables_from_without_explicit_excludes"></a><b>test_copy_instance_variables_from_without_explicit_excludes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_copy_instance_variables_from_without_explicit_excludes_source')" id="l_method-i-test_copy_instance_variables_from_without_explicit_excludes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_copy_instance_variables_from_without_explicit_excludes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/object_and_class_ext_test.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_copy_instance_variables_from_without_explicit_excludes</span>
+  <span class="ruby-identifier">assert_equal</span> [], <span class="ruby-ivar">@dest</span>.<span class="ruby-identifier">instance_variables</span>
+  <span class="ruby-ivar">@dest</span>.<span class="ruby-identifier">copy_instance_variables_from</span>(<span class="ruby-ivar">@source</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%w(@bar @baz)</span>, <span class="ruby-ivar">@dest</span>.<span class="ruby-identifier">instance_variables</span>.<span class="ruby-identifier">sort</span>
+  <span class="ruby-node">%w(@bar @baz)</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-ivar">@source</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">object_id</span>,
+                 <span class="ruby-ivar">@dest</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">object_id</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_instance_exec_passes_arguments_to_block">
+            
+              <a name="method-i-test_instance_exec_passes_arguments_to_block"></a><b>test_instance_exec_passes_arguments_to_block</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_instance_exec_passes_arguments_to_block_source')" id="l_method-i-test_instance_exec_passes_arguments_to_block_source">show</a>
+                
+              </p>
+              <div id="method-i-test_instance_exec_passes_arguments_to_block_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/object_and_class_ext_test.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_instance_exec_passes_arguments_to_block</span>
+  <span class="ruby-identifier">block</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span> [<span class="ruby-keyword">self</span>, <span class="ruby-identifier">value</span>] }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%w(hello goodbye)</span>, <span class="ruby-string">'hello'</span>.<span class="ruby-identifier">instance_exec</span>(<span class="ruby-string">'goodbye'</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_instance_values">
+            
+              <a name="method-i-test_instance_values"></a><b>test_instance_values</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_instance_values_source')" id="l_method-i-test_instance_values_source">show</a>
+                
+              </p>
+              <div id="method-i-test_instance_values_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/object_and_class_ext_test.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_instance_values</span>
+  <span class="ruby-identifier">object</span> = <span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">object</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@a</span>, <span class="ruby-number">1</span>
+  <span class="ruby-identifier">object</span>.<span class="ruby-identifier">instance_variable_set</span> <span class="ruby-value">:@b</span>, <span class="ruby-number">2</span>
+  <span class="ruby-identifier">assert_equal</span>({<span class="ruby-string">'a'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>, <span class="ruby-string">'b'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>}, <span class="ruby-identifier">object</span>.<span class="ruby-identifier">instance_values</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

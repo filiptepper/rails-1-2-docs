@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TMail::MimeEncodeMulti</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TMail::MimeEncodeMulti 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionmailer/lib/action_mailer/vendor/tmail/net_rb.html">rails/actionmailer/lib/action_mailer/vendor/tmail/net.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-exec">exec</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-exec">
+            
+              <a name="method-i-exec"></a><b>exec</b>( mail, top = true )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_source')" id="l_method-i-exec_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/net.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec</span>( <span class="ruby-identifier">mail</span>, <span class="ruby-identifier">top</span> = <span class="ruby-keyword">true</span> )
+  <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">mime_version</span> = <span class="ruby-string">'1.0'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">top</span>
+  <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">set_content_type</span> <span class="ruby-string">'multipart'</span>, <span class="ruby-string">'mixed'</span>
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">encoding</span>(<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">e</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-regexp">%r\A(?:7bit|8bit|binary)\z/</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">e</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>,
+          <span class="ruby-string">'using C.T.Encoding with multipart mail is not permitted'</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">mail</span>.<span class="ruby-identifier">parts</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">exec</span> <span class="ruby-identifier">m</span>, <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">_builtin_multipart?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

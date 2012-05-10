@@ -1,0 +1,1614 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Rails::Initializer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Rails::Initializer 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/railties/lib/initializer_rb.html">rails/railties/lib/initializer.rb</a></li>
+            
+            <li><a href="../../files/rails/railties/test/plugin_test_rb.html">rails/railties/test/plugin_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>The <a href="Initializer.html">Initializer</a> is responsible for
+processing the <a href="../Rails.html">Rails</a> configuration, such as
+setting the $LOAD_PATH, requiring the right frameworks, initializing
+logging, and more. It can be run either as a single command that’ll just
+use the default configuration, like this:</p>
+
+<pre>Rails::Initializer.run</pre>
+
+<p>But normally it’s more interesting to pass in a custom configuration
+through the block running:</p>
+
+<pre class="ruby"><span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">Initializer</span>.<span class="ruby-identifier">run</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">config</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">config</span>.<span class="ruby-identifier">frameworks</span> <span class="ruby-operator">-=</span> [ :<span class="ruby-identifier">action_web_service</span> ]
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>This will use the default configuration options from <a
+href="Configuration.html">Rails::Configuration</a>, but allow for
+overwriting on select areas.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_support_load_paths">add_support_load_paths</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-after_initialize">after_initialize</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-check_ruby_version">check_ruby_version</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-find_plugins">find_plugins</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-initialize_breakpoints">initialize_breakpoints</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-initialize_database">initialize_database</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-initialize_dependency_mechanism">initialize_dependency_mechanism</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-initialize_encoding">initialize_encoding</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-initialize_framework_logging">initialize_framework_logging</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-initialize_framework_settings">initialize_framework_settings</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-initialize_framework_views">initialize_framework_views</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-initialize_logger">initialize_logger</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-initialize_routing">initialize_routing</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-initialize_temporary_directories">initialize_temporary_directories</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-initialize_whiny_nils">initialize_whiny_nils</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-load_environment">load_environment</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-load_observers">load_observers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-load_plugin">load_plugin</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-load_plugins">load_plugins</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-plugin_enabled-3F">plugin_enabled?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-plugin_path-3F">plugin_path?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-process">process</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-require_frameworks">require_frameworks</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-run">run</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set_autoload_paths">set_autoload_paths</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-set_connection_adapters">set_connection_adapters</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-set_load_path">set_load_path</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">RAILS_ROOT</td>
+            <td>=</td>
+            <td class="attr-value">'.'</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>configuration</td>
+            <td class='attr-desc'><p>The <a href="Configuration.html">Configuration</a> instance used by this <a
+href="Initializer.html">Initializer</a> instance.</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>loaded_plugins</td>
+            <td class='attr-desc'><p>The set of loaded plugins.</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(configuration)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Create a new <a href="Initializer.html">Initializer</a> instance that
+references the given <a href="Configuration.html">Configuration</a>
+instance.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">configuration</span>)
+  <span class="ruby-ivar">@configuration</span> = <span class="ruby-identifier">configuration</span>
+  <span class="ruby-ivar">@loaded_plugins</span> = []
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-run">
+            
+              <a name="method-c-run"></a><b>run</b>(command = :process, configuration = Configuration.new)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Runs the initializer. By default, this will invoke the <a
+href="Initializer.html#method-i-process">process</a> method, which simply
+executes all of the initialization routines. Alternately, you can specify
+explicitly which initialization routine you want:</p>
+
+<pre>Rails::Initializer.run(:set_load_path)</pre>
+
+<p>This is useful if you only want the load path initialized, without incuring
+the overhead of completely loading the entire environment.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-run_source')" id="l_method-c-run_source">show</a>
+                
+              </p>
+              <div id="method-c-run_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">run</span>(<span class="ruby-identifier">command</span> = <span class="ruby-value">:process</span>, <span class="ruby-identifier">configuration</span> = <span class="ruby-constant">Configuration</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">configuration</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+  <span class="ruby-identifier">initializer</span> = <span class="ruby-identifier">new</span> <span class="ruby-identifier">configuration</span>
+  <span class="ruby-identifier">initializer</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">command</span>)
+  <span class="ruby-identifier">initializer</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_support_load_paths">
+            
+              <a name="method-i-add_support_load_paths"></a><b>add_support_load_paths</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Add the load paths used by support functions such as the info controller</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_support_load_paths_source')" id="l_method-i-add_support_load_paths_source">show</a>
+                
+              </p>
+              <div id="method-i-add_support_load_paths_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_support_load_paths</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-after_initialize">
+            
+              <a name="method-i-after_initialize"></a><b>after_initialize</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Fires the user-supplied <a
+href="Initializer.html#method-i-after_initialize">#after_initialize</a>
+block (<a
+href="Configuration.html#method-i-after_initialize">Rails::Configuration#after_initialize</a>)</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-after_initialize_source')" id="l_method-i-after_initialize_source">show</a>
+                
+              </p>
+              <div id="method-i-after_initialize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 340</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">after_initialize</span>
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">after_initialize_block</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">after_initialize_block</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-check_ruby_version">
+            
+              <a name="method-i-check_ruby_version"></a><b>check_ruby_version</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Check for valid Ruby version This is done in an external file, so we can
+use it from the `rails` program as well without duplication.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-check_ruby_version_source')" id="l_method-i-check_ruby_version_source">show</a>
+                
+              </p>
+              <div id="method-i-check_ruby_version_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">check_ruby_version</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'ruby_version_check'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_breakpoints">
+            
+              <a name="method-i-initialize_breakpoints"></a><b>initialize_breakpoints</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets the <code>BREAKPOINT_SERVER_PORT</code> if <a
+href="Configuration.html#attribute-i-breakpoint_server">Rails::Configuration#breakpoint_server</a>
+is true.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_breakpoints_source')" id="l_method-i-initialize_breakpoints_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_breakpoints_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_breakpoints</span>
+  <span class="ruby-identifier">silence_warnings</span> { <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_set</span>(<span class="ruby-string">&quot;BREAKPOINT_SERVER_PORT&quot;</span>, <span class="ruby-number">42531</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">breakpoint_server</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_database">
+            
+              <a name="method-i-initialize_database"></a><b>initialize_database</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>This initialization routine does nothing unless <code>:active_record</code>
+is one of the frameworks to load (<a
+href="Configuration.html#attribute-i-frameworks">Rails::Configuration#frameworks</a>).
+If it is, this sets the database configuration from <a
+href="Configuration.html#method-i-database_configuration">Rails::Configuration#database_configuration</a>
+and then establishes the connection.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_database_source')" id="l_method-i-initialize_database_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_database_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_database</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">frameworks</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:active_record</span>)
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">configurations</span> = <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">database_configuration</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">establish_connection</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_dependency_mechanism">
+            
+              <a name="method-i-initialize_dependency_mechanism"></a><b>initialize_dependency_mechanism</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets the dependency loading mechanism based on the value of <a
+href="Configuration.html#attribute-i-cache_classes">Rails::Configuration#cache_classes</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_dependency_mechanism_source')" id="l_method-i-initialize_dependency_mechanism_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_dependency_mechanism_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 298</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_dependency_mechanism</span>
+  <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">mechanism</span> = <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">cache_classes</span> <span class="ruby-operator">?</span> <span class="ruby-value">:require</span> <span class="ruby-operator">:</span> <span class="ruby-value">:load</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_encoding">
+            
+              <a name="method-i-initialize_encoding"></a><b>initialize_encoding</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>This initialzation sets $KCODE to ‘u’ to enable the multibyte safe
+operations. <a href="../Plugin.html">Plugin</a> authors supporting other
+encodings should override this behaviour and set the relevant
+<code>default_charset</code> on <a
+href="../ActionController/Base.html">ActionController::Base</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_encoding_source')" id="l_method-i-initialize_encoding_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_encoding_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 224</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_encoding</span>
+  <span class="ruby-identifier">$KCODE</span>=<span class="ruby-string">'u'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_framework_logging">
+            
+              <a name="method-i-initialize_framework_logging"></a><b>initialize_framework_logging</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets the logger for <a href="../ActiveRecord.html">ActiveRecord</a>, <a
+href="../ActionController.html">ActionController</a>, and <a
+href="../ActionMailer.html">ActionMailer</a> (but only for those frameworks
+that are to be loaded). If the framework’s logger is already set, it is not
+changed, otherwise it is set to use <code>RAILS_DEFAULT_LOGGER</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_framework_logging_source')" id="l_method-i-initialize_framework_logging_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_framework_logging_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 271</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_framework_logging</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">framework</span> <span class="ruby-keyword">in</span> ([ <span class="ruby-value">:active_record</span>, <span class="ruby-value">:action_controller</span>, <span class="ruby-value">:action_mailer</span> ] &amp; <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">frameworks</span>)
+    <span class="ruby-identifier">framework</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span>.<span class="ruby-identifier">constantize</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-string">&quot;Base&quot;</span>).<span class="ruby-identifier">logger</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">RAILS_DEFAULT_LOGGER</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_framework_settings">
+            
+              <a name="method-i-initialize_framework_settings"></a><b>initialize_framework_settings</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Initializes framework-specific settings for each of the loaded frameworks
+(<a
+href="Configuration.html#attribute-i-frameworks">Rails::Configuration#frameworks</a>).
+The available settings map to the accessors on each of the corresponding
+Base classes.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_framework_settings_source')" id="l_method-i-initialize_framework_settings_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_framework_settings_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 329</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_framework_settings</span>
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">frameworks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">framework</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">base_class</span> = <span class="ruby-identifier">framework</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span>.<span class="ruby-identifier">constantize</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-string">&quot;Base&quot;</span>)
+
+    <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">framework</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">setting</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">base_class</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{setting}=&quot;</span>, <span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_framework_views">
+            
+              <a name="method-i-initialize_framework_views"></a><b>initialize_framework_views</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets the <code>template_root</code> for <a
+href="../ActionController/Base.html">ActionController::Base</a> and <a
+href="../ActionMailer/Base.html">ActionMailer::Base</a> (but only for those
+frameworks that are to be loaded). If the framework’s
+<code>template_root</code> has already been set, it is not changed,
+otherwise it is set to use <a
+href="Configuration.html#attribute-i-view_path">Rails::Configuration#view_path</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_framework_views_source')" id="l_method-i-initialize_framework_views_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_framework_views_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_framework_views</span>
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">framework</span> <span class="ruby-keyword">in</span> ([ <span class="ruby-value">:action_controller</span>, <span class="ruby-value">:action_mailer</span> ] &amp; <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">frameworks</span>)
+    <span class="ruby-identifier">framework</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span>.<span class="ruby-identifier">constantize</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-string">&quot;Base&quot;</span>).<span class="ruby-identifier">template_root</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">view_path</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_logger">
+            
+              <a name="method-i-initialize_logger"></a><b>initialize_logger</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>If the <code>RAILS_DEFAULT_LOGGER</code> constant is already set, this
+initialization routine does nothing. If the constant is not set, and <a
+href="Configuration.html#attribute-i-logger">Rails::Configuration#logger</a>
+is not <code>nil</code>, this also does nothing. Otherwise, a new logger
+instance is created at <a
+href="Configuration.html#attribute-i-log_path">Rails::Configuration#log_path</a>,
+with a default log level of <a
+href="Configuration.html#attribute-i-log_level">Rails::Configuration#log_level</a>.</p>
+
+<p>If the log could not be created, the log will be set to output to
+<code>STDERR</code>, with a log level of <code>WARN</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_logger_source')" id="l_method-i-initialize_logger_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_logger_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_logger</span>
+  <span class="ruby-comment"># if the environment has explicitly defined a logger, use it</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">RAILS_DEFAULT_LOGGER</span>)
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">logger</span> = <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">logger</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">logger</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">log_path</span>)
+      <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">log_level</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>)
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">StandardError</span>
+      <span class="ruby-identifier">logger</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">STDERR</span>)
+      <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">level</span> = <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">WARN</span>
+      <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">warn</span>(
+        <span class="ruby-node">&quot;Rails Error: Unable to access log file. Please ensure that #{configuration.log_path} exists and is chmod 0666. &quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-string">&quot;The log level has been raised to WARN and the output directed to STDERR until the problem is fixed.&quot;</span>
+      )
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">silence_warnings</span> { <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_set</span> <span class="ruby-string">&quot;RAILS_DEFAULT_LOGGER&quot;</span>, <span class="ruby-identifier">logger</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_routing">
+            
+              <a name="method-i-initialize_routing"></a><b>initialize_routing</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>If <a href="../ActionController.html">ActionController</a> is not one of
+the loaded frameworks (<a
+href="Configuration.html#attribute-i-frameworks">Rails::Configuration#frameworks</a>)
+this does nothing. Otherwise, it loads the routing definitions and sets up
+loading module used to lazily load controllers (<a
+href="Configuration.html#attribute-i-controller_paths">Rails::Configuration#controller_paths</a>).</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_routing_source')" id="l_method-i-initialize_routing_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_routing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 290</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_routing</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">frameworks</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:action_controller</span>)
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_paths</span> = <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">controller_paths</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">reload</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_temporary_directories">
+            
+              <a name="method-i-initialize_temporary_directories"></a><b>initialize_temporary_directories</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_temporary_directories_source')" id="l_method-i-initialize_temporary_directories_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_temporary_directories_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 314</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_temporary_directories</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">frameworks</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:action_controller</span>)
+    <span class="ruby-identifier">session_path</span> = <span class="ruby-node">&quot;#{configuration.root_path}/tmp/sessions/&quot;</span>
+    <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">session_options</span>[<span class="ruby-value">:tmpdir</span>] = <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">session_path</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">session_path</span> <span class="ruby-operator">:</span> <span class="ruby-constant">Dir</span><span class="ruby-operator">::</span><span class="ruby-identifier">tmpdir</span>
+
+    <span class="ruby-identifier">cache_path</span> = <span class="ruby-node">&quot;#{configuration.root_path}/tmp/cache/&quot;</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">cache_path</span>)
+      <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">fragment_cache_store</span> = <span class="ruby-value">:file_store</span>, <span class="ruby-identifier">cache_path</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_whiny_nils">
+            
+              <a name="method-i-initialize_whiny_nils"></a><b>initialize_whiny_nils</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Loads support for “whiny nil” (noisy warnings when methods are invoked on
+<code>nil</code> values) if <a
+href="Configuration.html#attribute-i-whiny_nils">Rails::Configuration#whiny_nils</a>
+is true.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_whiny_nils_source')" id="l_method-i-initialize_whiny_nils_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_whiny_nils_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_whiny_nils</span>
+  <span class="ruby-identifier">require</span>(<span class="ruby-string">'active_support/whiny_nil'</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">whiny_nils</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-load_environment">
+            
+              <a name="method-i-load_environment"></a><b>load_environment</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Loads the environment specified by <a
+href="Configuration.html#method-i-environment_path">Rails::Configuration#environment_path</a>,
+which is typically one of development, testing, or production.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load_environment_source')" id="l_method-i-load_environment_source">show</a>
+                
+              </p>
+              <div id="method-i-load_environment_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load_environment</span>
+  <span class="ruby-identifier">silence_warnings</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">config</span> = <span class="ruby-identifier">configuration</span>
+    <span class="ruby-identifier">constants</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">constants</span>
+    
+    <span class="ruby-identifier">eval</span>(<span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">environment_path</span>), <span class="ruby-identifier">binding</span>, <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">environment_path</span>)
+    
+    (<span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">constants</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">constants</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">const</span><span class="ruby-operator">|</span>
+      <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_set</span>(<span class="ruby-identifier">const</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">const</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-load_observers">
+            
+              <a name="method-i-load_observers"></a><b>load_observers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load_observers_source')" id="l_method-i-load_observers_source">show</a>
+                
+              </p>
+              <div id="method-i-load_observers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 217</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load_observers</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">instantiate_observers</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-load_plugins">
+            
+              <a name="method-i-load_plugins"></a><b>load_plugins</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Loads all plugins in <code>config.plugin_paths</code>. 
+<code>plugin_paths</code> defaults to <code>vendor/plugins</code> but may
+also be set to a list of paths, such as</p>
+
+<pre>config.plugin_paths = ['lib/plugins', 'vendor/plugins']</pre>
+
+<p>Each plugin discovered in <code>plugin_paths</code> is initialized:</p>
+<ul><li>
+<p>add its <code>lib</code> directory, if present, to the beginning of the
+load path</p>
+</li><li>
+<p>evaluate <code>init.rb</code> if present</p>
+</li></ul>
+
+<p>After all plugins are loaded, duplicates are removed from the load path. If
+an array of plugin names is specified in config.plugins, the plugins will
+be loaded in that order. Otherwise, plugins are loaded in alphabetical
+order.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load_plugins_source')" id="l_method-i-load_plugins_source">show</a>
+                
+              </p>
+              <div id="method-i-load_plugins_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load_plugins</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugins</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-comment"># a nil value implies we don't care about plugins; load 'em all in a reliable order</span>
+    <span class="ruby-identifier">find_plugins</span>(<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugin_paths</span>).<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span> <span class="ruby-identifier">load_plugin</span> <span class="ruby-identifier">path</span> }
+  <span class="ruby-keyword">elsif</span> <span class="ruby-operator">!</span><span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugins</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-comment"># we've specified a config.plugins array, so respect that order</span>
+    <span class="ruby-identifier">plugin_paths</span> = <span class="ruby-identifier">find_plugins</span>(<span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugin_paths</span>)
+    <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugins</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">path</span> = <span class="ruby-identifier">plugin_paths</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">p</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span> }
+      <span class="ruby-identifier">raise</span>(<span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;Cannot find the plugin '#{name}'!&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">path</span>.<span class="ruby-identifier">nil?</span>
+      <span class="ruby-identifier">load_plugin</span> <span class="ruby-identifier">path</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">uniq!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-process">
+            
+              <a name="method-i-process"></a><b>process</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Sequentially step through all of the available initialization routines, in
+order:</p>
+<ul><li>
+<p><a href="Initializer.html#method-i-set_load_path">set_load_path</a></p>
+</li><li>
+<p><a
+href="Initializer.html#method-i-set_connection_adapters">set_connection_adapters</a></p>
+</li><li>
+<p><a
+href="Initializer.html#method-i-require_frameworks">require_frameworks</a></p>
+</li><li>
+<p><a href="Initializer.html#method-i-load_environment">load_environment</a></p>
+</li><li>
+<p><a
+href="Initializer.html#method-i-initialize_database">initialize_database</a></p>
+</li><li>
+<p><a href="Initializer.html#method-i-initialize_logger">initialize_logger</a></p>
+</li><li>
+<p><a
+href="Initializer.html#method-i-initialize_framework_logging">initialize_framework_logging</a></p>
+</li><li>
+<p><a
+href="Initializer.html#method-i-initialize_framework_views">initialize_framework_views</a></p>
+</li><li>
+<p><a
+href="Initializer.html#method-i-initialize_dependency_mechanism">initialize_dependency_mechanism</a></p>
+</li><li>
+<p><a
+href="Initializer.html#method-i-initialize_breakpoints">initialize_breakpoints</a></p>
+</li><li>
+<p><a
+href="Initializer.html#method-i-initialize_whiny_nils">initialize_whiny_nils</a></p>
+</li><li>
+<p><a
+href="Initializer.html#method-i-initialize_framework_settings">initialize_framework_settings</a></p>
+</li><li>
+<p><a href="Initializer.html#method-i-load_environment">load_environment</a></p>
+</li><li>
+<p><a href="Initializer.html#method-i-load_plugins">load_plugins</a></p>
+</li><li>
+<p><a href="Initializer.html#method-i-load_observers">load_observers</a></p>
+</li><li>
+<p><a
+href="Initializer.html#method-i-initialize_routing">initialize_routing</a></p>
+</li></ul>
+
+<p>(Note that <a
+href="Initializer.html#method-i-load_environment">load_environment</a> is
+invoked twice, once at the start and once at the end, to support the legacy
+configuration style where the environment could overwrite the defaults
+directly, instead of via the <a href="Configuration.html">Configuration</a>
+instance.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-process_source')" id="l_method-i-process_source">show</a>
+                
+              </p>
+              <div id="method-i-process_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">process</span>
+  <span class="ruby-identifier">check_ruby_version</span>
+  <span class="ruby-identifier">set_load_path</span>
+  <span class="ruby-identifier">set_connection_adapters</span>
+
+  <span class="ruby-identifier">require_frameworks</span>
+  <span class="ruby-identifier">set_autoload_paths</span>
+  <span class="ruby-identifier">load_environment</span>
+
+  <span class="ruby-identifier">initialize_encoding</span>
+  <span class="ruby-identifier">initialize_database</span>
+  <span class="ruby-identifier">initialize_logger</span>
+  <span class="ruby-identifier">initialize_framework_logging</span>
+  <span class="ruby-identifier">initialize_framework_views</span>
+  <span class="ruby-identifier">initialize_dependency_mechanism</span>
+  <span class="ruby-identifier">initialize_breakpoints</span>
+  <span class="ruby-identifier">initialize_whiny_nils</span>
+  <span class="ruby-identifier">initialize_temporary_directories</span>
+  <span class="ruby-identifier">initialize_framework_settings</span>
+
+  <span class="ruby-comment"># Support for legacy configuration style where the environment</span>
+  <span class="ruby-comment"># could overwrite anything set from the defaults/global through</span>
+  <span class="ruby-comment"># the individual base class configurations.</span>
+  <span class="ruby-identifier">load_environment</span>
+
+  <span class="ruby-identifier">add_support_load_paths</span>
+
+  <span class="ruby-identifier">load_plugins</span>
+
+  <span class="ruby-comment"># Observers are loaded after plugins in case Observers or observed models are modified by plugins.</span>
+  <span class="ruby-identifier">load_observers</span>
+
+  <span class="ruby-comment"># Routing must be initialized after plugins to allow the former to extend the routes</span>
+  <span class="ruby-identifier">initialize_routing</span>
+
+  <span class="ruby-comment"># the framework is now fully initialized</span>
+  <span class="ruby-identifier">after_initialize</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-require_frameworks">
+            
+              <a name="method-i-require_frameworks"></a><b>require_frameworks</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Requires all frameworks specified by the <a
+href="Configuration.html#attribute-i-frameworks">Rails::Configuration#frameworks</a>
+list. By default, all frameworks (<a
+href="../ActiveRecord.html">ActiveRecord</a>, <a
+href="../ActiveSupport.html">ActiveSupport</a>, ActionPack, <a
+href="../ActionMailer.html">ActionMailer</a>, and <a
+href="../ActionWebService.html">ActionWebService</a>) are loaded.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-require_frameworks_source')" id="l_method-i-require_frameworks_source">show</a>
+                
+              </p>
+              <div id="method-i-require_frameworks_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">require_frameworks</span>
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">frameworks</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">framework</span><span class="ruby-operator">|</span> <span class="ruby-identifier">require</span>(<span class="ruby-identifier">framework</span>.<span class="ruby-identifier">to_s</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_autoload_paths">
+            
+              <a name="method-i-set_autoload_paths"></a><b>set_autoload_paths</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the paths from which <a href="../Rails.html">Rails</a> will
+automatically load source files, and the load_once paths.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_autoload_paths_source')" id="l_method-i-set_autoload_paths_source">show</a>
+                
+              </p>
+              <div id="method-i-set_autoload_paths_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 138</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_autoload_paths</span>
+      <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_paths</span> = <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">load_paths</span>.<span class="ruby-identifier">uniq</span>
+      <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_once_paths</span> = <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">load_once_paths</span>.<span class="ruby-identifier">uniq</span>
+
+      <span class="ruby-identifier">extra</span> = <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_once_paths</span> <span class="ruby-operator">-</span> <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_paths</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">extra</span>.<span class="ruby-identifier">empty?</span>
+        <span class="ruby-identifier">abort</span> <span class="ruby-string">&quot;          load_once_paths must be a subset of the load_paths.
+          Extra items in load_once_paths: #{extra * ','}
+&quot;</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-comment"># Freeze the arrays so future modifications will fail rather than do nothing mysteriously</span>
+      <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">load_once_paths</span>.<span class="ruby-identifier">freeze</span>
+    <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_connection_adapters">
+            
+              <a name="method-i-set_connection_adapters"></a><b>set_connection_adapters</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets the <code>RAILS_CONNECTION_ADAPTERS</code> constant based on the value
+of <a
+href="Configuration.html#attribute-i-connection_adapters">Rails::Configuration#connection_adapters</a>.
+This constant is used to determine which database adapters should be loaded
+(by default, all adapters are loaded).</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_connection_adapters_source')" id="l_method-i-set_connection_adapters_source">show</a>
+                
+              </p>
+              <div id="method-i-set_connection_adapters_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 158</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_connection_adapters</span>
+  <span class="ruby-constant">Object</span>.<span class="ruby-identifier">const_set</span>(<span class="ruby-string">&quot;RAILS_CONNECTION_ADAPTERS&quot;</span>, <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">connection_adapters</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">connection_adapters</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_load_path">
+            
+              <a name="method-i-set_load_path"></a><b>set_load_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the <code>$LOAD_PATH</code> based on the value of <a
+href="Configuration.html#attribute-i-load_paths">Rails::Configuration#load_paths</a>.
+Duplicates are removed.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_load_path_source')" id="l_method-i-set_load_path_source">show</a>
+                
+              </p>
+              <div id="method-i-set_load_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_load_path</span>
+  <span class="ruby-identifier">load_paths</span> = <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">load_paths</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">framework_paths</span>
+  <span class="ruby-identifier">load_paths</span>.<span class="ruby-identifier">reverse_each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">unshift</span>(<span class="ruby-identifier">dir</span>) <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dir</span>) }
+  <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">uniq!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-find_plugins">
+            
+              <a name="method-i-find_plugins"></a><b>find_plugins</b>(*base_paths)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Return a list of plugin paths within base_path.  <a href="../A.html">A</a>
+plugin path is a directory that contains either a lib directory or an
+init.rb file. This recurses into directories which are not plugin paths, so
+you may organize your plugins within the plugin path.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-find_plugins_source')" id="l_method-i-find_plugins_source">show</a>
+                
+              </p>
+              <div id="method-i-find_plugins_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 349</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">find_plugins</span>(*<span class="ruby-identifier">base_paths</span>)
+  <span class="ruby-identifier">base_paths</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">inject</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">plugins</span>, <span class="ruby-identifier">base_path</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">base_path</span>, <span class="ruby-string">'*'</span>)).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">plugin_path?</span>(<span class="ruby-identifier">path</span>)
+        <span class="ruby-identifier">plugins</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">path</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">plugin_enabled?</span>(<span class="ruby-identifier">path</span>)
+      <span class="ruby-keyword">elsif</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">path</span>)
+        <span class="ruby-identifier">plugins</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">find_plugins</span>(<span class="ruby-identifier">path</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">plugins</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-load_plugin">
+            
+              <a name="method-i-load_plugin"></a><b>load_plugin</b>(directory)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Load the plugin at <code>path</code> unless already loaded.</p>
+
+<p>Each plugin is initialized:</p>
+<ul><li>
+<p>add its <code>lib</code> directory, if present, to the beginning of the
+load path</p>
+</li><li>
+<p>evaluate <code>init.rb</code> if present</p>
+</li></ul>
+
+<p>Returns <code>true</code> if the plugin is successfully loaded or
+<code>false</code> if it is already loaded (similar to Kernel#require).
+Raises <code>LoadError</code> if the plugin is not found.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-load_plugin_source')" id="l_method-i-load_plugin_source">show</a>
+                
+              </p>
+              <div id="method-i-load_plugin_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 379</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">load_plugin</span>(<span class="ruby-identifier">directory</span>)
+  <span class="ruby-identifier">name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">directory</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">loaded_plugins</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>)
+
+  <span class="ruby-comment"># Catch nonexistent and empty plugins.</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>, <span class="ruby-node">&quot;No such plugin: #{directory}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">plugin_path?</span>(<span class="ruby-identifier">directory</span>)
+
+  <span class="ruby-identifier">lib_path</span>  = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">directory</span>, <span class="ruby-string">'lib'</span>)
+  <span class="ruby-identifier">init_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">directory</span>, <span class="ruby-string">'init.rb'</span>)
+  <span class="ruby-identifier">has_lib</span>   = <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">lib_path</span>)
+  <span class="ruby-identifier">has_init</span>  = <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-identifier">init_path</span>)
+
+  <span class="ruby-comment"># Add lib to load path *after* the application lib, to allow</span>
+  <span class="ruby-comment"># application libraries to override plugin libraries.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_lib</span>
+    <span class="ruby-identifier">application_lib_index</span> = <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">index</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">RAILS_ROOT</span>, <span class="ruby-string">&quot;lib&quot;</span>)) <span class="ruby-operator">||</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">$LOAD_PATH</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-identifier">application_lib_index</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">lib_path</span>)
+    <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">lib_path</span>
+    <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">load_once_paths</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">lib_path</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Allow plugins to reference the current configuration object</span>
+  <span class="ruby-identifier">config</span> = <span class="ruby-identifier">configuration</span>
+  
+  <span class="ruby-comment"># Add to set of loaded plugins before 'name' collapsed in eval.</span>
+  <span class="ruby-identifier">loaded_plugins</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">name</span>
+
+  <span class="ruby-comment"># Evaluate init.rb.</span>
+  <span class="ruby-identifier">silence_warnings</span> { <span class="ruby-identifier">eval</span>(<span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">init_path</span>), <span class="ruby-identifier">binding</span>, <span class="ruby-identifier">init_path</span>) } <span class="ruby-keyword">if</span> <span class="ruby-identifier">has_init</span>
+
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-plugin_enabled-3F">
+            
+              <a name="method-i-plugin_enabled-3F"></a><b>plugin_enabled?</b>(path)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-plugin_enabled-3F_source')" id="l_method-i-plugin_enabled-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-plugin_enabled-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 366</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">plugin_enabled?</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugins</span>.<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">plugins</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-plugin_path-3F">
+            
+              <a name="method-i-plugin_path-3F"></a><b>plugin_path?</b>(path)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-plugin_path-3F_source')" id="l_method-i-plugin_path-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-plugin_path-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 362</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">plugin_path?</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">path</span>) <span class="ruby-keyword">and</span> (<span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">'lib'</span>)) <span class="ruby-keyword">or</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">'init.rb'</span>)))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

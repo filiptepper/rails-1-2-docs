@@ -1,0 +1,234 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>README</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            README
+        </h1>
+        <ul class="files">
+            <li>rails/actionmailer/README</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h1 id="label-Action+Mailer+--+Easy+email+delivery+and+testing">Action Mailer – Easy email delivery and testing</h1>
+
+<p>Action Mailer is a framework for designing email-service layers. These
+layers are used to consolidate code for sending out forgotten passwords,
+welcome wishes on signup, invoices for billing, and any other use case that
+requires a written notification to either a person or another system.</p>
+
+<p>Additionally, an Action Mailer class can be used to process incoming email,
+such as allowing a weblog to accept new posts from an email (which could
+even have been sent from a phone).</p>
+
+<h2 id="label-Sending+emails">Sending emails</h2>
+
+<p>The framework works by setting up all the email details, except the body,
+in methods on the service layer. <a
+href="../../../classes/Subject.html">Subject</a>, recipients, sender, and
+timestamp are all set up this way. An example of such a method:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">signed_up</span>(<span class="ruby-identifier">recipient</span>)
+  <span class="ruby-identifier">recipients</span> <span class="ruby-identifier">recipient</span>
+  <span class="ruby-identifier">subject</span>    <span class="ruby-node">&quot;[Signed up] Welcome #{recipient}&quot;</span>
+  <span class="ruby-identifier">from</span>       <span class="ruby-string">&quot;system@loudthinking.com&quot;</span>
+
+  <span class="ruby-identifier">body</span>(:<span class="ruby-identifier">recipient</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">recipient</span>)
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>The body of the email is created by using an Action View template (regular
+ERb) that has the content of the body hash parameter available as instance
+variables.  So the corresponding body template for the method above could
+look like this:</p>
+
+<pre>Hello there, 
+
+Mr. &lt;%= @recipient %&gt;</pre>
+
+<p>And if the recipient was given as “david@loudthinking.com”, the email 
+generated would look like this:</p>
+
+<pre>Date: Sun, 12 Dec 2004 00:00:00 +0100
+From: system@loudthinking.com
+To: david@loudthinking.com
+Subject: [Signed up] Welcome david@loudthinking.com
+
+Hello there, 
+
+Mr. david@loudthinking.com</pre>
+
+<p>You never actually call the instance methods like signed_up directly.
+Instead, you call class methods like deliver_* and create_* that are
+automatically created for each instance method. So if the signed_up method
+sat on ApplicationMailer, it would look like this:</p>
+
+<pre class="ruby"><span class="ruby-constant">ApplicationMailer</span>.<span class="ruby-identifier">create_signed_up</span>(<span class="ruby-string">&quot;david@loudthinking.com&quot;</span>)  <span class="ruby-comment"># =&gt; tmail object for testing</span>
+<span class="ruby-constant">ApplicationMailer</span>.<span class="ruby-identifier">deliver_signed_up</span>(<span class="ruby-string">&quot;david@loudthinking.com&quot;</span>) <span class="ruby-comment"># sends the email</span>
+<span class="ruby-constant">ApplicationMailer</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">signed_up</span>(<span class="ruby-string">&quot;david@loudthinking.com&quot;</span>)     <span class="ruby-comment"># won't work!</span>
+</pre>
+
+<h2 id="label-Receiving+emails">Receiving emails</h2>
+
+<p>To receive emails, you need to implement a public instance method called
+receive that takes a tmail object as its single parameter. The Action
+Mailer framework has a corresponding class method,  which is also called
+receive, that accepts a raw, unprocessed email as a string, which it then
+turns into the tmail object and calls the receive instance method.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Mailman</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionMailer</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">receive</span>(<span class="ruby-identifier">email</span>)
+    <span class="ruby-identifier">page</span> = <span class="ruby-constant">Page</span>.<span class="ruby-identifier">find_by_address</span>(<span class="ruby-identifier">email</span>.<span class="ruby-identifier">to</span>.<span class="ruby-identifier">first</span>)
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">emails</span>.<span class="ruby-identifier">create</span>(
+      :<span class="ruby-identifier">subject</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">email</span>.<span class="ruby-identifier">subject</span>, :<span class="ruby-identifier">body</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">email</span>.<span class="ruby-identifier">body</span>
+    )
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">email</span>.<span class="ruby-identifier">has_attachments?</span>
+      <span class="ruby-keyword">for</span> <span class="ruby-identifier">attachment</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">email</span>.<span class="ruby-identifier">attachments</span>
+        <span class="ruby-identifier">page</span>.<span class="ruby-identifier">attachments</span>.<span class="ruby-identifier">create</span>({ 
+          :<span class="ruby-identifier">file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">attachment</span>, :<span class="ruby-identifier">description</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">email</span>.<span class="ruby-identifier">subject</span>
+        })
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>This Mailman can be the target for Postfix. In <a
+href="../../../classes/Rails.html">Rails</a>, you would use the runner like
+this:</p>
+
+<pre>./script/runner 'Mailman.receive(STDIN.read)'</pre>
+
+<h2 id="label-Configuration">Configuration</h2>
+
+<p>The Base class has the full list of configuration options. Here’s an
+example:</p>
+
+<p><a
+href="../../../classes/ActionMailer/Base.html#method-c-server_settings">ActionMailer::Base.server_settings</a>
+= {</p>
+
+<pre class="ruby">:<span class="ruby-identifier">address=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">'smtp.yourserver.com'</span>,    <span class="ruby-comment"># default: localhost</span>
+:<span class="ruby-identifier">port=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">'25'</span>,                        <span class="ruby-comment"># default: 25</span>
+:<span class="ruby-identifier">user_name=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">'user'</span>,
+:<span class="ruby-identifier">password=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">'pass'</span>,
+:<span class="ruby-identifier">authentication=</span><span class="ruby-operator">&gt;</span>:<span class="ruby-identifier">plain</span>             <span class="ruby-comment"># :plain, :login or :cram_md5</span>
+</pre>
+
+<p>}</p>
+
+<h2 id="label-Dependencies">Dependencies</h2>
+
+<p>Action Mailer requires that the Action Pack is either available to be
+required immediately or is accessible as a GEM.</p>
+
+<h2 id="label-Bundled+software">Bundled software</h2>
+<ul><li>
+<p>tmail 0.10.8 by Minero Aoki released under LGPL Read more on <a
+href="http://i.loveruby.net/en/prog/tmail.html">i.loveruby.net/en/prog/tmail.html</a></p>
+</li><li>
+<p><a href="../../../classes/Text/Format.html">Text::Format</a> 0.63 by Austin
+Ziegler released under OpenSource Read more on <a
+href="http://www.halostatue.ca/ruby/Text__Format.html">www.halostatue.ca/ruby/Text__Format.html</a></p>
+</li></ul>
+
+<h2 id="label-Download">Download</h2>
+
+<p>The latest version of Action Mailer can be found at</p>
+<ul><li>
+<p><a
+href="http://rubyforge.org/project/showfiles.php?group_id=361">rubyforge.org/project/showfiles.php?group_id=361</a></p>
+</li></ul>
+
+<p>Documentation can be found at</p>
+<ul><li>
+<p><a
+href="http://actionmailer.rubyonrails.org">actionmailer.rubyonrails.org</a></p>
+</li></ul>
+
+<h2 id="label-Installation">Installation</h2>
+
+<p>You can install Action Mailer with the following command.</p>
+
+<pre>% [sudo] ruby install.rb</pre>
+
+<p>from its distribution directory.</p>
+
+<h2 id="label-License">License</h2>
+
+<p>Action Mailer is released under the MIT license.</p>
+
+<h2 id="label-Support">Support</h2>
+
+<p>The Action Mailer homepage is <a
+href="http://www.rubyonrails.org.">www.rubyonrails.org.</a> You can find
+the Action Mailer RubyForge page at <a
+href="http://rubyforge.org/projects/actionmailer.">rubyforge.org/projects/actionmailer.</a>
+And as Jim from Rake says:</p>
+
+<pre>Feel free to submit commits or feature requests.  If you send a patch,
+remember to update the corresponding unit tests.  If fact, I prefer
+new feature to be submitted in the form of new unit tests.</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

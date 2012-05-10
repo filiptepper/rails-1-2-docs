@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TMail::StrategyInterface</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            TMail::StrategyInterface 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionmailer/lib/action_mailer/vendor/tmail/encode_rb.html">rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-accept_strategy">accept_strategy</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-create_dest">create_dest</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-decoded">decoded</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-encoded">encoded</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-create_dest">
+            
+              <a name="method-c-create_dest"></a><b>create_dest</b>( obj )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-create_dest_source')" id="l_method-c-create_dest_source">show</a>
+                
+              </p>
+              <div id="method-c-create_dest_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">create_dest</span>( <span class="ruby-identifier">obj</span> )
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">obj</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-constant">StringOutput</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">String</span>
+    <span class="ruby-constant">StringOutput</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-keyword">when</span> <span class="ruby-constant">IO</span>, <span class="ruby-constant">StringOutput</span>
+    <span class="ruby-identifier">obj</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">TypeError</span>, <span class="ruby-string">'cannot handle this type of object for dest'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-accept_strategy">
+            
+              <a name="method-i-accept_strategy"></a><b>accept_strategy</b>( klass, eol, charset, dest = nil )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-accept_strategy_source')" id="l_method-i-accept_strategy_source">show</a>
+                
+              </p>
+              <div id="method-i-accept_strategy_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">accept_strategy</span>( <span class="ruby-identifier">klass</span>, <span class="ruby-identifier">eol</span>, <span class="ruby-identifier">charset</span>, <span class="ruby-identifier">dest</span> = <span class="ruby-keyword">nil</span> )
+  <span class="ruby-identifier">dest</span> <span class="ruby-operator">||=</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">accept</span> <span class="ruby-identifier">klass</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">create_dest</span>(<span class="ruby-identifier">dest</span>), <span class="ruby-identifier">charset</span>, <span class="ruby-identifier">eol</span>)
+  <span class="ruby-identifier">dest</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-decoded">
+            
+              <a name="method-i-decoded"></a><b>decoded</b>( eol = &quot;\n&quot;, charset = 'e', dest = nil )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="StrategyInterface.html#method-i-to_s">to_s</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-decoded_source')" id="l_method-i-decoded_source">show</a>
+                
+              </p>
+              <div id="method-i-decoded_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">decoded</span>( <span class="ruby-identifier">eol</span> = <span class="ruby-string">&quot;\n&quot;</span>, <span class="ruby-identifier">charset</span> = <span class="ruby-string">'e'</span>, <span class="ruby-identifier">dest</span> = <span class="ruby-keyword">nil</span> )
+  <span class="ruby-identifier">accept_strategy</span> <span class="ruby-constant">Decoder</span>, <span class="ruby-identifier">eol</span>, <span class="ruby-identifier">charset</span>, <span class="ruby-identifier">dest</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-encoded">
+            
+              <a name="method-i-encoded"></a><b>encoded</b>( eol = &quot;\r\n&quot;, charset = 'j', dest = nil )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-encoded_source')" id="l_method-i-encoded_source">show</a>
+                
+              </p>
+              <div id="method-i-encoded_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">encoded</span>( <span class="ruby-identifier">eol</span> = <span class="ruby-string">&quot;\r\n&quot;</span>, <span class="ruby-identifier">charset</span> = <span class="ruby-string">'j'</span>, <span class="ruby-identifier">dest</span> = <span class="ruby-keyword">nil</span> )
+  <span class="ruby-identifier">accept_strategy</span> <span class="ruby-constant">Encoder</span>, <span class="ruby-identifier">eol</span>, <span class="ruby-identifier">charset</span>, <span class="ruby-identifier">dest</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <a name="method-i-to_s"></a><b>to_s</b>( eol = &quot;\n&quot;, charset = 'e', dest = nil )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

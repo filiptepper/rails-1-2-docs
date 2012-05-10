@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionController::SessionManagement::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActionController::SessionManagement::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/actionpack/lib/action_controller/session_management_rb.html">rails/actionpack/lib/action_controller/session_management.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-session">session</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-session_options">session_options</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-session_store">session_store</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-session_store-3D">session_store=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-session">
+            
+              <a name="method-i-session"></a><b>session</b>(*args)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Specify how sessions ought to be managed for a subset of the actions on the
+controller. Like filters, you can specify <code>:only</code> and
+<code>:except</code> clauses to restrict the subset, otherwise options
+apply to all actions on this controller.</p>
+
+<p>The session options are inheritable, as well, so if you specify them in a
+parent controller, they apply to controllers that extend the parent.</p>
+
+<p>Usage:</p>
+
+<pre class="ruby"><span class="ruby-comment"># turn off session management for all actions.</span>
+<span class="ruby-identifier">session</span> :<span class="ruby-identifier">off</span>
+
+<span class="ruby-comment"># turn off session management for all actions _except_ foo and bar.</span>
+<span class="ruby-identifier">session</span> :<span class="ruby-identifier">off</span>, :<span class="ruby-identifier">except</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">%w(foo bar)</span>
+
+<span class="ruby-comment"># turn off session management for only the foo and bar actions.</span>
+<span class="ruby-identifier">session</span> :<span class="ruby-identifier">off</span>, :<span class="ruby-identifier">only</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">%w(foo bar)</span>
+
+<span class="ruby-comment"># the session will only work over HTTPS, but only for the foo action</span>
+<span class="ruby-identifier">session</span> :<span class="ruby-identifier">only</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">foo</span>, :<span class="ruby-identifier">session_secure</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+
+<span class="ruby-comment"># the session will only be disabled for 'foo', and only if it is</span>
+<span class="ruby-comment"># requested as a web service</span>
+<span class="ruby-identifier">session</span> :<span class="ruby-identifier">off</span>, :<span class="ruby-identifier">only</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">foo</span>,
+        :<span class="ruby-keyword">if</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">req</span><span class="ruby-operator">|</span> <span class="ruby-identifier">req</span>.<span class="ruby-identifier">parameters</span>[:<span class="ruby-identifier">ws</span>] }
+</pre>
+
+<p>All session options described for <a
+href="../Base.html#method-c-process_cgi">ActionController::Base.process_cgi</a>
+are valid arguments.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-session_source')" id="l_method-i-session_source">show</a>
+                
+              </p>
+              <div id="method-i-session_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/session_management.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">session</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-constant">Hash</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">last</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> {}
+
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:disabled</span>] = <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:only</span>] = [*<span class="ruby-identifier">options</span>[<span class="ruby-value">:only</span>]].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">to_s</span> } <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:only</span>]
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:except</span>] = [*<span class="ruby-identifier">options</span>[<span class="ruby-value">:except</span>]].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">o</span><span class="ruby-operator">|</span> <span class="ruby-identifier">o</span>.<span class="ruby-identifier">to_s</span> } <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:except</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:only</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:except</span>]
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;only one of either :only or :except are allowed&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">write_inheritable_array</span>(<span class="ruby-string">&quot;session_options&quot;</span>, [<span class="ruby-identifier">options</span>])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-session_options">
+            
+              <a name="method-i-session_options"></a><b>session_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the hash used to configure the session. Example use:</p>
+
+<pre>ActionController::Base.session_options[:session_secure] = true # session only available over HTTPS</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-session_options_source')" id="l_method-i-session_options_source">show</a>
+                
+              </p>
+              <div id="method-i-session_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/session_management.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">session_options</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">CgiRequest</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SESSION_OPTIONS</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-session_store">
+            
+              <a name="method-i-session_store"></a><b>session_store</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the session store class currently used.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-session_store_source')" id="l_method-i-session_store_source">show</a>
+                
+              </p>
+              <div id="method-i-session_store_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/session_management.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">session_store</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">CgiRequest</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SESSION_OPTIONS</span>[<span class="ruby-value">:database_manager</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-session_store-3D">
+            
+              <a name="method-i-session_store-3D"></a><b>session_store=</b>(store)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the session store to be used for keeping the session data between
+requests. The default is using the file system, but you can also specify
+one of the other included stores (:active_record_store, :drb_store, 
+:mem_cache_store, or :memory_store) or use your own class.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-session_store-3D_source')" id="l_method-i-session_store-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-session_store-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/session_management.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">session_store=</span>(<span class="ruby-identifier">store</span>)
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">CgiRequest</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SESSION_OPTIONS</span>[<span class="ruby-value">:database_manager</span>] =
+    <span class="ruby-identifier">store</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">store</span> <span class="ruby-operator">==</span> <span class="ruby-value">:drb_store</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;DRbStore&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">store</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span>) <span class="ruby-operator">:</span> <span class="ruby-identifier">store</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

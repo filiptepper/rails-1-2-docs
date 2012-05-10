@@ -1,0 +1,586 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionWebService::API::Base</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActionWebService::API::Base 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/actionwebservice/lib/action_web_service/api_rb.html">rails/actionwebservice/lib/action_web_service/api.rb</a></li>
+            
+            <li><a href="../../../files/rails/actionwebservice/lib/action_web_service/protocol/soap_protocol_rb.html">rails/actionwebservice/lib/action_web_service/protocol/soap_protocol.rb</a></li>
+            
+            <li><a href="../../../files/rails/actionwebservice/lib/action_web_service/protocol/xmlrpc_protocol_rb.html">rails/actionwebservice/lib/action_web_service/protocol/xmlrpc_protocol.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="../../A.html">A</a> web service <a href="../API.html">API</a>
+class specifies the methods that will be available for invocation for an <a
+href="../API.html">API</a>. It also contains metadata such as the method
+type signature hints.</p>
+
+<p>It is not intended to be instantiated.</p>
+
+<p>It is attached to web service implementation classes like <a
+href="../Base.html">ActionWebService::Base</a> and <a
+href="../../ActionController/Base.html">ActionController::Base</a>
+derivatives by using <code>container.web_service_api</code>, where
+<code>container</code> is an <a
+href="../../ActionController/Base.html">ActionController::Base</a> or a <a
+href="../Base.html">ActionWebService::Base</a>.</p>
+
+<p>See <a
+href="../Container/Direct/ClassMethods.html">ActionWebService::Container::Direct::ClassMethods</a>
+for an example of use.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-api_method">api_method</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-api_method_instance">api_method_instance</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-api_method_name">api_method_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-api_methods">api_methods</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-default_api_method_instance">default_api_method_instance</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-has_api_method-3F">has_api_method?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-has_public_api_method-3F">has_public_api_method?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-public_api_method_instance">public_api_method_instance</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-public_api_method_name">public_api_method_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../SignatureTypes.html">
+              ActionWebService::SignatureTypes
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-api_method">
+            
+              <a name="method-c-api_method"></a><b>api_method</b>(name, options={})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="../API.html">API</a> methods have a <code>name</code>, which must
+be the Ruby method name to use when performing the invocation on the web
+service object.</p>
+
+<p>The signatures for the method input parameters and return value can by
+specified in <code>options</code>.</p>
+
+<p><a href="../../A.html">A</a> signature is an array of one or more parameter
+specifiers.  <a href="../../A.html">A</a> parameter specifier can be one of
+the following:</p>
+<ul><li>
+<p><a href="../../A.html">A</a> symbol or string representing one of the
+Action Web Service base types. See <a
+href="../SignatureTypes.html">ActionWebService::SignatureTypes</a> for a
+canonical list of the base types.</p>
+</li><li>
+<p>The <a href="../../Class.html">Class</a> object of the parameter type</p>
+</li><li>
+<p><a href="../../A.html">A</a> single-element Array containing one of the two
+preceding items. This will cause Action Web Service to treat the parameter
+at that position as an array containing only values of the given type.</p>
+</li><li>
+<p><a href="../../A.html">A</a> Hash containing as key the name of the
+parameter, and as value one of the three preceding items</p>
+</li></ul>
+
+<p>If no method input parameter or method return value signatures are given,
+the method is assumed to take no parameters and/or return no values of
+interest, and any values that are received by the server will be discarded
+and ignored.</p>
+
+<p>Valid options:</p>
+<dl class="rdoc-list label-list"><dt><code>:expects</code>
+<dd>
+<p>Signature for the method input parameters</p>
+</dd><dt><code>:returns</code>
+<dd>
+<p>Signature for the method return value</p>
+</dd><dt><code>:expects_and_returns</code>
+<dd>
+<p>Signature for both input parameters and return value</p>
+</dd></dl>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-api_method_source')" id="l_method-c-api_method_source">show</a>
+                
+              </p>
+              <div id="method-c-api_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/api.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">api_method</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ActionWebServiceError</span>, <span class="ruby-string">&quot;Expected a Hash for options&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">validate_options</span>([<span class="ruby-value">:expects</span>, <span class="ruby-value">:returns</span>, <span class="ruby-value">:expects_and_returns</span>], <span class="ruby-identifier">options</span>.<span class="ruby-identifier">keys</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:expects_and_returns</span>]
+    <span class="ruby-identifier">expects</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:expects_and_returns</span>]
+    <span class="ruby-identifier">returns</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:expects_and_returns</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">expects</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:expects</span>]
+    <span class="ruby-identifier">returns</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:returns</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">expects</span> = <span class="ruby-identifier">canonical_signature</span>(<span class="ruby-identifier">expects</span>)
+  <span class="ruby-identifier">returns</span> = <span class="ruby-identifier">canonical_signature</span>(<span class="ruby-identifier">returns</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">expects</span>
+    <span class="ruby-identifier">expects</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">type</span> = <span class="ruby-identifier">type</span>.<span class="ruby-identifier">element_type</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">ArrayType</span>)
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">type_class</span>.<span class="ruby-identifier">ancestors</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">allow_active_record_expects</span>
+        <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ActionWebServiceError</span>, <span class="ruby-string">&quot;ActiveRecord model classes not allowed in :expects&quot;</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>
+  <span class="ruby-identifier">public_name</span> = <span class="ruby-identifier">public_api_method_name</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">method</span> = <span class="ruby-constant">Method</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">public_name</span>, <span class="ruby-identifier">expects</span>, <span class="ruby-identifier">returns</span>)
+  <span class="ruby-identifier">write_inheritable_hash</span>(<span class="ruby-string">&quot;api_methods&quot;</span>, <span class="ruby-identifier">name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>)
+  <span class="ruby-identifier">write_inheritable_hash</span>(<span class="ruby-string">&quot;api_public_method_names&quot;</span>, <span class="ruby-identifier">public_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-api_method_instance">
+            
+              <a name="method-c-api_method_instance"></a><b>api_method_instance</b>(method_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>The <a href="Method.html">Method</a> instance for the given <a
+href="../API.html">API</a> method name, if any</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-api_method_instance_source')" id="l_method-c-api_method_instance_source">show</a>
+                
+              </p>
+              <div id="method-c-api_method_instance_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/api.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">api_method_instance</span>(<span class="ruby-identifier">method_name</span>)
+  <span class="ruby-identifier">api_methods</span>[<span class="ruby-identifier">method_name</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-api_method_name">
+            
+              <a name="method-c-api_method_name"></a><b>api_method_name</b>(public_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>The corresponding service method name for the given public method name</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-api_method_name_source')" id="l_method-c-api_method_name_source">show</a>
+                
+              </p>
+              <div id="method-c-api_method_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/api.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">api_method_name</span>(<span class="ruby-identifier">public_name</span>)
+  <span class="ruby-identifier">api_public_method_names</span>[<span class="ruby-identifier">public_name</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-api_methods">
+            
+              <a name="method-c-api_methods"></a><b>api_methods</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="../../A.html">A</a> Hash containing all service methods on this <a
+href="../API.html">API</a>, and their associated metadata.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-api_methods_source')" id="l_method-c-api_methods_source">show</a>
+                
+              </p>
+              <div id="method-c-api_methods_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/api.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">api_methods</span>
+  <span class="ruby-identifier">read_inheritable_attribute</span>(<span class="ruby-string">&quot;api_methods&quot;</span>) <span class="ruby-operator">||</span> {}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-default_api_method_instance">
+            
+              <a name="method-c-default_api_method_instance"></a><b>default_api_method_instance</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>The <a href="Method.html">Method</a> instance for the default <a
+href="../API.html">API</a> method, if any</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-default_api_method_instance_source')" id="l_method-c-default_api_method_instance_source">show</a>
+                
+              </p>
+              <div id="method-c-default_api_method_instance_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/api.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_api_method_instance</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span> = <span class="ruby-identifier">default_api_method</span>
+  <span class="ruby-identifier">instance</span> = <span class="ruby-identifier">read_inheritable_attribute</span>(<span class="ruby-string">&quot;default_api_method_instance&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">instance</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">instance</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">instance</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">instance</span> = <span class="ruby-constant">Method</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">public_api_method_name</span>(<span class="ruby-identifier">name</span>), <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">write_inheritable_attribute</span>(<span class="ruby-string">&quot;default_api_method_instance&quot;</span>, <span class="ruby-identifier">instance</span>)
+  <span class="ruby-identifier">instance</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-has_api_method-3F">
+            
+              <a name="method-c-has_api_method-3F"></a><b>has_api_method?</b>(name)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Whether the given method name is a service method on this <a
+href="../API.html">API</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-has_api_method-3F_source')" id="l_method-c-has_api_method-3F_source">show</a>
+                
+              </p>
+              <div id="method-c-has_api_method-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/api.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">has_api_method?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">api_methods</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-has_public_api_method-3F">
+            
+              <a name="method-c-has_public_api_method-3F"></a><b>has_public_api_method?</b>(public_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Whether the given public method name has a corresponding service method on
+this <a href="../API.html">API</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-has_public_api_method-3F_source')" id="l_method-c-has_public_api_method-3F_source">show</a>
+                
+              </p>
+              <div id="method-c-has_public_api_method-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/api.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">has_public_api_method?</span>(<span class="ruby-identifier">public_name</span>)
+  <span class="ruby-identifier">api_public_method_names</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">public_name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-public_api_method_instance">
+            
+              <a name="method-c-public_api_method_instance"></a><b>public_api_method_instance</b>(public_method_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>The <a href="Method.html">Method</a> instance for the given public <a
+href="../API.html">API</a> method name, if any</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-public_api_method_instance_source')" id="l_method-c-public_api_method_instance_source">show</a>
+                
+              </p>
+              <div id="method-c-public_api_method_instance_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/api.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">public_api_method_instance</span>(<span class="ruby-identifier">public_method_name</span>)
+  <span class="ruby-identifier">api_method_instance</span>(<span class="ruby-identifier">api_method_name</span>(<span class="ruby-identifier">public_method_name</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-public_api_method_name">
+            
+              <a name="method-c-public_api_method_name"></a><b>public_api_method_name</b>(name)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>The corresponding public method name for the given service method name</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-public_api_method_name_source')" id="l_method-c-public_api_method_name_source">show</a>
+                
+              </p>
+              <div id="method-c-public_api_method_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/api.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">public_api_method_name</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">inflect_names</span>
+    <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+    </div>
+  </body>
+</html>    

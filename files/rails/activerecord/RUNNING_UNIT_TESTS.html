@@ -1,0 +1,139 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>RUNNING_UNIT_TESTS</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            RUNNING_UNIT_TESTS
+        </h1>
+        <ul class="files">
+            <li>rails/activerecord/RUNNING_UNIT_TESTS</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h2 id="label-Creating+the+test+database">Creating the test database</h2>
+
+<p>The default names for the test databases are “activerecord_unittest” and 
+“activerecord_unittest2”. If you want to use another database name then be
+sure  to update the connection adapter setups you want to test with in 
+test/connections/&lt;your database&gt;/connection.rb.  When you have the
+database online, you can import the fixture tables with  the
+test/fixtures/db_definitions/*.sql files.</p>
+
+<p>Make sure that you create database objects with the same user that you
+specified in  connection.rb otherwise (on Postgres, at least) tests for
+default values will fail.</p>
+
+<h2 id="label-Running+with+Rake">Running with Rake</h2>
+
+<p>The easiest way to run the unit tests is through Rake. The default task
+runs the entire test suite for all the adapters. You can also run the suite
+on just one adapter by using the tasks test_mysql, test_sqlite,
+test_postgresql or any of the other test_ tasks. For more information,
+checkout the full array of rake tasks with “rake -T”</p>
+
+<p>Rake can be found at <a
+href="http://rake.rubyforge.org">rake.rubyforge.org</a></p>
+
+<h2 id="label-Running+by+hand">Running by hand</h2>
+
+<p>Unit tests are located in test directory. If you only want to run a single
+test suite,  or don’t want to bother with Rake, you can do so with
+something like:</p>
+
+<pre>cd test; ruby -I &quot;connections/native_mysql&quot; base_test.rb</pre>
+
+<p>That’ll run the base suite using the MySQL-Ruby adapter. Change the adapter
+and test suite name as needed.</p>
+
+<p>You can also run all the suites on a specific adapter with:</p>
+
+<pre>cd test; all.sh &quot;connections/native_mysql&quot;</pre>
+
+<h2 id="label-Faster+tests">Faster tests</h2>
+
+<p>If you are using a database that supports transactions, you can set the
+“AR_TX_FIXTURES” environment variable to “yes” to use transactional
+fixtures. This gives a very large speed boost. With rake:</p>
+
+<pre>rake AR_TX_FIXTURES=yes</pre>
+
+<p>Or, by hand:</p>
+
+<pre>AR_TX_FIXTURES=yes ruby -I connections/native_sqlite3 base_test.rb</pre>
+
+<h2 id="label-Testing+with+Oracle">Testing with Oracle</h2>
+
+<p>In order to allow for testing against Oracle using an “arunit” schema
+within an existing Oracle database, the database name and tns connection
+string must be set in environment variables prior to running the unit
+tests.</p>
+
+<pre>$ export ARUNIT_DB_NAME=MYDB
+$ export ARUNIT_DB=MYDB</pre>
+
+<p>The ARUNIT_DB_NAME variable should be set to the name by which the database
+knows itself, ie., what will be returned by the query:</p>
+
+<pre>select sys_context('userenv','db_name') db from dual</pre>
+
+<p>And the ARUNIT_DB variable should be set to the tns connection string.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

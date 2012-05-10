@@ -1,0 +1,544 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Rails::Info</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Rails::Info 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/railties/builtin/rails_info/rails/info_rb.html">rails/railties/builtin/rails_info/rails/info.rb</a></li>
+            
+            <li><a href="../../files/rails/railties/test/rails_info_test_rb.html">rails/railties/test/rails_info_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-component_version">component_version</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-components">components</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-edge_rails_revision">edge_rails_revision</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-freeze_edge_version">freeze_edge_version</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-inspect">inspect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-property">property</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-rails_vendor_root">rails_vendor_root</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-svn_info">svn_info</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-to_html">to_html</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-component_version">
+            
+              <a name="method-c-component_version"></a><b>component_version</b>(component)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-component_version_source')" id="l_method-c-component_version_source">show</a>
+                
+              </p>
+              <div id="method-c-component_version_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/builtin/rails_info/rails/info.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">component_version</span>(<span class="ruby-identifier">component</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-node">&quot;#{component}/version&quot;</span>
+  <span class="ruby-node">&quot;#{component.classify}::VERSION::STRING&quot;</span>.<span class="ruby-identifier">constantize</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-components">
+            
+              <a name="method-c-components"></a><b>components</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-components_source')" id="l_method-c-components_source">show</a>
+                
+              </p>
+              <div id="method-c-components_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/builtin/rails_info/rails/info.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">components</span>
+  <span class="ruby-node">%w( active_record action_pack action_web_service action_mailer active_support )</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-edge_rails_revision">
+            
+              <a name="method-c-edge_rails_revision"></a><b>edge_rails_revision</b>(info = svn_info)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-edge_rails_revision_source')" id="l_method-c-edge_rails_revision_source">show</a>
+                
+              </p>
+              <div id="method-c-edge_rails_revision_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/builtin/rails_info/rails/info.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">edge_rails_revision</span>(<span class="ruby-identifier">info</span> = <span class="ruby-identifier">svn_info</span>)
+  <span class="ruby-identifier">info</span>[<span class="ruby-regexp">%r^Revision: (\d+)/</span>, <span class="ruby-number">1</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">freeze_edge_version</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-freeze_edge_version">
+            
+              <a name="method-c-freeze_edge_version"></a><b>freeze_edge_version</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-freeze_edge_version_source')" id="l_method-c-freeze_edge_version_source">show</a>
+                
+              </p>
+              <div id="method-c-freeze_edge_version_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/builtin/rails_info/rails/info.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">freeze_edge_version</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">rails_vendor_root</span>)
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">rails_vendor_root</span>, <span class="ruby-string">'REVISION_*'</span>)].<span class="ruby-identifier">first</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r_(\d+)$/</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">first</span>
+    <span class="ruby-keyword">rescue</span>
+      <span class="ruby-constant">Dir</span>[<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">rails_vendor_root</span>, <span class="ruby-string">'TAG_*'</span>)].<span class="ruby-identifier">first</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r_(.+)$/</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">first</span> <span class="ruby-keyword">rescue</span> <span class="ruby-string">'unknown'</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-inspect">
+            
+              <a name="method-c-inspect"></a><b>inspect</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-property">
+            
+              <a name="method-c-property"></a><b>property</b>(name, value = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-property_source')" id="l_method-c-property_source">show</a>
+                
+              </p>
+              <div id="method-c-property_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/builtin/rails_info/rails/info.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">property</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">value</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">yield</span>
+  <span class="ruby-identifier">properties</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> 
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-to_html">
+            
+              <a name="method-c-to_html"></a><b>to_html</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-to_html_source')" id="l_method-c-to_html_source">show</a>
+                
+              </p>
+              <div id="method-c-to_html_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/builtin/rails_info/rails/info.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_html</span>
+  <span class="ruby-identifier">returning</span> <span class="ruby-identifier">table</span> = <span class="ruby-string">'&lt;table&gt;'</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">properties</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span>)<span class="ruby-operator">|</span>
+      <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%Q(&lt;tr&gt;&lt;td class=&quot;name&quot;&gt;#{CGI.escapeHTML(name.to_s)}&lt;/td&gt;)</span>
+      <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">%Q(&lt;td class=&quot;value&quot;&gt;#{CGI.escapeHTML(value.to_s)}&lt;/td&gt;&lt;/tr&gt;)</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">table</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'&lt;/table&gt;'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-to_s">
+            
+              <a name="method-c-to_s"></a><b>to_s</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Info.html#method-c-inspect">inspect</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-to_s_source')" id="l_method-c-to_s_source">show</a>
+                
+              </p>
+              <div id="method-c-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/builtin/rails_info/rails/info.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+  <span class="ruby-identifier">column_width</span> = <span class="ruby-identifier">properties</span>.<span class="ruby-identifier">names</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">length</span>}.<span class="ruby-identifier">max</span>
+  [<span class="ruby-string">&quot;About your application's environment&quot;</span>, *<span class="ruby-identifier">properties</span>.<span class="ruby-identifier">map</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">property</span><span class="ruby-operator">|</span>
+    <span class="ruby-node">&quot;%-#{column_width}s   %s&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">property</span>
+  <span class="ruby-keyword">end</span>] * <span class="ruby-string">&quot;\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Class Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-rails_vendor_root">
+            
+              <a name="method-c-rails_vendor_root"></a><b>rails_vendor_root</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-rails_vendor_root_source')" id="l_method-c-rails_vendor_root_source">show</a>
+                
+              </p>
+              <div id="method-c-rails_vendor_root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/builtin/rails_info/rails/info.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rails_vendor_root</span>
+  <span class="ruby-ivar">@rails_vendor_root</span> <span class="ruby-operator">||=</span> <span class="ruby-node">&quot;#{RAILS_ROOT}/vendor/rails&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-svn_info">
+            
+              <a name="method-c-svn_info"></a><b>svn_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-svn_info_source')" id="l_method-c-svn_info_source">show</a>
+                
+              </p>
+              <div id="method-c-svn_info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/builtin/rails_info/rails/info.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">svn_info</span>
+  <span class="ruby-identifier">env_lang</span>, <span class="ruby-constant">ENV</span>[<span class="ruby-string">'LC_ALL'</span>] = <span class="ruby-constant">ENV</span>[<span class="ruby-string">'LC_ALL'</span>], <span class="ruby-string">'C'</span>
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span>(<span class="ruby-identifier">rails_vendor_root</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">silence_stderr</span> { <span class="ruby-value">%xsvn info`</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'LC_ALL'</span>] = <span class="ruby-identifier">env_lang</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+    </div>
+  </body>
+</html>    

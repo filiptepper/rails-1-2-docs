@@ -1,0 +1,442 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionView::CompiledTemplates</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActionView::CompiledTemplates 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Module.html">Module</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionpack/lib/action_view/compiled_templates_rb.html">rails/actionpack/lib/action_view/compiled_templates.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="CompiledTemplates.html">CompiledTemplates</a> modules hold methods
+that have been compiled. Templates are compiled into these methods so that
+they do not need to be read and parsed for each request.</p>
+
+<p>Each template may be compiled into one or more methods. Each method accepts
+a given set of parameters which is used to implement local assigns passing.</p>
+
+<p>To use a compiled template module, create a new instance and include it
+into the class in which you want the template to be rendered.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-compile_source">compile_source</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-compiled-3F">compiled?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-full_key">full_key</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-mtime">mtime</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-selector">selector</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-wrap_source">wrap_source</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>method_names</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/compiled_templates.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-ivar">@method_names</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">hash</span>, <span class="ruby-identifier">key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-node">&quot;__compiled_method_#{(hash.length + 1)}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@mtimes</span> = {}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-compile_source">
+            
+              <a name="method-i-compile_source"></a><b>compile_source</b>(identifier, arg_names, source, initial_line_number = 0, file_name = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Compile the provided source code for the given argument names and with the
+given initial line number. The identifier should be unique to this source.</p>
+
+<p>The file_name, if provided will appear in backtraces. If not provded, the
+file_name defaults to the identifier.</p>
+
+<p>This method will return the selector for the compiled version of this
+method.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-compile_source_source')" id="l_method-i-compile_source_source">show</a>
+                
+              </p>
+              <div id="method-i-compile_source_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/compiled_templates.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">compile_source</span>(<span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">arg_names</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">initial_line_number</span> = <span class="ruby-number">0</span>, <span class="ruby-identifier">file_name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">file_name</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">identifier</span>
+  <span class="ruby-identifier">name</span> = <span class="ruby-identifier">method_names</span>[<span class="ruby-identifier">full_key</span>(<span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">arg_names</span>)]
+  <span class="ruby-identifier">arg_desc</span> = <span class="ruby-identifier">arg_names</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-operator">?</span> <span class="ruby-string">''</span> <span class="ruby-operator">:</span> <span class="ruby-node">&quot;(#{arg_names * ', '})&quot;</span>
+  <span class="ruby-identifier">fake_file_name</span> = <span class="ruby-node">&quot;#{file_name}#{arg_desc}&quot;</span> <span class="ruby-comment"># Include the arguments for this version (for now)</span>
+  
+  <span class="ruby-identifier">method_def</span> = <span class="ruby-identifier">wrap_source</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">arg_names</span>, <span class="ruby-identifier">source</span>)
+  
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">module_eval</span>(<span class="ruby-identifier">method_def</span>, <span class="ruby-identifier">fake_file_name</span>, <span class="ruby-identifier">initial_line_number</span>)
+    <span class="ruby-ivar">@mtimes</span>[<span class="ruby-identifier">full_key</span>(<span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">arg_names</span>)] = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>  <span class="ruby-comment"># errors from compiled source</span>
+    <span class="ruby-identifier">e</span>.<span class="ruby-identifier">blame_file!</span> <span class="ruby-identifier">identifier</span>
+    <span class="ruby-identifier">raise</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-compiled-3F">
+            
+              <a name="method-i-compiled-3F"></a><b>compiled?</b>(identifier, arg_names)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-full_key">
+            
+              <a name="method-i-full_key"></a><b>full_key</b>(identifier, arg_names)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Return the full key for the given identifier and argument names</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-full_key_source')" id="l_method-i-full_key_source">show</a>
+                
+              </p>
+              <div id="method-i-full_key_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/compiled_templates.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">full_key</span>(<span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">arg_names</span>)
+  [<span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">arg_names</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mtime">
+            
+              <a name="method-i-mtime"></a><b>mtime</b>(identifier, arg_names)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Return the time at which the method for the given identifier and argument
+names was compiled.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mtime_source')" id="l_method-i-mtime_source">show</a>
+                
+              </p>
+              <div id="method-i-mtime_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/compiled_templates.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mtime</span>(<span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">arg_names</span>)
+  <span class="ruby-ivar">@mtimes</span>[<span class="ruby-identifier">full_key</span>(<span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">arg_names</span>)]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-selector">
+            
+              <a name="method-i-selector"></a><b>selector</b>(identifier, arg_names)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Return the selector for this method or nil if it has not been compiled</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="CompiledTemplates.html#method-i-compiled-3F">compiled?</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-selector_source')" id="l_method-i-selector_source">show</a>
+                
+              </p>
+              <div id="method-i-selector_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/compiled_templates.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">selector</span>(<span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">arg_names</span>)
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">full_key</span>(<span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">arg_names</span>)
+  <span class="ruby-identifier">method_names</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">key</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">method_names</span>[<span class="ruby-identifier">key</span>] <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-wrap_source">
+            
+              <a name="method-i-wrap_source"></a><b>wrap_source</b>(name, arg_names, source)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Wrap the provided source in a def … end block.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-wrap_source_source')" id="l_method-i-wrap_source_source">show</a>
+                
+              </p>
+              <div id="method-i-wrap_source_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/compiled_templates.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">wrap_source</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">arg_names</span>, <span class="ruby-identifier">source</span>)
+  <span class="ruby-node">&quot;def #{name}(#{arg_names * ', '})\n#{source}\nend&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

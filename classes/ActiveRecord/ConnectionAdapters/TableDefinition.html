@@ -1,0 +1,441 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::ConnectionAdapters::TableDefinition</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecord::ConnectionAdapters::TableDefinition 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions_rb.html">rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Represents a SQL table in an abstract way. Columns are stored as
+ColumnDefinition in the <a
+href="TableDefinition.html#attribute-i-columns">columns</a> attribute.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-5B-5D">[]</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-column">column</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-primary_key">primary_key</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_sql">to_sql</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>columns</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(base)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 230</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-ivar">@columns</span> = []
+  <span class="ruby-ivar">@base</span> = <span class="ruby-identifier">base</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-5B-5D">
+            
+              <a name="method-i-5B-5D"></a><b>[]</b>(name)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a ColumnDefinition for the column with name <code>name</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-5B-5D_source')" id="l_method-i-5B-5D_source">show</a>
+                
+              </p>
+              <div id="method-i-5B-5D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 242</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-keyword ruby-title">name</span>)
+  <span class="ruby-ivar">@columns</span>.<span class="ruby-identifier">find</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">column</span><span class="ruby-operator">|</span> <span class="ruby-identifier">column</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-column">
+            
+              <a name="method-i-column"></a><b>column</b>(name, type, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Instantiates a new column for the table. The <code>type</code> parameter
+must be one of the following values: <code>:primary_key</code>,
+<code>:string</code>, <code>:text</code>, <code>:integer</code>,
+<code>:float</code>, <code>:decimal</code>, <code>:datetime</code>,
+<code>:timestamp</code>, <code>:time</code>, <code>:date</code>,
+<code>:binary</code>, <code>:boolean</code>.</p>
+
+<p>Available options are (none of these exists by default):</p>
+<ul><li>
+<p><code>:limit</code>: Requests a maximum column length
+(<code>:string</code>, <code>:text</code>, <code>:binary</code> or
+<code>:integer</code> columns only)</p>
+</li><li>
+<p><code>:default</code>: The column's default value. Use nil for NULL.</p>
+</li><li>
+<p><code>:null</code>: Allows or disallows <code>NULL</code> values in the
+column.  This option could have been named <code>:null_allowed</code>.</p>
+</li><li>
+<p><code>:precision</code>: Specifies the precision for a
+<code>:decimal</code> column.</p>
+</li><li>
+<p><code>:scale</code>: Specifies the scale for a <code>:decimal</code>
+column.</p>
+</li></ul>
+
+<p>Please be aware of different RDBMS implementations behavior with
+<code>:decimal</code> columns:</p>
+<ul><li>
+<p>The SQL standard says the default scale should be 0, <code>:scale</code>
+&lt;= <code>:precision</code>, and makes no comments about the requirements
+of <code>:precision</code>.</p>
+</li><li>
+<p>MySQL: <code>:precision</code> [1..63], <code>:scale</code> [0..30].  <a
+href="../../Default.html">Default</a> is (10,0).</p>
+</li><li>
+<p>PostgreSQL: <code>:precision</code> [1..infinity],  <code>:scale</code>
+[0..infinity]. No default.</p>
+</li><li>
+<p>SQLite2: Any <code>:precision</code> and <code>:scale</code> may be used. 
+Internal storage as strings. No default.</p>
+</li><li>
+<p>SQLite3: No restrictions on <code>:precision</code> and
+<code>:scale</code>, but the maximum supported <code>:precision</code> is
+16. No default.</p>
+</li><li>
+<p>Oracle: <code>:precision</code> [1..38], <code>:scale</code> [-84..127]. 
+<a href="../../Default.html">Default</a> is (38,0).</p>
+</li><li>
+<p>DB2: <code>:precision</code> [1..63], <code>:scale</code> [0..62].  <a
+href="../../Default.html">Default</a> unknown.</p>
+</li><li>
+<p>Firebird: <code>:precision</code> [1..18], <code>:scale</code> [0..18].  <a
+href="../../Default.html">Default</a> (9,0). Internal types NUMERIC and
+DECIMAL have different storage rules, decimal being better.</p>
+</li><li>
+<p>FrontBase?: <code>:precision</code> [1..38], <code>:scale</code> [0..38]. 
+<a href="../../Default.html">Default</a> (38,0). WARNING Max
+<code>:precision</code>/<code>:scale</code> for NUMERIC is 19, and DECIMAL
+is 38.</p>
+</li><li>
+<p>SqlServer?: <code>:precision</code> [1..38], <code>:scale</code> [0..38]. 
+<a href="../../Default.html">Default</a> (38,0).</p>
+</li><li>
+<p>Sybase: <code>:precision</code> [1..38], <code>:scale</code> [0..38].  <a
+href="../../Default.html">Default</a> (38,0).</p>
+</li><li>
+<p>OpenBase?: Documentation unclear. Claims storage in <code>double</code>.</p>
+</li></ul>
+
+<p>This method returns <code>self</code>.</p>
+
+<h5 id="method-i-column-label-Examples">Examples</h5>
+
+<pre class="ruby"><span class="ruby-comment"># Assuming td is an instance of TableDefinition</span>
+<span class="ruby-identifier">td</span>.<span class="ruby-identifier">column</span>(:<span class="ruby-identifier">granted</span>, :<span class="ruby-identifier">boolean</span>)
+  <span class="ruby-comment">#=&gt; granted BOOLEAN</span>
+
+<span class="ruby-identifier">td</span>.<span class="ruby-identifier">column</span>(:<span class="ruby-identifier">picture</span>, :<span class="ruby-identifier">binary</span>, :<span class="ruby-identifier">limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>.<span class="ruby-identifier">megabytes</span>)
+  <span class="ruby-comment">#=&gt; picture BLOB(2097152)</span>
+
+<span class="ruby-identifier">td</span>.<span class="ruby-identifier">column</span>(:<span class="ruby-identifier">sales_stage</span>, :<span class="ruby-identifier">string</span>, :<span class="ruby-identifier">limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">20</span>, :<span class="ruby-identifier">default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'new'</span>, :<span class="ruby-identifier">null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>)
+  <span class="ruby-comment">#=&gt; sales_stage VARCHAR(20) DEFAULT 'new' NOT NULL</span>
+
+<span class="ruby-keyword">def</span>.<span class="ruby-identifier">column</span>(:<span class="ruby-identifier">bill_gates_money</span>, :<span class="ruby-identifier">decimal</span>, :<span class="ruby-identifier">precision</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">15</span>, :<span class="ruby-identifier">scale</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">2</span>)
+  <span class="ruby-comment">#=&gt; bill_gates_money DECIMAL(15,2)</span>
+
+<span class="ruby-keyword">def</span>.<span class="ruby-identifier">column</span>(:<span class="ruby-identifier">sensor_reading</span>, :<span class="ruby-identifier">decimal</span>, :<span class="ruby-identifier">precision</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>, :<span class="ruby-identifier">scale</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">20</span>)
+  <span class="ruby-comment">#=&gt; sensor_reading DECIMAL(30,20)</span>
+
+<span class="ruby-comment"># While &lt;tt&gt;:scale&lt;/tt&gt; defaults to zero on most databases, it</span>
+<span class="ruby-comment"># probably wouldn't hurt to include it.</span>
+<span class="ruby-keyword">def</span>.<span class="ruby-identifier">column</span>(:<span class="ruby-identifier">huge_integer</span>, :<span class="ruby-identifier">decimal</span>, :<span class="ruby-identifier">precision</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">30</span>)
+  <span class="ruby-comment">#=&gt; huge_integer DECIMAL(30)</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-column_source')" id="l_method-i-column_source">show</a>
+                
+              </p>
+              <div id="method-i-column_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">column</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">column</span> = <span class="ruby-keyword">self</span>[<span class="ruby-identifier">name</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">ColumnDefinition</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@base</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">type</span>)
+  <span class="ruby-identifier">column</span>.<span class="ruby-identifier">limit</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:limit</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">native</span>[<span class="ruby-identifier">type</span>.<span class="ruby-identifier">to_sym</span>][<span class="ruby-value">:limit</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:limit</span>] <span class="ruby-keyword">or</span> <span class="ruby-identifier">native</span>[<span class="ruby-identifier">type</span>.<span class="ruby-identifier">to_sym</span>]
+  <span class="ruby-identifier">column</span>.<span class="ruby-identifier">precision</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:precision</span>]
+  <span class="ruby-identifier">column</span>.<span class="ruby-identifier">scale</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:scale</span>]
+  <span class="ruby-identifier">column</span>.<span class="ruby-identifier">default</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:default</span>]
+  <span class="ruby-identifier">column</span>.<span class="ruby-identifier">null</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:null</span>]
+  <span class="ruby-ivar">@columns</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">column</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@columns</span>.<span class="ruby-identifier">include?</span> <span class="ruby-identifier">column</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-primary_key">
+            
+              <a name="method-i-primary_key"></a><b>primary_key</b>(name)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Appends a primary key definition to the table definition. Can be called
+multiple times, but this is probably not a good idea.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-primary_key_source')" id="l_method-i-primary_key_source">show</a>
+                
+              </p>
+              <div id="method-i-primary_key_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">primary_key</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">column</span>(<span class="ruby-identifier">name</span>, <span class="ruby-value">:primary_key</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_sql">
+            
+              <a name="method-i-to_sql"></a><b>to_sql</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a <a href="../../String.html">String</a> whose contents are the
+column definitions concatenated together.  This string can then be pre and
+appended to to generate the final SQL to create the table.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_sql_source')" id="l_method-i-to_sql_source">show</a>
+                
+              </p>
+              <div id="method-i-to_sql_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 333</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_sql</span>
+  <span class="ruby-ivar">@columns</span> * <span class="ruby-string">', '</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

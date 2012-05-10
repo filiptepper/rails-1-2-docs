@@ -1,0 +1,912 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecordHelperTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecordHelperTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/template/active_record_helper_test_rb.html">rails/actionpack/test/template/active_record_helper_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>require File.dirname(__FILE__) +
+‘/../../lib/action_view/helpers/active_record_helper’</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="ActiveRecordHelperTest/Post.html">ActiveRecordHelperTest::Post</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="ActiveRecordHelperTest/User.html">ActiveRecordHelperTest::User</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-setup_post">setup_post</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-setup_user">setup_user</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_error_for_block">test_error_for_block</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_error_message_on">test_error_message_on</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_error_message_on_handles_nil">test_error_message_on_handles_nil</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_error_messages_for_handles_nil">test_error_messages_for_handles_nil</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_error_messages_for_many_objects">test_error_messages_for_many_objects</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_form_with_date">test_form_with_date</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_form_with_datetime">test_form_with_datetime</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_form_with_string">test_form_with_string</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_form_with_string_multipart">test_form_with_string_multipart</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_generic_input_tag">test_generic_input_tag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_text_area_with_errors">test_text_area_with_errors</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_text_field_with_errors">test_text_field_with_errors</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/FormHelper.html">
+              ActionView::Helpers::FormHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/ActiveRecordHelper.html">
+              ActionView::Helpers::ActiveRecordHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/TextHelper.html">
+              ActionView::Helpers::TextHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/TagHelper.html">
+              ActionView::Helpers::TagHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/UrlHelper.html">
+              ActionView::Helpers::UrlHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/FormTagHelper.html">
+              ActionView::Helpers::FormTagHelper
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">Post</td>
+            <td>=</td>
+            <td class="attr-value">Struct.new(&quot;Post&quot;, :title, :author_name, :body, :secret, :written_on)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">User</td>
+            <td>=</td>
+            <td class="attr-value">Struct.new(&quot;User&quot;, :email)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">Column</td>
+            <td>=</td>
+            <td class="attr-value">Struct.new(&quot;Column&quot;, :type, :name, :human_name)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-identifier">setup_post</span>
+  <span class="ruby-identifier">setup_user</span>
+
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">@controller</span>.<span class="ruby-identifier">url_for</span>(<span class="ruby-identifier">options</span>, *<span class="ruby-identifier">parameters_for_method_reference</span>)
+    <span class="ruby-identifier">options</span> = <span class="ruby-identifier">options</span>.<span class="ruby-identifier">symbolize_keys</span>
+
+    [<span class="ruby-identifier">options</span>[<span class="ruby-value">:action</span>], <span class="ruby-identifier">options</span>[<span class="ruby-value">:id</span>].<span class="ruby-identifier">to_param</span>].<span class="ruby-identifier">compact</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'/'</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-setup_post">
+            
+              <a name="method-i-setup_post"></a><b>setup_post</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_post_source')" id="l_method-i-setup_post_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_post_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup_post</span>
+  <span class="ruby-ivar">@post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">new</span>    
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">@post</span>.<span class="ruby-identifier">errors</span>
+    <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span> {
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">on</span>(<span class="ruby-identifier">field</span>) <span class="ruby-identifier">field</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;author_name&quot;</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">field</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;body&quot;</span> <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">empty?</span>() <span class="ruby-keyword">false</span> <span class="ruby-keyword">end</span> 
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">count</span>() <span class="ruby-number">1</span> <span class="ruby-keyword">end</span> 
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">full_messages</span>() [ <span class="ruby-string">&quot;Author name can't be empty&quot;</span> ] <span class="ruby-keyword">end</span>
+    }.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">@post</span>.<span class="ruby-identifier">new_record?</span>() <span class="ruby-keyword">true</span> <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">@post</span>.<span class="ruby-identifier">to_param</span>() <span class="ruby-keyword">nil</span> <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">@post</span>.<span class="ruby-identifier">column_for_attribute</span>(<span class="ruby-identifier">attr_name</span>)
+    <span class="ruby-constant">Post</span>.<span class="ruby-identifier">content_columns</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">column</span><span class="ruby-operator">|</span> <span class="ruby-identifier">column</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">attr_name</span> }.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">silence_warnings</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">Post</span>.<span class="ruby-identifier">content_columns</span>() [ <span class="ruby-constant">Column</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:string</span>, <span class="ruby-string">&quot;title&quot;</span>, <span class="ruby-string">&quot;Title&quot;</span>), <span class="ruby-constant">Column</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:text</span>, <span class="ruby-string">&quot;body&quot;</span>, <span class="ruby-string">&quot;Body&quot;</span>) ] <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@post</span>.<span class="ruby-identifier">title</span>       = <span class="ruby-string">&quot;Hello World&quot;</span>
+  <span class="ruby-ivar">@post</span>.<span class="ruby-identifier">author_name</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-ivar">@post</span>.<span class="ruby-identifier">body</span>        = <span class="ruby-string">&quot;Back to the hill and over it again!&quot;</span>
+  <span class="ruby-ivar">@post</span>.<span class="ruby-identifier">secret</span> = <span class="ruby-number">1</span>
+  <span class="ruby-ivar">@post</span>.<span class="ruby-identifier">written_on</span>  = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">new</span>(<span class="ruby-number">2004</span>, <span class="ruby-number">6</span>, <span class="ruby-number">15</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-setup_user">
+            
+              <a name="method-i-setup_user"></a><b>setup_user</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_user_source')" id="l_method-i-setup_user_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_user_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup_user</span>
+  <span class="ruby-ivar">@user</span> = <span class="ruby-constant">User</span>.<span class="ruby-identifier">new</span>    
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">@user</span>.<span class="ruby-identifier">errors</span>
+    <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span> {
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">on</span>(<span class="ruby-identifier">field</span>) <span class="ruby-identifier">field</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;email&quot;</span> <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">empty?</span>() <span class="ruby-keyword">false</span> <span class="ruby-keyword">end</span> 
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">count</span>() <span class="ruby-number">1</span> <span class="ruby-keyword">end</span> 
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">full_messages</span>() [ <span class="ruby-string">&quot;User email can't be empty&quot;</span> ] <span class="ruby-keyword">end</span>
+    }.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">@user</span>.<span class="ruby-identifier">new_record?</span>() <span class="ruby-keyword">true</span> <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">@user</span>.<span class="ruby-identifier">to_param</span>() <span class="ruby-keyword">nil</span> <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">@user</span>.<span class="ruby-identifier">column_for_attribute</span>(<span class="ruby-identifier">attr_name</span>)
+    <span class="ruby-constant">User</span>.<span class="ruby-identifier">content_columns</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">column</span><span class="ruby-operator">|</span> <span class="ruby-identifier">column</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">attr_name</span> }.<span class="ruby-identifier">first</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">silence_warnings</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">User</span>.<span class="ruby-identifier">content_columns</span>() [ <span class="ruby-constant">Column</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:string</span>, <span class="ruby-string">&quot;email&quot;</span>, <span class="ruby-string">&quot;Email&quot;</span>) ] <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@user</span>.<span class="ruby-identifier">email</span> = <span class="ruby-string">&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_error_for_block">
+            
+              <a name="method-i-test_error_for_block"></a><b>test_error_for_block</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_error_for_block_source')" id="l_method-i-test_error_for_block_source">show</a>
+                
+              </p>
+              <div id="method-i-test_error_for_block_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_error_for_block</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;div class=&quot;errorExplanation&quot; id=&quot;errorExplanation&quot;&gt;&lt;h2&gt;1 error prohibited this post from being saved&lt;/h2&gt;&lt;p&gt;There were problems with the following fields:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Author name can't be empty&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;)</span>, <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-string">&quot;post&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q(&lt;div class=&quot;errorDeathByClass&quot; id=&quot;errorDeathById&quot;&gt;&lt;h1&gt;1 error prohibited this post from being saved&lt;/h1&gt;&lt;p&gt;There were problems with the following fields:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Author name can't be empty&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;)</span>, <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;errorDeathByClass&quot;</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;errorDeathById&quot;</span>, <span class="ruby-value">:header_tag</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;h1&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q(&lt;div id=&quot;errorDeathById&quot;&gt;&lt;h1&gt;1 error prohibited this post from being saved&lt;/h1&gt;&lt;p&gt;There were problems with the following fields:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Author name can't be empty&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;)</span>, <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;errorDeathById&quot;</span>, <span class="ruby-value">:header_tag</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;h1&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q(&lt;div class=&quot;errorDeathByClass&quot;&gt;&lt;h1&gt;1 error prohibited this post from being saved&lt;/h1&gt;&lt;p&gt;There were problems with the following fields:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Author name can't be empty&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;)</span>, <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;errorDeathByClass&quot;</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:header_tag</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;h1&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_error_message_on">
+            
+              <a name="method-i-test_error_message_on"></a><b>test_error_message_on</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_error_message_on_source')" id="l_method-i-test_error_message_on_source">show</a>
+                
+              </p>
+              <div id="method-i-test_error_message_on_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_error_message_on</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">error_message_on</span>(<span class="ruby-value">:post</span>, <span class="ruby-value">:author_name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_error_message_on_handles_nil">
+            
+              <a name="method-i-test_error_message_on_handles_nil"></a><b>test_error_message_on_handles_nil</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_error_message_on_handles_nil_source')" id="l_method-i-test_error_message_on_handles_nil_source">show</a>
+                
+              </p>
+              <div id="method-i-test_error_message_on_handles_nil_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_error_message_on_handles_nil</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">error_message_on</span>(<span class="ruby-string">&quot;notthere&quot;</span>, <span class="ruby-string">&quot;notthere&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_error_messages_for_handles_nil">
+            
+              <a name="method-i-test_error_messages_for_handles_nil"></a><b>test_error_messages_for_handles_nil</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_error_messages_for_handles_nil_source')" id="l_method-i-test_error_messages_for_handles_nil_source">show</a>
+                
+              </p>
+              <div id="method-i-test_error_messages_for_handles_nil_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_error_messages_for_handles_nil</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-string">&quot;notthere&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_error_messages_for_many_objects">
+            
+              <a name="method-i-test_error_messages_for_many_objects"></a><b>test_error_messages_for_many_objects</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_error_messages_for_many_objects_source')" id="l_method-i-test_error_messages_for_many_objects_source">show</a>
+                
+              </p>
+              <div id="method-i-test_error_messages_for_many_objects_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 182</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_error_messages_for_many_objects</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;div class=&quot;errorExplanation&quot; id=&quot;errorExplanation&quot;&gt;&lt;h2&gt;2 errors prohibited this post from being saved&lt;/h2&gt;&lt;p&gt;There were problems with the following fields:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;Author name can't be empty&lt;/li&gt;&lt;li&gt;User email can't be empty&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;)</span>, <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-string">&quot;user&quot;</span>)
+
+  <span class="ruby-comment"># reverse the order, error order changes and so does the title</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;div class=&quot;errorExplanation&quot; id=&quot;errorExplanation&quot;&gt;&lt;h2&gt;2 errors prohibited this user from being saved&lt;/h2&gt;&lt;p&gt;There were problems with the following fields:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;User email can't be empty&lt;/li&gt;&lt;li&gt;Author name can't be empty&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;)</span>, <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-string">&quot;post&quot;</span>)
+
+  <span class="ruby-comment"># add the default to put post back in the title</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;div class=&quot;errorExplanation&quot; id=&quot;errorExplanation&quot;&gt;&lt;h2&gt;2 errors prohibited this post from being saved&lt;/h2&gt;&lt;p&gt;There were problems with the following fields:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;User email can't be empty&lt;/li&gt;&lt;li&gt;Author name can't be empty&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;)</span>, <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-string">&quot;user&quot;</span>, <span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-value">:object_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;post&quot;</span>)
+  
+  <span class="ruby-comment"># symbols work as well</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;div class=&quot;errorExplanation&quot; id=&quot;errorExplanation&quot;&gt;&lt;h2&gt;2 errors prohibited this post from being saved&lt;/h2&gt;&lt;p&gt;There were problems with the following fields:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;User email can't be empty&lt;/li&gt;&lt;li&gt;Author name can't be empty&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;)</span>, <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-value">:user</span>, <span class="ruby-value">:post</span>, <span class="ruby-value">:object_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>)
+  
+  <span class="ruby-comment"># any default works too</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;div class=&quot;errorExplanation&quot; id=&quot;errorExplanation&quot;&gt;&lt;h2&gt;2 errors prohibited this monkey from being saved&lt;/h2&gt;&lt;p&gt;There were problems with the following fields:&lt;/p&gt;&lt;ul&gt;&lt;li&gt;User email can't be empty&lt;/li&gt;&lt;li&gt;Author name can't be empty&lt;/li&gt;&lt;/ul&gt;&lt;/div&gt;)</span>, <span class="ruby-identifier">error_messages_for</span>(<span class="ruby-value">:user</span>, <span class="ruby-value">:post</span>, <span class="ruby-value">:object_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;monkey&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_form_with_date">
+            
+              <a name="method-i-test_form_with_date"></a><b>test_form_with_date</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_form_with_date_source')" id="l_method-i-test_form_with_date_source">show</a>
+                
+              </p>
+              <div id="method-i-test_form_with_date_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_form_with_date</span>
+  <span class="ruby-identifier">silence_warnings</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">Post</span>.<span class="ruby-identifier">content_columns</span>() [ <span class="ruby-constant">Column</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:date</span>, <span class="ruby-string">&quot;written_on&quot;</span>, <span class="ruby-string">&quot;Written on&quot;</span>) ] <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_dom_equal</span>(
+    <span class="ruby-string">%Q(&lt;form action=&quot;create&quot; method=&quot;post&quot;&gt;&lt;p&gt;&lt;label for=&quot;post_written_on&quot;&gt;Written on&lt;/label&gt;&lt;br /&gt;&lt;select id=&quot;post_written_on_1i&quot; name=&quot;post[written_on(1i)]&quot;&gt;\n&lt;option value=&quot;1999&quot;&gt;1999&lt;/option&gt;\n&lt;option value=&quot;2000&quot;&gt;2000&lt;/option&gt;\n&lt;option value=&quot;2001&quot;&gt;2001&lt;/option&gt;\n&lt;option value=&quot;2002&quot;&gt;2002&lt;/option&gt;\n&lt;option value=&quot;2003&quot;&gt;2003&lt;/option&gt;\n&lt;option value=&quot;2004&quot; selected=&quot;selected&quot;&gt;2004&lt;/option&gt;\n&lt;option value=&quot;2005&quot;&gt;2005&lt;/option&gt;\n&lt;option value=&quot;2006&quot;&gt;2006&lt;/option&gt;\n&lt;option value=&quot;2007&quot;&gt;2007&lt;/option&gt;\n&lt;option value=&quot;2008&quot;&gt;2008&lt;/option&gt;\n&lt;option value=&quot;2009&quot;&gt;2009&lt;/option&gt;\n&lt;/select&gt;\n&lt;select id=&quot;post_written_on_2i&quot; name=&quot;post[written_on(2i)]&quot;&gt;\n&lt;option value=&quot;1&quot;&gt;January&lt;/option&gt;\n&lt;option value=&quot;2&quot;&gt;February&lt;/option&gt;\n&lt;option value=&quot;3&quot;&gt;March&lt;/option&gt;\n&lt;option value=&quot;4&quot;&gt;April&lt;/option&gt;\n&lt;option value=&quot;5&quot;&gt;May&lt;/option&gt;\n&lt;option value=&quot;6&quot; selected=&quot;selected&quot;&gt;June&lt;/option&gt;\n&lt;option value=&quot;7&quot;&gt;July&lt;/option&gt;\n&lt;option value=&quot;8&quot;&gt;August&lt;/option&gt;\n&lt;option value=&quot;9&quot;&gt;September&lt;/option&gt;\n&lt;option value=&quot;10&quot;&gt;October&lt;/option&gt;\n&lt;option value=&quot;11&quot;&gt;November&lt;/option&gt;\n&lt;option value=&quot;12&quot;&gt;December&lt;/option&gt;\n&lt;/select&gt;\n&lt;select id=&quot;post_written_on_3i&quot; name=&quot;post[written_on(3i)]&quot;&gt;\n&lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;\n&lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;\n&lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;\n&lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;\n&lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;\n&lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;\n&lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;\n&lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;\n&lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;\n&lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;\n&lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;\n&lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;\n&lt;option value=&quot;13&quot;&gt;13&lt;/option&gt;\n&lt;option value=&quot;14&quot;&gt;14&lt;/option&gt;\n&lt;option value=&quot;15&quot; selected=&quot;selected&quot;&gt;15&lt;/option&gt;\n&lt;option value=&quot;16&quot;&gt;16&lt;/option&gt;\n&lt;option value=&quot;17&quot;&gt;17&lt;/option&gt;\n&lt;option value=&quot;18&quot;&gt;18&lt;/option&gt;\n&lt;option value=&quot;19&quot;&gt;19&lt;/option&gt;\n&lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;\n&lt;option value=&quot;21&quot;&gt;21&lt;/option&gt;\n&lt;option value=&quot;22&quot;&gt;22&lt;/option&gt;\n&lt;option value=&quot;23&quot;&gt;23&lt;/option&gt;\n&lt;option value=&quot;24&quot;&gt;24&lt;/option&gt;\n&lt;option value=&quot;25&quot;&gt;25&lt;/option&gt;\n&lt;option value=&quot;26&quot;&gt;26&lt;/option&gt;\n&lt;option value=&quot;27&quot;&gt;27&lt;/option&gt;\n&lt;option value=&quot;28&quot;&gt;28&lt;/option&gt;\n&lt;option value=&quot;29&quot;&gt;29&lt;/option&gt;\n&lt;option value=&quot;30&quot;&gt;30&lt;/option&gt;\n&lt;option value=&quot;31&quot;&gt;31&lt;/option&gt;\n&lt;/select&gt;\n&lt;/p&gt;&lt;input name=&quot;commit&quot; type=&quot;submit&quot; value=&quot;Create&quot; /&gt;&lt;/form&gt;)</span>,
+    <span class="ruby-identifier">form</span>(<span class="ruby-string">&quot;post&quot;</span>)
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_form_with_datetime">
+            
+              <a name="method-i-test_form_with_datetime"></a><b>test_form_with_datetime</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_form_with_datetime_source')" id="l_method-i-test_form_with_datetime_source">show</a>
+                
+              </p>
+              <div id="method-i-test_form_with_datetime_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_form_with_datetime</span>
+  <span class="ruby-identifier">silence_warnings</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">Post</span>.<span class="ruby-identifier">content_columns</span>() [ <span class="ruby-constant">Column</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:datetime</span>, <span class="ruby-string">&quot;written_on&quot;</span>, <span class="ruby-string">&quot;Written on&quot;</span>) ] <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@post</span>.<span class="ruby-identifier">written_on</span>  = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">gm</span>(<span class="ruby-number">2004</span>, <span class="ruby-number">6</span>, <span class="ruby-number">15</span>, <span class="ruby-number">16</span>, <span class="ruby-number">30</span>)
+
+  <span class="ruby-identifier">assert_dom_equal</span>(
+    <span class="ruby-string">%Q(&lt;form action=&quot;create&quot; method=&quot;post&quot;&gt;&lt;p&gt;&lt;label for=&quot;post_written_on&quot;&gt;Written on&lt;/label&gt;&lt;br /&gt;&lt;select id=&quot;post_written_on_1i&quot; name=&quot;post[written_on(1i)]&quot;&gt;\n&lt;option value=&quot;1999&quot;&gt;1999&lt;/option&gt;\n&lt;option value=&quot;2000&quot;&gt;2000&lt;/option&gt;\n&lt;option value=&quot;2001&quot;&gt;2001&lt;/option&gt;\n&lt;option value=&quot;2002&quot;&gt;2002&lt;/option&gt;\n&lt;option value=&quot;2003&quot;&gt;2003&lt;/option&gt;\n&lt;option value=&quot;2004&quot; selected=&quot;selected&quot;&gt;2004&lt;/option&gt;\n&lt;option value=&quot;2005&quot;&gt;2005&lt;/option&gt;\n&lt;option value=&quot;2006&quot;&gt;2006&lt;/option&gt;\n&lt;option value=&quot;2007&quot;&gt;2007&lt;/option&gt;\n&lt;option value=&quot;2008&quot;&gt;2008&lt;/option&gt;\n&lt;option value=&quot;2009&quot;&gt;2009&lt;/option&gt;\n&lt;/select&gt;\n&lt;select id=&quot;post_written_on_2i&quot; name=&quot;post[written_on(2i)]&quot;&gt;\n&lt;option value=&quot;1&quot;&gt;January&lt;/option&gt;\n&lt;option value=&quot;2&quot;&gt;February&lt;/option&gt;\n&lt;option value=&quot;3&quot;&gt;March&lt;/option&gt;\n&lt;option value=&quot;4&quot;&gt;April&lt;/option&gt;\n&lt;option value=&quot;5&quot;&gt;May&lt;/option&gt;\n&lt;option value=&quot;6&quot; selected=&quot;selected&quot;&gt;June&lt;/option&gt;\n&lt;option value=&quot;7&quot;&gt;July&lt;/option&gt;\n&lt;option value=&quot;8&quot;&gt;August&lt;/option&gt;\n&lt;option value=&quot;9&quot;&gt;September&lt;/option&gt;\n&lt;option value=&quot;10&quot;&gt;October&lt;/option&gt;\n&lt;option value=&quot;11&quot;&gt;November&lt;/option&gt;\n&lt;option value=&quot;12&quot;&gt;December&lt;/option&gt;\n&lt;/select&gt;\n&lt;select id=&quot;post_written_on_3i&quot; name=&quot;post[written_on(3i)]&quot;&gt;\n&lt;option value=&quot;1&quot;&gt;1&lt;/option&gt;\n&lt;option value=&quot;2&quot;&gt;2&lt;/option&gt;\n&lt;option value=&quot;3&quot;&gt;3&lt;/option&gt;\n&lt;option value=&quot;4&quot;&gt;4&lt;/option&gt;\n&lt;option value=&quot;5&quot;&gt;5&lt;/option&gt;\n&lt;option value=&quot;6&quot;&gt;6&lt;/option&gt;\n&lt;option value=&quot;7&quot;&gt;7&lt;/option&gt;\n&lt;option value=&quot;8&quot;&gt;8&lt;/option&gt;\n&lt;option value=&quot;9&quot;&gt;9&lt;/option&gt;\n&lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;\n&lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;\n&lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;\n&lt;option value=&quot;13&quot;&gt;13&lt;/option&gt;\n&lt;option value=&quot;14&quot;&gt;14&lt;/option&gt;\n&lt;option value=&quot;15&quot; selected=&quot;selected&quot;&gt;15&lt;/option&gt;\n&lt;option value=&quot;16&quot;&gt;16&lt;/option&gt;\n&lt;option value=&quot;17&quot;&gt;17&lt;/option&gt;\n&lt;option value=&quot;18&quot;&gt;18&lt;/option&gt;\n&lt;option value=&quot;19&quot;&gt;19&lt;/option&gt;\n&lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;\n&lt;option value=&quot;21&quot;&gt;21&lt;/option&gt;\n&lt;option value=&quot;22&quot;&gt;22&lt;/option&gt;\n&lt;option value=&quot;23&quot;&gt;23&lt;/option&gt;\n&lt;option value=&quot;24&quot;&gt;24&lt;/option&gt;\n&lt;option value=&quot;25&quot;&gt;25&lt;/option&gt;\n&lt;option value=&quot;26&quot;&gt;26&lt;/option&gt;\n&lt;option value=&quot;27&quot;&gt;27&lt;/option&gt;\n&lt;option value=&quot;28&quot;&gt;28&lt;/option&gt;\n&lt;option value=&quot;29&quot;&gt;29&lt;/option&gt;\n&lt;option value=&quot;30&quot;&gt;30&lt;/option&gt;\n&lt;option value=&quot;31&quot;&gt;31&lt;/option&gt;\n&lt;/select&gt;\n &amp;mdash; &lt;select id=&quot;post_written_on_4i&quot; name=&quot;post[written_on(4i)]&quot;&gt;\n&lt;option value=&quot;00&quot;&gt;00&lt;/option&gt;\n&lt;option value=&quot;01&quot;&gt;01&lt;/option&gt;\n&lt;option value=&quot;02&quot;&gt;02&lt;/option&gt;\n&lt;option value=&quot;03&quot;&gt;03&lt;/option&gt;\n&lt;option value=&quot;04&quot;&gt;04&lt;/option&gt;\n&lt;option value=&quot;05&quot;&gt;05&lt;/option&gt;\n&lt;option value=&quot;06&quot;&gt;06&lt;/option&gt;\n&lt;option value=&quot;07&quot;&gt;07&lt;/option&gt;\n&lt;option value=&quot;08&quot;&gt;08&lt;/option&gt;\n&lt;option value=&quot;09&quot;&gt;09&lt;/option&gt;\n&lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;\n&lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;\n&lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;\n&lt;option value=&quot;13&quot;&gt;13&lt;/option&gt;\n&lt;option value=&quot;14&quot;&gt;14&lt;/option&gt;\n&lt;option value=&quot;15&quot;&gt;15&lt;/option&gt;\n&lt;option value=&quot;16&quot; selected=&quot;selected&quot;&gt;16&lt;/option&gt;\n&lt;option value=&quot;17&quot;&gt;17&lt;/option&gt;\n&lt;option value=&quot;18&quot;&gt;18&lt;/option&gt;\n&lt;option value=&quot;19&quot;&gt;19&lt;/option&gt;\n&lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;\n&lt;option value=&quot;21&quot;&gt;21&lt;/option&gt;\n&lt;option value=&quot;22&quot;&gt;22&lt;/option&gt;\n&lt;option value=&quot;23&quot;&gt;23&lt;/option&gt;\n&lt;/select&gt;\n : &lt;select id=&quot;post_written_on_5i&quot; name=&quot;post[written_on(5i)]&quot;&gt;\n&lt;option value=&quot;00&quot;&gt;00&lt;/option&gt;\n&lt;option value=&quot;01&quot;&gt;01&lt;/option&gt;\n&lt;option value=&quot;02&quot;&gt;02&lt;/option&gt;\n&lt;option value=&quot;03&quot;&gt;03&lt;/option&gt;\n&lt;option value=&quot;04&quot;&gt;04&lt;/option&gt;\n&lt;option value=&quot;05&quot;&gt;05&lt;/option&gt;\n&lt;option value=&quot;06&quot;&gt;06&lt;/option&gt;\n&lt;option value=&quot;07&quot;&gt;07&lt;/option&gt;\n&lt;option value=&quot;08&quot;&gt;08&lt;/option&gt;\n&lt;option value=&quot;09&quot;&gt;09&lt;/option&gt;\n&lt;option value=&quot;10&quot;&gt;10&lt;/option&gt;\n&lt;option value=&quot;11&quot;&gt;11&lt;/option&gt;\n&lt;option value=&quot;12&quot;&gt;12&lt;/option&gt;\n&lt;option value=&quot;13&quot;&gt;13&lt;/option&gt;\n&lt;option value=&quot;14&quot;&gt;14&lt;/option&gt;\n&lt;option value=&quot;15&quot;&gt;15&lt;/option&gt;\n&lt;option value=&quot;16&quot;&gt;16&lt;/option&gt;\n&lt;option value=&quot;17&quot;&gt;17&lt;/option&gt;\n&lt;option value=&quot;18&quot;&gt;18&lt;/option&gt;\n&lt;option value=&quot;19&quot;&gt;19&lt;/option&gt;\n&lt;option value=&quot;20&quot;&gt;20&lt;/option&gt;\n&lt;option value=&quot;21&quot;&gt;21&lt;/option&gt;\n&lt;option value=&quot;22&quot;&gt;22&lt;/option&gt;\n&lt;option value=&quot;23&quot;&gt;23&lt;/option&gt;\n&lt;option value=&quot;24&quot;&gt;24&lt;/option&gt;\n&lt;option value=&quot;25&quot;&gt;25&lt;/option&gt;\n&lt;option value=&quot;26&quot;&gt;26&lt;/option&gt;\n&lt;option value=&quot;27&quot;&gt;27&lt;/option&gt;\n&lt;option value=&quot;28&quot;&gt;28&lt;/option&gt;\n&lt;option value=&quot;29&quot;&gt;29&lt;/option&gt;\n&lt;option value=&quot;30&quot; selected=&quot;selected&quot;&gt;30&lt;/option&gt;\n&lt;option value=&quot;31&quot;&gt;31&lt;/option&gt;\n&lt;option value=&quot;32&quot;&gt;32&lt;/option&gt;\n&lt;option value=&quot;33&quot;&gt;33&lt;/option&gt;\n&lt;option value=&quot;34&quot;&gt;34&lt;/option&gt;\n&lt;option value=&quot;35&quot;&gt;35&lt;/option&gt;\n&lt;option value=&quot;36&quot;&gt;36&lt;/option&gt;\n&lt;option value=&quot;37&quot;&gt;37&lt;/option&gt;\n&lt;option value=&quot;38&quot;&gt;38&lt;/option&gt;\n&lt;option value=&quot;39&quot;&gt;39&lt;/option&gt;\n&lt;option value=&quot;40&quot;&gt;40&lt;/option&gt;\n&lt;option value=&quot;41&quot;&gt;41&lt;/option&gt;\n&lt;option value=&quot;42&quot;&gt;42&lt;/option&gt;\n&lt;option value=&quot;43&quot;&gt;43&lt;/option&gt;\n&lt;option value=&quot;44&quot;&gt;44&lt;/option&gt;\n&lt;option value=&quot;45&quot;&gt;45&lt;/option&gt;\n&lt;option value=&quot;46&quot;&gt;46&lt;/option&gt;\n&lt;option value=&quot;47&quot;&gt;47&lt;/option&gt;\n&lt;option value=&quot;48&quot;&gt;48&lt;/option&gt;\n&lt;option value=&quot;49&quot;&gt;49&lt;/option&gt;\n&lt;option value=&quot;50&quot;&gt;50&lt;/option&gt;\n&lt;option value=&quot;51&quot;&gt;51&lt;/option&gt;\n&lt;option value=&quot;52&quot;&gt;52&lt;/option&gt;\n&lt;option value=&quot;53&quot;&gt;53&lt;/option&gt;\n&lt;option value=&quot;54&quot;&gt;54&lt;/option&gt;\n&lt;option value=&quot;55&quot;&gt;55&lt;/option&gt;\n&lt;option value=&quot;56&quot;&gt;56&lt;/option&gt;\n&lt;option value=&quot;57&quot;&gt;57&lt;/option&gt;\n&lt;option value=&quot;58&quot;&gt;58&lt;/option&gt;\n&lt;option value=&quot;59&quot;&gt;59&lt;/option&gt;\n&lt;/select&gt;\n&lt;/p&gt;&lt;input name=&quot;commit&quot; type=&quot;submit&quot; value=&quot;Create&quot; /&gt;&lt;/form&gt;)</span>,
+    <span class="ruby-identifier">form</span>(<span class="ruby-string">&quot;post&quot;</span>)
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_form_with_string">
+            
+              <a name="method-i-test_form_with_string"></a><b>test_form_with_string</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_form_with_string_source')" id="l_method-i-test_form_with_string_source">show</a>
+                
+              </p>
+              <div id="method-i-test_form_with_string_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_form_with_string</span>
+  <span class="ruby-identifier">assert_dom_equal</span>(
+    <span class="ruby-string">%Q(&lt;form action=&quot;create&quot; method=&quot;post&quot;&gt;&lt;p&gt;&lt;label for=&quot;post_title&quot;&gt;Title&lt;/label&gt;&lt;br /&gt;&lt;input id=&quot;post_title&quot; name=&quot;post[title]&quot; size=&quot;30&quot; type=&quot;text&quot; value=&quot;Hello World&quot; /&gt;&lt;/p&gt;\n&lt;p&gt;&lt;label for=&quot;post_body&quot;&gt;Body&lt;/label&gt;&lt;br /&gt;&lt;div class=&quot;fieldWithErrors&quot;&gt;&lt;textarea cols=&quot;40&quot; id=&quot;post_body&quot; name=&quot;post[body]&quot; rows=&quot;20&quot;&gt;Back to the hill and over it again!&lt;/textarea&gt;&lt;/div&gt;&lt;/p&gt;&lt;input name=&quot;commit&quot; type=&quot;submit&quot; value=&quot;Create&quot; /&gt;&lt;/form&gt;)</span>,
+    <span class="ruby-identifier">form</span>(<span class="ruby-string">&quot;post&quot;</span>)
+  )
+
+  <span class="ruby-identifier">silence_warnings</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword ruby-title">@post</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">new_record?</span>() <span class="ruby-keyword">false</span> <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_param</span>() <span class="ruby-identifier">id</span> <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">id</span>() <span class="ruby-number">1</span> <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_dom_equal</span>(
+    <span class="ruby-string">%Q(&lt;form action=&quot;update/1&quot; method=&quot;post&quot;&gt;&lt;input id=&quot;post_id&quot; name=&quot;post[id]&quot; type=&quot;hidden&quot; value=&quot;1&quot; /&gt;&lt;p&gt;&lt;label for=&quot;post_title&quot;&gt;Title&lt;/label&gt;&lt;br /&gt;&lt;input id=&quot;post_title&quot; name=&quot;post[title]&quot; size=&quot;30&quot; type=&quot;text&quot; value=&quot;Hello World&quot; /&gt;&lt;/p&gt;\n&lt;p&gt;&lt;label for=&quot;post_body&quot;&gt;Body&lt;/label&gt;&lt;br /&gt;&lt;div class=&quot;fieldWithErrors&quot;&gt;&lt;textarea cols=&quot;40&quot; id=&quot;post_body&quot; name=&quot;post[body]&quot; rows=&quot;20&quot;&gt;Back to the hill and over it again!&lt;/textarea&gt;&lt;/div&gt;&lt;/p&gt;&lt;input name=&quot;commit&quot; type=&quot;submit&quot; value=&quot;Update&quot; /&gt;&lt;/form&gt;)</span>,
+    <span class="ruby-identifier">form</span>(<span class="ruby-string">&quot;post&quot;</span>)
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_form_with_string_multipart">
+            
+              <a name="method-i-test_form_with_string_multipart"></a><b>test_form_with_string_multipart</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_form_with_string_multipart_source')" id="l_method-i-test_form_with_string_multipart_source">show</a>
+                
+              </p>
+              <div id="method-i-test_form_with_string_multipart_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_form_with_string_multipart</span>
+  <span class="ruby-identifier">assert_dom_equal</span>(
+    <span class="ruby-string">%Q(&lt;form action=&quot;create&quot; enctype=&quot;multipart/form-data&quot; method=&quot;post&quot;&gt;&lt;p&gt;&lt;label for=&quot;post_title&quot;&gt;Title&lt;/label&gt;&lt;br /&gt;&lt;input id=&quot;post_title&quot; name=&quot;post[title]&quot; size=&quot;30&quot; type=&quot;text&quot; value=&quot;Hello World&quot; /&gt;&lt;/p&gt;\n&lt;p&gt;&lt;label for=&quot;post_body&quot;&gt;Body&lt;/label&gt;&lt;br /&gt;&lt;div class=&quot;fieldWithErrors&quot;&gt;&lt;textarea cols=&quot;40&quot; id=&quot;post_body&quot; name=&quot;post[body]&quot; rows=&quot;20&quot;&gt;Back to the hill and over it again!&lt;/textarea&gt;&lt;/div&gt;&lt;/p&gt;&lt;input name=&quot;commit&quot; type=&quot;submit&quot; value=&quot;Create&quot; /&gt;&lt;/form&gt;)</span>,
+    <span class="ruby-identifier">form</span>(<span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-value">:multipart</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_generic_input_tag">
+            
+              <a name="method-i-test_generic_input_tag"></a><b>test_generic_input_tag</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_generic_input_tag_source')" id="l_method-i-test_generic_input_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-test_generic_input_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_generic_input_tag</span>
+  <span class="ruby-identifier">assert_dom_equal</span>(
+    <span class="ruby-string">%Q(&lt;input id=&quot;post_title&quot; name=&quot;post[title]&quot; size=&quot;30&quot; type=&quot;text&quot; value=&quot;Hello World&quot; /&gt;)</span>, <span class="ruby-identifier">input</span>(<span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-string">&quot;title&quot;</span>)
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_text_area_with_errors">
+            
+              <a name="method-i-test_text_area_with_errors"></a><b>test_text_area_with_errors</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_text_area_with_errors_source')" id="l_method-i-test_text_area_with_errors_source">show</a>
+                
+              </p>
+              <div id="method-i-test_text_area_with_errors_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_text_area_with_errors</span>
+  <span class="ruby-identifier">assert_dom_equal</span>(
+    <span class="ruby-string">%Q(&lt;div class=&quot;fieldWithErrors&quot;&gt;&lt;textarea cols=&quot;40&quot; id=&quot;post_body&quot; name=&quot;post[body]&quot; rows=&quot;20&quot;&gt;Back to the hill and over it again!&lt;/textarea&gt;&lt;/div&gt;)</span>,
+    <span class="ruby-identifier">text_area</span>(<span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-string">&quot;body&quot;</span>)
+  )    
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_text_field_with_errors">
+            
+              <a name="method-i-test_text_field_with_errors"></a><b>test_text_field_with_errors</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_text_field_with_errors_source')" id="l_method-i-test_text_field_with_errors_source">show</a>
+                
+              </p>
+              <div id="method-i-test_text_field_with_errors_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/active_record_helper_test.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_text_field_with_errors</span>
+  <span class="ruby-identifier">assert_dom_equal</span>(
+    <span class="ruby-string">%Q(&lt;div class=&quot;fieldWithErrors&quot;&gt;&lt;input id=&quot;post_author_name&quot; name=&quot;post[author_name]&quot; size=&quot;30&quot; type=&quot;text&quot; value=&quot;&quot; /&gt;&lt;/div&gt;)</span>,
+    <span class="ruby-identifier">text_field</span>(<span class="ruby-string">&quot;post&quot;</span>, <span class="ruby-string">&quot;author_name&quot;</span>)
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

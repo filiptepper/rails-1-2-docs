@@ -1,0 +1,897 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>UTF8HandlingTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            UTF8HandlingTest 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/test/multibyte_handler_test_rb.html">rails/activesupport/test/multibyte_handler_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-common_setup">common_setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-string_from_classes">string_from_classes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_capitalize">test_capitalize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_casefolding">test_casefolding</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_grapheme_cluster_length">test_grapheme_cluster_length</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_index">test_index</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_insert">test_insert</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_normalization_C_pri_29">test_normalization_C_pri_29</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_reverse">test_reverse</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_simple_normalization">test_simple_normalization</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_size">test_size</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_slice">test_slice</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_strip">test_strip</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_tidy_bytes">test_tidy_bytes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_translate_offset">test_translate_offset</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_utf8_recognition">test_utf8_recognition</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-common_setup">
+            
+              <a name="method-i-common_setup"></a><b>common_setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-common_setup_source')" id="l_method-i-common_setup_source">show</a>
+                
+              </p>
+              <div id="method-i-common_setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">common_setup</span>
+  <span class="ruby-comment"># This is an ASCII string with some russian strings and a ligature. It's nicely calibrated, because</span>
+  <span class="ruby-comment"># slicing it at some specific bytes will kill your characters if you use standard Ruby routines.</span>
+  <span class="ruby-comment"># It has both capital and standard letters, so that we can test case conversions easily.</span>
+  <span class="ruby-comment"># It has 26 charactes and 28 when the ligature gets split during normalization.</span>
+  <span class="ruby-ivar">@string</span> =     <span class="ruby-string">&quot;Abcd Блå ﬃ бла бла бла бла&quot;</span>
+  <span class="ruby-ivar">@string_kd</span> =  <span class="ruby-string">&quot;Abcd Блå ffi бла бла бла бла&quot;</span>
+  <span class="ruby-ivar">@string_kc</span> =  <span class="ruby-string">&quot;Abcd Блå ffi бла бла бла бла&quot;</span>
+  <span class="ruby-ivar">@string_c</span> =   <span class="ruby-string">&quot;Abcd Блå ﬃ бла бла бла бла&quot;</span>
+  <span class="ruby-ivar">@string_d</span> =   <span class="ruby-string">&quot;Abcd Блå ﬃ бла бла бла бла&quot;</span>
+  <span class="ruby-ivar">@bytestring</span> = <span class="ruby-string">&quot;\2270\2236\0010\2210\2245&quot;</span> <span class="ruby-comment"># Not UTF-8</span>
+  
+  <span class="ruby-comment"># Characters from the character classes as described in UAX #29</span>
+  <span class="ruby-ivar">@character_from_class</span> = {
+    <span class="ruby-value">:l</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0x1100</span>, <span class="ruby-value">:v</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0x1160</span>, <span class="ruby-value">:t</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0x11A8</span>, <span class="ruby-value">:lv</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0xAC00</span>, <span class="ruby-value">:lvt</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0xAC01</span>, <span class="ruby-value">:cr</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0x000D</span>, <span class="ruby-value">:lf</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0x000A</span>,
+    <span class="ruby-value">:extend</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0x094D</span>, <span class="ruby-value">:n</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0x64</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_capitalize">
+            
+              <a name="method-i-test_capitalize"></a><b>test_capitalize</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_capitalize_source')" id="l_method-i-test_capitalize_source">show</a>
+                
+              </p>
+              <div id="method-i-test_capitalize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_capitalize</span>
+  { <span class="ruby-string">'аБвг аБвг'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Абвг абвг'</span>,
+    <span class="ruby-string">'аБвг АБВГ'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Абвг абвг'</span>,
+    <span class="ruby-string">'АБВГ АБВГ'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Абвг абвг'</span>,
+    <span class="ruby-string">''</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">''</span> }.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span>,<span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">t</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">capitalize</span>(<span class="ruby-identifier">f</span>), <span class="ruby-string">&quot;Capitalize should work as expected&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">EncodingError</span>) { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">capitalize</span>(<span class="ruby-ivar">@bytestring</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_casefolding">
+            
+              <a name="method-i-test_casefolding"></a><b>test_casefolding</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_casefolding_source')" id="l_method-i-test_casefolding_source">show</a>
+                
+              </p>
+              <div id="method-i-test_casefolding_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_casefolding</span>
+  <span class="ruby-identifier">simple_str</span> = <span class="ruby-string">&quot;abCdef&quot;</span>
+  <span class="ruby-identifier">simple_str_upcase</span> = <span class="ruby-string">&quot;ABCDEF&quot;</span>
+  <span class="ruby-identifier">simple_str_downcase</span> = <span class="ruby-string">&quot;abcdef&quot;</span>
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">downcase</span>(<span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">upcase</span>(<span class="ruby-string">''</span>)), <span class="ruby-string">&quot;Empty string should not break things&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">simple_str_upcase</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">upcase</span>(<span class="ruby-identifier">simple_str</span>), <span class="ruby-string">&quot;should upcase properly&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">simple_str_downcase</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">downcase</span>(<span class="ruby-identifier">simple_str</span>), <span class="ruby-string">&quot;should downcase properly&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">simple_str_downcase</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">downcase</span>(<span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">upcase</span>(<span class="ruby-identifier">simple_str_downcase</span>)), <span class="ruby-string">&quot;upcase and downcase should be mirrors&quot;</span>
+  
+  <span class="ruby-identifier">rus_str</span> = <span class="ruby-string">&quot;аБвгд\00ff&quot;</span>
+  <span class="ruby-identifier">rus_str_upcase</span> = <span class="ruby-string">&quot;АБВГД\00FF&quot;</span>
+  <span class="ruby-identifier">rus_str_downcase</span> = <span class="ruby-string">&quot;абвгд\00ff&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">rus_str_upcase</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">upcase</span>(<span class="ruby-identifier">rus_str</span>), <span class="ruby-string">&quot;should upcase properly honoring null-byte&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">rus_str_downcase</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">downcase</span>(<span class="ruby-identifier">rus_str</span>), <span class="ruby-string">&quot;should downcase properly honoring null-byte&quot;</span>
+  
+  <span class="ruby-identifier">jap_str</span> = <span class="ruby-string">&quot;の埋め込み化対応はほぼ完成&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">jap_str</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">upcase</span>(<span class="ruby-identifier">jap_str</span>), <span class="ruby-string">&quot;Japanse has no upcase, should remain unchanged&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">jap_str</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">downcase</span>(<span class="ruby-identifier">jap_str</span>), <span class="ruby-string">&quot;Japanse has no downcase, should remain unchanged&quot;</span>
+  
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">EncodingError</span>) { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">upcase</span>(<span class="ruby-ivar">@bytestring</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_grapheme_cluster_length">
+            
+              <a name="method-i-test_grapheme_cluster_length"></a><b>test_grapheme_cluster_length</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_grapheme_cluster_length_source')" id="l_method-i-test_grapheme_cluster_length_source">show</a>
+                
+              </p>
+              <div id="method-i-test_grapheme_cluster_length_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_grapheme_cluster_length</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-string">''</span>), <span class="ruby-string">&quot;String should count 0 grapheme clusters&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>([<span class="ruby-number">0x0924</span>, <span class="ruby-number">0x094D</span>, <span class="ruby-number">0x0930</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>)), <span class="ruby-string">&quot;String should count 2 grapheme clusters&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(cr lf)</span>)), <span class="ruby-string">&quot;Don't cut between CR and LF&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(l l)</span>)), <span class="ruby-string">&quot;Don't cut between L&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(l v)</span>)), <span class="ruby-string">&quot;Don't cut between L and V&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(l lv)</span>)), <span class="ruby-string">&quot;Don't cut between L and LV&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(l lvt)</span>)), <span class="ruby-string">&quot;Don't cut between L and LVT&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(lv v)</span>)), <span class="ruby-string">&quot;Don't cut between LV and V&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(lv t)</span>)), <span class="ruby-string">&quot;Don't cut between LV and T&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(v v)</span>)), <span class="ruby-string">&quot;Don't cut between V and V&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(v t)</span>)), <span class="ruby-string">&quot;Don't cut between V and T&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(lvt t)</span>)), <span class="ruby-string">&quot;Don't cut between LVT and T&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(t t)</span>)), <span class="ruby-string">&quot;Don't cut between T and T&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(n extend)</span>)), <span class="ruby-string">&quot;Don't cut before Extend&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(n n)</span>)), <span class="ruby-string">&quot;Cut between normal characters&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(n cr lf n)</span>)), <span class="ruby-string">&quot;Don't cut between CR and LF&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-identifier">string_from_classes</span>(<span class="ruby-node">%w(n l v t)</span>)), <span class="ruby-string">&quot;Don't cut between L, V and T&quot;</span>
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">EncodingError</span>) { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">g_length</span>(<span class="ruby-ivar">@bytestring</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_index">
+            
+              <a name="method-i-test_index"></a><b>test_index</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_index_source')" id="l_method-i-test_index_source">show</a>
+                
+              </p>
+              <div id="method-i-test_index_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_index</span>
+   <span class="ruby-identifier">s</span> = <span class="ruby-string">&quot;Καλημέρα κόσμε!&quot;</span>
+   <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">''</span>, <span class="ruby-string">''</span>), <span class="ruby-string">&quot;The empty string is always found at the beginning of the string&quot;</span>
+   <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">'haystack'</span>, <span class="ruby-string">''</span>), <span class="ruby-string">&quot;The empty string is always found at the beginning of the string&quot;</span>
+   <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">s</span>, <span class="ruby-string">'Κ'</span>), <span class="ruby-string">&quot;Greek K is at 0&quot;</span>
+   <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">index</span>(<span class="ruby-identifier">s</span>, <span class="ruby-string">'α'</span>), <span class="ruby-string">&quot;Greek Alpha is at 1&quot;</span>
+   
+   <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">nil</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">index</span>(<span class="ruby-ivar">@bytestring</span>, <span class="ruby-string">'a'</span>)
+   <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">EncodingError</span>) { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">index</span>(<span class="ruby-ivar">@bytestring</span>, <span class="ruby-string">&quot;\0010&quot;</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_insert">
+            
+              <a name="method-i-test_insert"></a><b>test_insert</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_insert_source')" id="l_method-i-test_insert_source">show</a>
+                
+              </p>
+              <div id="method-i-test_insert_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_insert</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-string">''</span>, <span class="ruby-number">0</span>, <span class="ruby-string">''</span>), <span class="ruby-string">&quot;Empty string should not break things&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;Abcd Блå ﬃБУМ бла бла бла бла&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-ivar">@string</span>, <span class="ruby-number">10</span>, <span class="ruby-string">&quot;БУМ&quot;</span>), 
+    <span class="ruby-string">&quot;Text should be inserted at right codepoints&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;Abcd Блå ﬃБУМ бла бла бла бла&quot;</span>, <span class="ruby-ivar">@string</span>, <span class="ruby-string">&quot;Insert should be destructive&quot;</span>
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">EncodingError</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">insert</span>(<span class="ruby-ivar">@bytestring</span>, <span class="ruby-number">2</span>, <span class="ruby-string">&quot;\2210&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_normalization_C_pri_29">
+            
+              <a name="method-i-test_normalization_C_pri_29"></a><b>test_normalization_C_pri_29</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Test for the Public Review Issue #29, bad explaination of composition might
+lead to a bad implementation: <a
+href="http://www.unicode.org/review/pr-29.html">www.unicode.org/review/pr-29.html</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_normalization_C_pri_29_source')" id="l_method-i-test_normalization_C_pri_29_source">show</a>
+                
+              </p>
+              <div id="method-i-test_normalization_C_pri_29_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_normalization_C_pri_29</span>
+  [
+    [<span class="ruby-number">0x0B47</span>, <span class="ruby-number">0x0300</span>, <span class="ruby-number">0x0B3E</span>],
+    [<span class="ruby-number">0x1100</span>, <span class="ruby-number">0x0300</span>, <span class="ruby-number">0x1161</span>]
+  ].<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>) }.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">c</span>, <span class="ruby-value">:c</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Composition is implemented incorrectly&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_reverse">
+            
+              <a name="method-i-test_reverse"></a><b>test_reverse</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_reverse_source')" id="l_method-i-test_reverse_source">show</a>
+                
+              </p>
+              <div id="method-i-test_reverse_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_reverse</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">&quot;wБлåa \n&quot;</span>
+  <span class="ruby-identifier">rev</span> = <span class="ruby-string">&quot;\n aåлБw&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">reverse</span>(<span class="ruby-string">''</span>), <span class="ruby-string">&quot;Empty string shouldn't change&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">rev</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">reverse</span>(<span class="ruby-identifier">str</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Should reverse properly&quot;</span>
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">EncodingError</span>) { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">reverse</span>(<span class="ruby-ivar">@bytestring</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_simple_normalization">
+            
+              <a name="method-i-test_simple_normalization"></a><b>test_simple_normalization</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_simple_normalization_source')" id="l_method-i-test_simple_normalization_source">show</a>
+                
+              </p>
+              <div id="method-i-test_simple_normalization_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_simple_normalization</span>
+  <span class="ruby-comment"># Normalization of DEVANAGARI LETTER QA breaks when composition exclusion isn't used correctly</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-number">0x915</span>, <span class="ruby-number">0x93c</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>).<span class="ruby-identifier">ui</span>, [<span class="ruby-number">0x915</span>, <span class="ruby-number">0x93c</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>).<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-value">:c</span>).<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">ui</span>
+  
+  <span class="ruby-identifier">null_byte_str</span> = <span class="ruby-string">&quot;Test\00ttest&quot;</span>
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-string">''</span>), <span class="ruby-string">&quot;Empty string should not break things&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">null_byte_str</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">null_byte_str</span>, <span class="ruby-value">:kc</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Null byte should remain&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">null_byte_str</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">null_byte_str</span>, <span class="ruby-value">:c</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Null byte should remain&quot;</span> 
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">null_byte_str</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">null_byte_str</span>, <span class="ruby-value">:d</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Null byte should remain&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">null_byte_str</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">null_byte_str</span>, <span class="ruby-value">:kd</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Null byte should remain&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">null_byte_str</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">decompose</span>(<span class="ruby-identifier">null_byte_str</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Null byte should remain&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">null_byte_str</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">compose</span>(<span class="ruby-identifier">null_byte_str</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Null byte should remain&quot;</span> 
+  
+  <span class="ruby-identifier">comp_str</span> = [
+    <span class="ruby-number">44</span>,  <span class="ruby-comment"># LATIN CAPITAL LETTER D</span>
+    <span class="ruby-number">307</span>, <span class="ruby-comment"># COMBINING DOT ABOVE</span>
+    <span class="ruby-number">328</span>, <span class="ruby-comment"># COMBINING OGONEK</span>
+    <span class="ruby-number">323</span> <span class="ruby-comment"># COMBINING DOT BELOW</span>
+  ].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;U*&quot;</span>)
+  <span class="ruby-identifier">norm_str_KC</span> = [<span class="ruby-number">44</span>,<span class="ruby-number">105</span>,<span class="ruby-number">106</span>,<span class="ruby-number">328</span>,<span class="ruby-number">323</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;U*&quot;</span>)
+  <span class="ruby-identifier">norm_str_C</span> = [<span class="ruby-number">44</span>,<span class="ruby-number">307</span>,<span class="ruby-number">328</span>,<span class="ruby-number">323</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;U*&quot;</span>)
+  <span class="ruby-identifier">norm_str_D</span> = [<span class="ruby-number">44</span>,<span class="ruby-number">307</span>,<span class="ruby-number">110</span>,<span class="ruby-number">780</span>,<span class="ruby-number">78</span>,<span class="ruby-number">769</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;U*&quot;</span>)
+  <span class="ruby-identifier">norm_str_KD</span> = [<span class="ruby-number">44</span>,<span class="ruby-number">105</span>,<span class="ruby-number">106</span>,<span class="ruby-number">110</span>,<span class="ruby-number">780</span>,<span class="ruby-number">78</span>,<span class="ruby-number">769</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;U*&quot;</span>)
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">norm_str_KC</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">comp_str</span>, <span class="ruby-value">:kc</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Should normalize KC&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">norm_str_C</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">comp_str</span>, <span class="ruby-value">:c</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Should normalize C&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">norm_str_D</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">comp_str</span>, <span class="ruby-value">:d</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Should normalize D&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">norm_str_KD</span>.<span class="ruby-identifier">ui</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-identifier">comp_str</span>, <span class="ruby-value">:kd</span>).<span class="ruby-identifier">ui</span>, <span class="ruby-string">&quot;Should normalize KD&quot;</span>
+  
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">EncodingError</span>) { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">normalize</span>(<span class="ruby-ivar">@bytestring</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_size">
+            
+              <a name="method-i-test_size"></a><b>test_size</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_size_source')" id="l_method-i-test_size_source">show</a>
+                
+              </p>
+              <div id="method-i-test_size_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">size</span>(<span class="ruby-string">''</span>), <span class="ruby-string">&quot;Empty string has size 0&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">26</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">size</span>(<span class="ruby-ivar">@string</span>), <span class="ruby-string">&quot;String length should be 26&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">26</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">length</span>(<span class="ruby-ivar">@string</span>), <span class="ruby-string">&quot;String length method should be properly aliased&quot;</span>
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">EncodingError</span>) { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">size</span>(<span class="ruby-ivar">@bytestring</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_slice">
+            
+              <a name="method-i-test_slice"></a><b>test_slice</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_slice_source')" id="l_method-i-test_slice_source">show</a>
+                
+              </p>
+              <div id="method-i-test_slice_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_slice</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0x41</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-ivar">@string</span>, <span class="ruby-number">0</span>), <span class="ruby-string">&quot;Singular characters should return codepoints&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0xE5</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-ivar">@string</span>, <span class="ruby-number">7</span>), <span class="ruby-string">&quot;Singular characters should return codepoints&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">nil</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-string">''</span>, <span class="ruby-number">-1</span><span class="ruby-operator">..</span><span class="ruby-number">1</span>), <span class="ruby-string">&quot;Broken range should return nil&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-string">''</span>, <span class="ruby-number">0</span><span class="ruby-operator">..</span><span class="ruby-number">10</span>), <span class="ruby-string">&quot;Empty string should not break things&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;d Блå ﬃ&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-ivar">@string</span>, <span class="ruby-number">3</span><span class="ruby-operator">..</span><span class="ruby-number">9</span>), <span class="ruby-string">&quot;Unicode characters have to be returned&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;d Блå ﬃ&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-ivar">@string</span>, <span class="ruby-number">3</span>, <span class="ruby-number">7</span>), <span class="ruby-string">&quot;Unicode characters have to be returned&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;A&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-ivar">@string</span>, <span class="ruby-number">0</span>, <span class="ruby-number">1</span>), <span class="ruby-string">&quot;Slicing from an offset should return characters&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot; Блå ﬃ &quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-ivar">@string</span>, <span class="ruby-number">4</span><span class="ruby-operator">..</span><span class="ruby-number">10</span>), <span class="ruby-string">&quot;Unicode characters have to be returned&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-ivar">@string</span>, <span class="ruby-number">7</span><span class="ruby-operator">..</span><span class="ruby-number">6</span>), <span class="ruby-string">&quot;Range is empty, should return an empty string&quot;</span>
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">EncodingError</span>) { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">slice</span>(<span class="ruby-ivar">@bytestring</span>, <span class="ruby-number">2</span><span class="ruby-operator">..</span><span class="ruby-number">3</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_strip">
+            
+              <a name="method-i-test_strip"></a><b>test_strip</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_strip_source')" id="l_method-i-test_strip_source">show</a>
+                
+              </p>
+              <div id="method-i-test_strip_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_strip</span>
+  <span class="ruby-comment"># A unicode aware version of strip should strip all 26 types of whitespace. This includes the NO BREAK SPACE</span>
+  <span class="ruby-comment"># aka BOM (byte order mark). The byte order mark has no place in UTF-8 because it's used to detect LE and BE.</span>
+  <span class="ruby-identifier">b</span> = <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-operator">+</span> [
+    <span class="ruby-number">32</span>, <span class="ruby-comment"># SPACE</span>
+    <span class="ruby-number">8195</span>, <span class="ruby-comment"># EM SPACE</span>
+    <span class="ruby-number">8199</span>, <span class="ruby-comment"># FIGURE SPACE,</span>
+    <span class="ruby-number">8201</span>, <span class="ruby-comment"># THIN SPACE</span>
+    <span class="ruby-number">8202</span>, <span class="ruby-comment"># HAIR SPACE</span>
+    <span class="ruby-number">65279</span>, <span class="ruby-comment"># NO BREAK SPACE (ZW)</span>
+  ].<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>)
+  <span class="ruby-identifier">m</span> = <span class="ruby-string">&quot;word блин\n\n\n  word&quot;</span>
+  <span class="ruby-identifier">e</span> = [
+  <span class="ruby-number">65279</span>, <span class="ruby-comment"># NO BREAK SPACE (ZW)</span>
+  <span class="ruby-number">8201</span>, <span class="ruby-comment"># THIN SPACE</span>
+  <span class="ruby-number">8199</span>, <span class="ruby-comment"># FIGURE SPACE,      </span>
+  <span class="ruby-number">32</span>, <span class="ruby-comment"># SPACE</span>
+  ].<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>)
+  <span class="ruby-identifier">string</span> = <span class="ruby-identifier">b</span><span class="ruby-operator">+</span><span class="ruby-identifier">m</span><span class="ruby-operator">+</span><span class="ruby-identifier">e</span>
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">strip</span>(<span class="ruby-string">''</span>), <span class="ruby-string">&quot;Empty string should stay empty&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">m</span><span class="ruby-operator">+</span><span class="ruby-identifier">e</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">lstrip</span>(<span class="ruby-identifier">string</span>), <span class="ruby-string">&quot;Whitespace should be gone on the left&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">b</span><span class="ruby-operator">+</span><span class="ruby-identifier">m</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">rstrip</span>(<span class="ruby-identifier">string</span>), <span class="ruby-string">&quot;Whitespace should be gone on the right&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">m</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">strip</span>(<span class="ruby-identifier">string</span>), <span class="ruby-string">&quot;Whitespace should be stripped on both sides&quot;</span>
+  
+  <span class="ruby-identifier">bs</span> = <span class="ruby-node">&quot;\n   #{@bytestring} \n\n&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-ivar">@bytestring</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">strip</span>(<span class="ruby-identifier">bs</span>), <span class="ruby-string">&quot;Invalid unicode strings should still strip&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_tidy_bytes">
+            
+              <a name="method-i-test_tidy_bytes"></a><b>test_tidy_bytes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_tidy_bytes_source')" id="l_method-i-test_tidy_bytes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_tidy_bytes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 228</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_tidy_bytes</span>
+  <span class="ruby-identifier">result</span> = [<span class="ruby-number">0xb8</span>, <span class="ruby-number">0x17e</span>, <span class="ruby-number">0x8</span>, <span class="ruby-number">0x2c6</span>, <span class="ruby-number">0xa5</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">result</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-ivar">@bytestring</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">&quot;a#{result}a&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-string">'a'</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@bytestring</span> <span class="ruby-operator">+</span> <span class="ruby-string">'a'</span>),
+    <span class="ruby-string">'tidy_bytes should leave surrounding characters intact'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">&quot;é#{result}é&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-string">'é'</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@bytestring</span> <span class="ruby-operator">+</span> <span class="ruby-string">'é'</span>),
+    <span class="ruby-string">'tidy_bytes should leave surrounding characters intact'</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-ivar">@bytestring</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">'U*'</span>) }
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;\xC3\xA7&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-string">&quot;\xE7&quot;</span>) <span class="ruby-comment"># iso_8859_1: small c cedilla</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;\xC2\xA9&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-string">&quot;\xA9&quot;</span>) <span class="ruby-comment"># iso_8859_1: copyright symbol</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;\xE2\x80\x9C&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-string">&quot;\x93&quot;</span>) <span class="ruby-comment"># win_1252: left smart quote</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;\xE2\x82\xAC&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-string">&quot;\x80&quot;</span>) <span class="ruby-comment"># win_1252: euro</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;\x00&quot;</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-string">&quot;\x00&quot;</span>) <span class="ruby-comment"># null char</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-number">0xfffd</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U'</span>), <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">tidy_bytes</span>(<span class="ruby-string">&quot;\xef\xbf\xbd&quot;</span>) <span class="ruby-comment"># invalid char</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_translate_offset">
+            
+              <a name="method-i-test_translate_offset"></a><b>test_translate_offset</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_translate_offset_source')" id="l_method-i-test_translate_offset_source">show</a>
+                
+              </p>
+              <div id="method-i-test_translate_offset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_translate_offset</span>
+  <span class="ruby-identifier">str</span> = <span class="ruby-string">&quot;Блaå&quot;</span> <span class="ruby-comment"># [2, 2, 1, 2] bytes</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">translate_offset</span>(<span class="ruby-string">''</span>, <span class="ruby-number">0</span>), <span class="ruby-string">&quot;Offset for an empty string makes no sense, return 0&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">translate_offset</span>(<span class="ruby-identifier">str</span>, <span class="ruby-number">0</span>), <span class="ruby-string">&quot;First character, first byte&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">translate_offset</span>(<span class="ruby-identifier">str</span>, <span class="ruby-number">1</span>), <span class="ruby-string">&quot;First character, second byte&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">translate_offset</span>(<span class="ruby-identifier">str</span>, <span class="ruby-number">2</span>), <span class="ruby-string">&quot;Second character, third byte&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">translate_offset</span>(<span class="ruby-identifier">str</span>, <span class="ruby-number">3</span>), <span class="ruby-string">&quot;Second character, fourth byte&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">translate_offset</span>(<span class="ruby-identifier">str</span>, <span class="ruby-number">4</span>), <span class="ruby-string">&quot;Third character, fifth byte&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">translate_offset</span>(<span class="ruby-identifier">str</span>, <span class="ruby-number">5</span>), <span class="ruby-string">&quot;Fourth character, sixth byte&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">translate_offset</span>(<span class="ruby-identifier">str</span>, <span class="ruby-number">6</span>), <span class="ruby-string">&quot;Fourth character, seventh byte&quot;</span>
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">EncodingError</span>) { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">translate_offset</span>(<span class="ruby-ivar">@bytestring</span>, <span class="ruby-number">3</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_utf8_recognition">
+            
+              <a name="method-i-test_utf8_recognition"></a><b>test_utf8_recognition</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_utf8_recognition_source')" id="l_method-i-test_utf8_recognition_source">show</a>
+                
+              </p>
+              <div id="method-i-test_utf8_recognition_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_utf8_recognition</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF8Handler</span>.<span class="ruby-identifier">consumes?</span>(<span class="ruby-ivar">@string</span>),
+    <span class="ruby-string">&quot;Should recognize as a valid UTF-8 string&quot;</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF8Handler</span>.<span class="ruby-identifier">consumes?</span>(<span class="ruby-ivar">@bytestring</span>), <span class="ruby-string">&quot;This is bytestring, not UTF-8&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-string_from_classes">
+            
+              <a name="method-i-string_from_classes"></a><b>string_from_classes</b>(classes)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-string_from_classes_source')" id="l_method-i-string_from_classes_source">show</a>
+                
+              </p>
+              <div id="method-i-string_from_classes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/multibyte_handler_test.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">string_from_classes</span>(<span class="ruby-identifier">classes</span>)
+  <span class="ruby-identifier">classes</span>.<span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@character_from_class</span>[<span class="ruby-identifier">k</span>.<span class="ruby-identifier">intern</span>]
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">pack</span>(<span class="ruby-string">'U*'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,391 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>HashCachingTests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            HashCachingTests 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/test/caching_tools_test_rb.html">rails/activesupport/test/caching_tools_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-cached">cached</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-slow_method">slow_method</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_cache_access_should_actually_cache">test_cache_access_should_actually_cache</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_cache_access_should_call_method">test_cache_access_should_call_method</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_cache_should_be_clearable">test_cache_should_be_clearable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_deep_caches_should_work_too">test_deep_caches_should_work_too</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-cached">
+            
+              <a name="method-i-cached"></a><b>cached</b>(&amp;proc)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cached_source')" id="l_method-i-cached_source">show</a>
+                
+              </p>
+              <div id="method-i-cached_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/caching_tools_test.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cached</span>(&amp;<span class="ruby-identifier">proc</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-ivar">@cached</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-ivar">@cached</span>)
+
+  <span class="ruby-ivar">@cached_class</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>(&amp;<span class="ruby-identifier">proc</span>)
+  <span class="ruby-ivar">@cached_class</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">extend</span> <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">CachingTools</span><span class="ruby-operator">::</span><span class="ruby-constant">HashCaching</span>
+    <span class="ruby-identifier">hash_cache</span> <span class="ruby-value">:slow_method</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@cached</span> = <span class="ruby-ivar">@cached_class</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-slow_method">
+            
+              <a name="method-i-slow_method"></a><b>slow_method</b>(a)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-slow_method_source')" id="l_method-i-slow_method_source">show</a>
+                
+              </p>
+              <div id="method-i-slow_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/caching_tools_test.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">slow_method</span>(<span class="ruby-identifier">a</span>) <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;I should be here: #{a}&quot;</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cache_access_should_actually_cache">
+            
+              <a name="method-i-test_cache_access_should_actually_cache"></a><b>test_cache_access_should_actually_cache</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cache_access_should_actually_cache_source')" id="l_method-i-test_cache_access_should_actually_cache_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cache_access_should_actually_cache_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/caching_tools_test.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cache_access_should_actually_cache</span>
+  <span class="ruby-identifier">cached</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">slow_method</span>(<span class="ruby-identifier">a</span>)
+      (<span class="ruby-ivar">@x</span> <span class="ruby-operator">||=</span> [])
+      <span class="ruby-keyword">if</span> <span class="ruby-ivar">@x</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">a</span>) <span class="ruby-keyword">then</span> <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Called twice for #{a}!&quot;</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-ivar">@x</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">a</span>
+        <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">11</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-number">10</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">12</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-number">11</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">11</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-number">10</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">12</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-number">11</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cache_access_should_call_method">
+            
+              <a name="method-i-test_cache_access_should_call_method"></a><b>test_cache_access_should_call_method</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cache_access_should_call_method_source')" id="l_method-i-test_cache_access_should_call_method_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cache_access_should_call_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/caching_tools_test.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cache_access_should_call_method</span>
+  <span class="ruby-identifier">cached</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">slow_method</span>(<span class="ruby-identifier">a</span>) <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;I should be here: #{a}&quot;</span>; <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">RuntimeError</span>) { <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-number">1</span>] }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cache_should_be_clearable">
+            
+              <a name="method-i-test_cache_should_be_clearable"></a><b>test_cache_should_be_clearable</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cache_should_be_clearable_source')" id="l_method-i-test_cache_should_be_clearable_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cache_should_be_clearable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/caching_tools_test.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cache_should_be_clearable</span>
+  <span class="ruby-identifier">cached</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">slow_method</span>(<span class="ruby-identifier">a</span>)
+      <span class="ruby-ivar">@x</span> <span class="ruby-operator">||=</span> <span class="ruby-number">0</span>
+      <span class="ruby-ivar">@x</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-value">:a</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-value">:b</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-value">:c</span>]
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-value">:a</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-value">:b</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-value">:c</span>]
+
+  <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>.<span class="ruby-identifier">clear</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">4</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-value">:a</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-value">:b</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">6</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-value">:c</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_deep_caches_should_work_too">
+            
+              <a name="method-i-test_deep_caches_should_work_too"></a><b>test_deep_caches_should_work_too</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_deep_caches_should_work_too_source')" id="l_method-i-test_deep_caches_should_work_too_source">show</a>
+                
+              </p>
+              <div id="method-i-test_deep_caches_should_work_too_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/caching_tools_test.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_deep_caches_should_work_too</span>
+  <span class="ruby-identifier">cached</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">slow_method</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>, <span class="ruby-identifier">c</span>)
+      <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">c</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-number">1</span>][<span class="ruby-number">1</span>][<span class="ruby-number">1</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">7</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-number">1</span>][<span class="ruby-number">2</span>][<span class="ruby-number">4</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">7</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-number">1</span>][<span class="ruby-number">2</span>][<span class="ruby-number">4</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">7</span>, <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>[<span class="ruby-number">4</span>][<span class="ruby-number">2</span>][<span class="ruby-number">1</span>]
+
+  <span class="ruby-identifier">assert_equal</span>({
+    <span class="ruby-number">1</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-number">1</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-number">1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">3</span>}, <span class="ruby-number">2</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-number">4</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">7</span>}},
+    <span class="ruby-number">4</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-number">2</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-number">1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">7</span>}}},
+    <span class="ruby-identifier">cached</span>.<span class="ruby-identifier">slow_method_cache</span>
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,264 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>HelperMailer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            HelperMailer 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="ActionMailer/Base.html">ActionMailer::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionmailer/test/mail_helper_test_rb.html">rails/actionmailer/test/mail_helper_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-use_helper">use_helper</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-use_helper_method">use_helper_method</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-use_mail_helper">use_mail_helper</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-use_test_helper">use_test_helper</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-use_helper">
+            
+              <a name="method-i-use_helper"></a><b>use_helper</b>(recipient)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-use_helper_source')" id="l_method-i-use_helper_source">show</a>
+                
+              </p>
+              <div id="method-i-use_helper_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/test/mail_helper_test.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">use_helper</span>(<span class="ruby-identifier">recipient</span>)
+  <span class="ruby-identifier">recipients</span> <span class="ruby-identifier">recipient</span>
+  <span class="ruby-identifier">subject</span>    <span class="ruby-string">&quot;using helpers&quot;</span>
+  <span class="ruby-identifier">from</span>       <span class="ruby-string">&quot;tester@example.com&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-use_helper_method">
+            
+              <a name="method-i-use_helper_method"></a><b>use_helper_method</b>(recipient)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-use_helper_method_source')" id="l_method-i-use_helper_method_source">show</a>
+                
+              </p>
+              <div id="method-i-use_helper_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/test/mail_helper_test.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">use_helper_method</span>(<span class="ruby-identifier">recipient</span>)
+  <span class="ruby-identifier">recipients</span> <span class="ruby-identifier">recipient</span>
+  <span class="ruby-identifier">subject</span>    <span class="ruby-string">&quot;using helpers&quot;</span>
+  <span class="ruby-identifier">from</span>       <span class="ruby-string">&quot;tester@example.com&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">body</span> = { <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;emphasize me!&quot;</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-use_mail_helper">
+            
+              <a name="method-i-use_mail_helper"></a><b>use_mail_helper</b>(recipient)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-use_mail_helper_source')" id="l_method-i-use_mail_helper_source">show</a>
+                
+              </p>
+              <div id="method-i-use_mail_helper_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/test/mail_helper_test.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">use_mail_helper</span>(<span class="ruby-identifier">recipient</span>)
+  <span class="ruby-identifier">recipients</span> <span class="ruby-identifier">recipient</span>
+  <span class="ruby-identifier">subject</span>    <span class="ruby-string">&quot;using mailing helpers&quot;</span>
+  <span class="ruby-identifier">from</span>       <span class="ruby-string">&quot;tester@example.com&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">body</span> = { <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> 
+    <span class="ruby-string">&quot;But soft! What light through yonder window breaks? It is the east, &quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;and Juliet is the sun. Arise, fair sun, and kill the envious moon, &quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;which is sick and pale with grief that thou, her maid, art far more &quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;fair than she. Be not her maid, for she is envious! Her vestal &quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;livery is but sick and green, and none but fools do wear it. Cast &quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-string">&quot;it off!&quot;</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-use_test_helper">
+            
+              <a name="method-i-use_test_helper"></a><b>use_test_helper</b>(recipient)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-use_test_helper_source')" id="l_method-i-use_test_helper_source">show</a>
+                
+              </p>
+              <div id="method-i-use_test_helper_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/test/mail_helper_test.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">use_test_helper</span>(<span class="ruby-identifier">recipient</span>)
+  <span class="ruby-identifier">recipients</span> <span class="ruby-identifier">recipient</span>
+  <span class="ruby-identifier">subject</span>    <span class="ruby-string">&quot;using helpers&quot;</span>
+  <span class="ruby-identifier">from</span>       <span class="ruby-string">&quot;tester@example.com&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">body</span> = { <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;emphasize me!&quot;</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

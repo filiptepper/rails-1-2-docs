@@ -1,0 +1,1126 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActionView::Helpers::PrototypeHelper::JavaScriptGenerator::GeneratorMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../../files/rails/actionpack/lib/action_view/helpers/prototype_helper_rb.html">rails/actionpack/lib/action_view/helpers/prototype_helper.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="../JavaScriptGenerator.html">JavaScriptGenerator</a> generates
+blocks of JavaScript code that allow you  to change the content and
+presentation of multiple DOM elements.  Use  this in your Ajax response
+bodies, either in a &lt;script&gt; tag or as plain JavaScript sent with a
+Content-type of "text/javascript".</p>
+
+<p>Create new instances with <a
+href="../../PrototypeHelper.html#method-i-update_page">ActionView::Helpers::PrototypeHelper#update_page</a>
+or with  <a
+href="../../../../ActionController/Base.html#method-i-render">ActionController::Base#render</a>,
+then call <a
+href="GeneratorMethods.html#method-i-insert_html">insert_html</a>, <a
+href="GeneratorMethods.html#method-i-replace_html">replace_html</a>,  <a
+href="GeneratorMethods.html#method-i-remove">remove</a>, <a
+href="GeneratorMethods.html#method-i-show">show</a>, <a
+href="GeneratorMethods.html#method-i-hide">hide</a>, <a
+href="GeneratorMethods.html#method-i-visual_effect">visual_effect</a>, or
+any other of the built-in  methods on the yielded generator in any order
+you like to modify the  content and appearance of the current page.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">update_page</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">page</span>.<span class="ruby-identifier">insert_html</span> :<span class="ruby-identifier">bottom</span>, <span class="ruby-string">'list'</span>, <span class="ruby-node">&quot;&lt;li&gt;#{@item.name}&lt;/li&gt;&quot;</span>
+  <span class="ruby-identifier">page</span>.<span class="ruby-identifier">visual_effect</span> :<span class="ruby-identifier">highlight</span>, <span class="ruby-string">'list'</span>
+  <span class="ruby-identifier">page</span>.<span class="ruby-identifier">hide</span> <span class="ruby-string">'status-indicator'</span>, <span class="ruby-string">'cancel-link'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>generates the following JavaScript:</p>
+
+<pre>new Insertion.Bottom(&quot;list&quot;, &quot;&lt;li&gt;Some item&lt;/li&gt;&quot;);
+new Effect.Highlight(&quot;list&quot;);
+[&quot;status-indicator&quot;, &quot;cancel-link&quot;].each(Element.hide);</pre>
+
+<p>Helper methods can be used in conjunction with <a
+href="../JavaScriptGenerator.html">JavaScriptGenerator</a>. When a helper
+method is called inside an update block on the <code>page</code>  object,
+that method will also have access to a <code>page</code> object.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-keyword">module</span> <span class="ruby-constant">ApplicationHelper</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">update_time</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">'time'</span>, <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_s</span>(:<span class="ruby-identifier">db</span>)
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">visual_effect</span> :<span class="ruby-identifier">highlight</span>, <span class="ruby-string">'time'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-comment"># Controller action</span>
+<span class="ruby-keyword">def</span> <span class="ruby-identifier">poll</span>
+  <span class="ruby-identifier">render</span>(:<span class="ruby-identifier">update</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">update_time</span> }
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>You can also use <a
+href="../../PrototypeHelper.html#method-i-update_page_tag">ActionView::Helpers::PrototypeHelper#update_page_tag</a>
+instead of  <a
+href="../../PrototypeHelper.html#method-i-update_page">ActionView::Helpers::PrototypeHelper#update_page</a>
+to wrap the generated JavaScript in a &lt;script&gt; tag.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-3C-3C">&lt;&lt;</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-5B-5D">[]</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-alert">alert</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assign">assign</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-call">call</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-delay">delay</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-draggable">draggable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-drop_receiving">drop_receiving</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-hide">hide</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-insert_html">insert_html</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-literal">literal</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-redirect_to">redirect_to</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-remove">remove</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-replace">replace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-replace_html">replace_html</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-select">select</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-show">show</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-sortable">sortable</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-toggle">toggle</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-visual_effect">visual_effect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-3C-3C">
+            
+              <a name="method-i-3C-3C"></a><b>&lt;&lt;</b>(javascript)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Writes raw JavaScript to the page.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-3C-3C_source')" id="l_method-i-3C-3C_source">show</a>
+                
+              </p>
+              <div id="method-i-3C-3C_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 553</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;&lt;</span>(<span class="ruby-keyword ruby-title">javascript</span>)
+  <span class="ruby-ivar">@lines</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">javascript</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-5B-5D">
+            
+              <a name="method-i-5B-5D"></a><b>[]</b>(id)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a element reference by finding it through <code>id</code> in the
+DOM. This element can then be used for further method calls. Examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">page</span>[<span class="ruby-string">'blank_slate'</span>]                  <span class="ruby-comment"># =&gt; $('blank_slate');</span>
+<span class="ruby-identifier">page</span>[<span class="ruby-string">'blank_slate'</span>].<span class="ruby-identifier">show</span>             <span class="ruby-comment"># =&gt; $('blank_slate').show();</span>
+<span class="ruby-identifier">page</span>[<span class="ruby-string">'blank_slate'</span>].<span class="ruby-identifier">show</span>(<span class="ruby-string">'first'</span>).<span class="ruby-identifier">up</span> <span class="ruby-comment"># =&gt; $('blank_slate').show('first').up();</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-5B-5D_source')" id="l_method-i-5B-5D_source">show</a>
+                
+              </p>
+              <div id="method-i-5B-5D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 403</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-keyword ruby-title">id</span>)
+  <span class="ruby-constant">JavaScriptElementProxy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">id</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-alert">
+            
+              <a name="method-i-alert"></a><b>alert</b>(message)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Displays an alert dialog with the given <code>message</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-alert_source')" id="l_method-i-alert_source">show</a>
+                
+              </p>
+              <div id="method-i-alert_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 529</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">alert</span>(<span class="ruby-identifier">message</span>)
+  <span class="ruby-identifier">call</span> <span class="ruby-string">'alert'</span>, <span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assign">
+            
+              <a name="method-i-assign"></a><b>assign</b>(variable, value)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Assigns the JavaScript <code>variable</code> the given <code>value</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assign_source')" id="l_method-i-assign_source">show</a>
+                
+              </p>
+              <div id="method-i-assign_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 548</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assign</span>(<span class="ruby-identifier">variable</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">record</span> <span class="ruby-node">&quot;#{variable} = #{javascript_object_for(value)}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-call">
+            
+              <a name="method-i-call"></a><b>call</b>(function, *arguments, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Calls the JavaScript <code>function</code>, optionally with the given
+<code>arguments</code>.</p>
+
+<p>If a block is given, the block will be passed to a new <a
+href="../JavaScriptGenerator.html">JavaScriptGenerator</a>; the resulting
+JavaScript code will then be wrapped inside <code>function() { ... }</code>
+and passed as the called function’s final argument.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-call_source')" id="l_method-i-call_source">show</a>
+                
+              </p>
+              <div id="method-i-call_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 543</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">call</span>(<span class="ruby-identifier">function</span>, *<span class="ruby-identifier">arguments</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">record</span> <span class="ruby-node">&quot;#{function}(#{arguments_for_call(arguments, block)})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delay">
+            
+              <a name="method-i-delay"></a><b>delay</b>(seconds = 1)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Executes the content of the block after a delay of <code>seconds</code>.
+Example:</p>
+
+<pre>page.delay(20) do
+  page.visual_effect :fade, 'notice'
+end</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-delay_source')" id="l_method-i-delay_source">show</a>
+                
+              </p>
+              <div id="method-i-delay_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 562</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">delay</span>(<span class="ruby-identifier">seconds</span> = <span class="ruby-number">1</span>)
+  <span class="ruby-identifier">record</span> <span class="ruby-string">&quot;setTimeout(function() {\n\n&quot;</span>
+  <span class="ruby-keyword">yield</span>
+  <span class="ruby-identifier">record</span> <span class="ruby-node">&quot;}, #{(seconds * 1000).to_i})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-draggable">
+            
+              <a name="method-i-draggable"></a><b>draggable</b>(id, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a script.aculo.us draggable element. See <a
+href="../../ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a>
+for more information.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-draggable_source')" id="l_method-i-draggable_source">show</a>
+                
+              </p>
+              <div id="method-i-draggable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 584</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">draggable</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">record</span> <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:draggable_element_js</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-drop_receiving">
+            
+              <a name="method-i-drop_receiving"></a><b>drop_receiving</b>(id, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a script.aculo.us drop receiving element. See <a
+href="../../ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a>
+for more information.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-drop_receiving_source')" id="l_method-i-drop_receiving_source">show</a>
+                
+              </p>
+              <div id="method-i-drop_receiving_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 590</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">drop_receiving</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">record</span> <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:drop_receiving_element_js</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hide">
+            
+              <a name="method-i-hide"></a><b>hide</b>(*ids)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Hides the visible DOM elements with the given <code>ids</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hide_source')" id="l_method-i-hide_source">show</a>
+                
+              </p>
+              <div id="method-i-hide_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 519</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hide</span>(*<span class="ruby-identifier">ids</span>)
+  <span class="ruby-identifier">loop_on_multiple_args</span> <span class="ruby-string">'Element.hide'</span>, <span class="ruby-identifier">ids</span>           
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-insert_html">
+            
+              <a name="method-i-insert_html"></a><b>insert_html</b>(position, id, *options_for_render)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Inserts <a href="../../../../HTML.html">HTML</a> at the specified
+<code>position</code> relative to the DOM element identified by the given
+<code>id</code>.</p>
+
+<p><code>position</code> may be one of:</p>
+<dl class="rdoc-list note-list"><dt><code>:top</code>
+<dd>
+<p><a href="../../../../HTML.html">HTML</a> is inserted inside the element,
+before the  element's existing content.</p>
+</dd><dt><code>:bottom</code>
+<dd>
+<p><a href="../../../../HTML.html">HTML</a> is inserted inside the element,
+after the element's existing content.</p>
+</dd><dt><code>:before</code>
+<dd>
+<p><a href="../../../../HTML.html">HTML</a> is inserted immediately preceeding
+the element.</p>
+</dd><dt><code>:after</code>
+<dd>
+<p><a href="../../../../HTML.html">HTML</a> is inserted immediately following
+the element.</p>
+</dd></dl>
+
+<p><code>options_for_render</code> may be either a string of <a
+href="../../../../HTML.html">HTML</a> to insert, or a hash of options to be
+passed to ActionView::Base#render.  For example:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Insert the rendered 'navigation' partial just before the DOM</span>
+<span class="ruby-comment"># element with ID 'content'.</span>
+<span class="ruby-identifier">insert_html</span> :<span class="ruby-identifier">before</span>, <span class="ruby-string">'content'</span>, :<span class="ruby-identifier">partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'navigation'</span>
+
+<span class="ruby-comment"># Add a list item to the bottom of the &lt;ul&gt; with ID 'list'.</span>
+<span class="ruby-identifier">insert_html</span> :<span class="ruby-identifier">bottom</span>, <span class="ruby-string">'list'</span>, <span class="ruby-string">'&lt;li&gt;Last item&lt;/li&gt;'</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-insert_html_source')" id="l_method-i-insert_html_source">show</a>
+                
+              </p>
+              <div id="method-i-insert_html_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 460</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">insert_html</span>(<span class="ruby-identifier">position</span>, <span class="ruby-identifier">id</span>, *<span class="ruby-identifier">options_for_render</span>)
+  <span class="ruby-identifier">insertion</span> = <span class="ruby-identifier">position</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span>
+  <span class="ruby-identifier">call</span> <span class="ruby-node">&quot;new Insertion.#{insertion}&quot;</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">render</span>(*<span class="ruby-identifier">options_for_render</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-literal">
+            
+              <a name="method-i-literal"></a><b>literal</b>(code)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns an object whose <code>#to_json</code> evaluates to
+<code>code</code>. Use this to pass a literal JavaScript  expression as an
+argument to another <a
+href="../JavaScriptGenerator.html">JavaScriptGenerator</a> method.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-literal_source')" id="l_method-i-literal_source">show</a>
+                
+              </p>
+              <div id="method-i-literal_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 409</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">literal</span>(<span class="ruby-identifier">code</span>)
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">JSON</span><span class="ruby-operator">::</span><span class="ruby-constant">Variable</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">code</span>.<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-redirect_to">
+            
+              <a name="method-i-redirect_to"></a><b>redirect_to</b>(location)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Redirects the browser to the given <code>location</code>, in the same form
+as <code>url_for</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-redirect_to_source')" id="l_method-i-redirect_to_source">show</a>
+                
+              </p>
+              <div id="method-i-redirect_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 534</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">redirect_to</span>(<span class="ruby-identifier">location</span>)
+  <span class="ruby-identifier">assign</span> <span class="ruby-string">'window.location.href'</span>, <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">url_for</span>(<span class="ruby-identifier">location</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-remove">
+            
+              <a name="method-i-remove"></a><b>remove</b>(*ids)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Removes the DOM elements with the given <code>ids</code> from the page.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-remove_source')" id="l_method-i-remove_source">show</a>
+                
+              </p>
+              <div id="method-i-remove_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 509</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">remove</span>(*<span class="ruby-identifier">ids</span>)
+  <span class="ruby-identifier">loop_on_multiple_args</span> <span class="ruby-string">'Element.remove'</span>, <span class="ruby-identifier">ids</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-replace">
+            
+              <a name="method-i-replace"></a><b>replace</b>(id, *options_for_render)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Replaces the “outer HTML” (i.e., the entire element, not just its contents)
+of the DOM element with the given <code>id</code>.</p>
+
+<p><code>options_for_render</code> may be either a string of <a
+href="../../../../HTML.html">HTML</a> to insert, or a hash of options to be
+passed to ActionView::Base#render.  For example:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Replace the DOM element having ID 'person-45' with the</span>
+<span class="ruby-comment"># 'person' partial for the appropriate object.</span>
+<span class="ruby-identifier">replace</span> <span class="ruby-string">'person-45'</span>, :<span class="ruby-identifier">partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'person'</span>, :<span class="ruby-identifier">object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@person</span>
+</pre>
+
+<p>This allows the same partial that is used for the <code>insert_html</code>
+to be also used for the input to <code>replace</code> without resorting to
+the use of wrapper elements.</p>
+
+<p>Examples:</p>
+
+<pre>&lt;div id=&quot;people&quot;&gt;
+  &lt;%= render :partial =&gt; 'person', :collection =&gt; @people %&gt;
+&lt;/div&gt;
+
+# Insert a new person
+page.insert_html :bottom, :partial =&gt; 'person', :object =&gt; @person
+
+# Replace an existing person
+page.replace 'person_45', :partial =&gt; 'person', :object =&gt; @person</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-replace_source')" id="l_method-i-replace_source">show</a>
+                
+              </p>
+              <div id="method-i-replace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 504</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">replace</span>(<span class="ruby-identifier">id</span>, *<span class="ruby-identifier">options_for_render</span>)
+  <span class="ruby-identifier">call</span> <span class="ruby-string">'Element.replace'</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">render</span>(*<span class="ruby-identifier">options_for_render</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-replace_html">
+            
+              <a name="method-i-replace_html"></a><b>replace_html</b>(id, *options_for_render)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Replaces the inner <a href="../../../../HTML.html">HTML</a> of the DOM
+element with the given <code>id</code>.</p>
+
+<p><code>options_for_render</code> may be either a string of <a
+href="../../../../HTML.html">HTML</a> to insert, or a hash of options to be
+passed to ActionView::Base#render.  For example:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Replace the HTML of the DOM element having ID 'person-45' with the</span>
+<span class="ruby-comment"># 'person' partial for the appropriate object.</span>
+<span class="ruby-identifier">replace_html</span> <span class="ruby-string">'person-45'</span>, :<span class="ruby-identifier">partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'person'</span>, :<span class="ruby-identifier">object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@person</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-replace_html_source')" id="l_method-i-replace_html_source">show</a>
+                
+              </p>
+              <div id="method-i-replace_html_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 474</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">replace_html</span>(<span class="ruby-identifier">id</span>, *<span class="ruby-identifier">options_for_render</span>)
+  <span class="ruby-identifier">call</span> <span class="ruby-string">'Element.update'</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">render</span>(*<span class="ruby-identifier">options_for_render</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-select">
+            
+              <a name="method-i-select"></a><b>select</b>(pattern)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a collection reference by finding it through a CSS
+<code>pattern</code> in the DOM. This collection can then be used for
+further method calls. Examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">page</span>.<span class="ruby-identifier">select</span>(<span class="ruby-string">'p'</span>)                      <span class="ruby-comment"># =&gt; $$('p');</span>
+<span class="ruby-identifier">page</span>.<span class="ruby-identifier">select</span>(<span class="ruby-string">'p.welcome b'</span>).<span class="ruby-identifier">first</span>      <span class="ruby-comment"># =&gt; $$('p.welcome b').first();</span>
+<span class="ruby-identifier">page</span>.<span class="ruby-identifier">select</span>(<span class="ruby-string">'p.welcome b'</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">hide</span> <span class="ruby-comment"># =&gt; $$('p.welcome b').first().hide();</span>
+</pre>
+
+<p>You can also use prototype enumerations with the collection.  Observe:</p>
+
+<pre class="ruby"><span class="ruby-identifier">page</span>.<span class="ruby-identifier">select</span>(<span class="ruby-string">'#items li'</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">value</span>.<span class="ruby-identifier">hide</span>
+<span class="ruby-keyword">end</span> 
+<span class="ruby-comment"># =&gt; $$('#items li').each(function(value) { value.hide(); });</span>
+</pre>
+
+<p>Though you can call the block param anything you want, they are always
+rendered in the  javascript as ‘value, index.’  Other enumerations, like
+collect() return the last statement:</p>
+
+<pre class="ruby"><span class="ruby-identifier">page</span>.<span class="ruby-identifier">select</span>(<span class="ruby-string">'#items li'</span>).<span class="ruby-identifier">collect</span>(<span class="ruby-string">'hidden'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">item</span>.<span class="ruby-identifier">hide</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-comment"># =&gt; var hidden = $$('#items li').collect(function(value, index) { return value.hide(); });</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-select_source')" id="l_method-i-select_source">show</a>
+                
+              </p>
+              <div id="method-i-select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 434</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">select</span>(<span class="ruby-identifier">pattern</span>)
+  <span class="ruby-constant">JavaScriptElementCollectionProxy</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">pattern</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-show">
+            
+              <a name="method-i-show"></a><b>show</b>(*ids)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Shows hidden DOM elements with the given <code>ids</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-show_source')" id="l_method-i-show_source">show</a>
+                
+              </p>
+              <div id="method-i-show_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 514</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">show</span>(*<span class="ruby-identifier">ids</span>)
+  <span class="ruby-identifier">loop_on_multiple_args</span> <span class="ruby-string">'Element.show'</span>, <span class="ruby-identifier">ids</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sortable">
+            
+              <a name="method-i-sortable"></a><b>sortable</b>(id, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a script.aculo.us sortable element. Useful to recreate sortable
+elements after items get added or deleted. See <a
+href="../../ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a>
+for more information.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sortable_source')" id="l_method-i-sortable_source">show</a>
+                
+              </p>
+              <div id="method-i-sortable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 578</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sortable</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">record</span> <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:sortable_element_js</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-toggle">
+            
+              <a name="method-i-toggle"></a><b>toggle</b>(*ids)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Toggles the visibility of the DOM elements with the given <code>ids</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-toggle_source')" id="l_method-i-toggle_source">show</a>
+                
+              </p>
+              <div id="method-i-toggle_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 524</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">toggle</span>(*<span class="ruby-identifier">ids</span>)
+  <span class="ruby-identifier">loop_on_multiple_args</span> <span class="ruby-string">'Element.toggle'</span>, <span class="ruby-identifier">ids</span>            
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-visual_effect">
+            
+              <a name="method-i-visual_effect"></a><b>visual_effect</b>(name, id = nil, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Starts a script.aculo.us visual effect. See  <a
+href="../../ScriptaculousHelper.html">ActionView::Helpers::ScriptaculousHelper</a>
+for more information.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-visual_effect_source')" id="l_method-i-visual_effect_source">show</a>
+                
+              </p>
+              <div id="method-i-visual_effect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/prototype_helper.rb, line 570</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">visual_effect</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">id</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">record</span> <span class="ruby-ivar">@context</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:visual_effect</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">id</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,430 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>MultipartCGITest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            MultipartCGITest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/cgi_test_rb.html">rails/actionpack/test/controller/cgi_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_binary_file">test_binary_file</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_large_text_file">test_large_text_file</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_mixed_files">test_mixed_files</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_multipart_param_rewound">test_multipart_param_rewound</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_single_parameter">test_single_parameter</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_text_file">test_text_file</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">FIXTURE_PATH</td>
+            <td>=</td>
+            <td class="attr-value">File.dirname(__FILE__) + '/../fixtures/multipart'</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 284</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'REQUEST_METHOD'</span>] = <span class="ruby-string">'POST'</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'CONTENT_LENGTH'</span>] = <span class="ruby-string">'0'</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'CONTENT_TYPE'</span>]   = <span class="ruby-string">'multipart/form-data, boundary=AaB03x'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_binary_file">
+            
+              <a name="method-i-test_binary_file"></a><b>test_binary_file</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_binary_file_source')" id="l_method-i-test_binary_file_source">show</a>
+                
+              </p>
+              <div id="method-i-test_binary_file_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_binary_file</span>
+  <span class="ruby-identifier">params</span> = <span class="ruby-identifier">process</span>(<span class="ruby-string">'binary_file'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%w(file flowers foo)</span>, <span class="ruby-identifier">params</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'bar'</span>, <span class="ruby-identifier">params</span>[<span class="ruby-string">'foo'</span>]
+
+  <span class="ruby-identifier">file</span> = <span class="ruby-identifier">params</span>[<span class="ruby-string">'file'</span>]
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">StringIO</span>, <span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'file.txt'</span>, <span class="ruby-identifier">file</span>.<span class="ruby-identifier">original_filename</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;text/plain\r&quot;</span>, <span class="ruby-identifier">file</span>.<span class="ruby-identifier">content_type</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'contents'</span>, <span class="ruby-identifier">file</span>.<span class="ruby-identifier">read</span>
+
+  <span class="ruby-identifier">file</span> = <span class="ruby-identifier">params</span>[<span class="ruby-string">'flowers'</span>]
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">StringIO</span>, <span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'flowers.jpg'</span>, <span class="ruby-identifier">file</span>.<span class="ruby-identifier">original_filename</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;image/jpeg\r&quot;</span>, <span class="ruby-identifier">file</span>.<span class="ruby-identifier">content_type</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">19512</span>, <span class="ruby-identifier">file</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-comment">#assert_equal File.read(File.dirname(__FILE__) + '/../../../activerecord/test/fixtures/flowers.jpg'), file.read</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_large_text_file">
+            
+              <a name="method-i-test_large_text_file"></a><b>test_large_text_file</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_large_text_file_source')" id="l_method-i-test_large_text_file_source">show</a>
+                
+              </p>
+              <div id="method-i-test_large_text_file_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 307</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_large_text_file</span>
+  <span class="ruby-identifier">params</span> = <span class="ruby-identifier">process</span>(<span class="ruby-string">'large_text_file'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%w(file foo)</span>, <span class="ruby-identifier">params</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'bar'</span>, <span class="ruby-identifier">params</span>[<span class="ruby-string">'foo'</span>]
+
+  <span class="ruby-identifier">file</span> = <span class="ruby-identifier">params</span>[<span class="ruby-string">'file'</span>]
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Tempfile</span>, <span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'file.txt'</span>, <span class="ruby-identifier">file</span>.<span class="ruby-identifier">original_filename</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;text/plain\r&quot;</span>, <span class="ruby-identifier">file</span>.<span class="ruby-identifier">content_type</span>
+  <span class="ruby-identifier">assert</span> (<span class="ruby-string">'a'</span> * <span class="ruby-number">20480</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">read</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_mixed_files">
+            
+              <a name="method-i-test_mixed_files"></a><b>test_mixed_files</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_mixed_files_source')" id="l_method-i-test_mixed_files_source">show</a>
+                
+              </p>
+              <div id="method-i-test_mixed_files_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 338</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_mixed_files</span>
+  <span class="ruby-identifier">params</span> = <span class="ruby-identifier">process</span>(<span class="ruby-string">'mixed_files'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%w(files foo)</span>, <span class="ruby-identifier">params</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'bar'</span>, <span class="ruby-identifier">params</span>[<span class="ruby-string">'foo'</span>]
+
+  <span class="ruby-comment"># Ruby CGI doesn't handle multipart/mixed for us.</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">String</span>, <span class="ruby-identifier">params</span>[<span class="ruby-string">'files'</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">19756</span>, <span class="ruby-identifier">params</span>[<span class="ruby-string">'files'</span>].<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_multipart_param_rewound">
+            
+              <a name="method-i-test_multipart_param_rewound"></a><b>test_multipart_param_rewound</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Rewind readable cgi params so others may reread them (such as CGI::Session
+when passing the session id in a multipart form).</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_multipart_param_rewound_source')" id="l_method-i-test_multipart_param_rewound_source">show</a>
+                
+              </p>
+              <div id="method-i-test_multipart_param_rewound_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 350</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_multipart_param_rewound</span>
+  <span class="ruby-identifier">params</span> = <span class="ruby-identifier">process</span>(<span class="ruby-string">'text_file'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'bar'</span>, <span class="ruby-ivar">@cgi</span>.<span class="ruby-identifier">params</span>[<span class="ruby-string">'foo'</span>][<span class="ruby-number">0</span>].<span class="ruby-identifier">read</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_single_parameter">
+            
+              <a name="method-i-test_single_parameter"></a><b>test_single_parameter</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_single_parameter_source')" id="l_method-i-test_single_parameter_source">show</a>
+                
+              </p>
+              <div id="method-i-test_single_parameter_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 290</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_single_parameter</span>
+  <span class="ruby-identifier">params</span> = <span class="ruby-identifier">process</span>(<span class="ruby-string">'single_parameter'</span>)
+  <span class="ruby-identifier">assert_equal</span>({ <span class="ruby-string">'foo'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'bar'</span> }, <span class="ruby-identifier">params</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_text_file">
+            
+              <a name="method-i-test_text_file"></a><b>test_text_file</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_text_file_source')" id="l_method-i-test_text_file_source">show</a>
+                
+              </p>
+              <div id="method-i-test_text_file_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 295</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_text_file</span>
+  <span class="ruby-identifier">params</span> = <span class="ruby-identifier">process</span>(<span class="ruby-string">'text_file'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%w(file foo)</span>, <span class="ruby-identifier">params</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">sort</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'bar'</span>, <span class="ruby-identifier">params</span>[<span class="ruby-string">'foo'</span>]
+
+  <span class="ruby-identifier">file</span> = <span class="ruby-identifier">params</span>[<span class="ruby-string">'file'</span>]
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">StringIO</span>, <span class="ruby-identifier">file</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'file.txt'</span>, <span class="ruby-identifier">file</span>.<span class="ruby-identifier">original_filename</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;text/plain\r&quot;</span>, <span class="ruby-identifier">file</span>.<span class="ruby-identifier">content_type</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'contents'</span>, <span class="ruby-identifier">file</span>.<span class="ruby-identifier">read</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

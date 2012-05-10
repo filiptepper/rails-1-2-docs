@@ -1,0 +1,642 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>MixinNestedSetTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            MixinNestedSetTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/test/mixin_nested_set_test_rb.html">rails/activerecord/test/mixin_nested_set_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-check_method_mixins">check_method_mixins</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set">set</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_adding_children">test_adding_children</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_common_usage">test_common_usage</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_deleting_root">test_deleting_root</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_inheritance">test_inheritance</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_mixing_in_methods">test_mixing_in_methods</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_snipping_tree">test_snipping_tree</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_string_scope">test_string_scope</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_symbol_scope">test_symbol_scope</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-check_method_mixins">
+            
+              <a name="method-i-check_method_mixins"></a><b>check_method_mixins</b>( obj )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-check_method_mixins_source')" id="l_method-i-check_method_mixins_source">show</a>
+                
+              </p>
+              <div id="method-i-check_method_mixins_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_nested_set_test.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">check_method_mixins</span>( <span class="ruby-identifier">obj</span> )
+  [<span class="ruby-value">:scope_condition</span>, <span class="ruby-value">:left_col_name</span>, <span class="ruby-value">:right_col_name</span>, <span class="ruby-value">:parent_column</span>, <span class="ruby-value">:root?</span>, <span class="ruby-value">:add_child</span>,
+  <span class="ruby-value">:children_count</span>, <span class="ruby-value">:full_set</span>, <span class="ruby-value">:all_children</span>, <span class="ruby-value">:direct_children</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">symbol</span><span class="ruby-operator">|</span> <span class="ruby-identifier">assert</span>( <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">symbol</span>)) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set">
+            
+              <a name="method-i-set"></a><b>set</b>( id )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_source')" id="l_method-i-set_source">show</a>
+                
+              </p>
+              <div id="method-i-set_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_nested_set_test.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set</span>( <span class="ruby-identifier">id</span> )
+  <span class="ruby-constant">NestedSet</span>.<span class="ruby-identifier">find</span>( <span class="ruby-number">3000</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">id</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_adding_children">
+            
+              <a name="method-i-test_adding_children"></a><b>test_adding_children</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_adding_children_source')" id="l_method-i-test_adding_children_source">show</a>
+                
+              </p>
+              <div id="method-i-test_adding_children_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_nested_set_test.rb, line 45</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_adding_children</span>
+  <span class="ruby-identifier">assert</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">unknown?</span> )
+  <span class="ruby-identifier">assert</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">unknown?</span> )
+  <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">add_child</span> <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>)
+  
+  <span class="ruby-comment"># Did we maintain adding the parent_ids?</span>
+  <span class="ruby-identifier">assert</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">root?</span> )
+  <span class="ruby-identifier">assert</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">child?</span> )
+  <span class="ruby-identifier">assert</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">parent_id</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">id</span> )
+  
+  <span class="ruby-comment"># Check boundies</span>
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">lft</span>, <span class="ruby-number">1</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">lft</span>, <span class="ruby-number">2</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">rgt</span>, <span class="ruby-number">3</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">rgt</span>, <span class="ruby-number">4</span> )
+  
+  <span class="ruby-comment"># Check children cound</span>
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">children_count</span>, <span class="ruby-number">1</span> )
+  
+  <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">add_child</span> <span class="ruby-identifier">set</span>(<span class="ruby-number">3</span>)
+  
+  <span class="ruby-comment">#check boundries</span>
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">lft</span>, <span class="ruby-number">1</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">lft</span>, <span class="ruby-number">2</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">rgt</span>, <span class="ruby-number">3</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">3</span>).<span class="ruby-identifier">lft</span>, <span class="ruby-number">4</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">3</span>).<span class="ruby-identifier">rgt</span>, <span class="ruby-number">5</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">rgt</span>, <span class="ruby-number">6</span> )
+  
+  <span class="ruby-comment"># How is the count looking?</span>
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">children_count</span>, <span class="ruby-number">2</span> )
+
+  <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">add_child</span> <span class="ruby-identifier">set</span>(<span class="ruby-number">4</span>)
+
+  <span class="ruby-comment"># boundries</span>
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">lft</span>, <span class="ruby-number">1</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">lft</span>, <span class="ruby-number">2</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">4</span>).<span class="ruby-identifier">lft</span>, <span class="ruby-number">3</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">4</span>).<span class="ruby-identifier">rgt</span>, <span class="ruby-number">4</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">rgt</span>, <span class="ruby-number">5</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">3</span>).<span class="ruby-identifier">lft</span>, <span class="ruby-number">6</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">3</span>).<span class="ruby-identifier">rgt</span>, <span class="ruby-number">7</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">rgt</span>, <span class="ruby-number">8</span> )
+  
+  <span class="ruby-comment"># Children count</span>
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">children_count</span>, <span class="ruby-number">3</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">children_count</span>, <span class="ruby-number">1</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">3</span>).<span class="ruby-identifier">children_count</span>, <span class="ruby-number">0</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">4</span>).<span class="ruby-identifier">children_count</span>, <span class="ruby-number">0</span> )
+  
+  <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">add_child</span> <span class="ruby-identifier">set</span>(<span class="ruby-number">5</span>)
+  <span class="ruby-identifier">set</span>(<span class="ruby-number">4</span>).<span class="ruby-identifier">add_child</span> <span class="ruby-identifier">set</span>(<span class="ruby-number">6</span>)
+  
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">children_count</span>, <span class="ruby-number">3</span> )
+
+
+  <span class="ruby-comment"># Children accessors</span>
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">full_set</span>.<span class="ruby-identifier">length</span>, <span class="ruby-number">6</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">2</span>).<span class="ruby-identifier">full_set</span>.<span class="ruby-identifier">length</span>, <span class="ruby-number">4</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">4</span>).<span class="ruby-identifier">full_set</span>.<span class="ruby-identifier">length</span>, <span class="ruby-number">2</span> )
+  
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">all_children</span>.<span class="ruby-identifier">length</span>, <span class="ruby-number">5</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">6</span>).<span class="ruby-identifier">all_children</span>.<span class="ruby-identifier">length</span>, <span class="ruby-number">0</span> )
+  
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">set</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">direct_children</span>.<span class="ruby-identifier">length</span>, <span class="ruby-number">2</span> )
+  
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_common_usage">
+            
+              <a name="method-i-test_common_usage"></a><b>test_common_usage</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_common_usage_source')" id="l_method-i-test_common_usage_source">show</a>
+                
+              </p>
+              <div id="method-i-test_common_usage_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_nested_set_test.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_common_usage</span>
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>).<span class="ruby-identifier">add_child</span>( <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_2</span>) )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">1</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>).<span class="ruby-identifier">direct_children</span>.<span class="ruby-identifier">length</span> )
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_2</span>).<span class="ruby-identifier">add_child</span>( <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_3</span>) )                      
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">1</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>).<span class="ruby-identifier">direct_children</span>.<span class="ruby-identifier">length</span> )     
+  
+  <span class="ruby-comment"># Local cache is now out of date!</span>
+  <span class="ruby-comment"># Problem: the update_alls update all objects up the tree</span>
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>).<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">2</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>).<span class="ruby-identifier">all_children</span>.<span class="ruby-identifier">length</span> )              
+  
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">1</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>).<span class="ruby-identifier">lft</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">2</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_2</span>).<span class="ruby-identifier">lft</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">3</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_3</span>).<span class="ruby-identifier">lft</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">4</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_3</span>).<span class="ruby-identifier">rgt</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">5</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_2</span>).<span class="ruby-identifier">rgt</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">6</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>).<span class="ruby-identifier">rgt</span> )
+        
+  <span class="ruby-identifier">assert</span>( <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>).<span class="ruby-identifier">root?</span> )
+                
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_4</span>).<span class="ruby-identifier">add_child</span>( <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>) )
+    <span class="ruby-identifier">fail</span>
+  <span class="ruby-keyword">rescue</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">2</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>).<span class="ruby-identifier">all_children</span>.<span class="ruby-identifier">length</span> )
+  
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>).<span class="ruby-identifier">add_child</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_4</span>)
+
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">3</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:set_1</span>).<span class="ruby-identifier">all_children</span>.<span class="ruby-identifier">length</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_deleting_root">
+            
+              <a name="method-i-test_deleting_root"></a><b>test_deleting_root</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_deleting_root_source')" id="l_method-i-test_deleting_root_source">show</a>
+                
+              </p>
+              <div id="method-i-test_deleting_root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_nested_set_test.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_deleting_root</span>
+  <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4001</span>).<span class="ruby-identifier">destroy</span>
+  
+  <span class="ruby-identifier">assert</span>( <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">count</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_inheritance">
+            
+              <a name="method-i-test_inheritance"></a><b>test_inheritance</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_inheritance_source')" id="l_method-i-test_inheritance_source">show</a>
+                
+              </p>
+              <div id="method-i-test_inheritance_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_nested_set_test.rb, line 183</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_inheritance</span>
+  <span class="ruby-identifier">parent</span> = <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:sti_set_3100</span>)
+  <span class="ruby-identifier">child</span> = <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:sti_set_3101</span>)
+  <span class="ruby-identifier">grandchild</span> = <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:sti_set_3102</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">full_set</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">child</span>.<span class="ruby-identifier">full_set</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">4</span>, <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">all_children</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">child</span>.<span class="ruby-identifier">all_children</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">direct_children</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">child</span>.<span class="ruby-identifier">direct_children</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">child</span>.<span class="ruby-identifier">destroy</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">parent</span>.<span class="ruby-identifier">full_set</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_mixing_in_methods">
+            
+              <a name="method-i-test_mixing_in_methods"></a><b>test_mixing_in_methods</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_mixing_in_methods_source')" id="l_method-i-test_mixing_in_methods_source">show</a>
+                
+              </p>
+              <div id="method-i-test_mixing_in_methods_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_nested_set_test.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_mixing_in_methods</span>
+  <span class="ruby-identifier">ns</span> = <span class="ruby-constant">NestedSet</span>.<span class="ruby-identifier">new</span>
+        <span class="ruby-identifier">assert</span>( <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">respond_to?</span>( <span class="ruby-value">:all_children</span> ) )
+        <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">scope_condition</span>, <span class="ruby-string">&quot;root_id IS NULL&quot;</span> )
+        
+        <span class="ruby-identifier">check_method_mixins</span> <span class="ruby-identifier">ns</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_snipping_tree">
+            
+              <a name="method-i-test_snipping_tree"></a><b>test_snipping_tree</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_snipping_tree_source')" id="l_method-i-test_snipping_tree_source">show</a>
+                
+              </p>
+              <div id="method-i-test_snipping_tree_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_nested_set_test.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_snipping_tree</span>
+  <span class="ruby-identifier">big_tree</span> = <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>( <span class="ruby-number">4001</span> )
+  
+  <span class="ruby-comment"># Make sure we have the right one</span>
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">3</span>, <span class="ruby-identifier">big_tree</span>.<span class="ruby-identifier">direct_children</span>.<span class="ruby-identifier">length</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">10</span>, <span class="ruby-identifier">big_tree</span>.<span class="ruby-identifier">full_set</span>.<span class="ruby-identifier">length</span> )
+  
+  <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>( <span class="ruby-number">4005</span> ).<span class="ruby-identifier">destroy</span>
+
+  <span class="ruby-identifier">big_tree</span> = <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>( <span class="ruby-number">4001</span> )
+  
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">7</span>, <span class="ruby-identifier">big_tree</span>.<span class="ruby-identifier">full_set</span>.<span class="ruby-identifier">length</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">2</span>, <span class="ruby-identifier">big_tree</span>.<span class="ruby-identifier">direct_children</span>.<span class="ruby-identifier">length</span> )
+  
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">1</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4001</span>).<span class="ruby-identifier">lft</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">2</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4002</span>).<span class="ruby-identifier">lft</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">3</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4003</span>).<span class="ruby-identifier">lft</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">4</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4003</span>).<span class="ruby-identifier">rgt</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">5</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4004</span>).<span class="ruby-identifier">lft</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">6</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4004</span>).<span class="ruby-identifier">rgt</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">7</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4002</span>).<span class="ruby-identifier">rgt</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">8</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4008</span>).<span class="ruby-identifier">lft</span> )
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-number">9</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4009</span>).<span class="ruby-identifier">lft</span> )
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-number">10</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4009</span>).<span class="ruby-identifier">rgt</span> )
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-number">11</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4010</span>).<span class="ruby-identifier">lft</span> )
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-number">12</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4010</span>).<span class="ruby-identifier">rgt</span> )
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-number">13</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4008</span>).<span class="ruby-identifier">rgt</span> )
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-number">14</span>, <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4001</span>).<span class="ruby-identifier">rgt</span> )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_string_scope">
+            
+              <a name="method-i-test_string_scope"></a><b>test_string_scope</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_string_scope_source')" id="l_method-i-test_string_scope_source">show</a>
+                
+              </p>
+              <div id="method-i-test_string_scope_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_nested_set_test.rb, line 17</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_string_scope</span>
+        <span class="ruby-identifier">ns</span> = <span class="ruby-constant">NestedSetWithStringScope</span>.<span class="ruby-identifier">new</span>
+        
+        <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">root_id</span> = <span class="ruby-number">1</span>
+        <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">scope_condition</span>, <span class="ruby-string">&quot;root_id = 1&quot;</span> )
+        <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">root_id</span> = <span class="ruby-number">42</span>
+        <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">scope_condition</span>, <span class="ruby-string">&quot;root_id = 42&quot;</span> )
+        <span class="ruby-identifier">check_method_mixins</span> <span class="ruby-identifier">ns</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_symbol_scope">
+            
+              <a name="method-i-test_symbol_scope"></a><b>test_symbol_scope</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_symbol_scope_source')" id="l_method-i-test_symbol_scope_source">show</a>
+                
+              </p>
+              <div id="method-i-test_symbol_scope_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_nested_set_test.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_symbol_scope</span>
+  <span class="ruby-identifier">ns</span> = <span class="ruby-constant">NestedSetWithSymbolScope</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">root_id</span> = <span class="ruby-number">1</span>
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">scope_condition</span>, <span class="ruby-string">&quot;root_id = 1&quot;</span> )
+  <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">root_id</span> = <span class="ruby-number">42</span>
+  <span class="ruby-identifier">assert_equal</span>( <span class="ruby-identifier">ns</span>.<span class="ruby-identifier">scope_condition</span>, <span class="ruby-string">&quot;root_id = 42&quot;</span> )
+  <span class="ruby-identifier">check_method_mixins</span> <span class="ruby-identifier">ns</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

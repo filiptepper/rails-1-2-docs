@@ -1,0 +1,675 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Rails::Generator::Commands::Create</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Rails::Generator::Commands::Create 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Base.html">Rails::Generator::Commands::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/rails/railties/lib/rails_generator/commands_rb.html">rails/railties/lib/rails_generator/commands.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Create.html">Create</a> is the premier generator command.  It
+copies files, creates directories, renders templates, and more.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-class_collisions">class_collisions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-complex_template">complex_template</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-directory">directory</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-file">file</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-identical-3F">identical?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-migration_template">migration_template</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-readme">readme</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-route_resources">route_resources</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-template">template</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">SYNONYM_LOOKUP_URI</td>
+            <td>=</td>
+            <td class="attr-value">&quot;http://wordnet.princeton.edu/cgi-bin/webwn2.0?stage=2&amp;word=%s&amp;posnumber=1&amp;searchtypenumber=2&amp;senses=&amp;showglosses=1&quot;</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-class_collisions">
+            
+              <a name="method-i-class_collisions"></a><b>class_collisions</b>(*class_names)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Check whether the given class names are already taken by Ruby or <a
+href="../../../Rails.html">Rails</a>.  In the future, expand to check other
+namespaces such as the rest of the user’s app.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-class_collisions_source')" id="l_method-i-class_collisions_source">show</a>
+                
+              </p>
+              <div id="method-i-class_collisions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/commands.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">class_collisions</span>(*<span class="ruby-identifier">class_names</span>)
+  <span class="ruby-identifier">class_names</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">class_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Convert to string to allow symbol arguments.</span>
+    <span class="ruby-identifier">class_name</span> = <span class="ruby-identifier">class_name</span>.<span class="ruby-identifier">to_s</span>
+
+    <span class="ruby-comment"># Skip empty strings.</span>
+    <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">class_name</span>.<span class="ruby-identifier">strip</span>.<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-comment"># Split the class from its module nesting.</span>
+    <span class="ruby-identifier">nesting</span> = <span class="ruby-identifier">class_name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'::'</span>)
+    <span class="ruby-identifier">name</span> = <span class="ruby-identifier">nesting</span>.<span class="ruby-identifier">pop</span>
+
+    <span class="ruby-comment"># Extract the last Module in the nesting.</span>
+    <span class="ruby-identifier">last</span> = <span class="ruby-identifier">nesting</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-constant">Object</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">last</span>, <span class="ruby-identifier">nest</span><span class="ruby-operator">|</span>
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">last</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">nest</span>)
+      <span class="ruby-identifier">last</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">nest</span>)
+    }
+
+    <span class="ruby-comment"># If the last Module exists, check whether the given</span>
+    <span class="ruby-comment"># class exists and raise a collision if so.</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">last</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">last</span>.<span class="ruby-identifier">const_defined?</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">camelize</span>)
+      <span class="ruby-identifier">raise_class_collision</span>(<span class="ruby-identifier">class_name</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-complex_template">
+            
+              <a name="method-i-complex_template"></a><b>complex_template</b>(relative_source, relative_destination, template_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-complex_template_source')" id="l_method-i-complex_template_source">show</a>
+                
+              </p>
+              <div id="method-i-complex_template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/commands.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">complex_template</span>(<span class="ruby-identifier">relative_source</span>, <span class="ruby-identifier">relative_destination</span>, <span class="ruby-identifier">template_options</span> = {})
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">template_options</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:assigns</span>] <span class="ruby-operator">||=</span> {}
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:assigns</span>][<span class="ruby-string">'template_for_inclusion'</span>] = <span class="ruby-identifier">render_template_part</span>(<span class="ruby-identifier">template_options</span>)
+  <span class="ruby-identifier">template</span>(<span class="ruby-identifier">relative_source</span>, <span class="ruby-identifier">relative_destination</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-directory">
+            
+              <a name="method-i-directory"></a><b>directory</b>(relative_path)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Create.html">Create</a> a directory including any missing parent
+directories. Always directories which exist.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-directory_source')" id="l_method-i-directory_source">show</a>
+                
+              </p>
+              <div id="method-i-directory_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/commands.rb, line 297</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">directory</span>(<span class="ruby-identifier">relative_path</span>)
+  <span class="ruby-identifier">path</span> = <span class="ruby-identifier">destination_path</span>(<span class="ruby-identifier">relative_path</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">exists</span> <span class="ruby-identifier">relative_path</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">create</span> <span class="ruby-identifier">relative_path</span>
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:pretend</span>]
+      <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-identifier">path</span>)
+      
+      <span class="ruby-comment"># Subversion doesn't do path adds, so we need to add</span>
+      <span class="ruby-comment"># each directory individually.</span>
+      <span class="ruby-comment"># So stack up the directory tree and add the paths to</span>
+      <span class="ruby-comment"># subversion in order without recursion.</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:svn</span>]
+        <span class="ruby-identifier">stack</span>=[<span class="ruby-identifier">relative_path</span>]
+        <span class="ruby-keyword">until</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">stack</span>.<span class="ruby-identifier">last</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">last</span> <span class="ruby-comment"># dirname('.') == '.'</span>
+          <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">push</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">stack</span>.<span class="ruby-identifier">last</span>)
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">stack</span>.<span class="ruby-identifier">reverse_each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">rel_path</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">svn_path</span> = <span class="ruby-identifier">destination_path</span>(<span class="ruby-identifier">rel_path</span>)
+          <span class="ruby-identifier">system</span>(<span class="ruby-node">&quot;svn add -N #{svn_path}&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">svn_path</span>, <span class="ruby-string">'.svn'</span>))
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-file">
+            
+              <a name="method-i-file"></a><b>file</b>(relative_source, relative_destination, file_options = {}, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Copy a file from source to destination with collision checking.</p>
+
+<p>The file_options hash accepts :chmod and :shebang and :collision options.
+:chmod sets the permissions of the destination file:</p>
+
+<pre class="ruby"><span class="ruby-identifier">file</span> <span class="ruby-string">'config/empty.log'</span>, <span class="ruby-string">'log/test.log'</span>, :<span class="ruby-identifier">chmod</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0664</span>
+</pre>
+
+<p>:shebang sets the #!/usr/bin/ruby line for scripts</p>
+
+<pre class="ruby"><span class="ruby-identifier">file</span> <span class="ruby-string">'bin/generate.rb'</span>, <span class="ruby-string">'script/generate'</span>, :<span class="ruby-identifier">chmod</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">0755</span>, :<span class="ruby-identifier">shebang</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/usr/bin/env ruby'</span>
+</pre>
+
+<p>:collision sets the collision option only for the destination file:</p>
+
+<pre class="ruby"><span class="ruby-identifier">file</span> <span class="ruby-string">'settings/server.yml'</span>, <span class="ruby-string">'config/server.yml'</span>, :<span class="ruby-identifier">collision</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">skip</span>
+</pre>
+
+<p>Collisions are handled by checking whether the destination file exists and
+either skipping the file, forcing overwrite, or asking the user what to do.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-file_source')" id="l_method-i-file_source">show</a>
+                
+              </p>
+              <div id="method-i-file_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/commands.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">file</span>(<span class="ruby-identifier">relative_source</span>, <span class="ruby-identifier">relative_destination</span>, <span class="ruby-identifier">file_options</span> = {}, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-comment"># Determine full paths for source and destination files.</span>
+  <span class="ruby-identifier">source</span>              = <span class="ruby-identifier">source_path</span>(<span class="ruby-identifier">relative_source</span>)
+  <span class="ruby-identifier">destination</span>         = <span class="ruby-identifier">destination_path</span>(<span class="ruby-identifier">relative_destination</span>)
+  <span class="ruby-identifier">destination_exists</span>  = <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">destination</span>)
+
+  <span class="ruby-comment"># If source and destination are identical then we're done.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">destination_exists</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">identical?</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">destination</span>, &amp;<span class="ruby-identifier">block</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">identical</span>(<span class="ruby-identifier">relative_destination</span>) 
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Check for and resolve file collisions.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">destination_exists</span>
+
+    <span class="ruby-comment"># Make a choice whether to overwrite the file.  :force and</span>
+    <span class="ruby-comment"># :skip already have their mind made up, but give :ask a shot.</span>
+    <span class="ruby-identifier">choice</span> = <span class="ruby-keyword">case</span> (<span class="ruby-identifier">file_options</span>[<span class="ruby-value">:collision</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:collision</span>]).<span class="ruby-identifier">to_sym</span> <span class="ruby-comment">#|| :ask</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:ask</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">force_file_collision?</span>(<span class="ruby-identifier">relative_destination</span>, <span class="ruby-identifier">source</span>, <span class="ruby-identifier">destination</span>, <span class="ruby-identifier">file_options</span>, &amp;<span class="ruby-identifier">block</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:force</span> <span class="ruby-keyword">then</span> <span class="ruby-value">:force</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:skip</span>  <span class="ruby-keyword">then</span> <span class="ruby-value">:skip</span>
+      <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Invalid collision option: #{options[:collision].inspect}&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Take action based on our choice.  Bail out if we chose to</span>
+    <span class="ruby-comment"># skip the file; otherwise, log our transgression and continue.</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">choice</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:force</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">force</span>(<span class="ruby-identifier">relative_destination</span>)
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:skip</span>  <span class="ruby-keyword">then</span> <span class="ruby-keyword">return</span>(<span class="ruby-identifier">logger</span>.<span class="ruby-identifier">skip</span>(<span class="ruby-identifier">relative_destination</span>))
+      <span class="ruby-keyword">else</span> <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Invalid collision choice: #{choice}.inspect&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># File doesn't exist so log its unbesmirched creation.</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">create</span> <span class="ruby-identifier">relative_destination</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># If we're pretending, back off now.</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:pretend</span>]
+
+  <span class="ruby-comment"># Write destination file with optional shebang.  Yield for content</span>
+  <span class="ruby-comment"># if block given so templaters may render the source file.  If a</span>
+  <span class="ruby-comment"># shebang is requested, replace the existing shebang or insert a</span>
+  <span class="ruby-comment"># new one.</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">destination</span>, <span class="ruby-string">'wb'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">dest</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">dest</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">render_file</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">file_options</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Optionally change permissions.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">file_options</span>[<span class="ruby-value">:chmod</span>]
+    <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">chmod</span>(<span class="ruby-identifier">file_options</span>[<span class="ruby-value">:chmod</span>], <span class="ruby-identifier">destination</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Optionally add file to subversion</span>
+  <span class="ruby-identifier">system</span>(<span class="ruby-node">&quot;svn add #{destination}&quot;</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:svn</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-identical-3F">
+            
+              <a name="method-i-identical-3F"></a><b>identical?</b>(source, destination, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Checks if the source and the destination file are identical. If passed a
+block then the source file is a template that needs to first be evaluated
+before being compared to the destination.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-identical-3F_source')" id="l_method-i-identical-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-identical-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/commands.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">identical?</span>(<span class="ruby-identifier">source</span>, <span class="ruby-identifier">destination</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-identifier">destination</span>
+  <span class="ruby-identifier">source</span>      = <span class="ruby-identifier">block_given?</span> <span class="ruby-operator">?</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">source</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">sf</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">sf</span>)} <span class="ruby-operator">:</span> <span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">source</span>)
+  <span class="ruby-identifier">destination</span> = <span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">destination</span>)
+  <span class="ruby-identifier">source</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">destination</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-migration_template">
+            
+              <a name="method-i-migration_template"></a><b>migration_template</b>(relative_source, relative_destination, template_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>When creating a migration, it knows to find the first available file in
+db/migrate and use the migration.rb template.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-migration_template_source')" id="l_method-i-migration_template_source">show</a>
+                
+              </p>
+              <div id="method-i-migration_template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/commands.rb, line 333</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">migration_template</span>(<span class="ruby-identifier">relative_source</span>, <span class="ruby-identifier">relative_destination</span>, <span class="ruby-identifier">template_options</span> = {})
+  <span class="ruby-identifier">migration_directory</span> <span class="ruby-identifier">relative_destination</span>
+  <span class="ruby-identifier">migration_file_name</span> = <span class="ruby-identifier">template_options</span>[<span class="ruby-value">:migration_file_name</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">file_name</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;Another migration is already named #{migration_file_name}: #{existing_migrations(migration_file_name).first}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">migration_exists?</span>(<span class="ruby-identifier">migration_file_name</span>)
+  <span class="ruby-identifier">template</span>(<span class="ruby-identifier">relative_source</span>, <span class="ruby-node">&quot;#{relative_destination}/#{next_migration_string}_#{migration_file_name}.rb&quot;</span>, <span class="ruby-identifier">template_options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-readme">
+            
+              <a name="method-i-readme"></a><b>readme</b>(*relative_sources)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Display a <a
+href="../../../../files/rails/actionmailer/README.html">README</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-readme_source')" id="l_method-i-readme_source">show</a>
+                
+              </p>
+              <div id="method-i-readme_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/commands.rb, line 325</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">readme</span>(*<span class="ruby-identifier">relative_sources</span>)
+  <span class="ruby-identifier">relative_sources</span>.<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">relative_source</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">readme</span> <span class="ruby-identifier">relative_source</span>
+    <span class="ruby-identifier">puts</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">source_path</span>(<span class="ruby-identifier">relative_source</span>)) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:pretend</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-route_resources">
+            
+              <a name="method-i-route_resources"></a><b>route_resources</b>(*resources)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-route_resources_source')" id="l_method-i-route_resources_source">show</a>
+                
+              </p>
+              <div id="method-i-route_resources_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/commands.rb, line 340</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">route_resources</span>(*<span class="ruby-identifier">resources</span>)
+  <span class="ruby-identifier">resource_list</span> = <span class="ruby-identifier">resources</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">to_sym</span>.<span class="ruby-identifier">inspect</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>)
+  <span class="ruby-identifier">sentinel</span> = <span class="ruby-string">'ActionController::Routing::Routes.draw do |map|'</span>
+
+  <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">route</span> <span class="ruby-node">&quot;map.resources #{resource_list}&quot;</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:pretend</span>]
+    <span class="ruby-identifier">gsub_file</span> <span class="ruby-string">'config/routes.rb'</span>, <span class="ruby-node">%r(#{Regexp.escape(sentinel)})/</span><span class="ruby-identifier">i</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">match</span><span class="ruby-operator">|</span>
+      <span class="ruby-node">&quot;#{match}\n  map.resources #{resource_list}\n&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-template">
+            
+              <a name="method-i-template"></a><b>template</b>(relative_source, relative_destination, template_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Generate a file for a <a href="../../../Rails.html">Rails</a> application
+using an ERuby template. Looks up and evalutes a template by name and
+writes the result.</p>
+
+<p>The ERB template uses explicit trim mode to best control the proliferation
+of whitespace in generated code.  &lt;%- trims leading whitespace; -%&gt;
+trims trailing whitespace including one newline.</p>
+
+<p><a href="../../../A.html">A</a> hash of template options may be passed as
+the last argument. The options accepted by the file are accepted as well as
+:assigns, a hash of variable bindings.  Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">template</span> <span class="ruby-string">'foo'</span>, <span class="ruby-string">'bar'</span>, :<span class="ruby-identifier">assigns</span> =<span class="ruby-operator">&gt;</span> { :<span class="ruby-identifier">action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'view'</span> }
+</pre>
+
+<p>Template is implemented in terms of file.  It calls file with a block which
+takes a file handle and returns its rendered contents.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-template_source')" id="l_method-i-template_source">show</a>
+                
+              </p>
+              <div id="method-i-template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/commands.rb, line 276</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">template</span>(<span class="ruby-identifier">relative_source</span>, <span class="ruby-identifier">relative_destination</span>, <span class="ruby-identifier">template_options</span> = {})
+  <span class="ruby-identifier">file</span>(<span class="ruby-identifier">relative_source</span>, <span class="ruby-identifier">relative_destination</span>, <span class="ruby-identifier">template_options</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Evaluate any assignments in a temporary, throwaway binding.</span>
+    <span class="ruby-identifier">vars</span> = <span class="ruby-identifier">template_options</span>[<span class="ruby-value">:assigns</span>] <span class="ruby-operator">||</span> {}
+    <span class="ruby-identifier">b</span> = <span class="ruby-identifier">binding</span>
+    <span class="ruby-identifier">vars</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">eval</span> <span class="ruby-node">&quot;#{k} = vars[:#{k}] || vars['#{k}']&quot;</span>, <span class="ruby-identifier">b</span> }
+
+    <span class="ruby-comment"># Render the source file with the temporary binding.</span>
+    <span class="ruby-constant">ERB</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">file</span>.<span class="ruby-identifier">read</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-string">'-'</span>).<span class="ruby-identifier">result</span>(<span class="ruby-identifier">b</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

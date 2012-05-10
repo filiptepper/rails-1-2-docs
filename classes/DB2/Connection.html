@@ -1,0 +1,450 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>DB2::Connection</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            DB2::Connection 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/activerecord/lib/active_record/vendor/db2_rb.html">rails/activerecord/lib/active_record/vendor/db2.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-commit">commit</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-connect">connect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-disconnect">disconnect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rollback">rollback</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set_auto_commit_off">set_auto_commit_off</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-set_auto_commit_on">set_auto_commit_on</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-set_connect_attr">set_connect_attr</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="DB2Util.html">
+              DB2::DB2Util
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(environment)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">environment</span>)
+  <span class="ruby-ivar">@env</span> = <span class="ruby-identifier">environment</span>
+  <span class="ruby-ivar">@handle_type</span> = <span class="ruby-constant">SQL_HANDLE_DBC</span>
+  <span class="ruby-identifier">rc</span>, <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">SQLAllocHandle</span>(<span class="ruby-ivar">@handle_type</span>, <span class="ruby-ivar">@env</span>.<span class="ruby-identifier">handle</span>)
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-identifier">rc</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-commit">
+            
+              <a name="method-i-commit"></a><b>commit</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-commit_source')" id="l_method-i-commit_source">show</a>
+                
+              </p>
+              <div id="method-i-commit_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">commit</span>
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLEndTran</span>(<span class="ruby-ivar">@handle_type</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-constant">SQL_COMMIT</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-connect">
+            
+              <a name="method-i-connect"></a><b>connect</b>(server_name, user_name = '', auth = '')
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-connect_source')" id="l_method-i-connect_source">show</a>
+                
+              </p>
+              <div id="method-i-connect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">connect</span>(<span class="ruby-identifier">server_name</span>, <span class="ruby-identifier">user_name</span> = <span class="ruby-string">''</span>, <span class="ruby-identifier">auth</span> = <span class="ruby-string">''</span>)
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLConnect</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">server_name</span>, <span class="ruby-identifier">user_name</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">auth</span>.<span class="ruby-identifier">to_s</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-disconnect">
+            
+              <a name="method-i-disconnect"></a><b>disconnect</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-disconnect_source')" id="l_method-i-disconnect_source">show</a>
+                
+              </p>
+              <div id="method-i-disconnect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">disconnect</span>
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLDisconnect</span>(<span class="ruby-ivar">@handle</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rollback">
+            
+              <a name="method-i-rollback"></a><b>rollback</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rollback_source')" id="l_method-i-rollback_source">show</a>
+                
+              </p>
+              <div id="method-i-rollback_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rollback</span>
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLEndTran</span>(<span class="ruby-ivar">@handle_type</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-constant">SQL_ROLLBACK</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_auto_commit_off">
+            
+              <a name="method-i-set_auto_commit_off"></a><b>set_auto_commit_off</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_auto_commit_off_source')" id="l_method-i-set_auto_commit_off_source">show</a>
+                
+              </p>
+              <div id="method-i-set_auto_commit_off_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_auto_commit_off</span>
+  <span class="ruby-identifier">set_connect_attr</span>(<span class="ruby-constant">SQL_ATTR_AUTOCOMMIT</span>, <span class="ruby-constant">SQL_AUTOCOMMIT_OFF</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_auto_commit_on">
+            
+              <a name="method-i-set_auto_commit_on"></a><b>set_auto_commit_on</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_auto_commit_on_source')" id="l_method-i-set_auto_commit_on_source">show</a>
+                
+              </p>
+              <div id="method-i-set_auto_commit_on_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_auto_commit_on</span>
+  <span class="ruby-identifier">set_connect_attr</span>(<span class="ruby-constant">SQL_ATTR_AUTOCOMMIT</span>, <span class="ruby-constant">SQL_AUTOCOMMIT_ON</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_connect_attr">
+            
+              <a name="method-i-set_connect_attr"></a><b>set_connect_attr</b>(attr, value)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_connect_attr_source')" id="l_method-i-set_connect_attr_source">show</a>
+                
+              </p>
+              <div id="method-i-set_connect_attr_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_connect_attr</span>(<span class="ruby-identifier">attr</span>, <span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">value</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot;\00&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLSetConnectAttr</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">attr</span>, <span class="ruby-identifier">value</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

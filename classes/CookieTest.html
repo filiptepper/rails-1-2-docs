@@ -1,0 +1,557 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CookieTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            CookieTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/cookie_test_rb.html">rails/actionpack/test/controller/cookie_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="CookieTest/TestController.html">CookieTest::TestController</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_cookiejar_accessor">test_cookiejar_accessor</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_cookiejar_accessor_with_array_value">test_cookiejar_accessor_with_array_value</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_delete_cookie_with_path">test_delete_cookie_with_path</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_expiring_cookie">test_expiring_cookie</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_multiple_cookies">test_multiple_cookies</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_setting_cookie">test_setting_cookie</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_setting_cookie_for_fourteen_days">test_setting_cookie_for_fourteen_days</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_setting_cookie_for_fourteen_days_with_symbols">test_setting_cookie_for_fourteen_days_with_symbols</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_setting_cookie_with_deprecated_writer">test_setting_cookie_with_deprecated_writer</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_setting_test_cookie">test_setting_test_cookie</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@request</span>  = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@response</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">TestController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">host</span> = <span class="ruby-string">&quot;www.nextangle.com&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cookiejar_accessor">
+            
+              <a name="method-i-test_cookiejar_accessor"></a><b>test_cookiejar_accessor</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cookiejar_accessor_source')" id="l_method-i-test_cookiejar_accessor_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cookiejar_accessor_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cookiejar_accessor</span>
+  <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">cookies</span>[<span class="ruby-string">&quot;user_name&quot;</span>] = <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookie</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;user_name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;david&quot;</span>, <span class="ruby-string">&quot;expires&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(<span class="ruby-number">2025</span>, <span class="ruby-number">10</span>, <span class="ruby-number">10</span>))
+  <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">request</span> = <span class="ruby-ivar">@request</span>
+  <span class="ruby-identifier">jar</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">CookieJar</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@controller</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;david&quot;</span>, <span class="ruby-identifier">jar</span>[<span class="ruby-string">&quot;user_name&quot;</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">jar</span>[<span class="ruby-string">&quot;something_else&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cookiejar_accessor_with_array_value">
+            
+              <a name="method-i-test_cookiejar_accessor_with_array_value"></a><b>test_cookiejar_accessor_with_array_value</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cookiejar_accessor_with_array_value_source')" id="l_method-i-test_cookiejar_accessor_with_array_value_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cookiejar_accessor_with_array_value_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cookiejar_accessor_with_array_value</span>
+  <span class="ruby-identifier">a</span> = <span class="ruby-node">%w{1 2 3}</span>
+  <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">cookies</span>[<span class="ruby-string">&quot;pages&quot;</span>] = <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookie</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;pages&quot;</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">a</span>, <span class="ruby-string">&quot;expires&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(<span class="ruby-number">2025</span>, <span class="ruby-number">10</span>, <span class="ruby-number">10</span>))
+  <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">request</span> = <span class="ruby-ivar">@request</span>
+  <span class="ruby-identifier">jar</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">CookieJar</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@controller</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">a</span>, <span class="ruby-identifier">jar</span>[<span class="ruby-string">&quot;pages&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_delete_cookie_with_path">
+            
+              <a name="method-i-test_delete_cookie_with_path"></a><b>test_delete_cookie_with_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_delete_cookie_with_path_source')" id="l_method-i-test_delete_cookie_with_path_source">show</a>
+                
+              </p>
+              <div id="method-i-test_delete_cookie_with_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_delete_cookie_with_path</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:delete_cookie_with_path</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;/beaten&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;cookie&quot;</span>].<span class="ruby-identifier">first</span>.<span class="ruby-identifier">path</span>
+  <span class="ruby-identifier">assert_not_equal</span> <span class="ruby-string">&quot;/&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;cookie&quot;</span>].<span class="ruby-identifier">first</span>.<span class="ruby-identifier">path</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_expiring_cookie">
+            
+              <a name="method-i-test_expiring_cookie"></a><b>test_expiring_cookie</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_expiring_cookie_source')" id="l_method-i-test_expiring_cookie_source">show</a>
+                
+              </p>
+              <div id="method-i-test_expiring_cookie_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_expiring_cookie</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:logout</span>
+  <span class="ruby-identifier">assert_equal</span> [ <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookie</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;user_name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;expires&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">at</span>(<span class="ruby-number">0</span>)) ], <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;cookie&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_multiple_cookies">
+            
+              <a name="method-i-test_multiple_cookies"></a><b>test_multiple_cookies</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_multiple_cookies_source')" id="l_method-i-test_multiple_cookies_source">show</a>
+                
+              </p>
+              <div id="method-i-test_multiple_cookies_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_multiple_cookies</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:set_multiple_cookies</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">cookies</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_setting_cookie">
+            
+              <a name="method-i-test_setting_cookie"></a><b>test_setting_cookie</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_setting_cookie_source')" id="l_method-i-test_setting_cookie_source">show</a>
+                
+              </p>
+              <div id="method-i-test_setting_cookie_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_setting_cookie</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:authenticate</span>
+  <span class="ruby-identifier">assert_equal</span> [ <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookie</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;user_name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;david&quot;</span>) ], <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;cookie&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_setting_cookie_for_fourteen_days">
+            
+              <a name="method-i-test_setting_cookie_for_fourteen_days"></a><b>test_setting_cookie_for_fourteen_days</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_setting_cookie_for_fourteen_days_source')" id="l_method-i-test_setting_cookie_for_fourteen_days_source">show</a>
+                
+              </p>
+              <div id="method-i-test_setting_cookie_for_fourteen_days_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_setting_cookie_for_fourteen_days</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:authenticate_for_fourten_days</span>
+  <span class="ruby-identifier">assert_equal</span> [ <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookie</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;user_name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;david&quot;</span>, <span class="ruby-string">&quot;expires&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(<span class="ruby-number">2005</span>, <span class="ruby-number">10</span>, <span class="ruby-number">10</span>)) ], <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;cookie&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_setting_cookie_for_fourteen_days_with_symbols">
+            
+              <a name="method-i-test_setting_cookie_for_fourteen_days_with_symbols"></a><b>test_setting_cookie_for_fourteen_days_with_symbols</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_setting_cookie_for_fourteen_days_with_symbols_source')" id="l_method-i-test_setting_cookie_for_fourteen_days_with_symbols_source">show</a>
+                
+              </p>
+              <div id="method-i-test_setting_cookie_for_fourteen_days_with_symbols_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_setting_cookie_for_fourteen_days_with_symbols</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:authenticate_for_fourten_days</span>
+  <span class="ruby-identifier">assert_equal</span> [ <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookie</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;user_name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;david&quot;</span>, <span class="ruby-string">&quot;expires&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(<span class="ruby-number">2005</span>, <span class="ruby-number">10</span>, <span class="ruby-number">10</span>)) ], <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;cookie&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_setting_cookie_with_deprecated_writer">
+            
+              <a name="method-i-test_setting_cookie_with_deprecated_writer"></a><b>test_setting_cookie_with_deprecated_writer</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_setting_cookie_with_deprecated_writer_source')" id="l_method-i-test_setting_cookie_with_deprecated_writer_source">show</a>
+                
+              </p>
+              <div id="method-i-test_setting_cookie_with_deprecated_writer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_setting_cookie_with_deprecated_writer</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:authenticate_with_deprecated_writer</span>
+  <span class="ruby-identifier">assert_equal</span> [ <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookie</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;user_name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;david&quot;</span>) ], <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">headers</span>[<span class="ruby-string">&quot;cookie&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_setting_test_cookie">
+            
+              <a name="method-i-test_setting_test_cookie"></a><b>test_setting_test_cookie</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_setting_test_cookie_source')" id="l_method-i-test_setting_test_cookie_source">show</a>
+                
+              </p>
+              <div id="method-i-test_setting_test_cookie_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_setting_test_cookie</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">get</span> <span class="ruby-value">:access_frozen_cookies</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

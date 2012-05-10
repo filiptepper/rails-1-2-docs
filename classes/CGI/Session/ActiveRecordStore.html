@@ -1,0 +1,503 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CGI::Session::ActiveRecordStore</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            CGI::Session::ActiveRecordStore 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/actionpack/lib/action_controller/session/active_record_store_rb.html">rails/actionpack/lib/action_controller/session/active_record_store.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="../../A.html">A</a> session store backed by an Active Record
+class.  <a href="../../A.html">A</a> default class is provided, but any
+object duck-typing to an Active Record <code>Session</code> class with text
+<code>session_id</code> and <code>data</code> attributes is sufficient.</p>
+
+<p>The default assumes a <code>sessions</code> tables with columns:</p>
+
+<pre>+id+ (numeric primary key),
++session_id+ (text, or longtext if your session data exceeds 65K), and
++data+ (text or longtext; careful if your session data exceeds 65KB).</pre>
+
+<p>The <code>session_id</code> column should always be indexed for speedy
+lookups. <a href="ActiveRecordStore/Session.html">Session</a> data is
+marshaled to the <code>data</code> column in Base64 format. If the data you
+write is larger than the column’s size limit,
+ActionController::SessionOverflowError will be raised.</p>
+
+<p>You may configure the table name, primary key, and data column. For
+example, at the end of config/environment.rb:</p>
+
+<pre>CGI::Session::ActiveRecordStore::Session.table_name = 'legacy_session_table'
+CGI::Session::ActiveRecordStore::Session.primary_key = 'session_id'
+CGI::Session::ActiveRecordStore::Session.data_column_name = 'legacy_session_data'</pre>
+
+<p>Note that setting the primary key to the session_id frees you from having a
+separate id column if you don’t want it.  However, you must set
+session.model.id = session.session_id by hand!  <a
+href="../../A.html">A</a> before_filter on <a
+href="../../ApplicationController.html">ApplicationController</a> is a good
+place.</p>
+
+<p>Since the default class is a simple Active Record, you get timestamps for
+free if you add <code>created_at</code> and <code>updated_at</code>
+datetime columns to the <code>sessions</code> table, making periodic
+session expiration a snap.</p>
+
+<p>You may provide your own session class implementation, whether a
+feature-packed Active Record or a bare-metal high-performance SQL store, by
+setting</p>
+
+<pre>+CGI::Session::ActiveRecordStore.session_class = MySessionClass+</pre>
+
+<p>You must implement these methods:</p>
+
+<pre>self.find_by_session_id(session_id)
+initialize(hash_of_session_id_and_data)
+attr_reader :session_id
+attr_accessor :data
+save
+destroy</pre>
+
+<p>The example <a href="ActiveRecordStore/SqlBypass.html">SqlBypass</a> class
+is a generic SQL session store.  You may use it as a basis for
+high-performance database-specific stores.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="ActiveRecordStore/Session.html">CGI::Session::ActiveRecordStore::Session</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="ActiveRecordStore/SqlBypass.html">CGI::Session::ActiveRecordStore::SqlBypass</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-close">close</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-delete">delete</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-logger">logger</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-model">model</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-restore">restore</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update">update</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(session, option = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Find or instantiate a session given a CGI::Session.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/session/active_record_store.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">session</span>, <span class="ruby-identifier">option</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">session_id</span> = <span class="ruby-identifier">session</span>.<span class="ruby-identifier">session_id</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@session</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">silence</span> { <span class="ruby-identifier">@@session_class</span>.<span class="ruby-identifier">find_by_session_id</span>(<span class="ruby-identifier">session_id</span>) }
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">session</span>.<span class="ruby-identifier">new_session</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Session</span><span class="ruby-operator">::</span><span class="ruby-constant">NoSession</span>, <span class="ruby-string">'uninitialized session'</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@session</span> = <span class="ruby-identifier">@@session_class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:session_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">session_id</span>, <span class="ruby-value">:data</span> =<span class="ruby-operator">&gt;</span> {})
+    <span class="ruby-comment"># session saving can be lazy again, because of improved component implementation</span>
+    <span class="ruby-comment"># therefore next line gets commented out:</span>
+    <span class="ruby-comment"># @session.save</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-close">
+            
+              <a name="method-i-close"></a><b>close</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Save and close the session store.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-close_source')" id="l_method-i-close_source">show</a>
+                
+              </p>
+              <div id="method-i-close_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/session/active_record_store.rb, line 314</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">close</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@session</span>
+    <span class="ruby-identifier">update</span>
+    <span class="ruby-ivar">@session</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delete">
+            
+              <a name="method-i-delete"></a><b>delete</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Delete and close the session store.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-delete_source')" id="l_method-i-delete_source">show</a>
+                
+              </p>
+              <div id="method-i-delete_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/session/active_record_store.rb, line 322</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">delete</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@session</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">silence</span> { <span class="ruby-ivar">@session</span>.<span class="ruby-identifier">destroy</span> }
+    <span class="ruby-ivar">@session</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-model">
+            
+              <a name="method-i-model"></a><b>model</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Access the underlying session model.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-model_source')" id="l_method-i-model_source">show</a>
+                
+              </p>
+              <div id="method-i-model_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/session/active_record_store.rb, line 295</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">model</span>
+  <span class="ruby-ivar">@session</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-restore">
+            
+              <a name="method-i-restore"></a><b>restore</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Restore session state.  The session model handles unmarshaling.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-restore_source')" id="l_method-i-restore_source">show</a>
+                
+              </p>
+              <div id="method-i-restore_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/session/active_record_store.rb, line 300</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">restore</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@session</span>
+    <span class="ruby-ivar">@session</span>.<span class="ruby-identifier">data</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update">
+            
+              <a name="method-i-update"></a><b>update</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Save session store.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-update_source')" id="l_method-i-update_source">show</a>
+                
+              </p>
+              <div id="method-i-update_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/session/active_record_store.rb, line 307</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">update</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@session</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">silence</span> { <span class="ruby-ivar">@session</span>.<span class="ruby-identifier">save</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-logger">
+            
+              <a name="method-i-logger"></a><b>logger</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-logger_source')" id="l_method-i-logger_source">show</a>
+                
+              </p>
+              <div id="method-i-logger_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/session/active_record_store.rb, line 330</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">logger</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">logger</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

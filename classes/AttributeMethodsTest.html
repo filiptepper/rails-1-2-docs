@@ -1,0 +1,282 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>AttributeMethodsTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            AttributeMethodsTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/test/attribute_methods_test_rb.html">rails/activerecord/test/attribute_methods_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-teardown">teardown</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_declared_attribute_method_affects_respond_to_and_method_missing">test_declared_attribute_method_affects_respond_to_and_method_missing</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_match_attribute_method_query_returns_match_data">test_match_attribute_method_query_returns_match_data</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/attribute_methods_test.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@old_suffixes</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:attribute_method_suffixes</span>).<span class="ruby-identifier">dup</span>
+  <span class="ruby-ivar">@target</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>)
+  <span class="ruby-ivar">@target</span>.<span class="ruby-identifier">table_name</span> = <span class="ruby-string">'topics'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-teardown">
+            
+              <a name="method-i-teardown"></a><b>teardown</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-teardown_source')" id="l_method-i-teardown_source">show</a>
+                
+              </p>
+              <div id="method-i-teardown_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/attribute_methods_test.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">teardown</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:attribute_method_suffixes</span>).<span class="ruby-identifier">clear</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">attribute_method_suffix</span> *<span class="ruby-ivar">@old_suffixes</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_declared_attribute_method_affects_respond_to_and_method_missing">
+            
+              <a name="method-i-test_declared_attribute_method_affects_respond_to_and_method_missing"></a><b>test_declared_attribute_method_affects_respond_to_and_method_missing</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_declared_attribute_method_affects_respond_to_and_method_missing_source')" id="l_method-i-test_declared_attribute_method_affects_respond_to_and_method_missing_source">show</a>
+                
+              </p>
+              <div id="method-i-test_declared_attribute_method_affects_respond_to_and_method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/attribute_methods_test.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_declared_attribute_method_affects_respond_to_and_method_missing</span>
+  <span class="ruby-identifier">topic</span> = <span class="ruby-ivar">@target</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Budget'</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">'title'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'Budget'</span>, <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">title</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">topic</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">'title_hello_world'</span>)
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">NoMethodError</span>) { <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">title_hello_world</span> }
+
+  <span class="ruby-node">%w(_hello_world _it! _candidate= able?)</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">suffix</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@target</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-node">&quot;def attribute#{suffix}(*args) args end&quot;</span>
+    <span class="ruby-ivar">@target</span>.<span class="ruby-identifier">attribute_method_suffix</span> <span class="ruby-identifier">suffix</span>
+
+    <span class="ruby-identifier">meth</span> = <span class="ruby-node">&quot;title#{suffix}&quot;</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">meth</span>)
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'title'</span>], <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">meth</span>)
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'title'</span>, <span class="ruby-string">'a'</span>], <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">meth</span>, <span class="ruby-string">'a'</span>)
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'title'</span>, <span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>], <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">meth</span>, <span class="ruby-number">1</span>, <span class="ruby-number">2</span>, <span class="ruby-number">3</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_match_attribute_method_query_returns_match_data">
+            
+              <a name="method-i-test_match_attribute_method_query_returns_match_data"></a><b>test_match_attribute_method_query_returns_match_data</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_match_attribute_method_query_returns_match_data_source')" id="l_method-i-test_match_attribute_method_query_returns_match_data_source">show</a>
+                
+              </p>
+              <div id="method-i-test_match_attribute_method_query_returns_match_data_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/attribute_methods_test.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_match_attribute_method_query_returns_match_data</span>
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">md</span> = <span class="ruby-ivar">@target</span>.<span class="ruby-identifier">match_attribute_method?</span>(<span class="ruby-string">'title='</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'title'</span>, <span class="ruby-identifier">md</span>.<span class="ruby-identifier">pre_match</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'='</span>], <span class="ruby-identifier">md</span>.<span class="ruby-identifier">captures</span>
+
+  <span class="ruby-node">%w(_hello_world ist! _maybe?)</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">suffix</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@target</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-node">&quot;def attribute#{suffix}(*args) args end&quot;</span>
+    <span class="ruby-ivar">@target</span>.<span class="ruby-identifier">attribute_method_suffix</span> <span class="ruby-identifier">suffix</span>
+
+    <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">md</span> = <span class="ruby-ivar">@target</span>.<span class="ruby-identifier">match_attribute_method?</span>(<span class="ruby-node">&quot;title#{suffix}&quot;</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'title'</span>, <span class="ruby-identifier">md</span>.<span class="ruby-identifier">pre_match</span>
+    <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">suffix</span>], <span class="ruby-identifier">md</span>.<span class="ruby-identifier">captures</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

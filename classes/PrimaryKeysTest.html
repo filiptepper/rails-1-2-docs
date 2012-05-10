@@ -1,0 +1,679 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PrimaryKeysTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PrimaryKeysTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/test/pk_test_rb.html">rails/activerecord/test/pk_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_customized_primary_key_auto_assigns_on_save">test_customized_primary_key_auto_assigns_on_save</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_customized_primary_key_can_be_get_before_saving">test_customized_primary_key_can_be_get_before_saving</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_customized_string_primary_key_settable_before_save">test_customized_string_primary_key_settable_before_save</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_decrement_counter_should_quote_pkey_and_quote_counter_columns">test_decrement_counter_should_quote_pkey_and_quote_counter_columns</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_delete_should_quote_pkey">test_delete_should_quote_pkey</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_find_with_more_than_one_string_key">test_find_with_more_than_one_string_key</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_find_with_multiple_ids_should_quote_pkey">test_find_with_multiple_ids_should_quote_pkey</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_find_with_one_id_should_quote_pkey">test_find_with_one_id_should_quote_pkey</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_increment_counter_should_quote_pkey_and_quote_counter_columns">test_increment_counter_should_quote_pkey_and_quote_counter_columns</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_instance_destry_should_quote_pkey">test_instance_destry_should_quote_pkey</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_instance_update_should_quote_pkey">test_instance_update_should_quote_pkey</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_integer_key">test_integer_key</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_primary_key_prefix">test_primary_key_prefix</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_string_key">test_string_key</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_customized_primary_key_auto_assigns_on_save">
+            
+              <a name="method-i-test_customized_primary_key_auto_assigns_on_save"></a><b>test_customized_primary_key_auto_assigns_on_save</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_customized_primary_key_auto_assigns_on_save_source')" id="l_method-i-test_customized_primary_key_auto_assigns_on_save_source">show</a>
+                
+              </p>
+              <div id="method-i-test_customized_primary_key_auto_assigns_on_save_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_customized_primary_key_auto_assigns_on_save</span>
+  <span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">delete_all</span>
+  <span class="ruby-identifier">keyboard</span> = <span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'HHKB'</span>)
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">keyboard</span>.<span class="ruby-identifier">save!</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">keyboard</span>.<span class="ruby-identifier">id</span>, <span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-string">'HHKB'</span>).<span class="ruby-identifier">id</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_customized_primary_key_can_be_get_before_saving">
+            
+              <a name="method-i-test_customized_primary_key_can_be_get_before_saving"></a><b>test_customized_primary_key_can_be_get_before_saving</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_customized_primary_key_can_be_get_before_saving_source')" id="l_method-i-test_customized_primary_key_can_be_get_before_saving_source">show</a>
+                
+              </p>
+              <div id="method-i-test_customized_primary_key_can_be_get_before_saving_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_customized_primary_key_can_be_get_before_saving</span>
+  <span class="ruby-identifier">keyboard</span> = <span class="ruby-constant">Keyboard</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">keyboard</span>.<span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">keyboard</span>.<span class="ruby-identifier">key_number</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_customized_string_primary_key_settable_before_save">
+            
+              <a name="method-i-test_customized_string_primary_key_settable_before_save"></a><b>test_customized_string_primary_key_settable_before_save</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_customized_string_primary_key_settable_before_save_source')" id="l_method-i-test_customized_string_primary_key_settable_before_save_source">show</a>
+                
+              </p>
+              <div id="method-i-test_customized_string_primary_key_settable_before_save_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_customized_string_primary_key_settable_before_save</span>
+  <span class="ruby-identifier">subscriber</span> = <span class="ruby-constant">Subscriber</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">subscriber</span>.<span class="ruby-identifier">id</span> = <span class="ruby-string">'webster123'</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'webster123'</span>, <span class="ruby-identifier">subscriber</span>.<span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'webster123'</span>, <span class="ruby-identifier">subscriber</span>.<span class="ruby-identifier">nick</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_decrement_counter_should_quote_pkey_and_quote_counter_columns">
+            
+              <a name="method-i-test_decrement_counter_should_quote_pkey_and_quote_counter_columns"></a><b>test_decrement_counter_should_quote_pkey_and_quote_counter_columns</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_decrement_counter_should_quote_pkey_and_quote_counter_columns_source')" id="l_method-i-test_decrement_counter_should_quote_pkey_and_quote_counter_columns_source">show</a>
+                
+              </p>
+              <div id="method-i-test_decrement_counter_should_quote_pkey_and_quote_counter_columns_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_decrement_counter_should_quote_pkey_and_quote_counter_columns</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">MixedCaseMonkey</span>.<span class="ruby-identifier">decrement_counter</span>(<span class="ruby-value">:fleaCount</span>, <span class="ruby-number">1</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_delete_should_quote_pkey">
+            
+              <a name="method-i-test_delete_should_quote_pkey"></a><b>test_delete_should_quote_pkey</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_delete_should_quote_pkey_source')" id="l_method-i-test_delete_should_quote_pkey_source">show</a>
+                
+              </p>
+              <div id="method-i-test_delete_should_quote_pkey_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_delete_should_quote_pkey</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">MixedCaseMonkey</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-number">1</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_find_with_more_than_one_string_key">
+            
+              <a name="method-i-test_find_with_more_than_one_string_key"></a><b>test_find_with_more_than_one_string_key</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_find_with_more_than_one_string_key_source')" id="l_method-i-test_find_with_more_than_one_string_key_source">show</a>
+                
+              </p>
+              <div id="method-i-test_find_with_more_than_one_string_key_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_find_with_more_than_one_string_key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-constant">Subscriber</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">subscribers</span>(<span class="ruby-value">:first</span>).<span class="ruby-identifier">nick</span>, <span class="ruby-identifier">subscribers</span>(<span class="ruby-value">:second</span>).<span class="ruby-identifier">nick</span>).<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_find_with_multiple_ids_should_quote_pkey">
+            
+              <a name="method-i-test_find_with_multiple_ids_should_quote_pkey"></a><b>test_find_with_multiple_ids_should_quote_pkey</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_find_with_multiple_ids_should_quote_pkey_source')" id="l_method-i-test_find_with_multiple_ids_should_quote_pkey_source">show</a>
+                
+              </p>
+              <div id="method-i-test_find_with_multiple_ids_should_quote_pkey_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_find_with_multiple_ids_should_quote_pkey</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">MixedCaseMonkey</span>.<span class="ruby-identifier">find</span>([<span class="ruby-number">1</span>,<span class="ruby-number">2</span>]) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_find_with_one_id_should_quote_pkey">
+            
+              <a name="method-i-test_find_with_one_id_should_quote_pkey"></a><b>test_find_with_one_id_should_quote_pkey</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_find_with_one_id_should_quote_pkey_source')" id="l_method-i-test_find_with_one_id_should_quote_pkey_source">show</a>
+                
+              </p>
+              <div id="method-i-test_find_with_one_id_should_quote_pkey_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_find_with_one_id_should_quote_pkey</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">MixedCaseMonkey</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_increment_counter_should_quote_pkey_and_quote_counter_columns">
+            
+              <a name="method-i-test_increment_counter_should_quote_pkey_and_quote_counter_columns"></a><b>test_increment_counter_should_quote_pkey_and_quote_counter_columns</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_increment_counter_should_quote_pkey_and_quote_counter_columns_source')" id="l_method-i-test_increment_counter_should_quote_pkey_and_quote_counter_columns_source">show</a>
+                
+              </p>
+              <div id="method-i-test_increment_counter_should_quote_pkey_and_quote_counter_columns_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_increment_counter_should_quote_pkey_and_quote_counter_columns</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">MixedCaseMonkey</span>.<span class="ruby-identifier">increment_counter</span>(<span class="ruby-value">:fleaCount</span>, <span class="ruby-number">1</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_instance_destry_should_quote_pkey">
+            
+              <a name="method-i-test_instance_destry_should_quote_pkey"></a><b>test_instance_destry_should_quote_pkey</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_instance_destry_should_quote_pkey_source')" id="l_method-i-test_instance_destry_should_quote_pkey_source">show</a>
+                
+              </p>
+              <div id="method-i-test_instance_destry_should_quote_pkey_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_instance_destry_should_quote_pkey</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">MixedCaseMonkey</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">destroy</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_instance_update_should_quote_pkey">
+            
+              <a name="method-i-test_instance_update_should_quote_pkey"></a><b>test_instance_update_should_quote_pkey</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_instance_update_should_quote_pkey_source')" id="l_method-i-test_instance_update_should_quote_pkey_source">show</a>
+                
+              </p>
+              <div id="method-i-test_instance_update_should_quote_pkey_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_instance_update_should_quote_pkey</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">MixedCaseMonkey</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">save</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_integer_key">
+            
+              <a name="method-i-test_integer_key"></a><b>test_integer_key</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_integer_key_source')" id="l_method-i-test_integer_key_source">show</a>
+                
+              </p>
+              <div id="method-i-test_integer_key_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_integer_key</span>
+  <span class="ruby-identifier">topic</span> = <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">topics</span>(<span class="ruby-value">:first</span>).<span class="ruby-identifier">author_name</span>, <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">author_name</span>)
+  <span class="ruby-identifier">topic</span> = <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">2</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">topics</span>(<span class="ruby-value">:second</span>).<span class="ruby-identifier">author_name</span>, <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">author_name</span>)
+
+  <span class="ruby-identifier">topic</span> = <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">title</span> = <span class="ruby-string">&quot;New Topic&quot;</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">save!</span> }
+  <span class="ruby-identifier">id</span> = <span class="ruby-identifier">topic</span>.<span class="ruby-identifier">id</span>
+
+  <span class="ruby-identifier">topicReloaded</span> = <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;New Topic&quot;</span>, <span class="ruby-identifier">topicReloaded</span>.<span class="ruby-identifier">title</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_primary_key_prefix">
+            
+              <a name="method-i-test_primary_key_prefix"></a><b>test_primary_key_prefix</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_primary_key_prefix_source')" id="l_method-i-test_primary_key_prefix_source">show</a>
+                
+              </p>
+              <div id="method-i-test_primary_key_prefix_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 69</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_primary_key_prefix</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">primary_key_prefix_type</span> = <span class="ruby-value">:table_name</span>
+  <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">reset_primary_key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;topicid&quot;</span>, <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">primary_key</span>
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">primary_key_prefix_type</span> = <span class="ruby-value">:table_name_with_underscore</span>
+  <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">reset_primary_key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;topic_id&quot;</span>, <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">primary_key</span>
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">primary_key_prefix_type</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">reset_primary_key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;id&quot;</span>, <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">primary_key</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_string_key">
+            
+              <a name="method-i-test_string_key"></a><b>test_string_key</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_string_key_source')" id="l_method-i-test_string_key_source">show</a>
+                
+              </p>
+              <div id="method-i-test_string_key_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/pk_test.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_string_key</span>
+  <span class="ruby-identifier">subscriber</span> = <span class="ruby-constant">Subscriber</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">subscribers</span>(<span class="ruby-value">:first</span>).<span class="ruby-identifier">nick</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">subscribers</span>(<span class="ruby-value">:first</span>).<span class="ruby-identifier">name</span>, <span class="ruby-identifier">subscriber</span>.<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">subscriber</span> = <span class="ruby-constant">Subscriber</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">subscribers</span>(<span class="ruby-value">:second</span>).<span class="ruby-identifier">nick</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">subscribers</span>(<span class="ruby-value">:second</span>).<span class="ruby-identifier">name</span>, <span class="ruby-identifier">subscriber</span>.<span class="ruby-identifier">name</span>)
+
+  <span class="ruby-identifier">subscriber</span> = <span class="ruby-constant">Subscriber</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">subscriber</span>.<span class="ruby-identifier">id</span> = <span class="ruby-string">&quot;jdoe&quot;</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;jdoe&quot;</span>, <span class="ruby-identifier">subscriber</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">subscriber</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;John Doe&quot;</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">subscriber</span>.<span class="ruby-identifier">save!</span> }
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;jdoe&quot;</span>, <span class="ruby-identifier">subscriber</span>.<span class="ruby-identifier">id</span>)
+
+  <span class="ruby-identifier">subscriberReloaded</span> = <span class="ruby-constant">Subscriber</span>.<span class="ruby-identifier">find</span>(<span class="ruby-string">&quot;jdoe&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-string">&quot;John Doe&quot;</span>, <span class="ruby-identifier">subscriberReloaded</span>.<span class="ruby-identifier">name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

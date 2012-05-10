@@ -1,0 +1,609 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TagHelperTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TagHelperTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/template/tag_helper_test_rb.html">rails/actionpack/test/template/tag_helper_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_cdata_section">test_cdata_section</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_content_tag">test_content_tag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_content_tag_with_block">test_content_tag_with_block</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_content_tag_with_block_and_options">test_content_tag_with_block_and_options</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_double_escaping_attributes">test_double_escaping_attributes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_escape_once">test_escape_once</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_skip_invalid_escaped_attributes">test_skip_invalid_escaped_attributes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_tag">test_tag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_tag_options">test_tag_options</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_tag_options_accepts_blank_option">test_tag_options_accepts_blank_option</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_tag_options_converts_boolean_option">test_tag_options_converts_boolean_option</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_tag_options_rejects_nil_option">test_tag_options_rejects_nil_option</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/TagHelper.html">
+              ActionView::Helpers::TagHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/UrlHelper.html">
+              ActionView::Helpers::UrlHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/TextHelper.html">
+              ActionView::Helpers::TextHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/CaptureHelper.html">
+              ActionView::Helpers::CaptureHelper
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cdata_section">
+            
+              <a name="method-i-test_cdata_section"></a><b>test_cdata_section</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cdata_section_source')" id="l_method-i-test_cdata_section_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cdata_section_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cdata_section</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;![CDATA[&lt;hello world&gt;]]&gt;&quot;</span>, <span class="ruby-identifier">cdata_section</span>(<span class="ruby-string">&quot;&lt;hello world&gt;&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_content_tag">
+            
+              <a name="method-i-test_content_tag"></a><b>test_content_tag</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_content_tag_source')" id="l_method-i-test_content_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-test_content_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_content_tag</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;a href=\&quot;create\&quot;&gt;Create&lt;/a&gt;&quot;</span>, <span class="ruby-identifier">content_tag</span>(<span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-string">&quot;Create&quot;</span>, <span class="ruby-string">&quot;href&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;create&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">content_tag</span>(<span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-string">&quot;Create&quot;</span>, <span class="ruby-string">&quot;href&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;create&quot;</span>),
+               <span class="ruby-identifier">content_tag</span>(<span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-string">&quot;Create&quot;</span>, <span class="ruby-value">:href</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;create&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_content_tag_with_block">
+            
+              <a name="method-i-test_content_tag_with_block"></a><b>test_content_tag_with_block</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_content_tag_with_block_source')" id="l_method-i-test_content_tag_with_block_source">show</a>
+                
+              </p>
+              <div id="method-i-test_content_tag_with_block_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_content_tag_with_block</span>
+  <span class="ruby-identifier">_erbout</span> = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:div</span>) { <span class="ruby-identifier">_erbout</span>.<span class="ruby-identifier">concat</span> <span class="ruby-string">&quot;Hello world!&quot;</span> }
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">&quot;&lt;div&gt;Hello world!&lt;/div&gt;&quot;</span>, <span class="ruby-identifier">_erbout</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_content_tag_with_block_and_options">
+            
+              <a name="method-i-test_content_tag_with_block_and_options"></a><b>test_content_tag_with_block_and_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_content_tag_with_block_and_options_source')" id="l_method-i-test_content_tag_with_block_and_options_source">show</a>
+                
+              </p>
+              <div id="method-i-test_content_tag_with_block_and_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_content_tag_with_block_and_options</span>
+  <span class="ruby-identifier">_erbout</span> = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">content_tag</span>(<span class="ruby-value">:div</span>, <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;green&quot;</span>) { <span class="ruby-identifier">_erbout</span>.<span class="ruby-identifier">concat</span> <span class="ruby-string">&quot;Hello world!&quot;</span> }
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;div class=&quot;green&quot;&gt;Hello world!&lt;/div&gt;)</span>, <span class="ruby-identifier">_erbout</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_double_escaping_attributes">
+            
+              <a name="method-i-test_double_escaping_attributes"></a><b>test_double_escaping_attributes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_double_escaping_attributes_source')" id="l_method-i-test_double_escaping_attributes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_double_escaping_attributes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_double_escaping_attributes</span>
+  [<span class="ruby-string">'1&amp;amp;2'</span>, <span class="ruby-string">'1 &amp;lt; 2'</span>, <span class="ruby-string">'&amp;#8220;test&amp;#8220;'</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">escaped</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;a href=&quot;#{escaped}&quot; /&gt;)</span>, <span class="ruby-identifier">tag</span>(<span class="ruby-string">'a'</span>, <span class="ruby-value">:href</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">escaped</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_escape_once">
+            
+              <a name="method-i-test_escape_once"></a><b>test_escape_once</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_escape_once_source')" id="l_method-i-test_escape_once_source">show</a>
+                
+              </p>
+              <div id="method-i-test_escape_once_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_escape_once</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'1 &amp;lt; 2 &amp;amp; 3'</span>, <span class="ruby-identifier">escape_once</span>(<span class="ruby-string">'1 &lt; 2 &amp;amp; 3'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_skip_invalid_escaped_attributes">
+            
+              <a name="method-i-test_skip_invalid_escaped_attributes"></a><b>test_skip_invalid_escaped_attributes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_skip_invalid_escaped_attributes_source')" id="l_method-i-test_skip_invalid_escaped_attributes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_skip_invalid_escaped_attributes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_skip_invalid_escaped_attributes</span>
+  [<span class="ruby-string">'&amp;1;'</span>, <span class="ruby-string">'&amp;#1dfa3;'</span>, <span class="ruby-string">'&amp; #123;'</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">escaped</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%Q(&lt;a href=&quot;#{escaped.gsub /&amp;/, '&amp;amp;'}&quot; /&gt;)</span>, <span class="ruby-identifier">tag</span>(<span class="ruby-string">'a'</span>, <span class="ruby-value">:href</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">escaped</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_tag">
+            
+              <a name="method-i-test_tag"></a><b>test_tag</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_tag_source')" id="l_method-i-test_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-test_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_tag</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;br /&gt;&quot;</span>, <span class="ruby-identifier">tag</span>(<span class="ruby-string">&quot;br&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;br clear=\&quot;left\&quot; /&gt;&quot;</span>, <span class="ruby-identifier">tag</span>(<span class="ruby-value">:br</span>, <span class="ruby-value">:clear</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;left&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;br&gt;&quot;</span>, <span class="ruby-identifier">tag</span>(<span class="ruby-string">&quot;br&quot;</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_tag_options">
+            
+              <a name="method-i-test_tag_options"></a><b>test_tag_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_tag_options_source')" id="l_method-i-test_tag_options_source">show</a>
+                
+              </p>
+              <div id="method-i-test_tag_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_tag_options</span>
+  <span class="ruby-identifier">assert_match</span> <span class="ruby-regexp">%r\A&lt;p class=&quot;(show|elsewhere)&quot; \/&gt;\z/</span>, <span class="ruby-identifier">tag</span>(<span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-string">&quot;class&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;show&quot;</span>, <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;elsewhere&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_tag_options_accepts_blank_option">
+            
+              <a name="method-i-test_tag_options_accepts_blank_option"></a><b>test_tag_options_accepts_blank_option</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_tag_options_accepts_blank_option_source')" id="l_method-i-test_tag_options_accepts_blank_option_source">show</a>
+                
+              </p>
+              <div id="method-i-test_tag_options_accepts_blank_option_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_tag_options_accepts_blank_option</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;p included=\&quot;\&quot; /&gt;&quot;</span>, <span class="ruby-identifier">tag</span>(<span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-value">:included</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_tag_options_converts_boolean_option">
+            
+              <a name="method-i-test_tag_options_converts_boolean_option"></a><b>test_tag_options_converts_boolean_option</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_tag_options_converts_boolean_option_source')" id="l_method-i-test_tag_options_converts_boolean_option_source">show</a>
+                
+              </p>
+              <div id="method-i-test_tag_options_converts_boolean_option_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_tag_options_converts_boolean_option</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'&lt;p disabled=&quot;disabled&quot; multiple=&quot;multiple&quot; readonly=&quot;readonly&quot; /&gt;'</span>,
+    <span class="ruby-identifier">tag</span>(<span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-value">:disabled</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, <span class="ruby-value">:multiple</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, <span class="ruby-value">:readonly</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_tag_options_rejects_nil_option">
+            
+              <a name="method-i-test_tag_options_rejects_nil_option"></a><b>test_tag_options_rejects_nil_option</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_tag_options_rejects_nil_option_source')" id="l_method-i-test_tag_options_rejects_nil_option_source">show</a>
+                
+              </p>
+              <div id="method-i-test_tag_options_rejects_nil_option_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/tag_helper_test.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_tag_options_rejects_nil_option</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&lt;p /&gt;&quot;</span>, <span class="ruby-identifier">tag</span>(<span class="ruby-string">&quot;p&quot;</span>, <span class="ruby-value">:ignored</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

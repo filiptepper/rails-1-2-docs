@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionController::Flash</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActionController::Flash 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionpack/lib/action_controller/flash_rb.html">rails/actionpack/lib/action_controller/flash.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>The flash provides a way to pass temporary objects between actions.
+Anything you place in the flash will be exposed to the very next action and
+then cleared out. This is a great way of doing notices and alerts, such as
+a create action that sets <code>flash[:notice] = &quot;Successfully
+created&quot;</code> before redirecting to a display action that can then
+expose  the flash to its template. Actually, that exposure is automatically
+done. Example:</p>
+
+<pre>class WeblogController &lt; ActionController::Base
+  def create
+    # save post
+    flash[:notice] = &quot;Successfully created post&quot;
+    redirect_to :action =&gt; &quot;display&quot;, :params =&gt; { :id =&gt; post.id }
+  end
+
+  def display
+    # doesn't need to assign the flash notice to the template, that's done automatically
+  end
+end
+
+display.rhtml
+  &lt;% if flash[:notice] %&gt;&lt;div class=&quot;notice&quot;&gt;&lt;%= flash[:notice] %&gt;&lt;/div&gt;&lt;% end %&gt;</pre>
+
+<p>This example just places a string in the flash, but you can put any object
+in there. And of course, you can put as many as you like at a time too.
+Just remember: They’ll be gone by the time the next action has been
+performed.</p>
+
+<p>See docs on the <a href="Flash/FlashHash.html">FlashHash</a> class for more
+details about the flash.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Flash/FlashHash.html">ActionController::Flash::FlashHash</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-included">included</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-included">
+            
+              <a name="method-c-included"></a><b>included</b>(base)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                
+              </p>
+              <div id="method-c-included_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/flash.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:include</span>, <span class="ruby-constant">InstanceMethods</span>
+
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">class_eval</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">alias_method_chain</span> <span class="ruby-value">:assign_shortcuts</span>, <span class="ruby-value">:flash</span>
+    <span class="ruby-identifier">alias_method_chain</span> <span class="ruby-value">:process_cleanup</span>,  <span class="ruby-value">:flash</span>
+    <span class="ruby-identifier">alias_method_chain</span> <span class="ruby-value">:reset_session</span>,    <span class="ruby-value">:flash</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+    </div>
+  </body>
+</html>    

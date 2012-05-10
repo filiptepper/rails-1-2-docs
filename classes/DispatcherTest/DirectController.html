@@ -1,0 +1,889 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>DispatcherTest::DirectController</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            DispatcherTest::DirectController 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="AbstractController.html">DispatcherTest::AbstractController</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionwebservice/test/abstract_dispatcher_rb.html">rails/actionwebservice/test/abstract_dispatcher.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add">add</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-add2">add2</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-after_filtered">after_filtered</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-alwaysfail">alwaysfail</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-alwaysok">alwaysok</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-base_struct_return">base_struct_return</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-before_filtered">before_filtered</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-hash_struct_return">hash_struct_return</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hex">hex</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-struct_pass">struct_pass</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-struct_return">struct_return</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_utf8">test_utf8</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-thrower">thrower</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-time">time</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-unhex">unhex</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-void">void</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>added</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>added2</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>after_filter_called</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>after_filter_target_called</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>before_filter_called</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>before_filter_target_called</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>struct_pass_value</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>void_called</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-ivar">@before_filter_called</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@before_filter_target_called</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@after_filter_called</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@after_filter_target_called</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@void_called</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@struct_pass_value</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add">
+            
+              <a name="method-i-add"></a><b>add</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_source')" id="l_method-i-add_source">show</a>
+                
+              </p>
+              <div id="method-i-add_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add</span>
+  <span class="ruby-ivar">@added</span> = <span class="ruby-identifier">params</span>[<span class="ruby-string">'a'</span>] <span class="ruby-operator">+</span> <span class="ruby-identifier">params</span>[<span class="ruby-string">'b'</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-add2">
+            
+              <a name="method-i-add2"></a><b>add2</b>(a, b)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add2_source')" id="l_method-i-add2_source">show</a>
+                
+              </p>
+              <div id="method-i-add2_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add2</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>)
+  <span class="ruby-ivar">@added2</span> = <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-after_filtered">
+            
+              <a name="method-i-after_filtered"></a><b>after_filtered</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-after_filtered_source')" id="l_method-i-after_filtered_source">show</a>
+                
+              </p>
+              <div id="method-i-after_filtered_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">after_filtered</span>
+  <span class="ruby-ivar">@after_filter_target_called</span> = <span class="ruby-keyword">true</span>
+  [<span class="ruby-number">5</span>, <span class="ruby-number">6</span>, <span class="ruby-number">7</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-base_struct_return">
+            
+              <a name="method-i-base_struct_return"></a><b>base_struct_return</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-base_struct_return_source')" id="l_method-i-base_struct_return_source">show</a>
+                
+              </p>
+              <div id="method-i-base_struct_return_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">base_struct_return</span>
+  <span class="ruby-identifier">p1</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'id'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>, <span class="ruby-string">'name'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'person1'</span>)
+  <span class="ruby-identifier">p2</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'id'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-string">'name'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'person2'</span>)
+  [<span class="ruby-identifier">p1</span>, <span class="ruby-identifier">p2</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-before_filtered">
+            
+              <a name="method-i-before_filtered"></a><b>before_filtered</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-before_filtered_source')" id="l_method-i-before_filtered_source">show</a>
+                
+              </p>
+              <div id="method-i-before_filtered_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 218</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">before_filtered</span>
+  <span class="ruby-ivar">@before_filter_target_called</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hash_struct_return">
+            
+              <a name="method-i-hash_struct_return"></a><b>hash_struct_return</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hash_struct_return_source')" id="l_method-i-hash_struct_return_source">show</a>
+                
+              </p>
+              <div id="method-i-hash_struct_return_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hash_struct_return</span>
+  <span class="ruby-identifier">p1</span> = { <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-string">'name'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'test'</span> }
+  <span class="ruby-identifier">p2</span> = { <span class="ruby-string">'id'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'2'</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'person2'</span> }
+  [<span class="ruby-identifier">p1</span>, <span class="ruby-identifier">p2</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hex">
+            
+              <a name="method-i-hex"></a><b>hex</b>(s)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hex_source')" id="l_method-i-hex_source">show</a>
+                
+              </p>
+              <div id="method-i-hex_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 261</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hex</span>(<span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;H*&quot;</span>)[<span class="ruby-number">0</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-struct_pass">
+            
+              <a name="method-i-struct_pass"></a><b>struct_pass</b>(person)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-struct_pass_source')" id="l_method-i-struct_pass_source">show</a>
+                
+              </p>
+              <div id="method-i-struct_pass_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">struct_pass</span>(<span class="ruby-identifier">person</span>)
+  <span class="ruby-ivar">@struct_pass_value</span> = <span class="ruby-identifier">person</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-struct_return">
+            
+              <a name="method-i-struct_return"></a><b>struct_return</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-struct_return_source')" id="l_method-i-struct_return_source">show</a>
+                
+              </p>
+              <div id="method-i-struct_return_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">struct_return</span>
+  <span class="ruby-identifier">n1</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'id'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>, <span class="ruby-string">'name'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'node1'</span>, <span class="ruby-string">'description'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Node 1'</span>)
+  <span class="ruby-identifier">n2</span> = <span class="ruby-constant">Node</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'id'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-string">'name'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'node2'</span>, <span class="ruby-string">'description'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Node 2'</span>)
+  [<span class="ruby-identifier">n1</span>, <span class="ruby-identifier">n2</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_utf8">
+            
+              <a name="method-i-test_utf8"></a><b>test_utf8</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_utf8_source')" id="l_method-i-test_utf8_source">show</a>
+                
+              </p>
+              <div id="method-i-test_utf8_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 257</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_utf8</span>
+  <span class="ruby-constant">Utf8String</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-thrower">
+            
+              <a name="method-i-thrower"></a><b>thrower</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-thrower_source')" id="l_method-i-thrower_source">show</a>
+                
+              </p>
+              <div id="method-i-thrower_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 227</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">thrower</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Hi, I'm an exception&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-time">
+            
+              <a name="method-i-time"></a><b>time</b>(t)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-time_source')" id="l_method-i-time_source">show</a>
+                
+              </p>
+              <div id="method-i-time_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 269</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">time</span>(<span class="ruby-identifier">t</span>)
+  <span class="ruby-identifier">t</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-unhex">
+            
+              <a name="method-i-unhex"></a><b>unhex</b>(s)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-unhex_source')" id="l_method-i-unhex_source">show</a>
+                
+              </p>
+              <div id="method-i-unhex_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">unhex</span>(<span class="ruby-identifier">s</span>)
+  <span class="ruby-keyword">return</span> [<span class="ruby-identifier">s</span>].<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;H*&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-void">
+            
+              <a name="method-i-void"></a><b>void</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-void_source')" id="l_method-i-void_source">show</a>
+                
+              </p>
+              <div id="method-i-void_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">void</span>
+  <span class="ruby-ivar">@void_called</span> = <span class="ruby-ivar">@method_params</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-alwaysfail">
+            
+              <a name="method-i-alwaysfail"></a><b>alwaysfail</b>(method_name, params)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-alwaysfail_source')" id="l_method-i-alwaysfail_source">show</a>
+                
+              </p>
+              <div id="method-i-alwaysfail_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 274</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">alwaysfail</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">params</span>)
+  <span class="ruby-ivar">@before_filter_called</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-alwaysok">
+            
+              <a name="method-i-alwaysok"></a><b>alwaysok</b>(method_name, params, return_value)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-alwaysok_source')" id="l_method-i-alwaysok_source">show</a>
+                
+              </p>
+              <div id="method-i-alwaysok_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/abstract_dispatcher.rb, line 279</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">alwaysok</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">params</span>, <span class="ruby-identifier">return_value</span>)
+  <span class="ruby-ivar">@after_filter_called</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,201 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Binding</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Binding 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/lib/active_support/binding_of_caller_rb.html">rails/activesupport/lib/active_support/binding_of_caller.rb</a></li>
+            
+            <li><a href="../files/rails/railties/lib/binding_of_caller_rb.html">rails/railties/lib/binding_of_caller.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-of_caller">of_caller</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-of_caller">
+            
+              <a name="method-c-of_caller"></a><b>of_caller</b>(&amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>This method returns the binding of the method that called your method. It
+will raise an Exception when you’re not inside a method.</p>
+
+<p>It’s used like this:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">inc_counter</span>(<span class="ruby-identifier">amount</span> = <span class="ruby-value">1</span>)
+  <span class="ruby-constant">Binding</span>.<span class="ruby-identifier">of_caller</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">binding</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Create a lambda that will increase the variable 'counter'</span>
+    <span class="ruby-comment"># in the caller of this method when called.</span>
+    <span class="ruby-identifier">inc</span> = <span class="ruby-identifier">eval</span>(<span class="ruby-string">&quot;lambda { |arg| counter += arg }&quot;</span>, <span class="ruby-identifier">binding</span>)
+    <span class="ruby-comment"># We can refer to amount from inside this block safely.</span>
+    <span class="ruby-identifier">inc</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">amount</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># No other statements can go here. Put them inside the block.</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">counter</span> = <span class="ruby-value">0</span>
+<span class="ruby-value">2</span>.<span class="ruby-identifier">times</span> { <span class="ruby-identifier">inc_counter</span> }
+<span class="ruby-identifier">counter</span> <span class="ruby-comment"># =&gt; 2</span>
+</pre>
+
+<p><a href="Binding.html#method-c-of_caller">::of_caller</a> must be the last
+statement in the method. This means that you will have to put everything
+you want to do after the call to <a
+href="Binding.html#method-c-of_caller">::of_caller</a> into the block of
+it. This should be no problem however, because Ruby has closures. If you
+don't do this an Exception will be raised. Because of the way that <a
+href="Binding.html#method-c-of_caller">::of_caller</a> is implemented it
+has to be done this way.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-of_caller_source')" id="l_method-c-of_caller_source">show</a>
+                
+              </p>
+              <div id="method-c-of_caller_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/binding_of_caller.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">Binding</span>.<span class="ruby-identifier">of_caller</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">old_critical</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">critical</span>
+  <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">critical</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">count</span> = <span class="ruby-number">0</span>
+  <span class="ruby-identifier">cc</span>, <span class="ruby-identifier">result</span>, <span class="ruby-identifier">error</span>, <span class="ruby-identifier">extra_data</span> = <span class="ruby-constant">Continuation</span>.<span class="ruby-identifier">create</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">error</span>.<span class="ruby-identifier">call</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">error</span>
+
+  <span class="ruby-identifier">tracer</span> = <span class="ruby-identifier">lambda</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span>*<span class="ruby-identifier">args</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">type</span>, <span class="ruby-identifier">context</span>, <span class="ruby-identifier">extra_data</span> = <span class="ruby-identifier">args</span>[<span class="ruby-number">0</span>], <span class="ruby-identifier">args</span>[<span class="ruby-number">4</span>], <span class="ruby-identifier">args</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;return&quot;</span>
+      <span class="ruby-identifier">count</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+      <span class="ruby-comment"># First this method and then calling one will return --</span>
+      <span class="ruby-comment"># the trace event of the second event gets the context</span>
+      <span class="ruby-comment"># of the method which called the method that called this</span>
+      <span class="ruby-comment"># method.</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">count</span> <span class="ruby-operator">==</span> <span class="ruby-number">2</span>
+        <span class="ruby-comment"># It would be nice if we could restore the trace_func</span>
+        <span class="ruby-comment"># that was set before we swapped in our own one, but</span>
+        <span class="ruby-comment"># this is impossible without overloading set_trace_func</span>
+        <span class="ruby-comment"># in current Ruby.</span>
+        <span class="ruby-identifier">set_trace_func</span>(<span class="ruby-keyword">nil</span>)
+        <span class="ruby-identifier">cc</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">eval</span>(<span class="ruby-string">&quot;binding&quot;</span>, <span class="ruby-identifier">context</span>), <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">extra_data</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;line&quot;</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;c-return&quot;</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">extra_data</span>[<span class="ruby-number">3</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:set_trace_func</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">set_trace_func</span>(<span class="ruby-keyword">nil</span>)
+      <span class="ruby-identifier">error_msg</span> = <span class="ruby-string">&quot;Binding.of_caller used in non-method context or &quot;</span> <span class="ruby-operator">+</span>
+        <span class="ruby-string">&quot;trailing statements of method using it aren't in the block.&quot;</span>
+      <span class="ruby-identifier">cc</span>.<span class="ruby-identifier">call</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">lambda</span> { <span class="ruby-identifier">raise</span>(<span class="ruby-constant">ArgumentError</span>, <span class="ruby-identifier">error_msg</span>) }, <span class="ruby-keyword">nil</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">result</span>
+    <span class="ruby-identifier">set_trace_func</span>(<span class="ruby-identifier">tracer</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">critical</span> = <span class="ruby-identifier">old_critical</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">arity</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-number">1</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">result</span>)
+      <span class="ruby-keyword">else</span> <span class="ruby-keyword">yield</span>(<span class="ruby-identifier">result</span>, <span class="ruby-identifier">extra_data</span>)        
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+    </div>
+  </body>
+</html>    

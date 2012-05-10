@@ -1,0 +1,263 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ObjectTests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ObjectTests 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/test/core_ext/object_and_class_ext_test_rb.html">rails/activesupport/test/core_ext/object_and_class_ext_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_extend_with_included_modules_from">test_extend_with_included_modules_from</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_extended_by">test_extended_by</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_suppress_re_raises">test_suppress_re_raises</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_suppress_supresses">test_suppress_supresses</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_extend_with_included_modules_from">
+            
+              <a name="method-i-test_extend_with_included_modules_from"></a><b>test_extend_with_included_modules_from</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_extend_with_included_modules_from_source')" id="l_method-i-test_extend_with_included_modules_from_source">show</a>
+                
+              </p>
+              <div id="method-i-test_extend_with_included_modules_from_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/object_and_class_ext_test.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_extend_with_included_modules_from</span>
+  <span class="ruby-identifier">foo</span>, <span class="ruby-identifier">object</span> = <span class="ruby-constant">Foo</span>.<span class="ruby-identifier">new</span>, <span class="ruby-constant">Object</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:bar</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:baz</span>)
+
+  <span class="ruby-identifier">object</span>.<span class="ruby-identifier">extend_with_included_modules_from</span>(<span class="ruby-identifier">foo</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:bar</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:baz</span>)
+
+  <span class="ruby-identifier">foo</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">Baz</span>)
+  <span class="ruby-identifier">object</span>.<span class="ruby-identifier">extend_with_included_modules_from</span>(<span class="ruby-identifier">foo</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:bar</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">object</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:baz</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_extended_by">
+            
+              <a name="method-i-test_extended_by"></a><b>test_extended_by</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_extended_by_source')" id="l_method-i-test_extended_by_source">show</a>
+                
+              </p>
+              <div id="method-i-test_extended_by_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/object_and_class_ext_test.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_extended_by</span>
+  <span class="ruby-identifier">foo</span> = <span class="ruby-constant">Foo</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">foo</span>.<span class="ruby-identifier">extended_by</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">Bar</span>)
+  <span class="ruby-identifier">foo</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">Baz</span>)
+  <span class="ruby-identifier">assert</span>(([<span class="ruby-constant">Bar</span>, <span class="ruby-constant">Baz</span>] <span class="ruby-operator">-</span> <span class="ruby-identifier">foo</span>.<span class="ruby-identifier">extended_by</span>).<span class="ruby-identifier">empty?</span>, <span class="ruby-node">&quot;Expected Bar, Baz in #{foo.extended_by.inspect}&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_suppress_re_raises">
+            
+              <a name="method-i-test_suppress_re_raises"></a><b>test_suppress_re_raises</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_suppress_re_raises_source')" id="l_method-i-test_suppress_re_raises_source">show</a>
+                
+              </p>
+              <div id="method-i-test_suppress_re_raises_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/object_and_class_ext_test.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_suppress_re_raises</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">LoadError</span>) { <span class="ruby-identifier">suppress</span>(<span class="ruby-constant">ArgumentError</span>) {<span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span>} }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_suppress_supresses">
+            
+              <a name="method-i-test_suppress_supresses"></a><b>test_suppress_supresses</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_suppress_supresses_source')" id="l_method-i-test_suppress_supresses_source">show</a>
+                
+              </p>
+              <div id="method-i-test_suppress_supresses_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/object_and_class_ext_test.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_suppress_supresses</span>
+  <span class="ruby-identifier">suppress</span>(<span class="ruby-constant">ArgumentError</span>) { <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> }
+  <span class="ruby-identifier">suppress</span>(<span class="ruby-constant">LoadError</span>) { <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span> }
+  <span class="ruby-identifier">suppress</span>(<span class="ruby-constant">LoadError</span>, <span class="ruby-constant">ArgumentError</span>) { <span class="ruby-identifier">raise</span> <span class="ruby-constant">LoadError</span> }
+  <span class="ruby-identifier">suppress</span>(<span class="ruby-constant">LoadError</span>, <span class="ruby-constant">ArgumentError</span>) { <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

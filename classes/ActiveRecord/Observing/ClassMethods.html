@@ -1,0 +1,275 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::Observing::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActiveRecord::Observing::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/activerecord/lib/active_record/observer_rb.html">rails/activerecord/lib/active_record/observer.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inherited">inherited</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-instantiate_observers">instantiate_observers</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-observers">observers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-observers-3D">observers=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-instantiate_observers">
+            
+              <a name="method-i-instantiate_observers"></a><b>instantiate_observers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Instantiate the global <a href="../../ActiveRecord.html">ActiveRecord</a>
+observers</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-instantiate_observers_source')" id="l_method-i-instantiate_observers_source">show</a>
+                
+              </p>
+              <div id="method-i-instantiate_observers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/observer.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">instantiate_observers</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@observers</span>.<span class="ruby-identifier">blank?</span>
+  <span class="ruby-ivar">@observers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">observer</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">observer</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_sym</span>) <span class="ruby-comment"># Symbol or String</span>
+      <span class="ruby-identifier">observer</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span>.<span class="ruby-identifier">constantize</span>.<span class="ruby-identifier">instance</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">observer</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:instance</span>)
+      <span class="ruby-identifier">observer</span>.<span class="ruby-identifier">instance</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;#{observer} must be a lowercase, underscored class name (or an instance of the class itself) responding to the instance method. Example: Person.observers = :big_brother # calls BigBrother.instance&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-observers">
+            
+              <a name="method-i-observers"></a><b>observers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Gets the current observers.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-observers_source')" id="l_method-i-observers_source">show</a>
+                
+              </p>
+              <div id="method-i-observers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/observer.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">observers</span>
+  <span class="ruby-ivar">@observers</span> <span class="ruby-operator">||=</span> []
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-observers-3D">
+            
+              <a name="method-i-observers-3D"></a><b>observers=</b>(*observers)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Activates the observers assigned. Examples:</p>
+
+<pre class="ruby"><span class="ruby-comment"># Calls PersonObserver.instance</span>
+<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">observers</span> = :<span class="ruby-identifier">person_observer</span>
+
+<span class="ruby-comment"># Calls Cacher.instance and GarbageCollector.instance</span>
+<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">observers</span> = :<span class="ruby-identifier">cacher</span>, :<span class="ruby-identifier">garbage_collector</span>
+
+<span class="ruby-comment"># Same as above, just using explicit class references</span>
+<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">observers</span> = <span class="ruby-constant">Cacher</span>, <span class="ruby-constant">GarbageCollector</span>
+</pre>
+
+<p>Note: Setting this does not instantiate the observers yet.  <a
+href="ClassMethods.html#method-i-instantiate_observers">instantiate_observers</a>
+is called during startup, and before each development request.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-observers-3D_source')" id="l_method-i-observers-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-observers-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/observer.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">observers=</span>(*<span class="ruby-identifier">observers</span>)
+  <span class="ruby-ivar">@observers</span> = <span class="ruby-identifier">observers</span>.<span class="ruby-identifier">flatten</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-inherited">
+            
+              <a name="method-i-inherited"></a><b>inherited</b>(subclass)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Notify observers when the observed class is subclassed.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inherited_source')" id="l_method-i-inherited_source">show</a>
+                
+              </p>
+              <div id="method-i-inherited_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/observer.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inherited</span>(<span class="ruby-identifier">subclass</span>)
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-identifier">changed</span>
+  <span class="ruby-identifier">notify_observers</span> <span class="ruby-value">:observed_class_inherited</span>, <span class="ruby-identifier">subclass</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,242 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>BinaryTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            BinaryTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/test/binary_test_rb.html">rails/activerecord/test/binary_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_load_save">test_load_save</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_truth">test_truth</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">BINARY_FIXTURE_PATH</td>
+            <td>=</td>
+            <td class="attr-value">File.dirname(__FILE__) + '/fixtures/flowers.jpg'</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/binary_test.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-constant">Binary</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">execute</span> <span class="ruby-string">'DELETE FROM binaries'</span>
+  <span class="ruby-ivar">@data</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">read</span>(<span class="ruby-constant">BINARY_FIXTURE_PATH</span>).<span class="ruby-identifier">freeze</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_load_save">
+            
+              <a name="method-i-test_load_save"></a><b>test_load_save</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_load_save_source')" id="l_method-i-test_load_save_source">show</a>
+                
+              </p>
+              <div id="method-i-test_load_save_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/binary_test.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_load_save</span>
+  <span class="ruby-identifier">bin</span> = <span class="ruby-constant">Binary</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">bin</span>.<span class="ruby-identifier">data</span> = <span class="ruby-ivar">@data</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-ivar">@data</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">bin</span>.<span class="ruby-identifier">data</span>, <span class="ruby-string">'Newly assigned data differs from original'</span>
+      
+  <span class="ruby-identifier">bin</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-ivar">@data</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">bin</span>.<span class="ruby-identifier">data</span>, <span class="ruby-string">'Data differs from original after save'</span>
+
+  <span class="ruby-identifier">db_bin</span> = <span class="ruby-constant">Binary</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">bin</span>.<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-ivar">@data</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">db_bin</span>.<span class="ruby-identifier">data</span>, <span class="ruby-string">'Reloaded data differs from original'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_truth">
+            
+              <a name="method-i-test_truth"></a><b>test_truth</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_truth_source')" id="l_method-i-test_truth_source">show</a>
+                
+              </p>
+              <div id="method-i-test_truth_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/binary_test.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_truth</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

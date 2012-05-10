@@ -1,0 +1,359 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>MetaWeblogService</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            MetaWeblogService 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="ActionWebService/Base.html">ActionWebService::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_service_rb.html">rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_service.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-editPost">editPost</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-getCategories">getCategories</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-getPost">getPost</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-getRecentPosts">getRecentPosts</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-newPost">newPost</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_service.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-ivar">@postid</span> = <span class="ruby-number">0</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-editPost">
+            
+              <a name="method-i-editPost"></a><b>editPost</b>(post_id, user, pw, struct, publish)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-editPost_source')" id="l_method-i-editPost_source">show</a>
+                
+              </p>
+              <div id="method-i-editPost_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_service.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">editPost</span>(<span class="ruby-identifier">post_id</span>, <span class="ruby-identifier">user</span>, <span class="ruby-identifier">pw</span>, <span class="ruby-identifier">struct</span>, <span class="ruby-identifier">publish</span>)
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;id=#{post_id} user=#{user} pw=#{pw} struct=#{struct.inspect} [#{publish}]&quot;</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-getCategories">
+            
+              <a name="method-i-getCategories"></a><b>getCategories</b>(id, user, pw)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-getCategories_source')" id="l_method-i-getCategories_source">show</a>
+                
+              </p>
+              <div id="method-i-getCategories_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_service.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">getCategories</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">user</span>, <span class="ruby-identifier">pw</span>)
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;categories for #{user}&quot;</span>
+  <span class="ruby-identifier">cat</span> = <span class="ruby-constant">Blog</span><span class="ruby-operator">::</span><span class="ruby-constant">Category</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'Tech'</span>,
+    <span class="ruby-value">:htmlUrl</span>     =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://blog/tech'</span>,
+    <span class="ruby-value">:rssUrl</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://blog/tech.rss'</span>)
+  [<span class="ruby-identifier">cat</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-getPost">
+            
+              <a name="method-i-getPost"></a><b>getPost</b>(post_id, user, pw)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-getPost_source')" id="l_method-i-getPost_source">show</a>
+                
+              </p>
+              <div id="method-i-getPost_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_service.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">getPost</span>(<span class="ruby-identifier">post_id</span>, <span class="ruby-identifier">user</span>, <span class="ruby-identifier">pw</span>)
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;get post #{post_id}&quot;</span>
+  <span class="ruby-constant">Blog</span><span class="ruby-operator">::</span><span class="ruby-constant">Post</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'hello world'</span>, <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'first post!'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-getRecentPosts">
+            
+              <a name="method-i-getRecentPosts"></a><b>getRecentPosts</b>(id, user, pw, num)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-getRecentPosts_source')" id="l_method-i-getRecentPosts_source">show</a>
+                
+              </p>
+              <div id="method-i-getRecentPosts_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_service.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">getRecentPosts</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">user</span>, <span class="ruby-identifier">pw</span>, <span class="ruby-identifier">num</span>)
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;recent #{num} posts for #{user} on blog #{id}&quot;</span>
+  <span class="ruby-identifier">post1</span> = <span class="ruby-constant">Blog</span><span class="ruby-operator">::</span><span class="ruby-constant">Post</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-value">:title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'first post!'</span>,
+    <span class="ruby-value">:link</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://blog.xeraph.org/testOne.html'</span>,
+    <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'this is the first post'</span>
+  )
+  <span class="ruby-identifier">post2</span> = <span class="ruby-constant">Blog</span><span class="ruby-operator">::</span><span class="ruby-constant">Post</span>.<span class="ruby-identifier">new</span>(
+    <span class="ruby-value">:title</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'second post!'</span>,
+    <span class="ruby-value">:link</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'http://blog.xeraph.org/testTwo.html'</span>,
+    <span class="ruby-value">:description</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'this is the second post'</span>
+  )
+  [<span class="ruby-identifier">post1</span>, <span class="ruby-identifier">post2</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-newPost">
+            
+              <a name="method-i-newPost"></a><b>newPost</b>(id, user, pw, struct, publish)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-newPost_source')" id="l_method-i-newPost_source">show</a>
+                
+              </p>
+              <div id="method-i-newPost_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/examples/metaWeblog/apis/meta_weblog_service.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">newPost</span>(<span class="ruby-identifier">id</span>, <span class="ruby-identifier">user</span>, <span class="ruby-identifier">pw</span>, <span class="ruby-identifier">struct</span>, <span class="ruby-identifier">publish</span>)
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;id=#{id} user=#{user} pw=#{pw}, struct=#{struct.inspect} [#{publish}]&quot;</span>
+  (<span class="ruby-ivar">@postid</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

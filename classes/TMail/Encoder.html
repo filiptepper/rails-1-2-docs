@@ -1,0 +1,1024 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TMail::Encoder</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TMail::Encoder 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionmailer/lib/action_mailer/vendor/tmail/encode_rb.html">rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>FIXME: This class can handle only (euc-jp/shift_jis -&gt; iso-2022-jp).</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-dest">dest</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-encode">encode</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-encode_value">encode_value</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-header_body">header_body</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-header_line">header_line</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-header_name">header_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>K</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-kv_pair">kv_pair</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-lwsp">lwsp</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-meta">meta</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-normalize_encoding">normalize_encoding</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-phrase">phrase</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-puts">puts</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-reset">reset</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-space">space</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-spc">spc</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-terminate">terminate</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-text">text</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-write">write</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="TextUtils.html">
+              TMail::TextUtils
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">BENCODE_DEBUG</td>
+            <td>=</td>
+            <td class="attr-value">false unless defined?(BENCODE_DEBUG)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SPACER</td>
+            <td>=</td>
+            <td class="attr-value">&quot;\t&quot;</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MAX_LINE_LEN</td>
+            <td>=</td>
+            <td class="attr-value">70</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">OPTIONS</td>
+            <td>=</td>
+            <td class="attr-value">{
+'EUC'  =&gt; '-Ej -m0',
+'SJIS' =&gt; '-Sj -m0',
+'UTF8' =&gt; nil,      # FIXME
+'NONE' =&gt; nil
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">METHOD_ID</td>
+            <td>=</td>
+            <td class="attr-value">{
+?jj =&gt; :extract_J,
+?ee =&gt; :extract_E,
+?aa =&gt; :extract_A,
+?ss =&gt; :extract_S
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-encode">
+            
+              <a name="method-c-encode"></a><b>encode</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-encode_source')" id="l_method-c-encode_source">show</a>
+                
+              </p>
+              <div id="method-c-encode_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">Encoder</span>.<span class="ruby-identifier">encode</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">new</span>()
+  <span class="ruby-identifier">e</span>.<span class="ruby-identifier">header_body</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-identifier">e</span>.<span class="ruby-identifier">terminate</span>
+  <span class="ruby-identifier">e</span>.<span class="ruby-identifier">dest</span>.<span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>( dest = nil, encoding = nil, eol = &quot;\r\n&quot;, limit = nil )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 189</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>( <span class="ruby-identifier">dest</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">encoding</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">eol</span> = <span class="ruby-string">&quot;\r\n&quot;</span>, <span class="ruby-identifier">limit</span> = <span class="ruby-keyword">nil</span> )
+  <span class="ruby-ivar">@f</span> = <span class="ruby-constant">StrategyInterface</span>.<span class="ruby-identifier">create_dest</span>(<span class="ruby-identifier">dest</span>)
+  <span class="ruby-ivar">@opt</span> = <span class="ruby-constant">OPTIONS</span>[<span class="ruby-identifier">$KCODE</span>]
+  <span class="ruby-ivar">@eol</span> = <span class="ruby-identifier">eol</span>
+  <span class="ruby-identifier">reset</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-dest">
+            
+              <a name="method-i-dest"></a><b>dest</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dest_source')" id="l_method-i-dest_source">show</a>
+                
+              </p>
+              <div id="method-i-dest_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dest</span>
+  <span class="ruby-ivar">@f</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-encode_value">
+            
+              <a name="method-i-encode_value"></a><b>encode_value</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-encode_value_source')" id="l_method-i-encode_value_source">show</a>
+                
+              </p>
+              <div id="method-i-encode_value_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">encode_value</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-constant">TOKEN_UNSAFE</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-string">'%%%02x'</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">s</span>[<span class="ruby-number">0</span>] }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-header_body">
+            
+              <a name="method-i-header_body"></a><b>header_body</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-header_body_source')" id="l_method-i-header_body_source">show</a>
+                
+              </p>
+              <div id="method-i-header_body_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">header_body</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">scanadd</span> <span class="ruby-identifier">normalize_encoding</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-header_line">
+            
+              <a name="method-i-header_line"></a><b>header_line</b>( line )
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>add</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-header_line_source')" id="l_method-i-header_line_source">show</a>
+                
+              </p>
+              <div id="method-i-header_line_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">header_line</span>( <span class="ruby-identifier">line</span> )
+  <span class="ruby-identifier">scanadd</span> <span class="ruby-identifier">line</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-header_name">
+            
+              <a name="method-i-header_name"></a><b>header_name</b>( name )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-header_name_source')" id="l_method-i-header_name_source">show</a>
+                
+              </p>
+              <div id="method-i-header_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 235</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">header_name</span>( <span class="ruby-identifier">name</span> )
+  <span class="ruby-identifier">add_text</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r-/</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">capitalize</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">'-'</span>)
+  <span class="ruby-identifier">add_text</span> <span class="ruby-string">':'</span>
+  <span class="ruby-identifier">add_lwsp</span> <span class="ruby-string">' '</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-kv_pair">
+            
+              <a name="method-i-kv_pair"></a><b>kv_pair</b>( k, v )
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>FIXME: implement line folding</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-kv_pair_source')" id="l_method-i-kv_pair_source">show</a>
+                
+              </p>
+              <div id="method-i-kv_pair_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 274</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">kv_pair</span>( <span class="ruby-identifier">k</span>, <span class="ruby-identifier">v</span> )
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">v</span> = <span class="ruby-identifier">normalize_encoding</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">token_safe?</span>(<span class="ruby-identifier">v</span>)
+    <span class="ruby-identifier">add_text</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">+</span> <span class="ruby-string">'='</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">v</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-keyword">not</span> <span class="ruby-constant">CONTROL_CHAR</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">v</span>
+    <span class="ruby-identifier">add_text</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">+</span> <span class="ruby-string">'='</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">quote_token</span>(<span class="ruby-identifier">v</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># apply RFC2231 encoding</span>
+    <span class="ruby-identifier">kv</span> = <span class="ruby-identifier">k</span> <span class="ruby-operator">+</span> <span class="ruby-string">'*='</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;iso-2022-jp'ja'&quot;</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">encode_value</span>(<span class="ruby-identifier">v</span>)
+    <span class="ruby-identifier">add_text</span> <span class="ruby-identifier">kv</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-lwsp">
+            
+              <a name="method-i-lwsp"></a><b>lwsp</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-lwsp_source')" id="l_method-i-lwsp_source">show</a>
+                
+              </p>
+              <div id="method-i-lwsp_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 251</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">lwsp</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">add_lwsp</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r[\r\n]+[^\r\n]*\z/</span>, <span class="ruby-string">''</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-meta">
+            
+              <a name="method-i-meta"></a><b>meta</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-meta_source')" id="l_method-i-meta_source">show</a>
+                
+              </p>
+              <div id="method-i-meta_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 255</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">meta</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">add_text</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-normalize_encoding">
+            
+              <a name="method-i-normalize_encoding"></a><b>normalize_encoding</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-normalize_encoding_source')" id="l_method-i-normalize_encoding_source">show</a>
+                
+              </p>
+              <div id="method-i-normalize_encoding_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 196</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">normalize_encoding</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@opt</span>
+  <span class="ruby-keyword">then</span> <span class="ruby-constant">NKF</span>.<span class="ruby-identifier">nkf</span>(<span class="ruby-ivar">@opt</span>, <span class="ruby-identifier">str</span>)
+  <span class="ruby-keyword">else</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-phrase">
+            
+              <a name="method-i-phrase"></a><b>phrase</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-phrase_source')" id="l_method-i-phrase_source">show</a>
+                
+              </p>
+              <div id="method-i-phrase_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 263</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">phrase</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">str</span> = <span class="ruby-identifier">normalize_encoding</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">CONTROL_CHAR</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">str</span>
+    <span class="ruby-identifier">scanadd</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">add_text</span> <span class="ruby-identifier">quote_phrase</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-puts">
+            
+              <a name="method-i-puts"></a><b>puts</b>( str = nil )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-puts_source')" id="l_method-i-puts_source">show</a>
+                
+              </p>
+              <div id="method-i-puts_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 218</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">puts</span>( <span class="ruby-identifier">str</span> = <span class="ruby-keyword">nil</span> )
+  <span class="ruby-ivar">@f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">str</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span>
+  <span class="ruby-ivar">@f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@eol</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reset">
+            
+              <a name="method-i-reset"></a><b>reset</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reset_source')" id="l_method-i-reset_source">show</a>
+                
+              </p>
+              <div id="method-i-reset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reset</span>
+  <span class="ruby-ivar">@text</span> = <span class="ruby-string">''</span>
+  <span class="ruby-ivar">@lwsp</span> = <span class="ruby-string">''</span>
+  <span class="ruby-ivar">@curlen</span> = <span class="ruby-number">0</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-space">
+            
+              <a name="method-i-space"></a><b>space</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Encoder.html#method-i-spc">spc</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-space_source')" id="l_method-i-space_source">show</a>
+                
+              </p>
+              <div id="method-i-space_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">space</span>
+  <span class="ruby-identifier">add_lwsp</span> <span class="ruby-string">' '</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-spc">
+            
+              <a name="method-i-spc"></a><b>spc</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-terminate">
+            
+              <a name="method-i-terminate"></a><b>terminate</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-terminate_source')" id="l_method-i-terminate_source">show</a>
+                
+              </p>
+              <div id="method-i-terminate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">terminate</span>
+  <span class="ruby-identifier">add_lwsp</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">reset</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-text">
+            
+              <a name="method-i-text"></a><b>text</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-text_source')" id="l_method-i-text_source">show</a>
+                
+              </p>
+              <div id="method-i-text_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">text</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-identifier">scanadd</span> <span class="ruby-identifier">normalize_encoding</span>(<span class="ruby-identifier">str</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-write">
+            
+              <a name="method-i-write"></a><b>write</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-write_source')" id="l_method-i-write_source">show</a>
+                
+              </p>
+              <div id="method-i-write_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/encode.rb, line 223</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">write</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-ivar">@f</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,440 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::ConnectionAdapters::SybaseAdapterContext</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecord::ConnectionAdapters::SybaseAdapterContext 
+            
+                <span class="parent">&lt; 
+                    
+                    SybSQLContext
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/activerecord/lib/active_record/connection_adapters/sybase_adapter_rb.html">rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-cltmsgCB">cltmsgCB</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-deadlocked-3F">deadlocked?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-failed-3F">failed?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-init">init</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-reset">reset</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-srvmsgCB">srvmsgCB</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DEADLOCK</td>
+            <td>=</td>
+            <td class="attr-value">1205</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>message</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-cltmsgCB">
+            
+              <a name="method-i-cltmsgCB"></a><b>cltmsgCB</b>(con, msg)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cltmsgCB_source')" id="l_method-i-cltmsgCB_source">show</a>
+                
+              </p>
+              <div id="method-i-cltmsgCB_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb, line 611</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cltmsgCB</span>(<span class="ruby-identifier">con</span>, <span class="ruby-identifier">msg</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">unless</span> ( <span class="ruby-identifier">msg</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">Hash</span>) )
+  <span class="ruby-keyword">unless</span> ( <span class="ruby-identifier">msg</span>[ <span class="ruby-string">&quot;severity&quot;</span> ] ) <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@logger</span>
+    <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-string">&quot;** SybSQLContext Client-Message: **&quot;</span>
+    <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;  Message number: LAYER=#{msg[ 'layer' ]} ORIGIN=#{msg[ 'origin' ]} SEVERITY=#{msg[ 'severity' ]} NUMBER=#{msg[ 'number' ]}&quot;</span>
+    <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;  Message String: #{msg['msgstring']}&quot;</span>
+    <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;  OS Error: #{msg['osstring']}&quot;</span>
+
+    <span class="ruby-ivar">@message</span> = <span class="ruby-identifier">msg</span>[<span class="ruby-string">'msgstring'</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@failed</span> = <span class="ruby-keyword">true</span>
+
+  <span class="ruby-comment"># Not retry , CS_CV_RETRY_FAIL( probability TimeOut ) </span>
+  <span class="ruby-keyword">if</span>( <span class="ruby-identifier">msg</span>[ <span class="ruby-string">'severity'</span> ] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;RETRY_FAIL&quot;</span> ) <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@timeout_p</span> = <span class="ruby-keyword">true</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-deadlocked-3F">
+            
+              <a name="method-i-deadlocked-3F"></a><b>deadlocked?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-deadlocked-3F_source')" id="l_method-i-deadlocked-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-deadlocked-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb, line 597</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">deadlocked?</span>
+  <span class="ruby-ivar">@deadlocked</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-failed-3F">
+            
+              <a name="method-i-failed-3F"></a><b>failed?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-failed-3F_source')" id="l_method-i-failed-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-failed-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb, line 601</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">failed?</span>
+  <span class="ruby-ivar">@failed</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-init">
+            
+              <a name="method-i-init"></a><b>init</b>(logger = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-init_source')" id="l_method-i-init_source">show</a>
+                
+              </p>
+              <div id="method-i-init_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb, line 564</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">init</span>(<span class="ruby-identifier">logger</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@deadlocked</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@failed</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@logger</span> = <span class="ruby-identifier">logger</span>
+  <span class="ruby-ivar">@message</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reset">
+            
+              <a name="method-i-reset"></a><b>reset</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reset_source')" id="l_method-i-reset_source">show</a>
+                
+              </p>
+              <div id="method-i-reset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb, line 605</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reset</span>
+  <span class="ruby-ivar">@deadlocked</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@failed</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@message</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-srvmsgCB">
+            
+              <a name="method-i-srvmsgCB"></a><b>srvmsgCB</b>(con, msg)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-srvmsgCB_source')" id="l_method-i-srvmsgCB_source">show</a>
+                
+              </p>
+              <div id="method-i-srvmsgCB_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb, line 571</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">srvmsgCB</span>(<span class="ruby-identifier">con</span>, <span class="ruby-identifier">msg</span>)
+  <span class="ruby-comment"># Do not log change of context messages.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">msg</span>[<span class="ruby-string">'severity'</span>] <span class="ruby-operator">==</span> <span class="ruby-number">10</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">msg</span>[<span class="ruby-string">'severity'</span>] <span class="ruby-operator">==</span> <span class="ruby-number">0</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">msg</span>[<span class="ruby-string">'msgnumber'</span>] <span class="ruby-operator">==</span> <span class="ruby-constant">DEADLOCK</span>
+    <span class="ruby-ivar">@deadlocked</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">info</span> <span class="ruby-string">&quot;SQL Command failed!&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@logger</span>
+    <span class="ruby-ivar">@failed</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@logger</span>
+    <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-string">&quot;** SybSQLContext Server Message: **&quot;</span>
+    <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;  Message number #{msg['msgnumber']} Severity #{msg['severity']} State #{msg['state']} Line #{msg['line']}&quot;</span>
+    <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;  Server #{msg['srvname']}&quot;</span>
+    <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;  Procedure #{msg['proc']}&quot;</span>
+    <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">error</span> <span class="ruby-node">&quot;  Message String:  #{msg['text']}&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@message</span> = <span class="ruby-identifier">msg</span>[<span class="ruby-string">'text'</span>]
+
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

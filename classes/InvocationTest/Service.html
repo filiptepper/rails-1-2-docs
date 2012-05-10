@@ -1,0 +1,694 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>InvocationTest::Service</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            InvocationTest::Service 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../ActionController/Base.html">ActionController::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionwebservice/test/invocation_test_rb.html">rails/actionwebservice/test/invocation_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add">add</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-fail_generic">fail_generic</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-fail_with_reason">fail_with_reason</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-intercept_after">intercept_after</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-intercept_after_first">intercept_after_first</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-intercept_before">intercept_before</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-intercept_only">intercept_only</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-no_after">no_after</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-no_before">no_before</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-only_one">only_one</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-only_two">only_two</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-transmogrify">transmogrify</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>after_first_invoked</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>after_invoked</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>before_invoked</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>block_invoked</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>invocation_result</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>only_invoked</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-ivar">@before_invoked</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@after_invoked</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@after_first_invoked</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@only_invoked</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@invocation_result</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@block_invoked</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add">
+            
+              <a name="method-i-add"></a><b>add</b>(a, b)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_source')" id="l_method-i-add_source">show</a>
+                
+              </p>
+              <div id="method-i-add_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add</span>(<span class="ruby-identifier">a</span>, <span class="ruby-identifier">b</span>)
+  <span class="ruby-identifier">a</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">b</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fail_generic">
+            
+              <a name="method-i-fail_generic"></a><b>fail_generic</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fail_generic_source')" id="l_method-i-fail_generic_source">show</a>
+                
+              </p>
+              <div id="method-i-fail_generic_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fail_generic</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fail_with_reason">
+            
+              <a name="method-i-fail_with_reason"></a><b>fail_with_reason</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fail_with_reason_source')" id="l_method-i-fail_with_reason_source">show</a>
+                
+              </p>
+              <div id="method-i-fail_with_reason_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fail_with_reason</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-no_after">
+            
+              <a name="method-i-no_after"></a><b>no_after</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-no_after_source')" id="l_method-i-no_after_source">show</a>
+                
+              </p>
+              <div id="method-i-no_after_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">no_after</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-no_before">
+            
+              <a name="method-i-no_before"></a><b>no_before</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-no_before_source')" id="l_method-i-no_before_source">show</a>
+                
+              </p>
+              <div id="method-i-no_before_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">no_before</span>
+  <span class="ruby-number">5</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-only_one">
+            
+              <a name="method-i-only_one"></a><b>only_one</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-only_one_source')" id="l_method-i-only_one_source">show</a>
+                
+              </p>
+              <div id="method-i-only_one_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">only_one</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-only_two">
+            
+              <a name="method-i-only_two"></a><b>only_two</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-only_two_source')" id="l_method-i-only_two_source">show</a>
+                
+              </p>
+              <div id="method-i-only_two_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">only_two</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-transmogrify">
+            
+              <a name="method-i-transmogrify"></a><b>transmogrify</b>(str)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-transmogrify_source')" id="l_method-i-transmogrify_source">show</a>
+                
+              </p>
+              <div id="method-i-transmogrify_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">transmogrify</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">upcase</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-intercept_after">
+            
+              <a name="method-i-intercept_after"></a><b>intercept_after</b>(name, args, result)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-intercept_after_source')" id="l_method-i-intercept_after_source">show</a>
+                
+              </p>
+              <div id="method-i-intercept_after_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">intercept_after</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">args</span>, <span class="ruby-identifier">result</span>)
+  <span class="ruby-ivar">@after_invoked</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-ivar">@invocation_result</span> = <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-intercept_after_first">
+            
+              <a name="method-i-intercept_after_first"></a><b>intercept_after_first</b>(name, args, result)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-intercept_after_first_source')" id="l_method-i-intercept_after_first_source">show</a>
+                
+              </p>
+              <div id="method-i-intercept_after_first_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">intercept_after_first</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">args</span>, <span class="ruby-identifier">result</span>)
+  <span class="ruby-ivar">@after_first_invoked</span> = <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-intercept_before">
+            
+              <a name="method-i-intercept_before"></a><b>intercept_before</b>(name, args)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-intercept_before_source')" id="l_method-i-intercept_before_source">show</a>
+                
+              </p>
+              <div id="method-i-intercept_before_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">intercept_before</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">args</span>)
+  <span class="ruby-ivar">@before_invoked</span> = <span class="ruby-identifier">name</span>
+  <span class="ruby-keyword">return</span> [<span class="ruby-keyword">false</span>, <span class="ruby-string">&quot;permission denied&quot;</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-value">:fail_with_reason</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-value">:fail_generic</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-intercept_only">
+            
+              <a name="method-i-intercept_only"></a><b>intercept_only</b>(name, args)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-intercept_only_source')" id="l_method-i-intercept_only_source">show</a>
+                
+              </p>
+              <div id="method-i-intercept_only_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">intercept_only</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Interception error&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-value">:only_one</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-value">:only_two</span>
+  <span class="ruby-ivar">@only_invoked</span> = <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

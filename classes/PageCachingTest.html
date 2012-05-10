@@ -1,0 +1,274 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PageCachingTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PageCachingTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/caching_test_rb.html">rails/actionpack/test/controller/caching_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-teardown">teardown</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_page_caching_resources_saves_to_correct_path_with_extension_even_if_default_route">test_page_caching_resources_saves_to_correct_path_with_extension_even_if_default_route</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_cache_get_with_ok_status">test_should_cache_get_with_ok_status</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/caching_test.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">map</span>.<span class="ruby-identifier">main</span> <span class="ruby-string">''</span>, <span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'posts'</span>
+    <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:posts</span>
+    <span class="ruby-identifier">map</span>.<span class="ruby-identifier">connect</span> <span class="ruby-string">':controller/:action/:id'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@request</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">host</span> = <span class="ruby-string">'hostname.com'</span>
+
+  <span class="ruby-ivar">@response</span>   = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">PageCachingTestController</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-ivar">@params</span> = {<span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'posts'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'index'</span>, <span class="ruby-value">:only_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>, <span class="ruby-value">:skip_relative_url_root</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>}
+  <span class="ruby-ivar">@rewriter</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">UrlRewriter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@request</span>, <span class="ruby-ivar">@params</span>)
+
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">FILE_STORE_PATH</span>))
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">mkdir_p</span>(<span class="ruby-constant">FILE_STORE_PATH</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-teardown">
+            
+              <a name="method-i-teardown"></a><b>teardown</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-teardown_source')" id="l_method-i-teardown_source">show</a>
+                
+              </p>
+              <div id="method-i-teardown_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/caching_test.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">teardown</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_rf</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-constant">FILE_STORE_PATH</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_page_caching_resources_saves_to_correct_path_with_extension_even_if_default_route">
+            
+              <a name="method-i-test_page_caching_resources_saves_to_correct_path_with_extension_even_if_default_route"></a><b>test_page_caching_resources_saves_to_correct_path_with_extension_even_if_default_route</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_page_caching_resources_saves_to_correct_path_with_extension_even_if_default_route_source')" id="l_method-i-test_page_caching_resources_saves_to_correct_path_with_extension_even_if_default_route_source">show</a>
+                
+              </p>
+              <div id="method-i-test_page_caching_resources_saves_to_correct_path_with_extension_even_if_default_route_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/caching_test.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_page_caching_resources_saves_to_correct_path_with_extension_even_if_default_route</span>
+  <span class="ruby-ivar">@params</span>[<span class="ruby-value">:format</span>] = <span class="ruby-string">'rss'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'/posts.rss'</span>, <span class="ruby-ivar">@rewriter</span>.<span class="ruby-identifier">rewrite</span>(<span class="ruby-ivar">@params</span>)
+  <span class="ruby-ivar">@params</span>[<span class="ruby-value">:format</span>] = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'/'</span>, <span class="ruby-ivar">@rewriter</span>.<span class="ruby-identifier">rewrite</span>(<span class="ruby-ivar">@params</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_cache_get_with_ok_status">
+            
+              <a name="method-i-test_should_cache_get_with_ok_status"></a><b>test_should_cache_get_with_ok_status</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_cache_get_with_ok_status_source')" id="l_method-i-test_should_cache_get_with_ok_status_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_cache_get_with_ok_status_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/caching_test.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_cache_get_with_ok_status</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:ok</span>
+  <span class="ruby-identifier">assert_response</span> <span class="ruby-value">:ok</span>
+  <span class="ruby-identifier">assert_page_cached</span> <span class="ruby-value">:ok</span>, <span class="ruby-string">&quot;get with ok status should have been cached&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

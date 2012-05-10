@@ -1,0 +1,427 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TC_Invocation</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TC_Invocation 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionwebservice/test/invocation_test_rb.html">rails/actionwebservice/test/invocation_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_interception">test_interception</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_interception_canceling">test_interception_canceling</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_interception_except_conditions">test_interception_except_conditions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_interception_only_conditions">test_interception_only_conditions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_interceptor_registration">test_interceptor_registration</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_invocation">test_invocation</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="ActionWebService/Invocation.html">
+              ActionWebService::Invocation
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@service</span> = <span class="ruby-constant">InvocationTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Service</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_interception">
+            
+              <a name="method-i-test_interception"></a><b>test_interception</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_interception_source')" id="l_method-i-test_interception_source">show</a>
+                
+              </p>
+              <div id="method-i-test_interception_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_interception</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">before_invoked</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">after_invoked</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">only_invoked</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">block_invoked</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">invocation_result</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">perform_invocation</span>(<span class="ruby-value">:add</span>, <span class="ruby-number">20</span>, <span class="ruby-number">50</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">before_invoked</span> <span class="ruby-operator">==</span> <span class="ruby-value">:add</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">after_invoked</span> <span class="ruby-operator">==</span> <span class="ruby-value">:add</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">invocation_result</span> <span class="ruby-operator">==</span> <span class="ruby-number">70</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_interception_canceling">
+            
+              <a name="method-i-test_interception_canceling"></a><b>test_interception_canceling</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_interception_canceling_source')" id="l_method-i-test_interception_canceling_source">show</a>
+                
+              </p>
+              <div id="method-i-test_interception_canceling_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_interception_canceling</span>
+  <span class="ruby-identifier">reason</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">perform_invocation</span>(<span class="ruby-value">:fail_with_reason</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">reason</span> = <span class="ruby-identifier">r</span>}
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">before_invoked</span> <span class="ruby-operator">==</span> <span class="ruby-value">:fail_with_reason</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">after_invoked</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">invocation_result</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">reason</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;permission denied&quot;</span>)
+  <span class="ruby-identifier">reason</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@service</span>.<span class="ruby-identifier">before_invoked</span> = <span class="ruby-ivar">@service</span>.<span class="ruby-identifier">after_invoked</span> = <span class="ruby-ivar">@service</span>.<span class="ruby-identifier">invocation_result</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">perform_invocation</span>(<span class="ruby-value">:fail_generic</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span> <span class="ruby-identifier">reason</span> = <span class="ruby-identifier">r</span>}
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">before_invoked</span> <span class="ruby-operator">==</span> <span class="ruby-value">:fail_generic</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">after_invoked</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">invocation_result</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">reason</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_interception_except_conditions">
+            
+              <a name="method-i-test_interception_except_conditions"></a><b>test_interception_except_conditions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_interception_except_conditions_source')" id="l_method-i-test_interception_except_conditions_source">show</a>
+                
+              </p>
+              <div id="method-i-test_interception_except_conditions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_interception_except_conditions</span>
+  <span class="ruby-identifier">perform_invocation</span>(<span class="ruby-value">:no_before</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">before_invoked</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">after_first_invoked</span> <span class="ruby-operator">==</span> <span class="ruby-value">:no_before</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">after_invoked</span> <span class="ruby-operator">==</span> <span class="ruby-value">:no_before</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">invocation_result</span> <span class="ruby-operator">==</span> <span class="ruby-number">5</span>)
+  <span class="ruby-ivar">@service</span>.<span class="ruby-identifier">before_invoked</span> = <span class="ruby-ivar">@service</span>.<span class="ruby-identifier">after_invoked</span> = <span class="ruby-ivar">@service</span>.<span class="ruby-identifier">invocation_result</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">perform_invocation</span>(<span class="ruby-value">:no_after</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">before_invoked</span> <span class="ruby-operator">==</span> <span class="ruby-value">:no_after</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">after_invoked</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">invocation_result</span>.<span class="ruby-identifier">nil?</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_interception_only_conditions">
+            
+              <a name="method-i-test_interception_only_conditions"></a><b>test_interception_only_conditions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_interception_only_conditions_source')" id="l_method-i-test_interception_only_conditions_source">show</a>
+                
+              </p>
+              <div id="method-i-test_interception_only_conditions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_interception_only_conditions</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">only_invoked</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">perform_invocation</span>(<span class="ruby-value">:only_one</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">only_invoked</span> <span class="ruby-operator">==</span> <span class="ruby-value">:only_one</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">block_invoked</span> <span class="ruby-operator">==</span> <span class="ruby-value">:only_one</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-constant">InvocationTest</span><span class="ruby-operator">::</span><span class="ruby-constant">InterceptorClass</span>.<span class="ruby-identifier">args</span>[<span class="ruby-number">1</span>] <span class="ruby-operator">==</span> <span class="ruby-value">:only_one</span>)
+  <span class="ruby-ivar">@service</span>.<span class="ruby-identifier">only_invoked</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">perform_invocation</span>(<span class="ruby-value">:only_two</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@service</span>.<span class="ruby-identifier">only_invoked</span> <span class="ruby-operator">==</span> <span class="ruby-value">:only_two</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_interceptor_registration">
+            
+              <a name="method-i-test_interceptor_registration"></a><b>test_interceptor_registration</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_interceptor_registration_source')" id="l_method-i-test_interceptor_registration_source">show</a>
+                
+              </p>
+              <div id="method-i-test_interceptor_registration_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_interceptor_registration</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-constant">InvocationTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Service</span>.<span class="ruby-identifier">before_invocation_interceptors</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-number">2</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-constant">InvocationTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Service</span>.<span class="ruby-identifier">after_invocation_interceptors</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-number">4</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:intercept_only</span>, <span class="ruby-constant">InvocationTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Service</span>.<span class="ruby-identifier">before_invocation_interceptors</span>[<span class="ruby-number">0</span>])
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-value">:intercept_after_first</span>, <span class="ruby-constant">InvocationTest</span><span class="ruby-operator">::</span><span class="ruby-constant">Service</span>.<span class="ruby-identifier">after_invocation_interceptors</span>[<span class="ruby-number">0</span>])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_invocation">
+            
+              <a name="method-i-test_invocation"></a><b>test_invocation</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_invocation_source')" id="l_method-i-test_invocation_source">show</a>
+                
+              </p>
+              <div id="method-i-test_invocation_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/invocation_test.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_invocation</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">perform_invocation</span>(<span class="ruby-value">:add</span>, <span class="ruby-number">5</span>, <span class="ruby-number">10</span>) <span class="ruby-operator">==</span> <span class="ruby-number">15</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">perform_invocation</span>(<span class="ruby-value">:transmogrify</span>, <span class="ruby-string">&quot;hello&quot;</span>) <span class="ruby-operator">==</span> <span class="ruby-string">&quot;HELLO&quot;</span>)
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">NoMethodError</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">perform_invocation</span>(<span class="ruby-value">:nonexistent_method_xyzzy</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

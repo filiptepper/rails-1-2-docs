@@ -1,0 +1,170 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Rakefile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            Rakefile
+        </h1>
+        <ul class="files">
+            <li>rails/actionmailer/Rakefile</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>require ‘rubygems’ require ‘rake’ require ‘rake/testtask’ require
+‘rake/rdoctask’ require ‘rake/packagetask’ require ‘rake/gempackagetask’
+require ‘rake/contrib/rubyforgepublisher’ require
+File.join(File.dirname(__FILE__), ‘lib’, ‘action_mailer’, ‘version’)</p>
+
+<p>PKG_BUILD     = <a href="http://'PKG_BUILD'">ENV</a> ? ‘.’ + <a
+href="http://'PKG_BUILD'">ENV</a> : ” PKG_NAME      = ‘actionmailer’
+PKG_VERSION   = ActionMailer::VERSION::STRING + PKG_BUILD PKG_FILE_NAME =
+“#{PKG_NAME}-#{PKG_VERSION}”</p>
+
+<p>RELEASE_NAME  = “REL #{PKG_VERSION}”</p>
+
+<p>RUBY_FORGE_PROJECT = “actionmailer” RUBY_FORGE_USER    = “webster132”</p>
+
+<p>desc “<a href="../../../classes/Default.html">Default</a> Task” task
+:default =&gt; [ :test ]</p>
+
+<p># Run the unit tests Rake::TestTask.new { |t|</p>
+
+<pre>t.libs &lt;&lt; &quot;test&quot;
+t.pattern = 'test  _test.rb'
+t.verbose = true
+t.warning = false</pre>
+
+<p>}</p>
+
+<p># Genereate the RDoc documentation Rake::RDocTask.new { |rdoc|</p>
+
+<pre>rdoc.rdoc_dir = 'doc'
+rdoc.title    = &quot;Action Mailer -- Easy email delivery and testing&quot;
+rdoc.options &lt;&lt; '--line-numbers' &lt;&lt; '--inline-source' &lt;&lt; '-A cattr_accessor=object'
+rdoc.template = &quot;#{ENV['template']}.rb&quot; if ENV['template']
+rdoc.rdoc_files.include('README', 'CHANGELOG')
+rdoc.rdoc_files.include('lib/action_mailer.rb')
+rdoc.rdoc_files.include('lib/action_mailer  .rb')</pre>
+
+<p>}</p>
+
+<p># Create compressed packages spec = Gem::Specification.new do |s|</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>.<span class="ruby-identifier">platform</span> = <span class="ruby-constant">Gem</span><span class="ruby-operator">::</span><span class="ruby-constant">Platform</span><span class="ruby-operator">::</span><span class="ruby-constant">RUBY</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">name</span> = <span class="ruby-constant">PKG_NAME</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">summary</span> = <span class="ruby-string">&quot;Service layer for easy email delivery and testing.&quot;</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">description</span> = <span class="ruby-string">%q{Makes it trivial to test and deliver emails sent from a single service layer.}</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">version</span> = <span class="ruby-constant">PKG_VERSION</span>
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">author</span> = <span class="ruby-string">&quot;David Heinemeier Hansson&quot;</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">email</span> = <span class="ruby-string">&quot;david@loudthinking.com&quot;</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">rubyforge_project</span> = <span class="ruby-string">&quot;actionmailer&quot;</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">homepage</span> = <span class="ruby-string">&quot;http://www.rubyonrails.org&quot;</span>
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">'actionpack'</span>, <span class="ruby-string">'= 1.13.6'</span> <span class="ruby-operator">+</span> <span class="ruby-constant">PKG_BUILD</span>)
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">has_rdoc</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">requirements</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'none'</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">require_path</span> = <span class="ruby-string">'lib'</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">autorequire</span> = <span class="ruby-string">'action_mailer'</span>
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">files</span> = [ <span class="ruby-string">&quot;Rakefile&quot;</span>, <span class="ruby-string">&quot;install.rb&quot;</span>, <span class="ruby-string">&quot;README&quot;</span>, <span class="ruby-string">&quot;CHANGELOG&quot;</span>, <span class="ruby-string">&quot;MIT-LICENSE&quot;</span> ]
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">files</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">files</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>( <span class="ruby-string">&quot;lib/   *&quot;</span> ).<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">include?</span>( <span class="ruby-string">&quot;\.svn&quot;</span> ) }
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">files</span> = <span class="ruby-identifier">s</span>.<span class="ruby-identifier">files</span> <span class="ruby-operator">+</span> <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>( <span class="ruby-string">&quot;test/   *&quot;</span> ).<span class="ruby-identifier">delete_if</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">item</span><span class="ruby-operator">|</span> <span class="ruby-identifier">item</span>.<span class="ruby-identifier">include?</span>( <span class="ruby-string">&quot;\.svn&quot;</span> ) }
+</pre>
+
+<p>end</p>
+
+<p>Rake::GemPackageTask.new(spec) do |p|</p>
+
+<pre>p.gem_spec = spec
+p.need_tar = true
+p.need_zip = true</pre>
+
+<p>end</p>
+
+<p>desc “Publish the API documentation” task :pgem =&gt; [:package] do</p>
+
+<pre>Rake::SshFilePublisher.new(&quot;davidhh@wrath.rubyonrails.org&quot;, &quot;public_html/gems/gems&quot;, &quot;pkg&quot;, &quot;#{PKG_FILE_NAME}.gem&quot;).upload</pre>
+
+<p>end</p>
+
+<p>desc “Publish the API documentation” task :pdoc =&gt; [:rdoc] do</p>
+
+<pre>Rake::SshDirPublisher.new(&quot;davidhh@wrath.rubyonrails.org&quot;, &quot;public_html/am&quot;, &quot;doc&quot;).upload</pre>
+
+<p>end</p>
+
+<p>desc “Publish the release files to RubyForge.” task :release =&gt; [
+:package ] do</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'rubyforge'</span>
+
+<span class="ruby-identifier">packages</span> = <span class="ruby-node">%w( gem tgz zip )</span>.<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">ext</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;pkg/#{PKG_NAME}-#{PKG_VERSION}.#{ext}&quot;</span> }
+
+<span class="ruby-identifier">rubyforge</span> = <span class="ruby-constant">RubyForge</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">rubyforge</span>.<span class="ruby-identifier">login</span>
+<span class="ruby-identifier">rubyforge</span>.<span class="ruby-identifier">add_release</span>(<span class="ruby-constant">PKG_NAME</span>, <span class="ruby-constant">PKG_NAME</span>, <span class="ruby-node">&quot;REL #{PKG_VERSION}&quot;</span>, *<span class="ruby-identifier">packages</span>)
+</pre>
+
+<p>end</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

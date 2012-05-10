@@ -1,0 +1,571 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PaginationTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PaginationTest 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="ActiveRecordTestCase.html">ActiveRecordTestCase</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/activerecord/pagination_test_rb.html">rails/actionpack/test/activerecord/pagination_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="PaginationTest/PaginationController.html">PaginationTest::PaginationController</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_paginate_with_class_name">test_paginate_with_class_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_paginate_with_conditions">test_paginate_with_conditions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_paginate_with_include_and_order">test_paginate_with_include_and_order</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_paginate_with_join_and_conditions">test_paginate_with_join_and_conditions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_paginate_with_join_and_count">test_paginate_with_join_and_count</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_paginate_with_joins">test_paginate_with_joins</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_paginate_with_order">test_paginate_with_order</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_paginate_with_order_by">test_paginate_with_order_by</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_paginate_with_per_page">test_paginate_with_per_page</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_simple_paginate">test_simple_paginate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/pagination_test.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">PaginationController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@request</span>    = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@response</span>   = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_paginate_with_class_name">
+            
+              <a name="method-i-test_paginate_with_class_name"></a><b>test_paginate_with_class_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_paginate_with_class_name_source')" id="l_method-i-test_paginate_with_class_name_source">show</a>
+                
+              </p>
+              <div id="method-i-test_paginate_with_class_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/pagination_test.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_paginate_with_class_name</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_class_name</span>
+  
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:developers</span>).<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">DeVeLoPeR</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:developers</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">class</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_paginate_with_conditions">
+            
+              <a name="method-i-test_paginate_with_conditions"></a><b>test_paginate_with_conditions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_paginate_with_conditions_source')" id="l_method-i-test_paginate_with_conditions_source">show</a>
+                
+              </p>
+              <div id="method-i-test_paginate_with_conditions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/pagination_test.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_paginate_with_conditions</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_conditions</span>
+  <span class="ruby-identifier">expected</span> = [<span class="ruby-identifier">topics</span>(<span class="ruby-value">:rails</span>)]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topics</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topic_pages</span>).<span class="ruby-identifier">page_count</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_paginate_with_include_and_order">
+            
+              <a name="method-i-test_paginate_with_include_and_order"></a><b>test_paginate_with_include_and_order</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_paginate_with_include_and_order_source')" id="l_method-i-test_paginate_with_include_and_order_source">show</a>
+                
+              </p>
+              <div id="method-i-test_paginate_with_include_and_order_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/pagination_test.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_paginate_with_include_and_order</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_include_and_order</span>
+  <span class="ruby-identifier">expected</span> = <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'replies'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'replies.created_at asc, topics.created_at asc'</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">10</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topics</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_paginate_with_join_and_conditions">
+            
+              <a name="method-i-test_paginate_with_join_and_conditions"></a><b>test_paginate_with_join_and_conditions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_paginate_with_join_and_conditions_source')" id="l_method-i-test_paginate_with_join_and_conditions_source">show</a>
+                
+              </p>
+              <div id="method-i-test_paginate_with_join_and_conditions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/pagination_test.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_paginate_with_join_and_conditions</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_joins</span>
+  <span class="ruby-identifier">expected</span> = <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:developers</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_join</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:developers</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_paginate_with_join_and_count">
+            
+              <a name="method-i-test_paginate_with_join_and_count"></a><b>test_paginate_with_join_and_count</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_paginate_with_join_and_count_source')" id="l_method-i-test_paginate_with_join_and_count_source">show</a>
+                
+              </p>
+              <div id="method-i-test_paginate_with_join_and_count_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/pagination_test.rb, line 153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_paginate_with_join_and_count</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_joins</span>
+  <span class="ruby-identifier">expected</span> = <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:developers</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_join_and_count</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:developers</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_paginate_with_joins">
+            
+              <a name="method-i-test_paginate_with_joins"></a><b>test_paginate_with_joins</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_paginate_with_joins_source')" id="l_method-i-test_paginate_with_joins_source">show</a>
+                
+              </p>
+              <div id="method-i-test_paginate_with_joins_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/pagination_test.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_paginate_with_joins</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_joins</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:developers</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">developer_names</span> = <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:developers</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">name</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">developer_names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'David'</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">developer_names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'Jamis'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_paginate_with_order">
+            
+              <a name="method-i-test_paginate_with_order"></a><b>test_paginate_with_order</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_paginate_with_order_source')" id="l_method-i-test_paginate_with_order_source">show</a>
+                
+              </p>
+              <div id="method-i-test_paginate_with_order_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/pagination_test.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_paginate_with_order</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_order</span>
+  <span class="ruby-identifier">expected</span> = [<span class="ruby-identifier">topics</span>(<span class="ruby-value">:futurama</span>),
+             <span class="ruby-identifier">topics</span>(<span class="ruby-value">:harvey_birdman</span>),
+             <span class="ruby-identifier">topics</span>(<span class="ruby-value">:rails</span>)]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topics</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topic_pages</span>).<span class="ruby-identifier">page_count</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_paginate_with_order_by">
+            
+              <a name="method-i-test_paginate_with_order_by"></a><b>test_paginate_with_order_by</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_paginate_with_order_by_source')" id="l_method-i-test_paginate_with_order_by_source">show</a>
+                
+              </p>
+              <div id="method-i-test_paginate_with_order_by_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/pagination_test.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_paginate_with_order_by</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_order</span>
+  <span class="ruby-identifier">expected</span> = <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topics</span>)
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_order_by</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topics</span>)  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topic_pages</span>).<span class="ruby-identifier">page_count</span>    
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_paginate_with_per_page">
+            
+              <a name="method-i-test_paginate_with_per_page"></a><b>test_paginate_with_per_page</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_paginate_with_per_page_source')" id="l_method-i-test_paginate_with_per_page_source">show</a>
+                
+              </p>
+              <div id="method-i-test_paginate_with_per_page_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/pagination_test.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_paginate_with_per_page</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:paginate_with_per_page</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topics</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topic_pages</span>).<span class="ruby-identifier">page_count</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_simple_paginate">
+            
+              <a name="method-i-test_simple_paginate"></a><b>test_simple_paginate</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Single Action Pagination Tests</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_simple_paginate_source')" id="l_method-i-test_simple_paginate_source">show</a>
+                
+              </p>
+              <div id="method-i-test_simple_paginate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/pagination_test.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_simple_paginate</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:simple_paginate</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topic_pages</span>).<span class="ruby-identifier">page_count</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">assigns</span>(<span class="ruby-value">:topics</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

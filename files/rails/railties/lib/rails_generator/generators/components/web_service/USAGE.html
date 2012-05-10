@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>USAGE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            USAGE
+        </h1>
+        <ul class="files">
+            <li>rails/railties/lib/rails_generator/generators/components/web_service/USAGE</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Description:</p>
+
+<pre class="ruby"><span class="ruby-constant">The</span> <span class="ruby-identifier">web</span> <span class="ruby-identifier">service</span> <span class="ruby-identifier">generator</span> <span class="ruby-identifier">creates</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">controller</span> <span class="ruby-keyword">and</span> <span class="ruby-constant">API</span> <span class="ruby-identifier">definition</span> <span class="ruby-keyword">for</span> 
+<span class="ruby-identifier">a</span> <span class="ruby-identifier">web</span> <span class="ruby-identifier">service</span>.
+
+<span class="ruby-constant">The</span> <span class="ruby-identifier">generator</span> <span class="ruby-identifier">takes</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">web</span> <span class="ruby-identifier">service</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">list</span> <span class="ruby-identifier">of</span> <span class="ruby-constant">API</span> <span class="ruby-identifier">methods</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">arguments</span>.
+<span class="ruby-constant">The</span> <span class="ruby-identifier">web</span> <span class="ruby-identifier">service</span> <span class="ruby-identifier">name</span> <span class="ruby-identifier">may</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">given</span> <span class="ruby-keyword">in</span> <span class="ruby-constant">CamelCase</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">under_score</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">should</span>
+<span class="ruby-identifier">contain</span> <span class="ruby-identifier">no</span> <span class="ruby-identifier">extra</span> <span class="ruby-identifier">suffixes</span>.  <span class="ruby-constant">To</span> <span class="ruby-identifier">create</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">web</span> <span class="ruby-identifier">service</span> <span class="ruby-identifier">within</span> <span class="ruby-identifier">a</span>
+<span class="ruby-keyword">module</span>, <span class="ruby-identifier">specify</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">web</span> <span class="ruby-identifier">service</span> <span class="ruby-identifier">name</span> <span class="ruby-identifier">as</span> <span class="ruby-string">'module/webservice'</span>.
+
+<span class="ruby-constant">The</span> <span class="ruby-identifier">generator</span> <span class="ruby-identifier">creates</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">controller</span> <span class="ruby-keyword">class</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">app</span><span class="ruby-operator">/</span><span class="ruby-identifier">controllers</span>, <span class="ruby-identifier">an</span> <span class="ruby-constant">API</span> <span class="ruby-identifier">definition</span>
+<span class="ruby-keyword">in</span> <span class="ruby-identifier">app</span><span class="ruby-operator">/</span><span class="ruby-identifier">apis</span>, <span class="ruby-keyword">and</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">functional</span> <span class="ruby-identifier">test</span> <span class="ruby-identifier">suite</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">test</span><span class="ruby-operator">/</span><span class="ruby-identifier">functional</span>.
+</pre>
+
+<p>Example:</p>
+
+<pre>./script/generate web_service User add edit list remove
+
+User web service.
+    Controller: app/controllers/user_controller.rb
+    API:        app/apis/user_api.rb
+    Test:       test/functional/user_api_test.rb</pre>
+
+<p>Modules Example:</p>
+
+<pre>./script/generate web_service 'api/registration' register renew
+
+Registration web service.
+    Controller: app/controllers/api/registration_controller.rb
+    API:        app/apis/api/registration_api.rb
+    Test:       test/functional/api/registration_api_test.rb</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

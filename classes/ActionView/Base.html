@@ -1,0 +1,504 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionView::Base</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActionView::Base 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionpack/lib/action_view/base_rb.html">rails/actionpack/lib/action_view/base.rb</a></li>
+            
+            <li><a href="../../files/rails/actionpack/lib/action_view/helpers/active_record_helper_rb.html">rails/actionpack/lib/action_view/helpers/active_record_helper.rb</a></li>
+            
+            <li><a href="../../files/rails/actionpack/lib/action_view/helpers/form_helper_rb.html">rails/actionpack/lib/action_view/helpers/form_helper.rb</a></li>
+            
+            <li><a href="../../files/rails/actionpack/test/template/compiled_templates_test_rb.html">rails/actionpack/test/template/compiled_templates_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Action View templates can be written in three ways. If the template file
+has a <code>.rhtml</code> extension then it uses a mixture of ERb 
+(included in Ruby) and <a href="../HTML.html">HTML</a>. If the template
+file has a <code>.rxml</code> extension then Jim Weirich’s <a
+href="../Builder/XmlMarkup.html">Builder::XmlMarkup</a> library is used. 
+If the template file has a <code>.rjs</code> extension then it will use <a
+href="Helpers/PrototypeHelper/JavaScriptGenerator.html">ActionView::Helpers::PrototypeHelper::JavaScriptGenerator</a>.</p>
+
+<h1 id="label-ERb">ERb</h1>
+
+<p>You trigger ERb by using embeddings such as &lt;% %&gt;, &lt;% -%&gt;, and
+&lt;%= %&gt;. The &lt;%= %&gt; tag set is used when you want output.
+Consider the  following loop for names:</p>
+
+<pre>&lt;b&gt;Names of all the people&lt;/b&gt;
+&lt;% for person in @people %&gt;
+  Name: &lt;%= person.name %&gt;&lt;br/&gt;
+&lt;% end %&gt;</pre>
+
+<p>The loop is setup in regular embedding tags &lt;% %&gt; and the name is
+written using the output embedding tag &lt;%= %&gt;. Note that this is not
+just a usage suggestion. Regular output functions like print or puts won’t
+work with ERb templates. So this would be wrong:</p>
+
+<pre>Hi, Mr. &lt;% puts &quot;Frodo&quot; %&gt;</pre>
+
+<p>If you absolutely must write from within a function, you can use the
+TextHelper#concat</p>
+
+<p>&lt;%- and -%&gt; suppress leading and trailing whitespace, including the
+trailing newline, and can be used interchangeably with &lt;% and %&gt;.</p>
+
+<h2 id="label-Using+sub+templates">Using sub templates</h2>
+
+<p>Using sub templates allows you to sidestep tedious replication and extract
+common display structures in shared templates. The classic example is the
+use of a header and footer (even though the Action Pack-way would be to use
+Layouts):</p>
+
+<pre>&lt;%= render &quot;shared/header&quot; %&gt;
+Something really specific and terrific
+&lt;%= render &quot;shared/footer&quot; %&gt;</pre>
+
+<p>As you see, we use the output embeddings for the render methods. The render
+call itself will just return a string holding the result of the rendering.
+The output embedding writes it to the current template.</p>
+
+<p>But you don’t have to restrict yourself to static includes. Templates can
+share variables amongst themselves by using instance variables defined
+using the regular embedding tags. Like this:</p>
+
+<pre>&lt;% @page_title = &quot;A Wonderful Hello&quot; %&gt;
+&lt;%= render &quot;shared/header&quot; %&gt;</pre>
+
+<p>Now the header can pick up on the @page_title variable and use it for
+outputting a title tag:</p>
+
+<pre>&lt;title&gt;&lt;%= @page_title %&gt;&lt;/title&gt;</pre>
+
+<h2 id="label-Passing+local+variables+to+sub+templates">Passing local variables to sub templates</h2>
+
+<p>You can pass local variables to sub templates by using a hash with the
+variable names as keys and the objects as values:</p>
+
+<pre>&lt;%= render &quot;shared/header&quot;, { :headline =&gt; &quot;Welcome&quot;, :person =&gt; person } %&gt;</pre>
+
+<p>These can now be accessed in shared/header with:</p>
+
+<pre>Headline: &lt;%= headline %&gt;
+First name: &lt;%= person.first_name %&gt;</pre>
+
+<p>If you need to find out whether a certain local variable has been assigned
+a value in a particular render call, you need to use the following pattern:</p>
+
+<pre>&lt;% if local_assigns.has_key? :headline %&gt;
+  Headline: &lt;%= headline %&gt;
+&lt;% end %&gt;</pre>
+
+<p>Testing using <code>defined? headline</code> will not work. This is an
+implementation restriction.</p>
+
+<h2 id="label-Template+caching">Template caching</h2>
+
+<p>By default, <a href="../Rails.html">Rails</a> will compile each template to
+a method in order to render it. When you alter a template, <a
+href="../Rails.html">Rails</a> will check the file’s modification time and
+recompile it.</p>
+
+<h2 id="label-Builder"><a href="../Builder.html">Builder</a></h2>
+
+<p><a href="../Builder.html">Builder</a> templates are a more programmatic
+alternative to ERb. They are especially useful for generating XML content.
+An <code>XmlMarkup</code> object  named <code>xml</code> is automatically
+made available to templates with a <code>.rxml</code> extension.</p>
+
+<p>Here are some basic examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">xml</span>.<span class="ruby-identifier">em</span>(<span class="ruby-string">&quot;emphasized&quot;</span>)                              <span class="ruby-comment"># =&gt; &lt;em&gt;emphasized&lt;/em&gt;</span>
+<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">em</span> { <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">b</span>(<span class="ruby-string">&quot;emp &amp; bold&quot;</span>) }                    <span class="ruby-comment"># =&gt; &lt;em&gt;&lt;b&gt;emph &amp;amp; bold&lt;/b&gt;&lt;/em&gt;</span>
+<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">a</span>(<span class="ruby-string">&quot;A Link&quot;</span>, <span class="ruby-string">&quot;href&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;http://onestepback.org&quot;</span>) <span class="ruby-comment"># =&gt; &lt;a href=&quot;http://onestepback.org&quot;&gt;A Link&lt;/a&gt;</span>
+<span class="ruby-identifier">xml</span>.<span class="ruby-identifier">target</span>(<span class="ruby-string">&quot;name&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;compile&quot;</span>, <span class="ruby-string">&quot;option&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;fast&quot;</span>)   <span class="ruby-comment"># =&gt; &lt;target option=&quot;fast&quot; name=&quot;compile&quot;\&gt;</span>
+                                                  <span class="ruby-comment"># NOTE: order of attributes is not specified.</span>
+</pre>
+
+<p>Any method with a block will be treated as an XML markup tag with nested
+markup in the block. For example, the following:</p>
+
+<pre>xml.div {
+  xml.h1(@person.name)
+  xml.p(@person.bio)
+}</pre>
+
+<p>would produce something like:</p>
+
+<pre>&lt;div&gt;
+  &lt;h1&gt;David Heinemeier Hansson&lt;/h1&gt;
+  &lt;p&gt;A product of Danish Design during the Winter of '79...&lt;/p&gt;
+&lt;/div&gt;</pre>
+
+<p><a href="../A.html">A</a> full-length RSS example actually used on
+Basecamp:</p>
+
+<pre class="ruby"><span class="ruby-identifier">xml</span>.<span class="ruby-identifier">rss</span>(<span class="ruby-string">&quot;version&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;2.0&quot;</span>, <span class="ruby-string">&quot;xmlns:dc&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;http://purl.org/dc/elements/1.1/&quot;</span>) <span class="ruby-keyword">do</span>
+  <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">channel</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">title</span>(<span class="ruby-ivar">@feed_title</span>)
+    <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">link</span>(<span class="ruby-ivar">@url</span>)
+    <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">description</span> <span class="ruby-string">&quot;Basecamp: Recent items&quot;</span>
+    <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">language</span> <span class="ruby-string">&quot;en-us&quot;</span>
+    <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">ttl</span> <span class="ruby-string">&quot;40&quot;</span>
+
+    <span class="ruby-keyword">for</span> <span class="ruby-identifier">item</span> <span class="ruby-keyword">in</span> <span class="ruby-ivar">@recent_items</span>
+      <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">item</span> <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">title</span>(<span class="ruby-identifier">item_title</span>(<span class="ruby-identifier">item</span>))
+        <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">description</span>(<span class="ruby-identifier">item_description</span>(<span class="ruby-identifier">item</span>)) <span class="ruby-keyword">if</span> <span class="ruby-identifier">item_description</span>(<span class="ruby-identifier">item</span>)
+        <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">pubDate</span>(<span class="ruby-identifier">item_pubDate</span>(<span class="ruby-identifier">item</span>))
+        <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">guid</span>(<span class="ruby-ivar">@person</span>.<span class="ruby-identifier">firm</span>.<span class="ruby-identifier">account</span>.<span class="ruby-identifier">url</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@recent_items</span>.<span class="ruby-identifier">url</span>(<span class="ruby-identifier">item</span>))
+        <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">link</span>(<span class="ruby-ivar">@person</span>.<span class="ruby-identifier">firm</span>.<span class="ruby-identifier">account</span>.<span class="ruby-identifier">url</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@recent_items</span>.<span class="ruby-identifier">url</span>(<span class="ruby-identifier">item</span>))
+
+        <span class="ruby-identifier">xml</span>.<span class="ruby-identifier">tag!</span>(<span class="ruby-string">&quot;dc:creator&quot;</span>, <span class="ruby-identifier">item</span>.<span class="ruby-identifier">author_name</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">item_has_creator?</span>(<span class="ruby-identifier">item</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>More builder documentation can be found at <a
+href="http://builder.rubyforge.org.">builder.rubyforge.org.</a></p>
+
+<h2 id="label-JavaScriptGenerator">JavaScriptGenerator</h2>
+
+<p>JavaScriptGenerator templates end in <code>.rjs</code>. Unlike conventional
+templates which are used to  render the results of an action, these
+templates generate instructions on how to modify an already rendered page.
+This makes it easy to  modify multiple elements on your page in one
+declarative Ajax response. Actions with these templates are called in the
+background with Ajax  and make updates to the page where the request
+originated from.</p>
+
+<p>An instance of the JavaScriptGenerator object named <code>page</code> is
+automatically made available to your template, which is implicitly wrapped
+in an <a
+href="Helpers/PrototypeHelper.html#method-i-update_page">ActionView::Helpers::PrototypeHelper#update_page</a>
+block.</p>
+
+<p>When an .rjs action is called with <code>link_to_remote</code>, the
+generated JavaScript is automatically evaluated.  Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">link_to_remote</span> :<span class="ruby-identifier">url</span> =<span class="ruby-operator">&gt;</span> {:<span class="ruby-identifier">action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'delete'</span>}
+</pre>
+
+<p>The subsequently rendered <code>delete.rjs</code> might look like:</p>
+
+<pre class="ruby"><span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span>  <span class="ruby-string">'sidebar'</span>, :<span class="ruby-identifier">partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'sidebar'</span>
+<span class="ruby-identifier">page</span>.<span class="ruby-identifier">remove</span>        <span class="ruby-node">&quot;person-#{@person.id}&quot;</span>
+<span class="ruby-identifier">page</span>.<span class="ruby-identifier">visual_effect</span> :<span class="ruby-identifier">highlight</span>, <span class="ruby-string">'user-list'</span>
+</pre>
+
+<p>This refreshes the sidebar, removes a person element and highlights the
+user list.</p>
+
+<p>See the ActionView::Helpers::PrototypeHelper::GeneratorMethods
+documentation for more details.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-compile_time">compile_time</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_names">method_names</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-register_template_handler">register_template_handler</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            ERB::Util
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>assigns</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>base_path</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>controller</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>first_render</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>headers</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>logger</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>response</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>template_extension</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-register_template_handler">
+            
+              <a name="method-c-register_template_handler"></a><b>register_template_handler</b>(extension, klass)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Register a class that knows how to handle template files with the given
+extension. This can be used to implement new template types. The
+constructor for the class must take the ActiveView::Base instance as a
+parameter, and the class must implement a render method that takes the
+contents of the template to render as well as the Hash of local assigns
+available to the template. The render method ought to return the rendered
+template as a string.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-register_template_handler_source')" id="l_method-c-register_template_handler_source">show</a>
+                
+              </p>
+              <div id="method-c-register_template_handler_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/base.rb, line 226</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">register_template_handler</span>(<span class="ruby-identifier">extension</span>, <span class="ruby-identifier">klass</span>)
+  <span class="ruby-identifier">@@template_handlers</span>[<span class="ruby-identifier">extension</span>] = <span class="ruby-identifier">klass</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-compile_time">
+            
+              <a name="method-i-compile_time"></a><b>compile_time</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-compile_time_source')" id="l_method-i-compile_time_source">show</a>
+                
+              </p>
+              <div id="method-i-compile_time_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/compiled_templates_test.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">compile_time</span>
+  <span class="ruby-identifier">@@compile_time</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-method_names">
+            
+              <a name="method-i-method_names"></a><b>method_names</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_names_source')" id="l_method-i-method_names_source">show</a>
+                
+              </p>
+              <div id="method-i-method_names_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/compiled_templates_test.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_names</span>
+  <span class="ruby-identifier">@@method_names</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,2324 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>EagerAssociationTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            EagerAssociationTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/test/associations/eager_test_rb.html">rails/activerecord/test/associations/eager_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-assert_equal_after_sort">assert_equal_after_sort</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-find_all_ordered">find_all_ordered</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_count_eager_with_has_many_and_limit_ond_high_offset">test_count_eager_with_has_many_and_limit_ond_high_offset</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_count_with_include">test_count_with_include</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_belongs_to">test_eager_association_loading_with_belongs_to</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_belongs_to_and_limit">test_eager_association_loading_with_belongs_to_and_limit</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_belongs_to_and_limit_and_conditions">test_eager_association_loading_with_belongs_to_and_limit_and_conditions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_belongs_to_and_limit_and_multiple_associations">test_eager_association_loading_with_belongs_to_and_limit_and_multiple_associations</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset">test_eager_association_loading_with_belongs_to_and_limit_and_offset</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions">test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_array">test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_array</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_multiple_associations">test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_multiple_associations</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_habtm">test_eager_association_loading_with_habtm</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_count_performed_on_a_has_many_association_with_multi_table_conditional">test_eager_count_performed_on_a_has_many_association_with_multi_table_conditional</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_habtm_with_association_inheritance">test_eager_habtm_with_association_inheritance</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_has_many_with_association_inheritance">test_eager_has_many_with_association_inheritance</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_has_one_with_association_inheritance">test_eager_has_one_with_association_inheritance</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_and_belongs_to_many_and_limit">test_eager_with_has_and_belongs_to_many_and_limit</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_and_limit">test_eager_with_has_many_and_limit</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_and_limit_and_conditions">test_eager_with_has_many_and_limit_and_conditions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_and_limit_and_conditions_array">test_eager_with_has_many_and_limit_and_conditions_array</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_and_limit_and_conditions_array_on_the_eagers">test_eager_with_has_many_and_limit_and_conditions_array_on_the_eagers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_and_limit_and_conditions_on_the_eagers">test_eager_with_has_many_and_limit_and_conditions_on_the_eagers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_and_limit_and_scoped_and_explicit_conditions_on_the_eagers">test_eager_with_has_many_and_limit_and_scoped_and_explicit_conditions_on_the_eagers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_and_limit_and_scoped_conditions_on_the_eagers">test_eager_with_has_many_and_limit_and_scoped_conditions_on_the_eagers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_and_limit_ond_high_offset">test_eager_with_has_many_and_limit_ond_high_offset</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_and_limit_with_no_results">test_eager_with_has_many_and_limit_with_no_results</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_through">test_eager_with_has_many_through</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_through_an_sti_join_model">test_eager_with_has_many_through_an_sti_join_model</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_through_an_sti_join_model_with_conditions_on_both">test_eager_with_has_many_through_an_sti_join_model_with_conditions_on_both</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_many_through_join_model_with_conditions">test_eager_with_has_many_through_join_model_with_conditions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_has_one_dependent_does_not_destroy_dependent">test_eager_with_has_one_dependent_does_not_destroy_dependent</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_inheritance">test_eager_with_inheritance</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_invalid_association_reference">test_eager_with_invalid_association_reference</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_multi_table_conditional_properly_counts_the_records_when_using_size">test_eager_with_multi_table_conditional_properly_counts_the_records_when_using_size</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_multiple_associations_with_same_table_belongs_to">test_eager_with_multiple_associations_with_same_table_belongs_to</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_multiple_associations_with_same_table_has_many_and_habtm">test_eager_with_multiple_associations_with_same_table_has_many_and_habtm</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_multiple_associations_with_same_table_has_one">test_eager_with_multiple_associations_with_same_table_has_one</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_with_valid_association_as_string_not_symbol">test_eager_with_valid_association_as_string_not_symbol</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_limited_eager_with_multiple_order_columns">test_limited_eager_with_multiple_order_columns</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_limited_eager_with_order">test_limited_eager_with_order</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_loading_conditions_with_or">test_loading_conditions_with_or</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_loading_from_an_association">test_loading_from_an_association</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_loading_with_multiple_associations">test_loading_with_multiple_associations</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_loading_with_no_associations">test_loading_with_no_associations</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_loading_with_one_association">test_loading_with_one_association</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_preconfigured_includes_with_belongs_to">test_preconfigured_includes_with_belongs_to</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_preconfigured_includes_with_habtm">test_preconfigured_includes_with_habtm</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_preconfigured_includes_with_has_many">test_preconfigured_includes_with_has_many</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_preconfigured_includes_with_has_many_and_habtm">test_preconfigured_includes_with_has_many_and_habtm</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_preconfigured_includes_with_has_one">test_preconfigured_includes_with_has_one</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_with_ordering">test_with_ordering</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_equal_after_sort">
+            
+              <a name="method-i-assert_equal_after_sort"></a><b>assert_equal_after_sort</b>(item1, item2, item3 = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_equal_after_sort_source')" id="l_method-i-assert_equal_after_sort_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_equal_after_sort_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 319</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_equal_after_sort</span>(<span class="ruby-identifier">item1</span>, <span class="ruby-identifier">item2</span>, <span class="ruby-identifier">item3</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">item1</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">id</span>}, <span class="ruby-identifier">item2</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">id</span>})
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">item3</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">id</span>}, <span class="ruby-identifier">item2</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">id</span>}) <span class="ruby-keyword">if</span> <span class="ruby-identifier">item3</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-find_all_ordered">
+            
+              <a name="method-i-find_all_ordered"></a><b>find_all_ordered</b>(className, include=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-find_all_ordered_source')" id="l_method-i-find_all_ordered_source">show</a>
+                
+              </p>
+              <div id="method-i-find_all_ordered_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 303</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">find_all_ordered</span>(<span class="ruby-identifier">className</span>, <span class="ruby-identifier">include</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">className</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order=</span><span class="ruby-operator">&gt;</span><span class="ruby-node">&quot;#{className.table_name}.#{className.primary_key}&quot;</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span><span class="ruby-identifier">include</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_count_eager_with_has_many_and_limit_ond_high_offset">
+            
+              <a name="method-i-test_count_eager_with_has_many_and_limit_ond_high_offset"></a><b>test_count_eager_with_has_many_and_limit_ond_high_offset</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_count_eager_with_has_many_and_limit_ond_high_offset_source')" id="l_method-i-test_count_eager_with_has_many_and_limit_ond_high_offset_source">show</a>
+                
+              </p>
+              <div id="method-i-test_count_eager_with_has_many_and_limit_ond_high_offset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 162</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_count_eager_with_has_many_and_limit_ond_high_offset</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">count</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span> ], <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:offset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">10</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-string">&quot;authors.name = ?&quot;</span>, <span class="ruby-string">'David'</span> ])
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">posts</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_count_with_include">
+            
+              <a name="method-i-test_count_with_include"></a><b>test_count_with_include</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_count_with_include_source')" id="l_method-i-test_count_with_include_source">show</a>
+                
+              </p>
+              <div id="method-i-test_count_with_include_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 399</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_count_with_include</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SQLServerAdapter</span>, <span class="ruby-value">:SybaseAdapter</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">posts_with_comments</span>.<span class="ruby-identifier">count</span>(<span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;len(comments.body) &gt; 15&quot;</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">posts_with_comments</span>.<span class="ruby-identifier">count</span>(<span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;length(comments.body) &gt; 15&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_belongs_to">
+            
+              <a name="method-i-test_eager_association_loading_with_belongs_to"></a><b>test_eager_association_loading_with_belongs_to</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_belongs_to_source')" id="l_method-i-test_eager_association_loading_with_belongs_to_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_belongs_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_belongs_to</span>
+  <span class="ruby-identifier">comments</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">10</span>, <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">titles</span> = <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">post</span>.<span class="ruby-identifier">title</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">titles</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">posts</span>(<span class="ruby-value">:welcome</span>).<span class="ruby-identifier">title</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">titles</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">posts</span>(<span class="ruby-value">:sti_post_and_comments</span>).<span class="ruby-identifier">title</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_belongs_to_and_limit">
+            
+              <a name="method-i-test_eager_association_loading_with_belongs_to_and_limit"></a><b>test_eager_association_loading_with_belongs_to_and_limit</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_belongs_to_and_limit_source')" id="l_method-i-test_eager_association_loading_with_belongs_to_and_limit_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_belongs_to_and_limit_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_belongs_to_and_limit</span>
+  <span class="ruby-identifier">comments</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">5</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'comments.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-number">1</span>,<span class="ruby-number">2</span>,<span class="ruby-number">3</span>,<span class="ruby-number">5</span>,<span class="ruby-number">6</span>], <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">id</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_conditions">
+            
+              <a name="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_conditions"></a><b>test_eager_association_loading_with_belongs_to_and_limit_and_conditions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_belongs_to_and_limit_and_conditions_source')" id="l_method-i-test_eager_association_loading_with_belongs_to_and_limit_and_conditions_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_conditions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_belongs_to_and_limit_and_conditions</span>
+  <span class="ruby-identifier">comments</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'post_id = 4'</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">3</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'comments.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-number">5</span>,<span class="ruby-number">6</span>,<span class="ruby-number">7</span>], <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">id</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_multiple_associations">
+            
+              <a name="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_multiple_associations"></a><b>test_eager_association_loading_with_belongs_to_and_limit_and_multiple_associations</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_belongs_to_and_limit_and_multiple_associations_source')" id="l_method-i-test_eager_association_loading_with_belongs_to_and_limit_and_multiple_associations_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_multiple_associations_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_belongs_to_and_limit_and_multiple_associations</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">:author</span>, <span class="ruby-value">:very_special_comment</span>], <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'posts.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-number">1</span>], <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">id</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset">
+            
+              <a name="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset"></a><b>test_eager_association_loading_with_belongs_to_and_limit_and_offset</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_source')" id="l_method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_belongs_to_and_limit_and_offset</span>
+  <span class="ruby-identifier">comments</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">3</span>, <span class="ruby-value">:offset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'comments.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-number">3</span>,<span class="ruby-number">5</span>,<span class="ruby-number">6</span>], <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">id</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions">
+            
+              <a name="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions"></a><b>test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_source')" id="l_method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions</span>
+  <span class="ruby-identifier">comments</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'post_id = 4'</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">3</span>, <span class="ruby-value">:offset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'comments.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-number">6</span>,<span class="ruby-number">7</span>,<span class="ruby-number">8</span>], <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">id</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_array">
+            
+              <a name="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_array"></a><b>test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_array</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_array_source')" id="l_method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_array_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_array_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_conditions_array</span>
+  <span class="ruby-identifier">comments</span> = <span class="ruby-constant">Comment</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">'post_id = ?'</span>,<span class="ruby-number">4</span>], <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">3</span>, <span class="ruby-value">:offset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'comments.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-number">6</span>,<span class="ruby-number">7</span>,<span class="ruby-number">8</span>], <span class="ruby-identifier">comments</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">id</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_multiple_associations">
+            
+              <a name="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_multiple_associations"></a><b>test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_multiple_associations</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_multiple_associations_source')" id="l_method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_multiple_associations_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_multiple_associations_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_belongs_to_and_limit_and_offset_and_multiple_associations</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">:author</span>, <span class="ruby-value">:very_special_comment</span>], <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>, <span class="ruby-value">:offset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'posts.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-number">2</span>], <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">id</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_habtm">
+            
+              <a name="method-i-test_eager_association_loading_with_habtm"></a><b>test_eager_association_loading_with_habtm</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_habtm_source')" id="l_method-i-test_eager_association_loading_with_habtm_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_habtm_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_habtm</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:categories</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;posts.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">posts</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">posts</span>[<span class="ruby-number">2</span>].<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">posts</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">categories</span>(<span class="ruby-value">:technology</span>))
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">posts</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">categories</span>(<span class="ruby-value">:general</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_count_performed_on_a_has_many_association_with_multi_table_conditional">
+            
+              <a name="method-i-test_eager_count_performed_on_a_has_many_association_with_multi_table_conditional"></a><b>test_eager_count_performed_on_a_has_many_association_with_multi_table_conditional</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_count_performed_on_a_has_many_association_with_multi_table_conditional_source')" id="l_method-i-test_eager_count_performed_on_a_has_many_association_with_multi_table_conditional_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_count_performed_on_a_has_many_association_with_multi_table_conditional_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_count_performed_on_a_has_many_association_with_multi_table_conditional</span>
+  <span class="ruby-identifier">author</span> = <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>)
+  <span class="ruby-identifier">author_posts_without_comments</span> = <span class="ruby-identifier">author</span>.<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">post</span><span class="ruby-operator">|</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">blank?</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">author_posts_without_comments</span>.<span class="ruby-identifier">size</span>, <span class="ruby-identifier">author</span>.<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">count</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:comments</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'comments.id is null'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_habtm_with_association_inheritance">
+            
+              <a name="method-i-test_eager_habtm_with_association_inheritance"></a><b>test_eager_habtm_with_association_inheritance</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_habtm_with_association_inheritance_source')" id="l_method-i-test_eager_habtm_with_association_inheritance_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_habtm_with_association_inheritance_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_habtm_with_association_inheritance</span>
+  <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">6</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:special_categories</span> ])
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">post</span>.<span class="ruby-identifier">special_categories</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">post</span>.<span class="ruby-identifier">special_categories</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">special_category</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;SpecialCategory&quot;</span>, <span class="ruby-identifier">special_category</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_has_many_with_association_inheritance">
+            
+              <a name="method-i-test_eager_has_many_with_association_inheritance"></a><b>test_eager_has_many_with_association_inheritance</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_has_many_with_association_inheritance_source')" id="l_method-i-test_eager_has_many_with_association_inheritance_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_has_many_with_association_inheritance_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_has_many_with_association_inheritance</span>
+  <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:special_comments</span> ])
+  <span class="ruby-identifier">post</span>.<span class="ruby-identifier">special_comments</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">special_comment</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;SpecialComment&quot;</span>, <span class="ruby-identifier">special_comment</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_has_one_with_association_inheritance">
+            
+              <a name="method-i-test_eager_has_one_with_association_inheritance"></a><b>test_eager_has_one_with_association_inheritance</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_has_one_with_association_inheritance_source')" id="l_method-i-test_eager_has_one_with_association_inheritance_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_has_one_with_association_inheritance_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_has_one_with_association_inheritance</span>
+  <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">4</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:very_special_comment</span> ])
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;VerySpecialComment&quot;</span>, <span class="ruby-identifier">post</span>.<span class="ruby-identifier">very_special_comment</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_and_belongs_to_many_and_limit">
+            
+              <a name="method-i-test_eager_with_has_and_belongs_to_many_and_limit"></a><b>test_eager_with_has_and_belongs_to_many_and_limit</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_and_belongs_to_many_and_limit_source')" id="l_method-i-test_eager_with_has_and_belongs_to_many_and_limit_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_and_belongs_to_many_and_limit_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_and_belongs_to_many_and_limit</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:categories</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;posts.id&quot;</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">3</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">posts</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">posts</span>[<span class="ruby-number">2</span>].<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">posts</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">categories</span>(<span class="ruby-value">:technology</span>))
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">posts</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">categories</span>(<span class="ruby-value">:general</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_and_limit">
+            
+              <a name="method-i-test_eager_with_has_many_and_limit"></a><b>test_eager_with_has_many_and_limit</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_and_limit_source')" id="l_method-i-test_eager_with_has_many_and_limit_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_and_limit_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_and_limit</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'posts.id asc'</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span> ], <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-number">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>, <span class="ruby-identifier">post</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">size</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_and_limit_and_conditions">
+            
+              <a name="method-i-test_eager_with_has_many_and_limit_and_conditions"></a><b>test_eager_with_has_many_and_limit_and_conditions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_and_limit_and_conditions_source')" id="l_method-i-test_eager_with_has_many_and_limit_and_conditions_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_and_limit_and_conditions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_and_limit_and_conditions</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span> ], <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;posts.body = 'hello'&quot;</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;posts.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-number">4</span>,<span class="ruby-number">5</span>], <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">id</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_and_limit_and_conditions_array">
+            
+              <a name="method-i-test_eager_with_has_many_and_limit_and_conditions_array"></a><b>test_eager_with_has_many_and_limit_and_conditions_array</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_and_limit_and_conditions_array_source')" id="l_method-i-test_eager_with_has_many_and_limit_and_conditions_array_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_and_limit_and_conditions_array_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 143</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_and_limit_and_conditions_array</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span> ], <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-string">&quot;posts.body = ?&quot;</span>, <span class="ruby-string">'hello'</span> ], <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;posts.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-number">4</span>,<span class="ruby-number">5</span>], <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">id</span> }    
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_and_limit_and_conditions_array_on_the_eagers">
+            
+              <a name="method-i-test_eager_with_has_many_and_limit_and_conditions_array_on_the_eagers"></a><b>test_eager_with_has_many_and_limit_and_conditions_array_on_the_eagers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_and_limit_and_conditions_array_on_the_eagers_source')" id="l_method-i-test_eager_with_has_many_and_limit_and_conditions_array_on_the_eagers_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_and_limit_and_conditions_array_on_the_eagers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 149</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_and_limit_and_conditions_array_on_the_eagers</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span> ], <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-string">&quot;authors.name = ?&quot;</span>, <span class="ruby-string">'David'</span> ])
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  
+  <span class="ruby-identifier">count</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">count</span>(<span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span> ], <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-string">&quot;authors.name = ?&quot;</span>, <span class="ruby-string">'David'</span> ])
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">count</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_and_limit_and_conditions_on_the_eagers">
+            
+              <a name="method-i-test_eager_with_has_many_and_limit_and_conditions_on_the_eagers"></a><b>test_eager_with_has_many_and_limit_and_conditions_on_the_eagers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_and_limit_and_conditions_on_the_eagers_source')" id="l_method-i-test_eager_with_has_many_and_limit_and_conditions_on_the_eagers_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_and_limit_and_conditions_on_the_eagers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_and_limit_and_conditions_on_the_eagers</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, 
+    <span class="ruby-value">:include</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:comments</span>, 
+    <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;comments.body like 'Normal%' OR comments.#{QUOTED_TYPE}= 'SpecialComment'&quot;</span>,
+    <span class="ruby-value">:limit</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>
+  )
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  
+  <span class="ruby-identifier">count</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">count</span>(
+    <span class="ruby-value">:include</span>    =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:comments</span>, <span class="ruby-value">:author</span> ], 
+    <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;authors.name = 'David' AND (comments.body like 'Normal%' OR comments.#{QUOTED_TYPE}= 'SpecialComment')&quot;</span>,
+    <span class="ruby-value">:limit</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>
+  )
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">count</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_and_limit_and_scoped_and_explicit_conditions_on_the_eagers">
+            
+              <a name="method-i-test_eager_with_has_many_and_limit_and_scoped_and_explicit_conditions_on_the_eagers"></a><b>test_eager_with_has_many_and_limit_and_scoped_and_explicit_conditions_on_the_eagers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_and_limit_and_scoped_and_explicit_conditions_on_the_eagers_source')" id="l_method-i-test_eager_with_has_many_and_limit_and_scoped_and_explicit_conditions_on_the_eagers_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_and_limit_and_scoped_and_explicit_conditions_on_the_eagers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 223</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_and_limit_and_scoped_and_explicit_conditions_on_the_eagers</span>
+  <span class="ruby-constant">Post</span>.<span class="ruby-identifier">with_scope</span>(<span class="ruby-value">:find</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;1=1&quot;</span> }) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">posts</span> = <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, 
+      <span class="ruby-value">:include</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:comments</span>, 
+      <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;comments.body like 'Normal%' OR comments.#{QUOTED_TYPE}= 'SpecialComment'&quot;</span>,
+      <span class="ruby-value">:limit</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>
+    )
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+    
+    <span class="ruby-identifier">count</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">count</span>(
+      <span class="ruby-value">:include</span>    =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:comments</span>, <span class="ruby-value">:author</span> ], 
+      <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;authors.name = 'David' AND (comments.body like 'Normal%' OR comments.#{QUOTED_TYPE}= 'SpecialComment')&quot;</span>,
+      <span class="ruby-value">:limit</span>      =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>
+    )
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">count</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_and_limit_and_scoped_conditions_on_the_eagers">
+            
+              <a name="method-i-test_eager_with_has_many_and_limit_and_scoped_conditions_on_the_eagers"></a><b>test_eager_with_has_many_and_limit_and_scoped_conditions_on_the_eagers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_and_limit_and_scoped_conditions_on_the_eagers_source')" id="l_method-i-test_eager_with_has_many_and_limit_and_scoped_conditions_on_the_eagers_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_and_limit_and_scoped_conditions_on_the_eagers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_and_limit_and_scoped_conditions_on_the_eagers</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Post</span>.<span class="ruby-identifier">with_scope</span>(<span class="ruby-value">:find</span> =<span class="ruby-operator">&gt;</span> {
+    <span class="ruby-value">:include</span>    =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:comments</span>, 
+    <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;comments.body like 'Normal%' OR comments.#{QUOTED_TYPE}= 'SpecialComment'&quot;</span>
+  }) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">posts</span> = <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-constant">Post</span>.<span class="ruby-identifier">with_scope</span>(<span class="ruby-value">:find</span> =<span class="ruby-operator">&gt;</span> {
+    <span class="ruby-value">:include</span>    =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:comments</span>, <span class="ruby-value">:author</span> ], 
+    <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;authors.name = 'David' AND (comments.body like 'Normal%' OR comments.#{QUOTED_TYPE}= 'SpecialComment')&quot;</span>
+  }) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">count</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">count</span>(<span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">count</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_and_limit_ond_high_offset">
+            
+              <a name="method-i-test_eager_with_has_many_and_limit_ond_high_offset"></a><b>test_eager_with_has_many_and_limit_ond_high_offset</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_and_limit_ond_high_offset_source')" id="l_method-i-test_eager_with_has_many_and_limit_ond_high_offset_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_and_limit_ond_high_offset_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_and_limit_ond_high_offset</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span> ], <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:offset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">10</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-string">&quot;authors.name = ?&quot;</span>, <span class="ruby-string">'David'</span> ])
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_and_limit_with_no_results">
+            
+              <a name="method-i-test_eager_with_has_many_and_limit_with_no_results"></a><b>test_eager_with_has_many_and_limit_with_no_results</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_and_limit_with_no_results_source')" id="l_method-i-test_eager_with_has_many_and_limit_with_no_results_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_and_limit_with_no_results_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_and_limit_with_no_results</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span> ], <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;posts.title = 'magic forest'&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_through">
+            
+              <a name="method-i-test_eager_with_has_many_through"></a><b>test_eager_with_has_many_through</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_through_source')" id="l_method-i-test_eager_with_has_many_through_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_through_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_through</span>
+  <span class="ruby-identifier">posts_with_comments</span> = <span class="ruby-identifier">people</span>(<span class="ruby-value">:michael</span>).<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:comments</span>)
+  <span class="ruby-identifier">posts_with_author</span> = <span class="ruby-identifier">people</span>(<span class="ruby-value">:michael</span>).<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:author</span> )
+  <span class="ruby-identifier">posts_with_comments_and_author</span> = <span class="ruby-identifier">people</span>(<span class="ruby-value">:michael</span>).<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:comments</span>, <span class="ruby-value">:author</span> ])
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts_with_comments</span>.<span class="ruby-identifier">inject</span>(<span class="ruby-number">0</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>, <span class="ruby-identifier">post</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">size</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>), <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">posts_with_author</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">author</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>), <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">posts_with_comments_and_author</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">author</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_through_an_sti_join_model">
+            
+              <a name="method-i-test_eager_with_has_many_through_an_sti_join_model"></a><b>test_eager_with_has_many_through_an_sti_join_model</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_through_an_sti_join_model_source')" id="l_method-i-test_eager_with_has_many_through_an_sti_join_model_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_through_an_sti_join_model_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_through_an_sti_join_model</span>
+  <span class="ruby-identifier">author</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:special_post_comments</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'authors.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">comments</span>(<span class="ruby-value">:does_it_hurt</span>)], <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">author</span>.<span class="ruby-identifier">special_post_comments</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_through_an_sti_join_model_with_conditions_on_both">
+            
+              <a name="method-i-test_eager_with_has_many_through_an_sti_join_model_with_conditions_on_both"></a><b>test_eager_with_has_many_through_an_sti_join_model_with_conditions_on_both</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_through_an_sti_join_model_with_conditions_on_both_source')" id="l_method-i-test_eager_with_has_many_through_an_sti_join_model_with_conditions_on_both_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_through_an_sti_join_model_with_conditions_on_both_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_through_an_sti_join_model_with_conditions_on_both</span>
+  <span class="ruby-identifier">author</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:special_nonexistant_post_comments</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'authors.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> [], <span class="ruby-identifier">author</span>.<span class="ruby-identifier">special_nonexistant_post_comments</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_many_through_join_model_with_conditions">
+            
+              <a name="method-i-test_eager_with_has_many_through_join_model_with_conditions"></a><b>test_eager_with_has_many_through_join_model_with_conditions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_many_through_join_model_with_conditions_source')" id="l_method-i-test_eager_with_has_many_through_join_model_with_conditions_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_many_through_join_model_with_conditions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_many_through_join_model_with_conditions</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:hello_post_comments</span>,
+                           <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'authors.id'</span>).<span class="ruby-identifier">hello_post_comments</span>.<span class="ruby-identifier">sort_by</span>(&amp;<span class="ruby-value">:id</span>),
+               <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'authors.id'</span>).<span class="ruby-identifier">hello_post_comments</span>.<span class="ruby-identifier">sort_by</span>(&amp;<span class="ruby-value">:id</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_has_one_dependent_does_not_destroy_dependent">
+            
+              <a name="method-i-test_eager_with_has_one_dependent_does_not_destroy_dependent"></a><b>test_eager_with_has_one_dependent_does_not_destroy_dependent</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_has_one_dependent_does_not_destroy_dependent_source')" id="l_method-i-test_eager_with_has_one_dependent_does_not_destroy_dependent_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_has_one_dependent_does_not_destroy_dependent_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_has_one_dependent_does_not_destroy_dependent</span>
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">companies</span>(<span class="ruby-value">:first_firm</span>).<span class="ruby-identifier">account</span>
+  <span class="ruby-identifier">f</span> = <span class="ruby-constant">Firm</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:account</span>,
+          <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;companies.name = ?&quot;</span>, <span class="ruby-string">&quot;37signals&quot;</span>])
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">account</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">companies</span>(<span class="ruby-value">:first_firm</span>, <span class="ruby-value">:reload</span>).<span class="ruby-identifier">account</span>, <span class="ruby-identifier">f</span>.<span class="ruby-identifier">account</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_inheritance">
+            
+              <a name="method-i-test_eager_with_inheritance"></a><b>test_eager_with_inheritance</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_inheritance_source')" id="l_method-i-test_eager_with_inheritance_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_inheritance_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_inheritance</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">SpecialPost</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:comments</span> ])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_invalid_association_reference">
+            
+              <a name="method-i-test_eager_with_invalid_association_reference"></a><b>test_eager_with_invalid_association_reference</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_invalid_association_reference_source')" id="l_method-i-test_eager_with_invalid_association_reference_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_invalid_association_reference_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_invalid_association_reference</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConfigurationError</span>, <span class="ruby-string">&quot;Association was not found; perhaps you misspelled it?  You specified :include =&gt; :monkeys&quot;</span>) {
+    <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">6</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span> <span class="ruby-value">:monkeys</span> )
+  }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConfigurationError</span>, <span class="ruby-string">&quot;Association was not found; perhaps you misspelled it?  You specified :include =&gt; :monkeys&quot;</span>) {
+    <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">6</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>[ <span class="ruby-value">:monkeys</span> ])
+  }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConfigurationError</span>, <span class="ruby-string">&quot;Association was not found; perhaps you misspelled it?  You specified :include =&gt; :monkeys&quot;</span>) {
+    <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">6</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>[ <span class="ruby-string">'monkeys'</span> ])
+  }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConfigurationError</span>, <span class="ruby-string">&quot;Association was not found; perhaps you misspelled it?  You specified :include =&gt; :monkeys, :elephants&quot;</span>) {
+    <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">6</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>[ <span class="ruby-value">:monkeys</span>, <span class="ruby-value">:elephants</span> ])
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_multi_table_conditional_properly_counts_the_records_when_using_size">
+            
+              <a name="method-i-test_eager_with_multi_table_conditional_properly_counts_the_records_when_using_size"></a><b>test_eager_with_multi_table_conditional_properly_counts_the_records_when_using_size</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_multi_table_conditional_properly_counts_the_records_when_using_size_source')" id="l_method-i-test_eager_with_multi_table_conditional_properly_counts_the_records_when_using_size_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_multi_table_conditional_properly_counts_the_records_when_using_size_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 281</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_multi_table_conditional_properly_counts_the_records_when_using_size</span>
+  <span class="ruby-identifier">author</span> = <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>)
+  <span class="ruby-identifier">posts_with_no_comments</span> = <span class="ruby-identifier">author</span>.<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">post</span><span class="ruby-operator">|</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">blank?</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">posts_with_no_comments</span>.<span class="ruby-identifier">size</span>, <span class="ruby-identifier">author</span>.<span class="ruby-identifier">posts_with_no_comments</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">posts_with_no_comments</span>, <span class="ruby-identifier">author</span>.<span class="ruby-identifier">posts_with_no_comments</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_multiple_associations_with_same_table_belongs_to">
+            
+              <a name="method-i-test_eager_with_multiple_associations_with_same_table_belongs_to"></a><b>test_eager_with_multiple_associations_with_same_table_belongs_to</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_multiple_associations_with_same_table_belongs_to_source')" id="l_method-i-test_eager_with_multiple_associations_with_same_table_belongs_to_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_multiple_associations_with_same_table_belongs_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 354</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_multiple_associations_with_same_table_belongs_to</span>
+  <span class="ruby-identifier">firm_types</span> = [<span class="ruby-value">:firm</span>, <span class="ruby-value">:firm_with_basic_id</span>, <span class="ruby-value">:firm_with_other_name</span>, <span class="ruby-value">:firm_with_condition</span>]
+  <span class="ruby-identifier">d1</span> = <span class="ruby-identifier">find_all_ordered</span>(<span class="ruby-constant">Client</span>)
+  <span class="ruby-identifier">d2</span> = <span class="ruby-identifier">find_all_ordered</span>(<span class="ruby-constant">Client</span>, <span class="ruby-identifier">firm_types</span>)
+  <span class="ruby-identifier">d1</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> 
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">d1</span>[<span class="ruby-identifier">i</span>], <span class="ruby-identifier">d2</span>[<span class="ruby-identifier">i</span>])
+    <span class="ruby-identifier">firm_types</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">type</span><span class="ruby-operator">|</span> <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">d1</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">send</span>(<span class="ruby-identifier">type</span>), <span class="ruby-identifier">d2</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">send</span>(<span class="ruby-identifier">type</span>)) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_multiple_associations_with_same_table_has_many_and_habtm">
+            
+              <a name="method-i-test_eager_with_multiple_associations_with_same_table_has_many_and_habtm"></a><b>test_eager_with_multiple_associations_with_same_table_has_many_and_habtm</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_multiple_associations_with_same_table_has_many_and_habtm_source')" id="l_method-i-test_eager_with_multiple_associations_with_same_table_has_many_and_habtm_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_multiple_associations_with_same_table_has_many_and_habtm_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 317</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_multiple_associations_with_same_table_has_many_and_habtm</span>
+  <span class="ruby-comment"># Eager includes of has many and habtm associations aren't necessarily sorted in the same way</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_equal_after_sort</span>(<span class="ruby-identifier">item1</span>, <span class="ruby-identifier">item2</span>, <span class="ruby-identifier">item3</span> = <span class="ruby-keyword">nil</span>)
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">item1</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">id</span>}, <span class="ruby-identifier">item2</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">id</span>})
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">item3</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">id</span>}, <span class="ruby-identifier">item2</span>.<span class="ruby-identifier">sort</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">a</span>,<span class="ruby-identifier">b</span><span class="ruby-operator">|</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">id</span>}) <span class="ruby-keyword">if</span> <span class="ruby-identifier">item3</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># Test regular association, association with conditions, association with</span>
+  <span class="ruby-comment"># STI, and association with conditions assured not to be true</span>
+  <span class="ruby-identifier">post_types</span> = [<span class="ruby-value">:posts</span>, <span class="ruby-value">:other_posts</span>, <span class="ruby-value">:special_posts</span>]
+  <span class="ruby-comment"># test both has_many and has_and_belongs_to_many</span>
+  [<span class="ruby-constant">Author</span>, <span class="ruby-constant">Category</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">className</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">d1</span> = <span class="ruby-identifier">find_all_ordered</span>(<span class="ruby-identifier">className</span>)
+    <span class="ruby-comment"># test including all post types at once</span>
+    <span class="ruby-identifier">d2</span> = <span class="ruby-identifier">find_all_ordered</span>(<span class="ruby-identifier">className</span>, <span class="ruby-identifier">post_types</span>) 
+    <span class="ruby-identifier">d1</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> 
+      <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">d1</span>[<span class="ruby-identifier">i</span>], <span class="ruby-identifier">d2</span>[<span class="ruby-identifier">i</span>])
+      <span class="ruby-identifier">assert_equal_after_sort</span>(<span class="ruby-identifier">d1</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">posts</span>, <span class="ruby-identifier">d2</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">posts</span>)
+      <span class="ruby-identifier">post_types</span>[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">post_type</span><span class="ruby-operator">|</span>
+        <span class="ruby-comment"># test including post_types together</span>
+        <span class="ruby-identifier">d3</span> = <span class="ruby-identifier">find_all_ordered</span>(<span class="ruby-identifier">className</span>, [<span class="ruby-value">:posts</span>, <span class="ruby-identifier">post_type</span>])
+        <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">d1</span>[<span class="ruby-identifier">i</span>], <span class="ruby-identifier">d3</span>[<span class="ruby-identifier">i</span>])
+        <span class="ruby-identifier">assert_equal_after_sort</span>(<span class="ruby-identifier">d1</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">posts</span>, <span class="ruby-identifier">d3</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">posts</span>)
+        <span class="ruby-identifier">assert_equal_after_sort</span>(<span class="ruby-identifier">d1</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">send</span>(<span class="ruby-identifier">post_type</span>), <span class="ruby-identifier">d2</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">send</span>(<span class="ruby-identifier">post_type</span>), <span class="ruby-identifier">d3</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">send</span>(<span class="ruby-identifier">post_type</span>))
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_multiple_associations_with_same_table_has_one">
+            
+              <a name="method-i-test_eager_with_multiple_associations_with_same_table_has_one"></a><b>test_eager_with_multiple_associations_with_same_table_has_one</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_multiple_associations_with_same_table_has_one_source')" id="l_method-i-test_eager_with_multiple_associations_with_same_table_has_one_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_multiple_associations_with_same_table_has_one_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 345</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_multiple_associations_with_same_table_has_one</span>
+  <span class="ruby-identifier">d1</span> = <span class="ruby-identifier">find_all_ordered</span>(<span class="ruby-constant">Firm</span>)
+  <span class="ruby-identifier">d2</span> = <span class="ruby-identifier">find_all_ordered</span>(<span class="ruby-constant">Firm</span>, <span class="ruby-value">:account</span>)
+  <span class="ruby-identifier">d1</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> 
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">d1</span>[<span class="ruby-identifier">i</span>], <span class="ruby-identifier">d2</span>[<span class="ruby-identifier">i</span>])
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">d1</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">account</span>, <span class="ruby-identifier">d2</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">account</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_with_valid_association_as_string_not_symbol">
+            
+              <a name="method-i-test_eager_with_valid_association_as_string_not_symbol"></a><b>test_eager_with_valid_association_as_string_not_symbol</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_with_valid_association_as_string_not_symbol_source')" id="l_method-i-test_eager_with_valid_association_as_string_not_symbol_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_with_valid_association_as_string_not_symbol_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 363</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_with_valid_association_as_string_not_symbol</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'comments'</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_limited_eager_with_multiple_order_columns">
+            
+              <a name="method-i-test_limited_eager_with_multiple_order_columns"></a><b>test_limited_eager_with_multiple_order_columns</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_limited_eager_with_multiple_order_columns_source')" id="l_method-i-test_limited_eager_with_multiple_order_columns_source">show</a>
+                
+              </p>
+              <div id="method-i-test_limited_eager_with_multiple_order_columns_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 312</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_limited_eager_with_multiple_order_columns</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">posts</span>(<span class="ruby-value">:thinking</span>), <span class="ruby-identifier">posts</span>(<span class="ruby-value">:sti_comments</span>)], <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span>], <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;authors.name = 'David'&quot;</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'UPPER(posts.title), posts.id'</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:offset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>)
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">posts</span>(<span class="ruby-value">:sti_post_and_comments</span>), <span class="ruby-identifier">posts</span>(<span class="ruby-value">:sti_comments</span>)], <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span>], <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;authors.name = 'David'&quot;</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'UPPER(posts.title) DESC, posts.id'</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:offset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_limited_eager_with_order">
+            
+              <a name="method-i-test_limited_eager_with_order"></a><b>test_limited_eager_with_order</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_limited_eager_with_order_source')" id="l_method-i-test_limited_eager_with_order_source">show</a>
+                
+              </p>
+              <div id="method-i-test_limited_eager_with_order_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 307</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_limited_eager_with_order</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">posts</span>(<span class="ruby-value">:thinking</span>), <span class="ruby-identifier">posts</span>(<span class="ruby-value">:sti_comments</span>)], <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span>], <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;authors.name = 'David'&quot;</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'UPPER(posts.title)'</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:offset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>)
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">posts</span>(<span class="ruby-value">:sti_post_and_comments</span>), <span class="ruby-identifier">posts</span>(<span class="ruby-value">:sti_comments</span>)], <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-value">:author</span>, <span class="ruby-value">:comments</span>], <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;authors.name = 'David'&quot;</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'UPPER(posts.title) DESC'</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:offset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_loading_conditions_with_or">
+            
+              <a name="method-i-test_loading_conditions_with_or"></a><b>test_loading_conditions_with_or</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_loading_conditions_with_or_source')" id="l_method-i-test_loading_conditions_with_or_source">show</a>
+                
+              </p>
+              <div id="method-i-test_loading_conditions_with_or_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_loading_conditions_with_or</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:comments</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;comments.body like 'Normal%' OR comments.#{QUOTED_TYPE} = 'SpecialComment'&quot;</span>)
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">author_id</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">id</span> },
+    <span class="ruby-string">&quot;expected to find only david's posts&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_loading_from_an_association">
+            
+              <a name="method-i-test_loading_from_an_association"></a><b>test_loading_from_an_association</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_loading_from_an_association_source')" id="l_method-i-test_loading_from_an_association_source">show</a>
+                
+              </p>
+              <div id="method-i-test_loading_from_an_association_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_loading_from_an_association</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:comments</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;posts.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_loading_with_multiple_associations">
+            
+              <a name="method-i-test_loading_with_multiple_associations"></a><b>test_loading_with_multiple_associations</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_loading_with_multiple_associations_source')" id="l_method-i-test_loading_with_multiple_associations_source">show</a>
+                
+              </p>
+              <div id="method-i-test_loading_with_multiple_associations_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_loading_with_multiple_associations</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:comments</span>, <span class="ruby-value">:author</span>, <span class="ruby-value">:categories</span> ], <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;posts.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">comments</span>(<span class="ruby-value">:greetings</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_loading_with_no_associations">
+            
+              <a name="method-i-test_loading_with_no_associations"></a><b>test_loading_with_no_associations</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_loading_with_no_associations_source')" id="l_method-i-test_loading_with_no_associations_source">show</a>
+                
+              </p>
+              <div id="method-i-test_loading_with_no_associations_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_loading_with_no_associations</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">posts</span>(<span class="ruby-value">:authorless</span>).<span class="ruby-identifier">id</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:author</span>).<span class="ruby-identifier">author</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_loading_with_one_association">
+            
+              <a name="method-i-test_loading_with_one_association"></a><b>test_loading_with_one_association</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_loading_with_one_association_source')" id="l_method-i-test_loading_with_one_association_source">show</a>
+                
+              </p>
+              <div id="method-i-test_loading_with_one_association_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_loading_with_one_association</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:comments</span>)
+  <span class="ruby-identifier">post</span> = <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">post</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">comments</span>(<span class="ruby-value">:greetings</span>))
+
+  <span class="ruby-identifier">post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:comments</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;posts.title = 'Welcome to the weblog'&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">post</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">comments</span>(<span class="ruby-value">:greetings</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_preconfigured_includes_with_belongs_to">
+            
+              <a name="method-i-test_preconfigured_includes_with_belongs_to"></a><b>test_preconfigured_includes_with_belongs_to</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_preconfigured_includes_with_belongs_to_source')" id="l_method-i-test_preconfigured_includes_with_belongs_to_source">show</a>
+                
+              </p>
+              <div id="method-i-test_preconfigured_includes_with_belongs_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 367</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_preconfigured_includes_with_belongs_to</span>
+  <span class="ruby-identifier">author</span> = <span class="ruby-identifier">posts</span>(<span class="ruby-value">:welcome</span>).<span class="ruby-identifier">author_with_posts</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">author</span>.<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_preconfigured_includes_with_habtm">
+            
+              <a name="method-i-test_preconfigured_includes_with_habtm"></a><b>test_preconfigured_includes_with_habtm</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_preconfigured_includes_with_habtm_source')" id="l_method-i-test_preconfigured_includes_with_habtm_source">show</a>
+                
+              </p>
+              <div id="method-i-test_preconfigured_includes_with_habtm_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 384</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_preconfigured_includes_with_habtm</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">posts_with_categories</span>
+  <span class="ruby-identifier">one</span> = <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">one</span>.<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_preconfigured_includes_with_has_many">
+            
+              <a name="method-i-test_preconfigured_includes_with_has_many"></a><b>test_preconfigured_includes_with_has_many</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_preconfigured_includes_with_has_many_source')" id="l_method-i-test_preconfigured_includes_with_has_many_source">show</a>
+                
+              </p>
+              <div id="method-i-test_preconfigured_includes_with_has_many_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 377</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_preconfigured_includes_with_has_many</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">posts_with_comments</span>
+  <span class="ruby-identifier">one</span> = <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">one</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_preconfigured_includes_with_has_many_and_habtm">
+            
+              <a name="method-i-test_preconfigured_includes_with_has_many_and_habtm"></a><b>test_preconfigured_includes_with_has_many_and_habtm</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_preconfigured_includes_with_has_many_and_habtm_source')" id="l_method-i-test_preconfigured_includes_with_has_many_and_habtm_source">show</a>
+                
+              </p>
+              <div id="method-i-test_preconfigured_includes_with_has_many_and_habtm_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 391</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_preconfigured_includes_with_has_many_and_habtm</span>
+  <span class="ruby-identifier">posts</span> = <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">posts_with_comments_and_categories</span>
+  <span class="ruby-identifier">one</span> = <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">id</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">one</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">one</span>.<span class="ruby-identifier">categories</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_preconfigured_includes_with_has_one">
+            
+              <a name="method-i-test_preconfigured_includes_with_has_one"></a><b>test_preconfigured_includes_with_has_one</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_preconfigured_includes_with_has_one_source')" id="l_method-i-test_preconfigured_includes_with_has_one_source">show</a>
+                
+              </p>
+              <div id="method-i-test_preconfigured_includes_with_has_one_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 372</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_preconfigured_includes_with_has_one</span>
+  <span class="ruby-identifier">comment</span> = <span class="ruby-identifier">posts</span>(<span class="ruby-value">:sti_comments</span>).<span class="ruby-identifier">very_special_comment_with_post</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">posts</span>(<span class="ruby-value">:sti_comments</span>), <span class="ruby-identifier">comment</span>.<span class="ruby-identifier">post</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_with_ordering">
+            
+              <a name="method-i-test_with_ordering"></a><b>test_with_ordering</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_with_ordering_source')" id="l_method-i-test_with_ordering_source">show</a>
+                
+              </p>
+              <div id="method-i-test_with_ordering_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/eager_test.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_with_ordering</span>
+  <span class="ruby-identifier">list</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:comments</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;posts.id DESC&quot;</span>)
+  [<span class="ruby-value">:eager_other</span>, <span class="ruby-value">:sti_habtm</span>, <span class="ruby-value">:sti_post_and_comments</span>, <span class="ruby-value">:sti_comments</span>,
+   <span class="ruby-value">:authorless</span>, <span class="ruby-value">:thinking</span>, <span class="ruby-value">:welcome</span>
+  ].<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">post</span>, <span class="ruby-identifier">index</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">posts</span>(<span class="ruby-identifier">post</span>), <span class="ruby-identifier">list</span>[<span class="ruby-identifier">index</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

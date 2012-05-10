@@ -1,0 +1,192 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::Acts::Tree::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActiveRecord::Acts::Tree::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/rails/activerecord/lib/active_record/acts/tree_rb.html">rails/activerecord/lib/active_record/acts/tree.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Specify this act if you want to model a tree structure by providing a
+parent association and a children association. This act requires that you
+have a foreign key column, which by default is called parent_id.</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Category</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">acts_as_tree</span> :<span class="ruby-identifier">order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;name&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-constant">Example</span><span class="ruby-operator">:</span>
+<span class="ruby-identifier">root</span>
+ \<span class="ruby-identifier">_</span> <span class="ruby-identifier">child1</span>
+      \<span class="ruby-identifier">_</span> <span class="ruby-identifier">subchild1</span>
+      \<span class="ruby-identifier">_</span> <span class="ruby-identifier">subchild2</span>
+
+<span class="ruby-identifier">root</span>      = <span class="ruby-constant">Category</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;root&quot;</span>)
+<span class="ruby-identifier">child1</span>    = <span class="ruby-identifier">root</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;child1&quot;</span>)
+<span class="ruby-identifier">subchild1</span> = <span class="ruby-identifier">child1</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;subchild1&quot;</span>)
+
+<span class="ruby-identifier">root</span>.<span class="ruby-identifier">parent</span>   <span class="ruby-comment"># =&gt; nil</span>
+<span class="ruby-identifier">child1</span>.<span class="ruby-identifier">parent</span> <span class="ruby-comment"># =&gt; root</span>
+<span class="ruby-identifier">root</span>.<span class="ruby-identifier">children</span> <span class="ruby-comment"># =&gt; [child1]</span>
+<span class="ruby-identifier">root</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">first</span> <span class="ruby-comment"># =&gt; subchild1</span>
+</pre>
+
+<p>In addition to the parent and children associations, the following instance
+methods are added to the class after specifying the act:</p>
+<ul><li>
+<p>siblings          : Returns all the children of the parent, excluding the
+current node ([ subchild2 ] when called from subchild1)</p>
+</li><li>
+<p>self_and_siblings : Returns all the children of the parent, including the
+current node ([ subchild1, subchild2 ] when called from subchild1)</p>
+</li><li>
+<p>ancestors         : Returns all the ancestors of the current node ([child1,
+root] when called from subchild2)</p>
+</li><li>
+<p>root              : Returns the root of the current node (root when called
+from subchild2)</p>
+</li></ul>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-acts_as_tree">acts_as_tree</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-acts_as_tree">
+            
+              <a name="method-i-acts_as_tree"></a><b>acts_as_tree</b>(options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Configuration options are:</p>
+<ul><li>
+<p><code>foreign_key</code> - specifies the column name to use for tracking of
+the tree (default: parent_id)</p>
+</li><li>
+<p><code>order</code> - makes it possible to sort the children according to
+this SQL snippet.</p>
+</li><li>
+<p><code>counter_cache</code> - keeps a count in a children_count column if
+set to true (default: false).</p>
+</li></ul>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-acts_as_tree_source')" id="l_method-i-acts_as_tree_source">show</a>
+                
+              </p>
+              <div id="method-i-acts_as_tree_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/acts/tree.rb, line 42</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">acts_as_tree</span>(<span class="ruby-identifier">options</span> = {})
+          <span class="ruby-identifier">configuration</span> = { <span class="ruby-value">:foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;parent_id&quot;</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:counter_cache</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span> }
+          <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+
+          <span class="ruby-identifier">belongs_to</span> <span class="ruby-value">:parent</span>, <span class="ruby-value">:class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">:foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-value">:foreign_key</span>], <span class="ruby-value">:counter_cache</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-value">:counter_cache</span>]
+          <span class="ruby-identifier">has_many</span> <span class="ruby-value">:children</span>, <span class="ruby-value">:class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">name</span>, <span class="ruby-value">:foreign_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-value">:foreign_key</span>], <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-value">:order</span>], <span class="ruby-value">:dependent</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:destroy</span>
+
+          <span class="ruby-identifier">class_eval</span> <span class="ruby-string">&quot;            include ActiveRecord::Acts::Tree::InstanceMethods
+
+            def self.roots
+              find(:all, :conditions =&gt; &quot;#{configuration[:foreign_key]} IS NULL&quot;, :order =&gt; #{configuration[:order].nil? ? &quot;nil&quot; : %Q{&quot;#{configuration[:order]}&quot;}})
+            end
+
+            def self.root
+              find(:first, :conditions =&gt; &quot;#{configuration[:foreign_key]} IS NULL&quot;, :order =&gt; #{configuration[:order].nil? ? &quot;nil&quot; : %Q{&quot;#{configuration[:order]}&quot;}})
+            end
+&quot;</span>
+        <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

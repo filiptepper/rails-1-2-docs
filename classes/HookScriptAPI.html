@@ -1,0 +1,560 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>HookScriptAPI</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            HookScriptAPI 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionwebservice/setup_rb.html">rails/actionwebservice/setup.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-config">config</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-curr_objdir">curr_objdir</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-curr_srcdir">curr_srcdir</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-get_config">get_config</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set_config">set_config</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-srcdirectories">srcdirectories</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-srcdirectory-3F">srcdirectory?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-srcentries">srcentries</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-srcexist-3F">srcexist?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-srcfile">srcfile</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-srcfile-3F">srcfile?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-srcfiles">srcfiles</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-config">
+            
+              <a name="method-i-config"></a><b>config</b>(key)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-curr_objdir">
+            
+              <a name="method-i-curr_objdir"></a><b>curr_objdir</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-curr_objdir_source')" id="l_method-i-curr_objdir_source">show</a>
+                
+              </p>
+              <div id="method-i-curr_objdir_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 636</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">curr_objdir</span>
+  <span class="ruby-node">&quot;#{objdir_root()}/#{relpath()}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-curr_srcdir">
+            
+              <a name="method-i-curr_srcdir"></a><b>curr_srcdir</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>abstract srcdir_root abstract objdir_root abstract relpath</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-curr_srcdir_source')" id="l_method-i-curr_srcdir_source">show</a>
+                
+              </p>
+              <div id="method-i-curr_srcdir_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 632</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">curr_srcdir</span>
+  <span class="ruby-node">&quot;#{srcdir_root()}/#{relpath()}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-get_config">
+            
+              <a name="method-i-get_config"></a><b>get_config</b>(key)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="HookScriptAPI.html#method-i-config">config</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-get_config_source')" id="l_method-i-get_config_source">show</a>
+                
+              </p>
+              <div id="method-i-get_config_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 614</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get_config</span>(<span class="ruby-identifier">key</span>)
+  <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">key</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_config">
+            
+              <a name="method-i-set_config"></a><b>set_config</b>(key, val)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_config_source')" id="l_method-i-set_config_source">show</a>
+                
+              </p>
+              <div id="method-i-set_config_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 620</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_config</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">val</span>)
+  <span class="ruby-ivar">@config</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">val</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-srcdirectories">
+            
+              <a name="method-i-srcdirectories"></a><b>srcdirectories</b>(path = '.')
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-srcdirectories_source')" id="l_method-i-srcdirectories_source">show</a>
+                
+              </p>
+              <div id="method-i-srcdirectories_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 668</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">srcdirectories</span>(<span class="ruby-identifier">path</span> = <span class="ruby-string">'.'</span>)
+  <span class="ruby-identifier">srcentries</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">fname</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">dir?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">curr_srcdir</span>(), <span class="ruby-identifier">path</span>, <span class="ruby-identifier">fname</span>))
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-srcdirectory-3F">
+            
+              <a name="method-i-srcdirectory-3F"></a><b>srcdirectory?</b>(path)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-srcdirectory-3F_source')" id="l_method-i-srcdirectory-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-srcdirectory-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 648</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">srcdirectory?</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">dir?</span>(<span class="ruby-identifier">srcfile</span>(<span class="ruby-identifier">path</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-srcentries">
+            
+              <a name="method-i-srcentries"></a><b>srcentries</b>(path = '.')
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-srcentries_source')" id="l_method-i-srcentries_source">show</a>
+                
+              </p>
+              <div id="method-i-srcentries_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 656</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">srcentries</span>(<span class="ruby-identifier">path</span> = <span class="ruby-string">'.'</span>)
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{curr_srcdir()}/#{path}&quot;</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">d</span>.<span class="ruby-identifier">to_a</span> <span class="ruby-operator">-</span> <span class="ruby-node">%w(. ..)</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-srcexist-3F">
+            
+              <a name="method-i-srcexist-3F"></a><b>srcexist?</b>(path)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-srcexist-3F_source')" id="l_method-i-srcexist-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-srcexist-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 644</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">srcexist?</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">srcfile</span>(<span class="ruby-identifier">path</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-srcfile">
+            
+              <a name="method-i-srcfile"></a><b>srcfile</b>(path)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-srcfile_source')" id="l_method-i-srcfile_source">show</a>
+                
+              </p>
+              <div id="method-i-srcfile_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 640</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">srcfile</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-node">&quot;#{curr_srcdir()}/#{path}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-srcfile-3F">
+            
+              <a name="method-i-srcfile-3F"></a><b>srcfile?</b>(path)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-srcfile-3F_source')" id="l_method-i-srcfile-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-srcfile-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 652</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">srcfile?</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span> <span class="ruby-identifier">srcfile</span>(<span class="ruby-identifier">path</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-srcfiles">
+            
+              <a name="method-i-srcfiles"></a><b>srcfiles</b>(path = '.')
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-srcfiles_source')" id="l_method-i-srcfiles_source">show</a>
+                
+              </p>
+              <div id="method-i-srcfiles_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 662</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">srcfiles</span>(<span class="ruby-identifier">path</span> = <span class="ruby-string">'.'</span>)
+  <span class="ruby-identifier">srcentries</span>(<span class="ruby-identifier">path</span>).<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">fname</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">curr_srcdir</span>(), <span class="ruby-identifier">path</span>, <span class="ruby-identifier">fname</span>))
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

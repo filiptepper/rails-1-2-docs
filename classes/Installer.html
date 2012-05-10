@@ -1,0 +1,2029 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Installer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Installer 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionwebservice/setup_rb.html">rails/actionwebservice/setup.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-adjust_shebang">adjust_shebang</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-clean_dir_bin">clean_dir_bin</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-clean_dir_data">clean_dir_data</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-clean_dir_ext">clean_dir_ext</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-clean_dir_lib">clean_dir_lib</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-collect_filenames_auto">collect_filenames_auto</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-config_dir_bin">config_dir_bin</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-config_dir_data">config_dir_data</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-config_dir_ext">config_dir_ext</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-config_dir_lib">config_dir_lib</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-distclean_dir_bin">distclean_dir_bin</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-distclean_dir_ext">distclean_dir_ext</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-distclean_dir_lib">distclean_dir_lib</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-dive_into">dive_into</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-exec_clean">exec_clean</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exec_config">exec_config</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exec_distclean">exec_distclean</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exec_install">exec_install</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exec_setup">exec_setup</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exec_task_traverse">exec_task_traverse</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-existfiles">existfiles</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-extconf">extconf</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-hookfiles">hookfiles</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inspect">inspect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-install_dir_bin">install_dir_bin</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-install_dir_data">install_dir_data</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-install_dir_ext">install_dir_ext</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-install_dir_lib">install_dir_lib</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-install_files">install_files</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-mapdir">mapdir</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-no_harm-3F">no_harm?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-objdir_root">objdir_root</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-relpath">relpath</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ruby_extentions">ruby_extentions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ruby_scripts">ruby_scripts</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup_dir_bin">setup_dir_bin</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-setup_dir_data">setup_dir_data</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-setup_dir_ext">setup_dir_ext</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-setup_dir_lib">setup_dir_lib</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-srcdir_root">srcdir_root</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-traverse">traverse</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-verbose-3F">verbose?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-verbose_off">verbose_off</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="HookScriptAPI.html">
+              HookScriptAPI
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="HookUtils.html">
+              HookUtils
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="FileOperations.html">
+              FileOperations
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">FILETYPES</td>
+            <td>=</td>
+            <td class="attr-value">%w( bin lib ext data )</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REJECT_PATTERNS</td>
+            <td>=</td>
+            <td class="attr-value">Regexp.new('\A(?:' +
+reject_patterns.map {|pat|
+pat.gsub(/[\.\$\#\*]/) {|ch| mapping[ch] }
+}.join('|') +
+')\z')</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(config, opt, srcroot, objroot)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1062</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">config</span>, <span class="ruby-identifier">opt</span>, <span class="ruby-identifier">srcroot</span>, <span class="ruby-identifier">objroot</span>)
+  <span class="ruby-ivar">@config</span> = <span class="ruby-identifier">config</span>
+  <span class="ruby-ivar">@options</span> = <span class="ruby-identifier">opt</span>
+  <span class="ruby-ivar">@srcdir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">srcroot</span>)
+  <span class="ruby-ivar">@objdir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-identifier">objroot</span>)
+  <span class="ruby-ivar">@currdir</span> = <span class="ruby-string">'.'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-adjust_shebang">
+            
+              <a name="method-i-adjust_shebang"></a><b>adjust_shebang</b>(path)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-adjust_shebang_source')" id="l_method-i-adjust_shebang_source">show</a>
+                
+              </p>
+              <div id="method-i-adjust_shebang_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">adjust_shebang</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">no_harm?</span>
+  <span class="ruby-identifier">tmpfile</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'.tmp'</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">path</span>, <span class="ruby-string">'rb'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">first</span> = <span class="ruby-identifier">r</span>.<span class="ruby-identifier">gets</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">config</span>(<span class="ruby-string">'rubypath'</span>)) <span class="ruby-operator">==</span> <span class="ruby-string">'ruby'</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">first</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r\A\#!/</span>, <span class="ruby-string">''</span>).<span class="ruby-identifier">split</span>[<span class="ruby-number">0</span>]) <span class="ruby-operator">==</span> <span class="ruby-string">'ruby'</span>
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;adjusting shebang: #{File.basename(path)}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">verbose?</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">tmpfile</span>, <span class="ruby-string">'wb'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">w</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">w</span>.<span class="ruby-identifier">print</span> <span class="ruby-identifier">first</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r\A\#!\s*\S+/</span>, <span class="ruby-string">'#! '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">config</span>(<span class="ruby-string">'rubypath'</span>))
+        <span class="ruby-identifier">w</span>.<span class="ruby-identifier">write</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">read</span>
+      }
+      <span class="ruby-identifier">move_file</span> <span class="ruby-identifier">tmpfile</span>, <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>)
+    }
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span> <span class="ruby-identifier">tmpfile</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">tmpfile</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clean_dir_bin">
+            
+              <a name="method-i-clean_dir_bin"></a><b>clean_dir_bin</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clean_dir_bin_source')" id="l_method-i-clean_dir_bin_source">show</a>
+                
+              </p>
+              <div id="method-i-clean_dir_bin_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1286</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clean_dir_bin</span>(<span class="ruby-identifier">rel</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clean_dir_data">
+            
+              <a name="method-i-clean_dir_data"></a><b>clean_dir_data</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clean_dir_data_source')" id="l_method-i-clean_dir_data_source">show</a>
+                
+              </p>
+              <div id="method-i-clean_dir_data_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1297</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clean_dir_data</span>(<span class="ruby-identifier">rel</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clean_dir_ext">
+            
+              <a name="method-i-clean_dir_ext"></a><b>clean_dir_ext</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clean_dir_ext_source')" id="l_method-i-clean_dir_ext_source">show</a>
+                
+              </p>
+              <div id="method-i-clean_dir_ext_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1292</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clean_dir_ext</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">extdir?</span>(<span class="ruby-identifier">curr_srcdir</span>())
+  <span class="ruby-identifier">make</span> <span class="ruby-string">'clean'</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-string">'Makefile'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-clean_dir_lib">
+            
+              <a name="method-i-clean_dir_lib"></a><b>clean_dir_lib</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-clean_dir_lib_source')" id="l_method-i-clean_dir_lib_source">show</a>
+                
+              </p>
+              <div id="method-i-clean_dir_lib_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1289</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">clean_dir_lib</span>(<span class="ruby-identifier">rel</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-collect_filenames_auto">
+            
+              <a name="method-i-collect_filenames_auto"></a><b>collect_filenames_auto</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-collect_filenames_auto_source')" id="l_method-i-collect_filenames_auto_source">show</a>
+                
+              </p>
+              <div id="method-i-collect_filenames_auto_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">collect_filenames_auto</span>
+  <span class="ruby-identifier">mapdir</span>((<span class="ruby-identifier">existfiles</span>() <span class="ruby-operator">-</span> <span class="ruby-identifier">hookfiles</span>()).<span class="ruby-identifier">reject</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">fname</span><span class="ruby-operator">|</span>
+           <span class="ruby-constant">REJECT_PATTERNS</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">fname</span>
+         })
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-config_dir_bin">
+            
+              <a name="method-i-config_dir_bin"></a><b>config_dir_bin</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-config_dir_bin_source')" id="l_method-i-config_dir_bin_source">show</a>
+                
+              </p>
+              <div id="method-i-config_dir_bin_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">config_dir_bin</span>(<span class="ruby-identifier">rel</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-config_dir_data">
+            
+              <a name="method-i-config_dir_data"></a><b>config_dir_data</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-config_dir_data_source')" id="l_method-i-config_dir_data_source">show</a>
+                
+              </p>
+              <div id="method-i-config_dir_data_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">config_dir_data</span>(<span class="ruby-identifier">rel</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-config_dir_ext">
+            
+              <a name="method-i-config_dir_ext"></a><b>config_dir_ext</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-config_dir_ext_source')" id="l_method-i-config_dir_ext_source">show</a>
+                
+              </p>
+              <div id="method-i-config_dir_ext_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1125</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">config_dir_ext</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-identifier">extconf</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">extdir?</span>(<span class="ruby-identifier">curr_srcdir</span>())
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-config_dir_lib">
+            
+              <a name="method-i-config_dir_lib"></a><b>config_dir_lib</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-config_dir_lib_source')" id="l_method-i-config_dir_lib_source">show</a>
+                
+              </p>
+              <div id="method-i-config_dir_lib_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">config_dir_lib</span>(<span class="ruby-identifier">rel</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-distclean_dir_bin">
+            
+              <a name="method-i-distclean_dir_bin"></a><b>distclean_dir_bin</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-distclean_dir_bin_source')" id="l_method-i-distclean_dir_bin_source">show</a>
+                
+              </p>
+              <div id="method-i-distclean_dir_bin_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">distclean_dir_bin</span>(<span class="ruby-identifier">rel</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-distclean_dir_ext">
+            
+              <a name="method-i-distclean_dir_ext"></a><b>distclean_dir_ext</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-distclean_dir_ext_source')" id="l_method-i-distclean_dir_ext_source">show</a>
+                
+              </p>
+              <div id="method-i-distclean_dir_ext_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1316</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">distclean_dir_ext</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">extdir?</span>(<span class="ruby-identifier">curr_srcdir</span>())
+  <span class="ruby-identifier">make</span> <span class="ruby-string">'distclean'</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">file?</span>(<span class="ruby-string">'Makefile'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-distclean_dir_lib">
+            
+              <a name="method-i-distclean_dir_lib"></a><b>distclean_dir_lib</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-distclean_dir_lib_source')" id="l_method-i-distclean_dir_lib_source">show</a>
+                
+              </p>
+              <div id="method-i-distclean_dir_lib_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1313</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">distclean_dir_lib</span>(<span class="ruby-identifier">rel</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dive_into">
+            
+              <a name="method-i-dive_into"></a><b>dive_into</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dive_into_source')" id="l_method-i-dive_into_source">show</a>
+                
+              </p>
+              <div id="method-i-dive_into_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1348</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dive_into</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dir?</span>(<span class="ruby-node">&quot;#{@srcdir}/#{rel}&quot;</span>)
+
+  <span class="ruby-identifier">dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span> <span class="ruby-identifier">dir</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dir?</span>(<span class="ruby-identifier">dir</span>)
+  <span class="ruby-identifier">prevdir</span> = <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">pwd</span>
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-identifier">dir</span>
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'---&gt; '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rel</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">verbose?</span>
+  <span class="ruby-ivar">@currdir</span> = <span class="ruby-identifier">rel</span>
+  <span class="ruby-keyword">yield</span>
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-identifier">prevdir</span>
+  <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'&lt;--- '</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">rel</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">verbose?</span>
+  <span class="ruby-ivar">@currdir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-identifier">rel</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_clean">
+            
+              <a name="method-i-exec_clean"></a><b>exec_clean</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>TASK clean</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_clean_source')" id="l_method-i-exec_clean_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_clean_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1280</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_clean</span>
+  <span class="ruby-identifier">exec_task_traverse</span> <span class="ruby-string">'clean'</span>
+  <span class="ruby-identifier">rm_f</span> <span class="ruby-constant">ConfigTable</span>.<span class="ruby-identifier">savefile</span>
+  <span class="ruby-identifier">rm_f</span> <span class="ruby-string">'InstalledFiles'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_config">
+            
+              <a name="method-i-exec_config"></a><b>exec_config</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>TASK config</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_config_source')" id="l_method-i-exec_config_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_config_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_config</span>
+  <span class="ruby-identifier">exec_task_traverse</span> <span class="ruby-string">'config'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_distclean">
+            
+              <a name="method-i-exec_distclean"></a><b>exec_distclean</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>TASK distclean</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_distclean_source')" id="l_method-i-exec_distclean_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_distclean_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1304</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_distclean</span>
+  <span class="ruby-identifier">exec_task_traverse</span> <span class="ruby-string">'distclean'</span>
+  <span class="ruby-identifier">rm_f</span> <span class="ruby-constant">ConfigTable</span>.<span class="ruby-identifier">savefile</span>
+  <span class="ruby-identifier">rm_f</span> <span class="ruby-string">'InstalledFiles'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_install">
+            
+              <a name="method-i-exec_install"></a><b>exec_install</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>TASK install</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_install_source')" id="l_method-i-exec_install_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_install_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_install</span>
+  <span class="ruby-identifier">rm_f</span> <span class="ruby-string">'InstalledFiles'</span>
+  <span class="ruby-identifier">exec_task_traverse</span> <span class="ruby-string">'install'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_setup">
+            
+              <a name="method-i-exec_setup"></a><b>exec_setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>TASK setup</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_setup_source')" id="l_method-i-exec_setup_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_setup</span>
+  <span class="ruby-identifier">exec_task_traverse</span> <span class="ruby-string">'setup'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_task_traverse">
+            
+              <a name="method-i-exec_task_traverse"></a><b>exec_task_traverse</b>(task)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>lib</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_task_traverse_source')" id="l_method-i-exec_task_traverse_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_task_traverse_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1325</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_task_traverse</span>(<span class="ruby-identifier">task</span>)
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-node">&quot;pre-#{task}&quot;</span>
+  <span class="ruby-constant">FILETYPES</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">config</span>(<span class="ruby-string">'without-ext'</span>) <span class="ruby-operator">==</span> <span class="ruby-string">'yes'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-string">'ext'</span>
+      <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'skipping ext/* by user option'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">verbose?</span>
+      <span class="ruby-keyword">next</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">traverse</span> <span class="ruby-identifier">task</span>, <span class="ruby-identifier">type</span>, <span class="ruby-node">&quot;#{task}_dir_#{type}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-node">&quot;post-#{task}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-existfiles">
+            
+              <a name="method-i-existfiles"></a><b>existfiles</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-existfiles_source')" id="l_method-i-existfiles_source">show</a>
+                
+              </p>
+              <div id="method-i-existfiles_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1246</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">existfiles</span>
+  <span class="ruby-identifier">all_files_in</span>(<span class="ruby-identifier">curr_srcdir</span>()) <span class="ruby-operator">|</span> <span class="ruby-identifier">all_files_in</span>(<span class="ruby-string">'.'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-extconf">
+            
+              <a name="method-i-extconf"></a><b>extconf</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-extconf_source')" id="l_method-i-extconf_source">show</a>
+                
+              </p>
+              <div id="method-i-extconf_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">extconf</span>
+  <span class="ruby-identifier">opt</span> = <span class="ruby-ivar">@options</span>[<span class="ruby-string">'config-opt'</span>].<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>)
+  <span class="ruby-identifier">command</span> <span class="ruby-node">&quot;#{config('rubyprog')} #{curr_srcdir()}/extconf.rb #{opt}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hookfiles">
+            
+              <a name="method-i-hookfiles"></a><b>hookfiles</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hookfiles_source')" id="l_method-i-hookfiles_source">show</a>
+                
+              </p>
+              <div id="method-i-hookfiles_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1250</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hookfiles</span>
+  <span class="ruby-node">%w( pre-%s post-%s pre-%s.rb post-%s.rb )</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">fmt</span><span class="ruby-operator">|</span>
+    <span class="ruby-node">%w( config setup install clean )</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sprintf</span>(<span class="ruby-identifier">fmt</span>, <span class="ruby-identifier">t</span>) }
+  }.<span class="ruby-identifier">flatten</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect">
+            
+              <a name="method-i-inspect"></a><b>inspect</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_source')" id="l_method-i-inspect_source">show</a>
+                
+              </p>
+              <div id="method-i-inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1070</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect</span>
+  <span class="ruby-node">&quot;#&lt;#{self.class} #{File.basename(@srcdir)}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-install_dir_bin">
+            
+              <a name="method-i-install_dir_bin"></a><b>install_dir_bin</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-install_dir_bin_source')" id="l_method-i-install_dir_bin_source">show</a>
+                
+              </p>
+              <div id="method-i-install_dir_bin_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1190</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">install_dir_bin</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-identifier">install_files</span> <span class="ruby-identifier">collect_filenames_auto</span>(), <span class="ruby-node">&quot;#{config('bindir')}/#{rel}&quot;</span>, <span class="ruby-number">0755</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-install_dir_data">
+            
+              <a name="method-i-install_dir_data"></a><b>install_dir_data</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-install_dir_data_source')" id="l_method-i-install_dir_data_source">show</a>
+                
+              </p>
+              <div id="method-i-install_dir_data_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1205</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">install_dir_data</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-identifier">install_files</span> <span class="ruby-identifier">collect_filenames_auto</span>(), <span class="ruby-node">&quot;#{config('datadir')}/#{rel}&quot;</span>, <span class="ruby-number">0644</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-install_dir_ext">
+            
+              <a name="method-i-install_dir_ext"></a><b>install_dir_ext</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-install_dir_ext_source')" id="l_method-i-install_dir_ext_source">show</a>
+                
+              </p>
+              <div id="method-i-install_dir_ext_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">install_dir_ext</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">extdir?</span>(<span class="ruby-identifier">curr_srcdir</span>())
+  <span class="ruby-identifier">install_files</span> <span class="ruby-identifier">ruby_extentions</span>(<span class="ruby-string">'.'</span>),
+                <span class="ruby-node">&quot;#{config('sodir')}/#{File.dirname(rel)}&quot;</span>,
+                <span class="ruby-number">0555</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-install_dir_lib">
+            
+              <a name="method-i-install_dir_lib"></a><b>install_dir_lib</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-install_dir_lib_source')" id="l_method-i-install_dir_lib_source">show</a>
+                
+              </p>
+              <div id="method-i-install_dir_lib_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">install_dir_lib</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-identifier">install_files</span> <span class="ruby-identifier">ruby_scripts</span>(), <span class="ruby-node">&quot;#{config('rbdir')}/#{rel}&quot;</span>, <span class="ruby-number">0644</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-install_files">
+            
+              <a name="method-i-install_files"></a><b>install_files</b>(list, dest, mode)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-install_files_source')" id="l_method-i-install_files_source">show</a>
+                
+              </p>
+              <div id="method-i-install_files_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">install_files</span>(<span class="ruby-identifier">list</span>, <span class="ruby-identifier">dest</span>, <span class="ruby-identifier">mode</span>)
+  <span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">dest</span>, <span class="ruby-ivar">@options</span>[<span class="ruby-string">'install-prefix'</span>]
+  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fname</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">install</span> <span class="ruby-identifier">fname</span>, <span class="ruby-identifier">dest</span>, <span class="ruby-identifier">mode</span>, <span class="ruby-ivar">@options</span>[<span class="ruby-string">'install-prefix'</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mapdir">
+            
+              <a name="method-i-mapdir"></a><b>mapdir</b>(filelist)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mapdir_source')" id="l_method-i-mapdir_source">show</a>
+                
+              </p>
+              <div id="method-i-mapdir_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1256</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mapdir</span>(<span class="ruby-identifier">filelist</span>)
+  <span class="ruby-identifier">filelist</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">fname</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">fname</span>)   <span class="ruby-comment"># objdir</span>
+      <span class="ruby-identifier">fname</span>
+    <span class="ruby-keyword">else</span>                    <span class="ruby-comment"># srcdir</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">curr_srcdir</span>(), <span class="ruby-identifier">fname</span>)
+    <span class="ruby-keyword">end</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-no_harm-3F">
+            
+              <a name="method-i-no_harm-3F"></a><b>no_harm?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>configs/options</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-no_harm-3F_source')" id="l_method-i-no_harm-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-no_harm-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1094</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">no_harm?</span>
+  <span class="ruby-ivar">@options</span>[<span class="ruby-string">'no-harm'</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-objdir_root">
+            
+              <a name="method-i-objdir_root"></a><b>objdir_root</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-objdir_root_source')" id="l_method-i-objdir_root_source">show</a>
+                
+              </p>
+              <div id="method-i-objdir_root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1082</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">objdir_root</span>
+  <span class="ruby-ivar">@objdir</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-relpath">
+            
+              <a name="method-i-relpath"></a><b>relpath</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-relpath_source')" id="l_method-i-relpath_source">show</a>
+                
+              </p>
+              <div id="method-i-relpath_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1086</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">relpath</span>
+  <span class="ruby-ivar">@currdir</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ruby_extentions">
+            
+              <a name="method-i-ruby_extentions"></a><b>ruby_extentions</b>(dir)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ruby_extentions_source')" id="l_method-i-ruby_extentions_source">show</a>
+                
+              </p>
+              <div id="method-i-ruby_extentions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1266</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ruby_extentions</span>(<span class="ruby-identifier">dir</span>)
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">dir</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">ents</span> = <span class="ruby-identifier">d</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">fname</span><span class="ruby-operator">|</span> <span class="ruby-node">%r\.#{::Config::CONFIG['DLEXT']}\z/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">fname</span> }
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">ents</span>.<span class="ruby-identifier">empty?</span>
+      <span class="ruby-identifier">setup_rb_error</span> <span class="ruby-node">&quot;no ruby extention exists: 'ruby #{$0} setup' first&quot;</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">ents</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ruby_scripts">
+            
+              <a name="method-i-ruby_scripts"></a><b>ruby_scripts</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ruby_scripts_source')" id="l_method-i-ruby_scripts_source">show</a>
+                
+              </p>
+              <div id="method-i-ruby_scripts_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ruby_scripts</span>
+  <span class="ruby-identifier">collect_filenames_auto</span>().<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span> <span class="ruby-regexp">%r\.rb\z/</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">n</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-setup_dir_bin">
+            
+              <a name="method-i-setup_dir_bin"></a><b>setup_dir_bin</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_dir_bin_source')" id="l_method-i-setup_dir_bin_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_dir_bin_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup_dir_bin</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-identifier">all_files_in</span>(<span class="ruby-identifier">curr_srcdir</span>()).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">fname</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">adjust_shebang</span> <span class="ruby-node">&quot;#{curr_srcdir()}/#{fname}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-setup_dir_data">
+            
+              <a name="method-i-setup_dir_data"></a><b>setup_dir_data</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_dir_data_source')" id="l_method-i-setup_dir_data_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_dir_data_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1178</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup_dir_data</span>(<span class="ruby-identifier">rel</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-setup_dir_ext">
+            
+              <a name="method-i-setup_dir_ext"></a><b>setup_dir_ext</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_dir_ext_source')" id="l_method-i-setup_dir_ext_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_dir_ext_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup_dir_ext</span>(<span class="ruby-identifier">rel</span>)
+  <span class="ruby-identifier">make</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">extdir?</span>(<span class="ruby-identifier">curr_srcdir</span>())
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-setup_dir_lib">
+            
+              <a name="method-i-setup_dir_lib"></a><b>setup_dir_lib</b>(rel)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_dir_lib_source')" id="l_method-i-setup_dir_lib_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_dir_lib_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup_dir_lib</span>(<span class="ruby-identifier">rel</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-srcdir_root">
+            
+              <a name="method-i-srcdir_root"></a><b>srcdir_root</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Hook Script API base methods</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-srcdir_root_source')" id="l_method-i-srcdir_root_source">show</a>
+                
+              </p>
+              <div id="method-i-srcdir_root_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1078</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">srcdir_root</span>
+  <span class="ruby-ivar">@srcdir</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-traverse">
+            
+              <a name="method-i-traverse"></a><b>traverse</b>(task, rel, mid)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-traverse_source')" id="l_method-i-traverse_source">show</a>
+                
+              </p>
+              <div id="method-i-traverse_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1337</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">traverse</span>(<span class="ruby-identifier">task</span>, <span class="ruby-identifier">rel</span>, <span class="ruby-identifier">mid</span>)
+  <span class="ruby-identifier">dive_into</span>(<span class="ruby-identifier">rel</span>) {
+    <span class="ruby-identifier">run_hook</span> <span class="ruby-node">&quot;pre-#{task}&quot;</span>
+    <span class="ruby-identifier">__send__</span> <span class="ruby-identifier">mid</span>, <span class="ruby-identifier">rel</span>.<span class="ruby-identifier">sub</span>(<span class="ruby-regexp">%r[\A.*?(?:/|\z)]</span>, <span class="ruby-string">''</span>)
+    <span class="ruby-identifier">all_dirs_in</span>(<span class="ruby-identifier">curr_srcdir</span>()).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">d</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">traverse</span> <span class="ruby-identifier">task</span>, <span class="ruby-node">&quot;#{rel}/#{d}&quot;</span>, <span class="ruby-identifier">mid</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">run_hook</span> <span class="ruby-node">&quot;post-#{task}&quot;</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-verbose-3F">
+            
+              <a name="method-i-verbose-3F"></a><b>verbose?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-verbose-3F_source')" id="l_method-i-verbose-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-verbose-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1098</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">verbose?</span>
+  <span class="ruby-ivar">@options</span>[<span class="ruby-string">'verbose'</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-verbose_off">
+            
+              <a name="method-i-verbose_off"></a><b>verbose_off</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-verbose_off_source')" id="l_method-i-verbose_off_source">show</a>
+                
+              </p>
+              <div id="method-i-verbose_off_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">verbose_off</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">save</span>, <span class="ruby-ivar">@options</span>[<span class="ruby-string">'verbose'</span>] = <span class="ruby-ivar">@options</span>[<span class="ruby-string">'verbose'</span>], <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-ivar">@options</span>[<span class="ruby-string">'verbose'</span>] = <span class="ruby-identifier">save</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

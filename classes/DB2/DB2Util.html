@@ -1,0 +1,233 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>DB2::DB2Util</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            DB2::DB2Util 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/activerecord/lib/active_record/vendor/db2_rb.html">rails/activerecord/lib/active_record/vendor/db2.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-check_rc">check_rc</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-free">free</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-handle">handle</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            DB2CLI
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-check_rc">
+            
+              <a name="method-i-check_rc"></a><b>check_rc</b>(rc)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-check_rc_source')" id="l_method-i-check_rc_source">show</a>
+                
+              </p>
+              <div id="method-i-check_rc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 10</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">check_rc</span>(<span class="ruby-identifier">rc</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>[<span class="ruby-constant">SQL_SUCCESS</span>, <span class="ruby-constant">SQL_SUCCESS_WITH_INFO</span>, <span class="ruby-constant">SQL_NO_DATA_FOUND</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">rc</span>)
+    <span class="ruby-identifier">rec</span> = <span class="ruby-number">1</span>
+    <span class="ruby-identifier">msg</span> = <span class="ruby-string">''</span>
+    <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">a</span> = <span class="ruby-constant">SQLGetDiagRec</span>(<span class="ruby-ivar">@handle_type</span>, <span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">rec</span>, <span class="ruby-number">500</span>)
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">a</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-constant">SQL_SUCCESS</span>
+      <span class="ruby-identifier">msg</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">a</span>[<span class="ruby-number">3</span>] <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span><span class="ruby-identifier">a</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">a</span>[<span class="ruby-number">3</span>] <span class="ruby-operator">!=</span> <span class="ruby-string">''</span> <span class="ruby-comment"># Create message.</span>
+      <span class="ruby-identifier">rec</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;DB2 error: #{msg}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-free">
+            
+              <a name="method-i-free"></a><b>free</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-free_source')" id="l_method-i-free_source">show</a>
+                
+              </p>
+              <div id="method-i-free_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">free</span>() <span class="ruby-constant">SQLFreeHandle</span>(<span class="ruby-ivar">@handle_type</span>, <span class="ruby-ivar">@handle</span>); <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-handle">
+            
+              <a name="method-i-handle"></a><b>handle</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-handle_source')" id="l_method-i-handle_source">show</a>
+                
+              </p>
+              <div id="method-i-handle_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">handle</span>() <span class="ruby-ivar">@handle</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

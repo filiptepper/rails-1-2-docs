@@ -1,0 +1,212 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveSupport::CoreExtensions::String::Unicode</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActiveSupport::CoreExtensions::String::Unicode 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/rails/activesupport/lib/active_support/core_ext/string/unicode_rb.html">rails/activesupport/lib/active_support/core_ext/string/unicode.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Define methods for handeling unicode data.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-chars">chars</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-is_utf8-3F">is_utf8?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-chars">
+            
+              <a name="method-i-chars"></a><b>chars</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p><code>chars</code> is a <a href="Unicode.html">Unicode</a> safe proxy for
+string methods. It creates and returns an instance of the <a
+href="../../Multibyte/Chars.html">ActiveSupport::Multibyte::Chars</a> class
+which encapsulates the original string. <a href="../../../A.html">A</a> <a
+href="Unicode.html">Unicode</a> safe version of all the <a
+href="../String.html">String</a> methods are defined on this proxy class.
+Undefined methods are forwarded to <a href="../String.html">String</a>, so
+all of the string overrides can also be called through the
+<code>chars</code> proxy.</p>
+
+<pre class="ruby"><span class="ruby-identifier">name</span> = <span class="ruby-string">'Claus Müller'</span>
+<span class="ruby-identifier">name</span>.<span class="ruby-identifier">reverse</span> <span class="ruby-comment">#=&gt; &quot;rell??M sualC&quot;</span>
+<span class="ruby-identifier">name</span>.<span class="ruby-identifier">length</span> <span class="ruby-comment">#=&gt; 13</span>
+
+<span class="ruby-identifier">name</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-comment">#=&gt; &quot;rellüM sualC&quot;</span>
+<span class="ruby-identifier">name</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">length</span> <span class="ruby-comment">#=&gt; 12</span>
+</pre>
+
+<p>All the methods on the chars proxy which normally return a string will
+return a Chars object. This allows method chaining on the result of any of
+these methods.</p>
+
+<pre class="ruby"><span class="ruby-identifier">name</span>.<span class="ruby-identifier">chars</span>.<span class="ruby-identifier">reverse</span>.<span class="ruby-identifier">length</span> <span class="ruby-comment">#=&gt; 12</span>
+</pre>
+
+<p>The Char object tries to be as interchangeable with <a
+href="../String.html">String</a> objects as possible: sorting and comparing
+between <a href="../String.html">String</a> and Char work like expected.
+The bang! methods change the internal string representation in the Chars
+object. Interoperability problems can be resolved easily with a
+<code>to_s</code> call.</p>
+
+<p>For more information about the methods defined on the Chars proxy see <a
+href="../../Multibyte/Chars.html">ActiveSupport::Multibyte::Chars</a> and
+<a
+href="../../Multibyte/Handlers/UTF8Handler.html">ActiveSupport::Multibyte::Handlers::UTF8Handler</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-chars_source')" id="l_method-i-chars_source">show</a>
+                
+              </p>
+              <div id="method-i-chars_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/core_ext/string/unicode.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">chars</span>
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Chars</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-is_utf8-3F">
+            
+              <a name="method-i-is_utf8-3F"></a><b>is_utf8?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if the string has UTF-8 semantics (a <a
+href="../String.html">String</a> used for purely byte resources is unlikely
+to have them), returns false otherwise.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-is_utf8-3F_source')" id="l_method-i-is_utf8-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-is_utf8-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/core_ext/string/unicode.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">is_utf8?</span>
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Multibyte</span><span class="ruby-operator">::</span><span class="ruby-constant">Handlers</span><span class="ruby-operator">::</span><span class="ruby-constant">UTF8Handler</span>.<span class="ruby-identifier">consumes?</span>(<span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>LayoutSetInResponseTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            LayoutSetInResponseTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/layout_test_rb.html">rails/actionpack/test/controller/layout_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_layout_is_not_set_when_none_rendered">test_layout_is_not_set_when_none_rendered</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_layout_set_when_set_in_controller">test_layout_set_when_set_in_controller</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_layout_set_when_using_default_layout">test_layout_set_when_using_default_layout</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_layout_set_when_using_render">test_layout_set_when_using_render</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/layout_test.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@request</span>    = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@response</span>   = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_layout_is_not_set_when_none_rendered">
+            
+              <a name="method-i-test_layout_is_not_set_when_none_rendered"></a><b>test_layout_is_not_set_when_none_rendered</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_layout_is_not_set_when_none_rendered_source')" id="l_method-i-test_layout_is_not_set_when_none_rendered_source">show</a>
+                
+              </p>
+              <div id="method-i-test_layout_is_not_set_when_none_rendered_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/layout_test.rb, line 163</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_layout_is_not_set_when_none_rendered</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">RendersNoLayoutController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:hello</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">layout</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_layout_set_when_set_in_controller">
+            
+              <a name="method-i-test_layout_set_when_set_in_controller"></a><b>test_layout_set_when_set_in_controller</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_layout_set_when_set_in_controller_source')" id="l_method-i-test_layout_set_when_set_in_controller_source">show</a>
+                
+              </p>
+              <div id="method-i-test_layout_set_when_set_in_controller_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/layout_test.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_layout_set_when_set_in_controller</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">HasOwnLayoutController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:hello</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'layouts/item'</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">layout</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_layout_set_when_using_default_layout">
+            
+              <a name="method-i-test_layout_set_when_using_default_layout"></a><b>test_layout_set_when_using_default_layout</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_layout_set_when_using_default_layout_source')" id="l_method-i-test_layout_set_when_using_default_layout_source">show</a>
+                
+              </p>
+              <div id="method-i-test_layout_set_when_using_default_layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/layout_test.rb, line 145</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_layout_set_when_using_default_layout</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">DefaultLayoutController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:hello</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'layouts/layout_test'</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">layout</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_layout_set_when_using_render">
+            
+              <a name="method-i-test_layout_set_when_using_render"></a><b>test_layout_set_when_using_render</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_layout_set_when_using_render_source')" id="l_method-i-test_layout_set_when_using_render_source">show</a>
+                
+              </p>
+              <div id="method-i-test_layout_set_when_using_render_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/layout_test.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_layout_set_when_using_render</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">SetsLayoutInRenderController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:hello</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'layouts/third_party_template_library'</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">layout</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

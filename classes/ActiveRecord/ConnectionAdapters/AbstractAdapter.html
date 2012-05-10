@@ -1,0 +1,760 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::ConnectionAdapters::AbstractAdapter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecord::ConnectionAdapters::AbstractAdapter 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/activerecord/lib/active_record/connection_adapters/abstract_adapter_rb.html">rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>All the concrete database adapters follow the interface laid down in this
+class. You can use this interface directly by borrowing the database
+connection from the <a href="../Base.html">Base</a> with <a
+href="../Base.html#method-c-connection">ActiveRecord::Base.connection</a>.</p>
+
+<p>Most of the methods in the adapter are useful during migrations.  Most
+notably, <a
+href="SchemaStatements.html#method-i-create_table">ActiveRecord::ConnectionAdapters::SchemaStatements#create_table</a>,
+<a
+href="SchemaStatements.html#method-i-drop_table">ActiveRecord::ConnectionAdapters::SchemaStatements#drop_table</a>,
+<a
+href="SchemaStatements.html#method-i-add_index">ActiveRecord::ConnectionAdapters::SchemaStatements#add_index</a>,
+<a
+href="SchemaStatements.html#method-i-remove_index">ActiveRecord::ConnectionAdapters::SchemaStatements#remove_index</a>,
+<a
+href="SchemaStatements.html#method-i-add_column">ActiveRecord::ConnectionAdapters::SchemaStatements#add_column</a>,
+<a
+href="SchemaStatements.html#method-i-change_column">ActiveRecord::ConnectionAdapters::SchemaStatements#change_column</a>
+and <a
+href="SchemaStatements.html#method-i-remove_column">ActiveRecord::ConnectionAdapters::SchemaStatements#remove_column</a>
+are very useful.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-active-3F">active?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-adapter_name">adapter_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-disconnect-21">disconnect!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-format_log_entry">format_log_entry</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-log">log</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-log_info">log_info</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-prefetch_primary_key-3F">prefetch_primary_key?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-raw_connection">raw_connection</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-reconnect-21">reconnect!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-requires_reloading-3F">requires_reloading?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-supports_count_distinct-3F">supports_count_distinct?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-supports_migrations-3F">supports_migrations?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-verify-21">verify!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="Quoting.html">
+              ActiveRecord::ConnectionAdapters::Quoting
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="DatabaseStatements.html">
+              ActiveRecord::ConnectionAdapters::DatabaseStatements
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="SchemaStatements.html">
+              ActiveRecord::ConnectionAdapters::SchemaStatements
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-active-3F">
+            
+              <a name="method-i-active-3F"></a><b>active?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Is this connection active and ready to perform queries?</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-active-3F_source')" id="l_method-i-active-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-active-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">active?</span>
+  <span class="ruby-ivar">@active</span> <span class="ruby-operator">!=</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-adapter_name">
+            
+              <a name="method-i-adapter_name"></a><b>adapter_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the human-readable name of the adapter.  Use mixed case - one can
+always use downcase if needed.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-adapter_name_source')" id="l_method-i-adapter_name_source">show</a>
+                
+              </p>
+              <div id="method-i-adapter_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">adapter_name</span>
+  <span class="ruby-string">'Abstract'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-disconnect-21">
+            
+              <a name="method-i-disconnect-21"></a><b>disconnect!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Close this connection</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-disconnect-21_source')" id="l_method-i-disconnect-21_source">show</a>
+                
+              </p>
+              <div id="method-i-disconnect-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 78</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">disconnect!</span>
+  <span class="ruby-ivar">@active</span> = <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-prefetch_primary_key-3F">
+            
+              <a name="method-i-prefetch_primary_key-3F"></a><b>prefetch_primary_key?</b>(table_name = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Should primary key values be selected from their corresponding sequence
+before the insert statement?  If true, next_sequence_value is called before
+each insert to set the record’s primary key. This is false for all adapters
+but Firebird.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-prefetch_primary_key-3F_source')" id="l_method-i-prefetch_primary_key-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-prefetch_primary_key-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prefetch_primary_key?</span>(<span class="ruby-identifier">table_name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-raw_connection">
+            
+              <a name="method-i-raw_connection"></a><b>raw_connection</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Provides access to the underlying database connection. Useful for when you
+need to call a proprietary method such as postgresql’s lo_* methods</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-raw_connection_source')" id="l_method-i-raw_connection_source">show</a>
+                
+              </p>
+              <div id="method-i-raw_connection_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">raw_connection</span>
+  <span class="ruby-ivar">@connection</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reconnect-21">
+            
+              <a name="method-i-reconnect-21"></a><b>reconnect!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Close this connection and open a new one in its place.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reconnect-21_source')" id="l_method-i-reconnect-21_source">show</a>
+                
+              </p>
+              <div id="method-i-reconnect-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reconnect!</span>
+  <span class="ruby-ivar">@active</span> = <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-requires_reloading-3F">
+            
+              <a name="method-i-requires_reloading-3F"></a><b>requires_reloading?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if its safe to reload the connection between requests for
+development mode. This is not the case for Ruby/MySQL and it’s not
+necessary for any adapters except SQLite.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-requires_reloading-3F_source')" id="l_method-i-requires_reloading-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-requires_reloading-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">requires_reloading?</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-supports_count_distinct-3F">
+            
+              <a name="method-i-supports_count_distinct-3F"></a><b>supports_count_distinct?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Does this adapter support using DISTINCT within COUNT?  This is
+<code>true</code> for all adapters except sqlite.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-supports_count_distinct-3F_source')" id="l_method-i-supports_count_distinct-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-supports_count_distinct-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">supports_count_distinct?</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-supports_migrations-3F">
+            
+              <a name="method-i-supports_migrations-3F"></a><b>supports_migrations?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Does this adapter support migrations?  Backend specific, as the abstract
+adapter always returns <code>false</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-supports_migrations-3F_source')" id="l_method-i-supports_migrations-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-supports_migrations-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">supports_migrations?</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-verify-21">
+            
+              <a name="method-i-verify-21"></a><b>verify!</b>(timeout)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Lazily verify this connection, calling <code>active?</code> only if it
+hasn’t been called for <code>timeout</code> seconds.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-verify-21_source')" id="l_method-i-verify-21_source">show</a>
+                
+              </p>
+              <div id="method-i-verify-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">verify!</span>(<span class="ruby-identifier">timeout</span>)
+  <span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_verification</span>) <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">timeout</span>
+    <span class="ruby-identifier">reconnect!</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">active?</span>
+    <span class="ruby-ivar">@last_verification</span> = <span class="ruby-identifier">now</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-format_log_entry">
+            
+              <a name="method-i-format_log_entry"></a><b>format_log_entry</b>(message, dump = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-format_log_entry_source')" id="l_method-i-format_log_entry_source">show</a>
+                
+              </p>
+              <div id="method-i-format_log_entry_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">format_log_entry</span>(<span class="ruby-identifier">message</span>, <span class="ruby-identifier">dump</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">colorize_logging</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">@@row_even</span>
+      <span class="ruby-identifier">@@row_even</span> = <span class="ruby-keyword">false</span>
+      <span class="ruby-identifier">message_color</span>, <span class="ruby-identifier">dump_color</span> = <span class="ruby-string">&quot;4;36;1&quot;</span>, <span class="ruby-string">&quot;0;1&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">@@row_even</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">message_color</span>, <span class="ruby-identifier">dump_color</span> = <span class="ruby-string">&quot;4;35;1&quot;</span>, <span class="ruby-string">&quot;0&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">log_entry</span> = <span class="ruby-node">&quot;  \e[#{message_color}m#{message}\e[0m   &quot;</span>
+    <span class="ruby-identifier">log_entry</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;\e[#{dump_color}m%#{String === dump ? 's' : 'p'}\e[0m&quot;</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">dump</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">dump</span>
+    <span class="ruby-identifier">log_entry</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-string">&quot;%s  %s&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">message</span>, <span class="ruby-identifier">dump</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-log">
+            
+              <a name="method-i-log"></a><b>log</b>(sql, name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-log_source')" id="l_method-i-log_source">show</a>
+                
+              </p>
+              <div id="method-i-log_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">log</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@logger</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">level</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-constant">Logger</span><span class="ruby-operator">::</span><span class="ruby-constant">INFO</span>
+      <span class="ruby-identifier">result</span> = <span class="ruby-keyword">nil</span>
+      <span class="ruby-identifier">seconds</span> = <span class="ruby-constant">Benchmark</span>.<span class="ruby-identifier">realtime</span> { <span class="ruby-identifier">result</span> = <span class="ruby-keyword">yield</span> }
+      <span class="ruby-ivar">@runtime</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">seconds</span>
+      <span class="ruby-identifier">log_info</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">seconds</span>)
+      <span class="ruby-identifier">result</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-keyword">yield</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">log_info</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-number">0</span>)
+    <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-comment"># Log message and raise exception.</span>
+  <span class="ruby-comment"># Set last_verfication to 0, so that connection gets verified</span>
+  <span class="ruby-comment"># upon reentering the request loop</span>
+  <span class="ruby-ivar">@last_verification</span> = <span class="ruby-number">0</span>
+  <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;#{e.class.name}: #{e.message}: #{sql}&quot;</span>
+  <span class="ruby-identifier">log_info</span>(<span class="ruby-identifier">message</span>, <span class="ruby-identifier">name</span>, <span class="ruby-number">0</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span>, <span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-log_info">
+            
+              <a name="method-i-log_info"></a><b>log_info</b>(sql, name, runtime)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-log_info_source')" id="l_method-i-log_info_source">show</a>
+                
+              </p>
+              <div id="method-i-log_info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract_adapter.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">log_info</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">runtime</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@logger</span>
+
+  <span class="ruby-ivar">@logger</span>.<span class="ruby-identifier">debug</span>(
+    <span class="ruby-identifier">format_log_entry</span>(
+      <span class="ruby-node">&quot;#{name.nil? ? &quot;SQL&quot; : name} (#{sprintf(&quot;%f&quot;, runtime)})&quot;</span>,
+      <span class="ruby-identifier">sql</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r +/</span>, <span class="ruby-string">&quot; &quot;</span>)
+    )
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

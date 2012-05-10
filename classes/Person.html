@@ -1,0 +1,416 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Person</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Person 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="ActiveRecord/Base.html">ActiveRecord::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/examples/associations_rb.html">rails/activerecord/examples/associations.rb</a></li>
+            
+            <li><a href="../files/rails/activerecord/examples/validation_rb.html">rails/activerecord/examples/validation.rb</a></li>
+            
+            <li><a href="../files/rails/activerecord/test/fixtures/person_rb.html">rails/activerecord/test/fixtures/person.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="Class.html">Class</a> setup ---------------</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-authenticate">authenticate</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-email_address_with_name">email_address_with_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-name_exists-3F">name_exists?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-table_name">table_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-validate">validate</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-validate_on_create">validate_on_create</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-validate_on_update">validate_on_update</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-authenticate">
+            
+              <a name="method-c-authenticate"></a><b>authenticate</b>(name, pass)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Using</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-authenticate_source')" id="l_method-c-authenticate_source">show</a>
+                
+              </p>
+              <div id="method-c-authenticate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/examples/validation.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">authenticate</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">pass</span>)
+  <span class="ruby-comment"># find_first &quot;name = '#{name}' AND pass = '#{pass}'&quot; would be open to sql-injection (in a web-app scenario)</span>
+  <span class="ruby-identifier">find_first</span> [ <span class="ruby-string">&quot;name = '%s' AND pass = '%s'&quot;</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">pass</span> ]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-name_exists-3F">
+            
+              <a name="method-c-name_exists-3F"></a><b>name_exists?</b>(name, id = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-name_exists-3F_source')" id="l_method-c-name_exists-3F_source">show</a>
+                
+              </p>
+              <div id="method-c-name_exists-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/examples/validation.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">name_exists?</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">id</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">id</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">condition</span> = [ <span class="ruby-string">&quot;name = '%s'&quot;</span>, <span class="ruby-identifier">name</span> ]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># Check if anyone else than the person identified by person_id has that user_name</span>
+    <span class="ruby-identifier">condition</span> = [ <span class="ruby-string">&quot;name = '%s' AND id &lt;&gt; %d&quot;</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">id</span> ]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-operator">!</span><span class="ruby-identifier">find_first</span>(<span class="ruby-identifier">condition</span>).<span class="ruby-identifier">nil?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-table_name">
+            
+              <a name="method-c-table_name"></a><b>table_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-table_name_source')" id="l_method-c-table_name_source">show</a>
+                
+              </p>
+              <div id="method-c-table_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/examples/associations.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">table_name</span>() <span class="ruby-string">&quot;people&quot;</span> <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-email_address_with_name">
+            
+              <a name="method-i-email_address_with_name"></a><b>email_address_with_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-email_address_with_name_source')" id="l_method-i-email_address_with_name_source">show</a>
+                
+              </p>
+              <div id="method-i-email_address_with_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/examples/validation.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">email_address_with_name</span>
+  <span class="ruby-node">&quot;\&quot;#{name}\&quot; &lt;#{email}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-validate">
+            
+              <a name="method-i-validate"></a><b>validate</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-validate_source')" id="l_method-i-validate_source">show</a>
+                
+              </p>
+              <div id="method-i-validate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/examples/validation.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">validate</span>
+  <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add_on_empty</span>(<span class="ruby-node">%w(name pass email)</span>)
+  <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-string">&quot;email&quot;</span>, <span class="ruby-string">&quot;must be valid&quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">email_address_valid?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-validate_on_create">
+            
+              <a name="method-i-validate_on_create"></a><b>validate_on_create</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-validate_on_create_source')" id="l_method-i-validate_on_create_source">show</a>
+                
+              </p>
+              <div id="method-i-validate_on_create_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/examples/validation.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">validate_on_create</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attribute_present?</span>(<span class="ruby-string">&quot;name&quot;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">name_exists?</span>(<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;is already taken by another person&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-validate_on_update">
+            
+              <a name="method-i-validate_on_update"></a><b>validate_on_update</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-validate_on_update_source')" id="l_method-i-validate_on_update_source">show</a>
+                
+              </p>
+              <div id="method-i-validate_on_update_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/examples/validation.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">validate_on_update</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">attribute_present?</span>(<span class="ruby-string">&quot;name&quot;</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">name_exists?</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">id</span>)
+      <span class="ruby-identifier">errors</span>.<span class="ruby-identifier">add</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;is already taken by another person&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

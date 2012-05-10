@@ -1,0 +1,846 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::ConnectionAdapters::Column</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecord::ConnectionAdapters::Column 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions_rb.html">rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>An abstract definition of a column in a table.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-binary_to_string">binary_to_string</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-human_name">human_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>K</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-klass">klass</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-number-3F">number?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-string_to_binary">string_to_binary</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-string_to_date">string_to_date</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-string_to_dummy_time">string_to_dummy_time</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-string_to_time">string_to_time</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-text-3F">text?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-type_cast">type_cast</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-type_cast_code">type_cast_code</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-value_to_boolean">value_to_boolean</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-value_to_decimal">value_to_decimal</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>default</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>limit</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>name</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>null</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>precision</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>primary</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>scale</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>sql_type</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>type</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-binary_to_string">
+            
+              <a name="method-c-binary_to_string"></a><b>binary_to_string</b>(value)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Used to convert from BLOBs to Strings</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-binary_to_string_source')" id="l_method-c-binary_to_string_source">show</a>
+                
+              </p>
+              <div id="method-c-binary_to_string_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">binary_to_string</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(name, default, sql_type = nil, null = true)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Instantiates a new column in the table.</p>
+
+<p><code>name</code> is the column's name, as in
+<strong><code>supplier_id</strong> int(11)</code>. <code>default</code> is
+the type-casted default value, such as <code>sales_stage varchar(20)
+default <strong>'new'</code></strong>. <code>sql_type</code> is only used
+to extract the column's length, if necessary.  For example,
+<code>company_name varchar(<strong>60</strong>)</code>. <code>null</code>
+determines if this column allows <code>NULL</code> values.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">default</span>, <span class="ruby-identifier">sql_type</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">null</span> = <span class="ruby-keyword">true</span>)
+  <span class="ruby-ivar">@name</span>, <span class="ruby-ivar">@sql_type</span>, <span class="ruby-ivar">@null</span> = <span class="ruby-identifier">name</span>, <span class="ruby-identifier">sql_type</span>, <span class="ruby-identifier">null</span>
+  <span class="ruby-ivar">@limit</span>, <span class="ruby-ivar">@precision</span>, <span class="ruby-ivar">@scale</span>  = <span class="ruby-identifier">extract_limit</span>(<span class="ruby-identifier">sql_type</span>), <span class="ruby-identifier">extract_precision</span>(<span class="ruby-identifier">sql_type</span>), <span class="ruby-identifier">extract_scale</span>(<span class="ruby-identifier">sql_type</span>) 
+  <span class="ruby-ivar">@type</span> = <span class="ruby-identifier">simplified_type</span>(<span class="ruby-identifier">sql_type</span>)
+  <span class="ruby-ivar">@default</span> = <span class="ruby-identifier">type_cast</span>(<span class="ruby-identifier">default</span>)
+
+  <span class="ruby-ivar">@primary</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-string_to_binary">
+            
+              <a name="method-c-string_to_binary"></a><b>string_to_binary</b>(value)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Used to convert from Strings to BLOBs</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-string_to_binary_source')" id="l_method-c-string_to_binary_source">show</a>
+                
+              </p>
+              <div id="method-c-string_to_binary_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">string_to_binary</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-string_to_date">
+            
+              <a name="method-c-string_to_date"></a><b>string_to_date</b>(string)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-string_to_date_source')" id="l_method-c-string_to_date_source">show</a>
+                
+              </p>
+              <div id="method-c-string_to_date_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">string_to_date</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">string</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+  <span class="ruby-identifier">date_array</span> = <span class="ruby-constant">ParseDate</span>.<span class="ruby-identifier">parsedate</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-comment"># treat 0000-00-00 as nil</span>
+  <span class="ruby-constant">Date</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">date_array</span>[<span class="ruby-number">0</span>], <span class="ruby-identifier">date_array</span>[<span class="ruby-number">1</span>], <span class="ruby-identifier">date_array</span>[<span class="ruby-number">2</span>]) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-string_to_dummy_time">
+            
+              <a name="method-c-string_to_dummy_time"></a><b>string_to_dummy_time</b>(string)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-string_to_dummy_time_source')" id="l_method-c-string_to_dummy_time_source">show</a>
+                
+              </p>
+              <div id="method-c-string_to_dummy_time_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 121</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">string_to_dummy_time</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">string</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">time_hash</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">_parse</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">time_hash</span>[<span class="ruby-value">:sec_fraction</span>] = <span class="ruby-identifier">microseconds</span>(<span class="ruby-identifier">time_hash</span>)
+  <span class="ruby-comment"># pad the resulting array with dummy date information</span>
+  <span class="ruby-identifier">time_array</span> = [<span class="ruby-number">2000</span>, <span class="ruby-number">1</span>, <span class="ruby-number">1</span>]
+  <span class="ruby-identifier">time_array</span> <span class="ruby-operator">+=</span> <span class="ruby-identifier">time_hash</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-value">:hour</span>, <span class="ruby-value">:min</span>, <span class="ruby-value">:sec</span>, <span class="ruby-value">:sec_fraction</span>)
+  <span class="ruby-constant">Time</span>.<span class="ruby-identifier">send</span>(<span class="ruby-constant">Base</span>.<span class="ruby-identifier">default_timezone</span>, *<span class="ruby-identifier">time_array</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-string_to_time">
+            
+              <a name="method-c-string_to_time"></a><b>string_to_time</b>(string)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-string_to_time_source')" id="l_method-c-string_to_time_source">show</a>
+                
+              </p>
+              <div id="method-c-string_to_time_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">string_to_time</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">string</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">string</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">String</span>)
+  <span class="ruby-identifier">time_hash</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">_parse</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-identifier">time_hash</span>[<span class="ruby-value">:sec_fraction</span>] = <span class="ruby-identifier">microseconds</span>(<span class="ruby-identifier">time_hash</span>)
+  <span class="ruby-identifier">time_array</span> = <span class="ruby-identifier">time_hash</span>.<span class="ruby-identifier">values_at</span>(<span class="ruby-value">:year</span>, <span class="ruby-value">:mon</span>, <span class="ruby-value">:mday</span>, <span class="ruby-value">:hour</span>, <span class="ruby-value">:min</span>, <span class="ruby-value">:sec</span>, <span class="ruby-value">:sec_fraction</span>)
+  <span class="ruby-comment"># treat 0000-00-00 00:00:00 as nil</span>
+  <span class="ruby-constant">Time</span>.<span class="ruby-identifier">send</span>(<span class="ruby-constant">Base</span>.<span class="ruby-identifier">default_timezone</span>, *<span class="ruby-identifier">time_array</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-constant">DateTime</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">time_array</span>[<span class="ruby-number">0</span><span class="ruby-operator">..</span><span class="ruby-number">5</span>]) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-value_to_boolean">
+            
+              <a name="method-c-value_to_boolean"></a><b>value_to_boolean</b>(value)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>convert something to a boolean</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-value_to_boolean_source')" id="l_method-c-value_to_boolean_source">show</a>
+                
+              </p>
+              <div id="method-c-value_to_boolean_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">value_to_boolean</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-node">%w(true t 1)</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-value_to_decimal">
+            
+              <a name="method-c-value_to_decimal"></a><b>value_to_decimal</b>(value)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>convert something to a BigDecimal</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-value_to_decimal_source')" id="l_method-c-value_to_decimal_source">show</a>
+                
+              </p>
+              <div id="method-c-value_to_decimal_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">value_to_decimal</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">BigDecimal</span>)
+    <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:to_d</span>)
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_d</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">to_d</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-human_name">
+            
+              <a name="method-i-human_name"></a><b>human_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the human name of the column name.</p>
+
+<h5 id="method-i-human_name-label-Examples">Examples</h5>
+
+<pre class="ruby"><span class="ruby-constant">Column</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">'sales_stage'</span>, <span class="ruby-operator">...</span>).<span class="ruby-identifier">human_name</span> <span class="ruby-comment">#=&gt; 'Sales stage'</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-human_name_source')" id="l_method-i-human_name_source">show</a>
+                
+              </p>
+              <div id="method-i-human_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">human_name</span>
+  <span class="ruby-constant">Base</span>.<span class="ruby-identifier">human_attribute_name</span>(<span class="ruby-ivar">@name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-klass">
+            
+              <a name="method-i-klass"></a><b>klass</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the Ruby class that corresponds to the abstract data type.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-klass_source')" id="l_method-i-klass_source">show</a>
+                
+              </p>
+              <div id="method-i-klass_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">klass</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:integer</span>       <span class="ruby-keyword">then</span> <span class="ruby-constant">Fixnum</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:float</span>         <span class="ruby-keyword">then</span> <span class="ruby-constant">Float</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:decimal</span>       <span class="ruby-keyword">then</span> <span class="ruby-constant">BigDecimal</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:datetime</span>      <span class="ruby-keyword">then</span> <span class="ruby-constant">Time</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:date</span>          <span class="ruby-keyword">then</span> <span class="ruby-constant">Date</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:timestamp</span>     <span class="ruby-keyword">then</span> <span class="ruby-constant">Time</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:time</span>          <span class="ruby-keyword">then</span> <span class="ruby-constant">Time</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:text</span>, <span class="ruby-value">:string</span> <span class="ruby-keyword">then</span> <span class="ruby-constant">String</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:binary</span>        <span class="ruby-keyword">then</span> <span class="ruby-constant">String</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:boolean</span>       <span class="ruby-keyword">then</span> <span class="ruby-constant">Object</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-number-3F">
+            
+              <a name="method-i-number-3F"></a><b>number?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-number-3F_source')" id="l_method-i-number-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-number-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">number?</span>
+  [<span class="ruby-value">:float</span>, <span class="ruby-value">:integer</span>, <span class="ruby-value">:decimal</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">type</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-text-3F">
+            
+              <a name="method-i-text-3F"></a><b>text?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-text-3F_source')" id="l_method-i-text-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-text-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">text?</span>
+  [<span class="ruby-value">:string</span>, <span class="ruby-value">:text</span>].<span class="ruby-identifier">include?</span> <span class="ruby-identifier">type</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-type_cast">
+            
+              <a name="method-i-type_cast"></a><b>type_cast</b>(value)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Casts value (which is a <a href="../../String.html">String</a>) to an
+appropriate instance.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-type_cast_source')" id="l_method-i-type_cast_source">show</a>
+                
+              </p>
+              <div id="method-i-type_cast_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">type_cast</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:string</span>    <span class="ruby-keyword">then</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:text</span>      <span class="ruby-keyword">then</span> <span class="ruby-identifier">value</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:integer</span>   <span class="ruby-keyword">then</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-number">1</span> <span class="ruby-operator">:</span> <span class="ruby-number">0</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:float</span>     <span class="ruby-keyword">then</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">to_f</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:decimal</span>   <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">value_to_decimal</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:datetime</span>  <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">string_to_time</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:timestamp</span> <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">string_to_time</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:time</span>      <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">string_to_dummy_time</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:date</span>      <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">string_to_date</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:binary</span>    <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">binary_to_string</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:boolean</span>   <span class="ruby-keyword">then</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">value_to_boolean</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">else</span> <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-type_cast_code">
+            
+              <a name="method-i-type_cast_code"></a><b>type_cast_code</b>(var_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-type_cast_code_source')" id="l_method-i-type_cast_code_source">show</a>
+                
+              </p>
+              <div id="method-i-type_cast_code_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/abstract/schema_definitions.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">type_cast_code</span>(<span class="ruby-identifier">var_name</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">type</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:string</span>    <span class="ruby-keyword">then</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:text</span>      <span class="ruby-keyword">then</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:integer</span>   <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;(#{var_name}.to_i rescue #{var_name} ? 1 : 0)&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:float</span>     <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;#{var_name}.to_f&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:decimal</span>   <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;#{self.class.name}.value_to_decimal(#{var_name})&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:datetime</span>  <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;#{self.class.name}.string_to_time(#{var_name})&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:timestamp</span> <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;#{self.class.name}.string_to_time(#{var_name})&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:time</span>      <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;#{self.class.name}.string_to_dummy_time(#{var_name})&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:date</span>      <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;#{self.class.name}.string_to_date(#{var_name})&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:binary</span>    <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;#{self.class.name}.binary_to_string(#{var_name})&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-value">:boolean</span>   <span class="ruby-keyword">then</span> <span class="ruby-node">&quot;#{self.class.name}.value_to_boolean(#{var_name})&quot;</span>
+    <span class="ruby-keyword">else</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,882 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Object::MysqlRes</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Object::MysqlRes 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/activerecord/lib/active_record/vendor/mysql_rb.html">rails/activerecord/lib/active_record/vendor/mysql.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-data_seek">data_seek</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-each">each</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-each_hash">each_hash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-fetch_field">fetch_field</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-fetch_field_direct">fetch_field_direct</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-fetch_fields">fetch_fields</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-fetch_hash">fetch_hash</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-fetch_lengths">fetch_lengths</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-fetch_row">fetch_row</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-field_seek">field_seek</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-field_tell">field_tell</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-free">free</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inspect">inspect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-num_fields">num_fields</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-num_rows">num_rows</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-row_seek">row_seek</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-row_tell">row_tell</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>eof</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(mysql, fields, field_count, data=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 580</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">mysql</span>, <span class="ruby-identifier">fields</span>, <span class="ruby-identifier">field_count</span>, <span class="ruby-identifier">data</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-identifier">mysql</span>
+  <span class="ruby-ivar">@fields</span> = <span class="ruby-identifier">fields</span>
+  <span class="ruby-ivar">@field_count</span> = <span class="ruby-identifier">field_count</span>
+  <span class="ruby-ivar">@data</span> = <span class="ruby-identifier">data</span>
+  <span class="ruby-ivar">@current_field</span> = <span class="ruby-number">0</span>
+  <span class="ruby-ivar">@current_row</span> = <span class="ruby-number">0</span>
+  <span class="ruby-ivar">@eof</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@row_count</span> = <span class="ruby-number">0</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-data_seek">
+            
+              <a name="method-i-data_seek"></a><b>data_seek</b>(n)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-data_seek_source')" id="l_method-i-data_seek_source">show</a>
+                
+              </p>
+              <div id="method-i-data_seek_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 592</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">data_seek</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-ivar">@current_row</span> = <span class="ruby-identifier">n</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each">
+            
+              <a name="method-i-each"></a><b>each</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-each_source')" id="l_method-i-each_source">show</a>
+                
+              </p>
+              <div id="method-i-each_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 676</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">each</span>()
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">row</span> = <span class="ruby-identifier">fetch_row</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">row</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each_hash">
+            
+              <a name="method-i-each_hash"></a><b>each_hash</b>(with_table=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-each_hash_source')" id="l_method-i-each_hash_source">show</a>
+                
+              </p>
+              <div id="method-i-each_hash_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 682</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">each_hash</span>(<span class="ruby-identifier">with_table</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">while</span> <span class="ruby-identifier">hash</span> = <span class="ruby-identifier">fetch_hash</span>(<span class="ruby-identifier">with_table</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">hash</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fetch_field">
+            
+              <a name="method-i-fetch_field"></a><b>fetch_field</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fetch_field_source')" id="l_method-i-fetch_field_source">show</a>
+                
+              </p>
+              <div id="method-i-fetch_field_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 596</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fetch_field</span>()
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_field</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-ivar">@field_count</span>
+  <span class="ruby-identifier">f</span> = <span class="ruby-ivar">@fields</span>[<span class="ruby-ivar">@current_field</span>]
+  <span class="ruby-ivar">@current_field</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+  <span class="ruby-identifier">f</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fetch_field_direct">
+            
+              <a name="method-i-fetch_field_direct"></a><b>fetch_field_direct</b>(n)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fetch_field_direct_source')" id="l_method-i-fetch_field_direct_source">show</a>
+                
+              </p>
+              <div id="method-i-fetch_field_direct_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 607</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fetch_field_direct</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-ivar">@fields</span>[<span class="ruby-identifier">n</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fetch_fields">
+            
+              <a name="method-i-fetch_fields"></a><b>fetch_fields</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fetch_fields_source')" id="l_method-i-fetch_fields_source">show</a>
+                
+              </p>
+              <div id="method-i-fetch_fields_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 603</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fetch_fields</span>()
+  <span class="ruby-ivar">@fields</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fetch_hash">
+            
+              <a name="method-i-fetch_hash"></a><b>fetch_hash</b>(with_table=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fetch_hash_source')" id="l_method-i-fetch_hash_source">show</a>
+                
+              </p>
+              <div id="method-i-fetch_hash_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 636</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fetch_hash</span>(<span class="ruby-identifier">with_table</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">row</span> = <span class="ruby-identifier">fetch_row</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">row</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">hash</span> = {}
+  <span class="ruby-ivar">@fields</span>.<span class="ruby-identifier">each_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">f</span> = <span class="ruby-identifier">with_table</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@fields</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">table</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;.&quot;</span><span class="ruby-operator">+</span><span class="ruby-ivar">@fields</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">name</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@fields</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">name</span>
+    <span class="ruby-identifier">hash</span>[<span class="ruby-identifier">f</span>] = <span class="ruby-identifier">row</span>[<span class="ruby-identifier">i</span>]
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fetch_lengths">
+            
+              <a name="method-i-fetch_lengths"></a><b>fetch_lengths</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fetch_lengths_source')" id="l_method-i-fetch_lengths_source">show</a>
+                
+              </p>
+              <div id="method-i-fetch_lengths_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 611</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fetch_lengths</span>()
+  <span class="ruby-ivar">@data</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@data</span>[<span class="ruby-ivar">@current_row</span>].<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">:</span> <span class="ruby-number">0</span>} <span class="ruby-operator">:</span> <span class="ruby-ivar">@lengths</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fetch_row">
+            
+              <a name="method-i-fetch_row"></a><b>fetch_row</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fetch_row_source')" id="l_method-i-fetch_row_source">show</a>
+                
+              </p>
+              <div id="method-i-fetch_row_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 615</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fetch_row</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@data</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-ivar">@current_row</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">length</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@handle</span>.<span class="ruby-identifier">status</span> = <span class="ruby-value">:STATUS_READY</span>
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">ret</span> = <span class="ruby-ivar">@data</span>[<span class="ruby-ivar">@current_row</span>]
+    <span class="ruby-ivar">@current_row</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@eof</span>
+    <span class="ruby-identifier">ret</span> = <span class="ruby-ivar">@handle</span>.<span class="ruby-identifier">read_one_row</span> <span class="ruby-ivar">@field_count</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">ret</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@eof</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@lengths</span> = <span class="ruby-identifier">ret</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">i</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">:</span> <span class="ruby-number">0</span>}
+    <span class="ruby-ivar">@row_count</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">ret</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-field_seek">
+            
+              <a name="method-i-field_seek"></a><b>field_seek</b>(n)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-field_seek_source')" id="l_method-i-field_seek_source">show</a>
+                
+              </p>
+              <div id="method-i-field_seek_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 647</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">field_seek</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-ivar">@current_field</span> = <span class="ruby-identifier">n</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-field_tell">
+            
+              <a name="method-i-field_tell"></a><b>field_tell</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-field_tell_source')" id="l_method-i-field_tell_source">show</a>
+                
+              </p>
+              <div id="method-i-field_tell_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 651</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">field_tell</span>()
+  <span class="ruby-ivar">@current_field</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-free">
+            
+              <a name="method-i-free"></a><b>free</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-free_source')" id="l_method-i-free_source">show</a>
+                
+              </p>
+              <div id="method-i-free_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 655</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">free</span>()
+  <span class="ruby-ivar">@handle</span>.<span class="ruby-identifier">skip_result</span>
+  <span class="ruby-ivar">@handle</span> = <span class="ruby-ivar">@fields</span> = <span class="ruby-ivar">@data</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect">
+            
+              <a name="method-i-inspect"></a><b>inspect</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_source')" id="l_method-i-inspect_source">show</a>
+                
+              </p>
+              <div id="method-i-inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 688</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect</span>()
+  <span class="ruby-node">&quot;#&lt;#{self.class}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-num_fields">
+            
+              <a name="method-i-num_fields"></a><b>num_fields</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-num_fields_source')" id="l_method-i-num_fields_source">show</a>
+                
+              </p>
+              <div id="method-i-num_fields_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 660</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">num_fields</span>()
+  <span class="ruby-ivar">@field_count</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-num_rows">
+            
+              <a name="method-i-num_rows"></a><b>num_rows</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-num_rows_source')" id="l_method-i-num_rows_source">show</a>
+                
+              </p>
+              <div id="method-i-num_rows_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 664</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">num_rows</span>()
+  <span class="ruby-ivar">@data</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@row_count</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-row_seek">
+            
+              <a name="method-i-row_seek"></a><b>row_seek</b>(n)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-row_seek_source')" id="l_method-i-row_seek_source">show</a>
+                
+              </p>
+              <div id="method-i-row_seek_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 668</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">row_seek</span>(<span class="ruby-identifier">n</span>)
+  <span class="ruby-ivar">@current_row</span> = <span class="ruby-identifier">n</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-row_tell">
+            
+              <a name="method-i-row_tell"></a><b>row_tell</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-row_tell_source')" id="l_method-i-row_tell_source">show</a>
+                
+              </p>
+              <div id="method-i-row_tell_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 672</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">row_tell</span>()
+  <span class="ruby-ivar">@current_row</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,533 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ReloadableTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ReloadableTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/test/reloadable_test_rb.html">rails/activesupport/test/reloadable_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-assert_deprecated_reloadable">assert_deprecated_reloadable</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_classes_inherit_reloadable">test_classes_inherit_reloadable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_classes_receive_reloadable">test_classes_receive_reloadable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_include_deprecated_should_not_warn">test_include_deprecated_should_not_warn</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_include_subclasses_should_warn">test_include_subclasses_should_warn</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_including_reloadable_should_warn">test_including_reloadable_should_warn</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_inside_hierarchy_only_subclass_reloadable">test_inside_hierarchy_only_subclass_reloadable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_only_subclass_reloadable">test_only_subclass_reloadable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_reloadable_is_not_overwritten_if_present">test_reloadable_is_not_overwritten_if_present</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_removable_classes">test_removable_classes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_classes_inherit_reloadable">
+            
+              <a name="method-i-test_classes_inherit_reloadable"></a><b>test_classes_inherit_reloadable</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_classes_inherit_reloadable_source')" id="l_method-i-test_classes_inherit_reloadable_source">show</a>
+                
+              </p>
+              <div id="method-i-test_classes_inherit_reloadable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/reloadable_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_classes_inherit_reloadable</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">ReloadableTestSandbox</span><span class="ruby-operator">::</span><span class="ruby-constant">AReloadableSubclass</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:reloadable?</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_classes_receive_reloadable">
+            
+              <a name="method-i-test_classes_receive_reloadable"></a><b>test_classes_receive_reloadable</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_classes_receive_reloadable_source')" id="l_method-i-test_classes_receive_reloadable_source">show</a>
+                
+              </p>
+              <div id="method-i-test_classes_receive_reloadable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/reloadable_test.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_classes_receive_reloadable</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">ReloadableTestSandbox</span><span class="ruby-operator">::</span><span class="ruby-constant">AReloadableClass</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:reloadable?</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_include_deprecated_should_not_warn">
+            
+              <a name="method-i-test_include_deprecated_should_not_warn"></a><b>test_include_deprecated_should_not_warn</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_include_deprecated_should_not_warn_source')" id="l_method-i-test_include_deprecated_should_not_warn_source">show</a>
+                
+              </p>
+              <div id="method-i-test_include_deprecated_should_not_warn_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/reloadable_test.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_include_deprecated_should_not_warn</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">result</span>, <span class="ruby-identifier">deps</span> = <span class="ruby-identifier">collect_deprecations</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:include</span>, <span class="ruby-constant">Reloadable</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecated</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">deps</span>.<span class="ruby-identifier">size</span>
+  
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:reloadable?</span>)
+  <span class="ruby-identifier">assert_deprecated_reloadable</span> { <span class="ruby-identifier">c</span>.<span class="ruby-identifier">reloadable?</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_include_subclasses_should_warn">
+            
+              <a name="method-i-test_include_subclasses_should_warn"></a><b>test_include_subclasses_should_warn</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_include_subclasses_should_warn_source')" id="l_method-i-test_include_subclasses_should_warn_source">show</a>
+                
+              </p>
+              <div id="method-i-test_include_subclasses_should_warn_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/reloadable_test.rb, line 97</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_include_subclasses_should_warn</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">result</span>, <span class="ruby-identifier">deps</span> = <span class="ruby-identifier">collect_deprecations</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:include</span>, <span class="ruby-constant">Reloadable</span><span class="ruby-operator">::</span><span class="ruby-constant">Subclasses</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">deps</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_match</span> <span class="ruby-regexp">%r{Reloadable::Subclasses}</span>, <span class="ruby-identifier">deps</span>.<span class="ruby-identifier">first</span>
+
+  <span class="ruby-identifier">assert_deprecated_reloadable</span> { <span class="ruby-identifier">c</span>.<span class="ruby-identifier">reloadable?</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_including_reloadable_should_warn">
+            
+              <a name="method-i-test_including_reloadable_should_warn"></a><b>test_including_reloadable_should_warn</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_including_reloadable_should_warn_source')" id="l_method-i-test_including_reloadable_should_warn_source">show</a>
+                
+              </p>
+              <div id="method-i-test_including_reloadable_should_warn_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/reloadable_test.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_including_reloadable_should_warn</span>
+  <span class="ruby-identifier">c</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">assert_deprecated_reloadable</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">c</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:include</span>, <span class="ruby-constant">Reloadable</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">assert_deprecated_reloadable</span> { <span class="ruby-identifier">c</span>.<span class="ruby-identifier">reloadable?</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_inside_hierarchy_only_subclass_reloadable">
+            
+              <a name="method-i-test_inside_hierarchy_only_subclass_reloadable"></a><b>test_inside_hierarchy_only_subclass_reloadable</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_inside_hierarchy_only_subclass_reloadable_source')" id="l_method-i-test_inside_hierarchy_only_subclass_reloadable_source">show</a>
+                
+              </p>
+              <div id="method-i-test_inside_hierarchy_only_subclass_reloadable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/reloadable_test.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_inside_hierarchy_only_subclass_reloadable</span>
+  <span class="ruby-identifier">assert_deprecated_reloadable</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">ReloadableTestSandbox</span><span class="ruby-operator">::</span><span class="ruby-constant">AnOnlySubclassReloadableClassSubclassingAReloadableClass</span>.<span class="ruby-identifier">reloadable?</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-constant">ReloadableTestSandbox</span><span class="ruby-operator">::</span><span class="ruby-constant">ASubclassofAOnlySubclassReloadableClassWhichWasSubclassingAReloadableClass</span>.<span class="ruby-identifier">reloadable?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_only_subclass_reloadable">
+            
+              <a name="method-i-test_only_subclass_reloadable"></a><b>test_only_subclass_reloadable</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_only_subclass_reloadable_source')" id="l_method-i-test_only_subclass_reloadable_source">show</a>
+                
+              </p>
+              <div id="method-i-test_only_subclass_reloadable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/reloadable_test.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_only_subclass_reloadable</span>
+  <span class="ruby-identifier">assert_deprecated_reloadable</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">ReloadableTestSandbox</span><span class="ruby-operator">::</span><span class="ruby-constant">SubclassesReloadable</span>.<span class="ruby-identifier">reloadable?</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-constant">ReloadableTestSandbox</span><span class="ruby-operator">::</span><span class="ruby-constant">ASubclassOfSubclassesReloadable</span>.<span class="ruby-identifier">reloadable?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_reloadable_is_not_overwritten_if_present">
+            
+              <a name="method-i-test_reloadable_is_not_overwritten_if_present"></a><b>test_reloadable_is_not_overwritten_if_present</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_reloadable_is_not_overwritten_if_present_source')" id="l_method-i-test_reloadable_is_not_overwritten_if_present_source">show</a>
+                
+              </p>
+              <div id="method-i-test_reloadable_is_not_overwritten_if_present_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/reloadable_test.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_reloadable_is_not_overwritten_if_present</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">10</span>, <span class="ruby-constant">ReloadableTestSandbox</span><span class="ruby-operator">::</span><span class="ruby-constant">AClassWhichDefinesItsOwnReloadable</span>.<span class="ruby-identifier">reloadable?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_removable_classes">
+            
+              <a name="method-i-test_removable_classes"></a><b>test_removable_classes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_removable_classes_source')" id="l_method-i-test_removable_classes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_removable_classes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/reloadable_test.rb, line 65</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_removable_classes</span>
+  <span class="ruby-identifier">reloadables</span> = <span class="ruby-node">%w(
+    AReloadableClass
+    AReloadableClassWithSubclasses
+    AReloadableSubclass
+    AClassWhichDefinesItsOwnReloadable
+    ASubclassOfSubclassesReloadable
+  )</span>
+  <span class="ruby-identifier">non_reloadables</span> = <span class="ruby-node">%w(
+    ANonReloadableSubclass
+    SubclassesReloadable
+  )</span>
+
+  <span class="ruby-identifier">results</span> = []
+  <span class="ruby-identifier">assert_deprecated_reloadable</span> { <span class="ruby-identifier">results</span> = <span class="ruby-constant">Reloadable</span>.<span class="ruby-identifier">reloadable_classes</span> }
+  <span class="ruby-identifier">reloadables</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">results</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">ReloadableTestSandbox</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">name</span>)), <span class="ruby-node">&quot;Expected #{name} to be reloadable&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">non_reloadables</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span> <span class="ruby-identifier">results</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-constant">ReloadableTestSandbox</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">name</span>)), <span class="ruby-node">&quot;Expected #{name} NOT to be reloadable&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_deprecated_reloadable">
+            
+              <a name="method-i-assert_deprecated_reloadable"></a><b>assert_deprecated_reloadable</b>(&amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_deprecated_reloadable_source')" id="l_method-i-assert_deprecated_reloadable_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_deprecated_reloadable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/reloadable_test.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_deprecated_reloadable</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">assert_deprecated</span>(<span class="ruby-regexp">%rreloadable/</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

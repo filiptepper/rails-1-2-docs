@@ -1,0 +1,483 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::ConnectionAdapters::OpenBaseAdapter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecord::ConnectionAdapters::OpenBaseAdapter 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/activerecord/lib/active_record/connection_adapters/openbase_adapter_rb.html">rails/activerecord/lib/active_record/connection_adapters/openbase_adapter.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>The OpenBase adapter works with the Ruby/Openbase driver by Tetsuya Suzuki.
+<a
+href="http://www.spice-of-life.net/ruby-openbase/">www.spice-of-life.net/ruby-openbase/</a>
+(needs version 0.7.3+)</p>
+
+<p>Options:</p>
+<ul><li>
+<p><code>:host</code> -- Defaults to localhost</p>
+</li><li>
+<p><code>:username</code> -- Defaults to nothing</p>
+</li><li>
+<p><code>:password</code> -- Defaults to nothing</p>
+</li><li>
+<p><code>:database</code> -- The name of the database. No default, must be
+provided.</p>
+</li></ul>
+
+<p>The OpenBase adapter will make use of OpenBase’s ability to generate unique
+ids for any column with an unique index applied.  Thus, if the value of a
+primary key is not specified at the time an INSERT is performed, the
+adapter will prefetch a unique id for the primary key.  This prefetching is
+also necessary in order  to return the id after an insert.</p>
+
+<p>Caveat: Operations involving LIMIT and OFFSET do not yet work!</p>
+
+<p>Maintainer: gmail at derrick.spell.com</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-adapter_name">adapter_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-native_database_types">native_database_types</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-next_sequence_value">next_sequence_value</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-prefetch_primary_key-3F">prefetch_primary_key?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>Q</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-quote">quote</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-quoted_false">quoted_false</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-quoted_true">quoted_true</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-supports_migrations-3F">supports_migrations?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-adapter_name">
+            
+              <a name="method-i-adapter_name"></a><b>adapter_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-adapter_name_source')" id="l_method-i-adapter_name_source">show</a>
+                
+              </p>
+              <div id="method-i-adapter_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/openbase_adapter.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">adapter_name</span>
+  <span class="ruby-string">'OpenBase'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-native_database_types">
+            
+              <a name="method-i-native_database_types"></a><b>native_database_types</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-native_database_types_source')" id="l_method-i-native_database_types_source">show</a>
+                
+              </p>
+              <div id="method-i-native_database_types_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/openbase_adapter.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">native_database_types</span>
+  {
+    <span class="ruby-value">:primary_key</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;integer UNIQUE INDEX DEFAULT _rowid&quot;</span>,
+    <span class="ruby-value">:string</span>      =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;char&quot;</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4096</span> },
+    <span class="ruby-value">:text</span>        =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;text&quot;</span> },
+    <span class="ruby-value">:integer</span>     =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;integer&quot;</span> },
+    <span class="ruby-value">:float</span>       =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;float&quot;</span> },
+    <span class="ruby-value">:decimal</span>     =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;decimal&quot;</span> },
+    <span class="ruby-value">:datetime</span>    =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;datetime&quot;</span> },
+    <span class="ruby-value">:timestamp</span>   =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;timestamp&quot;</span> },
+    <span class="ruby-value">:time</span>        =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;time&quot;</span> },
+    <span class="ruby-value">:date</span>        =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;date&quot;</span> },
+    <span class="ruby-value">:binary</span>      =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;object&quot;</span> },
+    <span class="ruby-value">:boolean</span>     =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;boolean&quot;</span> }
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-next_sequence_value">
+            
+              <a name="method-i-next_sequence_value"></a><b>next_sequence_value</b>(sequence_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-next_sequence_value_source')" id="l_method-i-next_sequence_value_source">show</a>
+                
+              </p>
+              <div id="method-i-next_sequence_value_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/openbase_adapter.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">next_sequence_value</span>(<span class="ruby-identifier">sequence_name</span>)
+  <span class="ruby-identifier">ary</span> = <span class="ruby-identifier">sequence_name</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">' '</span>)
+  <span class="ruby-keyword">if</span> (<span class="ruby-operator">!</span><span class="ruby-identifier">ary</span>[<span class="ruby-number">1</span>]) <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">ary</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r(\w+)_nonstd_seq/</span>
+    <span class="ruby-identifier">ary</span>[<span class="ruby-number">0</span>] = <span class="ruby-node">$1</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@connection</span>.<span class="ruby-identifier">unique_row_id</span>(<span class="ruby-identifier">ary</span>[<span class="ruby-number">0</span>], <span class="ruby-identifier">ary</span>[<span class="ruby-number">1</span>])
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-prefetch_primary_key-3F">
+            
+              <a name="method-i-prefetch_primary_key-3F"></a><b>prefetch_primary_key?</b>(table_name = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-prefetch_primary_key-3F_source')" id="l_method-i-prefetch_primary_key-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-prefetch_primary_key-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/openbase_adapter.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prefetch_primary_key?</span>(<span class="ruby-identifier">table_name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quote">
+            
+              <a name="method-i-quote"></a><b>quote</b>(value, column = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>QUOTING ==================================================</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-quote_source')" id="l_method-i-quote_source">show</a>
+                
+              </p>
+              <div id="method-i-quote_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/openbase_adapter.rb, line 105</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">quote</span>(<span class="ruby-identifier">value</span>, <span class="ruby-identifier">column</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">column</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">column</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:binary</span>
+    <span class="ruby-node">&quot;'#{@connection.insert_binary(value)}'&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quoted_false">
+            
+              <a name="method-i-quoted_false"></a><b>quoted_false</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-quoted_false_source')" id="l_method-i-quoted_false_source">show</a>
+                
+              </p>
+              <div id="method-i-quoted_false_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/openbase_adapter.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">quoted_false</span>
+  <span class="ruby-string">&quot;0&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quoted_true">
+            
+              <a name="method-i-quoted_true"></a><b>quoted_true</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-quoted_true_source')" id="l_method-i-quoted_true_source">show</a>
+                
+              </p>
+              <div id="method-i-quoted_true_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/openbase_adapter.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">quoted_true</span>
+  <span class="ruby-string">&quot;1&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-supports_migrations-3F">
+            
+              <a name="method-i-supports_migrations-3F"></a><b>supports_migrations?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-supports_migrations-3F_source')" id="l_method-i-supports_migrations-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-supports_migrations-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/openbase_adapter.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">supports_migrations?</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

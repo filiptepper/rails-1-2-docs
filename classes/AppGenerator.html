@@ -1,0 +1,487 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>AppGenerator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            AppGenerator 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Rails/Generator/Base.html">Rails::Generator::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/railties/lib/rails_generator/generators/applications/app/app_generator_rb.html">rails/railties/lib/rails_generator/generators/applications/app/app_generator.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_options-21">add_options!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-banner">banner</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-manifest">manifest</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-mysql_socket_location">mysql_socket_location</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">DEFAULT_SHEBANG</td>
+            <td>=</td>
+            <td class="attr-value">File.join(Config::CONFIG['bindir'],
+Config::CONFIG['ruby_install_name'])</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">DATABASES</td>
+            <td>=</td>
+            <td class="attr-value">%w(mysql oracle postgresql sqlite2 sqlite3 frontbase)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">BASEDIRS</td>
+            <td>=</td>
+            <td class="attr-value">%w(
+app/controllers
+app/helpers
+app/models
+app/views/layouts
+config/environments
+components
+db
+doc
+lib
+lib/tasks
+log
+public/images
+public/javascripts
+public/stylesheets
+script/performance
+script/process
+test/fixtures
+test/functional
+test/integration
+test/mocks/development
+test/mocks/test
+test/unit
+vendor
+vendor/plugins
+tmp/sessions
+tmp/sockets
+tmp/cache
+tmp/pids
+)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Installation skeleton.  Intermediate directories are automatically created
+so don’t sweat their absence here.</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MYSQL_SOCKET_LOCATIONS</td>
+            <td>=</td>
+            <td class="attr-value">[
+&quot;/tmp/mysql.sock&quot;,                        # default
+&quot;/var/run/mysqld/mysqld.sock&quot;,            # debian/gentoo
+&quot;/var/tmp/mysql.sock&quot;,                    # freebsd
+&quot;/var/lib/mysql/mysql.sock&quot;,              # fedora
+&quot;/opt/local/lib/mysql/mysql.sock&quot;,        # fedora
+&quot;/opt/local/var/run/mysqld/mysqld.sock&quot;,  # mac + darwinports + mysql
+&quot;/opt/local/var/run/mysql4/mysqld.sock&quot;,  # mac + darwinports + mysql4
+&quot;/opt/local/var/run/mysql5/mysqld.sock&quot;,  # mac + darwinports + mysql5
+&quot;/opt/lampp/var/mysql/mysql.sock&quot;         # xampp for linux
+]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(runtime_args, runtime_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/applications/app/app_generator.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">runtime_args</span>, <span class="ruby-identifier">runtime_options</span> = {})
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-identifier">usage</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">usage</span>(<span class="ruby-node">&quot;Databases supported for preconfiguration are: #{DATABASES.join(&quot;, &quot;)}&quot;</span>) <span class="ruby-keyword">if</span> (<span class="ruby-identifier">options</span>[<span class="ruby-value">:db</span>] <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-constant">DATABASES</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:db</span>]))
+  <span class="ruby-ivar">@destination_root</span> = <span class="ruby-identifier">args</span>.<span class="ruby-identifier">shift</span>
+  <span class="ruby-ivar">@app_name</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-ivar">@destination_root</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-manifest">
+            
+              <a name="method-i-manifest"></a><b>manifest</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-manifest_source')" id="l_method-i-manifest_source">show</a>
+                
+              </p>
+              <div id="method-i-manifest_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/applications/app/app_generator.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">manifest</span>
+  <span class="ruby-comment"># Use /usr/bin/env if no special shebang was specified</span>
+  <span class="ruby-identifier">script_options</span>     = { <span class="ruby-value">:chmod</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0755</span>, <span class="ruby-value">:shebang</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:shebang</span>] <span class="ruby-operator">==</span> <span class="ruby-constant">DEFAULT_SHEBANG</span> <span class="ruby-operator">?</span> <span class="ruby-keyword">nil</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:shebang</span>] }
+  <span class="ruby-identifier">dispatcher_options</span> = { <span class="ruby-value">:chmod</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0755</span>, <span class="ruby-value">:shebang</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:shebang</span>] }
+
+  <span class="ruby-identifier">record</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Root directory and all subdirectories.</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">directory</span> <span class="ruby-string">''</span>
+    <span class="ruby-constant">BASEDIRS</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span> <span class="ruby-identifier">m</span>.<span class="ruby-identifier">directory</span> <span class="ruby-identifier">path</span> }
+
+    <span class="ruby-comment"># Root</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;fresh_rakefile&quot;</span>, <span class="ruby-string">&quot;Rakefile&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;README&quot;</span>,         <span class="ruby-string">&quot;README&quot;</span>
+
+    <span class="ruby-comment"># Application</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">&quot;helpers/application.rb&quot;</span>,        <span class="ruby-string">&quot;app/controllers/application.rb&quot;</span>, <span class="ruby-value">:assigns</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:app_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@app_name</span> }
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">&quot;helpers/application_helper.rb&quot;</span>, <span class="ruby-string">&quot;app/helpers/application_helper.rb&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">&quot;helpers/test_helper.rb&quot;</span>,        <span class="ruby-string">&quot;test/test_helper.rb&quot;</span>
+
+    <span class="ruby-comment"># database.yml and .htaccess</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-node">&quot;configs/databases/#{options[:db]}.yml&quot;</span>, <span class="ruby-string">&quot;config/database.yml&quot;</span>, <span class="ruby-value">:assigns</span> =<span class="ruby-operator">&gt;</span> {
+      <span class="ruby-value">:app_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@app_name</span>,
+      <span class="ruby-value">:socket</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:db</span>] <span class="ruby-operator">==</span> <span class="ruby-string">&quot;mysql&quot;</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">mysql_socket_location</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+    }
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">&quot;configs/routes.rb&quot;</span>,     <span class="ruby-string">&quot;config/routes.rb&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">&quot;configs/apache.conf&quot;</span>,   <span class="ruby-string">&quot;public/.htaccess&quot;</span>
+
+    <span class="ruby-comment"># Environments</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;environments/boot.rb&quot;</span>,    <span class="ruby-string">&quot;config/boot.rb&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">&quot;environments/environment.rb&quot;</span>, <span class="ruby-string">&quot;config/environment.rb&quot;</span>, <span class="ruby-value">:assigns</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:freeze</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:freeze</span>] }
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;environments/production.rb&quot;</span>,  <span class="ruby-string">&quot;config/environments/production.rb&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;environments/development.rb&quot;</span>, <span class="ruby-string">&quot;config/environments/development.rb&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;environments/test.rb&quot;</span>,        <span class="ruby-string">&quot;config/environments/test.rb&quot;</span>
+
+    <span class="ruby-comment"># Scripts</span>
+    <span class="ruby-node">%w( about breakpointer console destroy generate performance/benchmarker performance/profiler process/reaper process/spawner process/inspector runner server plugin )</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-node">&quot;bin/#{file}&quot;</span>, <span class="ruby-node">&quot;script/#{file}&quot;</span>, <span class="ruby-identifier">script_options</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># Dispatches</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;dispatches/dispatch.rb&quot;</span>,   <span class="ruby-string">&quot;public/dispatch.rb&quot;</span>, <span class="ruby-identifier">dispatcher_options</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;dispatches/dispatch.rb&quot;</span>,   <span class="ruby-string">&quot;public/dispatch.cgi&quot;</span>, <span class="ruby-identifier">dispatcher_options</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;dispatches/dispatch.fcgi&quot;</span>, <span class="ruby-string">&quot;public/dispatch.fcgi&quot;</span>, <span class="ruby-identifier">dispatcher_options</span>
+
+    <span class="ruby-comment"># HTML files</span>
+    <span class="ruby-node">%w(404 500 index)</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-node">&quot;html/#{file}.html&quot;</span>, <span class="ruby-node">&quot;public/#{file}.html&quot;</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">&quot;html/favicon.ico&quot;</span>,  <span class="ruby-string">&quot;public/favicon.ico&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">&quot;html/robots.txt&quot;</span>,   <span class="ruby-string">&quot;public/robots.txt&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;html/images/rails.png&quot;</span>, <span class="ruby-string">&quot;public/images/rails.png&quot;</span>
+
+    <span class="ruby-comment"># Javascripts</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;html/javascripts/prototype.js&quot;</span>,    <span class="ruby-string">&quot;public/javascripts/prototype.js&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;html/javascripts/effects.js&quot;</span>,      <span class="ruby-string">&quot;public/javascripts/effects.js&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;html/javascripts/dragdrop.js&quot;</span>,     <span class="ruby-string">&quot;public/javascripts/dragdrop.js&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;html/javascripts/controls.js&quot;</span>,     <span class="ruby-string">&quot;public/javascripts/controls.js&quot;</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;html/javascripts/application.js&quot;</span>,  <span class="ruby-string">&quot;public/javascripts/application.js&quot;</span>
+
+    <span class="ruby-comment"># Docs</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;doc/README_FOR_APP&quot;</span>, <span class="ruby-string">&quot;doc/README_FOR_APP&quot;</span>
+
+    <span class="ruby-comment"># Logs</span>
+    <span class="ruby-node">%w(server production development test)</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">m</span>.<span class="ruby-identifier">file</span> <span class="ruby-string">&quot;configs/empty.log&quot;</span>, <span class="ruby-node">&quot;log/#{file}.log&quot;</span>, <span class="ruby-value">:chmod</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0666</span>
+    }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_options-21">
+            
+              <a name="method-i-add_options-21"></a><b>add_options!</b>(opt)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_options-21_source')" id="l_method-i-add_options-21_source">show</a>
+                
+              </p>
+              <div id="method-i-add_options-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/applications/app/app_generator.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_options!</span>(<span class="ruby-identifier">opt</span>)
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">'Options:'</span>
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-r&quot;</span>, <span class="ruby-string">&quot;--ruby=path&quot;</span>, <span class="ruby-constant">String</span>,
+         <span class="ruby-string">&quot;Path to the Ruby binary of your choice (otherwise scripts use env, dispatchers current path).&quot;</span>,
+         <span class="ruby-node">&quot;Default: #{DEFAULT_SHEBANG}&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:shebang</span>] = <span class="ruby-identifier">v</span> }
+
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-d&quot;</span>, <span class="ruby-string">&quot;--database=name&quot;</span>, <span class="ruby-constant">String</span>,
+        <span class="ruby-string">&quot;Preconfigure for selected database (options: mysql/oracle/postgresql/sqlite2/sqlite3).&quot;</span>,
+        <span class="ruby-string">&quot;Default: mysql&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:db</span>] = <span class="ruby-identifier">v</span> }
+
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;-f&quot;</span>, <span class="ruby-string">&quot;--freeze&quot;</span>,
+        <span class="ruby-string">&quot;Freeze Rails in vendor/rails from the gems generating the skeleton&quot;</span>,
+        <span class="ruby-string">&quot;Default: false&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:freeze</span>] = <span class="ruby-identifier">v</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-banner">
+            
+              <a name="method-i-banner"></a><b>banner</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-banner_source')" id="l_method-i-banner_source">show</a>
+                
+              </p>
+              <div id="method-i-banner_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/applications/app/app_generator.rb, line 91</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">banner</span>
+  <span class="ruby-node">&quot;Usage: #{$0} /path/to/your/app [options]&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mysql_socket_location">
+            
+              <a name="method-i-mysql_socket_location"></a><b>mysql_socket_location</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mysql_socket_location_source')" id="l_method-i-mysql_socket_location_source">show</a>
+                
+              </p>
+              <div id="method-i-mysql_socket_location_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/applications/app/app_generator.rb, line 111</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mysql_socket_location</span>
+  <span class="ruby-constant">MYSQL_SOCKET_LOCATIONS</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exists?</span>(<span class="ruby-identifier">f</span>) } <span class="ruby-keyword">unless</span> <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r(:?mswin|mingw)/</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

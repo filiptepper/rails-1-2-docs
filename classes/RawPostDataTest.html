@@ -1,0 +1,389 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>RawPostDataTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            RawPostDataTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/raw_post_test_rb.html">rails/actionpack/test/controller/raw_post_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_post_with_empty_content_type_treated_as_urlencoded">test_post_with_empty_content_type_treated_as_urlencoded</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_post_with_unrecognized_content_type_reads_body_but_doesnt_parse_params">test_post_with_unrecognized_content_type_reads_body_but_doesnt_parse_params</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_post_with_urlencoded_body">test_post_with_urlencoded_body</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_put_with_empty_content_type_ignores_body">test_put_with_empty_content_type_ignores_body</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_put_with_unrecognized_content_type_ignores_body">test_put_with_unrecognized_content_type_ignores_body</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_put_with_urlencoded_body">test_put_with_urlencoded_body</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/raw_post_test.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-constant">ENV</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'RAW_POST_DATA'</span>)
+  <span class="ruby-ivar">@request_body</span> = <span class="ruby-string">'a=1'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_post_with_empty_content_type_treated_as_urlencoded">
+            
+              <a name="method-i-test_post_with_empty_content_type_treated_as_urlencoded"></a><b>test_post_with_empty_content_type_treated_as_urlencoded</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_post_with_empty_content_type_treated_as_urlencoded_source')" id="l_method-i-test_post_with_empty_content_type_treated_as_urlencoded_source">show</a>
+                
+              </p>
+              <div id="method-i-test_post_with_empty_content_type_treated_as_urlencoded_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/raw_post_test.rb, line 19</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_post_with_empty_content_type_treated_as_urlencoded</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'REQUEST_METHOD'</span>] = <span class="ruby-string">'POST'</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'CONTENT_TYPE'</span>] = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'1'</span>], <span class="ruby-identifier">cgi_params</span>[<span class="ruby-string">'a'</span>]
+  <span class="ruby-identifier">assert_has_raw_post_data</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_post_with_unrecognized_content_type_reads_body_but_doesnt_parse_params">
+            
+              <a name="method-i-test_post_with_unrecognized_content_type_reads_body_but_doesnt_parse_params"></a><b>test_post_with_unrecognized_content_type_reads_body_but_doesnt_parse_params</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_post_with_unrecognized_content_type_reads_body_but_doesnt_parse_params_source')" id="l_method-i-test_post_with_unrecognized_content_type_reads_body_but_doesnt_parse_params_source">show</a>
+                
+              </p>
+              <div id="method-i-test_post_with_unrecognized_content_type_reads_body_but_doesnt_parse_params_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/raw_post_test.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_post_with_unrecognized_content_type_reads_body_but_doesnt_parse_params</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'REQUEST_METHOD'</span>] = <span class="ruby-string">'POST'</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'CONTENT_TYPE'</span>] = <span class="ruby-string">'foo/bar'</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">cgi_params</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">assert_has_raw_post_data</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_post_with_urlencoded_body">
+            
+              <a name="method-i-test_post_with_urlencoded_body"></a><b>test_post_with_urlencoded_body</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_post_with_urlencoded_body_source')" id="l_method-i-test_post_with_urlencoded_body_source">show</a>
+                
+              </p>
+              <div id="method-i-test_post_with_urlencoded_body_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/raw_post_test.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_post_with_urlencoded_body</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'REQUEST_METHOD'</span>] = <span class="ruby-string">'POST'</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'CONTENT_TYPE'</span>] = <span class="ruby-string">' apPlication/x-Www-form-urlEncoded; charset=utf-8'</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'1'</span>], <span class="ruby-identifier">cgi_params</span>[<span class="ruby-string">'a'</span>]
+  <span class="ruby-identifier">assert_has_raw_post_data</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_put_with_empty_content_type_ignores_body">
+            
+              <a name="method-i-test_put_with_empty_content_type_ignores_body"></a><b>test_put_with_empty_content_type_ignores_body</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_put_with_empty_content_type_ignores_body_source')" id="l_method-i-test_put_with_empty_content_type_ignores_body_source">show</a>
+                
+              </p>
+              <div id="method-i-test_put_with_empty_content_type_ignores_body_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/raw_post_test.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_put_with_empty_content_type_ignores_body</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'REQUEST_METHOD'</span>] = <span class="ruby-string">'PUT'</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'CONTENT_TYPE'</span>] = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">cgi_params</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">assert_has_raw_post_data</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_put_with_unrecognized_content_type_ignores_body">
+            
+              <a name="method-i-test_put_with_unrecognized_content_type_ignores_body"></a><b>test_put_with_unrecognized_content_type_ignores_body</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_put_with_unrecognized_content_type_ignores_body_source')" id="l_method-i-test_put_with_unrecognized_content_type_ignores_body_source">show</a>
+                
+              </p>
+              <div id="method-i-test_put_with_unrecognized_content_type_ignores_body_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/raw_post_test.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_put_with_unrecognized_content_type_ignores_body</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'REQUEST_METHOD'</span>] = <span class="ruby-string">'PUT'</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'CONTENT_TYPE'</span>] = <span class="ruby-string">'foo/bar'</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">cgi_params</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">assert_has_raw_post_data</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_put_with_urlencoded_body">
+            
+              <a name="method-i-test_put_with_urlencoded_body"></a><b>test_put_with_urlencoded_body</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_put_with_urlencoded_body_source')" id="l_method-i-test_put_with_urlencoded_body_source">show</a>
+                
+              </p>
+              <div id="method-i-test_put_with_urlencoded_body_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/raw_post_test.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_put_with_urlencoded_body</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'REQUEST_METHOD'</span>] = <span class="ruby-string">'PUT'</span>
+  <span class="ruby-constant">ENV</span>[<span class="ruby-string">'CONTENT_TYPE'</span>] = <span class="ruby-string">'application/x-www-form-urlencoded'</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'1'</span>], <span class="ruby-identifier">cgi_params</span>[<span class="ruby-string">'a'</span>]
+  <span class="ruby-identifier">assert_has_raw_post_data</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

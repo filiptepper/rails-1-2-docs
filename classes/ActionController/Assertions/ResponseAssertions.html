@@ -1,0 +1,310 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionController::Assertions::ResponseAssertions</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActionController::Assertions::ResponseAssertions 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/actionpack/lib/action_controller/assertions/response_assertions_rb.html">rails/actionpack/lib/action_controller/assertions/response_assertions.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-assert_redirected_to">assert_redirected_to</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assert_response">assert_response</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assert_template">assert_template</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_redirected_to">
+            
+              <a name="method-i-assert_redirected_to"></a><b>assert_redirected_to</b>(options = {}, message=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Assert that the redirection options passed in match those of the redirect
+called in the latest action. This match can be partial, such that <a
+href="ResponseAssertions.html#method-i-assert_redirected_to">#assert_redirected_to</a>(:controller
+=&gt; “weblog”) will also match the redirection of redirect_to(:controller
+=&gt; “weblog”, :action =&gt; “show”) and so on.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_redirected_to_source')" id="l_method-i-assert_redirected_to_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_redirected_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/assertions/response_assertions.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_redirected_to</span>(<span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">message</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">clean_backtrace</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_response</span>(<span class="ruby-value">:redirect</span>, <span class="ruby-identifier">message</span>)
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">redirected_to</span>
+    <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">reload</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">empty?</span>
+
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">url</span>  = {}
+      <span class="ruby-identifier">original</span> = { <span class="ruby-value">:expected</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">options</span>, <span class="ruby-value">:actual</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">redirected_to</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">redirected_to</span> <span class="ruby-operator">:</span> <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">redirected_to</span>.<span class="ruby-identifier">dup</span> }
+      <span class="ruby-identifier">original</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">key</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>)
+          <span class="ruby-identifier">value</span> = <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-identifier">value</span>, <span class="ruby-keyword">true</span>) <span class="ruby-operator">?</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">value</span>) <span class="ruby-operator">:</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;hash_for_#{value}_url&quot;</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">unless</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+          <span class="ruby-identifier">request</span> = <span class="ruby-keyword">case</span> <span class="ruby-identifier">value</span>
+            <span class="ruby-keyword">when</span> <span class="ruby-constant">NilClass</span>    <span class="ruby-keyword">then</span> <span class="ruby-keyword">nil</span>
+            <span class="ruby-keyword">when</span> <span class="ruby-regexp">%r^\w+:\/\//</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">recognized_request_for</span>(<span class="ruby-regexp">%r{^(\w+://.*?(/|$|\?))(.*)$}</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">value</span> <span class="ruby-operator">?</span> <span class="ruby-node">$3</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>)
+            <span class="ruby-keyword">else</span>                  <span class="ruby-identifier">recognized_request_for</span>(<span class="ruby-identifier">value</span>)
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">value</span> = <span class="ruby-identifier">request</span>.<span class="ruby-identifier">path_parameters</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">request</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-comment"># stringify 2 levels of hash keys</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span> = <span class="ruby-identifier">value</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:use_route</span>)
+            <span class="ruby-identifier">route</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">named_routes</span>[<span class="ruby-identifier">name</span>]
+            <span class="ruby-identifier">value</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">route</span>.<span class="ruby-identifier">parameter_shell</span>)
+          <span class="ruby-keyword">end</span>
+
+          <span class="ruby-identifier">value</span>.<span class="ruby-identifier">stringify_keys!</span>
+          <span class="ruby-identifier">value</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) }.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">stringify_keys!</span> }
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">==</span> <span class="ruby-value">:expected</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>] <span class="ruby-operator">==</span> <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">controller_name</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">original</span>[<span class="ruby-value">:actual</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+            <span class="ruby-identifier">original</span>[<span class="ruby-value">:actual</span>].<span class="ruby-identifier">stringify_keys!</span>
+            <span class="ruby-identifier">value</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">'controller'</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">original</span>[<span class="ruby-value">:actual</span>][<span class="ruby-string">'controller'</span>].<span class="ruby-identifier">nil?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">original</span>[<span class="ruby-value">:actual</span>][<span class="ruby-string">'controller'</span>] <span class="ruby-operator">==</span> <span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>]
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:[]</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>]
+          <span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>] = <span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>].<span class="ruby-identifier">to_s</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span> <span class="ruby-operator">==</span> <span class="ruby-value">:actual</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>].<span class="ruby-identifier">first</span> <span class="ruby-operator">!=</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-operator">!</span><span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-string">'/'</span>)
+            <span class="ruby-identifier">new_controller_path</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_relative_to</span>(<span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>], <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">controller_path</span>)
+            <span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>] = <span class="ruby-identifier">new_controller_path</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>] <span class="ruby-operator">!=</span> <span class="ruby-identifier">new_controller_path</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">possible_controllers</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">new_controller_path</span>)
+          <span class="ruby-keyword">end</span>
+          <span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>] = <span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>][<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">value</span>[<span class="ruby-string">'controller'</span>].<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-string">'/'</span> <span class="ruby-comment"># strip leading hash</span>
+        <span class="ruby-keyword">end</span>
+        <span class="ruby-identifier">url</span>[<span class="ruby-identifier">key</span>] = <span class="ruby-identifier">value</span>
+      <span class="ruby-keyword">end</span>
+
+
+      <span class="ruby-ivar">@response_diff</span> = <span class="ruby-identifier">url</span>[<span class="ruby-value">:expected</span>].<span class="ruby-identifier">diff</span>(<span class="ruby-identifier">url</span>[<span class="ruby-value">:actual</span>]) <span class="ruby-keyword">if</span> <span class="ruby-identifier">url</span>[<span class="ruby-value">:actual</span>]
+      <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">build_message</span>(<span class="ruby-identifier">message</span>, <span class="ruby-string">&quot;response is not a redirection to all of the options supplied (redirection is &lt;?&gt;), difference: &lt;?&gt;&quot;</span>,
+                          <span class="ruby-identifier">url</span>[<span class="ruby-value">:actual</span>], <span class="ruby-ivar">@response_diff</span>)
+
+      <span class="ruby-identifier">assert_block</span>(<span class="ruby-identifier">msg</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-identifier">url</span>[<span class="ruby-value">:expected</span>].<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">all?</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span>
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">k</span> <span class="ruby-operator">==</span> <span class="ruby-value">:controller</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">url</span>[<span class="ruby-value">:expected</span>][<span class="ruby-identifier">k</span>] <span class="ruby-operator">==</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">controller_relative_to</span>(<span class="ruby-identifier">url</span>[<span class="ruby-value">:actual</span>][<span class="ruby-identifier">k</span>], <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">controller_path</span>)
+          <span class="ruby-keyword">else</span> <span class="ruby-identifier">parameterize</span>(<span class="ruby-identifier">url</span>[<span class="ruby-value">:expected</span>][<span class="ruby-identifier">k</span>]) <span class="ruby-operator">==</span> <span class="ruby-identifier">parameterize</span>(<span class="ruby-identifier">url</span>[<span class="ruby-value">:actual</span>][<span class="ruby-identifier">k</span>])
+          <span class="ruby-keyword">end</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">RoutingError</span> <span class="ruby-comment"># routing failed us, so match the strings only.</span>
+      <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">build_message</span>(<span class="ruby-identifier">message</span>, <span class="ruby-string">&quot;expected a redirect to &lt;?&gt;, found one to &lt;?&gt;&quot;</span>, <span class="ruby-identifier">options</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">redirect_url</span>)
+      <span class="ruby-identifier">url_regexp</span> = <span class="ruby-regexp">%r{^(\w+://.*?(/|$|\?))(.*)$}</span>
+      <span class="ruby-identifier">eurl</span>, <span class="ruby-identifier">epath</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">path</span> = [<span class="ruby-identifier">options</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">redirect_url</span>].<span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">url</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">u</span>, <span class="ruby-identifier">p</span> = (<span class="ruby-identifier">url_regexp</span> <span class="ruby-operator">=~</span> <span class="ruby-identifier">url</span>) <span class="ruby-operator">?</span> [<span class="ruby-node">$1</span>, <span class="ruby-node">$3</span>] <span class="ruby-operator">:</span> [<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">url</span>]
+        [<span class="ruby-identifier">u</span>, (<span class="ruby-identifier">p</span>.<span class="ruby-identifier">first</span> <span class="ruby-operator">==</span> <span class="ruby-string">'/'</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">:</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">p</span>]
+      <span class="ruby-keyword">end</span>.<span class="ruby-identifier">flatten</span>
+
+      <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">eurl</span>, <span class="ruby-identifier">url</span>, <span class="ruby-identifier">msg</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">eurl</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">url</span>
+      <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">epath</span>, <span class="ruby-identifier">path</span>, <span class="ruby-identifier">msg</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">epath</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">path</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_response">
+            
+              <a name="method-i-assert_response"></a><b>assert_response</b>(type, message = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Asserts that the response is one of the following types:</p>
+<ul><li>
+<p><code>:success</code>: Status code was 200</p>
+</li><li>
+<p><code>:redirect</code>: Status code was in the 300-399 range</p>
+</li><li>
+<p><code>:missing</code>: Status code was 404</p>
+</li><li>
+<p><code>:error</code>:  Status code was in the 500-599 range</p>
+</li></ul>
+
+<p>You can also pass an explicit status number like <a
+href="ResponseAssertions.html#method-i-assert_response">#assert_response</a>(501)
+or its symbolic equivalent <a
+href="ResponseAssertions.html#method-i-assert_response">#assert_response</a>(:not_implemented).
+See ActionController::StatusCodes for a full list.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_response_source')" id="l_method-i-assert_response_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_response_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/assertions/response_assertions.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_response</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">message</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">clean_backtrace</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">if</span> [ <span class="ruby-value">:success</span>, <span class="ruby-value">:missing</span>, <span class="ruby-value">:redirect</span>, <span class="ruby-value">:error</span> ].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">type</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{type}?&quot;</span>)
+      <span class="ruby-identifier">assert_block</span>(<span class="ruby-string">&quot;&quot;</span>) { <span class="ruby-keyword">true</span> } <span class="ruby-comment"># to count the assertion</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Fixnum</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">response_code</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">type</span>
+      <span class="ruby-identifier">assert_block</span>(<span class="ruby-string">&quot;&quot;</span>) { <span class="ruby-keyword">true</span> } <span class="ruby-comment"># to count the assertion</span>
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">response_code</span> <span class="ruby-operator">==</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">StatusCodes</span><span class="ruby-operator">::</span><span class="ruby-constant">SYMBOL_TO_STATUS_CODE</span>[<span class="ruby-identifier">type</span>]
+      <span class="ruby-identifier">assert_block</span>(<span class="ruby-string">&quot;&quot;</span>) { <span class="ruby-keyword">true</span> } <span class="ruby-comment"># to count the assertion</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">assert_block</span>(<span class="ruby-identifier">build_message</span>(<span class="ruby-identifier">message</span>, <span class="ruby-string">&quot;Expected response to be a &lt;?&gt;, but was &lt;?&gt;&quot;</span>, <span class="ruby-identifier">type</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">response_code</span>)) { <span class="ruby-keyword">false</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_template">
+            
+              <a name="method-i-assert_template"></a><b>assert_template</b>(expected = nil, message=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Asserts that the request was rendered with the appropriate template file.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_template_source')" id="l_method-i-assert_template_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/assertions/response_assertions.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_template</span>(<span class="ruby-identifier">expected</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">message</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">clean_backtrace</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">rendered</span> = <span class="ruby-identifier">expected</span> <span class="ruby-operator">?</span> <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">rendered_file</span>(<span class="ruby-operator">!</span><span class="ruby-identifier">expected</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'/'</span>)) <span class="ruby-operator">:</span> <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">rendered_file</span>
+    <span class="ruby-identifier">msg</span> = <span class="ruby-identifier">build_message</span>(<span class="ruby-identifier">message</span>, <span class="ruby-string">&quot;expecting &lt;?&gt; but rendering with &lt;?&gt;&quot;</span>, <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">rendered</span>)
+    <span class="ruby-identifier">assert_block</span>(<span class="ruby-identifier">msg</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">expected</span>.<span class="ruby-identifier">nil?</span>
+        <span class="ruby-operator">!</span><span class="ruby-ivar">@response</span>.<span class="ruby-identifier">rendered_with_file?</span>
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">expected</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">rendered</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

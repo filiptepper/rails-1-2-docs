@@ -1,0 +1,728 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TMail::MaildirLoader</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TMail::MaildirLoader 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox_rb.html">rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb</a></li>
+            
+            <li><a href="../../files/rails/actionmailer/lib/action_mailer/vendor/tmail/obsolete_rb.html">rails/actionmailer/lib/action_mailer/vendor/tmail/obsolete.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-check_tmp">check_tmp</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-close">close</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-directory">directory</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-each">each</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-each_mail">each_mail</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-each_new_port">each_new_port</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-each_newmail">each_newmail</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-each_port">each_port</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inspect">inspect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-new_mail">new_mail</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-new_port">new_port</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-reverse_each">reverse_each</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-reverse_each_port">reverse_each_port</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-unique_number">unique_number</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">PORT_CLASS</td>
+            <td>=</td>
+            <td class="attr-value">MaildirPort</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">TOO_OLD</td>
+            <td>=</td>
+            <td class="attr-value">60 * 60 * 36</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>( dir = nil )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb, line 329</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>( <span class="ruby-identifier">dir</span> = <span class="ruby-keyword">nil</span> )
+  <span class="ruby-ivar">@dirname</span> = <span class="ruby-identifier">dir</span> <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">'MAILDIR'</span>]
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-node">&quot;not directory: #{@dirname}&quot;</span>                               <span class="ruby-keyword">unless</span> <span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">directory?</span> <span class="ruby-ivar">@dirname</span>
+  <span class="ruby-ivar">@new</span> = <span class="ruby-node">&quot;#{@dirname}/new&quot;</span>
+  <span class="ruby-ivar">@tmp</span> = <span class="ruby-node">&quot;#{@dirname}/tmp&quot;</span>
+  <span class="ruby-ivar">@cur</span> = <span class="ruby-node">&quot;#{@dirname}/cur&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-unique_number">
+            
+              <a name="method-c-unique_number"></a><b>unique_number</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-unique_number_source')" id="l_method-c-unique_number_source">show</a>
+                
+              </p>
+              <div id="method-c-unique_number_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb, line 322</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">Maildir</span>.<span class="ruby-identifier">unique_number</span>
+  <span class="ruby-identifier">synchronize</span> {
+      <span class="ruby-ivar">@seq</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-ivar">@seq</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-check_tmp">
+            
+              <a name="method-i-check_tmp"></a><b>check_tmp</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-check_tmp_source')" id="l_method-i-check_tmp_source">show</a>
+                
+              </p>
+              <div id="method-i-check_tmp_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb, line 399</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">check_tmp</span>
+  <span class="ruby-identifier">old</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">-</span> <span class="ruby-constant">TOO_OLD</span>
+  
+  <span class="ruby-identifier">each_filename</span>(<span class="ruby-ivar">@tmp</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">full</span>, <span class="ruby-identifier">fname</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">file?</span> <span class="ruby-identifier">full</span> <span class="ruby-keyword">and</span>
+       <span class="ruby-constant">File</span>.<span class="ruby-identifier">stat</span>(<span class="ruby-identifier">full</span>).<span class="ruby-identifier">mtime</span>.<span class="ruby-identifier">to_i</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">old</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">unlink</span> <span class="ruby-identifier">full</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-close">
+            
+              <a name="method-i-close"></a><b>close</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-close_source')" id="l_method-i-close_source">show</a>
+                
+              </p>
+              <div id="method-i-close_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb, line 346</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">close</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-directory">
+            
+              <a name="method-i-directory"></a><b>directory</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-directory_source')" id="l_method-i-directory_source">show</a>
+                
+              </p>
+              <div id="method-i-directory_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb, line 338</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">directory</span>
+  <span class="ruby-ivar">@dirname</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each">
+            
+              <a name="method-i-each"></a><b>each</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each_mail">
+            
+              <a name="method-i-each_mail"></a><b>each_mail</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each_new_port">
+            
+              <a name="method-i-each_new_port"></a><b>each_new_port</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Maildir.html#method-i-each_newmail">each_newmail</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-each_new_port_source')" id="l_method-i-each_new_port_source">show</a>
+                
+              </p>
+              <div id="method-i-each_new_port_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">each_new_port</span>
+  <span class="ruby-identifier">mail_files</span>(<span class="ruby-ivar">@new</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">dest</span> = <span class="ruby-ivar">@cur</span> <span class="ruby-operator">+</span> <span class="ruby-string">'/'</span> <span class="ruby-operator">+</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">basename</span>(<span class="ruby-identifier">path</span>)
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">rename</span> <span class="ruby-identifier">path</span>, <span class="ruby-identifier">dest</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-constant">PORT_CLASS</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">dest</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">check_tmp</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each_newmail">
+            
+              <a name="method-i-each_newmail"></a><b>each_newmail</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each_port">
+            
+              <a name="method-i-each_port"></a><b>each_port</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Maildir.html#method-i-each">each</a>, <a href="Maildir.html#method-i-each_mail">each_mail</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-each_port_source')" id="l_method-i-each_port_source">show</a>
+                
+              </p>
+              <div id="method-i-each_port_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb, line 349</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">each_port</span>
+  <span class="ruby-identifier">mail_files</span>(<span class="ruby-ivar">@cur</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-constant">PORT_CLASS</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect">
+            
+              <a name="method-i-inspect"></a><b>inspect</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_source')" id="l_method-i-inspect_source">show</a>
+                
+              </p>
+              <div id="method-i-inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb, line 342</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect</span>
+  <span class="ruby-node">&quot;#&lt;#{self.class} #{@dirname}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-new_mail">
+            
+              <a name="method-i-new_mail"></a><b>new_mail</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-new_port">
+            
+              <a name="method-i-new_port"></a><b>new_port</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Maildir.html#method-i-new_mail">new_mail</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-new_port_source')" id="l_method-i-new_port_source">show</a>
+                
+              </p>
+              <div id="method-i-new_port_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb, line 365</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">new_port</span>
+  <span class="ruby-identifier">fname</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">tmpfname</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">newfname</span> = <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">fname</span> = <span class="ruby-node">&quot;#{Time.now.to_i}.#{$$}_#{Maildir.unique_number}.#{Socket.gethostname}&quot;</span>
+    
+    <span class="ruby-identifier">tmpfname</span> = <span class="ruby-node">&quot;#{@tmp}/#{fname}&quot;</span>
+    <span class="ruby-identifier">newfname</span> = <span class="ruby-node">&quot;#{@new}/#{fname}&quot;</span>
+  <span class="ruby-keyword">end</span> <span class="ruby-keyword">while</span> <span class="ruby-constant">FileTest</span>.<span class="ruby-identifier">exist?</span> <span class="ruby-identifier">tmpfname</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">tmpfname</span>, <span class="ruby-string">'w'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-keyword">yield</span> <span class="ruby-identifier">f</span> }
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">rename</span> <span class="ruby-identifier">tmpfname</span>, <span class="ruby-identifier">newfname</span>
+    <span class="ruby-constant">PORT_CLASS</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">newfname</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">tmpfname</span>, <span class="ruby-string">'w'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-string">&quot;\n\n&quot;</span> }
+    <span class="ruby-constant">PORT_CLASS</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">tmpfname</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reverse_each">
+            
+              <a name="method-i-reverse_each"></a><b>reverse_each</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reverse_each_port">
+            
+              <a name="method-i-reverse_each_port"></a><b>reverse_each_port</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Maildir.html#method-i-reverse_each">reverse_each</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reverse_each_port_source')" id="l_method-i-reverse_each_port_source">show</a>
+                
+              </p>
+              <div id="method-i-reverse_each_port_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb, line 357</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reverse_each_port</span>
+  <span class="ruby-identifier">mail_files</span>(<span class="ruby-ivar">@cur</span>).<span class="ruby-identifier">reverse_each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">path</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-constant">PORT_CLASS</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">path</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

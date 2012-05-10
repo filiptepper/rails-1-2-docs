@@ -1,0 +1,1085 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>DB2::Statement</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            DB2::Statement 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/activerecord/lib/active_record/vendor/db2_rb.html">rails/activerecord/lib/active_record/vendor/db2.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-adjust_content">adjust_content</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-bind">bind</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-bindParms">bindParms</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-columns">columns</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-exec_direct">exec_direct</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-execute">execute</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-fetch">fetch</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-fetch_all">fetch_all</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-fetch_as_hash">fetch_as_hash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-get_col_desc">get_col_desc</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-get_cursor_name">get_cursor_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-indexes">indexes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-num_result_cols">num_result_cols</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-prepare">prepare</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-row_count">row_count</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set_cursor_name">set_cursor_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-tables">tables</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-tokens">tokens</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="DB2Util.html">
+              DB2::DB2Util
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(connection)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">connection</span>)
+  <span class="ruby-ivar">@conn</span> = <span class="ruby-identifier">connection</span>
+  <span class="ruby-ivar">@handle_type</span> = <span class="ruby-constant">SQL_HANDLE_STMT</span>
+  <span class="ruby-ivar">@parms</span> = []                           <span class="ruby-comment">#yun</span>
+  <span class="ruby-ivar">@sql</span> = <span class="ruby-string">''</span>                             <span class="ruby-comment">#yun</span>
+  <span class="ruby-ivar">@numParms</span> = <span class="ruby-number">0</span>                         <span class="ruby-comment">#yun</span>
+  <span class="ruby-ivar">@prepared</span> = <span class="ruby-keyword">false</span>                     <span class="ruby-comment">#yun</span>
+  <span class="ruby-ivar">@parmArray</span> = []                       <span class="ruby-comment">#yun. attributes of the parameter markers</span>
+  <span class="ruby-identifier">rc</span>, <span class="ruby-ivar">@handle</span> = <span class="ruby-constant">SQLAllocHandle</span>(<span class="ruby-ivar">@handle_type</span>, <span class="ruby-ivar">@conn</span>.<span class="ruby-identifier">handle</span>)
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-identifier">rc</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-adjust_content">
+            
+              <a name="method-i-adjust_content"></a><b>adjust_content</b>(c)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-adjust_content_source')" id="l_method-i-adjust_content_source">show</a>
+                
+              </p>
+              <div id="method-i-adjust_content_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 340</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">adjust_content</span>(<span class="ruby-identifier">c</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'DB2CLI::NullClass'</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'DB2CLI::Time'</span>
+    <span class="ruby-string">&quot;%02d:%02d:%02d&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">c</span>.<span class="ruby-identifier">hour</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">minute</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">second</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'DB2CLI::Date'</span>
+    <span class="ruby-string">&quot;%04d-%02d-%02d&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">c</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">month</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">day</span>]
+  <span class="ruby-keyword">when</span> <span class="ruby-string">'DB2CLI::Timestamp'</span>
+    <span class="ruby-string">&quot;%04d-%02d-%02d %02d:%02d:%02d&quot;</span> <span class="ruby-operator">%</span> [<span class="ruby-identifier">c</span>.<span class="ruby-identifier">year</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">month</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">day</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">hour</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">minute</span>, <span class="ruby-identifier">c</span>.<span class="ruby-identifier">second</span>]
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">c</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-bind">
+            
+              <a name="method-i-bind"></a><b>bind</b>(sql, args)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bind_source')" id="l_method-i-bind_source">show</a>
+                
+              </p>
+              <div id="method-i-bind_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">bind</span>(<span class="ruby-identifier">sql</span>, <span class="ruby-identifier">args</span>)                <span class="ruby-comment">#does not use SQLBindParams</span>
+  <span class="ruby-identifier">arg_index</span> = <span class="ruby-number">0</span>
+  <span class="ruby-identifier">result</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">tokens</span>(<span class="ruby-identifier">sql</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">part</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">part</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'?'</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;'&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">args</span>[<span class="ruby-identifier">arg_index</span>]) <span class="ruby-operator">+</span> <span class="ruby-string">&quot;'&quot;</span>  <span class="ruby-comment">#put it into quotes</span>
+      <span class="ruby-identifier">arg_index</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">'??'</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;?&quot;</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">result</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">part</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">arg_index</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Too many SQL parameters&quot;</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">arg_index</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Not enough SQL parameters&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-bindParms">
+            
+              <a name="method-i-bindParms"></a><b>bindParms</b>(parms)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-bindParms_source')" id="l_method-i-bindParms_source">show</a>
+                
+              </p>
+              <div id="method-i-bindParms_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">bindParms</span>(<span class="ruby-identifier">parms</span>)        <span class="ruby-comment"># This is the real thing. It uses SQLBindParms</span>
+  <span class="ruby-number">1</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@numParms</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>  <span class="ruby-comment"># parameter number starts from 1</span>
+    <span class="ruby-identifier">rc</span>, <span class="ruby-identifier">dataType</span>, <span class="ruby-identifier">parmSize</span>, <span class="ruby-identifier">decimalDigits</span> = <span class="ruby-constant">SQLDescribeParam</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">i</span>)
+    <span class="ruby-identifier">check_rc</span>(<span class="ruby-identifier">rc</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">parms</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>].<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+      <span class="ruby-identifier">value</span> = <span class="ruby-identifier">parms</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>]
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">value</span> = <span class="ruby-identifier">parms</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>].<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">rc</span> = <span class="ruby-constant">SQLBindParameter</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">dataType</span>, <span class="ruby-identifier">parmSize</span>, <span class="ruby-identifier">decimalDigits</span>, <span class="ruby-identifier">value</span>)
+    <span class="ruby-identifier">check_rc</span>(<span class="ruby-identifier">rc</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-columns">
+            
+              <a name="method-i-columns"></a><b>columns</b>(table_name, schema_name = '%')
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-columns_source')" id="l_method-i-columns_source">show</a>
+                
+              </p>
+              <div id="method-i-columns_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">columns</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">schema_name</span> = <span class="ruby-string">'%'</span>)
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLColumns</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-string">''</span>, <span class="ruby-identifier">schema_name</span>.<span class="ruby-identifier">upcase</span>, <span class="ruby-identifier">table_name</span>.<span class="ruby-identifier">upcase</span>, <span class="ruby-string">'%'</span>))
+  <span class="ruby-identifier">fetch_all</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_direct">
+            
+              <a name="method-i-exec_direct"></a><b>exec_direct</b>(sql)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_direct_source')" id="l_method-i-exec_direct_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_direct_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_direct</span>(<span class="ruby-identifier">sql</span>)
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLExecDirect</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">sql</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-execute">
+            
+              <a name="method-i-execute"></a><b>execute</b>(*parms)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-execute_source')" id="l_method-i-execute_source">show</a>
+                
+              </p>
+              <div id="method-i-execute_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 148</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">execute</span>(*<span class="ruby-identifier">parms</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;The statement was not prepared&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@prepared</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">parms</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">parms</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Array</span>
+    <span class="ruby-identifier">parms</span> = <span class="ruby-identifier">parms</span>[<span class="ruby-number">0</span>]
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@numParms</span> <span class="ruby-operator">!=</span> <span class="ruby-identifier">parms</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Number of parameters supplied does not match with the SQL statement&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@numParms</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>            <span class="ruby-comment">#need to bind parameters</span>
+    <span class="ruby-comment">#--------------------------------------------------------------------</span>
+    <span class="ruby-comment">#calling bindParms may not be safe. Look comment below.</span>
+    <span class="ruby-comment">#--------------------------------------------------------------------</span>
+    <span class="ruby-comment">#bindParms(parms)</span>
+
+    <span class="ruby-identifier">valueArray</span> = []
+    <span class="ruby-number">1</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@numParms</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>  <span class="ruby-comment"># parameter number starts from 1</span>
+      <span class="ruby-identifier">type</span> = <span class="ruby-ivar">@parmArray</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>].<span class="ruby-identifier">class</span>
+      <span class="ruby-identifier">size</span> = <span class="ruby-ivar">@parmArray</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>].<span class="ruby-identifier">size</span>
+      <span class="ruby-identifier">decimalDigits</span> = <span class="ruby-ivar">@parmArray</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>].<span class="ruby-identifier">decimalDigits</span>
+
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">parms</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>].<span class="ruby-identifier">class</span> <span class="ruby-operator">==</span> <span class="ruby-constant">String</span>
+        <span class="ruby-identifier">valueArray</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">parms</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>]
+      <span class="ruby-keyword">else</span>
+        <span class="ruby-identifier">valueArray</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">parms</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>].<span class="ruby-identifier">to_s</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">rc</span> = <span class="ruby-constant">SQLBindParameter</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">i</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">decimalDigits</span>, <span class="ruby-identifier">valueArray</span>[<span class="ruby-identifier">i</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>])
+      <span class="ruby-identifier">check_rc</span>(<span class="ruby-identifier">rc</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLExecute</span>(<span class="ruby-ivar">@handle</span>))
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@numParms</span> <span class="ruby-operator">!=</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLFreeStmt</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">SQL_RESET_PARAMS</span>)) <span class="ruby-comment"># Reset parameters</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fetch">
+            
+              <a name="method-i-fetch"></a><b>fetch</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fetch_source')" id="l_method-i-fetch_source">show</a>
+                
+              </p>
+              <div id="method-i-fetch_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 296</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fetch</span>
+  <span class="ruby-identifier">cols</span> = <span class="ruby-identifier">get_col_desc</span>
+  <span class="ruby-identifier">rc</span> = <span class="ruby-constant">SQLFetch</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">rc</span> <span class="ruby-operator">==</span> <span class="ruby-constant">SQL_NO_DATA_FOUND</span>
+    <span class="ruby-constant">SQLFreeStmt</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">SQL_CLOSE</span>)        <span class="ruby-comment"># Close cursor</span>
+    <span class="ruby-constant">SQLFreeStmt</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">SQL_RESET_PARAMS</span>) <span class="ruby-comment"># Reset parameters</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;ERROR&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rc</span> <span class="ruby-operator">==</span> <span class="ruby-constant">SQL_SUCCESS</span>
+
+  <span class="ruby-identifier">retval</span> = []
+  <span class="ruby-identifier">cols</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">rc</span>, <span class="ruby-identifier">content</span> = <span class="ruby-constant">SQLGetData</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">c</span>[<span class="ruby-number">1</span>], <span class="ruby-identifier">c</span>[<span class="ruby-number">2</span>] <span class="ruby-operator">+</span> <span class="ruby-number">1</span>) <span class="ruby-comment">#yun added 1 to c[2]</span>
+    <span class="ruby-identifier">retval</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">adjust_content</span>(<span class="ruby-identifier">content</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">retval</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fetch_all">
+            
+              <a name="method-i-fetch_all"></a><b>fetch_all</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fetch_all_source')" id="l_method-i-fetch_all_source">show</a>
+                
+              </p>
+              <div id="method-i-fetch_all_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 282</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fetch_all</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">row</span> = <span class="ruby-identifier">fetch</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-keyword">yield</span> <span class="ruby-identifier">row</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">res</span> = []
+    <span class="ruby-keyword">while</span> <span class="ruby-identifier">row</span> = <span class="ruby-identifier">fetch</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">res</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">row</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">res</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fetch_as_hash">
+            
+              <a name="method-i-fetch_as_hash"></a><b>fetch_as_hash</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fetch_as_hash_source')" id="l_method-i-fetch_as_hash_source">show</a>
+                
+              </p>
+              <div id="method-i-fetch_as_hash_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 314</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fetch_as_hash</span>
+  <span class="ruby-identifier">cols</span> = <span class="ruby-identifier">get_col_desc</span>
+  <span class="ruby-identifier">rc</span> = <span class="ruby-constant">SQLFetch</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">rc</span> <span class="ruby-operator">==</span> <span class="ruby-constant">SQL_NO_DATA_FOUND</span>
+    <span class="ruby-constant">SQLFreeStmt</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">SQL_CLOSE</span>)        <span class="ruby-comment"># Close cursor</span>
+    <span class="ruby-constant">SQLFreeStmt</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-constant">SQL_RESET_PARAMS</span>) <span class="ruby-comment"># Reset parameters</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;ERROR&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">rc</span> <span class="ruby-operator">==</span> <span class="ruby-constant">SQL_SUCCESS</span>
+
+  <span class="ruby-identifier">retval</span> = {}
+  <span class="ruby-identifier">cols</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">rc</span>, <span class="ruby-identifier">content</span> = <span class="ruby-constant">SQLGetData</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">i</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">c</span>[<span class="ruby-number">1</span>], <span class="ruby-identifier">c</span>[<span class="ruby-number">2</span>] <span class="ruby-operator">+</span> <span class="ruby-number">1</span>)   <span class="ruby-comment">#yun added 1 to c[2]</span>
+    <span class="ruby-identifier">retval</span>[<span class="ruby-identifier">c</span>[<span class="ruby-number">0</span>]] = <span class="ruby-identifier">adjust_content</span>(<span class="ruby-identifier">content</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">retval</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-get_col_desc">
+            
+              <a name="method-i-get_col_desc"></a><b>get_col_desc</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-get_col_desc_source')" id="l_method-i-get_col_desc_source">show</a>
+                
+              </p>
+              <div id="method-i-get_col_desc_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 332</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get_col_desc</span>
+  <span class="ruby-identifier">rc</span>, <span class="ruby-identifier">nr_cols</span> = <span class="ruby-constant">SQLNumResultCols</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">cols</span> = (<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-identifier">nr_cols</span>).<span class="ruby-identifier">collect</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">rc</span>, <span class="ruby-identifier">name</span>, <span class="ruby-identifier">bl</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">col_sz</span> = <span class="ruby-constant">SQLDescribeCol</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">c</span>, <span class="ruby-number">1024</span>)
+    [<span class="ruby-identifier">name</span>.<span class="ruby-identifier">downcase</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">col_sz</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-get_cursor_name">
+            
+              <a name="method-i-get_cursor_name"></a><b>get_cursor_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-get_cursor_name_source')" id="l_method-i-get_cursor_name_source">show</a>
+                
+              </p>
+              <div id="method-i-get_cursor_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 264</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get_cursor_name</span>
+  <span class="ruby-identifier">rc</span>, <span class="ruby-identifier">name</span> = <span class="ruby-constant">SQLGetCursorName</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-identifier">rc</span>)
+  <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-indexes">
+            
+              <a name="method-i-indexes"></a><b>indexes</b>(table_name, schema_name = '')
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-indexes_source')" id="l_method-i-indexes_source">show</a>
+                
+              </p>
+              <div id="method-i-indexes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 123</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">indexes</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-identifier">schema_name</span> = <span class="ruby-string">''</span>)
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLStatistics</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-string">''</span>, <span class="ruby-identifier">schema_name</span>.<span class="ruby-identifier">upcase</span>, <span class="ruby-identifier">table_name</span>.<span class="ruby-identifier">upcase</span>, <span class="ruby-constant">SQL_INDEX_ALL</span>, <span class="ruby-constant">SQL_ENSURE</span>))
+  <span class="ruby-identifier">fetch_all</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-num_result_cols">
+            
+              <a name="method-i-num_result_cols"></a><b>num_result_cols</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-num_result_cols_source')" id="l_method-i-num_result_cols_source">show</a>
+                
+              </p>
+              <div id="method-i-num_result_cols_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 276</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">num_result_cols</span>
+  <span class="ruby-identifier">rc</span>, <span class="ruby-identifier">cols</span> = <span class="ruby-constant">SQLNumResultCols</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-identifier">rc</span>)
+  <span class="ruby-identifier">cols</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-prepare">
+            
+              <a name="method-i-prepare"></a><b>prepare</b>(sql)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-prepare_source')" id="l_method-i-prepare_source">show</a>
+                
+              </p>
+              <div id="method-i-prepare_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prepare</span>(<span class="ruby-identifier">sql</span>)
+  <span class="ruby-ivar">@sql</span> = <span class="ruby-identifier">sql</span>
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLPrepare</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">sql</span>))
+  <span class="ruby-identifier">rc</span>, <span class="ruby-ivar">@numParms</span> = <span class="ruby-constant">SQLNumParams</span>(<span class="ruby-ivar">@handle</span>) <span class="ruby-comment">#number of question marks</span>
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-identifier">rc</span>)
+  <span class="ruby-comment">#--------------------------------------------------------------------------</span>
+  <span class="ruby-comment"># parameter attributes are stored in instance variable @parmArray so that</span>
+  <span class="ruby-comment"># they are available when execute method is called.</span>
+  <span class="ruby-comment">#--------------------------------------------------------------------------</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@numParms</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>           <span class="ruby-comment"># get parameter marker attributes</span>
+    <span class="ruby-number">1</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-ivar">@numParms</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-comment"># parameter number starts from 1</span>
+      <span class="ruby-identifier">rc</span>, <span class="ruby-identifier">type</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">decimalDigits</span> = <span class="ruby-constant">SQLDescribeParam</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">i</span>)
+      <span class="ruby-identifier">check_rc</span>(<span class="ruby-identifier">rc</span>)
+      <span class="ruby-ivar">@parmArray</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Parameter</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">type</span>, <span class="ruby-identifier">size</span>, <span class="ruby-identifier">decimalDigits</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@prepared</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-row_count">
+            
+              <a name="method-i-row_count"></a><b>row_count</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-row_count_source')" id="l_method-i-row_count_source">show</a>
+                
+              </p>
+              <div id="method-i-row_count_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">row_count</span>
+  <span class="ruby-identifier">rc</span>, <span class="ruby-identifier">rowcount</span> = <span class="ruby-constant">SQLRowCount</span>(<span class="ruby-ivar">@handle</span>)
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-identifier">rc</span>)
+  <span class="ruby-identifier">rowcount</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_cursor_name">
+            
+              <a name="method-i-set_cursor_name"></a><b>set_cursor_name</b>(name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_cursor_name_source')" id="l_method-i-set_cursor_name_source">show</a>
+                
+              </p>
+              <div id="method-i-set_cursor_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_cursor_name</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLSetCursorName</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-identifier">name</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tables">
+            
+              <a name="method-i-tables"></a><b>tables</b>(schema_name = '%')
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tables_source')" id="l_method-i-tables_source">show</a>
+                
+              </p>
+              <div id="method-i-tables_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tables</span>(<span class="ruby-identifier">schema_name</span> = <span class="ruby-string">'%'</span>)
+  <span class="ruby-identifier">check_rc</span>(<span class="ruby-constant">SQLTables</span>(<span class="ruby-ivar">@handle</span>, <span class="ruby-string">''</span>, <span class="ruby-identifier">schema_name</span>.<span class="ruby-identifier">upcase</span>, <span class="ruby-string">'%'</span>, <span class="ruby-string">'TABLE'</span>))
+  <span class="ruby-identifier">fetch_all</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-tokens">
+            
+              <a name="method-i-tokens"></a><b>tokens</b>(sql)
+            
+          </div>
+          
+          
+            <div class="description">
+              <pre>Break the sql string into parts.</pre>
+
+<p>This is NOT a full lexer for SQL.  It just breaks up the SQL string enough
+so that question marks, double question marks and quoted strings are
+separated.  This is used when binding arguments to “?” in the SQL string. 
+Note: comments are not handled.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-tokens_source')" id="l_method-i-tokens_source">show</a>
+                
+              </p>
+              <div id="method-i-tokens_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/db2.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">tokens</span>(<span class="ruby-identifier">sql</span>)
+  <span class="ruby-identifier">toks</span> = <span class="ruby-identifier">sql</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r('([^'\\]|''|\\.)*'|&quot;([^&quot;\\]|&quot;&quot;|\\.)*&quot;|\?\??|[^'&quot;?]+)/</span>)
+  <span class="ruby-identifier">toks</span>.<span class="ruby-identifier">collect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span> <span class="ruby-identifier">t</span>[<span class="ruby-number">0</span>] }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

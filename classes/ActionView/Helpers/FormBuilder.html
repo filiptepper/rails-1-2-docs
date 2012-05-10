@@ -1,0 +1,388 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionView::Helpers::FormBuilder</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActionView::Helpers::FormBuilder 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/actionpack/lib/action_view/helpers/date_helper_rb.html">rails/actionpack/lib/action_view/helpers/date_helper.rb</a></li>
+            
+            <li><a href="../../../files/rails/actionpack/lib/action_view/helpers/form_helper_rb.html">rails/actionpack/lib/action_view/helpers/form_helper.rb</a></li>
+            
+            <li><a href="../../../files/rails/actionpack/lib/action_view/helpers/form_options_helper_rb.html">rails/actionpack/lib/action_view/helpers/form_options_helper.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-collection_select">collection_select</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-country_select">country_select</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-date_select">date_select</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-datetime_select">datetime_select</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-select">select</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-time_select">time_select</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-time_zone_select">time_zone_select</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-collection_select">
+            
+              <a name="method-i-collection_select"></a><b>collection_select</b>(method, collection, value_method, text_method, options = {}, html_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-collection_select_source')" id="l_method-i-collection_select_source">show</a>
+                
+              </p>
+              <div id="method-i-collection_select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_options_helper.rb, line 350</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">collection_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">value_method</span>, <span class="ruby-identifier">text_method</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
+  <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">collection_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">collection</span>, <span class="ruby-identifier">value_method</span>, <span class="ruby-identifier">text_method</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>), <span class="ruby-identifier">html_options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-country_select">
+            
+              <a name="method-i-country_select"></a><b>country_select</b>(method, priority_countries = nil, options = {}, html_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-country_select_source')" id="l_method-i-country_select_source">show</a>
+                
+              </p>
+              <div id="method-i-country_select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_options_helper.rb, line 354</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">country_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_countries</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
+  <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">country_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_countries</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>), <span class="ruby-identifier">html_options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-date_select">
+            
+              <a name="method-i-date_select"></a><b>date_select</b>(method, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-date_select_source')" id="l_method-i-date_select_source">show</a>
+                
+              </p>
+              <div id="method-i-date_select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/date_helper.rb, line 416</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">date_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">date_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-datetime_select">
+            
+              <a name="method-i-datetime_select"></a><b>datetime_select</b>(method, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-datetime_select_source')" id="l_method-i-datetime_select_source">show</a>
+                
+              </p>
+              <div id="method-i-datetime_select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/date_helper.rb, line 424</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">datetime_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">datetime_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-select">
+            
+              <a name="method-i-select"></a><b>select</b>(method, choices, options = {}, html_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-select_source')" id="l_method-i-select_source">show</a>
+                
+              </p>
+              <div id="method-i-select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_options_helper.rb, line 346</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">choices</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
+  <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">choices</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>), <span class="ruby-identifier">html_options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-time_select">
+            
+              <a name="method-i-time_select"></a><b>time_select</b>(method, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-time_select_source')" id="l_method-i-time_select_source">show</a>
+                
+              </p>
+              <div id="method-i-time_select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/date_helper.rb, line 420</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">time_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">time_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-time_zone_select">
+            
+              <a name="method-i-time_zone_select"></a><b>time_zone_select</b>(method, priority_zones = nil, options = {}, html_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-time_zone_select_source')" id="l_method-i-time_zone_select_source">show</a>
+                
+              </p>
+              <div id="method-i-time_zone_select_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_view/helpers/form_options_helper.rb, line 358</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">time_zone_select</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_zones</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {}, <span class="ruby-identifier">html_options</span> = {})
+  <span class="ruby-ivar">@template</span>.<span class="ruby-identifier">time_zone_select</span>(<span class="ruby-ivar">@object_name</span>, <span class="ruby-identifier">method</span>, <span class="ruby-identifier">priority_zones</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@object</span>), <span class="ruby-identifier">html_options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,707 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TC_ClientSoap</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TC_ClientSoap 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionwebservice/test/client_soap_test_rb.html">rails/actionwebservice/test/client_soap_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_array_return">test_array_return</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_capitalized_method_name">test_capitalized_method_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_client_container">test_client_container</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_inner_nil">test_inner_nil</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_model_return">test_model_return</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_multi_dim_return">test_multi_dim_return</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_named_parameters">test_named_parameters</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_nil_struct_return">test_nil_struct_return</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_normal">test_normal</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_scoped_model_return">test_scoped_model_return</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_struct_pass">test_struct_pass</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_void">test_void</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_with_model">test_with_model</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="ClientTest.html">
+              ClientTest
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ClientSoapTest.html">
+              ClientSoapTest
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@server</span> = <span class="ruby-constant">SoapServer</span>.<span class="ruby-identifier">instance</span>
+  <span class="ruby-ivar">@container</span> = <span class="ruby-ivar">@server</span>.<span class="ruby-identifier">container</span>
+  <span class="ruby-ivar">@client</span> = <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Soap</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">API</span>, <span class="ruby-node">&quot;http://localhost:#{@server.server_port}/client/api&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_array_return">
+            
+              <a name="method-i-test_array_return"></a><b>test_array_return</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_array_return_source')" id="l_method-i-test_array_return_source">show</a>
+                
+              </p>
+              <div id="method-i-test_array_return_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_array_return</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_array_return</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">new_person</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">new_person</span>.<span class="ruby-identifier">firstnames</span> = [<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-string">&quot;two&quot;</span>]
+  <span class="ruby-identifier">new_person</span>.<span class="ruby-identifier">lastname</span> = <span class="ruby-string">&quot;last&quot;</span>
+  <span class="ruby-identifier">assert_equal</span>([<span class="ruby-identifier">new_person</span>], <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">array_return</span>)
+  <span class="ruby-identifier">assert_equal</span>([<span class="ruby-identifier">new_person</span>], <span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_array_return</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_capitalized_method_name">
+            
+              <a name="method-i-test_capitalized_method_name"></a><b>test_capitalized_method_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_capitalized_method_name_source')" id="l_method-i-test_capitalized_method_name_source">show</a>
+                
+              </p>
+              <div id="method-i-test_capitalized_method_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_capitalized_method_name</span>
+  <span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_normal</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-number">5</span>, <span class="ruby-ivar">@client</span>.<span class="ruby-constant">Normal</span>(<span class="ruby-number">5</span>, <span class="ruby-number">6</span>))
+  <span class="ruby-identifier">assert_equal</span>([<span class="ruby-number">5</span>, <span class="ruby-number">6</span>], <span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_normal</span>)
+  <span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_normal</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_client_container">
+            
+              <a name="method-i-test_client_container"></a><b>test_client_container</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_client_container_source')" id="l_method-i-test_client_container_source">show</a>
+                
+              </p>
+              <div id="method-i-test_client_container_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_client_container</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-number">50</span>, <span class="ruby-constant">ClientContainer</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">get_client</span>.<span class="ruby-identifier">client_container</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-constant">ClientContainer</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">get_invalid</span>.<span class="ruby-identifier">nil?</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_inner_nil">
+            
+              <a name="method-i-test_inner_nil"></a><b>test_inner_nil</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_inner_nil_source')" id="l_method-i-test_inner_nil_source">show</a>
+                
+              </p>
+              <div id="method-i-test_inner_nil_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_inner_nil</span>
+  <span class="ruby-identifier">outer</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">inner_nil</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'outer'</span>, <span class="ruby-identifier">outer</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">outer</span>.<span class="ruby-identifier">inner</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_model_return">
+            
+              <a name="method-i-test_model_return"></a><b>test_model_return</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_model_return_source')" id="l_method-i-test_model_return_source">show</a>
+                
+              </p>
+              <div id="method-i-test_model_return_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_model_return</span>
+  <span class="ruby-identifier">user</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">user_return</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">user</span>.<span class="ruby-identifier">id</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'Kent'</span>, <span class="ruby-identifier">user</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">user</span>.<span class="ruby-identifier">active?</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Date</span>, <span class="ruby-identifier">user</span>.<span class="ruby-identifier">created_on</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>, <span class="ruby-identifier">user</span>.<span class="ruby-identifier">created_on</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_multi_dim_return">
+            
+              <a name="method-i-test_multi_dim_return"></a><b>test_multi_dim_return</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_multi_dim_return_source')" id="l_method-i-test_multi_dim_return_source">show</a>
+                
+              </p>
+              <div id="method-i-test_multi_dim_return_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_multi_dim_return</span>
+  <span class="ruby-identifier">md_struct</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">multi_dim_return</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Array</span>, <span class="ruby-identifier">md_struct</span>.<span class="ruby-identifier">pref</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">md_struct</span>.<span class="ruby-identifier">pref</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Array</span>, <span class="ruby-identifier">md_struct</span>.<span class="ruby-identifier">pref</span>[<span class="ruby-number">0</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_named_parameters">
+            
+              <a name="method-i-test_named_parameters"></a><b>test_named_parameters</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_named_parameters_source')" id="l_method-i-test_named_parameters_source">show</a>
+                
+              </p>
+              <div id="method-i-test_named_parameters_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_named_parameters</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_named_parameters</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@client</span>.<span class="ruby-identifier">named_parameters</span>(<span class="ruby-string">&quot;key&quot;</span>, <span class="ruby-number">5</span>).<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert_equal</span>([<span class="ruby-string">&quot;key&quot;</span>, <span class="ruby-number">5</span>], <span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_named_parameters</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_nil_struct_return">
+            
+              <a name="method-i-test_nil_struct_return"></a><b>test_nil_struct_return</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_nil_struct_return_source')" id="l_method-i-test_nil_struct_return_source">show</a>
+                
+              </p>
+              <div id="method-i-test_nil_struct_return_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_nil_struct_return</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">nil_struct_return</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_normal">
+            
+              <a name="method-i-test_normal"></a><b>test_normal</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_normal_source')" id="l_method-i-test_normal_source">show</a>
+                
+              </p>
+              <div id="method-i-test_normal_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_normal</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_normal</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-number">5</span>, <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">normal</span>(<span class="ruby-number">5</span>, <span class="ruby-number">6</span>))
+  <span class="ruby-identifier">assert_equal</span>([<span class="ruby-number">5</span>, <span class="ruby-number">6</span>], <span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_normal</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-number">5</span>, <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">normal</span>(<span class="ruby-string">&quot;7&quot;</span>, <span class="ruby-string">&quot;8&quot;</span>))
+  <span class="ruby-identifier">assert_equal</span>([<span class="ruby-number">7</span>, <span class="ruby-number">8</span>], <span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_normal</span>)
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-number">5</span>, <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">normal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-keyword">false</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_scoped_model_return">
+            
+              <a name="method-i-test_scoped_model_return"></a><b>test_scoped_model_return</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_scoped_model_return_source')" id="l_method-i-test_scoped_model_return_source">show</a>
+                
+              </p>
+              <div id="method-i-test_scoped_model_return_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 140</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_scoped_model_return</span>
+  <span class="ruby-identifier">scoped_model</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">scoped_model_return</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Accounting</span><span class="ruby-operator">::</span><span class="ruby-constant">User</span>, <span class="ruby-identifier">scoped_model</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'Kent'</span>, <span class="ruby-identifier">scoped_model</span>.<span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_struct_pass">
+            
+              <a name="method-i-test_struct_pass"></a><b>test_struct_pass</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_struct_pass_source')" id="l_method-i-test_struct_pass_source">show</a>
+                
+              </p>
+              <div id="method-i-test_struct_pass_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_struct_pass</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_struct_pass</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">new_person</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">new_person</span>.<span class="ruby-identifier">firstnames</span> = [<span class="ruby-string">&quot;one&quot;</span>, <span class="ruby-string">&quot;two&quot;</span>]
+  <span class="ruby-identifier">new_person</span>.<span class="ruby-identifier">lastname</span> = <span class="ruby-string">&quot;last&quot;</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-keyword">true</span>, <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">struct_pass</span>([<span class="ruby-identifier">new_person</span>]))
+  <span class="ruby-identifier">assert_equal</span>([[<span class="ruby-identifier">new_person</span>]], <span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_struct_pass</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_void">
+            
+              <a name="method-i-test_void"></a><b>test_void</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_void_source')" id="l_method-i-test_void_source">show</a>
+                
+              </p>
+              <div id="method-i-test_void_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_void</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_void</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">void</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-operator">!</span><span class="ruby-ivar">@container</span>.<span class="ruby-identifier">value_void</span>.<span class="ruby-identifier">nil?</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_with_model">
+            
+              <a name="method-i-test_with_model"></a><b>test_with_model</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_with_model_source')" id="l_method-i-test_with_model_source">show</a>
+                
+              </p>
+              <div id="method-i-test_with_model_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/client_soap_test.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_with_model</span>
+  <span class="ruby-identifier">with_model</span> = <span class="ruby-ivar">@client</span>.<span class="ruby-identifier">with_model_return</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'Kent'</span>, <span class="ruby-identifier">with_model</span>.<span class="ruby-identifier">user</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">with_model</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">with_model</span>.<span class="ruby-identifier">users</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">user</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">User</span>, <span class="ruby-identifier">user</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

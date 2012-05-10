@@ -1,0 +1,2374 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>HasAndBelongsToManyAssociationsTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            HasAndBelongsToManyAssociationsTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/test/associations_test_rb.html">rails/activerecord/test/associations_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_adding_a_collection">test_adding_a_collection</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_adding_from_the_project">test_adding_from_the_project</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_adding_from_the_project_fixed_timestamp">test_adding_from_the_project_fixed_timestamp</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_adding_multiple">test_adding_multiple</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_adding_single">test_adding_single</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_adding_type_mismatch">test_adding_type_mismatch</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_adding_uses_default_values_on_join_table">test_adding_uses_default_values_on_join_table</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_adding_uses_explicit_values_on_join_table">test_adding_uses_explicit_values_on_join_table</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_additional_columns_from_join_table">test_additional_columns_from_join_table</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assign_ids">test_assign_ids</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assign_ids_ignoring_blanks">test_assign_ids_ignoring_blanks</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_associations_with_conditions">test_associations_with_conditions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_build">test_build</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_build_by_new_record">test_build_by_new_record</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_consider_type">test_consider_type</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_create">test_create</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_create_by_new_record">test_create_by_new_record</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_deleting">test_deleting</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_deleting_all">test_deleting_all</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_deleting_array">test_deleting_array</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_deleting_array_with_sql">test_deleting_array_with_sql</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_deleting_with_sql">test_deleting_with_sql</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_destroy_all">test_destroy_all</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_find_in_association">test_find_in_association</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_find_in_association_with_custom_finder_sql">test_find_in_association_with_custom_finder_sql</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_find_in_association_with_custom_finder_sql_and_string_id">test_find_in_association_with_custom_finder_sql_and_string_id</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_find_in_association_with_options">test_find_in_association_with_options</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_find_with_merged_options">test_find_with_merged_options</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_get_ids">test_get_ids</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_habtm_adding_before_save">test_habtm_adding_before_save</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_habtm_adding_before_save_with_join_attributes">test_habtm_adding_before_save_with_join_attributes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_habtm_saving_multiple_relationships">test_habtm_saving_multiple_relationships</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_habtm_unique_order_preserved">test_habtm_unique_order_preserved</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_has_and_belongs_to_many">test_has_and_belongs_to_many</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_hatbm_attribute_access_and_respond_to">test_hatbm_attribute_access_and_respond_to</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_join_table_alias">test_join_table_alias</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_join_with_group">test_join_with_group</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_new_with_values_in_collection">test_new_with_values_in_collection</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_removing_associations_on_destroy">test_removing_associations_on_destroy</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_replace_on_new_object">test_replace_on_new_object</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_replace_with_less">test_replace_with_less</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_replace_with_new">test_replace_with_new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_rich_association">test_rich_association</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_select_limited_ids_list">test_select_limited_ids_list</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_triple_equality">test_triple_equality</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_uniq_after_the_fact">test_uniq_after_the_fact</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_uniq_before_the_fact">test_uniq_before_the_fact</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_update_attributes_after_push_without_duplicate_join_table_rows">test_update_attributes_after_push_without_duplicate_join_table_rows</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_updating_attributes_on_non_rich_associations">test_updating_attributes_on_non_rich_associations</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_updating_attributes_on_rich_associations">test_updating_attributes_on_rich_associations</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_updating_attributes_on_rich_associations_with_limited_find">test_updating_attributes_on_rich_associations_with_limited_find</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_adding_a_collection">
+            
+              <a name="method-i-test_adding_a_collection"></a><b>test_adding_a_collection</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_adding_a_collection_source')" id="l_method-i-test_adding_a_collection_source">show</a>
+                
+              </p>
+              <div id="method-i-test_adding_a_collection_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1428</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_adding_a_collection</span>
+  <span class="ruby-identifier">aredridel</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Aredridel&quot;</span>)
+  <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">concat</span>([<span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>), <span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">2</span>)])
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_adding_from_the_project">
+            
+              <a name="method-i-test_adding_from_the_project"></a><b>test_adding_from_the_project</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_adding_from_the_project_source')" id="l_method-i-test_adding_from_the_project_source">show</a>
+                
+              </p>
+              <div id="method-i-test_adding_from_the_project_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1389</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_adding_from_the_project</span>
+  <span class="ruby-identifier">jamis</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">2</span>)
+  <span class="ruby-identifier">action_controller</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">2</span>)
+  <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">jamis</span> 
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_adding_from_the_project_fixed_timestamp">
+            
+              <a name="method-i-test_adding_from_the_project_fixed_timestamp"></a><b>test_adding_from_the_project_fixed_timestamp</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_adding_from_the_project_fixed_timestamp_source')" id="l_method-i-test_adding_from_the_project_fixed_timestamp_source">show</a>
+                
+              </p>
+              <div id="method-i-test_adding_from_the_project_fixed_timestamp_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1403</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_adding_from_the_project_fixed_timestamp</span>
+  <span class="ruby-identifier">jamis</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">2</span>)
+  <span class="ruby-identifier">action_controller</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">2</span>)
+  <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">updated_at</span> = <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">updated_at</span>
+
+  <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">jamis</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">updated_at</span>, <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">updated_at</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_adding_multiple">
+            
+              <a name="method-i-test_adding_multiple"></a><b>test_adding_multiple</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_adding_multiple_source')" id="l_method-i-test_adding_multiple_source">show</a>
+                
+              </p>
+              <div id="method-i-test_adding_multiple_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1419</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_adding_multiple</span>
+  <span class="ruby-identifier">aredridel</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Aredridel&quot;</span>)
+  <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">push</span>(<span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>), <span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">2</span>))
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_adding_single">
+            
+              <a name="method-i-test_adding_single"></a><b>test_adding_single</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_adding_single_source')" id="l_method-i-test_adding_single_source">show</a>
+                
+              </p>
+              <div id="method-i-test_adding_single_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1369</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_adding_single</span>
+  <span class="ruby-identifier">jamis</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">2</span>)
+  <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">reload</span> <span class="ruby-comment"># causing the collection to load </span>
+  <span class="ruby-identifier">action_controller</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">2</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>    
+  
+  <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">action_controller</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">action_controller</span>.<span class="ruby-identifier">developers</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_adding_type_mismatch">
+            
+              <a name="method-i-test_adding_type_mismatch"></a><b>test_adding_type_mismatch</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_adding_type_mismatch_source')" id="l_method-i-test_adding_type_mismatch_source">show</a>
+                
+              </p>
+              <div id="method-i-test_adding_type_mismatch_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1383</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_adding_type_mismatch</span>
+  <span class="ruby-identifier">jamis</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">2</span>)
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">AssociationTypeMismatch</span>) { <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">nil</span> }
+  <span class="ruby-identifier">assert_raise</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">AssociationTypeMismatch</span>) { <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-number">1</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_adding_uses_default_values_on_join_table">
+            
+              <a name="method-i-test_adding_uses_default_values_on_join_table"></a><b>test_adding_uses_default_values_on_join_table</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_adding_uses_default_values_on_join_table_source')" id="l_method-i-test_adding_uses_default_values_on_join_table_source">show</a>
+                
+              </p>
+              <div id="method-i-test_adding_uses_default_values_on_join_table_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1437</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_adding_uses_default_values_on_join_table</span>
+  <span class="ruby-identifier">ac</span> = <span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">ac</span>)
+  <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">ac</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>, <span class="ruby-value">:reload</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">ac</span>)
+  <span class="ruby-identifier">project</span> = <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">ac</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">project</span>.<span class="ruby-identifier">access_level</span>.<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_adding_uses_explicit_values_on_join_table">
+            
+              <a name="method-i-test_adding_uses_explicit_values_on_join_table"></a><b>test_adding_uses_explicit_values_on_join_table</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_adding_uses_explicit_values_on_join_table_source')" id="l_method-i-test_adding_uses_explicit_values_on_join_table_source">show</a>
+                
+              </p>
+              <div id="method-i-test_adding_uses_explicit_values_on_join_table_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1447</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_adding_uses_explicit_values_on_join_table</span>
+  <span class="ruby-identifier">ac</span> = <span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">ac</span>)
+  <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">push_with_attributes</span>(<span class="ruby-identifier">ac</span>, <span class="ruby-value">:access_level</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">3</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>, <span class="ruby-value">:reload</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">ac</span>)
+  <span class="ruby-identifier">project</span> = <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">ac</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">project</span>.<span class="ruby-identifier">access_level</span>.<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_additional_columns_from_join_table">
+            
+              <a name="method-i-test_additional_columns_from_join_table"></a><b>test_additional_columns_from_join_table</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_additional_columns_from_join_table_source')" id="l_method-i-test_additional_columns_from_join_table_source">show</a>
+                
+              </p>
+              <div id="method-i-test_additional_columns_from_join_table_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1649</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_additional_columns_from_join_table</span>
+  <span class="ruby-identifier">assert_date_from_db</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">new</span>(<span class="ruby-number">2004</span>, <span class="ruby-number">10</span>, <span class="ruby-number">10</span>), <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">joined_on</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assign_ids">
+            
+              <a name="method-i-test_assign_ids"></a><b>test_assign_ids</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assign_ids_source')" id="l_method-i-test_assign_ids_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assign_ids_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1819</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assign_ids</span>
+  <span class="ruby-identifier">developer</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Joe&quot;</span>)
+  <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">project_ids</span> = [<span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">id</span>, <span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>).<span class="ruby-identifier">id</span>]
+  <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>), <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">projects</span>[<span class="ruby-number">0</span>] 
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>), <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">projects</span>[<span class="ruby-number">1</span>] 
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assign_ids_ignoring_blanks">
+            
+              <a name="method-i-test_assign_ids_ignoring_blanks"></a><b>test_assign_ids_ignoring_blanks</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assign_ids_ignoring_blanks_source')" id="l_method-i-test_assign_ids_ignoring_blanks_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assign_ids_ignoring_blanks_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1829</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assign_ids_ignoring_blanks</span>
+  <span class="ruby-identifier">developer</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Joe&quot;</span>)
+  <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">project_ids</span> = [<span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">id</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>).<span class="ruby-identifier">id</span>, <span class="ruby-string">''</span>]
+  <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>), <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">projects</span>[<span class="ruby-number">0</span>] 
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>), <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">projects</span>[<span class="ruby-number">1</span>] 
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_associations_with_conditions">
+            
+              <a name="method-i-test_associations_with_conditions"></a><b>test_associations_with_conditions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_associations_with_conditions_source')" id="l_method-i-test_associations_with_conditions_source">show</a>
+                
+              </p>
+              <div id="method-i-test_associations_with_conditions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1672</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_associations_with_conditions</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers_named_david</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers_named_david_with_hash_conditions</span>.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>), <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers_named_david</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>), <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers_named_david_with_hash_conditions</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>), <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">salaried_developers</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">id</span>)
+
+  <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers_named_david</span>.<span class="ruby-identifier">clear</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>, <span class="ruby-value">:reload</span>).<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_build">
+            
+              <a name="method-i-test_build"></a><b>test_build</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_build_source')" id="l_method-i-test_build_source">show</a>
+                
+              </p>
+              <div id="method-i-test_build_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1534</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_build</span>
+  <span class="ruby-identifier">devel</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">proj</span> = <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">build</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Projekt&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">proj</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">proj</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">proj</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">proj</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">sort_by</span>(&amp;<span class="ruby-value">:id</span>).<span class="ruby-identifier">last</span>, <span class="ruby-identifier">proj</span>  <span class="ruby-comment"># prove join table is updated</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_build_by_new_record">
+            
+              <a name="method-i-test_build_by_new_record"></a><b>test_build_by_new_record</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_build_by_new_record_source')" id="l_method-i-test_build_by_new_record_source">show</a>
+                
+              </p>
+              <div id="method-i-test_build_by_new_record_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1545</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_build_by_new_record</span>
+  <span class="ruby-identifier">devel</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Marcel&quot;</span>, <span class="ruby-value">:salary</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">75000</span>)
+  <span class="ruby-identifier">proj1</span> = <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">build</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Make bed&quot;</span>)
+  <span class="ruby-identifier">proj2</span> = <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">build</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Lie in it&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">proj2</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">proj2</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">devel</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">proj2</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">proj2</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-string">&quot;Marcel&quot;</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">proj2</span>  <span class="ruby-comment"># prove join table is updated</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_consider_type">
+            
+              <a name="method-i-test_consider_type"></a><b>test_consider_type</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_consider_type_source')" id="l_method-i-test_consider_type_source">show</a>
+                
+              </p>
+              <div id="method-i-test_consider_type_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1755</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_consider_type</span>
+  <span class="ruby-identifier">developer</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>)
+  <span class="ruby-identifier">special_project</span> = <span class="ruby-constant">SpecialProject</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Special Project&quot;</span>)
+
+  <span class="ruby-identifier">other_project</span> = <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">special_projects</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">special_project</span>
+  <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">reload</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">special_project</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">special_projects</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">special_project</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">developer</span>.<span class="ruby-identifier">special_projects</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">other_project</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_create">
+            
+              <a name="method-i-test_create"></a><b>test_create</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_create_source')" id="l_method-i-test_create_source">show</a>
+                
+              </p>
+              <div id="method-i-test_create_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1558</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_create</span>
+  <span class="ruby-identifier">devel</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">proj</span> = <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Projekt&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">proj</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">proj</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">sort_by</span>(&amp;<span class="ruby-value">:id</span>).<span class="ruby-identifier">last</span>, <span class="ruby-identifier">proj</span>  <span class="ruby-comment"># prove join table is updated</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_create_by_new_record">
+            
+              <a name="method-i-test_create_by_new_record"></a><b>test_create_by_new_record</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_create_by_new_record_source')" id="l_method-i-test_create_by_new_record_source">show</a>
+                
+              </p>
+              <div id="method-i-test_create_by_new_record_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1566</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_create_by_new_record</span>
+  <span class="ruby-identifier">devel</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Marcel&quot;</span>, <span class="ruby-value">:salary</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">75000</span>)
+  <span class="ruby-identifier">proj1</span> = <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Make bed&quot;</span>)
+  <span class="ruby-identifier">proj2</span> = <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Lie in it&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">proj2</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">proj2</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">devel</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">proj2</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">devel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">proj2</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-string">&quot;Marcel&quot;</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">last</span>, <span class="ruby-identifier">proj2</span>  <span class="ruby-comment"># prove join table is updated</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_deleting">
+            
+              <a name="method-i-test_deleting"></a><b>test_deleting</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_deleting_source')" id="l_method-i-test_deleting_source">show</a>
+                
+              </p>
+              <div id="method-i-test_deleting_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1592</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_deleting</span>
+  <span class="ruby-identifier">david</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">active_record</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">active_record</span>)
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_deleting_all">
+            
+              <a name="method-i-test_deleting_all"></a><b>test_deleting_all</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_deleting_all_source')" id="l_method-i-test_deleting_all_source">show</a>
+                
+              </p>
+              <div id="method-i-test_deleting_all_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1633</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_deleting_all</span>
+  <span class="ruby-identifier">david</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">clear</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_deleting_array">
+            
+              <a name="method-i-test_deleting_array"></a><b>test_deleting_array</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_deleting_array_source')" id="l_method-i-test_deleting_array_source">show</a>
+                
+              </p>
+              <div id="method-i-test_deleting_array_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1606</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_deleting_array</span>
+  <span class="ruby-identifier">david</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>))
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_deleting_array_with_sql">
+            
+              <a name="method-i-test_deleting_array_with_sql"></a><b>test_deleting_array_with_sql</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_deleting_array_with_sql_source')" id="l_method-i-test_deleting_array_with_sql_source">show</a>
+                
+              </p>
+              <div id="method-i-test_deleting_array_with_sql_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1624</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_deleting_array_with_sql</span>
+  <span class="ruby-identifier">active_record</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers_by_sql</span>.<span class="ruby-identifier">size</span>
+  
+  <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers_by_sql</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>))
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers_by_sql</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_deleting_with_sql">
+            
+              <a name="method-i-test_deleting_with_sql"></a><b>test_deleting_with_sql</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_deleting_with_sql_source')" id="l_method-i-test_deleting_with_sql_source">show</a>
+                
+              </p>
+              <div id="method-i-test_deleting_with_sql_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1614</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_deleting_with_sql</span>
+  <span class="ruby-identifier">david</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">active_record</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers_by_sql</span>.<span class="ruby-identifier">size</span>
+  
+  <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers_by_sql</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">david</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers_by_sql</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_destroy_all">
+            
+              <a name="method-i-test_destroy_all"></a><b>test_destroy_all</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_destroy_all_source')" id="l_method-i-test_destroy_all_source">show</a>
+                
+              </p>
+              <div id="method-i-test_destroy_all_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1653</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_destroy_all</span>
+  <span class="ruby-identifier">david</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">destroy_all</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_find_in_association">
+            
+              <a name="method-i-test_find_in_association"></a><b>test_find_in_association</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_find_in_association_source')" id="l_method-i-test_find_in_association_source">show</a>
+                
+              </p>
+              <div id="method-i-test_find_in_association_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1685</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_find_in_association</span>
+  <span class="ruby-comment"># Using sql</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>), <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">id</span>), <span class="ruby-string">&quot;SQL find&quot;</span>
+  
+  <span class="ruby-comment"># Using ruby</span>
+  <span class="ruby-identifier">active_record</span> = <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>)
+  <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>), <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">id</span>), <span class="ruby-string">&quot;Ruby find&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_find_in_association_with_custom_finder_sql">
+            
+              <a name="method-i-test_find_in_association_with_custom_finder_sql"></a><b>test_find_in_association_with_custom_finder_sql</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_find_in_association_with_custom_finder_sql_source')" id="l_method-i-test_find_in_association_with_custom_finder_sql_source">show</a>
+                
+              </p>
+              <div id="method-i-test_find_in_association_with_custom_finder_sql_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1695</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_find_in_association_with_custom_finder_sql</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>), <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers_with_finder_sql</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">id</span>), <span class="ruby-string">&quot;SQL find&quot;</span>
+ 
+  <span class="ruby-identifier">active_record</span> = <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>)
+  <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers_with_finder_sql</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>), <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers_with_finder_sql</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">id</span>), <span class="ruby-string">&quot;Ruby find&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_find_in_association_with_custom_finder_sql_and_string_id">
+            
+              <a name="method-i-test_find_in_association_with_custom_finder_sql_and_string_id"></a><b>test_find_in_association_with_custom_finder_sql_and_string_id</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_find_in_association_with_custom_finder_sql_and_string_id_source')" id="l_method-i-test_find_in_association_with_custom_finder_sql_and_string_id_source">show</a>
+                
+              </p>
+              <div id="method-i-test_find_in_association_with_custom_finder_sql_and_string_id_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1703</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_find_in_association_with_custom_finder_sql_and_string_id</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>), <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers_with_finder_sql</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">id</span>.<span class="ruby-identifier">to_s</span>), <span class="ruby-string">&quot;SQL find&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_find_in_association_with_options">
+            
+              <a name="method-i-test_find_in_association_with_options"></a><b>test_find_in_association_with_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_find_in_association_with_options_source')" id="l_method-i-test_find_in_association_with_options_source">show</a>
+                
+              </p>
+              <div id="method-i-test_find_in_association_with_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1725</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_find_in_association_with_options</span>
+  <span class="ruby-identifier">developers</span> = <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:poor_jamis</span>), <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;salary &lt; 10000&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>),      <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;salary DESC&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_find_with_merged_options">
+            
+              <a name="method-i-test_find_with_merged_options"></a><b>test_find_with_merged_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_find_with_merged_options_source')" id="l_method-i-test_find_with_merged_options_source">show</a>
+                
+              </p>
+              <div id="method-i-test_find_with_merged_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1707</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_find_with_merged_options</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">limited_developers</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">limited_developers</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>).<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">limited_developers</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_get_ids">
+            
+              <a name="method-i-test_get_ids"></a><b>test_get_ids</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_get_ids_source')" id="l_method-i-test_get_ids_source">show</a>
+                
+              </p>
+              <div id="method-i-test_get_ids_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1814</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_get_ids</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">id</span>, <span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>).<span class="ruby-identifier">id</span>], <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">project_ids</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">id</span>], <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">project_ids</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_habtm_adding_before_save">
+            
+              <a name="method-i-test_habtm_adding_before_save"></a><b>test_habtm_adding_before_save</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_habtm_adding_before_save_source')" id="l_method-i-test_habtm_adding_before_save_source">show</a>
+                
+              </p>
+              <div id="method-i-test_habtm_adding_before_save_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1475</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_habtm_adding_before_save</span>
+  <span class="ruby-identifier">no_of_devels</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">count</span>
+  <span class="ruby-identifier">no_of_projects</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">count</span>
+  <span class="ruby-identifier">aredridel</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Aredridel&quot;</span>)
+  <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">concat</span>([<span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>), <span class="ruby-identifier">p</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Projekt&quot;</span>)])
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">no_of_devels</span><span class="ruby-operator">+</span><span class="ruby-number">1</span>, <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">count</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">no_of_projects</span><span class="ruby-operator">+</span><span class="ruby-number">1</span>, <span class="ruby-constant">Project</span>.<span class="ruby-identifier">count</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">aredridel</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_habtm_adding_before_save_with_join_attributes">
+            
+              <a name="method-i-test_habtm_adding_before_save_with_join_attributes"></a><b>test_habtm_adding_before_save_with_join_attributes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_habtm_adding_before_save_with_join_attributes_source')" id="l_method-i-test_habtm_adding_before_save_with_join_attributes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_habtm_adding_before_save_with_join_attributes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1490</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_habtm_adding_before_save_with_join_attributes</span>
+  <span class="ruby-identifier">no_of_devels</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">count</span>
+  <span class="ruby-identifier">no_of_projects</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">count</span>
+  <span class="ruby-identifier">now</span> = <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>
+  <span class="ruby-identifier">ken</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Ken&quot;</span>)
+  <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">ken</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">push_with_attributes</span>( <span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>), <span class="ruby-value">:joined_on</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">now</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">p</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Foomatic&quot;</span>)
+  <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">ken</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">push_with_attributes</span>( <span class="ruby-identifier">p</span>, <span class="ruby-value">:joined_on</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">now</span> )
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">ken</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">ken</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">ken</span>.<span class="ruby-identifier">new_record?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">no_of_devels</span><span class="ruby-operator">+</span><span class="ruby-number">1</span>, <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">count</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">no_of_projects</span><span class="ruby-operator">+</span><span class="ruby-number">1</span>, <span class="ruby-constant">Project</span>.<span class="ruby-identifier">count</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">ken</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">ken</span>.<span class="ruby-identifier">projects</span>(<span class="ruby-keyword">true</span>).<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">kenReloaded</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find_by_name</span> <span class="ruby-string">'Ken'</span>
+  <span class="ruby-identifier">kenReloaded</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">each</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">prj</span><span class="ruby-operator">|</span> <span class="ruby-identifier">assert_date_from_db</span>(<span class="ruby-identifier">now</span>, <span class="ruby-identifier">prj</span>.<span class="ruby-identifier">joined_on</span>)}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_habtm_saving_multiple_relationships">
+            
+              <a name="method-i-test_habtm_saving_multiple_relationships"></a><b>test_habtm_saving_multiple_relationships</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_habtm_saving_multiple_relationships_source')" id="l_method-i-test_habtm_saving_multiple_relationships_source">show</a>
+                
+              </p>
+              <div id="method-i-test_habtm_saving_multiple_relationships_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1515</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_habtm_saving_multiple_relationships</span>
+  <span class="ruby-identifier">new_project</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Grimetime&quot;</span>)
+  <span class="ruby-identifier">amount_of_developers</span> = <span class="ruby-number">4</span>
+  <span class="ruby-identifier">developers</span> = (<span class="ruby-number">0</span><span class="ruby-operator">...</span><span class="ruby-identifier">amount_of_developers</span>).<span class="ruby-identifier">collect</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">create</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;JME #{i}&quot;</span>) }.<span class="ruby-identifier">reverse</span>
+
+  <span class="ruby-identifier">new_project</span>.<span class="ruby-identifier">developer_ids</span> = [<span class="ruby-identifier">developers</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">id</span>, <span class="ruby-identifier">developers</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">id</span>]
+  <span class="ruby-identifier">new_project</span>.<span class="ruby-identifier">developers_with_callback_ids</span> = [<span class="ruby-identifier">developers</span>[<span class="ruby-number">2</span>].<span class="ruby-identifier">id</span>, <span class="ruby-identifier">developers</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">id</span>]
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">new_project</span>.<span class="ruby-identifier">save</span>
+
+  <span class="ruby-identifier">new_project</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">amount_of_developers</span>, <span class="ruby-identifier">new_project</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">developers</span>, <span class="ruby-identifier">new_project</span>.<span class="ruby-identifier">developers</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_habtm_unique_order_preserved">
+            
+              <a name="method-i-test_habtm_unique_order_preserved"></a><b>test_habtm_unique_order_preserved</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_habtm_unique_order_preserved_source')" id="l_method-i-test_habtm_unique_order_preserved_source">show</a>
+                
+              </p>
+              <div id="method-i-test_habtm_unique_order_preserved_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1529</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_habtm_unique_order_preserved</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">developers</span>(<span class="ruby-value">:poor_jamis</span>), <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>), <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>)], <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">non_unique_developers</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">developers</span>(<span class="ruby-value">:poor_jamis</span>), <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>), <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>)], <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_has_and_belongs_to_many">
+            
+              <a name="method-i-test_has_and_belongs_to_many"></a><b>test_has_and_belongs_to_many</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_has_and_belongs_to_many_source')" id="l_method-i-test_has_and_belongs_to_many_source">show</a>
+                
+              </p>
+              <div id="method-i-test_has_and_belongs_to_many_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1352</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_has_and_belongs_to_many</span>
+  <span class="ruby-identifier">david</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+
+  <span class="ruby-identifier">active_record</span> = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">active_record</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">david</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_hatbm_attribute_access_and_respond_to">
+            
+              <a name="method-i-test_hatbm_attribute_access_and_respond_to"></a><b>test_hatbm_attribute_access_and_respond_to</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_hatbm_attribute_access_and_respond_to_source')" id="l_method-i-test_hatbm_attribute_access_and_respond_to_source">show</a>
+                
+              </p>
+              <div id="method-i-test_hatbm_attribute_access_and_respond_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1459</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_hatbm_attribute_access_and_respond_to</span>
+  <span class="ruby-identifier">project</span> = <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span>[<span class="ruby-number">0</span>]
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">has_attribute?</span>(<span class="ruby-string">&quot;name&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">has_attribute?</span>(<span class="ruby-string">&quot;joined_on&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">has_attribute?</span>(<span class="ruby-string">&quot;access_level&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">&quot;name&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">&quot;name=&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">&quot;name?&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">&quot;joined_on&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">&quot;joined_on=&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">&quot;joined_on?&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">&quot;access_level&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">&quot;access_level=&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-string">&quot;access_level?&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_join_table_alias">
+            
+              <a name="method-i-test_join_table_alias"></a><b>test_join_table_alias</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_join_table_alias_source')" id="l_method-i-test_join_table_alias_source">show</a>
+                
+              </p>
+              <div id="method-i-test_join_table_alias_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1800</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_join_table_alias</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:projects</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:developers</span>}, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'developers_projects_join.joined_on IS NOT NULL'</span>).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_join_with_group">
+            
+              <a name="method-i-test_join_with_group"></a><b>test_join_with_group</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_join_with_group_source')" id="l_method-i-test_join_with_group_source">show</a>
+                
+              </p>
+              <div id="method-i-test_join_with_group_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1804</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_join_with_group</span>
+  <span class="ruby-identifier">group</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">columns</span>.<span class="ruby-identifier">inject</span>([]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">g</span>, <span class="ruby-identifier">c</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">g</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;developers.#{c.name}&quot;</span>
+    <span class="ruby-identifier">g</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;developers_projects_2.#{c.name}&quot;</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Project</span>.<span class="ruby-identifier">columns</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">group</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;projects.#{c.name}&quot;</span> }
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:projects</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:developers</span>}, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'developers_projects_join.joined_on IS NOT NULL'</span>, <span class="ruby-value">:group</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">group</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;,&quot;</span>)).<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_new_with_values_in_collection">
+            
+              <a name="method-i-test_new_with_values_in_collection"></a><b>test_new_with_values_in_collection</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_new_with_values_in_collection_source')" id="l_method-i-test_new_with_values_in_collection_source">show</a>
+                
+              </p>
+              <div id="method-i-test_new_with_values_in_collection_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1713</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_new_with_values_in_collection</span>
+  <span class="ruby-identifier">jamis</span> = <span class="ruby-constant">DeveloperForProjectWithAfterCreateHook</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-string">'Jamis'</span>)
+  <span class="ruby-identifier">david</span> = <span class="ruby-constant">DeveloperForProjectWithAfterCreateHook</span>.<span class="ruby-identifier">find_by_name</span>(<span class="ruby-string">'David'</span>)
+  <span class="ruby-identifier">project</span> = <span class="ruby-constant">ProjectWithAfterCreateHook</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Cooking with Bertie&quot;</span>)
+  <span class="ruby-identifier">project</span>.<span class="ruby-identifier">developers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">jamis</span>
+  <span class="ruby-identifier">project</span>.<span class="ruby-identifier">save!</span>
+  <span class="ruby-identifier">project</span>.<span class="ruby-identifier">reload</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">jamis</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">project</span>.<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">david</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_removing_associations_on_destroy">
+            
+              <a name="method-i-test_removing_associations_on_destroy"></a><b>test_removing_associations_on_destroy</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_removing_associations_on_destroy_source')" id="l_method-i-test_removing_associations_on_destroy_source">show</a>
+                
+              </p>
+              <div id="method-i-test_removing_associations_on_destroy_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1641</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_removing_associations_on_destroy</span>
+  <span class="ruby-identifier">david</span> = <span class="ruby-constant">DeveloperWithBeforeDestroyRaise</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">david</span>.<span class="ruby-identifier">destroy</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">DeveloperWithBeforeDestroyRaise</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">select_all</span>(<span class="ruby-string">&quot;SELECT * FROM developers_projects WHERE developer_id = 1&quot;</span>).<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_replace_on_new_object">
+            
+              <a name="method-i-test_replace_on_new_object"></a><b>test_replace_on_new_object</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_replace_on_new_object_source')" id="l_method-i-test_replace_on_new_object_source">show</a>
+                
+              </p>
+              <div id="method-i-test_replace_on_new_object_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1748</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_replace_on_new_object</span>
+  <span class="ruby-identifier">new_developer</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Matz&quot;</span>)
+  <span class="ruby-identifier">new_developer</span>.<span class="ruby-identifier">projects</span> = [<span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>), <span class="ruby-constant">Project</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;ActionWebSearch&quot;</span>)]
+  <span class="ruby-identifier">new_developer</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">new_developer</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_replace_with_less">
+            
+              <a name="method-i-test_replace_with_less"></a><b>test_replace_with_less</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_replace_with_less_source')" id="l_method-i-test_replace_with_less_source">show</a>
+                
+              </p>
+              <div id="method-i-test_replace_with_less_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1733</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_replace_with_less</span>
+  <span class="ruby-identifier">david</span> = <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>)
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span> = [<span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>)]
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">david</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_replace_with_new">
+            
+              <a name="method-i-test_replace_with_new"></a><b>test_replace_with_new</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_replace_with_new_source')" id="l_method-i-test_replace_with_new_source">show</a>
+                
+              </p>
+              <div id="method-i-test_replace_with_new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1740</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_replace_with_new</span>
+  <span class="ruby-identifier">david</span> = <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>)
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span> = [<span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>), <span class="ruby-constant">Project</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;ActionWebSearch&quot;</span>)]
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">save</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">david</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_rich_association">
+            
+              <a name="method-i-test_rich_association"></a><b>test_rich_association</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_rich_association_source')" id="l_method-i-test_rich_association_source">show</a>
+                
+              </p>
+              <div id="method-i-test_rich_association_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1662</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_rich_association</span>
+  <span class="ruby-identifier">jamis</span> = <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>)
+  <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-string">'push_with_attributes'</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">push_with_attributes</span>(<span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>), <span class="ruby-value">:joined_on</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_date_from_db</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>, <span class="ruby-identifier">jamis</span>.<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>).<span class="ruby-identifier">name</span> }.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">joined_on</span>
+  <span class="ruby-identifier">assert_date_from_db</span> <span class="ruby-constant">Date</span>.<span class="ruby-identifier">today</span>, <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>).<span class="ruby-identifier">name</span> }.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">joined_on</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_select_limited_ids_list">
+            
+              <a name="method-i-test_select_limited_ids_list"></a><b>test_select_limited_ids_list</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_select_limited_ids_list_source')" id="l_method-i-test_select_limited_ids_list_source">show</a>
+                
+              </p>
+              <div id="method-i-test_select_limited_ids_list_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1839</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_select_limited_ids_list</span>
+  <span class="ruby-comment"># Set timestamps</span>
+  <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">transaction</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'id'</span>).<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">record</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">record</span>.<span class="ruby-identifier">update_attributes</span>(<span class="ruby-value">:created_at</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">5</span>.<span class="ruby-identifier">years</span>.<span class="ruby-identifier">ago</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">i</span> * <span class="ruby-number">5</span>.<span class="ruby-identifier">minutes</span>))
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">join_base</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Associations</span><span class="ruby-operator">::</span><span class="ruby-constant">ClassMethods</span><span class="ruby-operator">::</span><span class="ruby-constant">JoinDependency</span><span class="ruby-operator">::</span><span class="ruby-constant">JoinBase</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">Project</span>)
+  <span class="ruby-identifier">join_dep</span>  = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Associations</span><span class="ruby-operator">::</span><span class="ruby-constant">ClassMethods</span><span class="ruby-operator">::</span><span class="ruby-constant">JoinDependency</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">join_base</span>, <span class="ruby-value">:developers</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">projects</span>  = <span class="ruby-constant">Project</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:select_limited_ids_list</span>, {<span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'developers.created_at'</span>}, <span class="ruby-identifier">join_dep</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%w(1 2)</span>, <span class="ruby-identifier">projects</span>.<span class="ruby-identifier">scan</span>(<span class="ruby-regexp">%r\d/</span>).<span class="ruby-identifier">sort</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_triple_equality">
+            
+              <a name="method-i-test_triple_equality"></a><b>test_triple_equality</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_triple_equality_source')" id="l_method-i-test_triple_equality_source">show</a>
+                
+              </p>
+              <div id="method-i-test_triple_equality_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1364</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_triple_equality</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span>(<span class="ruby-constant">Array</span> <span class="ruby-operator">===</span> <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">projects</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">find</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">projects</span> <span class="ruby-operator">===</span> <span class="ruby-constant">Array</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_uniq_after_the_fact">
+            
+              <a name="method-i-test_uniq_after_the_fact"></a><b>test_uniq_after_the_fact</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_uniq_after_the_fact_source')" id="l_method-i-test_uniq_after_the_fact_source">show</a>
+                
+              </p>
+              <div id="method-i-test_uniq_after_the_fact_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1579</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_uniq_after_the_fact</span>
+  <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>)
+  <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>).<span class="ruby-identifier">projects</span>.<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_uniq_before_the_fact">
+            
+              <a name="method-i-test_uniq_before_the_fact"></a><b>test_uniq_before_the_fact</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_uniq_before_the_fact_source')" id="l_method-i-test_uniq_before_the_fact_source">show</a>
+                
+              </p>
+              <div id="method-i-test_uniq_before_the_fact_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1586</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_uniq_before_the_fact</span>
+  <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:jamis</span>)
+  <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>).<span class="ruby-identifier">developers</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">developers</span>(<span class="ruby-value">:david</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">projects</span>(<span class="ruby-value">:active_record</span>, <span class="ruby-value">:reload</span>).<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_update_attributes_after_push_without_duplicate_join_table_rows">
+            
+              <a name="method-i-test_update_attributes_after_push_without_duplicate_join_table_rows"></a><b>test_update_attributes_after_push_without_duplicate_join_table_rows</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_update_attributes_after_push_without_duplicate_join_table_rows_source')" id="l_method-i-test_update_attributes_after_push_without_duplicate_join_table_rows_source">show</a>
+                
+              </p>
+              <div id="method-i-test_update_attributes_after_push_without_duplicate_join_table_rows_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1768</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_update_attributes_after_push_without_duplicate_join_table_rows</span>
+    <span class="ruby-identifier">developer</span> = <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Kano&quot;</span>)
+    <span class="ruby-identifier">project</span> = <span class="ruby-constant">SpecialProject</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Special Project&quot;</span>)
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">save</span>
+    <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">projects</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">project</span>
+    <span class="ruby-identifier">developer</span>.<span class="ruby-identifier">update_attribute</span>(<span class="ruby-string">&quot;name&quot;</span>, <span class="ruby-string">&quot;Bruza&quot;</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-constant">Developer</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">select_value</span>(<span class="ruby-string">&quot;      SELECT count(*) FROM developers_projects
+      WHERE project_id = #{project.id}
+      AND developer_id = #{developer.id}
+&quot;</span>).<span class="ruby-identifier">to_i</span>
+  <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_updating_attributes_on_non_rich_associations">
+            
+              <a name="method-i-test_updating_attributes_on_non_rich_associations"></a><b>test_updating_attributes_on_non_rich_associations</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_updating_attributes_on_non_rich_associations_source')" id="l_method-i-test_updating_attributes_on_non_rich_associations_source">show</a>
+                
+              </p>
+              <div id="method-i-test_updating_attributes_on_non_rich_associations_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1781</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_updating_attributes_on_non_rich_associations</span>
+  <span class="ruby-identifier">welcome</span> = <span class="ruby-identifier">categories</span>(<span class="ruby-value">:technology</span>).<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">welcome</span>.<span class="ruby-identifier">title</span> = <span class="ruby-string">&quot;Something else&quot;</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">welcome</span>.<span class="ruby-identifier">save!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_updating_attributes_on_rich_associations">
+            
+              <a name="method-i-test_updating_attributes_on_rich_associations"></a><b>test_updating_attributes_on_rich_associations</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_updating_attributes_on_rich_associations_source')" id="l_method-i-test_updating_attributes_on_rich_associations_source">show</a>
+                
+              </p>
+              <div id="method-i-test_updating_attributes_on_rich_associations_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1787</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_updating_attributes_on_rich_associations</span>
+  <span class="ruby-identifier">david</span> = <span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>).<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;DHH&quot;</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ReadOnlyRecord</span>) { <span class="ruby-identifier">david</span>.<span class="ruby-identifier">save!</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_updating_attributes_on_rich_associations_with_limited_find">
+            
+              <a name="method-i-test_updating_attributes_on_rich_associations_with_limited_find"></a><b>test_updating_attributes_on_rich_associations_with_limited_find</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_updating_attributes_on_rich_associations_with_limited_find_source')" id="l_method-i-test_updating_attributes_on_rich_associations_with_limited_find_source">show</a>
+                
+              </p>
+              <div id="method-i-test_updating_attributes_on_rich_associations_with_limited_find_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations_test.rb, line 1794</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_updating_attributes_on_rich_associations_with_limited_find</span>
+  <span class="ruby-identifier">david</span> = <span class="ruby-identifier">projects</span>(<span class="ruby-value">:action_controller</span>).<span class="ruby-identifier">developers</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:select</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;developers.*&quot;</span>).<span class="ruby-identifier">first</span>
+  <span class="ruby-identifier">david</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;DHH&quot;</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">david</span>.<span class="ruby-identifier">save!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,396 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionController::Resources</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActionController::Resources 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionpack/lib/action_controller/resources_rb.html">rails/actionpack/lib/action_controller/resources.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-resource">resource</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-resources">resources</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-resource">
+            
+              <a name="method-i-resource"></a><b>resource</b>(*entities, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates named routes for implementing verb-oriented controllers for a
+singleton resource.  <a href="../A.html">A</a> singleton resource is global
+to the current user visiting the application, such as a user’s /account
+profile.</p>
+
+<p>See map.resources for general conventions.  These are the main differences:</p>
+
+<pre>- A singular name is given to map.resource.  The default controller name is taken from the singular name.
+- There is no &lt;tt&gt;:collection&lt;/tt&gt; option as there is only the singleton resource.
+- There is no &lt;tt&gt;:singular&lt;/tt&gt; option as the singular name is passed to map.resource.
+- No default index route is created for the singleton resource controller.
+- When nesting singleton resources, only the singular name is used as the path prefix (example: 'account/messages/1')</pre>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span> :<span class="ruby-identifier">account</span> 
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">AccountController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-comment"># POST account_url</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+    <span class="ruby-comment"># create an account</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># GET new_account_url</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
+    <span class="ruby-comment"># return an HTML form for describing the new account</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># GET account_url</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+    <span class="ruby-comment"># find and return the account</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># GET edit_account_url</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
+    <span class="ruby-comment"># return an HTML form for editing the account</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># PUT account_url</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+    <span class="ruby-comment"># find and update the account</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># DELETE account_url</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
+    <span class="ruby-comment"># delete the account</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Along with the routes themselves, <a
+href="Resources.html#method-i-resource">resource</a> generates named routes
+for use in controllers and views. <code>map.resource :account</code>
+produces the following named routes and helpers:</p>
+
+<pre>Named Route   Helpers
+account       account_url, hash_for_account_url, 
+              account_path, hash_for_account_path
+edit_account  edit_account_url, hash_for_edit_account_url,
+              edit_account_path, hash_for_edit_account_path</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-resource_source')" id="l_method-i-resource_source">show</a>
+                
+              </p>
+              <div id="method-i-resource_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/resources.rb, line 309</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resource</span>(*<span class="ruby-identifier">entities</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">entities</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">entities</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> { }
+  <span class="ruby-identifier">entities</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">entity</span><span class="ruby-operator">|</span> <span class="ruby-identifier">map_singleton_resource</span> <span class="ruby-identifier">entity</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">dup</span>, &amp;<span class="ruby-identifier">block</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-resources">
+            
+              <a name="method-i-resources"></a><b>resources</b>(*entities, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates named routes for implementing verb-oriented controllers. This is
+useful for implementing REST API’s, where a single resource has different
+behavior based on the HTTP verb (method) used to access it.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">messages</span> 
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">MessagesController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-comment"># GET messages_url</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">index</span>
+    <span class="ruby-comment"># return all messages</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># GET new_message_url</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">new</span>
+    <span class="ruby-comment"># return an HTML form for describing a new message</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># POST messages_url</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">create</span>
+    <span class="ruby-comment"># create a new message</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># GET message_url(:id =&gt; 1)</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+    <span class="ruby-comment"># find and return a specific message</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># GET edit_message_url(:id =&gt; 1)</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">edit</span>
+    <span class="ruby-comment"># return an HTML form for editing a specific message</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># PUT message_url(:id =&gt; 1)</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">update</span>
+    <span class="ruby-comment"># find and update a specific message</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># DELETE message_url(:id =&gt; 1)</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">destroy</span>
+    <span class="ruby-comment"># delete a specific message</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>The <a href="Resources.html#method-i-resources">resources</a> method sets
+HTTP method restrictions on the routes it generates. For example, making an
+HTTP POST on <code>new_message_url</code> will raise a RoutingError
+exception. The default route in  <code>config/routes.rb</code> overrides
+this and allows invalid HTTP methods for resource routes.</p>
+
+<p>Along with the routes themselves, <a
+href="Resources.html#method-i-resources">resources</a> generates named
+routes for use in controllers and views. <code>map.resources
+:messages</code> produces the following named routes and helpers:</p>
+
+<pre>Named Route   Helpers
+messages      messages_url, hash_for_messages_url, 
+              messages_path, hash_for_messages_path
+message       message_url(id), hash_for_message_url(id), 
+              message_path(id), hash_for_message_path(id)
+new_message   new_message_url, hash_for_new_message_url, 
+              new_message_path, hash_for_new_message_path
+edit_message  edit_message_url(id), hash_for_edit_message_url(id),
+              edit_message_path(id), hash_for_edit_message_path(id)</pre>
+
+<p>You can use these helpers instead of url_for or methods that take url_for
+parameters:</p>
+
+<pre>redirect_to :controller =&gt; 'messages', :action =&gt; 'index'
+# becomes
+redirect_to messages_url
+
+&lt;%= link_to &quot;edit this message&quot;, :controller =&gt; 'messages', :action =&gt; 'edit', :id =&gt; @message.id %&gt;
+# becomes
+&lt;%= link_to &quot;edit this message&quot;, edit_message_url(@message) # calls @message.id automatically</pre>
+
+<p>Since web browsers don’t support the PUT and DELETE verbs, you will need to
+add a parameter ‘_method’ to your form tags. The form helpers make this a
+little easier. For an update form with a <code>@message</code> object:</p>
+
+<pre>&lt;%= form_tag message_path(@message), :method =&gt; :put %&gt;</pre>
+
+<p>or</p>
+
+<pre>&lt;% form_for :message, @message, :url =&gt; message_path(@message), :html =&gt; {:method =&gt; :put} do |f| %&gt;</pre>
+
+<p>The <a href="Resources.html#method-i-resources">resources</a> method
+accepts various options, too, to customize the resulting routes:</p>
+<ul><li>
+<p><code>:controller</code> -- specify the controller name for the routes.</p>
+</li><li>
+<p><code>:singular</code> -- specify the singular name used in the member
+routes.</p>
+</li><li>
+<p><code>:path_prefix</code> -- set a prefix to the routes with required route
+variables. Weblog comments usually belong to a post, so you might use
+resources like:</p>
+
+<pre class="ruby"><span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">articles</span>
+<span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">comments</span>, :<span class="ruby-identifier">path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/articles/:article_id'</span>
+</pre>
+
+<p>You can nest resources calls to set this automatically:</p>
+
+<pre class="ruby"><span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">articles</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">article</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">article</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">comments</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>The comment resources work the same, but must now include a value for
+:article_id.</p>
+
+<pre class="ruby"><span class="ruby-identifier">article_comments_url</span>(<span class="ruby-ivar">@article</span>)
+<span class="ruby-identifier">article_comment_url</span>(<span class="ruby-ivar">@article</span>, <span class="ruby-ivar">@comment</span>)
+
+<span class="ruby-identifier">article_comments_url</span>(:<span class="ruby-identifier">article_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@article</span>)
+<span class="ruby-identifier">article_comment_url</span>(:<span class="ruby-identifier">article_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@article</span>, :<span class="ruby-identifier">id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@comment</span>)
+</pre>
+</li><li>
+<p><code>:name_prefix</code> -- define a prefix for all generated routes,
+usually ending in an underscore. Use this if you have named routes that may
+clash.</p>
+
+<pre class="ruby"><span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">tags</span>, :<span class="ruby-identifier">path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/books/:book_id'</span>, :<span class="ruby-identifier">name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'book_'</span>
+<span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">tags</span>, :<span class="ruby-identifier">path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/toys/:toy_id'</span>,   :<span class="ruby-identifier">name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'toy_'</span>
+</pre>
+</li><li>
+<p><code>:collection</code> -- add named routes for other actions that operate
+on the collection. Takes a hash of <code>#{action} =&gt; #{method}</code>,
+where method is
+<code>:get</code>/<code>:post</code>/<code>:put</code>/<code>:delete</code>
+or <code>:any</code> if the method does not matter.  These routes map to a
+URL like /messages/rss, with a route of rss_messages_url.</p>
+</li><li>
+<p><code>:member</code> -- same as :collection, but for actions that operate
+on a specific member.</p>
+</li><li>
+<p><code>:new</code> -- same as :collection, but for actions that operate on
+the new resource action.</p>
+</li></ul>
+
+<p>If <code>map.resources</code> is called with multiple resources, they all
+get the same options applied.</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">messages</span>, :<span class="ruby-identifier">path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;/thread/:thread_id&quot;</span>
+<span class="ruby-comment"># --&gt; GET /thread/7/messages/1</span>
+
+<span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">messages</span>, :<span class="ruby-identifier">collection</span> =<span class="ruby-operator">&gt;</span> { :<span class="ruby-identifier">rss</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">get</span> }
+<span class="ruby-comment"># --&gt; GET /messages/rss (maps to the #rss action)</span>
+<span class="ruby-comment">#     also adds a named route called &quot;rss_messages&quot;</span>
+
+<span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">messages</span>, :<span class="ruby-identifier">member</span> =<span class="ruby-operator">&gt;</span> { :<span class="ruby-identifier">mark</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">post</span> }
+<span class="ruby-comment"># --&gt; POST /messages/1/mark (maps to the #mark action)</span>
+<span class="ruby-comment">#     also adds a named route called &quot;mark_message&quot;</span>
+
+<span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">messages</span>, :<span class="ruby-identifier">new</span> =<span class="ruby-operator">&gt;</span> { :<span class="ruby-identifier">preview</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">post</span> }
+<span class="ruby-comment"># --&gt; POST /messages/new/preview (maps to the #preview action)</span>
+<span class="ruby-comment">#     also adds a named route called &quot;preview_new_message&quot;</span>
+
+<span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">messages</span>, :<span class="ruby-identifier">new</span> =<span class="ruby-operator">&gt;</span> { :<span class="ruby-identifier">new</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">any</span>, :<span class="ruby-identifier">preview</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">post</span> }
+<span class="ruby-comment"># --&gt; POST /messages/new/preview (maps to the #preview action)</span>
+<span class="ruby-comment">#     also adds a named route called &quot;preview_new_message&quot;</span>
+<span class="ruby-comment"># --&gt; /messages/new can be invoked via any request method</span>
+
+<span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> :<span class="ruby-identifier">messages</span>, :<span class="ruby-identifier">controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;categories&quot;</span>,
+      :<span class="ruby-identifier">path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;/category/:category_id&quot;</span>,
+      :<span class="ruby-identifier">name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;category_&quot;</span>
+<span class="ruby-comment"># --&gt; GET /categories/7/messages/1</span>
+<span class="ruby-comment">#     has named route &quot;category_message&quot;</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-resources_source')" id="l_method-i-resources_source">show</a>
+                
+              </p>
+              <div id="method-i-resources_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/resources.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">resources</span>(*<span class="ruby-identifier">entities</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-identifier">entities</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">entities</span>.<span class="ruby-identifier">pop</span> <span class="ruby-operator">:</span> { }
+  <span class="ruby-identifier">entities</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">entity</span><span class="ruby-operator">|</span> <span class="ruby-identifier">map_resource</span> <span class="ruby-identifier">entity</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">dup</span>, &amp;<span class="ruby-identifier">block</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

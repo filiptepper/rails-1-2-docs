@@ -1,0 +1,181 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CGI::QueryExtension</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            CGI::QueryExtension 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionpack/lib/action_controller/cgi_ext/raw_post_data_fix_rb.html">rails/actionpack/lib/action_controller/cgi_ext/raw_post_data_fix.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-initialize_query">initialize_query</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">MULTIPART_FORM_BOUNDARY_RE</td>
+            <td>=</td>
+            <td class="attr-value">%r|\Amultipart/form-data.*boundary=\&quot;?([^\&quot;;,]+)\&quot;?|n</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-initialize_query">
+            
+              <a name="method-i-initialize_query"></a><b>initialize_query</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize the data from the query.</p>
+
+<p>Handles multipart forms (in particular, forms that involve file uploads).
+Reads query parameters in the @params field, and cookies into @cookies.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-initialize_query_source')" id="l_method-i-initialize_query_source">show</a>
+                
+              </p>
+              <div id="method-i-initialize_query_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/cgi_ext/raw_post_data_fix.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize_query</span>
+  <span class="ruby-ivar">@cookies</span> = <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookie</span><span class="ruby-operator">::</span><span class="ruby-identifier">parse</span>(<span class="ruby-identifier">env_table</span>[<span class="ruby-string">'HTTP_COOKIE'</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">env_table</span>[<span class="ruby-string">'COOKIE'</span>])
+
+  <span class="ruby-comment"># Fix some strange request environments.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">method</span> = <span class="ruby-identifier">env_table</span>[<span class="ruby-string">'REQUEST_METHOD'</span>]
+    <span class="ruby-identifier">method</span> = <span class="ruby-identifier">method</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">downcase</span>.<span class="ruby-identifier">intern</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">method</span> = <span class="ruby-value">:get</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># POST assumes missing Content-Type is application/x-www-form-urlencoded.</span>
+  <span class="ruby-identifier">content_type</span> = <span class="ruby-identifier">env_table</span>[<span class="ruby-string">'CONTENT_TYPE'</span>]
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">content_type</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">==</span> <span class="ruby-value">:post</span>
+    <span class="ruby-identifier">content_type</span> = <span class="ruby-string">'application/x-www-form-urlencoded'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Force content length to zero if missing.</span>
+  <span class="ruby-identifier">content_length</span> = <span class="ruby-identifier">env_table</span>[<span class="ruby-string">'CONTENT_LENGTH'</span>].<span class="ruby-identifier">to_i</span>
+
+  <span class="ruby-comment"># Set multipart to false by default.</span>
+  <span class="ruby-ivar">@multipart</span> = <span class="ruby-keyword">false</span>
+
+  <span class="ruby-comment"># POST and PUT may have params in entity body. If content type is</span>
+  <span class="ruby-comment"># missing for POST, assume urlencoded. If content type is missing</span>
+  <span class="ruby-comment"># for PUT, don't assume anything and don't parse the parameters:</span>
+  <span class="ruby-comment"># it's likely binary data.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># The other HTTP methods have their params in the query string.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">==</span> <span class="ruby-value">:post</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">method</span> <span class="ruby-operator">==</span> <span class="ruby-value">:put</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">boundary</span> = <span class="ruby-identifier">extract_multipart_form_boundary</span>(<span class="ruby-identifier">content_type</span>)
+      <span class="ruby-ivar">@multipart</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-ivar">@params</span> = <span class="ruby-identifier">read_multipart</span>(<span class="ruby-identifier">boundary</span>, <span class="ruby-identifier">content_length</span>)
+    <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">content_type</span>.<span class="ruby-identifier">blank?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">content_type</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r{application/x-www-form-urlencoded}</span>
+      <span class="ruby-identifier">read_params</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">content_length</span>)
+      <span class="ruby-ivar">@params</span> = {}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@params</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">CGI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">read_params</span>(<span class="ruby-identifier">method</span>, <span class="ruby-identifier">content_length</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

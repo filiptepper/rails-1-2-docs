@@ -1,0 +1,422 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::ConnectionAdapters::FirebirdAdapter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecord::ConnectionAdapters::FirebirdAdapter 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="AbstractAdapter.html">ActiveRecord::ConnectionAdapters::AbstractAdapter</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/activerecord/lib/active_record/connection_adapters/firebird_adapter_rb.html">rails/activerecord/lib/active_record/connection_adapters/firebird_adapter.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>The Firebird adapter relies on the <a
+href="http://rubyforge.org/projects/fireruby/">FireRuby</a> extension,
+version 0.4.0 or later (available as a gem or from <a
+href="http://rubyforge.org/projects/fireruby/">RubyForge</a>). <a
+href="../../FireRuby.html">FireRuby</a> works with Firebird 1.5.x on Linux,
+OS <a href="../../X.html">X</a> and Win32 platforms.</p>
+
+<h2 id="label-Usage+Notes">Usage Notes</h2>
+
+<h3 id="label-Sequence+%28Generator%29+Names">Sequence (Generator) Names</h3>
+
+<p>The Firebird adapter supports the same approach adopted for the Oracle
+adapter. See ActiveRecord::Base#set_sequence_name for more details.</p>
+
+<p>Note that in general there is no need to create a <code>BEFORE
+INSERT</code> trigger corresponding to a Firebird sequence generator when
+using <a href="../../ActiveRecord.html">ActiveRecord</a>. In other words,
+you don’t have to try to make Firebird simulate an
+<code>AUTO_INCREMENT</code> or <code>IDENTITY</code> column. When saving a
+new record, <a href="../../ActiveRecord.html">ActiveRecord</a> pre-fetches
+the next sequence value for the table and explicitly includes it in the
+<code>INSERT</code> statement. (Pre-fetching the next primary key value is
+the only reliable method for the Firebird adapter to report back the
+<code>id</code> after a successful insert.)</p>
+
+<h3 id="label-BOOLEAN+Domain">BOOLEAN Domain</h3>
+
+<p>Firebird 1.5 does not provide a native <code>BOOLEAN</code> type. But you
+can easily define a <code>BOOLEAN</code> <em>domain</em> for this purpose,
+e.g.:</p>
+
+<pre>CREATE DOMAIN D_BOOLEAN AS SMALLINT CHECK (VALUE IN (0, 1) OR VALUE IS NULL);</pre>
+
+<p>When the Firebird adapter encounters a column that is based on a domain
+that includes “BOOLEAN” in the domain name, it will attempt to treat the
+column as a <code>BOOLEAN</code>.</p>
+
+<p>By default, the Firebird adapter will assume that the BOOLEAN domain is
+defined as above.  This can be modified if needed.  For example, if you
+have a legacy schema with the following <code>BOOLEAN</code> domain
+defined:</p>
+
+<pre>CREATE DOMAIN BOOLEAN AS CHAR(1) CHECK (VALUE IN ('T', 'F'));</pre>
+
+<p>…you can add the following line to your <code>environment.rb</code> file:</p>
+
+<pre class="ruby"><span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">ConnectionAdapters</span><span class="ruby-operator">::</span><span class="ruby-constant">FirebirdAdapter</span>.<span class="ruby-identifier">boolean_domain</span> = { :<span class="ruby-keyword">true</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'T'</span>, :<span class="ruby-keyword">false</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'F'</span> }
+</pre>
+
+<h3 id="label-BLOB+Elements">BLOB Elements</h3>
+
+<p>The Firebird adapter currently provides only limited support for
+<code>BLOB</code> columns. You cannot currently retrieve or insert a
+<code>BLOB</code> as an IO stream. When selecting a <code>BLOB</code>, the
+entire element is converted into a <a href="../../String.html">String</a>.
+When inserting or updating a <code>BLOB</code>, the entire value is
+included in-line in the SQL statement, limiting you to values &lt;= 32KB in
+size.</p>
+
+<h3 id="label-Column+Name+Case+Semantics"><a href="Column.html">Column</a> <a href="../../Name.html">Name</a> Case Semantics</h3>
+
+<p>Firebird and <a href="../../ActiveRecord.html">ActiveRecord</a> have
+somewhat conflicting case semantics for column names.</p>
+<dl class="rdoc-list label-list"><dt><strong>Firebird</strong>
+<dd>
+<p>The standard practice is to use unquoted column names, which can be thought
+of as case-insensitive. (In fact, Firebird converts them to uppercase.)
+Quoted column names (not typically used) are case-sensitive.</p>
+</dd><dt><strong><a href="../../ActiveRecord.html">ActiveRecord</a></strong>
+<dd>
+<p>Attribute accessors corresponding to column names are case-sensitive. The
+defaults for primary key and inheritance columns are lowercase, and in
+general, people use lowercase attribute names.</p>
+</dd></dl>
+
+<p>In order to map between the differing semantics in a way that conforms to
+common usage for both Firebird and <a
+href="../../ActiveRecord.html">ActiveRecord</a>, uppercase column names in
+Firebird are converted to lowercase attribute names in <a
+href="../../ActiveRecord.html">ActiveRecord</a>, and vice-versa. Mixed-case
+column names retain their case in both directions. Lowercase (quoted)
+Firebird column names are not supported. This is similar to the solutions
+adopted by other adapters.</p>
+
+<p>In general, the best approach is to use unqouted (case-insensitive) column
+names in your Firebird DDL (or if you must quote, use uppercase column
+names). These will correspond to lowercase attributes in <a
+href="../../ActiveRecord.html">ActiveRecord</a>.</p>
+
+<p>For example, a Firebird table based on the following DDL:</p>
+
+<pre>CREATE TABLE products (
+  id BIGINT NOT NULL PRIMARY KEY,
+  &quot;TYPE&quot; VARCHAR(50),
+  name VARCHAR(255) );</pre>
+
+<p>…will correspond to an <a href="../../ActiveRecord.html">ActiveRecord</a>
+model class called <code>Product</code> with the following attributes:
+<code>id</code>, <code>type</code>, <code>name</code>.</p>
+
+<h4 id="label-Quoting+%22TYPE%22+and+other+Firebird+reserved+words%3A"><a href="Quoting.html">Quoting</a> <code>&quot;TYPE&quot;</code> and other Firebird reserved words:</h4>
+
+<p>In <a href="../../ActiveRecord.html">ActiveRecord</a>, the default
+inheritance column name is <code>type</code>. The word <em>type</em> is a
+Firebird reserved word, so it must be quoted in any Firebird SQL
+statements. Because of the case mapping described above, you should always
+reference this column using quoted-uppercase syntax
+(<code>&quot;TYPE&quot;</code>) within Firebird DDL or other SQL statements
+(as in the example above). This holds true for any other Firebird reserved
+words used as column names as well.</p>
+
+<h3 id="label-Migrations">Migrations</h3>
+
+<p>The Firebird Adapter now supports Migrations.</p>
+
+<h4 id="label-Create%2FDrop+Table+and+Sequence+Generators">Create/Drop Table and Sequence Generators</h4>
+
+<p>Creating or dropping a table will automatically create/drop a correpsonding
+sequence generator, using the default naming convension. You can specify a
+different name using the <code>:sequence</code> option; no generator is
+created if <code>:sequence</code> is set to <code>false</code>.</p>
+
+<h4 id="label-Rename+Table">Rename Table</h4>
+
+<p>The Firebird rename_table <a href="../Migration.html">Migration</a> should
+be used with caution. Firebird 1.5 lacks built-in support for this feature,
+so it is implemented by making a copy of the original table (including
+column definitions, indexes and data records), and then dropping the
+original table. Constraints and Triggers are <em>not</em> properly copied,
+so avoid this method if your original table includes constraints (other
+than the primary key) or triggers. (Consider manually copying your table or
+using a view instead.)</p>
+
+<h2 id="label-Connection+Options">Connection Options</h2>
+
+<p>The following options are supported by the Firebird adapter. None of the
+options have default values.</p>
+<dl class="rdoc-list note-list"><dt><code>:database</code>
+<dd>
+<p><em>Required option.</em> Specifies one of: (i) a Firebird database alias;
+(ii) the full path of a database file; <em>or</em> (iii) a full Firebird
+connection string. <em>Do not specify <code>:host</code>,
+<code>:service</code> or <code>:port</code> as separate options when using
+a full connection string.</em></p>
+</dd><dt><code>:host</code>
+<dd>
+<p>Set to <code>&quot;remote.host.name&quot;</code> for remote database
+connections. May be omitted for local connections if a full database path
+is specified for <code>:database</code>. Some platforms require a value of
+<code>&quot;localhost&quot;</code> for local connections when using a
+Firebird database <em>alias</em>.</p>
+</dd><dt><code>:service</code>
+<dd>
+<p>Specifies a service name for the connection. Only used if
+<code>:host</code> is provided. Required when connecting to a non-standard
+service.</p>
+</dd><dt><code>:port</code>
+<dd>
+<p>Specifies the connection port. Only used if <code>:host</code> is provided
+and <code>:service</code> is not. Required when connecting to a
+non-standard port and <code>:service</code> is not defined.</p>
+</dd><dt><code>:username</code>
+<dd>
+<p>Specifies the database user. May be omitted or set to <code>nil</code>
+(together with <code>:password</code>) to use the underlying operating
+system user credentials on supported platforms.</p>
+</dd><dt><code>:password</code>
+<dd>
+<p>Specifies the database password. Must be provided if <code>:username</code>
+is explicitly specified; should be omitted if OS user credentials are are
+being used.</p>
+</dd><dt><code>:charset</code>
+<dd>
+<p>Specifies the character set to be used by the connection. Refer to Firebird
+documentation for valid options.</p>
+</dd></dl>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-next_sequence_value">next_sequence_value</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-prefetch_primary_key-3F">prefetch_primary_key?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">TEMP_COLUMN_NAME</td>
+            <td>=</td>
+            <td class="attr-value">'AR$TEMP_COLUMN'</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(connection, logger, connection_params = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/firebird_adapter.rb, line 277</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">connection</span>, <span class="ruby-identifier">logger</span>, <span class="ruby-identifier">connection_params</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">connection</span>, <span class="ruby-identifier">logger</span>)
+  <span class="ruby-ivar">@connection_params</span> = <span class="ruby-identifier">connection_params</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-next_sequence_value">
+            
+              <a name="method-i-next_sequence_value"></a><b>next_sequence_value</b>(sequence_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the next sequence value from a sequence generator. Not generally
+called directly; used by <a href="../../ActiveRecord.html">ActiveRecord</a>
+to get the next primary key value when inserting a new database record (see
+<a
+href="FirebirdAdapter.html#method-i-prefetch_primary_key-3F">prefetch_primary_key?</a>).</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-next_sequence_value_source')" id="l_method-i-next_sequence_value_source">show</a>
+                
+              </p>
+              <div id="method-i-next_sequence_value_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/firebird_adapter.rb, line 417</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">next_sequence_value</span>(<span class="ruby-identifier">sequence_name</span>)
+  <span class="ruby-constant">FireRuby</span><span class="ruby-operator">::</span><span class="ruby-constant">Generator</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">sequence_name</span>, <span class="ruby-ivar">@connection</span>).<span class="ruby-identifier">next</span>(<span class="ruby-number">1</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-prefetch_primary_key-3F">
+            
+              <a name="method-i-prefetch_primary_key-3F"></a><b>prefetch_primary_key?</b>(table_name = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true for Firebird adapter (since Firebird requires primary key
+values to be pre-fetched before insert). See also <a
+href="FirebirdAdapter.html#method-i-next_sequence_value">next_sequence_value</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-prefetch_primary_key-3F_source')" id="l_method-i-prefetch_primary_key-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-prefetch_primary_key-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/firebird_adapter.rb, line 310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">prefetch_primary_key?</span>(<span class="ruby-identifier">table_name</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

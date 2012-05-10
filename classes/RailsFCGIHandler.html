@@ -1,0 +1,1516 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>RailsFCGIHandler</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            RailsFCGIHandler 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/railties/lib/fcgi_handler_rb.html">rails/railties/lib/fcgi_handler.rb</a></li>
+            
+            <li><a href="../files/rails/railties/test/fcgi_dispatcher_test_rb.html">rails/railties/test/fcgi_dispatcher_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-breakpoint">breakpoint</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-breakpoint-21">breakpoint!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-breakpoint_handler">breakpoint_handler</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-close_connection">close_connection</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-dispatcher_error">dispatcher_error</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-dispatcher_log">dispatcher_log</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-exit">exit</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exit_handler">exit_handler</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exit_now_handler">exit_now_handler</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-gc_countdown">gc_countdown</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-install_signal_handler">install_signal_handler</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-install_signal_handlers">install_signal_handlers</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-logger">logger</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-mark-21">mark!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-old_run_gc-21">old_run_gc!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-process-21">process!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-process-21">process!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-process_each_request-21">process_each_request!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-process_request">process_request</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-reload-21">reload!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-reload_handler">reload_handler</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-restart-21">restart!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-restart_handler">restart_handler</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-restore-21">restore!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-run_gc-21">run_gc!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-send_signal">send_signal</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-trap">trap</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-with_signal_handler">with_signal_handler</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">SIGNALS</td>
+            <td>=</td>
+            <td class="attr-value">{
+'HUP'     =&gt; :reload,
+'INT'     =&gt; :exit_now,
+'TERM'    =&gt; :exit_now,
+'USR1'    =&gt; :exit,
+'USR2'    =&gt; :restart,
+'SIGTRAP' =&gt; :breakpoint
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">GLOBAL_SIGNALS</td>
+            <td>=</td>
+            <td class="attr-value">SIGNALS.keys - %w(USR1)</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>exit_code</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>gc_request_period</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>gc_runs</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>log_file_path</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>reloaded</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>thread</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>when_ready</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(log_file_path = nil, gc_request_period = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize the FastCGI instance with the path to a crash log detailing
+unhandled exceptions (default RAILS_ROOT/log/fastcgi.crash.log) and the
+number of requests to process between garbage collection runs (default nil
+for normal GC behavior.)  Optionally, pass a block which takes this
+instance as an argument for further configuration.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">log_file_path</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">gc_request_period</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">log_file_path</span> = <span class="ruby-identifier">log_file_path</span> <span class="ruby-operator">||</span> <span class="ruby-node">&quot;#{RAILS_ROOT}/log/fastcgi.crash.log&quot;</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">gc_request_period</span> = <span class="ruby-identifier">gc_request_period</span>
+
+  <span class="ruby-comment"># Yield for additional configuration.</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+
+  <span class="ruby-comment"># Safely install signal handlers.</span>
+  <span class="ruby-identifier">install_signal_handlers</span>
+
+  <span class="ruby-comment"># Start error timestamp at 11 seconds ago.</span>
+  <span class="ruby-ivar">@last_error_on</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-number">11</span>
+
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;starting&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-process-21">
+            
+              <a name="method-c-process-21"></a><b>process!</b>(*args, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Initialize and run the FastCGI instance, passing arguments through to new.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-process-21_source')" id="l_method-c-process-21_source">show</a>
+                
+              </p>
+              <div id="method-c-process-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">process!</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>).<span class="ruby-identifier">process!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-breakpoint">
+            
+              <a name="method-i-breakpoint"></a><b>breakpoint</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-breakpoint_source')" id="l_method-i-breakpoint_source">show</a>
+                
+              </p>
+              <div id="method-i-breakpoint_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">breakpoint</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exit">
+            
+              <a name="method-i-exit"></a><b>exit</b>(code=0)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exit_source')" id="l_method-i-exit_source">show</a>
+                
+              </p>
+              <div id="method-i-exit_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exit</span>(<span class="ruby-identifier">code</span>=<span class="ruby-number">0</span>)
+  <span class="ruby-ivar">@exit_code</span> = <span class="ruby-identifier">code</span>
+  (<span class="ruby-identifier">thread</span> <span class="ruby-operator">||</span> <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">current</span>).<span class="ruby-identifier">exit</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-old_run_gc-21">
+            
+              <a name="method-i-old_run_gc-21"></a><b>old_run_gc!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-process-21">
+            
+              <a name="method-i-process-21"></a><b>process!</b>(provider = FCGI)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-process-21_source')" id="l_method-i-process-21_source">show</a>
+                
+              </p>
+              <div id="method-i-process-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">process!</span>(<span class="ruby-identifier">provider</span> = <span class="ruby-constant">FCGI</span>)
+  <span class="ruby-comment"># Make a note of $&quot; so we can safely reload this instance.</span>
+  <span class="ruby-identifier">mark!</span>
+
+  <span class="ruby-identifier">run_gc!</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">gc_request_period</span>
+
+  <span class="ruby-identifier">process_each_request!</span>(<span class="ruby-identifier">provider</span>)
+
+  <span class="ruby-constant">GC</span>.<span class="ruby-identifier">enable</span>
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;terminated gracefully&quot;</span>
+
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">SystemExit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exit_error</span>
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;terminated by explicit exit&quot;</span>
+
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">fcgi_error</span>  <span class="ruby-comment"># FCGI errors</span>
+  <span class="ruby-comment"># retry on errors that would otherwise have terminated the FCGI process,</span>
+  <span class="ruby-comment"># but only if they occur more than 10 seconds apart.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-operator">!</span>(<span class="ruby-constant">SignalException</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">fcgi_error</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-ivar">@last_error_on</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">10</span>
+    <span class="ruby-ivar">@last_error_on</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+    <span class="ruby-identifier">dispatcher_error</span>(<span class="ruby-identifier">fcgi_error</span>, <span class="ruby-string">&quot;almost killed by this error&quot;</span>)
+    <span class="ruby-keyword">retry</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">dispatcher_error</span>(<span class="ruby-identifier">fcgi_error</span>, <span class="ruby-string">&quot;killed by this error&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-send_signal">
+            
+              <a name="method-i-send_signal"></a><b>send_signal</b>(which)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-send_signal_source')" id="l_method-i-send_signal_source">show</a>
+                
+              </p>
+              <div id="method-i-send_signal_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">send_signal</span>(<span class="ruby-identifier">which</span>)
+  <span class="ruby-ivar">@signal_handlers</span>[<span class="ruby-identifier">which</span>].<span class="ruby-identifier">call</span>(<span class="ruby-identifier">which</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-trap">
+            
+              <a name="method-i-trap"></a><b>trap</b>(signal, handler, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-trap_source')" id="l_method-i-trap_source">show</a>
+                
+              </p>
+              <div id="method-i-trap_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">trap</span>(<span class="ruby-identifier">signal</span>, <span class="ruby-identifier">handler</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">handler</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">block</span>
+  (<span class="ruby-ivar">@signal_handlers</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>)[<span class="ruby-identifier">signal</span>] = <span class="ruby-identifier">handler</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-breakpoint-21">
+            
+              <a name="method-i-breakpoint-21"></a><b>breakpoint!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-breakpoint-21_source')" id="l_method-i-breakpoint-21_source">show</a>
+                
+              </p>
+              <div id="method-i-breakpoint-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">breakpoint!</span>
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'breakpoint'</span>
+  <span class="ruby-identifier">port</span> = <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">BREAKPOINT_SERVER_PORT</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">BREAKPOINT_SERVER_PORT</span> <span class="ruby-operator">:</span> <span class="ruby-number">42531</span>
+  <span class="ruby-constant">Breakpoint</span>.<span class="ruby-identifier">activate_drb</span>(<span class="ruby-node">&quot;druby://localhost:#{port}&quot;</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-operator">!</span><span class="ruby-keyword">defined?</span>(<span class="ruby-constant">FastCGI</span>))
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;breakpointing&quot;</span>
+  <span class="ruby-identifier">breakpoint</span>
+  <span class="ruby-ivar">@when_ready</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-breakpoint_handler">
+            
+              <a name="method-i-breakpoint_handler"></a><b>breakpoint_handler</b>(signal)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-breakpoint_handler_source')" id="l_method-i-breakpoint_handler_source">show</a>
+                
+              </p>
+              <div id="method-i-breakpoint_handler_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">breakpoint_handler</span>(<span class="ruby-identifier">signal</span>)
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;asked to breakpoint ASAP&quot;</span>
+  <span class="ruby-ivar">@when_ready</span> = <span class="ruby-value">:breakpoint</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-close_connection">
+            
+              <a name="method-i-close_connection"></a><b>close_connection</b>(cgi)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-close_connection_source')" id="l_method-i-close_connection_source">show</a>
+                
+              </p>
+              <div id="method-i-close_connection_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 222</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">close_connection</span>(<span class="ruby-identifier">cgi</span>)
+  <span class="ruby-identifier">cgi</span>.<span class="ruby-identifier">instance_variable_get</span>(<span class="ruby-string">&quot;@request&quot;</span>).<span class="ruby-identifier">finish</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dispatcher_error">
+            
+              <a name="method-i-dispatcher_error"></a><b>dispatcher_error</b>(e, msg = &quot;&quot;)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dispatcher_error_source')" id="l_method-i-dispatcher_error_source">show</a>
+                
+              </p>
+              <div id="method-i-dispatcher_error_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dispatcher_error</span>(<span class="ruby-identifier">e</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-identifier">error_message</span> =
+    <span class="ruby-node">&quot;Dispatcher failed to catch: #{e} (#{e.class})\n&quot;</span> <span class="ruby-operator">+</span>
+    <span class="ruby-node">&quot;  #{e.backtrace.join(&quot;\n  &quot;)}\n#{msg}&quot;</span>
+  <span class="ruby-identifier">dispatcher_log</span>(<span class="ruby-value">:error</span>, <span class="ruby-identifier">error_message</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dispatcher_log">
+            
+              <a name="method-i-dispatcher_log"></a><b>dispatcher_log</b>(level, msg)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dispatcher_log_source')" id="l_method-i-dispatcher_log_source">show</a>
+                
+              </p>
+              <div id="method-i-dispatcher_log_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dispatcher_log</span>(<span class="ruby-identifier">level</span>, <span class="ruby-identifier">msg</span>)
+  <span class="ruby-identifier">time_str</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>.<span class="ruby-identifier">strftime</span>(<span class="ruby-string">&quot;%d/%b/%Y:%H:%M:%S&quot;</span>)
+  <span class="ruby-identifier">logger</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">level</span>, <span class="ruby-node">&quot;[#{time_str} :: #{$$}] #{msg}&quot;</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">log_error</span>  <span class="ruby-comment"># Logger errors</span>
+  <span class="ruby-constant">STDERR</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;Couldn't write to #{@log_file_path.inspect}: #{msg}\n&quot;</span>
+  <span class="ruby-constant">STDERR</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;  #{log_error.class}: #{log_error.message}\n&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exit_handler">
+            
+              <a name="method-i-exit_handler"></a><b>exit_handler</b>(signal)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exit_handler_source')" id="l_method-i-exit_handler_source">show</a>
+                
+              </p>
+              <div id="method-i-exit_handler_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exit_handler</span>(<span class="ruby-identifier">signal</span>)
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;asked to terminate ASAP&quot;</span>
+  <span class="ruby-ivar">@when_ready</span> = <span class="ruby-value">:exit</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exit_now_handler">
+            
+              <a name="method-i-exit_now_handler"></a><b>exit_now_handler</b>(signal)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exit_now_handler_source')" id="l_method-i-exit_now_handler_source">show</a>
+                
+              </p>
+              <div id="method-i-exit_now_handler_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 114</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exit_now_handler</span>(<span class="ruby-identifier">signal</span>)
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;asked to terminate immediately&quot;</span>
+  <span class="ruby-identifier">exit</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-gc_countdown">
+            
+              <a name="method-i-gc_countdown"></a><b>gc_countdown</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-gc_countdown_source')" id="l_method-i-gc_countdown_source">show</a>
+                
+              </p>
+              <div id="method-i-gc_countdown_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 215</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">gc_countdown</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">gc_request_period</span>
+    <span class="ruby-ivar">@gc_request_countdown</span> <span class="ruby-operator">-=</span> <span class="ruby-number">1</span>
+    <span class="ruby-identifier">run_gc!</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@gc_request_countdown</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-number">0</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-install_signal_handler">
+            
+              <a name="method-i-install_signal_handler"></a><b>install_signal_handler</b>(signal, handler = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-install_signal_handler_source')" id="l_method-i-install_signal_handler_source">show</a>
+                
+              </p>
+              <div id="method-i-install_signal_handler_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">install_signal_handler</span>(<span class="ruby-identifier">signal</span>, <span class="ruby-identifier">handler</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">handler</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">method</span>(<span class="ruby-node">&quot;#{SIGNALS[signal]}_handler&quot;</span>).<span class="ruby-identifier">to_proc</span>
+  <span class="ruby-identifier">trap</span>(<span class="ruby-identifier">signal</span>, <span class="ruby-identifier">handler</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">ArgumentError</span>
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:warn</span>, <span class="ruby-node">&quot;Ignoring unsupported signal #{signal}.&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-install_signal_handlers">
+            
+              <a name="method-i-install_signal_handlers"></a><b>install_signal_handlers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-install_signal_handlers_source')" id="l_method-i-install_signal_handlers_source">show</a>
+                
+              </p>
+              <div id="method-i-install_signal_handlers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">install_signal_handlers</span>
+  <span class="ruby-constant">GLOBAL_SIGNALS</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">signal</span><span class="ruby-operator">|</span> <span class="ruby-identifier">install_signal_handler</span>(<span class="ruby-identifier">signal</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-logger">
+            
+              <a name="method-i-logger"></a><b>logger</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-logger_source')" id="l_method-i-logger_source">show</a>
+                
+              </p>
+              <div id="method-i-logger_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">logger</span>
+  <span class="ruby-ivar">@logger</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@log_file_path</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mark-21">
+            
+              <a name="method-i-mark-21"></a><b>mark!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mark-21_source')" id="l_method-i-mark-21_source">show</a>
+                
+              </p>
+              <div id="method-i-mark-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mark!</span>
+  <span class="ruby-ivar">@features</span> = <span class="ruby-identifier">$&quot;</span>.<span class="ruby-identifier">clone</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-process_each_request-21">
+            
+              <a name="method-i-process_each_request-21"></a><b>process_each_request!</b>(provider)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-process_each_request-21_source')" id="l_method-i-process_each_request-21_source">show</a>
+                
+              </p>
+              <div id="method-i-process_each_request-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">process_each_request!</span>(<span class="ruby-identifier">provider</span>)
+  <span class="ruby-identifier">cgi</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">provider</span>.<span class="ruby-identifier">each_cgi</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">cgi</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">with_signal_handler</span> <span class="ruby-string">'USR1'</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">process_request</span>(<span class="ruby-identifier">cgi</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-keyword">case</span> <span class="ruby-identifier">when_ready</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:reload</span>
+        <span class="ruby-identifier">reload!</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:restart</span>
+        <span class="ruby-identifier">close_connection</span>(<span class="ruby-identifier">cgi</span>)
+        <span class="ruby-identifier">restart!</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:exit</span>
+        <span class="ruby-identifier">close_connection</span>(<span class="ruby-identifier">cgi</span>)
+        <span class="ruby-keyword">break</span>
+      <span class="ruby-keyword">when</span> <span class="ruby-value">:breakpoint</span>
+        <span class="ruby-identifier">close_connection</span>(<span class="ruby-identifier">cgi</span>)
+        <span class="ruby-identifier">breakpoint!</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">gc_countdown</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">SignalException</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">signal</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">signal</span>.<span class="ruby-identifier">message</span> <span class="ruby-operator">==</span> <span class="ruby-string">'SIGUSR1'</span>
+  <span class="ruby-identifier">close_connection</span>(<span class="ruby-identifier">cgi</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">cgi</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-process_request">
+            
+              <a name="method-i-process_request"></a><b>process_request</b>(cgi)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-process_request_source')" id="l_method-i-process_request_source">show</a>
+                
+              </p>
+              <div id="method-i-process_request_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 167</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">process_request</span>(<span class="ruby-identifier">cgi</span>)
+  <span class="ruby-constant">Dispatcher</span>.<span class="ruby-identifier">dispatch</span>(<span class="ruby-identifier">cgi</span>)
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>  <span class="ruby-comment"># errors from CGI dispatch</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">SignalException</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">dispatcher_error</span>(<span class="ruby-identifier">e</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reload-21">
+            
+              <a name="method-i-reload-21"></a><b>reload!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reload-21_source')" id="l_method-i-reload-21_source">show</a>
+                
+              </p>
+              <div id="method-i-reload-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reload!</span>
+  <span class="ruby-identifier">run_gc!</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">gc_request_period</span>
+  <span class="ruby-identifier">restore!</span>
+  <span class="ruby-ivar">@when_ready</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;reloaded&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reload_handler">
+            
+              <a name="method-i-reload_handler"></a><b>reload_handler</b>(signal)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reload_handler_source')" id="l_method-i-reload_handler_source">show</a>
+                
+              </p>
+              <div id="method-i-reload_handler_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 124</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reload_handler</span>(<span class="ruby-identifier">signal</span>)
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;asked to reload ASAP&quot;</span>
+  <span class="ruby-ivar">@when_ready</span> = <span class="ruby-value">:reload</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-restart-21">
+            
+              <a name="method-i-restart-21"></a><b>restart!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-restart-21_source')" id="l_method-i-restart-21_source">show</a>
+                
+              </p>
+              <div id="method-i-restart-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">restart!</span>
+  <span class="ruby-identifier">config</span>       = <span class="ruby-operator">::</span><span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>
+  <span class="ruby-identifier">ruby</span>         = <span class="ruby-constant">File</span><span class="ruby-operator">::</span><span class="ruby-identifier">join</span>(<span class="ruby-identifier">config</span>[<span class="ruby-string">'bindir'</span>], <span class="ruby-identifier">config</span>[<span class="ruby-string">'ruby_install_name'</span>]) <span class="ruby-operator">+</span> <span class="ruby-identifier">config</span>[<span class="ruby-string">'EXEEXT'</span>]
+  <span class="ruby-identifier">command_line</span> = [<span class="ruby-identifier">ruby</span>, <span class="ruby-identifier">$0</span>, <span class="ruby-constant">ARGV</span>].<span class="ruby-identifier">flatten</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>)
+
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;restarted&quot;</span>
+
+  <span class="ruby-identifier">exec</span>(<span class="ruby-identifier">command_line</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-restart_handler">
+            
+              <a name="method-i-restart_handler"></a><b>restart_handler</b>(signal)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-restart_handler_source')" id="l_method-i-restart_handler_source">show</a>
+                
+              </p>
+              <div id="method-i-restart_handler_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">restart_handler</span>(<span class="ruby-identifier">signal</span>)
+  <span class="ruby-identifier">dispatcher_log</span> <span class="ruby-value">:info</span>, <span class="ruby-string">&quot;asked to restart ASAP&quot;</span>
+  <span class="ruby-ivar">@when_ready</span> = <span class="ruby-value">:restart</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-restore-21">
+            
+              <a name="method-i-restore-21"></a><b>restore!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-restore-21_source')" id="l_method-i-restore-21_source">show</a>
+                
+              </p>
+              <div id="method-i-restore-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">restore!</span>
+  <span class="ruby-identifier">$&quot;</span>.<span class="ruby-identifier">replace</span> <span class="ruby-ivar">@features</span>
+  <span class="ruby-constant">Dispatcher</span>.<span class="ruby-identifier">reset_application!</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">reload</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-run_gc-21">
+            
+              <a name="method-i-run_gc-21"></a><b>run_gc!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="RailsFCGIHandler.html#method-i-old_run_gc-21">old_run_gc!</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-run_gc-21_source')" id="l_method-i-run_gc-21_source">show</a>
+                
+              </p>
+              <div id="method-i-run_gc-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 210</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">run_gc!</span>
+  <span class="ruby-ivar">@gc_request_countdown</span> = <span class="ruby-identifier">gc_request_period</span>
+  <span class="ruby-constant">GC</span>.<span class="ruby-identifier">enable</span>; <span class="ruby-constant">GC</span>.<span class="ruby-identifier">start</span>; <span class="ruby-constant">GC</span>.<span class="ruby-identifier">disable</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-with_signal_handler">
+            
+              <a name="method-i-with_signal_handler"></a><b>with_signal_handler</b>(signal)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-with_signal_handler_source')" id="l_method-i-with_signal_handler_source">show</a>
+                
+              </p>
+              <div id="method-i-with_signal_handler_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/fcgi_handler.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">with_signal_handler</span>(<span class="ruby-identifier">signal</span>)
+  <span class="ruby-identifier">install_signal_handler</span>(<span class="ruby-identifier">signal</span>)
+  <span class="ruby-keyword">yield</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">install_signal_handler</span>(<span class="ruby-identifier">signal</span>, <span class="ruby-string">'DEFAULT'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

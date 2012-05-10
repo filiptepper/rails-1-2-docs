@@ -1,0 +1,766 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CascadedEagerLoadingTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            CascadedEagerLoadingTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/test/associations/cascaded_eager_loading_test_rb.html">rails/activerecord/test/associations/cascaded_eager_loading_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_of_stis_with_multiple_references">test_eager_association_loading_of_stis_with_multiple_references</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_acts_as_tree">test_eager_association_loading_with_acts_as_tree</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_belongs_to_sti">test_eager_association_loading_with_belongs_to_sti</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_cascaded_three_levels_by_ping_pong">test_eager_association_loading_with_cascaded_three_levels_by_ping_pong</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_cascaded_two_levels">test_eager_association_loading_with_cascaded_two_levels</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_cascaded_two_levels_and_one_level">test_eager_association_loading_with_cascaded_two_levels_and_one_level</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_cascaded_two_levels_and_self_table_reference">test_eager_association_loading_with_cascaded_two_levels_and_self_table_reference</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_cascaded_two_levels_with_condition">test_eager_association_loading_with_cascaded_two_levels_with_condition</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_cascaded_two_levels_with_two_has_many_associations">test_eager_association_loading_with_cascaded_two_levels_with_two_has_many_associations</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_has_many_sti">test_eager_association_loading_with_has_many_sti</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_multiple_stis_and_order">test_eager_association_loading_with_multiple_stis_and_order</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_and_belongs_to_many">test_eager_association_loading_with_recursive_cascading_four_levels_has_and_belongs_to_many</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_many_through">test_eager_association_loading_with_recursive_cascading_four_levels_has_many_through</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_recursive_cascading_three_levels_belongs_to">test_eager_association_loading_with_recursive_cascading_three_levels_belongs_to</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_many">test_eager_association_loading_with_recursive_cascading_three_levels_has_many</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_one">test_eager_association_loading_with_recursive_cascading_three_levels_has_one</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_of_stis_with_multiple_references">
+            
+              <a name="method-i-test_eager_association_loading_of_stis_with_multiple_references"></a><b>test_eager_association_loading_of_stis_with_multiple_references</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_of_stis_with_multiple_references_source')" id="l_method-i-test_eager_association_loading_of_stis_with_multiple_references_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_of_stis_with_multiple_references_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_of_stis_with_multiple_references</span>
+  <span class="ruby-identifier">authors</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:posts</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:special_comments</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:post</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:special_comments</span>, <span class="ruby-value">:very_special_comment</span> ] } } }, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'comments.body, very_special_comments_posts.body'</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'posts.id = 4'</span>)
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>)], <span class="ruby-identifier">authors</span>
+  <span class="ruby-identifier">assert_no_queries</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">authors</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">special_comments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">post</span>.<span class="ruby-identifier">special_comments</span>
+    <span class="ruby-identifier">authors</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">special_comments</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">post</span>.<span class="ruby-identifier">very_special_comment</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_acts_as_tree">
+            
+              <a name="method-i-test_eager_association_loading_with_acts_as_tree"></a><b>test_eager_association_loading_with_acts_as_tree</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_acts_as_tree_source')" id="l_method-i-test_eager_association_loading_with_acts_as_tree_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_acts_as_tree_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_acts_as_tree</span>
+  <span class="ruby-identifier">roots</span> = <span class="ruby-constant">TreeMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;children&quot;</span>, <span class="ruby-value">:conditions=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;mixins.parent_id IS NULL&quot;</span>, <span class="ruby-value">:order=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;mixins.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree2_1</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:tree3_1</span>)], <span class="ruby-identifier">roots</span>
+  <span class="ruby-identifier">assert_no_queries</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">roots</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">children</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">roots</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">children</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">roots</span>[<span class="ruby-number">2</span>].<span class="ruby-identifier">children</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_belongs_to_sti">
+            
+              <a name="method-i-test_eager_association_loading_with_belongs_to_sti"></a><b>test_eager_association_loading_with_belongs_to_sti</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_belongs_to_sti_source')" id="l_method-i-test_eager_association_loading_with_belongs_to_sti_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_belongs_to_sti_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 83</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_belongs_to_sti</span>
+  <span class="ruby-identifier">replies</span> = <span class="ruby-constant">Reply</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:topic</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'topics.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">topics</span>(<span class="ruby-value">:second</span>)], <span class="ruby-identifier">replies</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">topics</span>(<span class="ruby-value">:first</span>), <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">replies</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">topic</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_cascaded_three_levels_by_ping_pong">
+            
+              <a name="method-i-test_eager_association_loading_with_cascaded_three_levels_by_ping_pong"></a><b>test_eager_association_loading_with_cascaded_three_levels_by_ping_pong</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_cascaded_three_levels_by_ping_pong_source')" id="l_method-i-test_eager_association_loading_with_cascaded_three_levels_by_ping_pong_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_cascaded_three_levels_by_ping_pong_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_cascaded_three_levels_by_ping_pong</span>
+  <span class="ruby-identifier">firms</span> = <span class="ruby-constant">Firm</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:account=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:firm=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">:account</span>}}, <span class="ruby-value">:order=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;companies.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">firms</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">firms</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">account</span>, <span class="ruby-identifier">firms</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">account</span>.<span class="ruby-identifier">firm</span>.<span class="ruby-identifier">account</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">companies</span>(<span class="ruby-value">:first_firm</span>).<span class="ruby-identifier">account</span>, <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">firms</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">account</span>.<span class="ruby-identifier">firm</span>.<span class="ruby-identifier">account</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">companies</span>(<span class="ruby-value">:first_firm</span>).<span class="ruby-identifier">account</span>.<span class="ruby-identifier">firm</span>.<span class="ruby-identifier">account</span>, <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">firms</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">account</span>.<span class="ruby-identifier">firm</span>.<span class="ruby-identifier">account</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_cascaded_two_levels">
+            
+              <a name="method-i-test_eager_association_loading_with_cascaded_two_levels"></a><b>test_eager_association_loading_with_cascaded_two_levels</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_cascaded_two_levels_source')" id="l_method-i-test_eager_association_loading_with_cascaded_two_levels_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_cascaded_two_levels_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_cascaded_two_levels</span>
+  <span class="ruby-identifier">authors</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:posts=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">:comments</span>}, <span class="ruby-value">:order=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;authors.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">authors</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">9</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">post</span><span class="ruby-operator">|</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">size</span> }.<span class="ruby-identifier">inject</span>(<span class="ruby-number">0</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span><span class="ruby-operator">+</span><span class="ruby-identifier">i</span>}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_cascaded_two_levels_and_one_level">
+            
+              <a name="method-i-test_eager_association_loading_with_cascaded_two_levels_and_one_level"></a><b>test_eager_association_loading_with_cascaded_two_levels_and_one_level</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_cascaded_two_levels_and_one_level_source')" id="l_method-i-test_eager_association_loading_with_cascaded_two_levels_and_one_level_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_cascaded_two_levels_and_one_level_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_cascaded_two_levels_and_one_level</span>
+  <span class="ruby-identifier">authors</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>[{<span class="ruby-value">:posts=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">:comments</span>}, <span class="ruby-value">:categorizations</span>], <span class="ruby-value">:order=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;authors.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">authors</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">9</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">post</span><span class="ruby-operator">|</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">size</span> }.<span class="ruby-identifier">inject</span>(<span class="ruby-number">0</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span><span class="ruby-operator">+</span><span class="ruby-identifier">i</span>}
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">categorizations</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">categorizations</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_cascaded_two_levels_and_self_table_reference">
+            
+              <a name="method-i-test_eager_association_loading_with_cascaded_two_levels_and_self_table_reference"></a><b>test_eager_association_loading_with_cascaded_two_levels_and_self_table_reference</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_cascaded_two_levels_and_self_table_reference_source')" id="l_method-i-test_eager_association_loading_with_cascaded_two_levels_and_self_table_reference_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_cascaded_two_levels_and_self_table_reference_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_cascaded_two_levels_and_self_table_reference</span>
+  <span class="ruby-identifier">authors</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:posts=</span><span class="ruby-operator">&gt;</span>[<span class="ruby-value">:comments</span>, <span class="ruby-value">:author</span>]}, <span class="ruby-value">:order=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;authors.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">authors</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">name</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>).<span class="ruby-identifier">name</span>], <span class="ruby-identifier">authors</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">post</span><span class="ruby-operator">|</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">author</span>.<span class="ruby-identifier">name</span>}.<span class="ruby-identifier">uniq</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_cascaded_two_levels_with_condition">
+            
+              <a name="method-i-test_eager_association_loading_with_cascaded_two_levels_with_condition"></a><b>test_eager_association_loading_with_cascaded_two_levels_with_condition</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_cascaded_two_levels_with_condition_source')" id="l_method-i-test_eager_association_loading_with_cascaded_two_levels_with_condition_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_cascaded_two_levels_with_condition_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_cascaded_two_levels_with_condition</span>
+  <span class="ruby-identifier">authors</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:posts=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">:comments</span>}, <span class="ruby-value">:conditions=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;authors.id=1&quot;</span>, <span class="ruby-value">:order=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;authors.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">authors</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_cascaded_two_levels_with_two_has_many_associations">
+            
+              <a name="method-i-test_eager_association_loading_with_cascaded_two_levels_with_two_has_many_associations"></a><b>test_eager_association_loading_with_cascaded_two_levels_with_two_has_many_associations</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_cascaded_two_levels_with_two_has_many_associations_source')" id="l_method-i-test_eager_association_loading_with_cascaded_two_levels_with_two_has_many_associations_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_cascaded_two_levels_with_two_has_many_associations_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_cascaded_two_levels_with_two_has_many_associations</span>
+  <span class="ruby-identifier">authors</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:posts=</span><span class="ruby-operator">&gt;</span>[<span class="ruby-value">:comments</span>, <span class="ruby-value">:categorizations</span>]}, <span class="ruby-value">:order=</span><span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;authors.id&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">authors</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">9</span>, <span class="ruby-identifier">authors</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">post</span><span class="ruby-operator">|</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">comments</span>.<span class="ruby-identifier">size</span> }.<span class="ruby-identifier">inject</span>(<span class="ruby-number">0</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>,<span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span><span class="ruby-operator">+</span><span class="ruby-identifier">i</span>}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_has_many_sti">
+            
+              <a name="method-i-test_eager_association_loading_with_has_many_sti"></a><b>test_eager_association_loading_with_has_many_sti</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_has_many_sti_source')" id="l_method-i-test_eager_association_loading_with_has_many_sti_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_has_many_sti_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_has_many_sti</span>
+  <span class="ruby-identifier">topics</span> = <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:replies</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'topics.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">topics</span>(<span class="ruby-value">:first</span>), <span class="ruby-identifier">topics</span>(<span class="ruby-value">:second</span>)], <span class="ruby-identifier">topics</span>
+  <span class="ruby-identifier">assert_no_queries</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">topics</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">replies</span>.<span class="ruby-identifier">size</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-identifier">topics</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">replies</span>.<span class="ruby-identifier">size</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_multiple_stis_and_order">
+            
+              <a name="method-i-test_eager_association_loading_with_multiple_stis_and_order"></a><b>test_eager_association_loading_with_multiple_stis_and_order</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_multiple_stis_and_order_source')" id="l_method-i-test_eager_association_loading_with_multiple_stis_and_order_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_multiple_stis_and_order_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_multiple_stis_and_order</span>
+  <span class="ruby-identifier">author</span> = <span class="ruby-constant">Author</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:include</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:posts</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-value">:special_comments</span> , <span class="ruby-value">:very_special_comment</span> ] }, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'authors.name, comments.body, very_special_comments_posts.body'</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'posts.id = 4'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">authors</span>(<span class="ruby-value">:david</span>), <span class="ruby-identifier">author</span>
+  <span class="ruby-identifier">assert_no_queries</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">author</span>.<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">special_comments</span>
+    <span class="ruby-identifier">author</span>.<span class="ruby-identifier">posts</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">very_special_comment</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_and_belongs_to_many">
+            
+              <a name="method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_and_belongs_to_many"></a><b>test_eager_association_loading_with_recursive_cascading_four_levels_has_and_belongs_to_many</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_and_belongs_to_many_source')" id="l_method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_and_belongs_to_many_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_and_belongs_to_many_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_recursive_cascading_four_levels_has_and_belongs_to_many</span>
+  <span class="ruby-identifier">sink</span> = <span class="ruby-constant">Vertex</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:sources=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:sources=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:sources=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">:sources</span>}}}, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'vertices.id DESC'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">vertices</span>(<span class="ruby-value">:vertex_1</span>), <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">sink</span>.<span class="ruby-identifier">sources</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">sources</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">sources</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">sources</span>.<span class="ruby-identifier">first</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_many_through">
+            
+              <a name="method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_many_through"></a><b>test_eager_association_loading_with_recursive_cascading_four_levels_has_many_through</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_many_through_source')" id="l_method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_many_through_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_recursive_cascading_four_levels_has_many_through_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_recursive_cascading_four_levels_has_many_through</span>
+  <span class="ruby-identifier">source</span> = <span class="ruby-constant">Vertex</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:sinks=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:sinks=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:sinks=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">:sinks</span>}}}, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'vertices.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">vertices</span>(<span class="ruby-value">:vertex_4</span>), <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">source</span>.<span class="ruby-identifier">sinks</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">sinks</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">sinks</span>.<span class="ruby-identifier">first</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_recursive_cascading_three_levels_belongs_to">
+            
+              <a name="method-i-test_eager_association_loading_with_recursive_cascading_three_levels_belongs_to"></a><b>test_eager_association_loading_with_recursive_cascading_three_levels_belongs_to</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_recursive_cascading_three_levels_belongs_to_source')" id="l_method-i-test_eager_association_loading_with_recursive_cascading_three_levels_belongs_to_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_recursive_cascading_three_levels_belongs_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 117</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_recursive_cascading_three_levels_belongs_to</span>
+  <span class="ruby-identifier">leaf_node</span> = <span class="ruby-constant">RecursivelyCascadedTreeMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:parent=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:parent=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">:parent</span>}}, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'mixins.id DESC'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:recursively_cascaded_tree_1</span>), <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">leaf_node</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">parent</span>.<span class="ruby-identifier">parent</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_many">
+            
+              <a name="method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_many"></a><b>test_eager_association_loading_with_recursive_cascading_three_levels_has_many</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_many_source')" id="l_method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_many_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_many_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_recursive_cascading_three_levels_has_many</span>
+  <span class="ruby-identifier">root_node</span> = <span class="ruby-constant">RecursivelyCascadedTreeMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:children=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:children=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">:children</span>}}, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'mixins.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:recursively_cascaded_tree_4</span>), <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">root_node</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">children</span>.<span class="ruby-identifier">first</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_one">
+            
+              <a name="method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_one"></a><b>test_eager_association_loading_with_recursive_cascading_three_levels_has_one</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_one_source')" id="l_method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_one_source">show</a>
+                
+              </p>
+              <div id="method-i-test_eager_association_loading_with_recursive_cascading_three_levels_has_one_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/associations/cascaded_eager_loading_test.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_eager_association_loading_with_recursive_cascading_three_levels_has_one</span>
+  <span class="ruby-identifier">root_node</span> = <span class="ruby-constant">RecursivelyCascadedTreeMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>, <span class="ruby-value">:include=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:first_child=</span><span class="ruby-operator">&gt;</span>{<span class="ruby-value">:first_child=</span><span class="ruby-operator">&gt;</span><span class="ruby-value">:first_child</span>}}, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'mixins.id'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:recursively_cascaded_tree_4</span>), <span class="ruby-identifier">assert_no_queries</span> { <span class="ruby-identifier">root_node</span>.<span class="ruby-identifier">first_child</span>.<span class="ruby-identifier">first_child</span>.<span class="ruby-identifier">first_child</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

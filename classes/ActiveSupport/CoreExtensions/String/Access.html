@@ -1,0 +1,347 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveSupport::CoreExtensions::String::Access</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActiveSupport::CoreExtensions::String::Access 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/rails/activesupport/lib/active_support/core_ext/string/access_rb.html">rails/activesupport/lib/active_support/core_ext/string/access.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Makes it easier to access parts of a string, such as specific characters
+and substrings.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-at">at</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-first">first</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-from">from</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-last">last</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to">to</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-at">
+            
+              <a name="method-i-at"></a><b>at</b>(position)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the character at the <code>position</code> treating the string as
+an array (where 0 is the first character).</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">0</span>)  <span class="ruby-comment"># =&gt; &quot;h&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">4</span>)  <span class="ruby-comment"># =&gt; &quot;o&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">at</span>(<span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; nil</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-at_source')" id="l_method-i-at_source">show</a>
+                
+              </p>
+              <div id="method-i-at_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/core_ext/string/access.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">at</span>(<span class="ruby-identifier">position</span>)
+  <span class="ruby-identifier">chars</span>[<span class="ruby-identifier">position</span>, <span class="ruby-number">1</span>].<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-first">
+            
+              <a name="method-i-first"></a><b>first</b>(limit = 1)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the first character of the string or the first <code>limit</code>
+characters.</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">first</span>     <span class="ruby-comment"># =&gt; &quot;h&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">first</span>(<span class="ruby-value">2</span>)  <span class="ruby-comment"># =&gt; &quot;he&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">first</span>(<span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; &quot;hello&quot;</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-first_source')" id="l_method-i-first_source">show</a>
+                
+              </p>
+              <div id="method-i-first_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/core_ext/string/access.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">first</span>(<span class="ruby-identifier">limit</span> = <span class="ruby-number">1</span>)
+  <span class="ruby-identifier">chars</span>[<span class="ruby-number">0</span><span class="ruby-operator">..</span>(<span class="ruby-identifier">limit</span> <span class="ruby-operator">-</span> <span class="ruby-number">1</span>)].<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-from">
+            
+              <a name="method-i-from"></a><b>from</b>(position)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the remaining of the string from the <code>position</code> treating
+the string as an array (where 0 is the first character).</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">from</span>(<span class="ruby-value">0</span>)  <span class="ruby-comment"># =&gt; &quot;hello&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">from</span>(<span class="ruby-value">2</span>)  <span class="ruby-comment"># =&gt; &quot;llo&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">from</span>(<span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; nil</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-from_source')" id="l_method-i-from_source">show</a>
+                
+              </p>
+              <div id="method-i-from_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/core_ext/string/access.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">from</span>(<span class="ruby-identifier">position</span>)
+  <span class="ruby-identifier">chars</span>[<span class="ruby-identifier">position</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>].<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-last">
+            
+              <a name="method-i-last"></a><b>last</b>(limit = 1)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the last character of the string or the last <code>limit</code>
+characters.</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">last</span>     <span class="ruby-comment"># =&gt; &quot;o&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">last</span>(<span class="ruby-value">2</span>)  <span class="ruby-comment"># =&gt; &quot;lo&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">last</span>(<span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; &quot;hello&quot;</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-last_source')" id="l_method-i-last_source">show</a>
+                
+              </p>
+              <div id="method-i-last_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/core_ext/string/access.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">last</span>(<span class="ruby-identifier">limit</span> = <span class="ruby-number">1</span>)
+  (<span class="ruby-identifier">chars</span>[(<span class="ruby-operator">-</span><span class="ruby-identifier">limit</span>)<span class="ruby-operator">..</span><span class="ruby-number">-1</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">self</span>).<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to">
+            
+              <a name="method-i-to"></a><b>to</b>(position)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the beginning of the string up to the <code>position</code>
+treating the string as an array (where 0 is the first character).</p>
+
+<p>Examples:</p>
+
+<pre class="ruby"><span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">to</span>(<span class="ruby-value">0</span>)  <span class="ruby-comment"># =&gt; &quot;h&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">to</span>(<span class="ruby-value">2</span>)  <span class="ruby-comment"># =&gt; &quot;hel&quot;</span>
+<span class="ruby-string">&quot;hello&quot;</span>.<span class="ruby-identifier">to</span>(<span class="ruby-value">10</span>) <span class="ruby-comment"># =&gt; &quot;hello&quot;</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_source')" id="l_method-i-to_source">show</a>
+                
+              </p>
+              <div id="method-i-to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/core_ext/string/access.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to</span>(<span class="ruby-identifier">position</span>)
+  <span class="ruby-identifier">chars</span>[<span class="ruby-number">0</span><span class="ruby-operator">..</span><span class="ruby-identifier">position</span>].<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

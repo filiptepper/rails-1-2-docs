@@ -1,0 +1,641 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ContentTypeTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ContentTypeTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/content_type_test_rb.html">rails/actionpack/test/controller/content_type_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_change_for_rxml">test_change_for_rxml</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_charset_from_body">test_charset_from_body</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_content_type_from_body">test_content_type_from_body</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_content_type_from_render">test_content_type_from_render</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_default_for_rhtml">test_default_for_rhtml</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_default_for_rjs">test_default_for_rjs</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_default_for_rxml">test_default_for_rxml</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_render_changed_charset_default">test_render_changed_charset_default</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_render_default_content_types_for_respond_to">test_render_default_content_types_for_respond_to</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_render_default_content_types_for_respond_to_with_overwrite">test_render_default_content_types_for_respond_to_with_overwrite</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_render_default_content_types_for_respond_to_with_template">test_render_default_content_types_for_respond_to_with_template</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_render_defaults">test_render_defaults</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">ContentTypeController</span>.<span class="ruby-identifier">new</span>
+
+  <span class="ruby-comment"># enable a logger so that (e.g.) the benchmarking stuff runs, so we can get</span>
+  <span class="ruby-comment"># a more accurate simulation of what happens in &quot;real life&quot;.</span>
+  <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">logger</span> = <span class="ruby-constant">Logger</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>)
+
+  <span class="ruby-ivar">@request</span>    = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@response</span>   = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_change_for_rxml">
+            
+              <a name="method-i-test_change_for_rxml"></a><b>test_change_for_rxml</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_change_for_rxml_source')" id="l_method-i-test_change_for_rxml_source">show</a>
+                
+              </p>
+              <div id="method-i-test_change_for_rxml_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_change_for_rxml</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_change_for_rxml</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;utf-8&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">charset</span>    
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_charset_from_body">
+            
+              <a name="method-i-test_charset_from_body"></a><b>test_charset_from_body</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_charset_from_body_source')" id="l_method-i-test_charset_from_body_source">show</a>
+                
+              </p>
+              <div id="method-i-test_charset_from_body_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_charset_from_body</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_charset_from_body</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;utf-16&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">charset</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_content_type_from_body">
+            
+              <a name="method-i-test_content_type_from_body"></a><b>test_content_type_from_body</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_content_type_from_body_source')" id="l_method-i-test_content_type_from_body_source">show</a>
+                
+              </p>
+              <div id="method-i-test_content_type_from_body_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_content_type_from_body</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_content_type_from_body</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;application/rss+xml&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;utf-8&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">charset</span>    
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_content_type_from_render">
+            
+              <a name="method-i-test_content_type_from_render"></a><b>test_content_type_from_render</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_content_type_from_render_source')" id="l_method-i-test_content_type_from_render_source">show</a>
+                
+              </p>
+              <div id="method-i-test_content_type_from_render_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_content_type_from_render</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_content_type_from_render</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;application/rss+xml&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;utf-8&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">charset</span>    
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_default_for_rhtml">
+            
+              <a name="method-i-test_default_for_rhtml"></a><b>test_default_for_rhtml</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_default_for_rhtml_source')" id="l_method-i-test_default_for_rhtml_source">show</a>
+                
+              </p>
+              <div id="method-i-test_default_for_rhtml_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_default_for_rhtml</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_default_for_rhtml</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;utf-8&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">charset</span>    
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_default_for_rjs">
+            
+              <a name="method-i-test_default_for_rjs"></a><b>test_default_for_rjs</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_default_for_rjs_source')" id="l_method-i-test_default_for_rjs_source">show</a>
+                
+              </p>
+              <div id="method-i-test_default_for_rjs_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_default_for_rjs</span>
+  <span class="ruby-identifier">xhr</span> <span class="ruby-value">:post</span>, <span class="ruby-value">:render_default_for_rjs</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">JS</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;utf-8&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">charset</span>    
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_default_for_rxml">
+            
+              <a name="method-i-test_default_for_rxml"></a><b>test_default_for_rxml</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_default_for_rxml_source')" id="l_method-i-test_default_for_rxml_source">show</a>
+                
+              </p>
+              <div id="method-i-test_default_for_rxml_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_default_for_rxml</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_default_for_rxml</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;utf-8&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">charset</span>    
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_render_changed_charset_default">
+            
+              <a name="method-i-test_render_changed_charset_default"></a><b>test_render_changed_charset_default</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_render_changed_charset_default_source')" id="l_method-i-test_render_changed_charset_default_source">show</a>
+                
+              </p>
+              <div id="method-i-test_render_changed_charset_default_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_render_changed_charset_default</span>
+  <span class="ruby-constant">ContentTypeController</span>.<span class="ruby-identifier">default_charset</span> = <span class="ruby-string">&quot;utf-16&quot;</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_defaults</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;utf-16&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">charset</span>    
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+  <span class="ruby-constant">ContentTypeController</span>.<span class="ruby-identifier">default_charset</span> = <span class="ruby-string">&quot;utf-8&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_render_default_content_types_for_respond_to">
+            
+              <a name="method-i-test_render_default_content_types_for_respond_to"></a><b>test_render_default_content_types_for_respond_to</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_render_default_content_types_for_respond_to_source')" id="l_method-i-test_render_default_content_types_for_respond_to_source">show</a>
+                
+              </p>
+              <div id="method-i-test_render_default_content_types_for_respond_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 118</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_render_default_content_types_for_respond_to</span>
+  <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&quot;HTTP_ACCEPT&quot;</span>] = <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_default_content_types_for_respond_to</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+
+  <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&quot;HTTP_ACCEPT&quot;</span>] = <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">JS</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_default_content_types_for_respond_to</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">JS</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_render_default_content_types_for_respond_to_with_overwrite">
+            
+              <a name="method-i-test_render_default_content_types_for_respond_to_with_overwrite"></a><b>test_render_default_content_types_for_respond_to_with_overwrite</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_render_default_content_types_for_respond_to_with_overwrite_source')" id="l_method-i-test_render_default_content_types_for_respond_to_with_overwrite_source">show</a>
+                
+              </p>
+              <div id="method-i-test_render_default_content_types_for_respond_to_with_overwrite_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_render_default_content_types_for_respond_to_with_overwrite</span>
+  <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&quot;HTTP_ACCEPT&quot;</span>] = <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">RSS</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_default_content_types_for_respond_to</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_render_default_content_types_for_respond_to_with_template">
+            
+              <a name="method-i-test_render_default_content_types_for_respond_to_with_template"></a><b>test_render_default_content_types_for_respond_to_with_template</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_render_default_content_types_for_respond_to_with_template_source')" id="l_method-i-test_render_default_content_types_for_respond_to_with_template_source">show</a>
+                
+              </p>
+              <div id="method-i-test_render_default_content_types_for_respond_to_with_template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_render_default_content_types_for_respond_to_with_template</span>
+  <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">env</span>[<span class="ruby-string">&quot;HTTP_ACCEPT&quot;</span>] = <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_default_content_types_for_respond_to</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">XML</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_render_defaults">
+            
+              <a name="method-i-test_render_defaults"></a><b>test_render_defaults</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_render_defaults_source')" id="l_method-i-test_render_defaults_source">show</a>
+                
+              </p>
+              <div id="method-i-test_render_defaults_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/content_type_test.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_render_defaults</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:render_defaults</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;utf-8&quot;</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">charset</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">HTML</span>, <span class="ruby-ivar">@response</span>.<span class="ruby-identifier">content_type</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

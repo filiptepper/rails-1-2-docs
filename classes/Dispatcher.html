@@ -1,0 +1,308 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Dispatcher</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Dispatcher 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/railties/lib/dispatcher_rb.html">rails/railties/lib/dispatcher.rb</a></li>
+            
+            <li><a href="../files/rails/railties/test/mocks/dispatcher_rb.html">rails/railties/test/mocks/dispatcher.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>This class provides an interface for dispatching a <a
+href="CGI.html">CGI</a> (or CGI-like) request to the appropriate controller
+and action. It also takes care of resetting the environment (when
+Dependencies.load? is true) after each request.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-dispatch">dispatch</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-reset_application-21">reset_application!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-to_prepare">to_prepare</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>dispatch_hook</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>raise_exception</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>time_to_sleep</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-dispatch">
+            
+              <a name="method-c-dispatch"></a><b>dispatch</b>(cgi = nil, session_options = ActionController::CgiRequest::DEFAULT_SESSION_OPTIONS, output = $stdout)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Dispatch the given <a href="CGI.html">CGI</a> request, using the given
+session options, and emitting the output via the given output.  If you
+dispatch with your own <a href="CGI.html">CGI</a> object be sure to handle
+the exceptions it raises on multipart requests (EOFError and
+ArgumentError).</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-dispatch_source')" id="l_method-c-dispatch_source">show</a>
+                
+              </p>
+              <div id="method-c-dispatch_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/dispatcher.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dispatch</span>(<span class="ruby-identifier">cgi</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">session_options</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">CgiRequest</span><span class="ruby-operator">::</span><span class="ruby-constant">DEFAULT_SESSION_OPTIONS</span>, <span class="ruby-identifier">output</span> = <span class="ruby-identifier">$stdout</span>)
+  <span class="ruby-identifier">controller</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">cgi</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">new_cgi</span>(<span class="ruby-identifier">output</span>)
+    <span class="ruby-identifier">request</span>, <span class="ruby-identifier">response</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">CgiRequest</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">cgi</span>, <span class="ruby-identifier">session_options</span>), <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">CgiResponse</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">cgi</span>)
+    <span class="ruby-identifier">prepare_application</span>
+    <span class="ruby-identifier">controller</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">recognize</span>(<span class="ruby-identifier">request</span>)
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">request</span>, <span class="ruby-identifier">response</span>).<span class="ruby-identifier">out</span>(<span class="ruby-identifier">output</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">exception</span>  <span class="ruby-comment"># errors from CGI dispatch</span>
+  <span class="ruby-identifier">failsafe_response</span>(<span class="ruby-identifier">output</span>, <span class="ruby-string">'500 Internal Server Error'</span>, <span class="ruby-identifier">exception</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">controller</span> <span class="ruby-operator">||=</span> (<span class="ruby-constant">ApplicationController</span> <span class="ruby-keyword">rescue</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>)
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">process_with_exception</span>(<span class="ruby-identifier">request</span>, <span class="ruby-identifier">response</span>, <span class="ruby-identifier">exception</span>).<span class="ruby-identifier">out</span>(<span class="ruby-identifier">output</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-comment"># Do not give a failsafe response here.</span>
+  <span class="ruby-identifier">reset_after_dispatch</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-reset_application-21">
+            
+              <a name="method-c-reset_application-21"></a><b>reset_application!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Reset the application by clearing out loaded controllers, views, actions,
+mailers, and so forth. This allows them to be loaded again without having
+to restart the server (WEBrick, FastCGI, etc.).</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-reset_application-21_source')" id="l_method-c-reset_application-21_source">show</a>
+                
+              </p>
+              <div id="method-c-reset_application-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/dispatcher.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reset_application!</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">reset_subclasses</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">ActiveRecord</span>)
+
+  <span class="ruby-constant">Dependencies</span>.<span class="ruby-identifier">clear</span>
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">Deprecation</span>.<span class="ruby-identifier">silence</span> <span class="ruby-keyword">do</span> <span class="ruby-comment"># TODO: Remove after 1.2</span>
+    <span class="ruby-constant">Class</span>.<span class="ruby-identifier">remove_class</span>(*<span class="ruby-constant">Reloadable</span>.<span class="ruby-identifier">reloadable_classes</span>)
+  <span class="ruby-keyword">end</span>
+    
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">clear_reloadable_connections!</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-constant">ActiveRecord</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-to_prepare">
+            
+              <a name="method-c-to_prepare"></a><b>to_prepare</b>(identifier = nil, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Add a preparation callback. Preparation callbacks are run before every
+request in development mode, and before the first request in production
+mode.</p>
+
+<p>An optional identifier may be supplied for the callback. If provided, <a
+href="Dispatcher.html#method-c-to_prepare">::to_prepare</a> may be called
+again with the same identifier to replace the existing callback. Passing an
+identifier is a suggested practice if the code adding a preparation block
+may be reloaded.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-to_prepare_source')" id="l_method-c-to_prepare_source">show</a>
+                
+              </p>
+              <div id="method-c-to_prepare_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/dispatcher.rb, line 75</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_prepare</span>(<span class="ruby-identifier">identifier</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">identifier</span>.<span class="ruby-identifier">nil?</span>
+    <span class="ruby-identifier">callback</span> = <span class="ruby-identifier">preparation_callbacks</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">ident</span>, <span class="ruby-identifier">_</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ident</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">identifier</span> }
+
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">callback</span> <span class="ruby-comment"># Already registered: update the existing callback</span>
+      <span class="ruby-identifier">callback</span>[<span class="ruby-number">-1</span>] = <span class="ruby-identifier">block</span>
+      <span class="ruby-keyword">return</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">preparation_callbacks</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-identifier">identifier</span>, <span class="ruby-identifier">block</span>]
+
+  <span class="ruby-keyword">return</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+    </div>
+  </body>
+</html>    

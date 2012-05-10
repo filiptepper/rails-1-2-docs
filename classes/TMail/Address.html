@@ -1,0 +1,922 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TMail::Address</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TMail::Address 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionmailer/lib/action_mailer/vendor/tmail/address_rb.html">rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb</a></li>
+            
+            <li><a href="../../files/rails/actionmailer/lib/action_mailer/vendor/tmail/obsolete_rb.html">rails/actionmailer/lib/action_mailer/vendor/tmail/obsolete.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>address.rb</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-3D-3D">==</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-accept">accept</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-addr">addr</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-addr-3D">addr=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-address">address</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-address-3D">address=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-address_group-3F">address_group?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-domain">domain</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-dup">dup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-eql-3F">eql?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-hash">hash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-inspect">inspect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-local">local</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-name-3D">name=</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-parse">parse</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-phrase-3D">phrase=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-spec">spec</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-spec-3D">spec=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="TextUtils.html">
+              TMail::TextUtils
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="StrategyInterface.html">
+              TMail::StrategyInterface
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>name</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>phrase</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>route</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>routes</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>( local, domain )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>( <span class="ruby-identifier">local</span>, <span class="ruby-identifier">domain</span> )
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">domain</span>
+    <span class="ruby-identifier">domain</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">raise</span> <span class="ruby-constant">SyntaxError</span>, <span class="ruby-string">'empty word in domain'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@local</span> = <span class="ruby-identifier">local</span>
+  <span class="ruby-ivar">@domain</span> = <span class="ruby-identifier">domain</span>
+  <span class="ruby-ivar">@name</span>   = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@routes</span> = []
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-parse">
+            
+              <a name="method-c-parse"></a><b>parse</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-parse_source')" id="l_method-c-parse_source">show</a>
+                
+              </p>
+              <div id="method-c-parse_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">Address</span>.<span class="ruby-identifier">parse</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-constant">Parser</span>.<span class="ruby-identifier">parse</span> <span class="ruby-value">:ADDRESS</span>, <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-3D-3D">
+            
+              <a name="method-i-3D-3D"></a><b>==</b>( other )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Address.html#method-i-eql-3F">eql?</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-3D-3D_source')" id="l_method-i-3D-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-3D-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>( <span class="ruby-keyword ruby-title">other</span> )
+  <span class="ruby-identifier">other</span>.<span class="ruby-identifier">respond_to?</span> <span class="ruby-value">:spec</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">spec</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other</span>.<span class="ruby-identifier">spec</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-accept">
+            
+              <a name="method-i-accept"></a><b>accept</b>( strategy, dummy1 = nil, dummy2 = nil )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-accept_source')" id="l_method-i-accept_source">show</a>
+                
+              </p>
+              <div id="method-i-accept_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">accept</span>( <span class="ruby-identifier">strategy</span>, <span class="ruby-identifier">dummy1</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">dummy2</span> = <span class="ruby-keyword">nil</span> )
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@local</span>
+    <span class="ruby-identifier">strategy</span>.<span class="ruby-identifier">meta</span> <span class="ruby-string">'&lt;&gt;'</span>   <span class="ruby-comment"># empty return-path</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">spec_p</span> = (<span class="ruby-keyword">not</span> <span class="ruby-ivar">@name</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@routes</span>.<span class="ruby-identifier">empty?</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@name</span>
+    <span class="ruby-identifier">strategy</span>.<span class="ruby-identifier">phrase</span> <span class="ruby-ivar">@name</span>
+    <span class="ruby-identifier">strategy</span>.<span class="ruby-identifier">space</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">tmp</span> = <span class="ruby-identifier">spec_p</span> <span class="ruby-operator">?</span> <span class="ruby-string">''</span> <span class="ruby-operator">:</span> <span class="ruby-string">'&lt;'</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@routes</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">tmp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@routes</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-string">'@'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">i</span> }.<span class="ruby-identifier">join</span>(<span class="ruby-string">','</span>) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">':'</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">tmp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword">self</span>.<span class="ruby-identifier">spec</span>
+  <span class="ruby-identifier">tmp</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'&gt;'</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">spec_p</span>
+  <span class="ruby-identifier">strategy</span>.<span class="ruby-identifier">meta</span> <span class="ruby-identifier">tmp</span>
+  <span class="ruby-identifier">strategy</span>.<span class="ruby-identifier">lwsp</span> <span class="ruby-string">''</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-addr">
+            
+              <a name="method-i-addr"></a><b>addr</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-addr-3D">
+            
+              <a name="method-i-addr-3D"></a><b>addr=</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-address">
+            
+              <a name="method-i-address"></a><b>address</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-address-3D">
+            
+              <a name="method-i-address-3D"></a><b>address=</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-address_group-3F">
+            
+              <a name="method-i-address_group-3F"></a><b>address_group?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-address_group-3F_source')" id="l_method-i-address_group-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-address_group-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">address_group?</span>
+  <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-domain">
+            
+              <a name="method-i-domain"></a><b>domain</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-domain_source')" id="l_method-i-domain_source">show</a>
+                
+              </p>
+              <div id="method-i-domain_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">domain</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@domain</span>
+  <span class="ruby-identifier">join_domain</span>(<span class="ruby-ivar">@domain</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dup">
+            
+              <a name="method-i-dup"></a><b>dup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dup_source')" id="l_method-i-dup_source">show</a>
+                
+              </p>
+              <div id="method-i-dup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dup</span>
+  <span class="ruby-identifier">obj</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@local</span>.<span class="ruby-identifier">dup</span>, <span class="ruby-ivar">@domain</span>.<span class="ruby-identifier">dup</span>)
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">name</span> = <span class="ruby-ivar">@name</span>.<span class="ruby-identifier">dup</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@name</span>
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">routes</span>.<span class="ruby-identifier">replace</span> <span class="ruby-ivar">@routes</span>
+  <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-eql-3F">
+            
+              <a name="method-i-eql-3F"></a><b>eql?</b>( other )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hash">
+            
+              <a name="method-i-hash"></a><b>hash</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hash_source')" id="l_method-i-hash_source">show</a>
+                
+              </p>
+              <div id="method-i-hash_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 106</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hash</span>
+  <span class="ruby-ivar">@local</span>.<span class="ruby-identifier">hash</span> <span class="ruby-operator">^</span> <span class="ruby-ivar">@domain</span>.<span class="ruby-identifier">hash</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect">
+            
+              <a name="method-i-inspect"></a><b>inspect</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_source')" id="l_method-i-inspect_source">show</a>
+                
+              </p>
+              <div id="method-i-inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect</span>
+  <span class="ruby-node">&quot;#&lt;#{self.class} #{address()}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-local">
+            
+              <a name="method-i-local"></a><b>local</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-local_source')" id="l_method-i-local_source">show</a>
+                
+              </p>
+              <div id="method-i-local_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">local</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@local</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-string">'&quot;&quot;'</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@local</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@local</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">empty?</span>
+  <span class="ruby-ivar">@local</span>.<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">quote_atom</span>(<span class="ruby-identifier">i</span>) }.<span class="ruby-identifier">join</span>(<span class="ruby-string">'.'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-name-3D">
+            
+              <a name="method-i-name-3D"></a><b>name=</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Address.html#method-i-phrase-3D">phrase=</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-name-3D_source')" id="l_method-i-name-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-name-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">name=</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">str</span>
+  <span class="ruby-ivar">@name</span> = <span class="ruby-keyword">nil</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">str</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">str</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-phrase-3D">
+            
+              <a name="method-i-phrase-3D"></a><b>phrase=</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-spec">
+            
+              <a name="method-i-spec"></a><b>spec</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Address.html#method-i-address">address</a>, <a href="Address.html#method-i-addr">addr</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-spec_source')" id="l_method-i-spec_source">show</a>
+                
+              </p>
+              <div id="method-i-spec_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/address.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">spec</span>
+  <span class="ruby-identifier">s</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">local</span>
+  <span class="ruby-identifier">d</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">domain</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">s</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">d</span>
+    <span class="ruby-identifier">s</span> <span class="ruby-operator">+</span> <span class="ruby-string">'@'</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">d</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">s</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-spec-3D">
+            
+              <a name="method-i-spec-3D"></a><b>spec=</b>( str )
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Address.html#method-i-addr-3D">addr=</a>, <a href="Address.html#method-i-address-3D">address=</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-spec-3D_source')" id="l_method-i-spec-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-spec-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/obsolete.rb, line 90</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">spec=</span>( <span class="ruby-identifier">str</span> )
+  <span class="ruby-ivar">@local</span>, <span class="ruby-ivar">@domain</span> = <span class="ruby-identifier">str</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r@/</span>,<span class="ruby-number">2</span>).<span class="ruby-identifier">map</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">s</span><span class="ruby-operator">|</span> <span class="ruby-identifier">s</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r\./</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

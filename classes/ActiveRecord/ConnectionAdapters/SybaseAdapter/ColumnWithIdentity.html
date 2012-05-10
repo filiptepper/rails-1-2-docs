@@ -1,0 +1,288 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::ConnectionAdapters::SybaseAdapter::ColumnWithIdentity</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecord::ConnectionAdapters::SybaseAdapter::ColumnWithIdentity 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Column.html">ActiveRecord::ConnectionAdapters::Column</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/rails/activerecord/lib/active_record/connection_adapters/sybase_adapter_rb.html">rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-binary_to_string">binary_to_string</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-simplified_type">simplified_type</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-string_to_binary">string_to_binary</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>identity</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-binary_to_string">
+            
+              <a name="method-c-binary_to_string"></a><b>binary_to_string</b>(value)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-binary_to_string_source')" id="l_method-c-binary_to_string_source">show</a>
+                
+              </p>
+              <div id="method-c-binary_to_string_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">binary_to_string</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-comment"># FIXME: sybase-ctlib uses separate sql method for binary columns.</span>
+  <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(name, default, sql_type = nil, nullable = nil, identity = nil, primary = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">default</span>, <span class="ruby-identifier">sql_type</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">nullable</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">identity</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">primary</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">default</span>, <span class="ruby-identifier">sql_type</span>, <span class="ruby-identifier">nullable</span>)
+  <span class="ruby-ivar">@default</span>, <span class="ruby-ivar">@identity</span>, <span class="ruby-ivar">@primary</span> = <span class="ruby-identifier">type_cast</span>(<span class="ruby-identifier">default</span>), <span class="ruby-identifier">identity</span>, <span class="ruby-identifier">primary</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-string_to_binary">
+            
+              <a name="method-c-string_to_binary"></a><b>string_to_binary</b>(value)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-string_to_binary_source')" id="l_method-c-string_to_binary_source">show</a>
+                
+              </p>
+              <div id="method-c-string_to_binary_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">string_to_binary</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-node">&quot;0x#{value.unpack(&quot;H*&quot;)[0]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-simplified_type">
+            
+              <a name="method-i-simplified_type"></a><b>simplified_type</b>(field_type)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-simplified_type_source')" id="l_method-i-simplified_type_source">show</a>
+                
+              </p>
+              <div id="method-i-simplified_type_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/connection_adapters/sybase_adapter.rb, line 94</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">simplified_type</span>(<span class="ruby-identifier">field_type</span>)
+  <span class="ruby-keyword">case</span> <span class="ruby-identifier">field_type</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rint|bigint|smallint|tinyint/</span>        <span class="ruby-keyword">then</span> <span class="ruby-value">:integer</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rfloat|double|real/</span>                  <span class="ruby-keyword">then</span> <span class="ruby-value">:float</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rdecimal|money|numeric|smallmoney/</span>   <span class="ruby-keyword">then</span> <span class="ruby-value">:decimal</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rtext|ntext/</span>                         <span class="ruby-keyword">then</span> <span class="ruby-value">:text</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rbinary|image|varbinary/</span>             <span class="ruby-keyword">then</span> <span class="ruby-value">:binary</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rchar|nchar|nvarchar|string|varchar/</span> <span class="ruby-keyword">then</span> <span class="ruby-value">:string</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rbit/</span>                                <span class="ruby-keyword">then</span> <span class="ruby-value">:boolean</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-regexp">%rdatetime|smalldatetime/</span>             <span class="ruby-keyword">then</span> <span class="ruby-value">:datetime</span>
+    <span class="ruby-keyword">else</span>                                       <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

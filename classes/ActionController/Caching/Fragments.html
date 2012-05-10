@@ -1,0 +1,474 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionController::Caching::Fragments</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActionController::Caching::Fragments 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/actionpack/lib/action_controller/caching_rb.html">rails/actionpack/lib/action_controller/caching.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Fragment caching is used for caching various blocks within templates
+without caching the entire action as a whole. This is useful when certain
+elements of an action change frequently or depend on complicated state
+while other parts rarely change or can be shared amongst multiple parties.
+The caching is doing using the cache helper available in the Action View.
+<a href="../../A.html">A</a> template with caching might look something
+like:</p>
+
+<pre>&lt;b&gt;Hello &lt;%= @name %&gt;&lt;/b&gt;
+&lt;% cache do %&gt;
+  All the topics in the system:
+  &lt;%= render :partial =&gt; &quot;topic&quot;, :collection =&gt; Topic.find(:all) %&gt;
+&lt;% end %&gt;</pre>
+
+<p>This cache will bind to the name of action that called it. So you would be
+able to invalidate it using <code>expire_fragment(:controller =&gt;
+&quot;topics&quot;, :action =&gt; &quot;list&quot;)</code> – if that was
+the controller/action used. This is not too helpful if you need to cache
+multiple fragments per action or if the action itself is cached using
+<code>caches_action</code>. So instead we should qualify the name of the
+action used with something like:</p>
+
+<pre>&lt;% cache(:action =&gt; &quot;list&quot;, :action_suffix =&gt; &quot;all_topics&quot;) do %&gt;</pre>
+
+<p>That would result in a name such as “/topics/list/all_topics”, which
+wouldn’t conflict with any action cache and neither with another fragment
+using a different suffix. Note that the URL doesn’t have to really exist or
+be callable. We’re just using the url_for system to generate unique cache
+names that we can refer to later for expirations. The expiration call for
+this example would be <code>expire_fragment(:controller =&gt;
+&quot;topics&quot;, :action =&gt; &quot;list&quot;, :action_suffix =&gt;
+&quot;all_topics&quot;)</code>.</p>
+
+<h2 id="label-Fragment+stores">Fragment stores</h2>
+
+<p>In order to use the fragment caching, you need to designate where the
+caches should be stored. This is done by assigning a fragment store of
+which there are four different kinds:</p>
+<ul><li>
+<p>FileStore: Keeps the fragments on disk in the <code>cache_path</code>,
+which works well for all types of environments and shares the fragments for
+all the web server processes running off the same application directory.</p>
+</li><li>
+<p>MemoryStore: Keeps the fragments in memory, which is fine for WEBrick and
+for <a href="../../FCGI.html">FCGI</a> (if you don’t care that each <a
+href="../../FCGI.html">FCGI</a> process holds its own fragment store). It’s
+not suitable for <a href="../../CGI.html">CGI</a> as the process is thrown
+away at the end of each request. It can potentially also take up a lot of
+memory since each process keeps all the caches in memory.</p>
+</li><li>
+<p>DRbStore: Keeps the fragments in the memory of a separate, shared DRb
+process. This works for all environments and only keeps one cache around
+for all processes, but requires that you run and manage a separate DRb
+process.</p>
+</li><li>
+<p>MemCacheStore: Works like DRbStore, but uses Danga’s MemCache instead.
+Requires the ruby-memcache library:  gem install ruby-memcache.</p>
+</li></ul>
+
+<p>Configuration examples (MemoryStore is the default):</p>
+
+<pre>ActionController::Base.fragment_cache_store = :memory_store
+ActionController::Base.fragment_cache_store = :file_store, &quot;/path/to/cache/directory&quot;
+ActionController::Base.fragment_cache_store = :drb_store, &quot;druby://localhost:9192&quot;
+ActionController::Base.fragment_cache_store = :mem_cache_store, &quot;localhost&quot;
+ActionController::Base.fragment_cache_store = MyOwnStore.new(&quot;parameter&quot;)</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-cache_erb_fragment">cache_erb_fragment</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-expire_fragment">expire_fragment</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-fragment_cache_key">fragment_cache_key</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-fragment_cache_store-3D">fragment_cache_store=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read_fragment">read_fragment</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-write_fragment">write_fragment</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-fragment_cache_store-3D">
+            
+              <a name="method-c-fragment_cache_store-3D"></a><b>fragment_cache_store=</b>(store_option)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-fragment_cache_store-3D_source')" id="l_method-c-fragment_cache_store-3D_source">show</a>
+                
+              </p>
+              <div id="method-c-fragment_cache_store-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/caching.rb, line 313</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">fragment_cache_store=</span>(<span class="ruby-identifier">store_option</span>)
+  <span class="ruby-identifier">store</span>, *<span class="ruby-identifier">parameters</span> = *([ <span class="ruby-identifier">store_option</span> ].<span class="ruby-identifier">flatten</span>)
+  <span class="ruby-identifier">@@fragment_cache_store</span> = <span class="ruby-keyword">if</span> <span class="ruby-identifier">store</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>)
+    <span class="ruby-identifier">store_class_name</span> = (<span class="ruby-identifier">store</span> <span class="ruby-operator">==</span> <span class="ruby-value">:drb_store</span> <span class="ruby-operator">?</span> <span class="ruby-string">&quot;DRbStore&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">store</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">camelize</span>)
+    <span class="ruby-identifier">store_class</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Caching</span><span class="ruby-operator">::</span><span class="ruby-constant">Fragments</span>.<span class="ruby-identifier">const_get</span>(<span class="ruby-identifier">store_class_name</span>)
+    <span class="ruby-identifier">store_class</span>.<span class="ruby-identifier">new</span>(*<span class="ruby-identifier">parameters</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">store</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-cache_erb_fragment">
+            
+              <a name="method-i-cache_erb_fragment"></a><b>cache_erb_fragment</b>(block, name = {}, options = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Called by CacheHelper#cache</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-cache_erb_fragment_source')" id="l_method-i-cache_erb_fragment_source">show</a>
+                
+              </p>
+              <div id="method-i-cache_erb_fragment_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/caching.rb, line 331</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">cache_erb_fragment</span>(<span class="ruby-identifier">block</span>, <span class="ruby-identifier">name</span> = {}, <span class="ruby-identifier">options</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">perform_caching</span> <span class="ruby-keyword">then</span> <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>; <span class="ruby-keyword">return</span> <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">buffer</span> = <span class="ruby-identifier">eval</span>(<span class="ruby-string">&quot;_erbout&quot;</span>, <span class="ruby-identifier">block</span>.<span class="ruby-identifier">binding</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">cache</span> = <span class="ruby-identifier">read_fragment</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">concat</span>(<span class="ruby-identifier">cache</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">pos</span> = <span class="ruby-identifier">buffer</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-identifier">block</span>.<span class="ruby-identifier">call</span>
+    <span class="ruby-identifier">write_fragment</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">buffer</span>[<span class="ruby-identifier">pos</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>], <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-expire_fragment">
+            
+              <a name="method-i-expire_fragment"></a><b>expire_fragment</b>(name, options = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="../../Name.html">Name</a> can take one of three forms:</p>
+<ul><li>
+<p>String: This would normally take the form of a path like “pages/45/notes”</p>
+</li><li>
+<p>Hash: Is treated as an implicit call to url_for, like { :controller =&gt;
+“pages”, :action =&gt; “notes”, :id =&gt; 45 }</p>
+</li><li>
+<p>Regexp: Will destroy all the matched fragments, example:</p>
+
+<pre>%r{pages/\d*/notes}</pre>
+
+<p>Ensure you do not specify start and finish in the regex (^$) because the
+actual filename matched looks like ./cache/filename/path.cache Regexp
+expiration is not supported on caches which can’t iterate over all keys,
+such as memcached.</p>
+</li></ul>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-expire_fragment_source')" id="l_method-i-expire_fragment_source">show</a>
+                
+              </p>
+              <div id="method-i-expire_fragment_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/caching.rb, line 373</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">expire_fragment</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">perform_caching</span>
+
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">fragment_cache_key</span>(<span class="ruby-identifier">name</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">key</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Regexp</span>)
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">benchmark</span> <span class="ruby-node">&quot;Expired fragments matching: #{key.source}&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">fragment_cache_store</span>.<span class="ruby-identifier">delete_matched</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">benchmark</span> <span class="ruby-node">&quot;Expired fragment: #{key}&quot;</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">fragment_cache_store</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">options</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-fragment_cache_key">
+            
+              <a name="method-i-fragment_cache_key"></a><b>fragment_cache_key</b>(name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-fragment_cache_key_source')" id="l_method-i-fragment_cache_key_source">show</a>
+                
+              </p>
+              <div id="method-i-fragment_cache_key_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/caching.rb, line 326</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">fragment_cache_key</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-identifier">name</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">url_for</span>(<span class="ruby-identifier">name</span>).<span class="ruby-identifier">split</span>(<span class="ruby-string">&quot;://&quot;</span>).<span class="ruby-identifier">last</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read_fragment">
+            
+              <a name="method-i-read_fragment"></a><b>read_fragment</b>(name, options = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_fragment_source')" id="l_method-i-read_fragment_source">show</a>
+                
+              </p>
+              <div id="method-i-read_fragment_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/caching.rb, line 355</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read_fragment</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">options</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">perform_caching</span>
+
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">fragment_cache_key</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">benchmark</span> <span class="ruby-node">&quot;Fragment read: #{key}&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">fragment_cache_store</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-write_fragment">
+            
+              <a name="method-i-write_fragment"></a><b>write_fragment</b>(name, content, options = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-write_fragment_source')" id="l_method-i-write_fragment_source">show</a>
+                
+              </p>
+              <div id="method-i-write_fragment_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/caching.rb, line 345</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">write_fragment</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">content</span>, <span class="ruby-identifier">options</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">perform_caching</span>
+
+  <span class="ruby-identifier">key</span> = <span class="ruby-identifier">fragment_cache_key</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">benchmark</span> <span class="ruby-node">&quot;Cached fragment: #{key}&quot;</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">fragment_cache_store</span>.<span class="ruby-identifier">write</span>(<span class="ruby-identifier">key</span>, <span class="ruby-identifier">content</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">content</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

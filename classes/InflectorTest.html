@@ -1,0 +1,1171 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>InflectorTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            InflectorTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/test/inflector_test_rb.html">rails/activesupport/test/inflector_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_camelize">test_camelize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_camelize_with_module">test_camelize_with_module</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_classify">test_classify</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_classify_with_leading_schema_name">test_classify_with_leading_schema_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_classify_with_symbol">test_classify_with_symbol</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_constantize">test_constantize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_constantize_doesnt_look_in_parent">test_constantize_doesnt_look_in_parent</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_dasherize">test_dasherize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_demodulize">test_demodulize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_foreign_key">test_foreign_key</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_humanize">test_humanize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_ordinal">test_ordinal</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_pluralize_plurals">test_pluralize_plurals</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_tableize">test_tableize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_underscore">test_underscore</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_underscore_as_reverse_of_dasherize">test_underscore_as_reverse_of_dasherize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_underscore_to_lower_camel">test_underscore_to_lower_camel</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_underscore_with_slashes">test_underscore_with_slashes</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">SingularToPlural</td>
+            <td>=</td>
+            <td class="attr-value">{
+&quot;search&quot;      =&gt; &quot;searches&quot;,
+&quot;switch&quot;      =&gt; &quot;switches&quot;,
+&quot;fix&quot;         =&gt; &quot;fixes&quot;,
+&quot;box&quot;         =&gt; &quot;boxes&quot;,
+&quot;process&quot;     =&gt; &quot;processes&quot;,
+&quot;address&quot;     =&gt; &quot;addresses&quot;,
+&quot;case&quot;        =&gt; &quot;cases&quot;,
+&quot;stack&quot;       =&gt; &quot;stacks&quot;,
+&quot;wish&quot;        =&gt; &quot;wishes&quot;,
+&quot;fish&quot;        =&gt; &quot;fish&quot;,
+
+&quot;category&quot;    =&gt; &quot;categories&quot;,
+&quot;query&quot;       =&gt; &quot;queries&quot;,
+&quot;ability&quot;     =&gt; &quot;abilities&quot;,
+&quot;agency&quot;      =&gt; &quot;agencies&quot;,
+&quot;movie&quot;       =&gt; &quot;movies&quot;,
+
+&quot;archive&quot;     =&gt; &quot;archives&quot;,
+
+&quot;index&quot;       =&gt; &quot;indices&quot;,
+
+&quot;wife&quot;        =&gt; &quot;wives&quot;,
+&quot;safe&quot;        =&gt; &quot;saves&quot;,
+&quot;half&quot;        =&gt; &quot;halves&quot;,
+
+&quot;move&quot;        =&gt; &quot;moves&quot;,
+
+&quot;salesperson&quot; =&gt; &quot;salespeople&quot;,
+&quot;person&quot;      =&gt; &quot;people&quot;,
+
+&quot;spokesman&quot;   =&gt; &quot;spokesmen&quot;,
+&quot;man&quot;         =&gt; &quot;men&quot;,
+&quot;woman&quot;       =&gt; &quot;women&quot;,
+
+&quot;basis&quot;       =&gt; &quot;bases&quot;,
+&quot;diagnosis&quot;   =&gt; &quot;diagnoses&quot;,
+
+&quot;datum&quot;       =&gt; &quot;data&quot;,
+&quot;medium&quot;      =&gt; &quot;media&quot;,
+&quot;analysis&quot;    =&gt; &quot;analyses&quot;,
+
+&quot;node_child&quot;  =&gt; &quot;node_children&quot;,
+&quot;child&quot;       =&gt; &quot;children&quot;,
+
+&quot;experience&quot;  =&gt; &quot;experiences&quot;,
+&quot;day&quot;         =&gt; &quot;days&quot;,
+
+&quot;comment&quot;     =&gt; &quot;comments&quot;,
+&quot;foobar&quot;      =&gt; &quot;foobars&quot;,
+&quot;newsletter&quot;  =&gt; &quot;newsletters&quot;,
+
+&quot;old_news&quot;    =&gt; &quot;old_news&quot;,
+&quot;news&quot;        =&gt; &quot;news&quot;,
+
+&quot;series&quot;      =&gt; &quot;series&quot;,
+&quot;species&quot;     =&gt; &quot;species&quot;,
+
+&quot;quiz&quot;        =&gt; &quot;quizzes&quot;,
+
+&quot;perspective&quot; =&gt; &quot;perspectives&quot;,
+
+&quot;ox&quot;          =&gt; &quot;oxen&quot;,
+&quot;photo&quot;       =&gt; &quot;photos&quot;,
+&quot;buffalo&quot;     =&gt; &quot;buffaloes&quot;,
+&quot;tomato&quot;      =&gt; &quot;tomatoes&quot;,
+&quot;dwarf&quot;       =&gt; &quot;dwarves&quot;,
+&quot;elf&quot;         =&gt; &quot;elves&quot;,
+&quot;information&quot; =&gt; &quot;information&quot;,
+&quot;equipment&quot;   =&gt; &quot;equipment&quot;,
+&quot;bus&quot;         =&gt; &quot;buses&quot;,
+&quot;status&quot;      =&gt; &quot;statuses&quot;,
+&quot;status_code&quot; =&gt; &quot;status_codes&quot;,
+&quot;mouse&quot;       =&gt; &quot;mice&quot;,
+
+&quot;louse&quot;       =&gt; &quot;lice&quot;,
+&quot;house&quot;       =&gt; &quot;houses&quot;,
+&quot;octopus&quot;     =&gt; &quot;octopi&quot;,
+&quot;virus&quot;       =&gt; &quot;viri&quot;,
+&quot;alias&quot;       =&gt; &quot;aliases&quot;,
+&quot;portfolio&quot;   =&gt; &quot;portfolios&quot;,
+
+&quot;vertex&quot;      =&gt; &quot;vertices&quot;,
+&quot;matrix&quot;      =&gt; &quot;matrices&quot;,
+
+&quot;axis&quot;        =&gt; &quot;axes&quot;,
+&quot;testis&quot;      =&gt; &quot;testes&quot;,
+&quot;crisis&quot;      =&gt; &quot;crises&quot;,
+
+&quot;rice&quot;        =&gt; &quot;rice&quot;,
+&quot;shoe&quot;        =&gt; &quot;shoes&quot;,
+
+&quot;horse&quot;       =&gt; &quot;horses&quot;,
+&quot;prize&quot;       =&gt; &quot;prizes&quot;,
+&quot;edge&quot;        =&gt; &quot;edges&quot;
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CamelToUnderscore</td>
+            <td>=</td>
+            <td class="attr-value">{
+&quot;Product&quot;               =&gt; &quot;product&quot;,
+&quot;SpecialGuest&quot;          =&gt; &quot;special_guest&quot;,
+&quot;ApplicationController&quot; =&gt; &quot;application_controller&quot;,
+&quot;Area51Controller&quot;      =&gt; &quot;area51_controller&quot;
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">UnderscoreToLowerCamel</td>
+            <td>=</td>
+            <td class="attr-value">{
+&quot;product&quot;                =&gt; &quot;product&quot;,
+&quot;special_guest&quot;          =&gt; &quot;specialGuest&quot;,
+&quot;application_controller&quot; =&gt; &quot;applicationController&quot;,
+&quot;area51_controller&quot;      =&gt; &quot;area51Controller&quot;
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CamelToUnderscoreWithoutReverse</td>
+            <td>=</td>
+            <td class="attr-value">{
+&quot;HTMLTidy&quot;              =&gt; &quot;html_tidy&quot;,
+&quot;HTMLTidyGenerator&quot;     =&gt; &quot;html_tidy_generator&quot;,
+&quot;FreeBSD&quot;               =&gt; &quot;free_bsd&quot;,
+&quot;HTML&quot;                  =&gt; &quot;html&quot;,
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CamelWithModuleToUnderscoreWithSlash</td>
+            <td>=</td>
+            <td class="attr-value">{
+&quot;Admin::Product&quot; =&gt; &quot;admin/product&quot;,
+&quot;Users::Commission::Department&quot; =&gt; &quot;users/commission/department&quot;,
+&quot;UsersSection::CommissionDepartment&quot; =&gt; &quot;users_section/commission_department&quot;,
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ClassNameToForeignKeyWithUnderscore</td>
+            <td>=</td>
+            <td class="attr-value">{
+&quot;Person&quot; =&gt; &quot;person_id&quot;,
+&quot;MyApplication::Billing::Account&quot; =&gt; &quot;account_id&quot;
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ClassNameToForeignKeyWithoutUnderscore</td>
+            <td>=</td>
+            <td class="attr-value">{
+&quot;Person&quot; =&gt; &quot;personid&quot;,
+&quot;MyApplication::Billing::Account&quot; =&gt; &quot;accountid&quot;
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ClassNameToTableName</td>
+            <td>=</td>
+            <td class="attr-value">{
+&quot;PrimarySpokesman&quot; =&gt; &quot;primary_spokesmen&quot;,
+&quot;NodeChild&quot;        =&gt; &quot;node_children&quot;
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">UnderscoreToHuman</td>
+            <td>=</td>
+            <td class="attr-value">{
+&quot;employee_salary&quot; =&gt; &quot;Employee salary&quot;,
+&quot;employee_id&quot;     =&gt; &quot;Employee&quot;,
+&quot;underground&quot;     =&gt; &quot;Underground&quot;
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MixtureToTitleCase</td>
+            <td>=</td>
+            <td class="attr-value">{
+'active_record'       =&gt; 'Active Record',
+'ActiveRecord'        =&gt; 'Active Record',
+'action web service'  =&gt; 'Action Web Service',
+'Action Web Service'  =&gt; 'Action Web Service',
+'Action web service'  =&gt; 'Action Web Service',
+'actionwebservice'    =&gt; 'Actionwebservice',
+'Actionwebservice'    =&gt; 'Actionwebservice'
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">OrdinalNumbers</td>
+            <td>=</td>
+            <td class="attr-value">{
+&quot;0&quot; =&gt; &quot;0th&quot;,
+&quot;1&quot; =&gt; &quot;1st&quot;,
+&quot;2&quot; =&gt; &quot;2nd&quot;,
+&quot;3&quot; =&gt; &quot;3rd&quot;,
+&quot;4&quot; =&gt; &quot;4th&quot;,
+&quot;5&quot; =&gt; &quot;5th&quot;,
+&quot;6&quot; =&gt; &quot;6th&quot;,
+&quot;7&quot; =&gt; &quot;7th&quot;,
+&quot;8&quot; =&gt; &quot;8th&quot;,
+&quot;9&quot; =&gt; &quot;9th&quot;,
+&quot;10&quot; =&gt; &quot;10th&quot;,
+&quot;11&quot; =&gt; &quot;11th&quot;,
+&quot;12&quot; =&gt; &quot;12th&quot;,
+&quot;13&quot; =&gt; &quot;13th&quot;,
+&quot;14&quot; =&gt; &quot;14th&quot;,
+&quot;20&quot; =&gt; &quot;20th&quot;,
+&quot;21&quot; =&gt; &quot;21st&quot;,
+&quot;22&quot; =&gt; &quot;22nd&quot;,
+&quot;23&quot; =&gt; &quot;23rd&quot;,
+&quot;24&quot; =&gt; &quot;24th&quot;,
+&quot;100&quot; =&gt; &quot;100th&quot;,
+&quot;101&quot; =&gt; &quot;101st&quot;,
+&quot;102&quot; =&gt; &quot;102nd&quot;,
+&quot;103&quot; =&gt; &quot;103rd&quot;,
+&quot;104&quot; =&gt; &quot;104th&quot;,
+&quot;110&quot; =&gt; &quot;110th&quot;,
+&quot;111&quot; =&gt; &quot;111th&quot;,
+&quot;112&quot; =&gt; &quot;112th&quot;,
+&quot;113&quot; =&gt; &quot;113th&quot;,
+&quot;1000&quot; =&gt; &quot;1000th&quot;,
+&quot;1001&quot; =&gt; &quot;1001st&quot;
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">UnderscoresToDashes</td>
+            <td>=</td>
+            <td class="attr-value">{
+&quot;street&quot;                =&gt; &quot;street&quot;,
+&quot;street_address&quot;        =&gt; &quot;street-address&quot;,
+&quot;person_street_address&quot; =&gt; &quot;person-street-address&quot;
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">Irregularities</td>
+            <td>=</td>
+            <td class="attr-value">{
+'person' =&gt; 'people',
+'man'    =&gt; 'men',
+'child'  =&gt; 'children',
+'sex'    =&gt; 'sexes',
+'move'   =&gt; 'moves',
+}</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_camelize">
+            
+              <a name="method-i-test_camelize"></a><b>test_camelize</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_camelize_source')" id="l_method-i-test_camelize_source">show</a>
+                
+              </p>
+              <div id="method-i-test_camelize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 239</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_camelize</span>
+  <span class="ruby-constant">CamelToUnderscore</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">camel</span>, <span class="ruby-identifier">underscore</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">camel</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">camelize</span>(<span class="ruby-identifier">underscore</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_camelize_with_module">
+            
+              <a name="method-i-test_camelize_with_module"></a><b>test_camelize_with_module</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_camelize_with_module_source')" id="l_method-i-test_camelize_with_module_source">show</a>
+                
+              </p>
+              <div id="method-i-test_camelize_with_module_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 254</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_camelize_with_module</span>
+  <span class="ruby-constant">CamelWithModuleToUnderscoreWithSlash</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">camel</span>, <span class="ruby-identifier">underscore</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">camel</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">camelize</span>(<span class="ruby-identifier">underscore</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_classify">
+            
+              <a name="method-i-test_classify"></a><b>test_classify</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_classify_source')" id="l_method-i-test_classify_source">show</a>
+                
+              </p>
+              <div id="method-i-test_classify_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 286</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_classify</span>
+  <span class="ruby-constant">ClassNameToTableName</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">class_name</span>, <span class="ruby-identifier">table_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">class_name</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">classify</span>(<span class="ruby-identifier">table_name</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_classify_with_leading_schema_name">
+            
+              <a name="method-i-test_classify_with_leading_schema_name"></a><b>test_classify_with_leading_schema_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_classify_with_leading_schema_name_source')" id="l_method-i-test_classify_with_leading_schema_name_source">show</a>
+                
+              </p>
+              <div id="method-i-test_classify_with_leading_schema_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 298</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_classify_with_leading_schema_name</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'FooBar'</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">classify</span>(<span class="ruby-string">'schema.foo_bar'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_classify_with_symbol">
+            
+              <a name="method-i-test_classify_with_symbol"></a><b>test_classify_with_symbol</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_classify_with_symbol_source')" id="l_method-i-test_classify_with_symbol_source">show</a>
+                
+              </p>
+              <div id="method-i-test_classify_with_symbol_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 292</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_classify_with_symbol</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'FooBar'</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">classify</span>(<span class="ruby-value">:foo_bar</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_constantize">
+            
+              <a name="method-i-test_constantize"></a><b>test_constantize</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_constantize_source')" id="l_method-i-test_constantize_source">show</a>
+                
+              </p>
+              <div id="method-i-test_constantize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 308</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_constantize</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Ace</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span><span class="ruby-operator">::</span><span class="ruby-constant">Case</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">constantize</span>(<span class="ruby-string">&quot;Ace::Base::Case&quot;</span>) }
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Ace</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span><span class="ruby-operator">::</span><span class="ruby-constant">Case</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">constantize</span>(<span class="ruby-string">&quot;::Ace::Base::Case&quot;</span>) }
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">InflectorTest</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">constantize</span>(<span class="ruby-string">&quot;InflectorTest&quot;</span>) }
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">InflectorTest</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">constantize</span>(<span class="ruby-string">&quot;::InflectorTest&quot;</span>) }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">NameError</span>) { <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">constantize</span>(<span class="ruby-string">&quot;UnknownClass&quot;</span>) }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">NameError</span>) { <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">constantize</span>(<span class="ruby-string">&quot;An invalid string&quot;</span>) }
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">NameError</span>) { <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">constantize</span>(<span class="ruby-string">&quot;InvalidClass\n&quot;</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_constantize_doesnt_look_in_parent">
+            
+              <a name="method-i-test_constantize_doesnt_look_in_parent"></a><b>test_constantize_doesnt_look_in_parent</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_constantize_doesnt_look_in_parent_source')" id="l_method-i-test_constantize_doesnt_look_in_parent_source">show</a>
+                
+              </p>
+              <div id="method-i-test_constantize_doesnt_look_in_parent_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_constantize_doesnt_look_in_parent</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">NameError</span>) { <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">constantize</span>(<span class="ruby-string">&quot;Ace::Base::InflectorTest&quot;</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_dasherize">
+            
+              <a name="method-i-test_dasherize"></a><b>test_dasherize</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_dasherize_source')" id="l_method-i-test_dasherize_source">show</a>
+                
+              </p>
+              <div id="method-i-test_dasherize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 328</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_dasherize</span>
+  <span class="ruby-constant">UnderscoresToDashes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">underscored</span>, <span class="ruby-identifier">dasherized</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">dasherized</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">dasherize</span>(<span class="ruby-identifier">underscored</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_demodulize">
+            
+              <a name="method-i-test_demodulize"></a><b>test_demodulize</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_demodulize_source')" id="l_method-i-test_demodulize_source">show</a>
+                
+              </p>
+              <div id="method-i-test_demodulize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 266</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_demodulize</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;Account&quot;</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">demodulize</span>(<span class="ruby-string">&quot;MyApplication::Billing::Account&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_foreign_key">
+            
+              <a name="method-i-test_foreign_key"></a><b>test_foreign_key</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_foreign_key_source')" id="l_method-i-test_foreign_key_source">show</a>
+                
+              </p>
+              <div id="method-i-test_foreign_key_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 270</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_foreign_key</span>
+  <span class="ruby-constant">ClassNameToForeignKeyWithUnderscore</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span>, <span class="ruby-identifier">foreign_key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">foreign_key</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">foreign_key</span>(<span class="ruby-identifier">klass</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">ClassNameToForeignKeyWithoutUnderscore</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">klass</span>, <span class="ruby-identifier">foreign_key</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">foreign_key</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">foreign_key</span>(<span class="ruby-identifier">klass</span>, <span class="ruby-keyword">false</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_humanize">
+            
+              <a name="method-i-test_humanize"></a><b>test_humanize</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_humanize_source')" id="l_method-i-test_humanize_source">show</a>
+                
+              </p>
+              <div id="method-i-test_humanize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 302</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_humanize</span>
+  <span class="ruby-constant">UnderscoreToHuman</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">underscore</span>, <span class="ruby-identifier">human</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">human</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">humanize</span>(<span class="ruby-identifier">underscore</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_ordinal">
+            
+              <a name="method-i-test_ordinal"></a><b>test_ordinal</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_ordinal_source')" id="l_method-i-test_ordinal_source">show</a>
+                
+              </p>
+              <div id="method-i-test_ordinal_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 322</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_ordinal</span>
+  <span class="ruby-constant">OrdinalNumbers</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">number</span>, <span class="ruby-identifier">ordinalized</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">ordinalized</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">ordinalize</span>(<span class="ruby-identifier">number</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_pluralize_plurals">
+            
+              <a name="method-i-test_pluralize_plurals"></a><b>test_pluralize_plurals</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_pluralize_plurals_source')" id="l_method-i-test_pluralize_plurals_source">show</a>
+                
+              </p>
+              <div id="method-i-test_pluralize_plurals_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_pluralize_plurals</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;plurals&quot;</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">pluralize</span>(<span class="ruby-string">&quot;plurals&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;Plurals&quot;</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">pluralize</span>(<span class="ruby-string">&quot;Plurals&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_tableize">
+            
+              <a name="method-i-test_tableize"></a><b>test_tableize</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_tableize_source')" id="l_method-i-test_tableize_source">show</a>
+                
+              </p>
+              <div id="method-i-test_tableize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 280</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_tableize</span>
+  <span class="ruby-constant">ClassNameToTableName</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">class_name</span>, <span class="ruby-identifier">table_name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">table_name</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">tableize</span>(<span class="ruby-identifier">class_name</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_underscore">
+            
+              <a name="method-i-test_underscore"></a><b>test_underscore</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_underscore_source')" id="l_method-i-test_underscore_source">show</a>
+                
+              </p>
+              <div id="method-i-test_underscore_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_underscore</span>
+  <span class="ruby-constant">CamelToUnderscore</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">camel</span>, <span class="ruby-identifier">underscore</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">underscore</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">underscore</span>(<span class="ruby-identifier">camel</span>))
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">CamelToUnderscoreWithoutReverse</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">camel</span>, <span class="ruby-identifier">underscore</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">underscore</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">underscore</span>(<span class="ruby-identifier">camel</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_underscore_as_reverse_of_dasherize">
+            
+              <a name="method-i-test_underscore_as_reverse_of_dasherize"></a><b>test_underscore_as_reverse_of_dasherize</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_underscore_as_reverse_of_dasherize_source')" id="l_method-i-test_underscore_as_reverse_of_dasherize_source">show</a>
+                
+              </p>
+              <div id="method-i-test_underscore_as_reverse_of_dasherize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 334</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_underscore_as_reverse_of_dasherize</span>
+  <span class="ruby-constant">UnderscoresToDashes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">underscored</span>, <span class="ruby-identifier">dasherized</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">underscored</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">underscore</span>(<span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">dasherize</span>(<span class="ruby-identifier">underscored</span>)))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_underscore_to_lower_camel">
+            
+              <a name="method-i-test_underscore_to_lower_camel"></a><b>test_underscore_to_lower_camel</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_underscore_to_lower_camel_source')" id="l_method-i-test_underscore_to_lower_camel_source">show</a>
+                
+              </p>
+              <div id="method-i-test_underscore_to_lower_camel_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 340</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_underscore_to_lower_camel</span>
+  <span class="ruby-constant">UnderscoreToLowerCamel</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">underscored</span>, <span class="ruby-identifier">lower_camel</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">lower_camel</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">camelize</span>(<span class="ruby-identifier">underscored</span>, <span class="ruby-keyword">false</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_underscore_with_slashes">
+            
+              <a name="method-i-test_underscore_with_slashes"></a><b>test_underscore_with_slashes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_underscore_with_slashes_source')" id="l_method-i-test_underscore_with_slashes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_underscore_with_slashes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/inflector_test.rb, line 260</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_underscore_with_slashes</span>
+  <span class="ruby-constant">CamelWithModuleToUnderscoreWithSlash</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">camel</span>, <span class="ruby-identifier">underscore</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span>(<span class="ruby-identifier">underscore</span>, <span class="ruby-constant">Inflector</span>.<span class="ruby-identifier">underscore</span>(<span class="ruby-identifier">camel</span>))
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,283 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionWebService::Scaffolding::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActionWebService::Scaffolding::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/actionwebservice/lib/action_web_service/scaffolding_rb.html">rails/actionwebservice/lib/action_web_service/scaffolding.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Web service invocation scaffolding provides a way to quickly invoke web
+service methods in a controller. The generated scaffold actions have
+default views to let you enter the method parameters and view the results.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ApiController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionController</span>
+  <span class="ruby-identifier">web_service_scaffold</span> :<span class="ruby-identifier">invoke</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>This example generates an <code>invoke</code> action in the
+<code>ApiController</code> that you can navigate to from your browser,
+select the <a href="../API.html">API</a> method, enter its parameters, and
+perform the invocation.</p>
+
+<p>If you want to customize the default views, create the following views in
+“app/views”:</p>
+<ul><li>
+<p><code>action_name/methods.rhtml</code></p>
+</li><li>
+<p><code>action_name/parameters.rhtml</code></p>
+</li><li>
+<p><code>action_name/result.rhtml</code></p>
+</li><li>
+<p><code>action_name/layout.rhtml</code></p>
+</li></ul>
+
+<p>Where <code>action_name</code> is the name of the action you gave to <a
+href="ClassMethods.html#method-i-web_service_scaffold">#web_service_scaffold</a>.</p>
+
+<p>You can use the default views in
+<code>RAILS_DIR/lib/action_web_service/templates/scaffolds</code> as a
+guide.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-web_service_scaffold">web_service_scaffold</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-web_service_scaffold">
+            
+              <a name="method-i-web_service_scaffold"></a><b>web_service_scaffold</b>(action_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Generates web service invocation scaffolding for the current controller.
+The given action name can then be used as the entry point for invoking <a
+href="../API.html">API</a> methods from a web browser.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-web_service_scaffold_source')" id="l_method-i-web_service_scaffold_source">show</a>
+                
+              </p>
+              <div id="method-i-web_service_scaffold_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/scaffolding.rb, line 40</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">web_service_scaffold</span>(<span class="ruby-identifier">action_name</span>)
+        <span class="ruby-identifier">add_template_helper</span>(<span class="ruby-constant">Helpers</span>)
+        <span class="ruby-identifier">module_eval</span> <span class="ruby-string">&quot;          def #{action_name}
+            if request.method == :get
+              setup_invocation_assigns
+              render_invocation_scaffold 'methods'
+            end
+          end
+
+          def #{action_name}_method_params
+            if request.method == :get
+              setup_invocation_assigns
+              render_invocation_scaffold 'parameters'
+            end
+          end
+
+          def #{action_name}_submit
+            if request.method == :post
+              setup_invocation_assigns
+              protocol_name = params['protocol'] ? params['protocol'].to_sym : :soap
+              case protocol_name
+              when :soap
+                @protocol = Protocol::Soap::SoapProtocol.create(self)
+              when :xmlrpc
+                @protocol = Protocol::XmlRpc::XmlRpcProtocol.create(self)
+              end
+              bm = Benchmark.measure do
+                @protocol.register_api(@scaffold_service.api)
+                post_params = params['method_params'] ? params['method_params'].dup : nil
+                params = []
+                @scaffold_method.expects.each_with_index do |spec, i|
+                  params &lt;&lt; post_params[i.to_s]                                            
+                end if @scaffold_method.expects
+                params = @scaffold_method.cast_expects(params)
+                method_name = public_method_name(@scaffold_service.name, @scaffold_method.public_name)
+                @method_request_xml = @protocol.encode_request(method_name, params, @scaffold_method.expects)
+                new_request = @protocol.encode_action_pack_request(@scaffold_service.name, @scaffold_method.public_name, @method_request_xml)
+                prepare_request(new_request, @scaffold_service.name, @scaffold_method.public_name)
+                self.request = new_request
+                if @scaffold_container.dispatching_mode != :direct
+                  request.parameters['action'] = @scaffold_service.name
+                end
+                dispatch_web_service_request
+                @method_response_xml = response.body
+                method_name, obj = @protocol.decode_response(@method_response_xml)
+                return if handle_invocation_exception(obj)
+                @method_return_value = @scaffold_method.cast_returns(obj)
+              end
+              @method_elapsed = bm.real
+              add_instance_variables_to_assigns
+              reset_invocation_response
+              render_invocation_scaffold 'result'
+            end
+          end
+
+          private
+            def setup_invocation_assigns
+              @scaffold_class = self.class
+              @scaffold_action_name = &quot;#{action_name}&quot;
+              @scaffold_container = WebServiceModel::Container.new(self)
+              if params['service'] &amp;&amp; params['method']
+                @scaffold_service = @scaffold_container.services.find{ |x| x.name == params['service'] }
+                @scaffold_method = @scaffold_service.api_methods[params['method']]
+              end
+              add_instance_variables_to_assigns
+            end
+
+            def render_invocation_scaffold(action)
+              customized_template = &quot;\#{self.class.controller_path}/#{action_name}/\#{action}&quot;
+              default_template = scaffold_path(action)
+              if template_exists?(customized_template)
+                content = @template.render_file(customized_template)
+              else
+                content = @template.render_file(default_template, false)
+              end
+              @template.instance_variable_set(&quot;@content_for_layout&quot;, content)
+              if self.active_layout.nil?
+                render_file(scaffold_path(&quot;layout&quot;))
+              else
+                render_file(self.active_layout, &quot;200 OK&quot;, true)
+              end
+            end
+
+            def scaffold_path(template_name)
+              File.dirname(__FILE__) + &quot;/templates/scaffolds/&quot; + template_name + &quot;.rhtml&quot;
+            end
+
+            def reset_invocation_response
+              erase_render_results
+              response.headers = ::ActionController::AbstractResponse::DEFAULT_HEADERS.merge(&quot;cookie&quot; =&gt; [])
+            end
+
+            def public_method_name(service_name, method_name)
+              if web_service_dispatching_mode == :layered &amp;&amp; @protocol.is_a?(ActionWebService::Protocol::XmlRpc::XmlRpcProtocol)
+                service_name + '.' + method_name
+              else
+                method_name
+              end
+            end
+
+            def prepare_request(new_request, service_name, method_name)
+              new_request.parameters.update(request.parameters)
+              request.env.each{ |k, v| new_request.env[k] = v unless new_request.env.has_key?(k) }
+              if web_service_dispatching_mode == :layered &amp;&amp; @protocol.is_a?(ActionWebService::Protocol::Soap::SoapProtocol)
+                new_request.env['HTTP_SOAPACTION'] = &quot;/\#{controller_name()}/\#{service_name}/\#{method_name}&quot;
+              end
+            end
+
+            def handle_invocation_exception(obj)
+              exception = nil
+              if obj.respond_to?(:detail) &amp;&amp; obj.detail.respond_to?(:cause) &amp;&amp; obj.detail.cause.is_a?(Exception)
+                exception = obj.detail.cause
+              elsif obj.is_a?(XMLRPC::FaultException)
+                exception = obj
+              end
+              return unless exception
+              reset_invocation_response
+              rescue_action(exception)
+              true
+            end
+&quot;</span>, <span class="ruby-keyword">__FILE__</span>, <span class="ruby-keyword">__LINE__</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>
+      <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

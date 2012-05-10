@@ -1,0 +1,459 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Killer</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Killer 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/railties/lib/commands/process/reaper_rb.html">rails/railties/lib/commands/process/reaper.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-graceful">graceful</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>K</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-kill">kill</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-process">process</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-process">process</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-reload">reload</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-restart">restart</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-usr1">usr1</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-graceful">
+            
+              <a name="method-c-graceful"></a><b>graceful</b>(pid)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Forces the (rails) application to gracefully terminate by sending a
+<code>TERM</code> signal to the process.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-graceful_source')" id="l_method-c-graceful_source">show</a>
+                
+              </p>
+              <div id="method-c-graceful_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/process/reaper.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">graceful</span>(<span class="ruby-identifier">pid</span>)
+  <span class="ruby-node">%xkill -s TERM #{pid}`</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-kill">
+            
+              <a name="method-c-kill"></a><b>kill</b>(pid)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Forces the (rails) application to terminate immediately by sending a -9
+signal to the process.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-kill_source')" id="l_method-c-kill_source">show</a>
+                
+              </p>
+              <div id="method-c-kill_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/process/reaper.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">kill</span>(<span class="ruby-identifier">pid</span>)
+  <span class="ruby-node">%xkill -9 #{pid}`</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(pid_path, pattern, keyword=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/process/reaper.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">pid_path</span>, <span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">keyword</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@pid_path</span>, <span class="ruby-ivar">@pattern</span>, <span class="ruby-ivar">@keyword</span> = <span class="ruby-identifier">pid_path</span>, <span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">keyword</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-process">
+            
+              <a name="method-c-process"></a><b>process</b>(action, pid_path, pattern, keyword)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Searches for all processes matching the given keywords, and then invokes a
+specific action on each of them. This is useful for (e.g.) reloading a set
+of processes:</p>
+
+<pre>Killer.process(:reload, &quot;/tmp/pids&quot;, &quot;dispatcher.*.pid&quot;)</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-process_source')" id="l_method-c-process_source">show</a>
+                
+              </p>
+              <div id="method-c-process_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/process/reaper.rb, line 14</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">process</span>(<span class="ruby-identifier">action</span>, <span class="ruby-identifier">pid_path</span>, <span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">keyword</span>)
+  <span class="ruby-identifier">new</span>(<span class="ruby-identifier">pid_path</span>, <span class="ruby-identifier">pattern</span>, <span class="ruby-identifier">keyword</span>).<span class="ruby-identifier">process</span>(<span class="ruby-identifier">action</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-reload">
+            
+              <a name="method-c-reload"></a><b>reload</b>(pid)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Forces the (rails) application to reload by sending a <code>HUP</code>
+signal to the process.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-reload_source')" id="l_method-c-reload_source">show</a>
+                
+              </p>
+              <div id="method-c-reload_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/process/reaper.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reload</span>(<span class="ruby-identifier">pid</span>)
+  <span class="ruby-node">%xkill -s HUP #{pid}`</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-restart">
+            
+              <a name="method-c-restart"></a><b>restart</b>(pid)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Force the (rails) application to restart by sending a <code>USR2</code>
+signal to the process.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-restart_source')" id="l_method-c-restart_source">show</a>
+                
+              </p>
+              <div id="method-c-restart_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/process/reaper.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">restart</span>(<span class="ruby-identifier">pid</span>)
+  <span class="ruby-node">%xkill -s USR2 #{pid}`</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-usr1">
+            
+              <a name="method-c-usr1"></a><b>usr1</b>(pid)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Send a <code>USR1</code> signal to the process.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-usr1_source')" id="l_method-c-usr1_source">show</a>
+                
+              </p>
+              <div id="method-c-usr1_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/process/reaper.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">usr1</span>(<span class="ruby-identifier">pid</span>)
+  <span class="ruby-node">%xkill -s USR1 #{pid}`</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-process">
+            
+              <a name="method-i-process"></a><b>process</b>(action)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-process_source')" id="l_method-i-process_source">show</a>
+                
+              </p>
+              <div id="method-i-process_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/commands/process/reaper.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">process</span>(<span class="ruby-identifier">action</span>)
+  <span class="ruby-identifier">pids</span> = <span class="ruby-identifier">find_processes</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pids</span>.<span class="ruby-identifier">empty?</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;Couldn't find any pid file in '#{@pid_path}' matching '#{@pattern}'&quot;</span>
+    <span class="ruby-identifier">warn</span> <span class="ruby-node">&quot;(also looked for processes matching #{@keyword.inspect})&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@keyword</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">pids</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pid</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;#{action.capitalize}ing #{pid}&quot;</span>
+      <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">action</span>, <span class="ruby-identifier">pid</span>)
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-identifier">delete_pid_files</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">terminating?</span>(<span class="ruby-identifier">action</span>)
+  <span class="ruby-keyword">end</span>      
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

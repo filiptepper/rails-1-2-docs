@@ -1,0 +1,664 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TC_DispatcherActionControllerSoap</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TC_DispatcherActionControllerSoap 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionwebservice/test/dispatcher_action_controller_soap_test_rb.html">rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-ensure_valid_wsdl">ensure_valid_wsdl</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ensure_valid_wsdl_action">ensure_valid_wsdl_action</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-ensure_valid_wsdl_generation">ensure_valid_wsdl_generation</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exception_message">exception_message</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-is_exception-3F">is_exception?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-service_name">service_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_autoloading">test_autoloading</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_layered_dispatching">test_layered_dispatching</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_utf8">test_utf8</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_wsdl_action">test_wsdl_action</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_wsdl_generation">test_wsdl_generation</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            DispatcherTest
+          
+        </li>
+      
+        <li>
+          
+            <a href="DispatcherCommonTests.html">
+              DispatcherCommonTests
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 25</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@direct_controller</span> = <span class="ruby-constant">DirectController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@delegated_controller</span> = <span class="ruby-constant">DelegatedController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@virtual_controller</span> = <span class="ruby-constant">VirtualController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@layered_controller</span> = <span class="ruby-constant">LayeredController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@protocol</span> = <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">Protocol</span><span class="ruby-operator">::</span><span class="ruby-constant">Soap</span><span class="ruby-operator">::</span><span class="ruby-constant">SoapProtocol</span>.<span class="ruby-identifier">create</span>(<span class="ruby-ivar">@direct_controller</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_autoloading">
+            
+              <a name="method-i-test_autoloading"></a><b>test_autoloading</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_autoloading_source')" id="l_method-i-test_autoloading_source">show</a>
+                
+              </p>
+              <div id="method-i-test_autoloading_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_autoloading</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-operator">!</span><span class="ruby-constant">AutoLoadController</span>.<span class="ruby-identifier">web_service_api</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-constant">AutoLoadController</span>.<span class="ruby-identifier">web_service_api</span>.<span class="ruby-identifier">has_public_api_method?</span>(<span class="ruby-string">'Void'</span>))
+  <span class="ruby-identifier">assert</span>(<span class="ruby-constant">FailingAutoLoadController</span>.<span class="ruby-identifier">web_service_api</span>.<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">MissingSourceFile</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">FailingAutoLoadController</span>.<span class="ruby-identifier">require_web_service_api</span> <span class="ruby-value">:blah</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ArgumentError</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">FailingAutoLoadController</span>.<span class="ruby-identifier">require_web_service_api</span> <span class="ruby-number">50.0</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">assert</span>(<span class="ruby-constant">BrokenAutoLoadController</span>.<span class="ruby-identifier">web_service_api</span>.<span class="ruby-identifier">nil?</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_layered_dispatching">
+            
+              <a name="method-i-test_layered_dispatching"></a><b>test_layered_dispatching</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_layered_dispatching_source')" id="l_method-i-test_layered_dispatching_source">show</a>
+                
+              </p>
+              <div id="method-i-test_layered_dispatching_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 63</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_layered_dispatching</span>
+  <span class="ruby-identifier">mt_cats</span> = <span class="ruby-identifier">do_method_call</span>(<span class="ruby-ivar">@layered_controller</span>, <span class="ruby-string">'mt.getCategories'</span>)
+  <span class="ruby-identifier">assert_equal</span>([<span class="ruby-string">&quot;mtCat1&quot;</span>, <span class="ruby-string">&quot;mtCat2&quot;</span>], <span class="ruby-identifier">mt_cats</span>)
+  <span class="ruby-identifier">blogger_cats</span> = <span class="ruby-identifier">do_method_call</span>(<span class="ruby-ivar">@layered_controller</span>, <span class="ruby-string">'blogger.getCategories'</span>)
+  <span class="ruby-identifier">assert_equal</span>([<span class="ruby-string">&quot;bloggerCat1&quot;</span>, <span class="ruby-string">&quot;bloggerCat2&quot;</span>], <span class="ruby-identifier">blogger_cats</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_utf8">
+            
+              <a name="method-i-test_utf8"></a><b>test_utf8</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_utf8_source')" id="l_method-i-test_utf8_source">show</a>
+                
+              </p>
+              <div id="method-i-test_utf8_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_utf8</span>
+  <span class="ruby-ivar">@direct_controller</span>.<span class="ruby-identifier">web_service_exception_reporting</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">$KCODE</span> = <span class="ruby-string">'u'</span>
+  <span class="ruby-identifier">assert_equal</span>(<span class="ruby-constant">Utf8String</span>, <span class="ruby-identifier">do_method_call</span>(<span class="ruby-ivar">@direct_controller</span>, <span class="ruby-string">'TestUtf8'</span>))
+  <span class="ruby-identifier">retval</span> = <span class="ruby-constant">SOAP</span><span class="ruby-operator">::</span><span class="ruby-constant">Processor</span>.<span class="ruby-identifier">unmarshal</span>(<span class="ruby-ivar">@response_body</span>).<span class="ruby-identifier">body</span>.<span class="ruby-identifier">response</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">retval</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SOAP</span><span class="ruby-operator">::</span><span class="ruby-constant">SOAPString</span>)
+
+  <span class="ruby-comment"># If $KCODE is not set to UTF-8, any strings with non-ASCII UTF-8 data</span>
+  <span class="ruby-comment"># will be sent back as base64 by SOAP4R. By the time we get it here though,</span>
+  <span class="ruby-comment"># it will be decoded back into a string. So lets read the base64 value</span>
+  <span class="ruby-comment"># from the message body directly.</span>
+  <span class="ruby-identifier">$KCODE</span> = <span class="ruby-string">'NONE'</span>
+  <span class="ruby-identifier">do_method_call</span>(<span class="ruby-ivar">@direct_controller</span>, <span class="ruby-string">'TestUtf8'</span>)
+  <span class="ruby-identifier">retval</span> = <span class="ruby-constant">SOAP</span><span class="ruby-operator">::</span><span class="ruby-constant">Processor</span>.<span class="ruby-identifier">unmarshal</span>(<span class="ruby-ivar">@response_body</span>).<span class="ruby-identifier">body</span>.<span class="ruby-identifier">response</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">retval</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">SOAP</span><span class="ruby-operator">::</span><span class="ruby-constant">SOAPBase64</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;T25lIFdvcmxkIENhZsOp&quot;</span>, <span class="ruby-identifier">retval</span>.<span class="ruby-identifier">data</span>.<span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_wsdl_action">
+            
+              <a name="method-i-test_wsdl_action"></a><b>test_wsdl_action</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_wsdl_action_source')" id="l_method-i-test_wsdl_action_source">show</a>
+                
+              </p>
+              <div id="method-i-test_wsdl_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 38</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_wsdl_action</span>
+  <span class="ruby-identifier">delegated_types</span> = <span class="ruby-identifier">ensure_valid_wsdl_action</span> <span class="ruby-constant">DelegatedController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">delegated_names</span> = <span class="ruby-identifier">delegated_types</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">name</span>}
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">delegated_names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'DispatcherTest..NodeArray'</span>))
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">delegated_names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'DispatcherTest..Node'</span>))
+  <span class="ruby-identifier">direct_types</span> = <span class="ruby-identifier">ensure_valid_wsdl_action</span> <span class="ruby-constant">DirectController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">direct_names</span> = <span class="ruby-identifier">direct_types</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">name</span>}
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">direct_names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'DispatcherTest..NodeArray'</span>))
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">direct_names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'DispatcherTest..Node'</span>))
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">direct_names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'IntegerArray'</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_wsdl_generation">
+            
+              <a name="method-i-test_wsdl_generation"></a><b>test_wsdl_generation</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_wsdl_generation_source')" id="l_method-i-test_wsdl_generation_source">show</a>
+                
+              </p>
+              <div id="method-i-test_wsdl_generation_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_wsdl_generation</span>
+  <span class="ruby-identifier">ensure_valid_wsdl_generation</span> <span class="ruby-constant">DelegatedController</span>.<span class="ruby-identifier">new</span>, <span class="ruby-constant">DispatcherTest</span><span class="ruby-operator">::</span><span class="ruby-constant">WsdlNamespace</span>
+  <span class="ruby-identifier">ensure_valid_wsdl_generation</span> <span class="ruby-constant">DirectController</span>.<span class="ruby-identifier">new</span>, <span class="ruby-constant">DispatcherTest</span><span class="ruby-operator">::</span><span class="ruby-constant">WsdlNamespace</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-ensure_valid_wsdl">
+            
+              <a name="method-i-ensure_valid_wsdl"></a><b>ensure_valid_wsdl</b>(controller, wsdl, expected_namespace)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ensure_valid_wsdl_source')" id="l_method-i-ensure_valid_wsdl_source">show</a>
+                
+              </p>
+              <div id="method-i-ensure_valid_wsdl_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ensure_valid_wsdl</span>(<span class="ruby-identifier">controller</span>, <span class="ruby-identifier">wsdl</span>, <span class="ruby-identifier">expected_namespace</span>)
+  <span class="ruby-identifier">definitions</span> = <span class="ruby-constant">WSDL</span><span class="ruby-operator">::</span><span class="ruby-constant">Parser</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">wsdl</span>)
+  <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">definitions</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">WSDL</span><span class="ruby-operator">::</span><span class="ruby-constant">Definitions</span>))
+  <span class="ruby-identifier">definitions</span>.<span class="ruby-identifier">bindings</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">binding</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">binding</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">':'</span>).<span class="ruby-identifier">nil?</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">definitions</span>.<span class="ruby-identifier">services</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">service</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">service</span>.<span class="ruby-identifier">ports</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">port</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">port</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">name</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">':'</span>).<span class="ruby-identifier">nil?</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">types</span> = <span class="ruby-identifier">definitions</span>.<span class="ruby-identifier">collect_complextypes</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">x</span><span class="ruby-operator">|</span> <span class="ruby-identifier">x</span>.<span class="ruby-identifier">name</span>}
+  <span class="ruby-identifier">types</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert</span>(<span class="ruby-identifier">type</span>.<span class="ruby-identifier">namespace</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">expected_namespace</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">location</span> = <span class="ruby-identifier">definitions</span>.<span class="ruby-identifier">services</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">ports</span>[<span class="ruby-number">0</span>].<span class="ruby-identifier">soap_address</span>.<span class="ruby-identifier">location</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">DelegatedController</span>)
+    <span class="ruby-identifier">assert_match</span> <span class="ruby-regexp">%r{http://test.host/dispatcher_test/delegated/test_service$}</span>, <span class="ruby-identifier">location</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">DirectController</span>)
+    <span class="ruby-identifier">assert_match</span> <span class="ruby-regexp">%r{http://test.host/dispatcher_test/direct/api$}</span>, <span class="ruby-identifier">location</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">definitions</span>.<span class="ruby-identifier">collect_complextypes</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ensure_valid_wsdl_action">
+            
+              <a name="method-i-ensure_valid_wsdl_action"></a><b>ensure_valid_wsdl_action</b>(controller)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ensure_valid_wsdl_action_source')" id="l_method-i-ensure_valid_wsdl_action_source">show</a>
+                
+              </p>
+              <div id="method-i-ensure_valid_wsdl_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 131</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ensure_valid_wsdl_action</span>(<span class="ruby-identifier">controller</span>)
+  <span class="ruby-identifier">test_request</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>({ <span class="ruby-string">'action'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'wsdl'</span> })
+  <span class="ruby-identifier">test_response</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">wsdl</span> = <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">process</span>(<span class="ruby-identifier">test_request</span>, <span class="ruby-identifier">test_response</span>).<span class="ruby-identifier">body</span>
+  <span class="ruby-identifier">ensure_valid_wsdl</span>(<span class="ruby-identifier">controller</span>, <span class="ruby-identifier">wsdl</span>, <span class="ruby-constant">DispatcherTest</span><span class="ruby-operator">::</span><span class="ruby-constant">WsdlNamespace</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ensure_valid_wsdl_generation">
+            
+              <a name="method-i-ensure_valid_wsdl_generation"></a><b>ensure_valid_wsdl_generation</b>(controller, expected_namespace)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ensure_valid_wsdl_generation_source')" id="l_method-i-ensure_valid_wsdl_generation_source">show</a>
+                
+              </p>
+              <div id="method-i-ensure_valid_wsdl_generation_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ensure_valid_wsdl_generation</span>(<span class="ruby-identifier">controller</span>, <span class="ruby-identifier">expected_namespace</span>)
+  <span class="ruby-identifier">wsdl</span> = <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">generate_wsdl</span>
+  <span class="ruby-identifier">ensure_valid_wsdl</span>(<span class="ruby-identifier">controller</span>, <span class="ruby-identifier">wsdl</span>, <span class="ruby-identifier">expected_namespace</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exception_message">
+            
+              <a name="method-i-exception_message"></a><b>exception_message</b>(soap_fault_exception)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exception_message_source')" id="l_method-i-exception_message_source">show</a>
+                
+              </p>
+              <div id="method-i-exception_message_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exception_message</span>(<span class="ruby-identifier">soap_fault_exception</span>)
+  <span class="ruby-identifier">soap_fault_exception</span>.<span class="ruby-identifier">detail</span>.<span class="ruby-identifier">cause</span>.<span class="ruby-identifier">message</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-is_exception-3F">
+            
+              <a name="method-i-is_exception-3F"></a><b>is_exception?</b>(obj)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-is_exception-3F_source')" id="l_method-i-is_exception-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-is_exception-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">is_exception?</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:detail</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">detail</span>.<span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:cause</span>) <span class="ruby-operator">&amp;&amp;</span>        <span class="ruby-identifier">obj</span>.<span class="ruby-identifier">detail</span>.<span class="ruby-identifier">cause</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Exception</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-service_name">
+            
+              <a name="method-i-service_name"></a><b>service_name</b>(container)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-service_name_source')" id="l_method-i-service_name_source">show</a>
+                
+              </p>
+              <div id="method-i-service_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/test/dispatcher_action_controller_soap_test.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">service_name</span>(<span class="ruby-identifier">container</span>)
+  <span class="ruby-identifier">container</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">DelegatedController</span>) <span class="ruby-operator">?</span> <span class="ruby-string">'test_service'</span> <span class="ruby-operator">:</span> <span class="ruby-string">'api'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

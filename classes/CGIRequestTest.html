@@ -1,0 +1,439 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CGIRequestTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            CGIRequestTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/cgi_test_rb.html">rails/actionpack/test/controller/cgi_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_cookie_syntax_resilience">test_cookie_syntax_resilience</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_host_with_port_defaults_to_server_name_if_no_host_headers">test_host_with_port_defaults_to_server_name_if_no_host_headers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_host_with_port_falls_back_to_server_addr_if_necessary">test_host_with_port_falls_back_to_server_addr_if_necessary</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_http_host">test_http_host</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_http_host_with_default_port_overrides_server_port">test_http_host_with_default_port_overrides_server_port</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_proxy_request">test_proxy_request</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_unbalanced_query_string_with_array">test_unbalanced_query_string_with_array</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 379</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@request_hash</span> = {<span class="ruby-string">&quot;HTTP_MAX_FORWARDS&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;10&quot;</span>, <span class="ruby-string">&quot;SERVER_NAME&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;glu.ttono.us:8007&quot;</span>, <span class="ruby-string">&quot;FCGI_ROLE&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;RESPONDER&quot;</span>, <span class="ruby-string">&quot;HTTP_X_FORWARDED_HOST&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;glu.ttono.us&quot;</span>, <span class="ruby-string">&quot;HTTP_ACCEPT_ENCODING&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;gzip, deflate&quot;</span>, <span class="ruby-string">&quot;HTTP_USER_AGENT&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;Mozilla/5.0 (Macintosh; U; PPC Mac OS X; en) AppleWebKit/312.5.1 (KHTML, like Gecko) Safari/312.3.1&quot;</span>, <span class="ruby-string">&quot;PATH_INFO&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;HTTP_ACCEPT_LANGUAGE&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;en&quot;</span>, <span class="ruby-string">&quot;HTTP_HOST&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;glu.ttono.us:8007&quot;</span>, <span class="ruby-string">&quot;SERVER_PROTOCOL&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;HTTP/1.1&quot;</span>, <span class="ruby-string">&quot;REDIRECT_URI&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;/dispatch.fcgi&quot;</span>, <span class="ruby-string">&quot;SCRIPT_NAME&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;/dispatch.fcgi&quot;</span>, <span class="ruby-string">&quot;SERVER_ADDR&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;207.7.108.53&quot;</span>, <span class="ruby-string">&quot;REMOTE_ADDR&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;207.7.108.53&quot;</span>, <span class="ruby-string">&quot;SERVER_SOFTWARE&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;lighttpd/1.4.5&quot;</span>, <span class="ruby-string">&quot;HTTP_COOKIE&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;_session_id=c84ace84796670c052c6ceb2451fb0f2; is_admin=yes&quot;</span>, <span class="ruby-string">&quot;HTTP_X_FORWARDED_SERVER&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;glu.ttono.us&quot;</span>, <span class="ruby-string">&quot;REQUEST_URI&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;/admin&quot;</span>, <span class="ruby-string">&quot;DOCUMENT_ROOT&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;/home/kevinc/sites/typo/public&quot;</span>, <span class="ruby-string">&quot;SERVER_PORT&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;8007&quot;</span>, <span class="ruby-string">&quot;QUERY_STRING&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;&quot;</span>, <span class="ruby-string">&quot;REMOTE_PORT&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;63137&quot;</span>, <span class="ruby-string">&quot;GATEWAY_INTERFACE&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;CGI/1.1&quot;</span>, <span class="ruby-string">&quot;HTTP_X_FORWARDED_FOR&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;65.88.180.234&quot;</span>, <span class="ruby-string">&quot;HTTP_ACCEPT&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;*/*&quot;</span>, <span class="ruby-string">&quot;SCRIPT_FILENAME&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;/home/kevinc/sites/typo/public/dispatch.fcgi&quot;</span>, <span class="ruby-string">&quot;REDIRECT_STATUS&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;200&quot;</span>, <span class="ruby-string">&quot;REQUEST_METHOD&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;GET&quot;</span>}
+  <span class="ruby-comment"># cookie as returned by some Nokia phone browsers (no space after semicolon separator)</span>
+  <span class="ruby-ivar">@alt_cookie_fmt_request_hash</span> = {<span class="ruby-string">&quot;HTTP_COOKIE&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;_session_id=c84ace84796670c052c6ceb2451fb0f2;is_admin=yes&quot;</span>}
+  <span class="ruby-ivar">@fake_cgi</span> = <span class="ruby-constant">Struct</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:env_table</span>).<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@request_hash</span>)
+  <span class="ruby-ivar">@request</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">CgiRequest</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@fake_cgi</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_cookie_syntax_resilience">
+            
+              <a name="method-i-test_cookie_syntax_resilience"></a><b>test_cookie_syntax_resilience</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_cookie_syntax_resilience_source')" id="l_method-i-test_cookie_syntax_resilience_source">show</a>
+                
+              </p>
+              <div id="method-i-test_cookie_syntax_resilience_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 419</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_cookie_syntax_resilience</span>
+  <span class="ruby-identifier">cookies</span> = <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookie</span><span class="ruby-operator">::</span><span class="ruby-identifier">parse</span>(<span class="ruby-ivar">@request_hash</span>[<span class="ruby-string">&quot;HTTP_COOKIE&quot;</span>]);
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">&quot;c84ace84796670c052c6ceb2451fb0f2&quot;</span>], <span class="ruby-identifier">cookies</span>[<span class="ruby-string">&quot;_session_id&quot;</span>]
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">&quot;yes&quot;</span>], <span class="ruby-identifier">cookies</span>[<span class="ruby-string">&quot;is_admin&quot;</span>]
+  
+  <span class="ruby-identifier">alt_cookies</span> = <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookie</span><span class="ruby-operator">::</span><span class="ruby-identifier">parse</span>(<span class="ruby-ivar">@alt_cookie_fmt_request_hash</span>[<span class="ruby-string">&quot;HTTP_COOKIE&quot;</span>]);
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">&quot;c84ace84796670c052c6ceb2451fb0f2&quot;</span>], <span class="ruby-identifier">alt_cookies</span>[<span class="ruby-string">&quot;_session_id&quot;</span>]
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">&quot;yes&quot;</span>], <span class="ruby-identifier">alt_cookies</span>[<span class="ruby-string">&quot;is_admin&quot;</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_host_with_port_defaults_to_server_name_if_no_host_headers">
+            
+              <a name="method-i-test_host_with_port_defaults_to_server_name_if_no_host_headers"></a><b>test_host_with_port_defaults_to_server_name_if_no_host_headers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_host_with_port_defaults_to_server_name_if_no_host_headers_source')" id="l_method-i-test_host_with_port_defaults_to_server_name_if_no_host_headers_source">show</a>
+                
+              </p>
+              <div id="method-i-test_host_with_port_defaults_to_server_name_if_no_host_headers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 406</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_host_with_port_defaults_to_server_name_if_no_host_headers</span>
+  <span class="ruby-ivar">@request_hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">&quot;HTTP_X_FORWARDED_HOST&quot;</span>
+  <span class="ruby-ivar">@request_hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">&quot;HTTP_HOST&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;glu.ttono.us:8007&quot;</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">host_with_port</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_host_with_port_falls_back_to_server_addr_if_necessary">
+            
+              <a name="method-i-test_host_with_port_falls_back_to_server_addr_if_necessary"></a><b>test_host_with_port_falls_back_to_server_addr_if_necessary</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_host_with_port_falls_back_to_server_addr_if_necessary_source')" id="l_method-i-test_host_with_port_falls_back_to_server_addr_if_necessary_source">show</a>
+                
+              </p>
+              <div id="method-i-test_host_with_port_falls_back_to_server_addr_if_necessary_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 412</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_host_with_port_falls_back_to_server_addr_if_necessary</span>
+  <span class="ruby-ivar">@request_hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">&quot;HTTP_X_FORWARDED_HOST&quot;</span>
+  <span class="ruby-ivar">@request_hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">&quot;HTTP_HOST&quot;</span>
+  <span class="ruby-ivar">@request_hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">&quot;SERVER_NAME&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;207.7.108.53:8007&quot;</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">host_with_port</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_http_host">
+            
+              <a name="method-i-test_http_host"></a><b>test_http_host</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_http_host_source')" id="l_method-i-test_http_host_source">show</a>
+                
+              </p>
+              <div id="method-i-test_http_host_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 391</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_http_host</span>
+  <span class="ruby-ivar">@request_hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">&quot;HTTP_X_FORWARDED_HOST&quot;</span>
+  <span class="ruby-ivar">@request_hash</span>[<span class="ruby-string">'HTTP_HOST'</span>] = <span class="ruby-string">&quot;rubyonrails.org:8080&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;rubyonrails.org:8080&quot;</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">host_with_port</span>
+  
+  <span class="ruby-ivar">@request_hash</span>[<span class="ruby-string">'HTTP_X_FORWARDED_HOST'</span>] = <span class="ruby-string">&quot;www.firsthost.org, www.secondhost.org&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;www.secondhost.org&quot;</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">host</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_http_host_with_default_port_overrides_server_port">
+            
+              <a name="method-i-test_http_host_with_default_port_overrides_server_port"></a><b>test_http_host_with_default_port_overrides_server_port</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_http_host_with_default_port_overrides_server_port_source')" id="l_method-i-test_http_host_with_default_port_overrides_server_port_source">show</a>
+                
+              </p>
+              <div id="method-i-test_http_host_with_default_port_overrides_server_port_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 400</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_http_host_with_default_port_overrides_server_port</span>
+  <span class="ruby-ivar">@request_hash</span>.<span class="ruby-identifier">delete</span> <span class="ruby-string">&quot;HTTP_X_FORWARDED_HOST&quot;</span>
+  <span class="ruby-ivar">@request_hash</span>[<span class="ruby-string">'HTTP_HOST'</span>] = <span class="ruby-string">&quot;rubyonrails.org&quot;</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;rubyonrails.org&quot;</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">host_with_port</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_proxy_request">
+            
+              <a name="method-i-test_proxy_request"></a><b>test_proxy_request</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_proxy_request_source')" id="l_method-i-test_proxy_request_source">show</a>
+                
+              </p>
+              <div id="method-i-test_proxy_request_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 387</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_proxy_request</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'glu.ttono.us'</span>, <span class="ruby-ivar">@request</span>.<span class="ruby-identifier">host_with_port</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_unbalanced_query_string_with_array">
+            
+              <a name="method-i-test_unbalanced_query_string_with_array"></a><b>test_unbalanced_query_string_with_array</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_unbalanced_query_string_with_array_source')" id="l_method-i-test_unbalanced_query_string_with_array_source">show</a>
+                
+              </p>
+              <div id="method-i-test_unbalanced_query_string_with_array_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cgi_test.rb, line 429</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_unbalanced_query_string_with_array</span>
+ <span class="ruby-identifier">assert_equal</span>(
+   {<span class="ruby-string">'location'</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;2&quot;</span>], <span class="ruby-string">'age_group'</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;2&quot;</span>]},
+<span class="ruby-constant">CGIMethods</span>.<span class="ruby-identifier">parse_query_parameters</span>(<span class="ruby-string">&quot;location[]=1&amp;location[]=2&amp;age_group[]=2&quot;</span>)
+ )
+ <span class="ruby-identifier">assert_equal</span>(
+   {<span class="ruby-string">'location'</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;2&quot;</span>], <span class="ruby-string">'age_group'</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;2&quot;</span>]},
+   <span class="ruby-constant">CGIMethods</span>.<span class="ruby-identifier">parse_request_parameters</span>({<span class="ruby-string">'location[]'</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;1&quot;</span>, <span class="ruby-string">&quot;2&quot;</span>],
+<span class="ruby-string">'age_group[]'</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;2&quot;</span>]})
+ )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

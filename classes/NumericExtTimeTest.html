@@ -1,0 +1,270 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>NumericExtTimeTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            NumericExtTimeTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/test/core_ext/numeric_ext_test_rb.html">rails/activesupport/test/core_ext/numeric_ext_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_intervals">test_intervals</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_now">test_now</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_units">test_units</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/numeric_ext_test.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-ivar">@seconds</span> = {
+    <span class="ruby-number">1</span>.<span class="ruby-identifier">minute</span>   =<span class="ruby-operator">&gt;</span> <span class="ruby-number">60</span>,
+    <span class="ruby-number">10</span>.<span class="ruby-identifier">minutes</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">600</span>,
+    <span class="ruby-number">1</span>.<span class="ruby-identifier">hour</span> <span class="ruby-operator">+</span> <span class="ruby-number">15</span>.<span class="ruby-identifier">minutes</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4500</span>,
+    <span class="ruby-number">2</span>.<span class="ruby-identifier">days</span> <span class="ruby-operator">+</span> <span class="ruby-number">4</span>.<span class="ruby-identifier">hours</span> <span class="ruby-operator">+</span> <span class="ruby-number">30</span>.<span class="ruby-identifier">minutes</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">189000</span>,
+    <span class="ruby-number">5</span>.<span class="ruby-identifier">years</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>.<span class="ruby-identifier">month</span> <span class="ruby-operator">+</span> <span class="ruby-number">1</span>.<span class="ruby-identifier">fortnight</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">161589600</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_intervals">
+            
+              <a name="method-i-test_intervals"></a><b>test_intervals</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_intervals_source')" id="l_method-i-test_intervals_source">show</a>
+                
+              </p>
+              <div id="method-i-test_intervals_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/numeric_ext_test.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_intervals</span>
+  <span class="ruby-ivar">@seconds</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">seconds</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">seconds</span>.<span class="ruby-identifier">since</span>(<span class="ruby-ivar">@now</span>), <span class="ruby-ivar">@now</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">seconds</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">seconds</span>.<span class="ruby-identifier">until</span>(<span class="ruby-ivar">@now</span>), <span class="ruby-ivar">@now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">seconds</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_now">
+            
+              <a name="method-i-test_now"></a><b>test_now</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Test intervals based from Time.now</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_now_source')" id="l_method-i-test_now_source">show</a>
+                
+              </p>
+              <div id="method-i-test_now_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/numeric_ext_test.rb, line 29</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_now</span>
+  <span class="ruby-ivar">@seconds</span>.<span class="ruby-identifier">values</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">seconds</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">seconds</span>.<span class="ruby-identifier">ago</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">now</span> <span class="ruby-operator">-</span> <span class="ruby-identifier">seconds</span>
+    <span class="ruby-identifier">now</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">seconds</span>.<span class="ruby-identifier">from_now</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-identifier">now</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">seconds</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_units">
+            
+              <a name="method-i-test_units"></a><b>test_units</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_units_source')" id="l_method-i-test_units_source">show</a>
+                
+              </p>
+              <div id="method-i-test_units_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/numeric_ext_test.rb, line 15</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_units</span>
+  <span class="ruby-ivar">@seconds</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">actual</span>, <span class="ruby-identifier">expected</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">actual</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,141 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>oracle_adapter.rb</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            oracle_adapter.rb
+        </h1>
+        <ul class="files">
+            <li>rails/activerecord/lib/active_record/connection_adapters/oracle_adapter.rb</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>oracle_adapter.rb – <a
+href="../../../../../../classes/ActiveRecord.html">ActiveRecord</a> adapter
+for Oracle 8i, 9i, 10g</p>
+
+<p>Original author: Graham Jenkins</p>
+
+<p>Current maintainer: Michael Schoen &lt;schoenm@earthlink.net&gt;</p>
+
+<p>Implementation notes:</p>
+<ol><li>
+<p>Redefines (safely) a method in <a
+href="../../../../../../classes/ActiveRecord.html">ActiveRecord</a> to make
+it possible to implement an autonumbering solution for Oracle.</p>
+</li><li>
+<p>The OCI8 driver is patched to properly handle values for LONG and TIMESTAMP
+columns. The driver-author has indicated that a future release of the
+driver will obviate this patch.</p>
+</li><li>
+<p>LOB support is implemented through an after_save callback.</p>
+</li><li>
+<p>Oracle does not offer native LIMIT and OFFSET options; this functionality
+is mimiced through the use of nested selects. See <a
+href="http://asktom.oracle.com/pls/ask/f?p=4950:8:::::F4950_P8_DISPLAYID:127412348064">asktom.oracle.com/pls/ask/f?p=4950:8:::::F4950_P8_DISPLAYID:127412348064</a></p>
+</li></ol>
+
+<p>Do what you want with this code, at your own peril, but if any significant
+portion of my code remains then please acknowledge my contribution.
+portions Copyright 2005 Graham Jenkins</p>
+
+    </div>
+  
+
+
+  
+    <!-- File only: requires -->
+    <div class="sectiontitle">Required Files</div>
+    <ul>
+      
+        <li>active_record/connection_adapters/abstract_adapter</li>
+      
+        <li>delegate</li>
+      
+    </ul>
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="../../../../../../classes/ActiveRecord.html">ActiveRecord</a>
+        </li>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="../../../../../../classes/ActiveRecord/ConnectionAdapters.html">ActiveRecord::ConnectionAdapters</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="../../../../../../classes/ActiveRecord/Base.html">ActiveRecord::Base</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="../../../../../../classes/ActiveRecord/ConnectionAdapters/OracleAdapter.html">ActiveRecord::ConnectionAdapters::OracleAdapter</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="../../../../../../classes/OCI8AutoRecover.html">OCI8AutoRecover</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

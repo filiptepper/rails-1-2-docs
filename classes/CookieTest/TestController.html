@@ -1,0 +1,471 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CookieTest::TestController</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            CookieTest::TestController 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../ActionController/Base.html">ActionController::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionpack/test/controller/cookie_test_rb.html">rails/actionpack/test/controller/cookie_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-access_frozen_cookies">access_frozen_cookies</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-authenticate">authenticate</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-authenticate_for_fourten_days">authenticate_for_fourten_days</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-authenticate_for_fourten_days_with_symbols">authenticate_for_fourten_days_with_symbols</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-authenticate_with_deprecated_writer">authenticate_with_deprecated_writer</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-delete_cookie_with_path">delete_cookie_with_path</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-logout">logout</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rescue_action">rescue_action</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set_multiple_cookies">set_multiple_cookies</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-access_frozen_cookies">
+            
+              <a name="method-i-access_frozen_cookies"></a><b>access_frozen_cookies</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-access_frozen_cookies_source')" id="l_method-i-access_frozen_cookies_source">show</a>
+                
+              </p>
+              <div id="method-i-access_frozen_cookies_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">access_frozen_cookies</span>
+  <span class="ruby-identifier">cookies</span>[<span class="ruby-string">&quot;will&quot;</span>] = <span class="ruby-string">&quot;work&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-authenticate">
+            
+              <a name="method-i-authenticate"></a><b>authenticate</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-authenticate_source')" id="l_method-i-authenticate_source">show</a>
+                
+              </p>
+              <div id="method-i-authenticate_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 9</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">authenticate</span>
+  <span class="ruby-identifier">cookies</span>[<span class="ruby-string">&quot;user_name&quot;</span>] = <span class="ruby-string">&quot;david&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-authenticate_for_fourten_days">
+            
+              <a name="method-i-authenticate_for_fourten_days"></a><b>authenticate_for_fourten_days</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-authenticate_for_fourten_days_source')" id="l_method-i-authenticate_for_fourten_days_source">show</a>
+                
+              </p>
+              <div id="method-i-authenticate_for_fourten_days_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 13</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">authenticate_for_fourten_days</span>
+  <span class="ruby-identifier">cookies</span>[<span class="ruby-string">&quot;user_name&quot;</span>] = { <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;david&quot;</span>, <span class="ruby-string">&quot;expires&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(<span class="ruby-number">2005</span>, <span class="ruby-number">10</span>, <span class="ruby-number">10</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-authenticate_for_fourten_days_with_symbols">
+            
+              <a name="method-i-authenticate_for_fourten_days_with_symbols"></a><b>authenticate_for_fourten_days_with_symbols</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-authenticate_for_fourten_days_with_symbols_source')" id="l_method-i-authenticate_for_fourten_days_with_symbols_source">show</a>
+                
+              </p>
+              <div id="method-i-authenticate_for_fourten_days_with_symbols_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">authenticate_for_fourten_days_with_symbols</span>
+  <span class="ruby-identifier">cookies</span>[<span class="ruby-value">:user_name</span>] = { <span class="ruby-value">:value</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;david&quot;</span>, <span class="ruby-value">:expires</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(<span class="ruby-number">2005</span>, <span class="ruby-number">10</span>, <span class="ruby-number">10</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-authenticate_with_deprecated_writer">
+            
+              <a name="method-i-authenticate_with_deprecated_writer"></a><b>authenticate_with_deprecated_writer</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-authenticate_with_deprecated_writer_source')" id="l_method-i-authenticate_with_deprecated_writer_source">show</a>
+                
+              </p>
+              <div id="method-i-authenticate_with_deprecated_writer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">authenticate_with_deprecated_writer</span>
+  <span class="ruby-identifier">cookie</span> <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;user_name&quot;</span>, <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;david&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delete_cookie_with_path">
+            
+              <a name="method-i-delete_cookie_with_path"></a><b>delete_cookie_with_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-delete_cookie_with_path_source')" id="l_method-i-delete_cookie_with_path_source">show</a>
+                
+              </p>
+              <div id="method-i-delete_cookie_with_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">delete_cookie_with_path</span>
+  <span class="ruby-identifier">cookies</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;user_name&quot;</span>, <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/beaten'</span>)
+  <span class="ruby-identifier">render_text</span> <span class="ruby-string">&quot;hello world&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-logout">
+            
+              <a name="method-i-logout"></a><b>logout</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-logout_source')" id="l_method-i-logout_source">show</a>
+                
+              </p>
+              <div id="method-i-logout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">logout</span>
+  <span class="ruby-identifier">cookies</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-string">&quot;user_name&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rescue_action">
+            
+              <a name="method-i-rescue_action"></a><b>rescue_action</b>(e)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rescue_action_source')" id="l_method-i-rescue_action_source">show</a>
+                
+              </p>
+              <div id="method-i-rescue_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rescue_action</span>(<span class="ruby-identifier">e</span>) 
+  <span class="ruby-identifier">raise</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">MissingTemplate</span> <span class="ruby-comment"># No templates here, and we don't care about the output </span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_multiple_cookies">
+            
+              <a name="method-i-set_multiple_cookies"></a><b>set_multiple_cookies</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_multiple_cookies_source')" id="l_method-i-set_multiple_cookies_source">show</a>
+                
+              </p>
+              <div id="method-i-set_multiple_cookies_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/cookie_test.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_multiple_cookies</span>
+  <span class="ruby-identifier">cookies</span>[<span class="ruby-string">&quot;user_name&quot;</span>] = { <span class="ruby-string">&quot;value&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;david&quot;</span>, <span class="ruby-string">&quot;expires&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">local</span>(<span class="ruby-number">2005</span>, <span class="ruby-number">10</span>, <span class="ruby-number">10</span>) }
+  <span class="ruby-identifier">cookies</span>[<span class="ruby-string">&quot;login&quot;</span>]     = <span class="ruby-string">&quot;XJ-122&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

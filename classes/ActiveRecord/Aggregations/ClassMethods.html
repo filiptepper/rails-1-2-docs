@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::Aggregations::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActiveRecord::Aggregations::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/activerecord/lib/active_record/aggregations_rb.html">rails/activerecord/lib/active_record/aggregations.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Active Record implements aggregation through a macro-like class method
+called <code>composed_of</code> for representing attributes  as value
+objects. It expresses relationships like “<a
+href="../../Account.html">Account</a> [is] composed of <a
+href="../../Money.html">Money</a> [among other things]” or “<a
+href="../../Person.html">Person</a> [is] composed of [an] address”. Each
+call to the macro adds a description of how the value objects are created
+from the  attributes of the entity object (when the entity is initialized
+either as a new object or from finding an existing object)  and how it can
+be turned back into attributes (when the entity is saved to the database).
+Example:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Customer</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">composed_of</span> :<span class="ruby-identifier">balance</span>, :<span class="ruby-identifier">class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Money&quot;</span>, :<span class="ruby-identifier">mapping</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">%w(balance amount)</span>
+  <span class="ruby-identifier">composed_of</span> :<span class="ruby-identifier">address</span>, :<span class="ruby-identifier">mapping</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-node">%w(address_street street)</span>, <span class="ruby-node">%w(address_city city)</span> ]
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>The customer class now has the following methods to manipulate the value
+objects:</p>
+<ul><li>
+<p><code>Customer#balance, Customer#balance=(money)</code></p>
+</li><li>
+<p><code>Customer#address, Customer#address=(address)</code></p>
+</li></ul>
+
+<p>These methods will operate with value objects like the ones described
+below:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Money</span>
+  <span class="ruby-identifier">include</span> <span class="ruby-constant">Comparable</span>
+  <span class="ruby-identifier">attr_reader</span> :<span class="ruby-identifier">amount</span>, :<span class="ruby-identifier">currency</span>
+  <span class="ruby-constant">EXCHANGE_RATES</span> = { <span class="ruby-string">&quot;USD_TO_DKK&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">6</span> }  
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">amount</span>, <span class="ruby-identifier">currency</span> = <span class="ruby-string">&quot;USD&quot;</span>) 
+    <span class="ruby-ivar">@amount</span>, <span class="ruby-ivar">@currency</span> = <span class="ruby-identifier">amount</span>, <span class="ruby-identifier">currency</span> 
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">exchange_to</span>(<span class="ruby-identifier">other_currency</span>)
+    <span class="ruby-identifier">exchanged_amount</span> = (<span class="ruby-identifier">amount</span> * <span class="ruby-constant">EXCHANGE_RATES</span>[<span class="ruby-node">&quot;#{currency}_TO_#{other_currency}&quot;</span>]).<span class="ruby-identifier">floor</span>
+    <span class="ruby-constant">Money</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">exchanged_amount</span>, <span class="ruby-identifier">other_currency</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other_money</span>)
+    <span class="ruby-identifier">amount</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other_money</span>.<span class="ruby-identifier">amount</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">currency</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other_money</span>.<span class="ruby-identifier">currency</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">&lt;=&gt;</span>(<span class="ruby-identifier">other_money</span>)
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">currency</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other_money</span>.<span class="ruby-identifier">currency</span>
+      <span class="ruby-identifier">amount</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">amount</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">amount</span> <span class="ruby-operator">&lt;=&gt;</span> <span class="ruby-identifier">other_money</span>.<span class="ruby-identifier">exchange_to</span>(<span class="ruby-identifier">currency</span>).<span class="ruby-identifier">amount</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">Address</span>
+  <span class="ruby-identifier">attr_reader</span> :<span class="ruby-identifier">street</span>, :<span class="ruby-identifier">city</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">street</span>, <span class="ruby-identifier">city</span>) 
+    <span class="ruby-ivar">@street</span>, <span class="ruby-ivar">@city</span> = <span class="ruby-identifier">street</span>, <span class="ruby-identifier">city</span> 
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">close_to?</span>(<span class="ruby-identifier">other_address</span>) 
+    <span class="ruby-identifier">city</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other_address</span>.<span class="ruby-identifier">city</span> 
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-identifier">other_address</span>)
+    <span class="ruby-identifier">city</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other_address</span>.<span class="ruby-identifier">city</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">street</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">other_address</span>.<span class="ruby-identifier">street</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>Now it’s possible to access attributes from the database through the value
+objects instead. If you choose to name the composition the same as the
+attributes name, it will be the only way to access that attribute. That’s
+the case with our <code>balance</code> attribute. You interact with the
+value objects just like you would any other attribute, though:</p>
+
+<pre class="ruby"><span class="ruby-identifier">customer</span>.<span class="ruby-identifier">balance</span> = <span class="ruby-constant">Money</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">20</span>)     <span class="ruby-comment"># sets the Money value object and the attribute</span>
+<span class="ruby-identifier">customer</span>.<span class="ruby-identifier">balance</span>                     <span class="ruby-comment"># =&gt; Money value object</span>
+<span class="ruby-identifier">customer</span>.<span class="ruby-identifier">balance</span>.<span class="ruby-identifier">exchanged_to</span>(<span class="ruby-string">&quot;DKK&quot;</span>) <span class="ruby-comment"># =&gt; Money.new(120, &quot;DKK&quot;)</span>
+<span class="ruby-identifier">customer</span>.<span class="ruby-identifier">balance</span> <span class="ruby-operator">&gt;</span> <span class="ruby-constant">Money</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">10</span>)     <span class="ruby-comment"># =&gt; true</span>
+<span class="ruby-identifier">customer</span>.<span class="ruby-identifier">balance</span> <span class="ruby-operator">==</span> <span class="ruby-constant">Money</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">20</span>)    <span class="ruby-comment"># =&gt; true</span>
+<span class="ruby-identifier">customer</span>.<span class="ruby-identifier">balance</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Money</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">5</span>)      <span class="ruby-comment"># =&gt; false</span>
+</pre>
+
+<p>Value objects can also be composed of multiple attributes, such as the case
+of <a href="../../Address.html">Address</a>. The order of the mappings will
+determine the order of the parameters. Example:</p>
+
+<pre class="ruby"><span class="ruby-identifier">customer</span>.<span class="ruby-identifier">address_street</span> = <span class="ruby-string">&quot;Hyancintvej&quot;</span>
+<span class="ruby-identifier">customer</span>.<span class="ruby-identifier">address_city</span>   = <span class="ruby-string">&quot;Copenhagen&quot;</span>
+<span class="ruby-identifier">customer</span>.<span class="ruby-identifier">address</span>        <span class="ruby-comment"># =&gt; Address.new(&quot;Hyancintvej&quot;, &quot;Copenhagen&quot;)</span>
+<span class="ruby-identifier">customer</span>.<span class="ruby-identifier">address</span> = <span class="ruby-constant">Address</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;May Street&quot;</span>, <span class="ruby-string">&quot;Chicago&quot;</span>)
+<span class="ruby-identifier">customer</span>.<span class="ruby-identifier">address_street</span> <span class="ruby-comment"># =&gt; &quot;May Street&quot; </span>
+<span class="ruby-identifier">customer</span>.<span class="ruby-identifier">address_city</span>   <span class="ruby-comment"># =&gt; &quot;Chicago&quot;</span>
+</pre>
+
+<h2 id="label-Writing+value+objects">Writing value objects</h2>
+
+<p>Value objects are immutable and interchangeable objects that represent a
+given value, such as a <a href="../../Money.html">Money</a> object
+representing $5. Two <a href="../../Money.html">Money</a> objects both
+representing $5 should be equal (through methods such as == and &lt;=&gt;
+from Comparable if ranking makes sense). This is unlike entity objects
+where equality is determined by identity. An entity class such as <a
+href="../../Customer.html">Customer</a> can easily have two different
+objects that both have an address on Hyancintvej. Entity identity is
+determined by object or relational unique identifiers (such as primary
+keys). Normal <a href="../Base.html">ActiveRecord::Base</a> classes are
+entity objects.</p>
+
+<p>It’s also important to treat the value objects as immutable. Don’t allow
+the <a href="../../Money.html">Money</a> object to have its amount changed
+after creation. Create a new money object with the new value instead. This
+is exemplified by the Money#exchanged_to method that returns a new value
+object instead of changing its own values. Active Record won’t persist
+value objects that have been changed through other means than the writer
+method.</p>
+
+<p>The immutable requirement is enforced by Active Record by freezing any
+object assigned as a value object. Attempting to  change it afterwards will
+result in a TypeError.</p>
+
+<p>Read more about value objects on <a
+href="http://c2.com/cgi/wiki?ValueObject">c2.com/cgi/wiki?ValueObject</a>
+and on the dangers of not keeping value objects immutable on <a
+href="http://c2.com/cgi/wiki?ValueObjectsShouldBeImmutable">c2.com/cgi/wiki?ValueObjectsShouldBeImmutable</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-composed_of">composed_of</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-composed_of">
+            
+              <a name="method-i-composed_of"></a><b>composed_of</b>(part_id, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Adds reader and writer methods for manipulating a value object:
+<code>composed_of :address</code> adds <code>address</code> and
+<code>address=(new_address)</code> methods.</p>
+
+<p>Options are:</p>
+<ul><li>
+<p><code>:class_name</code>  - specify the class name of the association. Use
+it only if that name can't be inferred from the part id. So
+<code>composed_of :address</code> will by default be linked to the
+<code>Address</code> class, but if the real class name is
+<code>CompanyAddress</code>, you'll have to specify it with this option.</p>
+</li><li>
+<p><code>:mapping</code> - specifies a number of mapping arrays (attribute,
+parameter) that bind an attribute name to a constructor parameter on the
+value class.</p>
+</li><li>
+<p><code>:allow_nil</code> - specifies that the aggregate object will not be
+instantiated when all mapped attributes are nil.  Setting the aggregate
+class to nil has the effect of writing nil to all mapped attributes. This
+defaults to false.</p>
+</li></ul>
+
+<p>Option examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">composed_of</span> :<span class="ruby-identifier">temperature</span>, :<span class="ruby-identifier">mapping</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">%w(reading celsius)</span>
+<span class="ruby-identifier">composed_of</span> :<span class="ruby-identifier">balance</span>, :<span class="ruby-identifier">class_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Money&quot;</span>, :<span class="ruby-identifier">mapping</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">%w(balance amount)</span>
+<span class="ruby-identifier">composed_of</span> :<span class="ruby-identifier">address</span>, :<span class="ruby-identifier">mapping</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-node">%w(address_street street)</span>, <span class="ruby-node">%w(address_city city)</span> ]
+<span class="ruby-identifier">composed_of</span> :<span class="ruby-identifier">gps_location</span>
+<span class="ruby-identifier">composed_of</span> :<span class="ruby-identifier">gps_location</span>, :<span class="ruby-identifier">allow_nil</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-composed_of_source')" id="l_method-i-composed_of_source">show</a>
+                
+              </p>
+              <div id="method-i-composed_of_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/aggregations.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">composed_of</span>(<span class="ruby-identifier">part_id</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">options</span>.<span class="ruby-identifier">assert_valid_keys</span>(<span class="ruby-value">:class_name</span>, <span class="ruby-value">:mapping</span>, <span class="ruby-value">:allow_nil</span>)
+
+  <span class="ruby-identifier">name</span>        = <span class="ruby-identifier">part_id</span>.<span class="ruby-identifier">id2name</span>
+  <span class="ruby-identifier">class_name</span>  = <span class="ruby-identifier">options</span>[<span class="ruby-value">:class_name</span>] <span class="ruby-operator">||</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">camelize</span>
+  <span class="ruby-identifier">mapping</span>     = <span class="ruby-identifier">options</span>[<span class="ruby-value">:mapping</span>]    <span class="ruby-operator">||</span> [ <span class="ruby-identifier">name</span>, <span class="ruby-identifier">name</span> ]
+  <span class="ruby-identifier">allow_nil</span>   = <span class="ruby-identifier">options</span>[<span class="ruby-value">:allow_nil</span>]  <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">reader_method</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">class_name</span>, <span class="ruby-identifier">mapping</span>, <span class="ruby-identifier">allow_nil</span>)
+  <span class="ruby-identifier">writer_method</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">class_name</span>, <span class="ruby-identifier">mapping</span>, <span class="ruby-identifier">allow_nil</span>)
+  
+  <span class="ruby-identifier">create_reflection</span>(<span class="ruby-value">:composed_of</span>, <span class="ruby-identifier">part_id</span>, <span class="ruby-identifier">options</span>, <span class="ruby-keyword">self</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

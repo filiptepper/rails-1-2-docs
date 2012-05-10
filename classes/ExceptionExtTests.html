@@ -1,0 +1,479 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ExceptionExtTests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ExceptionExtTests 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/test/core_ext/exception_test_rb.html">rails/activesupport/test/core_ext/exception_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-get_exception">get_exception</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_app_backtrace">test_app_backtrace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_app_backtrace_with_before">test_app_backtrace_with_before</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_app_trace_should_be_empty_when_no_app_frames">test_app_trace_should_be_empty_when_no_app_frames</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_backtrace_should_clean_paths">test_backtrace_should_clean_paths</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_clean_backtrace">test_clean_backtrace</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_clean_message_should_clean_paths">test_clean_message_should_clean_paths</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_framework_backtrace_with_before">test_framework_backtrace_with_before</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-get_exception">
+            
+              <a name="method-i-get_exception"></a><b>get_exception</b>(cls = RuntimeError, msg = nil, trace = nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-get_exception_source')" id="l_method-i-get_exception_source">show</a>
+                
+              </p>
+              <div id="method-i-get_exception_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/exception_test.rb, line 5</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get_exception</span>(<span class="ruby-identifier">cls</span> = <span class="ruby-constant">RuntimeError</span>, <span class="ruby-identifier">msg</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">trace</span> = <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">begin</span> <span class="ruby-identifier">raise</span> <span class="ruby-identifier">cls</span>, <span class="ruby-identifier">msg</span>, (<span class="ruby-identifier">trace</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">caller</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Exception</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">e</span>  <span class="ruby-comment"># passed Exception</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">e</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/exception_test.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">TraceSubstitutions</span>.<span class="ruby-identifier">clear</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_app_backtrace">
+            
+              <a name="method-i-test_app_backtrace"></a><b>test_app_backtrace</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_app_backtrace_source')" id="l_method-i-test_app_backtrace_source">show</a>
+                
+              </p>
+              <div id="method-i-test_app_backtrace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/exception_test.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_app_backtrace</span>
+  <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">TraceSubstitutions</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-regexp">%r\s*hidden.*/</span>, <span class="ruby-string">''</span>]
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">get_exception</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-string">'RAWR'</span>, [<span class="ruby-string">'bhal.rb'</span>, <span class="ruby-string">' vendor/file.rb some stuff'</span>, <span class="ruby-string">'almost all'</span>]
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Exception</span>, <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'bhal.rb'</span>, <span class="ruby-string">'almost all'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">application_backtrace</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_app_backtrace_with_before">
+            
+              <a name="method-i-test_app_backtrace_with_before"></a><b>test_app_backtrace_with_before</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_app_backtrace_with_before_source')" id="l_method-i-test_app_backtrace_with_before_source">show</a>
+                
+              </p>
+              <div id="method-i-test_app_backtrace_with_before_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/exception_test.rb, line 30</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_app_backtrace_with_before</span>
+  <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">TraceSubstitutions</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-regexp">%r\s*hidden.*/</span>, <span class="ruby-string">''</span>]
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">get_exception</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-string">'RAWR'</span>, [<span class="ruby-string">'vendor/file.rb some stuff'</span>, <span class="ruby-string">'bhal.rb'</span>, <span class="ruby-string">' vendor/file.rb some stuff'</span>, <span class="ruby-string">'almost all'</span>]
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Exception</span>, <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'vendor/file.rb some stuff'</span>, <span class="ruby-string">'bhal.rb'</span>, <span class="ruby-string">'almost all'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">application_backtrace</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_app_trace_should_be_empty_when_no_app_frames">
+            
+              <a name="method-i-test_app_trace_should_be_empty_when_no_app_frames"></a><b>test_app_trace_should_be_empty_when_no_app_frames</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_app_trace_should_be_empty_when_no_app_frames_source')" id="l_method-i-test_app_trace_should_be_empty_when_no_app_frames_source">show</a>
+                
+              </p>
+              <div id="method-i-test_app_trace_should_be_empty_when_no_app_frames_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/exception_test.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_app_trace_should_be_empty_when_no_app_frames</span>
+  <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">TraceSubstitutions</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-regexp">%r\s*hidden.*/</span>, <span class="ruby-string">''</span>]
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">get_exception</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-string">'RAWR'</span>, [<span class="ruby-string">'vendor/file.rb some stuff'</span>, <span class="ruby-string">'generated/bhal.rb'</span>, <span class="ruby-string">' vendor/file.rb some stuff'</span>, <span class="ruby-string">'generated/almost all'</span>]
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Exception</span>, <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">assert_equal</span> [], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">application_backtrace</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_backtrace_should_clean_paths">
+            
+              <a name="method-i-test_backtrace_should_clean_paths"></a><b>test_backtrace_should_clean_paths</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_backtrace_should_clean_paths_source')" id="l_method-i-test_backtrace_should_clean_paths_source">show</a>
+                
+              </p>
+              <div id="method-i-test_backtrace_should_clean_paths_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/exception_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_backtrace_should_clean_paths</span>
+  <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">TraceSubstitutions</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-regexp">%r\s*hidden.*/</span>, <span class="ruby-string">''</span>]
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">get_exception</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-string">'RAWR'</span>, [<span class="ruby-string">'a/b/c/../d/../../../bhal.rb'</span>, <span class="ruby-string">'rawh hid den stuff is not here'</span>, <span class="ruby-string">'almost all'</span>]
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Exception</span>, <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'bhal.rb'</span>, <span class="ruby-string">'rawh hid den stuff is not here'</span>, <span class="ruby-string">'almost all'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">clean_backtrace</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_clean_backtrace">
+            
+              <a name="method-i-test_clean_backtrace"></a><b>test_clean_backtrace</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_clean_backtrace_source')" id="l_method-i-test_clean_backtrace_source">show</a>
+                
+              </p>
+              <div id="method-i-test_clean_backtrace_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/exception_test.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_clean_backtrace</span>
+  <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">TraceSubstitutions</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-regexp">%r\s*hidden.*/</span>, <span class="ruby-string">''</span>]
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">get_exception</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-string">'RAWR'</span>, [<span class="ruby-string">'bhal.rb'</span>, <span class="ruby-string">'rawh hid den stuff is not here'</span>, <span class="ruby-string">'almost all'</span>]
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Exception</span>, <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'bhal.rb'</span>, <span class="ruby-string">'rawh hid den stuff is not here'</span>, <span class="ruby-string">'almost all'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">clean_backtrace</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_clean_message_should_clean_paths">
+            
+              <a name="method-i-test_clean_message_should_clean_paths"></a><b>test_clean_message_should_clean_paths</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_clean_message_should_clean_paths_source')" id="l_method-i-test_clean_message_should_clean_paths_source">show</a>
+                
+              </p>
+              <div id="method-i-test_clean_message_should_clean_paths_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/exception_test.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_clean_message_should_clean_paths</span>
+  <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">TraceSubstitutions</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-regexp">%r\s*hidden.*/</span>, <span class="ruby-string">''</span>]
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">get_exception</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-string">&quot;I dislike a/z/x/../../b/y/../c&quot;</span>, [<span class="ruby-string">'a/b/c/../d/../../../bhal.rb'</span>, <span class="ruby-string">'rawh hid den stuff is not here'</span>, <span class="ruby-string">'almost all'</span>]
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Exception</span>, <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;I dislike a/b/c&quot;</span>, <span class="ruby-identifier">e</span>.<span class="ruby-identifier">clean_message</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_framework_backtrace_with_before">
+            
+              <a name="method-i-test_framework_backtrace_with_before"></a><b>test_framework_backtrace_with_before</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_framework_backtrace_with_before_source')" id="l_method-i-test_framework_backtrace_with_before_source">show</a>
+                
+              </p>
+              <div id="method-i-test_framework_backtrace_with_before_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/core_ext/exception_test.rb, line 37</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_framework_backtrace_with_before</span>
+  <span class="ruby-constant">Exception</span><span class="ruby-operator">::</span><span class="ruby-constant">TraceSubstitutions</span> <span class="ruby-operator">&lt;&lt;</span> [<span class="ruby-regexp">%r\s*hidden.*/</span>, <span class="ruby-string">''</span>]
+  <span class="ruby-identifier">e</span> = <span class="ruby-identifier">get_exception</span> <span class="ruby-constant">RuntimeError</span>, <span class="ruby-string">'RAWR'</span>, [<span class="ruby-string">'vendor/file.rb some stuff'</span>, <span class="ruby-string">'bhal.rb'</span>, <span class="ruby-string">' vendor/file.rb some stuff'</span>, <span class="ruby-string">'almost all'</span>]
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Exception</span>, <span class="ruby-identifier">e</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-string">'vendor/file.rb some stuff'</span>, <span class="ruby-string">' vendor/file.rb some stuff'</span>], <span class="ruby-identifier">e</span>.<span class="ruby-identifier">framework_backtrace</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

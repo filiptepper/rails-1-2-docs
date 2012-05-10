@@ -1,0 +1,539 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TestJSONEmitters</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TestJSONEmitters 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/test/json_test_rb.html">rails/activesupport/test/json_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-teardown">teardown</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_exception_raised_when_encoding_circular_reference">test_exception_raised_when_encoding_circular_reference</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_hash_encoding">test_hash_encoding</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_unquote_hash_key_identifiers">test_unquote_hash_key_identifiers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_utf8_string_encoded_properly_when_kcode_is_utf8">test_utf8_string_encoded_properly_when_kcode_is_utf8</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-unquote">unquote</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">TrueTests</td>
+            <td>=</td>
+            <td class="attr-value">[[ true,  %(true)  ]]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">FalseTests</td>
+            <td>=</td>
+            <td class="attr-value">[[ false, %(false) ]]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NilTests</td>
+            <td>=</td>
+            <td class="attr-value">[[ nil,   %(null)  ]]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">NumericTests</td>
+            <td>=</td>
+            <td class="attr-value">[[ 1,     %(1)     ],
+[ 2.5,   %(2.5)   ]]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">StringTests</td>
+            <td>=</td>
+            <td class="attr-value">[[ 'this is the string',     %(&quot;this is the string&quot;)         ],
+[ 'a &quot;string&quot; with quotes&lt;script&gt;', %(&quot;a \\&quot;string\\&quot; with quotes\\074script\\076&quot;) ]]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ArrayTests</td>
+            <td>=</td>
+            <td class="attr-value">[[ ['a', 'b', 'c'],          %([\&quot;a\&quot;, \&quot;b\&quot;, \&quot;c\&quot;])          ],
+[ [1, 'a', :b, nil, false], %([1, \&quot;a\&quot;, \&quot;b\&quot;, null, false]) ]]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SymbolTests</td>
+            <td>=</td>
+            <td class="attr-value">[[ :a,     %(&quot;a&quot;)    ],
+[ :this,  %(&quot;this&quot;) ],
+[ :&quot;a b&quot;, %(&quot;a b&quot;)  ]]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">ObjectTests</td>
+            <td>=</td>
+            <td class="attr-value">[[ JsonFoo.new(1, 2), %({\&quot;a\&quot;: 1, \&quot;b\&quot;: 2}) ]]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">VariableTests</td>
+            <td>=</td>
+            <td class="attr-value">[[ ActiveSupport::JSON::Variable.new('foo'), 'foo'],
+[ ActiveSupport::JSON::Variable.new('alert(&quot;foo&quot;)'), 'alert(&quot;foo&quot;)']]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">RegexpTests</td>
+            <td>=</td>
+            <td class="attr-value">[[ /^a/, '/^a/' ], [/^\w{1,2}[a-z]+/ix, '/^\\w{1,2}[a-z]+/ix']]</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/json_test.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-identifier">unquote</span>(<span class="ruby-keyword">false</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-teardown">
+            
+              <a name="method-i-teardown"></a><b>teardown</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-teardown_source')" id="l_method-i-teardown_source">show</a>
+                
+              </p>
+              <div id="method-i-teardown_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/json_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">teardown</span>
+  <span class="ruby-identifier">unquote</span>(<span class="ruby-keyword">true</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_exception_raised_when_encoding_circular_reference">
+            
+              <a name="method-i-test_exception_raised_when_encoding_circular_reference"></a><b>test_exception_raised_when_encoding_circular_reference</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_exception_raised_when_encoding_circular_reference_source')" id="l_method-i-test_exception_raised_when_encoding_circular_reference_source">show</a>
+                
+              </p>
+              <div id="method-i-test_exception_raised_when_encoding_circular_reference_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/json_test.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_exception_raised_when_encoding_circular_reference</span>
+  <span class="ruby-identifier">a</span> = [<span class="ruby-number">1</span>]
+  <span class="ruby-identifier">a</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">a</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">JSON</span><span class="ruby-operator">::</span><span class="ruby-constant">CircularReferenceError</span>) { <span class="ruby-identifier">a</span>.<span class="ruby-identifier">to_json</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_hash_encoding">
+            
+              <a name="method-i-test_hash_encoding"></a><b>test_hash_encoding</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_hash_encoding_source')" id="l_method-i-test_hash_encoding_source">show</a>
+                
+              </p>
+              <div id="method-i-test_hash_encoding_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/json_test.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_hash_encoding</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({\&quot;a\&quot;: \&quot;b\&quot;})</span>, { <span class="ruby-value">:a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:b</span> }.<span class="ruby-identifier">to_json</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({\&quot;a\&quot;: 1})</span>, { <span class="ruby-string">'a'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>  }.<span class="ruby-identifier">to_json</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({\&quot;a\&quot;: [1, 2]})</span>, { <span class="ruby-string">'a'</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-number">1</span>,<span class="ruby-number">2</span>] }.<span class="ruby-identifier">to_json</span>
+  
+  <span class="ruby-identifier">sorted_json</span>  = 
+    <span class="ruby-string">'{'</span> <span class="ruby-operator">+</span> {<span class="ruby-value">:a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:b</span>, <span class="ruby-value">:c</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:d</span>}.<span class="ruby-identifier">to_json</span>[<span class="ruby-number">1</span><span class="ruby-operator">..</span><span class="ruby-number">-2</span>].<span class="ruby-identifier">split</span>(<span class="ruby-string">', '</span>).<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">', '</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'}'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({\&quot;a\&quot;: \&quot;b\&quot;, \&quot;c\&quot;: \&quot;d\&quot;})</span>, <span class="ruby-identifier">sorted_json</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_unquote_hash_key_identifiers">
+            
+              <a name="method-i-test_unquote_hash_key_identifiers"></a><b>test_unquote_hash_key_identifiers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_unquote_hash_key_identifiers_source')" id="l_method-i-test_unquote_hash_key_identifiers_source">show</a>
+                
+              </p>
+              <div id="method-i-test_unquote_hash_key_identifiers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/json_test.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_unquote_hash_key_identifiers</span>
+  <span class="ruby-identifier">values</span> = {<span class="ruby-number">0</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>, <span class="ruby-number">1</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>, <span class="ruby-value">:_</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:_</span>, <span class="ruby-string">&quot;$&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;$&quot;</span>, <span class="ruby-string">&quot;a&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;a&quot;</span>, <span class="ruby-value">:A</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:A</span>, <span class="ruby-value">:A0</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:A0</span>, <span class="ruby-string">&quot;A0B&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;A0B&quot;</span>}    
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({&quot;a&quot;: &quot;a&quot;})</span>, {<span class="ruby-string">&quot;a&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;a&quot;</span>}.<span class="ruby-identifier">to_json</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({0: 0})</span>,   { <span class="ruby-number">0</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span> }.<span class="ruby-identifier">to_json</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({&quot;_&quot;: &quot;_&quot;})</span>, {<span class="ruby-value">:_</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value">:_</span> }.<span class="ruby-identifier">to_json</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({&quot;$&quot;: &quot;$&quot;})</span>, {<span class="ruby-string">&quot;$&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;$&quot;</span>}.<span class="ruby-identifier">to_json</span>
+  
+  <span class="ruby-identifier">unquote</span>(<span class="ruby-keyword">true</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({a: &quot;a&quot;})</span>, {<span class="ruby-string">&quot;a&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;a&quot;</span>}.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({0: 0})</span>,   { <span class="ruby-number">0</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span> }.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({_: &quot;_&quot;})</span>, {<span class="ruby-value">:_</span> =<span class="ruby-operator">&gt;</span><span class="ruby-value">:_</span> }.<span class="ruby-identifier">to_json</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q({$: &quot;$&quot;})</span>, {<span class="ruby-string">&quot;$&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;$&quot;</span>}.<span class="ruby-identifier">to_json</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_utf8_string_encoded_properly_when_kcode_is_utf8">
+            
+              <a name="method-i-test_utf8_string_encoded_properly_when_kcode_is_utf8"></a><b>test_utf8_string_encoded_properly_when_kcode_is_utf8</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_utf8_string_encoded_properly_when_kcode_is_utf8_source')" id="l_method-i-test_utf8_string_encoded_properly_when_kcode_is_utf8_source">show</a>
+                
+              </p>
+              <div id="method-i-test_utf8_string_encoded_properly_when_kcode_is_utf8_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/json_test.rb, line 58</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_utf8_string_encoded_properly_when_kcode_is_utf8</span>
+  <span class="ruby-identifier">old_kcode</span>, <span class="ruby-identifier">$KCODE</span> = <span class="ruby-identifier">$KCODE</span>, <span class="ruby-string">'UTF8'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'&quot;\u20ac2.99&quot;'</span>, <span class="ruby-string">'€2.99'</span>.<span class="ruby-identifier">to_json</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'&quot;\u270e\u263a&quot;'</span>, <span class="ruby-string">'✎☺'</span>.<span class="ruby-identifier">to_json</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-identifier">$KCODE</span> = <span class="ruby-identifier">old_kcode</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-unquote">
+            
+              <a name="method-i-unquote"></a><b>unquote</b>(value)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-unquote_source')" id="l_method-i-unquote_source">show</a>
+                
+              </p>
+              <div id="method-i-unquote_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/test/json_test.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">unquote</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">previous_value</span> = <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">JSON</span>.<span class="ruby-identifier">unquote_hash_key_identifiers</span>
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">JSON</span>.<span class="ruby-identifier">unquote_hash_key_identifiers</span> = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">yield</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">ActiveSupport</span><span class="ruby-operator">::</span><span class="ruby-constant">JSON</span>.<span class="ruby-identifier">unquote_hash_key_identifiers</span> = <span class="ruby-identifier">previous_value</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

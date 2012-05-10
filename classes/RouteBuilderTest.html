@@ -1,0 +1,1174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>RouteBuilderTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            RouteBuilderTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/routing_test_rb.html">rails/actionpack/test/controller/routing_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-build">build</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-builder">builder</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_action_default_should_not_trigger_on_prefix">test_action_default_should_not_trigger_on_prefix</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assign_route_options">test_assign_route_options</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assign_route_options_with_anchor_chars">test_assign_route_options_with_anchor_chars</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assignment_of_default_options">test_assignment_of_default_options</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assignment_of_default_options_respects_existing_defaults">test_assignment_of_default_options_respects_existing_defaults</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assignment_of_default_options_respects_regexps">test_assignment_of_default_options_respects_regexps</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_assignment_of_is_optional_when_default">test_assignment_of_is_optional_when_default</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_divide_route_options">test_divide_route_options</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_is_optional_is_assigned_to_default_segments">test_is_optional_is_assigned_to_default_segments</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_optional_segments_preceding_required_segments">test_optional_segments_preceding_required_segments</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_options_should_not_be_modified">test_options_should_not_be_modified</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_route_build">test_route_build</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_segment_for_action">test_segment_for_action</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_segment_for_dynamic">test_segment_for_dynamic</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_segment_for_static">test_segment_for_static</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_segment_for_with_rest">test_segment_for_with_rest</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_segmentation_of_dot_path">test_segmentation_of_dot_path</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_segmentation_of_dynamic_dot_path">test_segmentation_of_dynamic_dot_path</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_segmentation_of_semicolon_path">test_segmentation_of_semicolon_path</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_segments_for">test_segments_for</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_slashes_are_implied">test_slashes_are_implied</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-build">
+            
+              <a name="method-i-build"></a><b>build</b>(path, options)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-build_source')" id="l_method-i-build_source">show</a>
+                
+              </p>
+              <div id="method-i-build_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 968</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">build</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">build</span>(<span class="ruby-identifier">path</span>, <span class="ruby-identifier">options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-builder">
+            
+              <a name="method-i-builder"></a><b>builder</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-builder_source')" id="l_method-i-builder_source">show</a>
+                
+              </p>
+              <div id="method-i-builder_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 964</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">builder</span>
+  <span class="ruby-ivar">@builder</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">RouteBuilder</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_action_default_should_not_trigger_on_prefix">
+            
+              <a name="method-i-test_action_default_should_not_trigger_on_prefix"></a><b>test_action_default_should_not_trigger_on_prefix</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_action_default_should_not_trigger_on_prefix_source')" id="l_method-i-test_action_default_should_not_trigger_on_prefix_source">show</a>
+                
+              </p>
+              <div id="method-i-test_action_default_should_not_trigger_on_prefix_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1050</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_action_default_should_not_trigger_on_prefix</span>
+  <span class="ruby-identifier">s</span>, <span class="ruby-identifier">r</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segment_for</span> <span class="ruby-string">':action_name/something/else'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'/something/else'</span>, <span class="ruby-identifier">r</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:action_name</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">s</span>.<span class="ruby-identifier">default</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assign_route_options">
+            
+              <a name="method-i-test_assign_route_options"></a><b>test_assign_route_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assign_route_options_source')" id="l_method-i-test_assign_route_options_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assign_route_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1068</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assign_route_options</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/cars/:action/:person/:car/'</span>
+  <span class="ruby-identifier">defaults</span> = {<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'buy'</span>, <span class="ruby-value">:person</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:car</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>}
+  <span class="ruby-identifier">requirements</span> = {<span class="ruby-value">:person</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\w+/</span>, <span class="ruby-value">:car</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\w+/</span>}
+  
+  <span class="ruby-identifier">route_requirements</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">assign_route_options</span>(<span class="ruby-identifier">segments</span>, <span class="ruby-identifier">defaults</span>, <span class="ruby-identifier">requirements</span>)
+  <span class="ruby-identifier">assert_equal</span>({}, <span class="ruby-identifier">route_requirements</span>)
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:action</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'buy'</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">default</span>
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:person</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">5</span>].<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-regexp">%r\w+/</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">5</span>].<span class="ruby-identifier">regexp</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">segments</span>[<span class="ruby-number">5</span>].<span class="ruby-identifier">optional?</span>
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:car</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">7</span>].<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-regexp">%r\w+/</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">7</span>].<span class="ruby-identifier">regexp</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">segments</span>[<span class="ruby-number">7</span>].<span class="ruby-identifier">optional?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assign_route_options_with_anchor_chars">
+            
+              <a name="method-i-test_assign_route_options_with_anchor_chars"></a><b>test_assign_route_options_with_anchor_chars</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assign_route_options_with_anchor_chars_source')" id="l_method-i-test_assign_route_options_with_anchor_chars_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assign_route_options_with_anchor_chars_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1088</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assign_route_options_with_anchor_chars</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/cars/:action/:person/:car/'</span>
+  <span class="ruby-identifier">defaults</span> = {<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'buy'</span>, <span class="ruby-value">:person</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:car</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>}
+  <span class="ruby-identifier">requirements</span> = {<span class="ruby-value">:person</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\w+/</span>, <span class="ruby-value">:car</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r^\w+$/</span>}
+  
+  <span class="ruby-identifier">assert_raises</span> <span class="ruby-constant">ArgumentError</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">route_requirements</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">assign_route_options</span>(<span class="ruby-identifier">segments</span>, <span class="ruby-identifier">defaults</span>, <span class="ruby-identifier">requirements</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">requirements</span>[<span class="ruby-value">:car</span>] = <span class="ruby-regexp">%r[^\/]+/</span>
+  <span class="ruby-identifier">route_requirements</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">assign_route_options</span>(<span class="ruby-identifier">segments</span>, <span class="ruby-identifier">defaults</span>, <span class="ruby-identifier">requirements</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assignment_of_default_options">
+            
+              <a name="method-i-test_assignment_of_default_options"></a><b>test_assignment_of_default_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assignment_of_default_options_source')" id="l_method-i-test_assignment_of_default_options_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assignment_of_default_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assignment_of_default_options</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/:controller/:action/:id/'</span>
+  <span class="ruby-identifier">action</span>, <span class="ruby-identifier">id</span> = <span class="ruby-identifier">segments</span>[<span class="ruby-number">-4</span>], <span class="ruby-identifier">segments</span>[<span class="ruby-number">-2</span>]
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:action</span>, <span class="ruby-identifier">action</span>.<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:id</span>, <span class="ruby-identifier">id</span>.<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span> <span class="ruby-identifier">action</span>.<span class="ruby-identifier">optional?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span> <span class="ruby-identifier">id</span>.<span class="ruby-identifier">optional?</span>
+  
+  <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">assign_default_route_options</span>(<span class="ruby-identifier">segments</span>)
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'index'</span>, <span class="ruby-identifier">action</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">action</span>.<span class="ruby-identifier">optional?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">id</span>.<span class="ruby-identifier">optional?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assignment_of_default_options_respects_existing_defaults">
+            
+              <a name="method-i-test_assignment_of_default_options_respects_existing_defaults"></a><b>test_assignment_of_default_options_respects_existing_defaults</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assignment_of_default_options_respects_existing_defaults_source')" id="l_method-i-test_assignment_of_default_options_respects_existing_defaults_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assignment_of_default_options_respects_existing_defaults_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1153</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assignment_of_default_options_respects_existing_defaults</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/:controller/:action/:id/'</span>
+  <span class="ruby-identifier">action</span>, <span class="ruby-identifier">id</span> = <span class="ruby-identifier">segments</span>[<span class="ruby-number">-4</span>], <span class="ruby-identifier">segments</span>[<span class="ruby-number">-2</span>]
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:action</span>, <span class="ruby-identifier">action</span>.<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:id</span>, <span class="ruby-identifier">id</span>.<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">action</span>.<span class="ruby-identifier">default</span> = <span class="ruby-string">'show'</span>
+  <span class="ruby-identifier">action</span>.<span class="ruby-identifier">is_optional</span> = <span class="ruby-keyword">true</span>
+  
+  <span class="ruby-identifier">id</span>.<span class="ruby-identifier">default</span> = <span class="ruby-string">'Welcome'</span>
+  <span class="ruby-identifier">id</span>.<span class="ruby-identifier">is_optional</span> = <span class="ruby-keyword">true</span>
+  
+  <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">assign_default_route_options</span>(<span class="ruby-identifier">segments</span>)
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'show'</span>, <span class="ruby-identifier">action</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">action</span>.<span class="ruby-identifier">optional?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'Welcome'</span>, <span class="ruby-identifier">id</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">id</span>.<span class="ruby-identifier">optional?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assignment_of_default_options_respects_regexps">
+            
+              <a name="method-i-test_assignment_of_default_options_respects_regexps"></a><b>test_assignment_of_default_options_respects_regexps</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assignment_of_default_options_respects_regexps_source')" id="l_method-i-test_assignment_of_default_options_respects_regexps_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assignment_of_default_options_respects_regexps_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1173</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assignment_of_default_options_respects_regexps</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/:controller/:action/:id/'</span>
+  <span class="ruby-identifier">action</span> = <span class="ruby-identifier">segments</span>[<span class="ruby-number">-4</span>]
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:action</span>, <span class="ruby-identifier">action</span>.<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">action</span>.<span class="ruby-identifier">regexp</span> = <span class="ruby-regexp">%rshow|in/</span> <span class="ruby-comment"># Use 'in' to check partial matches</span>
+  
+  <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">assign_default_route_options</span>(<span class="ruby-identifier">segments</span>)
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">action</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span> <span class="ruby-identifier">action</span>.<span class="ruby-identifier">optional?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_assignment_of_is_optional_when_default">
+            
+              <a name="method-i-test_assignment_of_is_optional_when_default"></a><b>test_assignment_of_is_optional_when_default</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_assignment_of_is_optional_when_default_source')" id="l_method-i-test_assignment_of_is_optional_when_default_source">show</a>
+                
+              </p>
+              <div id="method-i-test_assignment_of_is_optional_when_default_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1186</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_assignment_of_is_optional_when_default</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/books/:action.rss'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">key</span>, <span class="ruby-value">:action</span>
+  <span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">default</span> = <span class="ruby-string">'changes'</span>
+  <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">ensure_required_segments</span>(<span class="ruby-identifier">segments</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span> <span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">optional?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_divide_route_options">
+            
+              <a name="method-i-test_divide_route_options"></a><b>test_divide_route_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_divide_route_options_source')" id="l_method-i-test_divide_route_options_source">show</a>
+                
+              </p>
+              <div id="method-i-test_divide_route_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1057</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_divide_route_options</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/cars/:action/:person/:car/'</span>
+  <span class="ruby-identifier">defaults</span>, <span class="ruby-identifier">requirements</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">divide_route_options</span>(<span class="ruby-identifier">segments</span>,
+    <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'buy'</span>, <span class="ruby-value">:person</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\w+/</span>, <span class="ruby-value">:car</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\w+/</span>,
+    <span class="ruby-value">:defaults</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:person</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:car</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>}
+  )
+  
+  <span class="ruby-identifier">assert_equal</span>({<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'buy'</span>, <span class="ruby-value">:person</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:car</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>}, <span class="ruby-identifier">defaults</span>)
+  <span class="ruby-identifier">assert_equal</span>({<span class="ruby-value">:person</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\w+/</span>, <span class="ruby-value">:car</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\w+/</span>}, <span class="ruby-identifier">requirements</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_is_optional_is_assigned_to_default_segments">
+            
+              <a name="method-i-test_is_optional_is_assigned_to_default_segments"></a><b>test_is_optional_is_assigned_to_default_segments</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_is_optional_is_assigned_to_default_segments_source')" id="l_method-i-test_is_optional_is_assigned_to_default_segments_source">show</a>
+                
+              </p>
+              <div id="method-i-test_is_optional_is_assigned_to_default_segments_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_is_optional_is_assigned_to_default_segments</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/books/:action'</span>
+  <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">assign_route_options</span>(<span class="ruby-identifier">segments</span>, {<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'index'</span>}, {})
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">key</span>, <span class="ruby-value">:action</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">optional?</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DividerSegment</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">2</span>]
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">segments</span>[<span class="ruby-number">2</span>].<span class="ruby-identifier">optional?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_optional_segments_preceding_required_segments">
+            
+              <a name="method-i-test_optional_segments_preceding_required_segments"></a><b>test_optional_segments_preceding_required_segments</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_optional_segments_preceding_required_segments_source')" id="l_method-i-test_optional_segments_preceding_required_segments_source">show</a>
+                
+              </p>
+              <div id="method-i-test_optional_segments_preceding_required_segments_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_optional_segments_preceding_required_segments</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/cars/:action/:person/:car/'</span>
+  <span class="ruby-identifier">defaults</span> = {<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'buy'</span>, <span class="ruby-value">:person</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:car</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;model-t&quot;</span>}
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">assign_route_options</span>(<span class="ruby-identifier">segments</span>, <span class="ruby-identifier">defaults</span>, {}).<span class="ruby-identifier">empty?</span>
+  
+  <span class="ruby-number">0</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-number">1</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">segments</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">optional?</span>, <span class="ruby-node">&quot;segment #{i} is optional and it shouldn't be&quot;</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">segments</span>[<span class="ruby-number">2</span>].<span class="ruby-identifier">optional?</span>
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">warn_output</span> <span class="ruby-comment"># should only warn on the :person segment</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_options_should_not_be_modified">
+            
+              <a name="method-i-test_options_should_not_be_modified"></a><b>test_options_should_not_be_modified</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_options_should_not_be_modified_source')" id="l_method-i-test_options_should_not_be_modified_source">show</a>
+                
+              </p>
+              <div id="method-i-test_options_should_not_be_modified_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 972</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_options_should_not_be_modified</span>
+  <span class="ruby-identifier">requirements1</span> = { <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r\w+/</span>, <span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-regexp">%r(?:[a-z](?:-?[a-z]+)*)/</span> }
+  <span class="ruby-identifier">requirements2</span> = <span class="ruby-identifier">requirements1</span>.<span class="ruby-identifier">dup</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">requirements1</span>, <span class="ruby-identifier">requirements2</span>
+
+  <span class="ruby-identifier">with_options</span>(<span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'folder'</span>,
+               <span class="ruby-value">:requirements</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">requirements2</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">build</span> <span class="ruby-string">'folders/new'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'new'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">requirements1</span>, <span class="ruby-identifier">requirements2</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_route_build">
+            
+              <a name="method-i-test_route_build"></a><b>test_route_build</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>XXX is optional not being set right? /blah/:defaulted_segment &lt;– is the
+second slash optional? it should be.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_route_build_source')" id="l_method-i-test_route_build_source">show</a>
+                
+              </p>
+              <div id="method-i-test_route_build_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_route_build</span>
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span>.<span class="ruby-identifier">with_controllers</span> <span class="ruby-node">%w(users pages)</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">r</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">build</span> <span class="ruby-string">'/:controller/:action/:id/'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>
+    
+    [<span class="ruby-number">0</span>, <span class="ruby-number">2</span>, <span class="ruby-number">4</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DividerSegment</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-identifier">i</span>]
+      <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'/'</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">value</span>
+      <span class="ruby-identifier">assert</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-identifier">i</span>].<span class="ruby-identifier">optional?</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">i</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>
+    <span class="ruby-keyword">end</span>
+    
+    <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DynamicSegment</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-number">1</span>]
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:controller</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">key</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">default</span>
+    
+    <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DynamicSegment</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>]
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:action</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">key</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'index'</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">default</span>
+    
+    <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DynamicSegment</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-number">5</span>]
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:id</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-number">5</span>].<span class="ruby-identifier">key</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">r</span>.<span class="ruby-identifier">segments</span>[<span class="ruby-number">5</span>].<span class="ruby-identifier">optional?</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_segment_for_action">
+            
+              <a name="method-i-test_segment_for_action"></a><b>test_segment_for_action</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_segment_for_action_source')" id="l_method-i-test_segment_for_action_source">show</a>
+                
+              </p>
+              <div id="method-i-test_segment_for_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 993</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_segment_for_action</span>
+  <span class="ruby-identifier">segment</span>, <span class="ruby-identifier">rest</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segment_for</span> <span class="ruby-string">':action'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-identifier">rest</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DynamicSegment</span>, <span class="ruby-identifier">segment</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:action</span>, <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'index'</span>, <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">default</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_segment_for_dynamic">
+            
+              <a name="method-i-test_segment_for_dynamic"></a><b>test_segment_for_dynamic</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_segment_for_dynamic_source')" id="l_method-i-test_segment_for_dynamic_source">show</a>
+                
+              </p>
+              <div id="method-i-test_segment_for_dynamic_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1001</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_segment_for_dynamic</span>
+  <span class="ruby-identifier">segment</span>, <span class="ruby-identifier">rest</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segment_for</span> <span class="ruby-string">':login'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-identifier">rest</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DynamicSegment</span>, <span class="ruby-identifier">segment</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:login</span>, <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">optional?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_segment_for_static">
+            
+              <a name="method-i-test_segment_for_static"></a><b>test_segment_for_static</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_segment_for_static_source')" id="l_method-i-test_segment_for_static_source">show</a>
+                
+              </p>
+              <div id="method-i-test_segment_for_static_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 986</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_segment_for_static</span>
+  <span class="ruby-identifier">segment</span>, <span class="ruby-identifier">rest</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segment_for</span> <span class="ruby-string">'ulysses'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-identifier">rest</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">StaticSegment</span>, <span class="ruby-identifier">segment</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'ulysses'</span>, <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_segment_for_with_rest">
+            
+              <a name="method-i-test_segment_for_with_rest"></a><b>test_segment_for_with_rest</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_segment_for_with_rest_source')" id="l_method-i-test_segment_for_with_rest_source">show</a>
+                
+              </p>
+              <div id="method-i-test_segment_for_with_rest_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1010</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_segment_for_with_rest</span>
+  <span class="ruby-identifier">segment</span>, <span class="ruby-identifier">rest</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segment_for</span> <span class="ruby-string">':login/:action'</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:login</span>, <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'/:action'</span>, <span class="ruby-identifier">rest</span>
+  <span class="ruby-identifier">segment</span>, <span class="ruby-identifier">rest</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segment_for</span> <span class="ruby-identifier">rest</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'/'</span>, <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">value</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">':action'</span>, <span class="ruby-identifier">rest</span>
+  <span class="ruby-identifier">segment</span>, <span class="ruby-identifier">rest</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segment_for</span> <span class="ruby-identifier">rest</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:action</span>, <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">key</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">''</span>, <span class="ruby-identifier">rest</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_segmentation_of_dot_path">
+            
+              <a name="method-i-test_segmentation_of_dot_path"></a><b>test_segmentation_of_dot_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_segmentation_of_dot_path_source')" id="l_method-i-test_segmentation_of_dot_path_source">show</a>
+                
+              </p>
+              <div id="method-i-test_segmentation_of_dot_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_segmentation_of_dot_path</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/books/:action.rss'</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">assign_route_options</span>(<span class="ruby-identifier">segments</span>, {}, {}).<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">6</span>, <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">length</span> <span class="ruby-comment"># &quot;/&quot;, &quot;books&quot;, &quot;/&quot;, &quot;:action&quot;, &quot;.&quot;, &quot;rss&quot;</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">segments</span>.<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">seg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">seg</span>.<span class="ruby-identifier">optional?</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_segmentation_of_dynamic_dot_path">
+            
+              <a name="method-i-test_segmentation_of_dynamic_dot_path"></a><b>test_segmentation_of_dynamic_dot_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_segmentation_of_dynamic_dot_path_source')" id="l_method-i-test_segmentation_of_dynamic_dot_path_source">show</a>
+                
+              </p>
+              <div id="method-i-test_segmentation_of_dynamic_dot_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1129</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_segmentation_of_dynamic_dot_path</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/books/:action.:format'</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">assign_route_options</span>(<span class="ruby-identifier">segments</span>, {}, {}).<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">6</span>, <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">length</span> <span class="ruby-comment"># &quot;/&quot;, &quot;books&quot;, &quot;/&quot;, &quot;:action&quot;, &quot;.&quot;, &quot;:format&quot;</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">segments</span>.<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">seg</span><span class="ruby-operator">|</span> <span class="ruby-identifier">seg</span>.<span class="ruby-identifier">optional?</span> }
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DynamicSegment</span>, <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">last</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_segmentation_of_semicolon_path">
+            
+              <a name="method-i-test_segmentation_of_semicolon_path"></a><b>test_segmentation_of_semicolon_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_segmentation_of_semicolon_path_source')" id="l_method-i-test_segmentation_of_semicolon_path_source">show</a>
+                
+              </p>
+              <div id="method-i-test_segmentation_of_semicolon_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1113</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_segmentation_of_semicolon_path</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/books/:id;:action'</span>
+  <span class="ruby-identifier">defaults</span> = { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'show'</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">assign_route_options</span>(<span class="ruby-identifier">segments</span>, <span class="ruby-identifier">defaults</span>, {}).<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">segments</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">segment</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">optional?</span> <span class="ruby-operator">||</span> <span class="ruby-identifier">segment</span>.<span class="ruby-identifier">key</span> <span class="ruby-operator">==</span> <span class="ruby-value">:action</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_segments_for">
+            
+              <a name="method-i-test_segments_for"></a><b>test_segments_for</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_segments_for_source')" id="l_method-i-test_segments_for_source">show</a>
+                
+              </p>
+              <div id="method-i-test_segments_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1022</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_segments_for</span>
+  <span class="ruby-identifier">segments</span> = <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">segments_for_route_path</span> <span class="ruby-string">'/:controller/:action/:id'</span>
+  
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DividerSegment</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">0</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'/'</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">2</span>].<span class="ruby-identifier">value</span>
+  
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DynamicSegment</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">1</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:controller</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">1</span>].<span class="ruby-identifier">key</span>
+  
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DividerSegment</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">2</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'/'</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">2</span>].<span class="ruby-identifier">value</span>
+  
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DynamicSegment</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:action</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">3</span>].<span class="ruby-identifier">key</span>
+  
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DividerSegment</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">4</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'/'</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">4</span>].<span class="ruby-identifier">value</span>
+  
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">ROUTING</span><span class="ruby-operator">::</span><span class="ruby-constant">DynamicSegment</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">5</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:id</span>, <span class="ruby-identifier">segments</span>[<span class="ruby-number">5</span>].<span class="ruby-identifier">key</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_slashes_are_implied">
+            
+              <a name="method-i-test_slashes_are_implied"></a><b>test_slashes_are_implied</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_slashes_are_implied_source')" id="l_method-i-test_slashes_are_implied_source">show</a>
+                
+              </p>
+              <div id="method-i-test_slashes_are_implied_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/routing_test.rb, line 1231</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_slashes_are_implied</span>
+  <span class="ruby-identifier">routes</span> = [
+    <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">build</span>(<span class="ruby-string">'/:controller/:action/:id/'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>),
+    <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">build</span>(<span class="ruby-string">'/:controller/:action/:id'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>),
+    <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">build</span>(<span class="ruby-string">':controller/:action/:id'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>),
+    <span class="ruby-identifier">builder</span>.<span class="ruby-identifier">build</span>(<span class="ruby-string">'/:controller/:action/:id/'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>)
+  ]
+  <span class="ruby-identifier">expected</span> = <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">segments</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">each_with_index</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">route</span>, <span class="ruby-identifier">i</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">found</span> = <span class="ruby-identifier">route</span>.<span class="ruby-identifier">segments</span>.<span class="ruby-identifier">length</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">found</span>, <span class="ruby-node">&quot;Route #{i + 1} has #{found} segments, expected #{expected}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

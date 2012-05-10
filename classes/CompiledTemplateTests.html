@@ -1,0 +1,528 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CompiledTemplateTests</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            CompiledTemplateTests 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/template/compiled_templates_test_rb.html">rails/actionpack/test/template/compiled_templates_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-teardown">teardown</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_compile_source_single_method">test_compile_source_single_method</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_compile_source_two_method">test_compile_source_two_method</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_compile_time">test_compile_time</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_mtime">test_mtime</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_name_allocation">test_name_allocation</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_wrap_source">test_wrap_source</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>ct</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>v</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/compiled_templates_test.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@ct</span> = <span class="ruby-constant">ActionView</span><span class="ruby-operator">::</span><span class="ruby-constant">CompiledTemplates</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@v</span> = <span class="ruby-constant">Class</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@v</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:include</span>, <span class="ruby-ivar">@ct</span>
+  <span class="ruby-ivar">@a</span> = <span class="ruby-string">'./test_compile_template_a.rhtml'</span>
+  <span class="ruby-ivar">@b</span> = <span class="ruby-string">'./test_compile_template_b.rhtml'</span>
+  <span class="ruby-ivar">@s</span> = <span class="ruby-string">'./test_compile_template_link.rhtml'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-teardown">
+            
+              <a name="method-i-teardown"></a><b>teardown</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-teardown_source')" id="l_method-i-teardown_source">show</a>
+                
+              </p>
+              <div id="method-i-teardown_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/compiled_templates_test.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">teardown</span>
+  [<span class="ruby-ivar">@a</span>, <span class="ruby-ivar">@b</span>, <span class="ruby-ivar">@s</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span>
+    <span class="ruby-node">%xrm #{f}`</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">exist?</span>(<span class="ruby-identifier">f</span>) <span class="ruby-operator">||</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">symlink?</span>(<span class="ruby-identifier">f</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_compile_source_single_method">
+            
+              <a name="method-i-test_compile_source_single_method"></a><b>test_compile_source_single_method</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_compile_source_single_method_source')" id="l_method-i-test_compile_source_single_method_source">show</a>
+                
+              </p>
+              <div id="method-i-test_compile_source_single_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/compiled_templates_test.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_compile_source_single_method</span>
+  <span class="ruby-identifier">selector</span> = <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">compile_source</span>(<span class="ruby-string">'doubling method'</span>, [<span class="ruby-value">:a</span>], <span class="ruby-string">'a + a'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-ivar">@v</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-number">1</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">4</span>, <span class="ruby-ivar">@v</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-number">2</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">-4</span>, <span class="ruby-ivar">@v</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-number">-2</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-ivar">@v</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">selector</span>, <span class="ruby-number">0</span>)
+  <span class="ruby-identifier">selector</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_compile_source_two_method">
+            
+              <a name="method-i-test_compile_source_two_method"></a><b>test_compile_source_two_method</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_compile_source_two_method_source')" id="l_method-i-test_compile_source_two_method_source">show</a>
+                
+              </p>
+              <div id="method-i-test_compile_source_two_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/compiled_templates_test.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_compile_source_two_method</span>
+  <span class="ruby-identifier">sel1</span> = <span class="ruby-identifier">test_compile_source_single_method</span> <span class="ruby-comment"># compile the method in the other test</span>
+  <span class="ruby-identifier">sel2</span> = <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">compile_source</span>(<span class="ruby-string">'doubling method'</span>, [<span class="ruby-value">:a</span>, <span class="ruby-value">:b</span>], <span class="ruby-string">'a + b + a + b'</span>)
+  <span class="ruby-identifier">assert_not_equal</span> <span class="ruby-identifier">sel1</span>, <span class="ruby-identifier">sel2</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-ivar">@v</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">sel1</span>, <span class="ruby-number">1</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">4</span>, <span class="ruby-ivar">@v</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">sel1</span>, <span class="ruby-number">2</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">6</span>, <span class="ruby-ivar">@v</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">sel2</span>, <span class="ruby-number">1</span>, <span class="ruby-number">2</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">32</span>, <span class="ruby-ivar">@v</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">sel2</span>, <span class="ruby-number">15</span>, <span class="ruby-number">1</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_compile_time">
+            
+              <a name="method-i-test_compile_time"></a><b>test_compile_time</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_compile_time_source')" id="l_method-i-test_compile_time_source">show</a>
+                
+              </p>
+              <div id="method-i-test_compile_time_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/compiled_templates_test.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_compile_time</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-ivar">@a</span>, <span class="ruby-string">&quot;w&quot;</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-ivar">@a</span>}
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-ivar">@b</span>, <span class="ruby-string">&quot;w&quot;</span>){<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-ivar">@b</span>}
+
+  <span class="ruby-comment"># windows doesn't support symlinks (even under cygwin)</span>
+  <span class="ruby-identifier">windows</span> = (<span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%rwin32/</span>)
+  <span class="ruby-node">%xln -s #{@a} #{@s}`</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+
+  <span class="ruby-identifier">v</span> = <span class="ruby-constant">ActionView</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">base_path</span> = <span class="ruby-string">'.'</span>
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">cache_template_loading</span> = <span class="ruby-keyword">false</span>;
+
+  <span class="ruby-identifier">sleep</span> <span class="ruby-number">1</span>
+  <span class="ruby-identifier">t</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-identifier">sleep</span> <span class="ruby-number">1</span>
+
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@a</span>)
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@b</span>)
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@s</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+
+  <span class="ruby-identifier">a_n</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">method_names</span>[<span class="ruby-ivar">@a</span>]
+  <span class="ruby-identifier">b_n</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">method_names</span>[<span class="ruby-ivar">@b</span>]
+  <span class="ruby-identifier">s_n</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">method_names</span>[<span class="ruby-ivar">@s</span>]  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+  <span class="ruby-identifier">ct_a</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">a_n</span>]
+  <span class="ruby-identifier">ct_b</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">b_n</span>]
+  <span class="ruby-identifier">ct_s</span> = <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">s_n</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+  <span class="ruby-comment"># all of the files have changed since last compile</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">a_n</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">t</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">b_n</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">t</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">s_n</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">t</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+
+  <span class="ruby-identifier">sleep</span> <span class="ruby-number">1</span>
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@a</span>)
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@b</span>)
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@s</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+  <span class="ruby-comment"># none of the files have changed since last compile</span>
+  <span class="ruby-comment"># so they should not have been recmpiled</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">ct_a</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">a_n</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">ct_b</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">b_n</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">ct_s</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">s_n</span>] <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+
+  <span class="ruby-node">%xrm #{@s}; ln -s #{@b} #{@s}`</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@a</span>)
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@b</span>)
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@s</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+  <span class="ruby-comment"># the symlink has changed since last compile</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">ct_a</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">a_n</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">ct_b</span>, <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">b_n</span>]
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">s_n</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">t</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+
+  <span class="ruby-identifier">sleep</span> <span class="ruby-number">1</span>
+  <span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">touch</span> <span class="ruby-ivar">@b</span>
+  <span class="ruby-identifier">t</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-identifier">sleep</span> <span class="ruby-number">1</span>
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@a</span>)
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@b</span>)
+  <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_and_render_template</span>(<span class="ruby-value">:rhtml</span>, <span class="ruby-string">''</span>, <span class="ruby-ivar">@s</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+  <span class="ruby-comment"># the file at the end of the symlink has changed since last compile</span>
+  <span class="ruby-comment"># both the symlink and the file at the end of it should be recompiled</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">a_n</span>] <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">t</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">b_n</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">t</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">v</span>.<span class="ruby-identifier">compile_time</span>[<span class="ruby-identifier">s_n</span>] <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">t</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">windows</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_mtime">
+            
+              <a name="method-i-test_mtime"></a><b>test_mtime</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_mtime_source')" id="l_method-i-test_mtime_source">show</a>
+                
+              </p>
+              <div id="method-i-test_mtime_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/compiled_templates_test.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_mtime</span>
+  <span class="ruby-identifier">t1</span> = <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>
+  <span class="ruby-identifier">test_compile_source_single_method</span>
+  <span class="ruby-identifier">assert</span> (<span class="ruby-identifier">t1</span><span class="ruby-operator">..</span><span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>).<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">ct</span>.<span class="ruby-identifier">mtime</span>(<span class="ruby-string">'doubling method'</span>, [<span class="ruby-value">:a</span>]))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_name_allocation">
+            
+              <a name="method-i-test_name_allocation"></a><b>test_name_allocation</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_name_allocation_source')" id="l_method-i-test_name_allocation_source">show</a>
+                
+              </p>
+              <div id="method-i-test_name_allocation_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/compiled_templates_test.rb, line 23</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_name_allocation</span>
+  <span class="ruby-identifier">hi_world</span> = <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">method_names</span>[<span class="ruby-string">'hi world'</span>]
+  <span class="ruby-identifier">hi_sexy</span> = <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">method_names</span>[<span class="ruby-string">'hi sexy'</span>]
+  <span class="ruby-identifier">wish_upon_a_star</span> = <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">method_names</span>[<span class="ruby-string">'I love seeing decent error messages'</span>]
+  
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">hi_world</span>, <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">method_names</span>[<span class="ruby-string">'hi world'</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">hi_sexy</span>, <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">method_names</span>[<span class="ruby-string">'hi sexy'</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">wish_upon_a_star</span>, <span class="ruby-identifier">ct</span>.<span class="ruby-identifier">method_names</span>[<span class="ruby-string">'I love seeing decent error messages'</span>]
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, [<span class="ruby-identifier">hi_world</span>, <span class="ruby-identifier">hi_sexy</span>, <span class="ruby-identifier">wish_upon_a_star</span>].<span class="ruby-identifier">uniq</span>.<span class="ruby-identifier">length</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_wrap_source">
+            
+              <a name="method-i-test_wrap_source"></a><b>test_wrap_source</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_wrap_source_source')" id="l_method-i-test_wrap_source_source">show</a>
+                
+              </p>
+              <div id="method-i-test_wrap_source_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/compiled_templates_test.rb, line 34</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_wrap_source</span>
+  <span class="ruby-identifier">assert_equal</span>(
+    <span class="ruby-string">&quot;def aliased_assignment(value)\nself.value = value\nend&quot;</span>,
+    <span class="ruby-ivar">@ct</span>.<span class="ruby-identifier">wrap_source</span>(<span class="ruby-value">:aliased_assignment</span>, [<span class="ruby-value">:value</span>], <span class="ruby-string">'self.value = value'</span>)
+  )
+
+  <span class="ruby-identifier">assert_equal</span>(
+    <span class="ruby-string">&quot;def simple()\nnil\nend&quot;</span>,
+    <span class="ruby-ivar">@ct</span>.<span class="ruby-identifier">wrap_source</span>(<span class="ruby-value">:simple</span>, [], <span class="ruby-string">'nil'</span>)
+  )
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,103 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>USAGE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            USAGE
+        </h1>
+        <ul class="files">
+            <li>rails/railties/lib/rails_generator/generators/components/scaffold_resource/USAGE</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Description:</p>
+
+<pre>The scaffold resource generator creates a model, a controller, and a set of templates that's ready to use as the
+starting point for your REST-like, resource-oriented application. This basically means that it follows a set of
+conventions to exploit the full set of HTTP verbs (GET/POST/PUT/DELETE) and is prepared for multi-client access
+(like one view for HTML, one for an XML API, one for ATOM, etc). Everything comes with sample unit and functional
+tests as well.
+
+The generator takes the name of the model as its first argument. This model name is then pluralized to get the 
+controller name. So &quot;scaffold_resource post&quot; will generate a Post model and a PostsController and will be intended
+for URLs like /posts and /posts/45.
+
+As additional parameters, the generator will take attribute pairs described by name and type. These attributes will
+be used to prepopulate the migration to create the table for the model and to give you a set of templates for the
+view. For example, &quot;scaffold_resource post title:string created_on:date body:text published:boolean&quot; will give
+you a model with those four attributes, forms to create and edit those models from, and an index that'll list them 
+all.
+
+You don't have to think up all attributes up front, but it's a good idea of adding just the baseline of what's 
+needed to start really working with the resource.
+
+Once the generator has run, you'll need to add a declaration to your config/routes.rb file to hook up the rules
+that'll point URLs to this new resource. If you create a resource like &quot;scaffold_resource post&quot;, you'll need to
+add &quot;map.resources :posts&quot; (notice the plural form) in the routes file. Then your new resource is accessible from
+/posts.</pre>
+
+<p>Examples:</p>
+
+<pre>./script/generate scaffold_resource post # no attributes, view will be anemic
+./script/generate scaffold_resource post title:string created_on:date body:text published:boolean
+./script/generate scaffold_resource purchase order_id:integer created_at:datetime amount:decimal</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

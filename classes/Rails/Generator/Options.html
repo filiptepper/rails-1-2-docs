@@ -1,0 +1,652 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Rails::Generator::Options</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Rails::Generator::Options 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/railties/lib/rails_generator/options_rb.html">rails/railties/lib/rails_generator/options.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Options/ClassMethods.html">Rails::Generator::Options::ClassMethods</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_general_options-21">add_general_options!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-add_options-21">add_options!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-banner">banner</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-default_options">default_options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-full_options">full_options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-included">included</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-mandatory_options">mandatory_options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-options">options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-parse-21">parse!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-usage">usage</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-usage_message">usage_message</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [W]
+            </td>
+            <td class='attr-name'>options</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-included">
+            
+              <a name="method-c-included"></a><b>included</b>(base)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-included_source')" id="l_method-c-included_source">show</a>
+                
+              </p>
+              <div id="method-c-included_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/options.rb, line 6</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">included</span>(<span class="ruby-identifier">base</span>)
+  <span class="ruby-identifier">base</span>.<span class="ruby-identifier">extend</span>(<span class="ruby-constant">ClassMethods</span>)
+  <span class="ruby-keyword">class</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-keyword ruby-title">base</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">respond_to?</span>(<span class="ruby-value">:inherited</span>)
+      <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:inherited_without_options</span>, <span class="ruby-value">:inherited</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">alias_method</span> <span class="ruby-value">:inherited</span>, <span class="ruby-value">:inherited_with_options</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-options">
+            
+              <a name="method-i-options"></a><b>options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Each instance has an options hash that’s populated by parse.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-options_source')" id="l_method-i-options_source">show</a>
+                
+              </p>
+              <div id="method-i-options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/options.rb, line 49</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">options</span>
+  <span class="ruby-ivar">@options</span> <span class="ruby-operator">||=</span> {}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_general_options-21">
+            
+              <a name="method-i-add_general_options-21"></a><b>add_general_options!</b>(opt)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Adds general options like -h and –quiet.  Usually don’t override.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_general_options-21_source')" id="l_method-i-add_general_options-21_source">show</a>
+                
+              </p>
+              <div id="method-i-add_general_options-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/options.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_general_options!</span>(<span class="ruby-identifier">opt</span>)
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">'Rails Info:'</span>
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-v'</span>, <span class="ruby-string">'--version'</span>, <span class="ruby-string">'Show the Rails version number and quit.'</span>)
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-h'</span>, <span class="ruby-string">'--help'</span>, <span class="ruby-string">'Show this help message and quit.'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:help</span>] = <span class="ruby-identifier">v</span> }
+
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">'General Options:'</span>
+
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-p'</span>, <span class="ruby-string">'--pretend'</span>, <span class="ruby-string">'Run but do not make any changes.'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:pretend</span>] = <span class="ruby-identifier">v</span> }
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-f'</span>, <span class="ruby-string">'--force'</span>, <span class="ruby-string">'Overwrite files that already exist.'</span>) { <span class="ruby-identifier">options</span>[<span class="ruby-value">:collision</span>] = <span class="ruby-value">:force</span> }
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-s'</span>, <span class="ruby-string">'--skip'</span>, <span class="ruby-string">'Skip files that already exist.'</span>) { <span class="ruby-identifier">options</span>[<span class="ruby-value">:collision</span>] = <span class="ruby-value">:skip</span> }
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-q'</span>, <span class="ruby-string">'--quiet'</span>, <span class="ruby-string">'Suppress normal output.'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:quiet</span>] = <span class="ruby-identifier">v</span> }
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-t'</span>, <span class="ruby-string">'--backtrace'</span>, <span class="ruby-string">'Debugging: show backtrace on errors.'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:backtrace</span>] = <span class="ruby-identifier">v</span> }
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-c'</span>, <span class="ruby-string">'--svn'</span>, <span class="ruby-string">'Modify files with subversion. (Note: svn must be in path)'</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">options</span>[<span class="ruby-value">:svn</span>] = <span class="ruby-value">%xsvn status`</span>.<span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span>, <span class="ruby-identifier">e</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">opt</span>[<span class="ruby-identifier">e</span>.<span class="ruby-identifier">chomp</span>[<span class="ruby-number">7</span><span class="ruby-operator">..</span><span class="ruby-number">-1</span>]] = <span class="ruby-keyword">true</span>
+      <span class="ruby-identifier">opt</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-add_options-21">
+            
+              <a name="method-i-add_options-21"></a><b>add_options!</b>(opt)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Override to add your options to the parser:</p>
+
+<pre class="ruby"><span class="ruby-keyword">def</span> <span class="ruby-identifier">add_options!</span>(<span class="ruby-identifier">opt</span>)
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">'-v'</span>, <span class="ruby-string">'--verbose'</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[:<span class="ruby-identifier">verbose</span>] = <span class="ruby-identifier">value</span> }
+<span class="ruby-keyword">end</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_options-21_source')" id="l_method-i-add_options-21_source">show</a>
+                
+              </p>
+              <div id="method-i-add_options-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/options.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_options!</span>(<span class="ruby-identifier">opt</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-banner">
+            
+              <a name="method-i-banner"></a><b>banner</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Override with your own usage banner.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-banner_source')" id="l_method-i-banner_source">show</a>
+                
+              </p>
+              <div id="method-i-banner_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/options.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">banner</span>
+  <span class="ruby-node">&quot;Usage: #{$0} [options]&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-default_options">
+            
+              <a name="method-i-default_options"></a><b>default_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Convenient access to class default options.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-default_options_source')" id="l_method-i-default_options_source">show</a>
+                
+              </p>
+              <div id="method-i-default_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/options.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">default_options</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">default_options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-full_options">
+            
+              <a name="method-i-full_options"></a><b>full_options</b>(runtime_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Merge together our instance options.  In increasing precedence:</p>
+
+<pre class="ruby"><span class="ruby-identifier">default_options</span>   (<span class="ruby-keyword">class</span> <span class="ruby-identifier">default</span> <span class="ruby-identifier">options</span>)
+<span class="ruby-identifier">options</span>           (<span class="ruby-identifier">instance</span> <span class="ruby-identifier">options</span>)
+<span class="ruby-identifier">runtime_options</span>   (<span class="ruby-identifier">provided</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">argument</span>)
+<span class="ruby-identifier">mandatory_options</span> (<span class="ruby-keyword">class</span> <span class="ruby-identifier">mandatory</span> <span class="ruby-identifier">options</span>)
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-full_options_source')" id="l_method-i-full_options_source">show</a>
+                
+              </p>
+              <div id="method-i-full_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/options.rb, line 70</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">full_options</span>(<span class="ruby-identifier">runtime_options</span> = {})
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">full_options</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">runtime_options</span>))
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-mandatory_options">
+            
+              <a name="method-i-mandatory_options"></a><b>mandatory_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Convenient access to class mandatory options.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-mandatory_options_source')" id="l_method-i-mandatory_options_source">show</a>
+                
+              </p>
+              <div id="method-i-mandatory_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/options.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">mandatory_options</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">mandatory_options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-parse-21">
+            
+              <a name="method-i-parse-21"></a><b>parse!</b>(args, runtime_options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Parse arguments into the options hash.  Classes may customize parsing
+behavior by overriding these methods:</p>
+
+<pre>#banner                 Usage: ./script/generate [options]
+#add_options!           Options:
+                          some options..
+#add_general_options!   General Options:
+                          general options..</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-parse-21_source')" id="l_method-i-parse-21_source">show</a>
+                
+              </p>
+              <div id="method-i-parse-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/options.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">parse!</span>(<span class="ruby-identifier">args</span>, <span class="ruby-identifier">runtime_options</span> = {})
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">options</span> = {}
+
+  <span class="ruby-ivar">@option_parser</span> = <span class="ruby-constant">OptionParser</span>.<span class="ruby-identifier">new</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">opt</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">banner</span> = <span class="ruby-identifier">banner</span>
+    <span class="ruby-identifier">add_options!</span>(<span class="ruby-identifier">opt</span>)
+    <span class="ruby-identifier">add_general_options!</span>(<span class="ruby-identifier">opt</span>)
+    <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">parse!</span>(<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">args</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">options</span> = <span class="ruby-identifier">full_options</span>(<span class="ruby-identifier">runtime_options</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-usage">
+            
+              <a name="method-i-usage"></a><b>usage</b>(message = usage_message)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Raise a usage error.  Override <a
+href="Options.html#method-i-usage_message">#usage_message</a> to provide a
+blurb after the option parser summary.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-usage_source')" id="l_method-i-usage_source">show</a>
+                
+              </p>
+              <div id="method-i-usage_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/options.rb, line 98</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">usage</span>(<span class="ruby-identifier">message</span> = <span class="ruby-identifier">usage_message</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">UsageError</span>, <span class="ruby-node">&quot;#{@option_parser}\n#{message}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-usage_message">
+            
+              <a name="method-i-usage_message"></a><b>usage_message</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-usage_message_source')" id="l_method-i-usage_message_source">show</a>
+                
+              </p>
+              <div id="method-i-usage_message_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/options.rb, line 102</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">usage_message</span>
+  <span class="ruby-string">''</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

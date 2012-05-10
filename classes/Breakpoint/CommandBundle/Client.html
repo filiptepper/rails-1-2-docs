@@ -1,0 +1,202 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Breakpoint::CommandBundle::Client</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Breakpoint::CommandBundle::Client 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/activesupport/lib/active_support/breakpoint_rb.html">rails/activesupport/lib/active_support/breakpoint.rb</a></li>
+            
+            <li><a href="../../../files/rails/railties/lib/breakpoint_rb.html">rails/railties/lib/breakpoint.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Proxy to a <a href="../../Breakpoint.html">Breakpoint</a> client. Lets you
+directly execute code in the context of the client.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-eval">eval</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-method_missing">method_missing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-eval">
+            
+              <a name="method-i-eval"></a><b>eval</b>(code)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Executes the specified code at the client.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-eval_source')" id="l_method-i-eval_source">show</a>
+                
+              </p>
+              <div id="method-i-eval_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/breakpoint.rb, line 141</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">eval</span>(<span class="ruby-identifier">code</span>)
+  <span class="ruby-ivar">@eval_handler</span>.<span class="ruby-identifier">call</span>(<span class="ruby-identifier">code</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-method_missing">
+            
+              <a name="method-i-method_missing"></a><b>method_missing</b>(method, *args, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Will execute the specified statement at the client.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-method_missing_source')" id="l_method-i-method_missing_source">show</a>
+                
+              </p>
+              <div id="method-i-method_missing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/breakpoint.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">method_missing</span>(<span class="ruby-identifier">method</span>, *<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">block</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">&quot;#{method}&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># This is a bit ugly. The alternative would be using an</span>
+    <span class="ruby-comment"># eval context instead of an eval handler for executing</span>
+    <span class="ruby-comment"># the code at the client. The problem with that approach</span>
+    <span class="ruby-comment"># is that we would have to handle special expressions</span>
+    <span class="ruby-comment"># like &quot;self&quot;, &quot;nil&quot; or constants ourself which is hard.</span>
+    <span class="ruby-identifier">remote</span> = <span class="ruby-identifier">eval</span> <span class="ruby-node">%Q{
+      result = lambda { |block, *args| #{method}(*args, &amp;block) }
+      def result.call_with_block(*args, &amp;block)
+        call(block, *args)
+      end
+      result
+    }</span>
+    <span class="ruby-identifier">remote</span>.<span class="ruby-identifier">call_with_block</span>(*<span class="ruby-identifier">args</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

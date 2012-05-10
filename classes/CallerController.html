@@ -1,0 +1,545 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CallerController</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            CallerController 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="ActionController/Base.html">ActionController::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/components_test_rb.html">rails/actionpack/test/controller/components_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-calling_from_controller">calling_from_controller</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-calling_from_controller_with_different_status_code">calling_from_controller_with_different_status_code</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-calling_from_controller_with_params">calling_from_controller_with_params</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-calling_from_template">calling_from_template</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-calling_redirected">calling_redirected</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-calling_redirected_as_string">calling_redirected_as_string</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-internal_callee">internal_callee</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-internal_caller">internal_caller</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rescue_action">rescue_action</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set_flash">set_flash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-use_flash">use_flash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-calling_from_controller">
+            
+              <a name="method-i-calling_from_controller"></a><b>calling_from_controller</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-calling_from_controller_source')" id="l_method-i-calling_from_controller_source">show</a>
+                
+              </p>
+              <div id="method-i-calling_from_controller_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/components_test.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">calling_from_controller</span>
+  <span class="ruby-identifier">render_component</span>(<span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;callee&quot;</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;being_called&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-calling_from_controller_with_different_status_code">
+            
+              <a name="method-i-calling_from_controller_with_different_status_code"></a><b>calling_from_controller_with_different_status_code</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-calling_from_controller_with_different_status_code_source')" id="l_method-i-calling_from_controller_with_different_status_code_source">show</a>
+                
+              </p>
+              <div id="method-i-calling_from_controller_with_different_status_code_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/components_test.rb, line 12</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">calling_from_controller_with_different_status_code</span>
+  <span class="ruby-identifier">render_component</span>(<span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;callee&quot;</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;blowing_up&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-calling_from_controller_with_params">
+            
+              <a name="method-i-calling_from_controller_with_params"></a><b>calling_from_controller_with_params</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-calling_from_controller_with_params_source')" id="l_method-i-calling_from_controller_with_params_source">show</a>
+                
+              </p>
+              <div id="method-i-calling_from_controller_with_params_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/components_test.rb, line 8</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">calling_from_controller_with_params</span>
+  <span class="ruby-identifier">render_component</span>(<span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;callee&quot;</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;being_called&quot;</span>, <span class="ruby-value">:params</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-string">&quot;name&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;David&quot;</span> })
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-calling_from_template">
+            
+              <a name="method-i-calling_from_template"></a><b>calling_from_template</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-calling_from_template_source')" id="l_method-i-calling_from_template_source">show</a>
+                
+              </p>
+              <div id="method-i-calling_from_template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/components_test.rb, line 16</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">calling_from_template</span>
+  <span class="ruby-identifier">render_template</span> <span class="ruby-string">&quot;Ring, ring: &lt;%= render_component(:controller =&gt; 'callee', :action =&gt; 'being_called') %&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-calling_redirected">
+            
+              <a name="method-i-calling_redirected"></a><b>calling_redirected</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-calling_redirected_source')" id="l_method-i-calling_redirected_source">show</a>
+                
+              </p>
+              <div id="method-i-calling_redirected_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/components_test.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">calling_redirected</span>
+  <span class="ruby-identifier">render_component</span>(<span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;callee&quot;</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;redirected&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-calling_redirected_as_string">
+            
+              <a name="method-i-calling_redirected_as_string"></a><b>calling_redirected_as_string</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-calling_redirected_as_string_source')" id="l_method-i-calling_redirected_as_string_source">show</a>
+                
+              </p>
+              <div id="method-i-calling_redirected_as_string_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/components_test.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">calling_redirected_as_string</span>
+  <span class="ruby-identifier">render_template</span> <span class="ruby-string">&quot;&lt;%= render_component(:controller =&gt; 'callee', :action =&gt; 'redirected') %&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-internal_callee">
+            
+              <a name="method-i-internal_callee"></a><b>internal_callee</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-internal_callee_source')" id="l_method-i-internal_callee_source">show</a>
+                
+              </p>
+              <div id="method-i-internal_callee_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/components_test.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">internal_callee</span>
+  <span class="ruby-identifier">render_text</span> <span class="ruby-string">&quot;Yes, ma'am&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-internal_caller">
+            
+              <a name="method-i-internal_caller"></a><b>internal_caller</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-internal_caller_source')" id="l_method-i-internal_caller_source">show</a>
+                
+              </p>
+              <div id="method-i-internal_caller_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/components_test.rb, line 20</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">internal_caller</span>
+  <span class="ruby-identifier">render_template</span> <span class="ruby-string">&quot;Are you there? &lt;%= render_component(:action =&gt; 'internal_callee') %&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rescue_action">
+            
+              <a name="method-i-rescue_action"></a><b>rescue_action</b>(e)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rescue_action_source')" id="l_method-i-rescue_action_source">show</a>
+                
+              </p>
+              <div id="method-i-rescue_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/components_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rescue_action</span>(<span class="ruby-identifier">e</span>) <span class="ruby-identifier">raise</span> <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_flash">
+            
+              <a name="method-i-set_flash"></a><b>set_flash</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_flash_source')" id="l_method-i-set_flash_source">show</a>
+                
+              </p>
+              <div id="method-i-set_flash_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/components_test.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_flash</span>
+  <span class="ruby-identifier">render_component</span>(<span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;callee&quot;</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;set_flash&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-use_flash">
+            
+              <a name="method-i-use_flash"></a><b>use_flash</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-use_flash_source')" id="l_method-i-use_flash_source">show</a>
+                
+              </p>
+              <div id="method-i-use_flash_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/components_test.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">use_flash</span>
+  <span class="ruby-identifier">render_component</span>(<span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;callee&quot;</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;use_flash&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

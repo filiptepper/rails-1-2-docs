@@ -1,0 +1,3046 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Mysql</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Mysql 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/lib/active_record/vendor/mysql_rb.html">rails/activerecord/lib/active_record/vendor/mysql.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>$Id: mysql.rb,v 1.24 2005/02/12 11:37:15 tommy Exp $</p>
+
+<p>Copyright (<a href="C.html">C</a>) 2003-2005 TOMITA Masahiro tommy@tmtm.org</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Mysql/Error.html">Mysql::Error</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Mysql/Field.html">Mysql::Field</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Mysql/Net.html">Mysql::Net</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Mysql/Random.html">Mysql::Random</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Mysql/Result.html">Mysql::Result</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-change_user">change_user</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-character_set_name">character_set_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-client_info">client_info</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-client_info">client_info</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-close">close</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-connect">connect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-connect">connect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-create_db">create_db</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-debug">debug</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-drop_db">drop_db</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-dump_debug_info">dump_debug_info</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-escape_string">escape_string</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-escape_string">escape_string</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-finalizer">finalizer</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-get_client_info">get_client_info</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-get_client_info">get_client_info</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-get_host_info">get_host_info</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-get_proto_info">get_proto_info</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-get_server_info">get_server_info</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-handle_auth_fallback">handle_auth_fallback</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-host_info">host_info</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-init">init</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-inspect">inspect</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>K</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-kill">kill</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-list_dbs">list_dbs</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-list_fields">list_fields</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-list_processes">list_processes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-list_tables">list_tables</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>O</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-options">options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-ping">ping</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-proto_info">proto_info</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>Q</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-query">query</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-quote">quote</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-quote">quote</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-read_one_row">read_one_row</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-real_connect">real_connect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-real_connect">real_connect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-real_query">real_query</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-refresh">refresh</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-reload">reload</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-select_db">select_db</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-server_info">server_info</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-shutdown">shutdown</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-skip_result">skip_result</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-stat">stat</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-store_result">store_result</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-use_result">use_result</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">VERSION</td>
+            <td>=</td>
+            <td class="attr-value">&quot;4.0-ruby-0.2.6-plus-changes&quot;</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MAX_PACKET_LENGTH</td>
+            <td>=</td>
+            <td class="attr-value">256*256*256-1</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MAX_ALLOWED_PACKET</td>
+            <td>=</td>
+            <td class="attr-value">1024*1024*1024</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MYSQL_UNIX_ADDR</td>
+            <td>=</td>
+            <td class="attr-value">&quot;/tmp/mysql.sock&quot;</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">MYSQL_PORT</td>
+            <td>=</td>
+            <td class="attr-value">3306</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">PROTOCOL_VERSION</td>
+            <td>=</td>
+            <td class="attr-value">10</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SCRAMBLE_LENGTH</td>
+            <td>=</td>
+            <td class="attr-value">20</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SCRAMBLE_LENGTH_323</td>
+            <td>=</td>
+            <td class="attr-value">8</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_SLEEP</td>
+            <td>=</td>
+            <td class="attr-value">0</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Command</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_QUIT</td>
+            <td>=</td>
+            <td class="attr-value">1</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_INIT_DB</td>
+            <td>=</td>
+            <td class="attr-value">2</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_QUERY</td>
+            <td>=</td>
+            <td class="attr-value">3</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_FIELD_LIST</td>
+            <td>=</td>
+            <td class="attr-value">4</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_CREATE_DB</td>
+            <td>=</td>
+            <td class="attr-value">5</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_DROP_DB</td>
+            <td>=</td>
+            <td class="attr-value">6</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_REFRESH</td>
+            <td>=</td>
+            <td class="attr-value">7</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_SHUTDOWN</td>
+            <td>=</td>
+            <td class="attr-value">8</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_STATISTICS</td>
+            <td>=</td>
+            <td class="attr-value">9</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_PROCESS_INFO</td>
+            <td>=</td>
+            <td class="attr-value">10</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_CONNECT</td>
+            <td>=</td>
+            <td class="attr-value">11</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_PROCESS_KILL</td>
+            <td>=</td>
+            <td class="attr-value">12</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_DEBUG</td>
+            <td>=</td>
+            <td class="attr-value">13</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_PING</td>
+            <td>=</td>
+            <td class="attr-value">14</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_TIME</td>
+            <td>=</td>
+            <td class="attr-value">15</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_DELAYED_INSERT</td>
+            <td>=</td>
+            <td class="attr-value">16</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_CHANGE_USER</td>
+            <td>=</td>
+            <td class="attr-value">17</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_BINLOG_DUMP</td>
+            <td>=</td>
+            <td class="attr-value">18</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_TABLE_DUMP</td>
+            <td>=</td>
+            <td class="attr-value">19</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_CONNECT_OUT</td>
+            <td>=</td>
+            <td class="attr-value">20</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">COM_REGISTER_SLAVE</td>
+            <td>=</td>
+            <td class="attr-value">21</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_LONG_PASSWORD</td>
+            <td>=</td>
+            <td class="attr-value">1</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p><a href="Client.html">Client</a> flag</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_FOUND_ROWS</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 1</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_LONG_FLAG</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 2</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_CONNECT_WITH_DB</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 3</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_NO_SCHEMA</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 4</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_COMPRESS</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 5</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_ODBC</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 6</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_LOCAL_FILES</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 7</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_IGNORE_SPACE</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 8</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_PROTOCOL_41</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 9</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_INTERACTIVE</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 10</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_SSL</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 11</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_IGNORE_SIGPIPE</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 12</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_TRANSACTIONS</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 13</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_RESERVED</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 14</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_SECURE_CONNECTION</td>
+            <td>=</td>
+            <td class="attr-value">1 &lt;&lt; 15</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">CLIENT_CAPABILITIES</td>
+            <td>=</td>
+            <td class="attr-value">CLIENT_LONG_PASSWORD|CLIENT_LONG_FLAG|CLIENT_TRANSACTIONS</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">PROTO_AUTH41</td>
+            <td>=</td>
+            <td class="attr-value">CLIENT_PROTOCOL_41 | CLIENT_SECURE_CONNECTION</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">OPT_CONNECT_TIMEOUT</td>
+            <td>=</td>
+            <td class="attr-value">0</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Connection Option</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">OPT_COMPRESS</td>
+            <td>=</td>
+            <td class="attr-value">1</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">OPT_NAMED_PIPE</td>
+            <td>=</td>
+            <td class="attr-value">2</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">INIT_COMMAND</td>
+            <td>=</td>
+            <td class="attr-value">3</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">READ_DEFAULT_FILE</td>
+            <td>=</td>
+            <td class="attr-value">4</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">READ_DEFAULT_GROUP</td>
+            <td>=</td>
+            <td class="attr-value">5</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SET_CHARSET_DIR</td>
+            <td>=</td>
+            <td class="attr-value">6</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SET_CHARSET_NAME</td>
+            <td>=</td>
+            <td class="attr-value">7</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">OPT_LOCAL_INFILE</td>
+            <td>=</td>
+            <td class="attr-value">8</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SERVER_STATUS_IN_TRANS</td>
+            <td>=</td>
+            <td class="attr-value">1</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Server Status</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">SERVER_STATUS_AUTOCOMMIT</td>
+            <td>=</td>
+            <td class="attr-value">2</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REFRESH_GRANT</td>
+            <td>=</td>
+            <td class="attr-value">1</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"><p>Refresh parameter</p></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REFRESH_LOG</td>
+            <td>=</td>
+            <td class="attr-value">2</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REFRESH_TABLES</td>
+            <td>=</td>
+            <td class="attr-value">4</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REFRESH_HOSTS</td>
+            <td>=</td>
+            <td class="attr-value">8</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REFRESH_STATUS</td>
+            <td>=</td>
+            <td class="attr-value">16</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REFRESH_THREADS</td>
+            <td>=</td>
+            <td class="attr-value">32</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REFRESH_SLAVE</td>
+            <td>=</td>
+            <td class="attr-value">64</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+          <tr valign='top'>
+            <td class="attr-name">REFRESH_MASTER</td>
+            <td>=</td>
+            <td class="attr-value">128</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>affected_rows</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>field_count</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>info</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>insert_id</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>query_with_result</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>status</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>thread_id</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-client_info">
+            
+              <a name="method-c-client_info"></a><b>client_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-connect">
+            
+              <a name="method-c-connect"></a><b>connect</b>(*args)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-debug">
+            
+              <a name="method-c-debug"></a><b>debug</b>(str)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-debug_source')" id="l_method-c-debug_source">show</a>
+                
+              </p>
+              <div id="method-c-debug_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 1203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">debug</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;not implemented&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-escape_string">
+            
+              <a name="method-c-escape_string"></a><b>escape_string</b>(str)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Mysql.html#method-c-quote">quote</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-escape_string_source')" id="l_method-c-escape_string_source">show</a>
+                
+              </p>
+              <div id="method-c-escape_string_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 1185</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">escape_string</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-identifier">str</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r([\00\\n\r\0032\'\&quot;\\])/</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">case</span> <span class="ruby-node">$1</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;\00&quot;&quot;</span> <span class="ruby-keyword">then</span> <span class="ruby-string">&quot;\\0&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;\n&quot;</span> <span class="ruby-keyword">then</span> <span class="ruby-string">&quot;\\n&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;\r&quot;</span> <span class="ruby-keyword">then</span> <span class="ruby-string">&quot;\\r&quot;</span>
+    <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;\0032&quot;</span> <span class="ruby-keyword">then</span> <span class="ruby-string">&quot;\\Z&quot;</span>
+    <span class="ruby-keyword">else</span> <span class="ruby-string">&quot;\\&quot;</span><span class="ruby-operator">+</span><span class="ruby-node">$1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-finalizer">
+            
+              <a name="method-c-finalizer"></a><b>finalizer</b>(net)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-finalizer_source')" id="l_method-c-finalizer_source">show</a>
+                
+              </p>
+              <div id="method-c-finalizer_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 1174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">finalizer</span>(<span class="ruby-identifier">net</span>)
+  <span class="ruby-identifier">proc</span> {
+    <span class="ruby-identifier">net</span>.<span class="ruby-identifier">clear</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-identifier">net</span>.<span class="ruby-identifier">write</span>(<span class="ruby-constant">Mysql</span><span class="ruby-operator">::</span><span class="ruby-constant">COM_QUIT</span>.<span class="ruby-identifier">chr</span>)
+      <span class="ruby-identifier">net</span>.<span class="ruby-identifier">close</span>
+    <span class="ruby-keyword">rescue</span>  <span class="ruby-comment"># Ignore IOError if socket is already closed.</span>
+    <span class="ruby-keyword">end</span>
+  }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-get_client_info">
+            
+              <a name="method-c-get_client_info"></a><b>get_client_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Mysql.html#method-c-client_info">client_info</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-get_client_info_source')" id="l_method-c-get_client_info_source">show</a>
+                
+              </p>
+              <div id="method-c-get_client_info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 1198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get_client_info</span>()
+  <span class="ruby-constant">Mysql</span><span class="ruby-operator">::</span><span class="ruby-constant">VERSION</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-init">
+            
+              <a name="method-c-init"></a><b>init</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-init_source')" id="l_method-c-init_source">show</a>
+                
+              </p>
+              <div id="method-c-init_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 1165</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">init</span>()
+  <span class="ruby-constant">Mysql</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span> <span class="ruby-value">:INIT</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(*args)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-ivar">@client_flag</span> = <span class="ruby-number">0</span>
+  <span class="ruby-ivar">@max_allowed_packet</span> = <span class="ruby-constant">MAX_ALLOWED_PACKET</span>
+  <span class="ruby-ivar">@query_with_result</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@status</span> = <span class="ruby-value">:STATUS_READY</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">args</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">!=</span> <span class="ruby-value">:INIT</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">real_connect</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-quote">
+            
+              <a name="method-c-quote"></a><b>quote</b>(str)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-real_connect">
+            
+              <a name="method-c-real_connect"></a><b>real_connect</b>(*args)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Mysql.html#method-c-connect">connect</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-real_connect_source')" id="l_method-c-real_connect_source">show</a>
+                
+              </p>
+              <div id="method-c-real_connect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 1169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">real_connect</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-constant">Mysql</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(*<span class="ruby-identifier">args</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-change_user">
+            
+              <a name="method-i-change_user"></a><b>change_user</b>(user=&quot;&quot;, passwd=&quot;&quot;, db=&quot;&quot;)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-change_user_source')" id="l_method-i-change_user_source">show</a>
+                
+              </p>
+              <div id="method-i-change_user_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 219</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">change_user</span>(<span class="ruby-identifier">user</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">passwd</span>=<span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">db</span>=<span class="ruby-string">&quot;&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@pre_411</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-identifier">user</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;\00&quot;&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">scramble</span>(<span class="ruby-identifier">passwd</span>, <span class="ruby-ivar">@scramble_buff</span>, <span class="ruby-ivar">@protocol_version</span><span class="ruby-operator">==</span><span class="ruby-number">9</span>)<span class="ruby-operator">+</span><span class="ruby-string">&quot;\00&quot;&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">db</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-identifier">user</span><span class="ruby-operator">+</span><span class="ruby-string">&quot;\00&quot;&quot;</span><span class="ruby-operator">+</span><span class="ruby-identifier">scramble41</span>(<span class="ruby-identifier">passwd</span>, <span class="ruby-ivar">@scramble_buff</span>)<span class="ruby-operator">+</span><span class="ruby-identifier">db</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">pkt</span> = <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_CHANGE_USER</span>, <span class="ruby-identifier">data</span>
+  <span class="ruby-identifier">handle_auth_fallback</span>(<span class="ruby-identifier">pkt</span>, <span class="ruby-identifier">passwd</span>)
+  <span class="ruby-ivar">@user</span> = <span class="ruby-identifier">user</span>
+  <span class="ruby-ivar">@passwd</span> = <span class="ruby-identifier">passwd</span>
+  <span class="ruby-ivar">@db</span> = <span class="ruby-identifier">db</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-character_set_name">
+            
+              <a name="method-i-character_set_name"></a><b>character_set_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-character_set_name_source')" id="l_method-i-character_set_name_source">show</a>
+                
+              </p>
+              <div id="method-i-character_set_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 232</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">character_set_name</span>()
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;not implemented&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-client_info">
+            
+              <a name="method-i-client_info"></a><b>client_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-close">
+            
+              <a name="method-i-close"></a><b>close</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-close_source')" id="l_method-i-close_source">show</a>
+                
+              </p>
+              <div id="method-i-close_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 236</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">close</span>()
+  <span class="ruby-ivar">@status</span> = <span class="ruby-value">:STATUS_READY</span>
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_QUIT</span>, <span class="ruby-keyword">nil</span>, <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@net</span>.<span class="ruby-identifier">close</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-connect">
+            
+              <a name="method-i-connect"></a><b>connect</b>(host=nil, user=nil, passwd=nil, db=nil, port=nil, socket=nil, flag=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-create_db">
+            
+              <a name="method-i-create_db"></a><b>create_db</b>(db)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-create_db_source')" id="l_method-i-create_db_source">show</a>
+                
+              </p>
+              <div id="method-i-create_db_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 243</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">create_db</span>(<span class="ruby-identifier">db</span>)
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_CREATE_DB</span>, <span class="ruby-identifier">db</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-drop_db">
+            
+              <a name="method-i-drop_db"></a><b>drop_db</b>(db)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-drop_db_source')" id="l_method-i-drop_db_source">show</a>
+                
+              </p>
+              <div id="method-i-drop_db_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 248</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">drop_db</span>(<span class="ruby-identifier">db</span>)
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_DROP_DB</span>, <span class="ruby-identifier">db</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-dump_debug_info">
+            
+              <a name="method-i-dump_debug_info"></a><b>dump_debug_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-dump_debug_info_source')" id="l_method-i-dump_debug_info_source">show</a>
+                
+              </p>
+              <div id="method-i-dump_debug_info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">dump_debug_info</span>()
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_DEBUG</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-escape_string">
+            
+              <a name="method-i-escape_string"></a><b>escape_string</b>(str)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Mysql.html#method-i-quote">quote</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-escape_string_source')" id="l_method-i-escape_string_source">show</a>
+                
+              </p>
+              <div id="method-i-escape_string_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 170</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">escape_string</span>(<span class="ruby-identifier">str</span>)
+  <span class="ruby-constant">Mysql</span><span class="ruby-operator">::</span><span class="ruby-identifier">escape_string</span> <span class="ruby-identifier">str</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-get_client_info">
+            
+              <a name="method-i-get_client_info"></a><b>get_client_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Mysql.html#method-i-client_info">client_info</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-get_client_info_source')" id="l_method-i-get_client_info_source">show</a>
+                
+              </p>
+              <div id="method-i-get_client_info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 175</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get_client_info</span>()
+  <span class="ruby-constant">VERSION</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-get_host_info">
+            
+              <a name="method-i-get_host_info"></a><b>get_host_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Mysql.html#method-i-host_info">host_info</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-get_host_info_source')" id="l_method-i-get_host_info_source">show</a>
+                
+              </p>
+              <div id="method-i-get_host_info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 258</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get_host_info</span>()
+  <span class="ruby-ivar">@host_info</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-get_proto_info">
+            
+              <a name="method-i-get_proto_info"></a><b>get_proto_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Mysql.html#method-i-proto_info">proto_info</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-get_proto_info_source')" id="l_method-i-get_proto_info_source">show</a>
+                
+              </p>
+              <div id="method-i-get_proto_info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 263</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get_proto_info</span>()
+  <span class="ruby-ivar">@protocol_version</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-get_server_info">
+            
+              <a name="method-i-get_server_info"></a><b>get_server_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Mysql.html#method-i-server_info">server_info</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-get_server_info_source')" id="l_method-i-get_server_info_source">show</a>
+                
+              </p>
+              <div id="method-i-get_server_info_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">get_server_info</span>()
+  <span class="ruby-ivar">@server_version</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-handle_auth_fallback">
+            
+              <a name="method-i-handle_auth_fallback"></a><b>handle_auth_fallback</b>(pkt, passwd)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-handle_auth_fallback_source')" id="l_method-i-handle_auth_fallback_source">show</a>
+                
+              </p>
+              <div id="method-i-handle_auth_fallback_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 160</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">handle_auth_fallback</span>(<span class="ruby-identifier">pkt</span>, <span class="ruby-identifier">passwd</span>)
+  <span class="ruby-comment"># A packet like this means that we need to send an old-format password</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">pkt</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">pkt</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">==</span> <span class="ruby-number">254</span> <span class="ruby-keyword">and</span>
+     <span class="ruby-ivar">@server_capabilities</span> &amp; <span class="ruby-constant">CLIENT_SECURE_CONNECTION</span> <span class="ruby-operator">!=</span> <span class="ruby-number">0</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-identifier">scramble</span>(<span class="ruby-identifier">passwd</span>, <span class="ruby-ivar">@scramble_buff</span>, <span class="ruby-ivar">@protocol_version</span> <span class="ruby-operator">==</span> <span class="ruby-number">9</span>)
+    <span class="ruby-identifier">write</span> <span class="ruby-identifier">data</span> <span class="ruby-operator">+</span> <span class="ruby-string">&quot;\00&quot;&quot;</span>
+    <span class="ruby-identifier">read</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-host_info">
+            
+              <a name="method-i-host_info"></a><b>host_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-inspect">
+            
+              <a name="method-i-inspect"></a><b>inspect</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-inspect_source')" id="l_method-i-inspect_source">show</a>
+                
+              </p>
+              <div id="method-i-inspect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 389</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">inspect</span>()
+  <span class="ruby-node">&quot;#&lt;#{self.class}&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-kill">
+            
+              <a name="method-i-kill"></a><b>kill</b>(id)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-kill_source')" id="l_method-i-kill_source">show</a>
+                
+              </p>
+              <div id="method-i-kill_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">kill</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_PROCESS_KILL</span>, <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-identifier">int4str</span>(<span class="ruby-identifier">id</span>)
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-list_dbs">
+            
+              <a name="method-i-list_dbs"></a><b>list_dbs</b>(db=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-list_dbs_source')" id="l_method-i-list_dbs_source">show</a>
+                
+              </p>
+              <div id="method-i-list_dbs_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 278</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">list_dbs</span>(<span class="ruby-identifier">db</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">real_query</span> <span class="ruby-node">&quot;show databases #{db}&quot;</span>
+  <span class="ruby-ivar">@status</span> = <span class="ruby-value">:STATUS_READY</span>
+  <span class="ruby-identifier">read_rows</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">flatten</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-list_fields">
+            
+              <a name="method-i-list_fields"></a><b>list_fields</b>(table, field=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-list_fields_source')" id="l_method-i-list_fields_source">show</a>
+                
+              </p>
+              <div id="method-i-list_fields_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 284</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">list_fields</span>(<span class="ruby-identifier">table</span>, <span class="ruby-identifier">field</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_FIELD_LIST</span>, <span class="ruby-node">&quot;#{table}\00##{field}&quot;</span>, <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@pre_411</span>
+    <span class="ruby-identifier">f</span> = <span class="ruby-identifier">read_rows</span> <span class="ruby-number">6</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">f</span> = <span class="ruby-identifier">read_rows</span> <span class="ruby-number">7</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">fields</span> = <span class="ruby-identifier">unpack_fields</span>(<span class="ruby-identifier">f</span>, <span class="ruby-ivar">@server_capabilities</span> &amp; <span class="ruby-constant">CLIENT_LONG_FLAG</span> <span class="ruby-operator">!=</span> <span class="ruby-number">0</span>)
+  <span class="ruby-identifier">res</span> = <span class="ruby-constant">Result</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-identifier">fields</span>, <span class="ruby-identifier">f</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">res</span>.<span class="ruby-identifier">eof</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">res</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-list_processes">
+            
+              <a name="method-i-list_processes"></a><b>list_processes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-list_processes_source')" id="l_method-i-list_processes_source">show</a>
+                
+              </p>
+              <div id="method-i-list_processes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 297</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">list_processes</span>()
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_PROCESS_INFO</span>
+  <span class="ruby-ivar">@field_count</span> = <span class="ruby-identifier">get_length</span> <span class="ruby-identifier">data</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@pre_411</span>
+    <span class="ruby-identifier">fields</span> = <span class="ruby-identifier">read_rows</span> <span class="ruby-number">5</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">fields</span> = <span class="ruby-identifier">read_rows</span> <span class="ruby-number">7</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@fields</span> = <span class="ruby-identifier">unpack_fields</span>(<span class="ruby-identifier">fields</span>, <span class="ruby-ivar">@server_capabilities</span> &amp; <span class="ruby-constant">CLIENT_LONG_FLAG</span> <span class="ruby-operator">!=</span> <span class="ruby-number">0</span>)
+  <span class="ruby-ivar">@status</span> = <span class="ruby-value">:STATUS_GET_RESULT</span>
+  <span class="ruby-identifier">store_result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-list_tables">
+            
+              <a name="method-i-list_tables"></a><b>list_tables</b>(table=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-list_tables_source')" id="l_method-i-list_tables_source">show</a>
+                
+              </p>
+              <div id="method-i-list_tables_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 310</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">list_tables</span>(<span class="ruby-identifier">table</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">real_query</span> <span class="ruby-node">&quot;show tables #{table}&quot;</span>
+  <span class="ruby-ivar">@status</span> = <span class="ruby-value">:STATUS_READY</span>
+  <span class="ruby-identifier">read_rows</span>(<span class="ruby-number">1</span>).<span class="ruby-identifier">flatten</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-options">
+            
+              <a name="method-i-options"></a><b>options</b>(option, arg=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-options_source')" id="l_method-i-options_source">show</a>
+                
+              </p>
+              <div id="method-i-options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 180</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">options</span>(<span class="ruby-identifier">option</span>, <span class="ruby-identifier">arg</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">option</span> <span class="ruby-operator">==</span> <span class="ruby-constant">OPT_LOCAL_INFILE</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">arg</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">arg</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-ivar">@client_flag</span> <span class="ruby-operator">&amp;=</span> <span class="ruby-operator">~</span><span class="ruby-constant">CLIENT_LOCAL_FILES</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-ivar">@client_flag</span> <span class="ruby-operator">|=</span> <span class="ruby-constant">CLIENT_LOCAL_FILES</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;not implemented&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-ping">
+            
+              <a name="method-i-ping"></a><b>ping</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-ping_source')" id="l_method-i-ping_source">show</a>
+                
+              </p>
+              <div id="method-i-ping_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 316</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">ping</span>()
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_PING</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-proto_info">
+            
+              <a name="method-i-proto_info"></a><b>proto_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-query">
+            
+              <a name="method-i-query"></a><b>query</b>(query)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-query_source')" id="l_method-i-query_source">show</a>
+                
+              </p>
+              <div id="method-i-query_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 321</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">query</span>(<span class="ruby-identifier">query</span>)
+  <span class="ruby-identifier">real_query</span> <span class="ruby-identifier">query</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-keyword">not</span> <span class="ruby-ivar">@query_with_result</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@field_count</span> <span class="ruby-operator">==</span> <span class="ruby-number">0</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">store_result</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-quote">
+            
+              <a name="method-i-quote"></a><b>quote</b>(str)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-read_one_row">
+            
+              <a name="method-i-read_one_row"></a><b>read_one_row</b>(field_count)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-read_one_row_source')" id="l_method-i-read_one_row_source">show</a>
+                
+              </p>
+              <div id="method-i-read_one_row_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 360</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">read_one_row</span>(<span class="ruby-identifier">field_count</span>)
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">read</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">==</span> <span class="ruby-number">254</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span> <span class="ruby-comment">## EOF</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">data</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">==</span> <span class="ruby-number">254</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-number">5</span>
+    <span class="ruby-keyword">return</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rec</span> = []
+  <span class="ruby-identifier">field_count</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">len</span> = <span class="ruby-identifier">get_length</span> <span class="ruby-identifier">data</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">len</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-identifier">rec</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">len</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-identifier">rec</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-number">0</span>,<span class="ruby-identifier">len</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">rec</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-real_connect">
+            
+              <a name="method-i-real_connect"></a><b>real_connect</b>(host=nil, user=nil, passwd=nil, db=nil, port=nil, socket=nil, flag=nil)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Mysql.html#method-i-connect">connect</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-real_connect_source')" id="l_method-i-real_connect_source">show</a>
+                
+              </p>
+              <div id="method-i-real_connect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">real_connect</span>(<span class="ruby-identifier">host</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">user</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">passwd</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">db</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">port</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">socket</span>=<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">flag</span>=<span class="ruby-keyword">nil</span>)
+  <span class="ruby-ivar">@server_status</span> = <span class="ruby-constant">SERVER_STATUS_AUTOCOMMIT</span>
+  <span class="ruby-keyword">if</span> (<span class="ruby-identifier">host</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">host</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;localhost&quot;</span>) <span class="ruby-keyword">and</span> <span class="ruby-keyword">defined?</span> <span class="ruby-constant">UNIXSocket</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">unix_socket</span> = <span class="ruby-identifier">socket</span> <span class="ruby-operator">||</span> <span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;MYSQL_UNIX_PORT&quot;</span>] <span class="ruby-operator">||</span> <span class="ruby-constant">MYSQL_UNIX_ADDR</span>
+    <span class="ruby-identifier">sock</span> = <span class="ruby-constant">UNIXSocket</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-identifier">unix_socket</span>)
+    <span class="ruby-ivar">@host_info</span> = <span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-identifier">err</span>(<span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CR_LOCALHOST_CONNECTION</span>)
+    <span class="ruby-ivar">@unix_socket</span> = <span class="ruby-identifier">unix_socket</span>
+  <span class="ruby-keyword">else</span>      
+    <span class="ruby-identifier">sock</span> = <span class="ruby-constant">TCPSocket</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span>(<span class="ruby-identifier">host</span>, <span class="ruby-identifier">port</span><span class="ruby-operator">||</span><span class="ruby-constant">ENV</span>[<span class="ruby-string">&quot;MYSQL_TCP_PORT&quot;</span>]<span class="ruby-operator">||</span>(<span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-identifier">getservbyname</span>(<span class="ruby-string">&quot;mysql&quot;</span>,<span class="ruby-string">&quot;tcp&quot;</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-constant">MYSQL_PORT</span>))
+    <span class="ruby-ivar">@host_info</span> = <span class="ruby-identifier">sprintf</span> <span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-identifier">err</span>(<span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CR_TCP_CONNECTION</span>), <span class="ruby-identifier">host</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@host</span> = <span class="ruby-identifier">host</span> <span class="ruby-operator">?</span> <span class="ruby-identifier">host</span>.<span class="ruby-identifier">dup</span> <span class="ruby-operator">:</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">sock</span>.<span class="ruby-identifier">setsockopt</span> <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">SOL_SOCKET</span>, <span class="ruby-constant">Socket</span><span class="ruby-operator">::</span><span class="ruby-constant">SO_KEEPALIVE</span>, <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@net</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span> <span class="ruby-identifier">sock</span>
+
+  <span class="ruby-identifier">a</span> = <span class="ruby-identifier">read</span>
+  <span class="ruby-ivar">@protocol_version</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-number">0</span>)
+  <span class="ruby-ivar">@server_version</span>, <span class="ruby-identifier">a</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r\00//</span>,<span class="ruby-number">2</span>)
+  <span class="ruby-ivar">@thread_id</span>, <span class="ruby-ivar">@scramble_buff</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-number">0</span>,<span class="ruby-number">13</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;La8&quot;</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-number">2</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@server_capabilities</span>, = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-number">0</span>,<span class="ruby-number">2</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;v&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">a</span>.<span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-number">16</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-ivar">@server_language</span>, <span class="ruby-ivar">@server_status</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-number">0</span>,<span class="ruby-number">3</span>).<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;cv&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">flag</span> = <span class="ruby-number">0</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">flag</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-identifier">flag</span> <span class="ruby-operator">|=</span> <span class="ruby-ivar">@client_flag</span> <span class="ruby-operator">|</span> <span class="ruby-constant">CLIENT_CAPABILITIES</span>
+  <span class="ruby-identifier">flag</span> <span class="ruby-operator">|=</span> <span class="ruby-constant">CLIENT_CONNECT_WITH_DB</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">db</span>
+
+  <span class="ruby-ivar">@pre_411</span> = (<span class="ruby-number">0</span> <span class="ruby-operator">==</span> <span class="ruby-ivar">@server_capabilities</span> &amp; <span class="ruby-constant">PROTO_AUTH41</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@pre_411</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-identifier">int2str</span>(<span class="ruby-identifier">flag</span>)<span class="ruby-operator">+</span><span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-identifier">int3str</span>(<span class="ruby-ivar">@max_allowed_packet</span>)<span class="ruby-operator">+</span>
+           (<span class="ruby-identifier">user</span><span class="ruby-operator">||</span><span class="ruby-string">&quot;&quot;</span>)<span class="ruby-operator">+</span><span class="ruby-string">&quot;\00&quot;&quot;</span><span class="ruby-operator">+</span>
+                 <span class="ruby-identifier">scramble</span>(<span class="ruby-identifier">passwd</span>, <span class="ruby-ivar">@scramble_buff</span>, <span class="ruby-ivar">@protocol_version</span><span class="ruby-operator">==</span><span class="ruby-number">9</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">dummy</span>, <span class="ruby-ivar">@salt2</span> = <span class="ruby-identifier">a</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;a13a12&quot;</span>)
+    <span class="ruby-ivar">@scramble_buff</span> <span class="ruby-operator">+=</span> <span class="ruby-ivar">@salt2</span>
+    <span class="ruby-identifier">flag</span> <span class="ruby-operator">|=</span> <span class="ruby-constant">PROTO_AUTH41</span>
+    <span class="ruby-identifier">data</span> = <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-identifier">int4str</span>(<span class="ruby-identifier">flag</span>) <span class="ruby-operator">+</span> <span class="ruby-constant">Net</span><span class="ruby-operator">::</span><span class="ruby-identifier">int4str</span>(<span class="ruby-ivar">@max_allowed_packet</span>) <span class="ruby-operator">+</span>
+           ([<span class="ruby-number">8</span>] <span class="ruby-operator">+</span> <span class="ruby-constant">Array</span>.<span class="ruby-identifier">new</span>(<span class="ruby-number">23</span>, <span class="ruby-number">0</span>)).<span class="ruby-identifier">pack</span>(<span class="ruby-string">&quot;c24&quot;</span>) <span class="ruby-operator">+</span> (<span class="ruby-identifier">user</span><span class="ruby-operator">||</span><span class="ruby-string">&quot;&quot;</span>)<span class="ruby-operator">+</span><span class="ruby-string">&quot;\00&quot;&quot;</span><span class="ruby-operator">+</span>
+           <span class="ruby-identifier">scramble41</span>(<span class="ruby-identifier">passwd</span>, <span class="ruby-ivar">@scramble_buff</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">db</span> <span class="ruby-keyword">and</span> <span class="ruby-ivar">@server_capabilities</span> &amp; <span class="ruby-constant">CLIENT_CONNECT_WITH_DB</span> <span class="ruby-operator">!=</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;\00&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@pre_411</span>
+    <span class="ruby-identifier">data</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">db</span>
+    <span class="ruby-ivar">@db</span> = <span class="ruby-identifier">db</span>.<span class="ruby-identifier">dup</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">write</span> <span class="ruby-identifier">data</span>
+  <span class="ruby-identifier">pkt</span> = <span class="ruby-identifier">read</span>
+  <span class="ruby-identifier">handle_auth_fallback</span>(<span class="ruby-identifier">pkt</span>, <span class="ruby-identifier">passwd</span>)
+  <span class="ruby-constant">ObjectSpace</span>.<span class="ruby-identifier">define_finalizer</span>(<span class="ruby-keyword">self</span>, <span class="ruby-constant">Mysql</span>.<span class="ruby-identifier">finalizer</span>(<span class="ruby-ivar">@net</span>))
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-real_query">
+            
+              <a name="method-i-real_query"></a><b>real_query</b>(query)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-real_query_source')" id="l_method-i-real_query_source">show</a>
+                
+              </p>
+              <div id="method-i-real_query_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 192</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">real_query</span>(<span class="ruby-identifier">query</span>)
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_QUERY</span>, <span class="ruby-identifier">query</span>, <span class="ruby-keyword">true</span>
+  <span class="ruby-identifier">read_query_result</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-refresh">
+            
+              <a name="method-i-refresh"></a><b>refresh</b>(r)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-refresh_source')" id="l_method-i-refresh_source">show</a>
+                
+              </p>
+              <div id="method-i-refresh_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 332</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">refresh</span>(<span class="ruby-identifier">r</span>)
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_REFRESH</span>, <span class="ruby-identifier">r</span>.<span class="ruby-identifier">chr</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-reload">
+            
+              <a name="method-i-reload"></a><b>reload</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-reload_source')" id="l_method-i-reload_source">show</a>
+                
+              </p>
+              <div id="method-i-reload_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 337</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">reload</span>()
+  <span class="ruby-identifier">refresh</span> <span class="ruby-constant">REFRESH_GRANT</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-select_db">
+            
+              <a name="method-i-select_db"></a><b>select_db</b>(db)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-select_db_source')" id="l_method-i-select_db_source">show</a>
+                
+              </p>
+              <div id="method-i-select_db_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 342</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">select_db</span>(<span class="ruby-identifier">db</span>)
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_INIT_DB</span>, <span class="ruby-identifier">db</span>
+  <span class="ruby-ivar">@db</span> = <span class="ruby-identifier">db</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-server_info">
+            
+              <a name="method-i-server_info"></a><b>server_info</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-shutdown">
+            
+              <a name="method-i-shutdown"></a><b>shutdown</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-shutdown_source')" id="l_method-i-shutdown_source">show</a>
+                
+              </p>
+              <div id="method-i-shutdown_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 348</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">shutdown</span>()
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_SHUTDOWN</span>
+  <span class="ruby-keyword">self</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-skip_result">
+            
+              <a name="method-i-skip_result"></a><b>skip_result</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-skip_result_source')" id="l_method-i-skip_result_source">show</a>
+                
+              </p>
+              <div id="method-i-skip_result_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 379</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">skip_result</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@status</span> <span class="ruby-operator">==</span> <span class="ruby-value">:STATUS_USE_RESULT</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">loop</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">data</span> = <span class="ruby-identifier">read</span>
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">data</span>[<span class="ruby-number">0</span>] <span class="ruby-operator">==</span> <span class="ruby-number">254</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">==</span> <span class="ruby-number">1</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-ivar">@status</span> = <span class="ruby-value">:STATUS_READY</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-stat">
+            
+              <a name="method-i-stat"></a><b>stat</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-stat_source')" id="l_method-i-stat_source">show</a>
+                
+              </p>
+              <div id="method-i-stat_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 353</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">stat</span>()
+  <span class="ruby-identifier">command</span> <span class="ruby-constant">COM_STATISTICS</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-store_result">
+            
+              <a name="method-i-store_result"></a><b>store_result</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-store_result_source')" id="l_method-i-store_result_source">show</a>
+                
+              </p>
+              <div id="method-i-store_result_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 207</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">store_result</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@status</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:STATUS_GET_RESULT</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">error</span> <span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CR_COMMANDS_OUT_OF_SYNC</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@status</span> = <span class="ruby-value">:STATUS_READY</span>
+  <span class="ruby-identifier">data</span> = <span class="ruby-identifier">read_rows</span> <span class="ruby-ivar">@field_count</span>
+  <span class="ruby-identifier">res</span> = <span class="ruby-constant">Result</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-ivar">@fields</span>, <span class="ruby-ivar">@field_count</span>, <span class="ruby-identifier">data</span>
+  <span class="ruby-ivar">@fields</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@affected_rows</span> = <span class="ruby-identifier">data</span>.<span class="ruby-identifier">length</span>
+  <span class="ruby-identifier">res</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-use_result">
+            
+              <a name="method-i-use_result"></a><b>use_result</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-use_result_source')" id="l_method-i-use_result_source">show</a>
+                
+              </p>
+              <div id="method-i-use_result_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/vendor/mysql.rb, line 198</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">use_result</span>()
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@status</span> <span class="ruby-operator">!=</span> <span class="ruby-value">:STATUS_GET_RESULT</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">error</span> <span class="ruby-constant">Error</span><span class="ruby-operator">::</span><span class="ruby-constant">CR_COMMANDS_OUT_OF_SYNC</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">res</span> = <span class="ruby-constant">Result</span><span class="ruby-operator">::</span><span class="ruby-identifier">new</span> <span class="ruby-keyword">self</span>, <span class="ruby-ivar">@fields</span>, <span class="ruby-ivar">@field_count</span>
+  <span class="ruby-ivar">@status</span> = <span class="ruby-value">:STATUS_USE_RESULT</span>
+  <span class="ruby-identifier">res</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

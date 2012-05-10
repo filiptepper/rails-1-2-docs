@@ -1,0 +1,960 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>RailsFCGIHandlerTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            RailsFCGIHandlerTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/railties/test/fcgi_dispatcher_test_rb.html">rails/railties/test/fcgi_dispatcher_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_breakpoint-21">test_breakpoint!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_breakpoint_handler">test_breakpoint_handler</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_install_signal_handler_should_log_on_bad_signal">test_install_signal_handler_should_log_on_bad_signal</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_interrupted_via_HUP_when_in_request">test_interrupted_via_HUP_when_in_request</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_interrupted_via_HUP_when_not_in_request">test_interrupted_via_HUP_when_not_in_request</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_interrupted_via_TERM">test_interrupted_via_TERM</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_interrupted_via_USR1_when_in_request">test_interrupted_via_USR1_when_in_request</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_interrupted_via_USR1_when_not_in_request">test_interrupted_via_USR1_when_not_in_request</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_process_breakpoint">test_process_breakpoint</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_process_exit">test_process_exit</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_process_restart">test_process_restart</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_process_with_system_exit_exception">test_process_with_system_exit_exception</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_reload">test_reload</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_reload_doesnt_run_gc_if_gc_request_period_isnt_set">test_reload_doesnt_run_gc_if_gc_request_period_isnt_set</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_reload_runs_gc_when_gc_request_period_set">test_reload_runs_gc_when_gc_request_period_set</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_restart-21">test_restart!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_restart_handler">test_restart_handler</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_restore-21">test_restore!</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_uninterrupted_processing">test_uninterrupted_processing</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@log</span> = <span class="ruby-constant">StringIO</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@handler</span> = <span class="ruby-constant">RailsFCGIHandler</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@log</span>)
+  <span class="ruby-constant">FCGI</span>.<span class="ruby-identifier">time_to_sleep</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">FCGI</span>.<span class="ruby-identifier">raise_exception</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Dispatcher</span>.<span class="ruby-identifier">time_to_sleep</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Dispatcher</span>.<span class="ruby-identifier">raise_exception</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_breakpoint-21">
+            
+              <a name="method-i-test_breakpoint-21"></a><b>test_breakpoint!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_breakpoint-21_source')" id="l_method-i-test_breakpoint-21_source">show</a>
+                
+              </p>
+              <div id="method-i-test_breakpoint-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_breakpoint!</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:require</span>).<span class="ruby-identifier">with</span>(<span class="ruby-string">'breakpoint'</span>)
+  <span class="ruby-constant">Breakpoint</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:activate_drb</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:breakpoint</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:dispatcher_log</span>).<span class="ruby-identifier">with</span>(<span class="ruby-value">:info</span>, <span class="ruby-string">&quot;breakpointing&quot;</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:breakpoint!</span>)
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">when_ready</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_breakpoint_handler">
+            
+              <a name="method-i-test_breakpoint_handler"></a><b>test_breakpoint_handler</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_breakpoint_handler_source')" id="l_method-i-test_breakpoint_handler_source">show</a>
+                
+              </p>
+              <div id="method-i-test_breakpoint_handler_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_breakpoint_handler</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:dispatcher_log</span>).<span class="ruby-identifier">with</span>(<span class="ruby-value">:info</span>, <span class="ruby-string">&quot;asked to breakpoint ASAP&quot;</span>)
+
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:breakpoint_handler</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:breakpoint</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">when_ready</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_install_signal_handler_should_log_on_bad_signal">
+            
+              <a name="method-i-test_install_signal_handler_should_log_on_bad_signal"></a><b>test_install_signal_handler_should_log_on_bad_signal</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_install_signal_handler_should_log_on_bad_signal_source')" id="l_method-i-test_install_signal_handler_should_log_on_bad_signal_source">show</a>
+                
+              </p>
+              <div id="method-i-test_install_signal_handler_should_log_on_bad_signal_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_install_signal_handler_should_log_on_bad_signal</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">stubs</span>(<span class="ruby-value">:trap</span>).<span class="ruby-identifier">raises</span>(<span class="ruby-constant">ArgumentError</span>)
+
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:dispatcher_log</span>).<span class="ruby-identifier">with</span>(<span class="ruby-value">:warn</span>, <span class="ruby-string">&quot;Ignoring unsupported signal CHEESECAKE.&quot;</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:install_signal_handler</span>, <span class="ruby-string">&quot;CHEESECAKE&quot;</span>, <span class="ruby-keyword">nil</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_interrupted_via_HUP_when_in_request">
+            
+              <a name="method-i-test_interrupted_via_HUP_when_in_request"></a><b>test_interrupted_via_HUP_when_in_request</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_interrupted_via_HUP_when_in_request_source')" id="l_method-i-test_interrupted_via_HUP_when_in_request_source">show</a>
+                
+              </p>
+              <div id="method-i-test_interrupted_via_HUP_when_in_request_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_interrupted_via_HUP_when_in_request</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:reload!</span>)
+  
+  <span class="ruby-constant">Dispatcher</span>.<span class="ruby-identifier">time_to_sleep</span> = <span class="ruby-number">1</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">process!</span> }
+  <span class="ruby-identifier">sleep</span> <span class="ruby-number">0.1</span> <span class="ruby-comment"># let the thread get started</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send_signal</span>(<span class="ruby-string">&quot;HUP&quot;</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">thread</span>.<span class="ruby-identifier">join</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">exit_code</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:reload</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">when_ready</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_interrupted_via_HUP_when_not_in_request">
+            
+              <a name="method-i-test_interrupted_via_HUP_when_not_in_request"></a><b>test_interrupted_via_HUP_when_not_in_request</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_interrupted_via_HUP_when_not_in_request_source')" id="l_method-i-test_interrupted_via_HUP_when_not_in_request_source">show</a>
+                
+              </p>
+              <div id="method-i-test_interrupted_via_HUP_when_not_in_request_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 161</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_interrupted_via_HUP_when_not_in_request</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:reload!</span>)
+  <span class="ruby-constant">FCGI</span>.<span class="ruby-identifier">time_to_sleep</span> = <span class="ruby-number">1</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">process!</span> }
+  <span class="ruby-identifier">sleep</span> <span class="ruby-number">0.1</span> <span class="ruby-comment"># let the thread get started</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send_signal</span>(<span class="ruby-string">&quot;HUP&quot;</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">thread</span>.<span class="ruby-identifier">join</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">exit_code</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:reload</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">when_ready</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_interrupted_via_TERM">
+            
+              <a name="method-i-test_interrupted_via_TERM"></a><b>test_interrupted_via_TERM</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_interrupted_via_TERM_source')" id="l_method-i-test_interrupted_via_TERM_source">show</a>
+                
+              </p>
+              <div id="method-i-test_interrupted_via_TERM_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 204</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_interrupted_via_TERM</span>
+  <span class="ruby-constant">Dispatcher</span>.<span class="ruby-identifier">time_to_sleep</span> = <span class="ruby-number">1</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">process!</span> }
+  <span class="ruby-identifier">sleep</span> <span class="ruby-number">0.1</span> <span class="ruby-comment"># let the thread get started</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send_signal</span>(<span class="ruby-string">&quot;TERM&quot;</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">thread</span>.<span class="ruby-identifier">join</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">exit_code</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">when_ready</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_interrupted_via_USR1_when_in_request">
+            
+              <a name="method-i-test_interrupted_via_USR1_when_in_request"></a><b>test_interrupted_via_USR1_when_in_request</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_interrupted_via_USR1_when_in_request_source')" id="l_method-i-test_interrupted_via_USR1_when_in_request_source">show</a>
+                
+              </p>
+              <div id="method-i-test_interrupted_via_USR1_when_in_request_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 194</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_interrupted_via_USR1_when_in_request</span>
+  <span class="ruby-constant">Dispatcher</span>.<span class="ruby-identifier">time_to_sleep</span> = <span class="ruby-number">1</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">process!</span> }
+  <span class="ruby-identifier">sleep</span> <span class="ruby-number">0.1</span> <span class="ruby-comment"># let the thread get started</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send_signal</span>(<span class="ruby-string">&quot;USR1&quot;</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">thread</span>.<span class="ruby-identifier">join</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">exit_code</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:exit</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">when_ready</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_interrupted_via_USR1_when_not_in_request">
+            
+              <a name="method-i-test_interrupted_via_USR1_when_not_in_request"></a><b>test_interrupted_via_USR1_when_not_in_request</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_interrupted_via_USR1_when_not_in_request_source')" id="l_method-i-test_interrupted_via_USR1_when_not_in_request_source">show</a>
+                
+              </p>
+              <div id="method-i-test_interrupted_via_USR1_when_not_in_request_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 184</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_interrupted_via_USR1_when_not_in_request</span>
+  <span class="ruby-constant">FCGI</span>.<span class="ruby-identifier">time_to_sleep</span> = <span class="ruby-number">1</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">thread</span> = <span class="ruby-constant">Thread</span>.<span class="ruby-identifier">new</span> { <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">process!</span> }
+  <span class="ruby-identifier">sleep</span> <span class="ruby-number">0.1</span> <span class="ruby-comment"># let the thread get started</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send_signal</span>(<span class="ruby-string">&quot;USR1&quot;</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">thread</span>.<span class="ruby-identifier">join</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">exit_code</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:exit</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">when_ready</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_process_breakpoint">
+            
+              <a name="method-i-test_process_breakpoint"></a><b>test_process_breakpoint</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_process_breakpoint_source')" id="l_method-i-test_process_breakpoint_source">show</a>
+                
+              </p>
+              <div id="method-i-test_process_breakpoint_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_process_breakpoint</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">stubs</span>(<span class="ruby-value">:when_ready</span>).<span class="ruby-identifier">returns</span>(<span class="ruby-value">:breakpoint</span>)
+  
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:close_connection</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:breakpoint!</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">process!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_process_exit">
+            
+              <a name="method-i-test_process_exit"></a><b>test_process_exit</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_process_exit_source')" id="l_method-i-test_process_exit_source">show</a>
+                
+              </p>
+              <div id="method-i-test_process_exit_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_process_exit</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">stubs</span>(<span class="ruby-value">:when_ready</span>).<span class="ruby-identifier">returns</span>(<span class="ruby-value">:exit</span>)
+  
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:close_connection</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">process!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_process_restart">
+            
+              <a name="method-i-test_process_restart"></a><b>test_process_restart</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_process_restart_source')" id="l_method-i-test_process_restart_source">show</a>
+                
+              </p>
+              <div id="method-i-test_process_restart_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 59</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_process_restart</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">stubs</span>(<span class="ruby-value">:when_ready</span>).<span class="ruby-identifier">returns</span>(<span class="ruby-value">:restart</span>)
+  
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:close_connection</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:restart!</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">process!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_process_with_system_exit_exception">
+            
+              <a name="method-i-test_process_with_system_exit_exception"></a><b>test_process_with_system_exit_exception</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_process_with_system_exit_exception_source')" id="l_method-i-test_process_with_system_exit_exception_source">show</a>
+                
+              </p>
+              <div id="method-i-test_process_with_system_exit_exception_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_process_with_system_exit_exception</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">stubs</span>(<span class="ruby-value">:process_request</span>).<span class="ruby-identifier">raises</span>(<span class="ruby-constant">SystemExit</span>)
+  
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:dispatcher_log</span>).<span class="ruby-identifier">with</span>(<span class="ruby-value">:info</span>, <span class="ruby-string">&quot;terminated by explicit exit&quot;</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">process!</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_reload">
+            
+              <a name="method-i-test_reload"></a><b>test_reload</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_reload_source')" id="l_method-i-test_reload_source">show</a>
+                
+              </p>
+              <div id="method-i-test_reload_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_reload</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:restore!</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:dispatcher_log</span>).<span class="ruby-identifier">with</span>(<span class="ruby-value">:info</span>, <span class="ruby-string">&quot;reloaded&quot;</span>)
+
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:reload!</span>)
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">when_ready</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_reload_doesnt_run_gc_if_gc_request_period_isnt_set">
+            
+              <a name="method-i-test_reload_doesnt_run_gc_if_gc_request_period_isnt_set"></a><b>test_reload_doesnt_run_gc_if_gc_request_period_isnt_set</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_reload_doesnt_run_gc_if_gc_request_period_isnt_set_source')" id="l_method-i-test_reload_doesnt_run_gc_if_gc_request_period_isnt_set_source">show</a>
+                
+              </p>
+              <div id="method-i-test_reload_doesnt_run_gc_if_gc_request_period_isnt_set_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_reload_doesnt_run_gc_if_gc_request_period_isnt_set</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:run_gc!</span>).<span class="ruby-identifier">never</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:restore!</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:dispatcher_log</span>).<span class="ruby-identifier">with</span>(<span class="ruby-value">:info</span>, <span class="ruby-string">&quot;reloaded&quot;</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:reload!</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_reload_runs_gc_when_gc_request_period_set">
+            
+              <a name="method-i-test_reload_runs_gc_when_gc_request_period_set"></a><b>test_reload_runs_gc_when_gc_request_period_set</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_reload_runs_gc_when_gc_request_period_set_source')" id="l_method-i-test_reload_runs_gc_when_gc_request_period_set_source">show</a>
+                
+              </p>
+              <div id="method-i-test_reload_runs_gc_when_gc_request_period_set_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_reload_runs_gc_when_gc_request_period_set</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:run_gc!</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:restore!</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:dispatcher_log</span>).<span class="ruby-identifier">with</span>(<span class="ruby-value">:info</span>, <span class="ruby-string">&quot;reloaded&quot;</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">gc_request_period</span> = <span class="ruby-number">10</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:reload!</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_restart-21">
+            
+              <a name="method-i-test_restart-21"></a><b>test_restart!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_restart-21_source')" id="l_method-i-test_restart-21_source">show</a>
+                
+              </p>
+              <div id="method-i-test_restart-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_restart!</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:dispatcher_log</span>).<span class="ruby-identifier">with</span>(<span class="ruby-value">:info</span>, <span class="ruby-string">&quot;restarted&quot;</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:restart!</span>), <span class="ruby-string">&quot;Exec wasn't run&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_restart_handler">
+            
+              <a name="method-i-test_restart_handler"></a><b>test_restart_handler</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_restart_handler_source')" id="l_method-i-test_restart_handler_source">show</a>
+                
+              </p>
+              <div id="method-i-test_restart_handler_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_restart_handler</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:dispatcher_log</span>).<span class="ruby-identifier">with</span>(<span class="ruby-value">:info</span>, <span class="ruby-string">&quot;asked to restart ASAP&quot;</span>)
+  
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:restart_handler</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-value">:restart</span>, <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">when_ready</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_restore-21">
+            
+              <a name="method-i-test_restore-21"></a><b>test_restore!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_restore-21_source')" id="l_method-i-test_restore-21_source">show</a>
+                
+              </p>
+              <div id="method-i-test_restore-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 139</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_restore!</span>
+  <span class="ruby-identifier">$&quot;</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:replace</span>)
+  <span class="ruby-constant">Dispatcher</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:reset_application!</span>)
+  <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">expects</span>(<span class="ruby-value">:reload</span>)
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:restore!</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_uninterrupted_processing">
+            
+              <a name="method-i-test_uninterrupted_processing"></a><b>test_uninterrupted_processing</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_uninterrupted_processing_source')" id="l_method-i-test_uninterrupted_processing_source">show</a>
+                
+              </p>
+              <div id="method-i-test_uninterrupted_processing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/test/fcgi_dispatcher_test.rb, line 155</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_uninterrupted_processing</span>
+  <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">process!</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">exit_code</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-ivar">@handler</span>.<span class="ruby-identifier">when_ready</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

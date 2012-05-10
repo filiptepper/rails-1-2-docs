@@ -1,0 +1,2191 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>MigrationTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            MigrationTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/test/migration_test_rb.html">rails/activerecord/test/migration_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-teardown">teardown</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_add_column_not_null_with_default">test_add_column_not_null_with_default</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_add_column_not_null_without_default">test_add_column_not_null_without_default</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_add_drop_table_with_prefix_and_suffix">test_add_drop_table_with_prefix_and_suffix</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_add_index">test_add_index</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_add_remove_single_field_using_string_arguments">test_add_remove_single_field_using_string_arguments</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_add_remove_single_field_using_symbol_arguments">test_add_remove_single_field_using_symbol_arguments</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_add_rename">test_add_rename</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_add_table">test_add_table</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_add_table_with_decimals">test_add_table_with_decimals</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_change_column">test_change_column</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_change_column_default">test_change_column_default</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_change_column_default_to_null">test_change_column_default_to_null</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_change_column_with_new_default">test_change_column_with_new_default</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_change_column_with_nil_default">test_change_column_with_nil_default</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_create_table_adds_id">test_create_table_adds_id</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_create_table_with_binary_column">test_create_table_with_binary_column</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_create_table_with_custom_sequence_name">test_create_table_with_custom_sequence_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_create_table_with_defaults">test_create_table_with_defaults</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_create_table_with_limits">test_create_table_with_limits</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_create_table_with_not_null_column">test_create_table_with_not_null_column</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_migrator">test_migrator</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_migrator_going_down_due_to_version_target">test_migrator_going_down_due_to_version_target</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_migrator_one_down">test_migrator_one_down</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_migrator_one_up">test_migrator_one_up</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_migrator_one_up_one_down">test_migrator_one_up_one_down</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_migrator_verbosity">test_migrator_verbosity</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_migrator_verbosity_off">test_migrator_verbosity_off</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_migrator_with_duplicates">test_migrator_with_duplicates</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_migrator_with_missing_version_numbers">test_migrator_with_missing_version_numbers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_native_decimal_insert_manual_vs_automatic">test_native_decimal_insert_manual_vs_automatic</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_native_types">test_native_types</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_proper_table_name">test_proper_table_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_rename_column">test_rename_column</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_rename_column_using_symbol_arguments">test_rename_column_using_symbol_arguments</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_rename_table">test_rename_table</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_rename_table_with_an_index">test_rename_table_with_an_index</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_schema_info_table_name">test_schema_info_table_name</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migration</span>.<span class="ruby-identifier">verbose</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-constant">PeopleHaveLastNames</span>.<span class="ruby-identifier">message_count</span> = <span class="ruby-number">0</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-teardown">
+            
+              <a name="method-i-teardown"></a><b>teardown</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-teardown_source')" id="l_method-i-teardown_source">show</a>
+                
+              </p>
+              <div id="method-i-teardown_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 33</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">teardown</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">initialize_schema_information</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">update</span> <span class="ruby-node">&quot;UPDATE #{ActiveRecord::Migrator.schema_info_table_name} SET version = 0&quot;</span>
+
+  <span class="ruby-node">%w(reminders people_reminders prefix_reminders_suffix)</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">table</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span>(<span class="ruby-identifier">table</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_column_information</span>
+
+  <span class="ruby-node">%w(last_name key bio age height wealth birthday favorite_day
+     male administrator)</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">column</span><span class="ruby-operator">|</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_column</span>(<span class="ruby-string">'people'</span>, <span class="ruby-identifier">column</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_column</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;first_name&quot;</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_column</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;middle_name&quot;</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">40</span>)
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_add_column_not_null_with_default">
+            
+              <a name="method-i-test_add_column_not_null_with_default"></a><b>test_add_column_not_null_with_default</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_add_column_not_null_with_default_source')" id="l_method-i-test_add_column_not_null_with_default_source">show</a>
+                
+              </p>
+              <div id="method-i-test_add_column_not_null_with_default_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 188</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_add_column_not_null_with_default</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">create_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:foo</span>, <span class="ruby-value">:string</span>
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-identifier">con</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>     
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">enable_identity_insert</span>(<span class="ruby-string">&quot;testings&quot;</span>, <span class="ruby-keyword">true</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SybaseAdapter</span>)
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;insert into testings (#{con.quote_column_name('id')}, #{con.quote_column_name('foo')}) values (1, 'hello')&quot;</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">enable_identity_insert</span>(<span class="ruby-string">&quot;testings&quot;</span>, <span class="ruby-keyword">false</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SybaseAdapter</span>)
+  <span class="ruby-identifier">assert_nothing_raised</span> {<span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-value">:testings</span>, <span class="ruby-value">:bar</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;default&quot;</span> }
+
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;insert into testings (#{con.quote_column_name('id')}, #{con.quote_column_name('foo')}, #{con.quote_column_name('bar')}) values (2, 'hello', NULL)&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_add_column_not_null_without_default">
+            
+              <a name="method-i-test_add_column_not_null_without_default"></a><b>test_add_column_not_null_without_default</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_add_column_not_null_without_default_source')" id="l_method-i-test_add_column_not_null_without_default_source">show</a>
+                
+              </p>
+              <div id="method-i-test_add_column_not_null_without_default_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 174</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_add_column_not_null_without_default</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">create_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:foo</span>, <span class="ruby-value">:string</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-value">:testings</span>, <span class="ruby-value">:bar</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">execute</span> <span class="ruby-string">&quot;insert into testings (foo, bar) values ('hello', NULL)&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_add_drop_table_with_prefix_and_suffix">
+            
+              <a name="method-i-test_add_drop_table_with_prefix_and_suffix"></a><b>test_add_drop_table_with_prefix_and_suffix</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_add_drop_table_with_prefix_and_suffix_source')" id="l_method-i-test_add_drop_table_with_prefix_and_suffix_source">show</a>
+                
+              </p>
+              <div id="method-i-test_add_drop_table_with_prefix_and_suffix_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 669</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_add_drop_table_with_prefix_and_suffix</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_exists?</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_prefix</span> = <span class="ruby-string">'prefix_'</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_suffix</span> = <span class="ruby-string">'_suffix'</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_table_name</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_sequence_name</span>
+  <span class="ruby-constant">WeNeedReminders</span>.<span class="ruby-identifier">up</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;content&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-string">&quot;remind_at&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>).<span class="ruby-identifier">content</span>
+
+  <span class="ruby-constant">WeNeedReminders</span>.<span class="ruby-identifier">down</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span>) { <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>) }
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_prefix</span> = <span class="ruby-string">''</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_suffix</span> = <span class="ruby-string">''</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_table_name</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_sequence_name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_add_index">
+            
+              <a name="method-i-test_add_index"></a><b>test_add_index</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_add_index_source')" id="l_method-i-test_add_index_source">show</a>
+                
+              </p>
+              <div id="method-i-test_add_index_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_add_index</span>
+  <span class="ruby-comment"># Limit size of last_name and key columns to support Firebird index limitations</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">100</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;key&quot;</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">100</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;administrator&quot;</span>, <span class="ruby-value">:boolean</span>
+
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_index</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;last_name&quot;</span>) }
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_index</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;last_name&quot;</span>) }
+
+  <span class="ruby-comment"># Orcl nds shrt indx nms.  Sybs 2.</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:OracleAdapter</span>, <span class="ruby-value">:SybaseAdapter</span>)
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_index</span>(<span class="ruby-string">&quot;people&quot;</span>, [<span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-string">&quot;first_name&quot;</span>]) }
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_index</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-value">:column</span> =<span class="ruby-operator">&gt;</span> [<span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-string">&quot;first_name&quot;</span>]) }
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_index</span>(<span class="ruby-string">&quot;people&quot;</span>, [<span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-string">&quot;first_name&quot;</span>]) }
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_index</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;index_people_on_last_name_and_first_name&quot;</span>) }
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_index</span>(<span class="ruby-string">&quot;people&quot;</span>, [<span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-string">&quot;first_name&quot;</span>]) }
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_index</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;last_name_and_first_name&quot;</span>) }
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_index</span>(<span class="ruby-string">&quot;people&quot;</span>, [<span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-string">&quot;first_name&quot;</span>]) }
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_index</span>(<span class="ruby-string">&quot;people&quot;</span>, [<span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-string">&quot;first_name&quot;</span>]) }
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># quoting</span>
+  <span class="ruby-comment"># Note: changed index name from &quot;key&quot; to &quot;key_idx&quot; since &quot;key&quot; is a Firebird reserved word</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_index</span>(<span class="ruby-string">&quot;people&quot;</span>, [<span class="ruby-string">&quot;key&quot;</span>], <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;key_idx&quot;</span>, <span class="ruby-value">:unique</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>) }
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_index</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;key_idx&quot;</span>, <span class="ruby-value">:unique</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>) }
+
+  <span class="ruby-comment"># Sybase adapter does not support indexes on :boolean columns</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SybaseAdapter</span>)
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_index</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-node">%w(last_name first_name administrator)</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;named_admin&quot;</span>) }
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_index</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-value">:name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;named_admin&quot;</span>) }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_add_remove_single_field_using_string_arguments">
+            
+              <a name="method-i-test_add_remove_single_field_using_string_arguments"></a><b>test_add_remove_single_field_using_string_arguments</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_add_remove_single_field_using_string_arguments_source')" id="l_method-i-test_add_remove_single_field_using_string_arguments_source">show</a>
+                
+              </p>
+              <div id="method-i-test_add_remove_single_field_using_string_arguments_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 295</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_add_remove_single_field_using_string_arguments</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migration</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">'people'</span>, <span class="ruby-string">'last_name'</span>, <span class="ruby-value">:string</span>
+
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migration</span>.<span class="ruby-identifier">remove_column</span> <span class="ruby-string">'people'</span>, <span class="ruby-string">'last_name'</span>
+
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_add_remove_single_field_using_symbol_arguments">
+            
+              <a name="method-i-test_add_remove_single_field_using_symbol_arguments"></a><b>test_add_remove_single_field_using_symbol_arguments</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_add_remove_single_field_using_symbol_arguments_source')" id="l_method-i-test_add_remove_single_field_using_symbol_arguments_source">show</a>
+                
+              </p>
+              <div id="method-i-test_add_remove_single_field_using_symbol_arguments_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 309</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_add_remove_single_field_using_symbol_arguments</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migration</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-value">:people</span>, <span class="ruby-value">:last_name</span>, <span class="ruby-value">:string</span>
+
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migration</span>.<span class="ruby-identifier">remove_column</span> <span class="ruby-value">:people</span>, <span class="ruby-value">:last_name</span>
+
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_add_rename">
+            
+              <a name="method-i-test_add_rename"></a><b>test_add_rename</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_add_rename_source')" id="l_method-i-test_add_rename_source">show</a>
+                
+              </p>
+              <div id="method-i-test_add_rename_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 323</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_add_rename</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">delete_all</span>
+
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;girlfriend&quot;</span>, <span class="ruby-value">:string</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">create</span> <span class="ruby-value">:girlfriend</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'bobette'</span>
+
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">rename_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;girlfriend&quot;</span>, <span class="ruby-string">&quot;exgirlfriend&quot;</span>
+
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+    <span class="ruby-identifier">bob</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>)
+
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;bobette&quot;</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">exgirlfriend</span>
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_column</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;girlfriend&quot;</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_column</span>(<span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;exgirlfriend&quot;</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_add_table">
+            
+              <a name="method-i-test_add_table"></a><b>test_add_table</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_add_table_source')" id="l_method-i-test_add_table_source">show</a>
+                
+              </p>
+              <div id="method-i-test_add_table_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 462</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_add_table</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_exists?</span>
+
+  <span class="ruby-constant">WeNeedReminders</span>.<span class="ruby-identifier">up</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;content&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-string">&quot;remind_at&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>).<span class="ruby-identifier">content</span>
+
+  <span class="ruby-constant">WeNeedReminders</span>.<span class="ruby-identifier">down</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span>) { <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_add_table_with_decimals">
+            
+              <a name="method-i-test_add_table_with_decimals"></a><b>test_add_table_with_decimals</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_add_table_with_decimals_source')" id="l_method-i-test_add_table_with_decimals_source">show</a>
+                
+              </p>
+              <div id="method-i-test_add_table_with_decimals_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 474</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_add_table_with_decimals</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:big_numbers</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">BigNumber</span>.<span class="ruby-identifier">table_exists?</span>
+  <span class="ruby-constant">GiveMeBigNumbers</span>.<span class="ruby-identifier">up</span>
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">BigNumber</span>.<span class="ruby-identifier">create</span>(
+    <span class="ruby-value">:bank_balance</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1586.43</span>,
+    <span class="ruby-value">:big_bank_balance</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;1000234000567.95&quot;</span>),
+    <span class="ruby-value">:world_population</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">6000000000</span>,
+    <span class="ruby-value">:my_house_population</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">3</span>,
+    <span class="ruby-value">:value_of_e</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;2.7182818284590452353602875&quot;</span>)
+  )
+
+  <span class="ruby-identifier">b</span> = <span class="ruby-constant">BigNumber</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>)
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">b</span>
+
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">bank_balance</span>
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">big_bank_balance</span>
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">world_population</span>
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">my_house_population</span>
+  <span class="ruby-identifier">assert_not_nil</span> <span class="ruby-identifier">b</span>.<span class="ruby-identifier">value_of_e</span>
+
+  <span class="ruby-comment"># TODO: set world_population &gt;= 2**62 to cover 64-bit platforms and test</span>
+  <span class="ruby-comment"># is_a?(Bignum)</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Integer</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">world_population</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">6000000000</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">world_population</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Fixnum</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">my_house_population</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">my_house_population</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">BigDecimal</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">bank_balance</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;1586.43&quot;</span>), <span class="ruby-identifier">b</span>.<span class="ruby-identifier">bank_balance</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">BigDecimal</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">big_bank_balance</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;1000234000567.95&quot;</span>), <span class="ruby-identifier">b</span>.<span class="ruby-identifier">big_bank_balance</span>
+
+  <span class="ruby-comment"># This one is fun. The 'value_of_e' field is defined as 'DECIMAL' with</span>
+  <span class="ruby-comment"># precision/scale explictly left out.  By the SQL standard, numbers</span>
+  <span class="ruby-comment"># assigned to this field should be truncated but that's seldom respected.</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:PostgreSQLAdapter</span>, <span class="ruby-value">:SQLite2Adapter</span>)
+    <span class="ruby-comment"># - PostgreSQL changes the SQL spec on columns declared simply as</span>
+    <span class="ruby-comment"># &quot;decimal&quot; to something more useful: instead of being given a scale</span>
+    <span class="ruby-comment"># of 0, they take on the compile-time limit for precision and scale,</span>
+    <span class="ruby-comment"># so the following should succeed unless you have used really wacky</span>
+    <span class="ruby-comment"># compilation options</span>
+    <span class="ruby-comment"># - SQLite2 has the default behavior of preserving all data sent in,</span>
+    <span class="ruby-comment"># so this happens there too</span>
+    <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">BigDecimal</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">value_of_e</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;2.7182818284590452353602875&quot;</span>), <span class="ruby-identifier">b</span>.<span class="ruby-identifier">value_of_e</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SQLiteAdapter</span>)
+    <span class="ruby-comment"># - SQLite3 stores a float, in violation of SQL</span>
+    <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">BigDecimal</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">value_of_e</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">BigDecimal</span>(<span class="ruby-string">&quot;2.71828182845905&quot;</span>), <span class="ruby-identifier">b</span>.<span class="ruby-identifier">value_of_e</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SQLServer</span>)
+    <span class="ruby-comment"># - SQL Server rounds instead of truncating</span>
+    <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Fixnum</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">value_of_e</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">value_of_e</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># - SQL standard is an integer</span>
+    <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">Fixnum</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">value_of_e</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">b</span>.<span class="ruby-identifier">value_of_e</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">GiveMeBigNumbers</span>.<span class="ruby-identifier">down</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span>) { <span class="ruby-constant">BigNumber</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_change_column">
+            
+              <a name="method-i-test_change_column"></a><b>test_change_column</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_change_column_source')" id="l_method-i-test_change_column_source">show</a>
+                
+              </p>
+              <div id="method-i-test_change_column_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 409</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_change_column</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">'people'</span>, <span class="ruby-string">'age'</span>, <span class="ruby-value">:integer</span>
+  <span class="ruby-identifier">old_columns</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">columns</span>(<span class="ruby-constant">Person</span>.<span class="ruby-identifier">table_name</span>, <span class="ruby-node">&quot;#{name} Columns&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">old_columns</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'age'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span> }
+
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">change_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;age&quot;</span>, <span class="ruby-value">:string</span> }
+
+  <span class="ruby-identifier">new_columns</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">columns</span>(<span class="ruby-constant">Person</span>.<span class="ruby-identifier">table_name</span>, <span class="ruby-node">&quot;#{name} Columns&quot;</span>)
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">new_columns</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'age'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:integer</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">new_columns</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'age'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:string</span> }
+
+  <span class="ruby-identifier">old_columns</span> = <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">columns</span>(<span class="ruby-constant">Topic</span>.<span class="ruby-identifier">table_name</span>, <span class="ruby-node">&quot;#{name} Columns&quot;</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">old_columns</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'approved'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:boolean</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">default</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">change_column</span> <span class="ruby-value">:topics</span>, <span class="ruby-value">:approved</span>, <span class="ruby-value">:boolean</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span> }
+  <span class="ruby-identifier">new_columns</span> = <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">columns</span>(<span class="ruby-constant">Topic</span>.<span class="ruby-identifier">table_name</span>, <span class="ruby-node">&quot;#{name} Columns&quot;</span>)     
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">new_columns</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'approved'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:boolean</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">default</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> }
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">new_columns</span>.<span class="ruby-identifier">find</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">'approved'</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">type</span> <span class="ruby-operator">==</span> <span class="ruby-value">:boolean</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">default</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span> }
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Topic</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">change_column</span> <span class="ruby-value">:topics</span>, <span class="ruby-value">:approved</span>, <span class="ruby-value">:boolean</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_change_column_default">
+            
+              <a name="method-i-test_change_column_default"></a><b>test_change_column_default</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_change_column_default_source')" id="l_method-i-test_change_column_default_source">show</a>
+                
+              </p>
+              <div id="method-i-test_change_column_default_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 450</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_change_column_default</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">change_column_default</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-string">&quot;Tester&quot;</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;Tester&quot;</span>, <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">first_name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_change_column_default_to_null">
+            
+              <a name="method-i-test_change_column_default_to_null"></a><b>test_change_column_default_to_null</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_change_column_default_to_null_source')" id="l_method-i-test_change_column_default_to_null_source">show</a>
+                
+              </p>
+              <div id="method-i-test_change_column_default_to_null_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 456</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_change_column_default_to_null</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">change_column_default</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">first_name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_change_column_with_new_default">
+            
+              <a name="method-i-test_change_column_with_new_default"></a><b>test_change_column_with_new_default</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_change_column_with_new_default_source')" id="l_method-i-test_change_column_with_new_default_source">show</a>
+                
+              </p>
+              <div id="method-i-test_change_column_with_new_default_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 440</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_change_column_with_new_default</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;administrator&quot;</span>, <span class="ruby-value">:boolean</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">administrator?</span>
+
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">change_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;administrator&quot;</span>, <span class="ruby-value">:boolean</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span> }
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">administrator?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_change_column_with_nil_default">
+            
+              <a name="method-i-test_change_column_with_nil_default"></a><b>test_change_column_with_nil_default</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_change_column_with_nil_default_source')" id="l_method-i-test_change_column_with_nil_default_source">show</a>
+                
+              </p>
+              <div id="method-i-test_change_column_with_nil_default_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 429</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_change_column_with_nil_default</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;contributor&quot;</span>, <span class="ruby-value">:boolean</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">contributor?</span>
+  
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">change_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;contributor&quot;</span>, <span class="ruby-value">:boolean</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span> }
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">contributor?</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>.<span class="ruby-identifier">contributor</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_create_table_adds_id">
+            
+              <a name="method-i-test_create_table_adds_id"></a><b>test_create_table_adds_id</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_create_table_adds_id_source')" id="l_method-i-test_create_table_adds_id_source">show</a>
+                
+              </p>
+              <div id="method-i-test_create_table_adds_id_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_create_table_adds_id</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">create_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:foo</span>, <span class="ruby-value">:string</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-node">%w(foo id)</span>,
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">columns</span>(<span class="ruby-value">:testings</span>).<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> }.<span class="ruby-identifier">sort</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_create_table_with_binary_column">
+            
+              <a name="method-i-test_create_table_with_binary_column"></a><b>test_create_table_with_binary_column</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_create_table_with_binary_column_source')" id="l_method-i-test_create_table_with_binary_column_source">show</a>
+                
+              </p>
+              <div id="method-i-test_create_table_with_binary_column_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 690</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_create_table_with_binary_column</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:binary_testings</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+
+  <span class="ruby-identifier">assert_nothing_raised</span> {
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">create_table</span> <span class="ruby-value">:binary_testings</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-string">&quot;data&quot;</span>, <span class="ruby-value">:binary</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+  }
+
+  <span class="ruby-identifier">columns</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">columns</span>(<span class="ruby-value">:binary_testings</span>)
+  <span class="ruby-identifier">data_column</span> = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;data&quot;</span> }
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:OracleAdapter</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;empty_blob()&quot;</span>, <span class="ruby-identifier">data_column</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;&quot;</span>, <span class="ruby-identifier">data_column</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:binary_testings</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_create_table_with_custom_sequence_name">
+            
+              <a name="method-i-test_create_table_with_custom_sequence_name"></a><b>test_create_table_with_custom_sequence_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_create_table_with_custom_sequence_name_source')" id="l_method-i-test_create_table_with_custom_sequence_name_source">show</a>
+                
+              </p>
+              <div id="method-i-test_create_table_with_custom_sequence_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 728</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_create_table_with_custom_sequence_name</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current_adapter?</span> <span class="ruby-value">:OracleAdapter</span>
+
+  <span class="ruby-comment"># table name is 29 chars, the standard sequence name will</span>
+  <span class="ruby-comment"># be 33 chars and fail</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">create_table</span> <span class="ruby-value">:table_with_name_thats_just_ok</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:foo</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:table_with_name_thats_just_ok</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># should be all good w/ a custom sequence name</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-keyword">begin</span>
+      <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">create_table</span> <span class="ruby-value">:table_with_name_thats_just_ok</span>,
+                                     <span class="ruby-value">:sequence_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'suitably_short_seq'</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:foo</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-string">&quot;select suitably_short_seq.nextval from dual&quot;</span>)
+
+    <span class="ruby-keyword">ensure</span>
+      <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:table_with_name_thats_just_ok</span>,
+                                   <span class="ruby-value">:sequence_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'suitably_short_seq'</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># confirm the custom sequence got dropped</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">execute</span>(<span class="ruby-string">&quot;select suitably_short_seq.nextval from dual&quot;</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_create_table_with_defaults">
+            
+              <a name="method-i-test_create_table_with_defaults"></a><b>test_create_table_with_defaults</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_create_table_with_defaults_source')" id="l_method-i-test_create_table_with_defaults_source">show</a>
+                
+              </p>
+              <div id="method-i-test_create_table_with_defaults_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 110</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_create_table_with_defaults</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">create_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:one</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello&quot;</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:two</span>, <span class="ruby-value">:boolean</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:three</span>, <span class="ruby-value">:boolean</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:four</span>, <span class="ruby-value">:integer</span>, <span class="ruby-value">:default</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">columns</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">columns</span>(<span class="ruby-value">:testings</span>)
+  <span class="ruby-identifier">one</span> = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;one&quot;</span> }
+  <span class="ruby-identifier">two</span> = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;two&quot;</span> }
+  <span class="ruby-identifier">three</span> = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;three&quot;</span> }
+  <span class="ruby-identifier">four</span> = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;four&quot;</span> }
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;hello&quot;</span>, <span class="ruby-identifier">one</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">two</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">three</span>.<span class="ruby-identifier">default</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">four</span>.<span class="ruby-identifier">default</span>
+
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_create_table_with_limits">
+            
+              <a name="method-i-test_create_table_with_limits"></a><b>test_create_table_with_limits</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_create_table_with_limits_source')" id="l_method-i-test_create_table_with_limits_source">show</a>
+                
+              </p>
+              <div id="method-i-test_create_table_with_limits_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 133</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_create_table_with_limits</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">create_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:foo</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">255</span>
+
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:default_int</span>, <span class="ruby-value">:integer</span>
+
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:one_int</span>,   <span class="ruby-value">:integer</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:four_int</span>,  <span class="ruby-value">:integer</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">4</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:eight_int</span>, <span class="ruby-value">:integer</span>, <span class="ruby-value">:limit</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">8</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">columns</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">columns</span>(<span class="ruby-value">:testings</span>)
+  <span class="ruby-identifier">foo</span> = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;foo&quot;</span> }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">255</span>, <span class="ruby-identifier">foo</span>.<span class="ruby-identifier">limit</span>
+
+  <span class="ruby-identifier">default</span> = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;default_int&quot;</span> }
+  <span class="ruby-identifier">one</span>     = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;one_int&quot;</span>     }
+  <span class="ruby-identifier">four</span>    = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;four_int&quot;</span>    }
+  <span class="ruby-identifier">eight</span>   = <span class="ruby-identifier">columns</span>.<span class="ruby-identifier">detect</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">c</span><span class="ruby-operator">|</span> <span class="ruby-identifier">c</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">==</span> <span class="ruby-string">&quot;eight_int&quot;</span>   }
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:PostgreSQLAdapter</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'integer'</span>, <span class="ruby-identifier">default</span>.<span class="ruby-identifier">sql_type</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'smallint'</span>, <span class="ruby-identifier">one</span>.<span class="ruby-identifier">sql_type</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'integer'</span>, <span class="ruby-identifier">four</span>.<span class="ruby-identifier">sql_type</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'bigint'</span>, <span class="ruby-identifier">eight</span>.<span class="ruby-identifier">sql_type</span>
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:OracleAdapter</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'NUMBER(38)'</span>, <span class="ruby-identifier">default</span>.<span class="ruby-identifier">sql_type</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'NUMBER(1)'</span>, <span class="ruby-identifier">one</span>.<span class="ruby-identifier">sql_type</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'NUMBER(4)'</span>, <span class="ruby-identifier">four</span>.<span class="ruby-identifier">sql_type</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'NUMBER(8)'</span>, <span class="ruby-identifier">eight</span>.<span class="ruby-identifier">sql_type</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_create_table_with_not_null_column">
+            
+              <a name="method-i-test_create_table_with_not_null_column"></a><b>test_create_table_with_not_null_column</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_create_table_with_not_null_column_source')" id="l_method-i-test_create_table_with_not_null_column_source">show</a>
+                
+              </p>
+              <div id="method-i-test_create_table_with_not_null_column_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_create_table_with_not_null_column</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">create_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:foo</span>, <span class="ruby-value">:string</span>, <span class="ruby-value">:null</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">execute</span> <span class="ruby-string">&quot;insert into testings (foo) values (NULL)&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:testings</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_migrator">
+            
+              <a name="method-i-test_migrator"></a><b>test_migrator</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_migrator_source')" id="l_method-i-test_migrator_source">show</a>
+                
+              </p>
+              <div id="method-i-test_migrator_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 539</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_migrator</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_exists?</span>
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">up</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">current_version</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;content&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-string">&quot;remind_at&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>).<span class="ruby-identifier">content</span>
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">down</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">0</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">current_version</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">StatementInvalid</span>) { <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_migrator_going_down_due_to_version_target">
+            
+              <a name="method-i-test_migrator_going_down_due_to_version_target"></a><b>test_migrator_going_down_due_to_version_target</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_migrator_going_down_due_to_version_target_source')" id="l_method-i-test_migrator_going_down_due_to_version_target_source">show</a>
+                
+              </p>
+              <div id="method-i-test_migrator_going_down_due_to_version_target_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 611</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_migrator_going_down_due_to_version_target</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">up</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>, <span class="ruby-number">1</span>)
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">migrate</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>, <span class="ruby-number">0</span>)
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_exists?</span>
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">migrate</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>)
+
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;content&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-string">&quot;remind_at&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>).<span class="ruby-identifier">content</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_migrator_one_down">
+            
+              <a name="method-i-test_migrator_one_down"></a><b>test_migrator_one_down</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_migrator_one_down_source')" id="l_method-i-test_migrator_one_down_source">show</a>
+                
+              </p>
+              <div id="method-i-test_migrator_one_down_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 575</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_migrator_one_down</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">up</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>)
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">down</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>, <span class="ruby-number">1</span>)
+
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_exists?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_migrator_one_up">
+            
+              <a name="method-i-test_migrator_one_up"></a><b>test_migrator_one_up</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_migrator_one_up_source')" id="l_method-i-test_migrator_one_up_source">show</a>
+                
+              </p>
+              <div id="method-i-test_migrator_one_up_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 559</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_migrator_one_up</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_exists?</span>
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">up</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>, <span class="ruby-number">1</span>)
+
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_exists?</span>
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">up</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>, <span class="ruby-number">2</span>)
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;content&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-string">&quot;remind_at&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Time</span>.<span class="ruby-identifier">now</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>).<span class="ruby-identifier">content</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_migrator_one_up_one_down">
+            
+              <a name="method-i-test_migrator_one_up_one_down"></a><b>test_migrator_one_up_one_down</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_migrator_one_up_one_down_source')" id="l_method-i-test_migrator_one_up_one_down_source">show</a>
+                
+              </p>
+              <div id="method-i-test_migrator_one_up_one_down_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 585</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_migrator_one_up_one_down</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">up</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>, <span class="ruby-number">1</span>)
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">down</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>, <span class="ruby-number">0</span>)
+
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_exists?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_migrator_verbosity">
+            
+              <a name="method-i-test_migrator_verbosity"></a><b>test_migrator_verbosity</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_migrator_verbosity_source')" id="l_method-i-test_migrator_verbosity_source">show</a>
+                
+              </p>
+              <div id="method-i-test_migrator_verbosity_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 593</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_migrator_verbosity</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">up</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>, <span class="ruby-number">1</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">PeopleHaveLastNames</span>.<span class="ruby-identifier">message_count</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+  <span class="ruby-constant">PeopleHaveLastNames</span>.<span class="ruby-identifier">message_count</span> = <span class="ruby-number">0</span>
+
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">down</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>, <span class="ruby-number">0</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">PeopleHaveLastNames</span>.<span class="ruby-identifier">message_count</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+  <span class="ruby-constant">PeopleHaveLastNames</span>.<span class="ruby-identifier">message_count</span> = <span class="ruby-number">0</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_migrator_verbosity_off">
+            
+              <a name="method-i-test_migrator_verbosity_off"></a><b>test_migrator_verbosity_off</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_migrator_verbosity_off_source')" id="l_method-i-test_migrator_verbosity_off_source">show</a>
+                
+              </p>
+              <div id="method-i-test_migrator_verbosity_off_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 603</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_migrator_verbosity_off</span>
+  <span class="ruby-constant">PeopleHaveLastNames</span>.<span class="ruby-identifier">verbose</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">up</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>, <span class="ruby-number">1</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">PeopleHaveLastNames</span>.<span class="ruby-identifier">message_count</span>.<span class="ruby-identifier">zero?</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">down</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations/'</span>, <span class="ruby-number">0</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">PeopleHaveLastNames</span>.<span class="ruby-identifier">message_count</span>.<span class="ruby-identifier">zero?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_migrator_with_duplicates">
+            
+              <a name="method-i-test_migrator_with_duplicates"></a><b>test_migrator_with_duplicates</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_migrator_with_duplicates_source')" id="l_method-i-test_migrator_with_duplicates_source">show</a>
+                
+              </p>
+              <div id="method-i-test_migrator_with_duplicates_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 711</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_migrator_with_duplicates</span>
+  <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">DuplicateMigrationVersionError</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">migrate</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations_with_duplicate/'</span>, <span class="ruby-keyword">nil</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_migrator_with_missing_version_numbers">
+            
+              <a name="method-i-test_migrator_with_missing_version_numbers"></a><b>test_migrator_with_missing_version_numbers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_migrator_with_missing_version_numbers_source')" id="l_method-i-test_migrator_with_missing_version_numbers_source">show</a>
+                
+              </p>
+              <div id="method-i-test_migrator_with_missing_version_numbers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 717</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_migrator_with_missing_version_numbers</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">migrate</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations_with_missing_versions/'</span>, <span class="ruby-number">500</span>)
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:middle_name</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">4</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">current_version</span>
+                    
+                    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">migrate</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>) <span class="ruby-operator">+</span> <span class="ruby-string">'/fixtures/migrations_with_missing_versions/'</span>, <span class="ruby-number">2</span>)
+                    <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_exists?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_methods_hash</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-value">:last_name</span>)                    
+                    <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">current_version</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_native_decimal_insert_manual_vs_automatic">
+            
+              <a name="method-i-test_native_decimal_insert_manual_vs_automatic"></a><b>test_native_decimal_insert_manual_vs_automatic</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>We specifically do a manual INSERT here, and then test only the SELECT
+functionality. This allows us to more easily catch INSERT being broken, but
+SELECT actually working fine.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_native_decimal_insert_manual_vs_automatic_source')" id="l_method-i-test_native_decimal_insert_manual_vs_automatic_source">show</a>
+                
+              </p>
+              <div id="method-i-test_native_decimal_insert_manual_vs_automatic_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_native_decimal_insert_manual_vs_automatic</span>
+  <span class="ruby-comment"># SQLite3 always uses float in violation of SQL</span>
+  <span class="ruby-comment"># 16 decimal places</span>
+  <span class="ruby-identifier">correct_value</span> = <span class="ruby-string">'0012345678901234567890.0123456789'</span>.<span class="ruby-identifier">to_d</span>
+
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">delete_all</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;wealth&quot;</span>, <span class="ruby-value">:decimal</span>, <span class="ruby-value">:precision</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'30'</span>, <span class="ruby-value">:scale</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'10'</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+
+  <span class="ruby-comment"># Do a manual insertion</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:OracleAdapter</span>)
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">execute</span> <span class="ruby-string">&quot;insert into people (id, wealth) values (people_seq.nextval, 12345678901234567890.0123456789)&quot;</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">execute</span> <span class="ruby-string">&quot;insert into people (wealth) values (12345678901234567890.0123456789)&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># SELECT</span>
+  <span class="ruby-identifier">row</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>)
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">BigDecimal</span>, <span class="ruby-identifier">row</span>.<span class="ruby-identifier">wealth</span>
+
+  <span class="ruby-comment"># If this assert fails, that means the SELECT is broken!</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SQLite3Adapter</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">correct_value</span>, <span class="ruby-identifier">row</span>.<span class="ruby-identifier">wealth</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># Reset to old state</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">delete_all</span>
+
+  <span class="ruby-comment"># Now use the Rails insertion</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">create</span> <span class="ruby-value">:wealth</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;12345678901234567890.0123456789&quot;</span>) }
+
+  <span class="ruby-comment"># SELECT</span>
+  <span class="ruby-identifier">row</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>)
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">BigDecimal</span>, <span class="ruby-identifier">row</span>.<span class="ruby-identifier">wealth</span>
+
+  <span class="ruby-comment"># If these asserts fail, that means the INSERT (create function, or cast to SQL) is broken!</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SQLite3Adapter</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">correct_value</span>, <span class="ruby-identifier">row</span>.<span class="ruby-identifier">wealth</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-comment"># Reset to old state</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">del_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;wealth&quot;</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_native_types">
+            
+              <a name="method-i-test_native_types"></a><b>test_native_types</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_native_types_source')" id="l_method-i-test_native_types_source">show</a>
+                
+              </p>
+              <div id="method-i-test_native_types_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 252</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_native_types</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">delete_all</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;last_name&quot;</span>, <span class="ruby-value">:string</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;bio&quot;</span>, <span class="ruby-value">:text</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;age&quot;</span>, <span class="ruby-value">:integer</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;height&quot;</span>, <span class="ruby-value">:float</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;wealth&quot;</span>, <span class="ruby-value">:decimal</span>, <span class="ruby-value">:precision</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'30'</span>, <span class="ruby-value">:scale</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'10'</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;birthday&quot;</span>, <span class="ruby-value">:datetime</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;favorite_day&quot;</span>, <span class="ruby-value">:date</span>
+  <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;male&quot;</span>, <span class="ruby-value">:boolean</span>
+  <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-constant">Person</span>.<span class="ruby-identifier">create</span> <span class="ruby-value">:first_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'bob'</span>, <span class="ruby-value">:last_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'bobsen'</span>, <span class="ruby-value">:bio</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;I was born ....&quot;</span>, <span class="ruby-value">:age</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">18</span>, <span class="ruby-value">:height</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">1.78</span>, <span class="ruby-value">:wealth</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;12345678901234567890.0123456789&quot;</span>), <span class="ruby-value">:birthday</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">18</span>.<span class="ruby-identifier">years</span>.<span class="ruby-identifier">ago</span>, <span class="ruby-value">:favorite_day</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">10</span>.<span class="ruby-identifier">days</span>.<span class="ruby-identifier">ago</span>, <span class="ruby-value">:male</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span> }
+  <span class="ruby-identifier">bob</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:first</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'bob'</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">first_name</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'bobsen'</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">last_name</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;I was born ....&quot;</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">bio</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">18</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">age</span>
+
+  <span class="ruby-comment"># Test for 30 significent digits (beyond the 16 of float), 10 of them</span>
+  <span class="ruby-comment"># after the decimal place.</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SQLite3Adapter</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">BigDecimal</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;0012345678901234567890.0123456789&quot;</span>), <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">wealth</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">male?</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">String</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">first_name</span>.<span class="ruby-identifier">class</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">String</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">last_name</span>.<span class="ruby-identifier">class</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">String</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">bio</span>.<span class="ruby-identifier">class</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Fixnum</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">age</span>.<span class="ruby-identifier">class</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Time</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">birthday</span>.<span class="ruby-identifier">class</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SQLServerAdapter</span>, <span class="ruby-value">:OracleAdapter</span>, <span class="ruby-value">:SybaseAdapter</span>)
+    <span class="ruby-comment"># Sybase, and Oracle don't differentiate between date/time</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Time</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">favorite_day</span>.<span class="ruby-identifier">class</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Date</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">favorite_day</span>.<span class="ruby-identifier">class</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">TrueClass</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">male?</span>.<span class="ruby-identifier">class</span>
+  <span class="ruby-identifier">assert_kind_of</span> <span class="ruby-constant">BigDecimal</span>, <span class="ruby-identifier">bob</span>.<span class="ruby-identifier">wealth</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_proper_table_name">
+            
+              <a name="method-i-test_proper_table_name"></a><b>test_proper_table_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_proper_table_name_source')" id="l_method-i-test_proper_table_name_source">show</a>
+                
+              </p>
+              <div id="method-i-test_proper_table_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 640</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_proper_table_name</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;table&quot;</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">proper_table_name</span>(<span class="ruby-string">'table'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;table&quot;</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">proper_table_name</span>(<span class="ruby-value">:table</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;reminders&quot;</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">proper_table_name</span>(<span class="ruby-constant">Reminder</span>)
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_table_name</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_name</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">proper_table_name</span>(<span class="ruby-constant">Reminder</span>)
+
+  <span class="ruby-comment"># Use the model's own prefix/suffix if a model is given</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_prefix</span> = <span class="ruby-string">&quot;ARprefix_&quot;</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_suffix</span> = <span class="ruby-string">&quot;_ARsuffix&quot;</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_name_prefix</span> = <span class="ruby-string">'prefix_'</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_name_suffix</span> = <span class="ruby-string">'_suffix'</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_table_name</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;prefix_reminders_suffix&quot;</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">proper_table_name</span>(<span class="ruby-constant">Reminder</span>)
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_name_prefix</span> = <span class="ruby-string">''</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">table_name_suffix</span> = <span class="ruby-string">''</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_table_name</span>
+
+  <span class="ruby-comment"># Use AR::Base's prefix/suffix if string or symbol is given</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_prefix</span> = <span class="ruby-string">&quot;prefix_&quot;</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_suffix</span> = <span class="ruby-string">&quot;_suffix&quot;</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_table_name</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;prefix_table_suffix&quot;</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">proper_table_name</span>(<span class="ruby-string">'table'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;prefix_table_suffix&quot;</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">proper_table_name</span>(<span class="ruby-value">:table</span>)
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_prefix</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_suffix</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_table_name</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_rename_column">
+            
+              <a name="method-i-test_rename_column"></a><b>test_rename_column</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_rename_column_source')" id="l_method-i-test_rename_column_source">show</a>
+                
+              </p>
+              <div id="method-i-test_rename_column_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 354</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_rename_column</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">rename_column</span> <span class="ruby-string">&quot;people&quot;</span>, <span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-string">&quot;nick_name&quot;</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;nick_name&quot;</span>)
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_column</span>(<span class="ruby-string">&quot;people&quot;</span>,<span class="ruby-string">&quot;nick_name&quot;</span>)
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span>(<span class="ruby-string">&quot;people&quot;</span>,<span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-value">:string</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_rename_column_using_symbol_arguments">
+            
+              <a name="method-i-test_rename_column_using_symbol_arguments"></a><b>test_rename_column_using_symbol_arguments</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_rename_column_using_symbol_arguments_source')" id="l_method-i-test_rename_column_using_symbol_arguments_source">show</a>
+                
+              </p>
+              <div id="method-i-test_rename_column_using_symbol_arguments_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 343</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_rename_column_using_symbol_arguments</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">rename_column</span> <span class="ruby-value">:people</span>, <span class="ruby-value">:first_name</span>, <span class="ruby-value">:nick_name</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">reset_column_information</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-constant">Person</span>.<span class="ruby-identifier">column_names</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;nick_name&quot;</span>)
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">remove_column</span>(<span class="ruby-string">&quot;people&quot;</span>,<span class="ruby-string">&quot;nick_name&quot;</span>)
+    <span class="ruby-constant">Person</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_column</span>(<span class="ruby-string">&quot;people&quot;</span>,<span class="ruby-string">&quot;first_name&quot;</span>, <span class="ruby-value">:string</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_rename_table">
+            
+              <a name="method-i-test_rename_table"></a><b>test_rename_table</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_rename_table_source')" id="l_method-i-test_rename_table_source">show</a>
+                
+              </p>
+              <div id="method-i-test_rename_table_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 365</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_rename_table</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">create_table</span> <span class="ruby-value">:octopuses</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:url</span>, <span class="ruby-value">:string</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">rename_table</span> <span class="ruby-value">:octopuses</span>, <span class="ruby-value">:octopi</span>
+
+    <span class="ruby-comment"># Using explicit id in insert for compatibility across all databases</span>
+    <span class="ruby-identifier">con</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>     
+    <span class="ruby-identifier">con</span>.<span class="ruby-identifier">enable_identity_insert</span>(<span class="ruby-string">&quot;octopi&quot;</span>, <span class="ruby-keyword">true</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SybaseAdapter</span>)
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">con</span>.<span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;INSERT INTO octopi (#{con.quote_column_name('id')}, #{con.quote_column_name('url')}) VALUES (1, 'http://www.foreverflying.com/octopus-black7.jpg')&quot;</span> }
+    <span class="ruby-identifier">con</span>.<span class="ruby-identifier">enable_identity_insert</span>(<span class="ruby-string">&quot;octopi&quot;</span>, <span class="ruby-keyword">false</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SybaseAdapter</span>)
+
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'http://www.foreverflying.com/octopus-black7.jpg'</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">select_value</span>(<span class="ruby-string">&quot;SELECT url FROM octopi WHERE id=1&quot;</span>)
+
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:octopuses</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:octopi</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_rename_table_with_an_index">
+            
+              <a name="method-i-test_rename_table_with_an_index"></a><b>test_rename_table_with_an_index</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_rename_table_with_an_index_source')" id="l_method-i-test_rename_table_with_an_index_source">show</a>
+                
+              </p>
+              <div id="method-i-test_rename_table_with_an_index_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 386</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_rename_table_with_an_index</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">create_table</span> <span class="ruby-value">:octopuses</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">t</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">t</span>.<span class="ruby-identifier">column</span> <span class="ruby-value">:url</span>, <span class="ruby-value">:string</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">add_index</span> <span class="ruby-value">:octopuses</span>, <span class="ruby-value">:url</span>
+    
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">rename_table</span> <span class="ruby-value">:octopuses</span>, <span class="ruby-value">:octopi</span>
+
+    <span class="ruby-comment"># Using explicit id in insert for compatibility across all databases</span>
+    <span class="ruby-identifier">con</span> = <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>     
+    <span class="ruby-identifier">con</span>.<span class="ruby-identifier">enable_identity_insert</span>(<span class="ruby-string">&quot;octopi&quot;</span>, <span class="ruby-keyword">true</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SybaseAdapter</span>)
+    <span class="ruby-identifier">assert_nothing_raised</span> { <span class="ruby-identifier">con</span>.<span class="ruby-identifier">execute</span> <span class="ruby-node">&quot;INSERT INTO octopi (#{con.quote_column_name('id')}, #{con.quote_column_name('url')}) VALUES (1, 'http://www.foreverflying.com/octopus-black7.jpg')&quot;</span> }
+    <span class="ruby-identifier">con</span>.<span class="ruby-identifier">enable_identity_insert</span>(<span class="ruby-string">&quot;octopi&quot;</span>, <span class="ruby-keyword">false</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">current_adapter?</span>(<span class="ruby-value">:SybaseAdapter</span>)
+
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'http://www.foreverflying.com/octopus-black7.jpg'</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">select_value</span>(<span class="ruby-string">&quot;SELECT url FROM octopi WHERE id=1&quot;</span>)
+    <span class="ruby-identifier">assert</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">indexes</span>(<span class="ruby-value">:octopi</span>).<span class="ruby-identifier">first</span>.<span class="ruby-identifier">columns</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">&quot;url&quot;</span>)
+  <span class="ruby-keyword">ensure</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:octopuses</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+    <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">connection</span>.<span class="ruby-identifier">drop_table</span> <span class="ruby-value">:octopi</span> <span class="ruby-keyword">rescue</span> <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_schema_info_table_name">
+            
+              <a name="method-i-test_schema_info_table_name"></a><b>test_schema_info_table_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_schema_info_table_name_source')" id="l_method-i-test_schema_info_table_name_source">show</a>
+                
+              </p>
+              <div id="method-i-test_schema_info_table_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/migration_test.rb, line 626</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_schema_info_table_name</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_prefix</span> = <span class="ruby-string">&quot;prefix_&quot;</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_suffix</span> = <span class="ruby-string">&quot;_suffix&quot;</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_table_name</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;prefix_schema_info_suffix&quot;</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">schema_info_table_name</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_prefix</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_suffix</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-constant">Reminder</span>.<span class="ruby-identifier">reset_table_name</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;schema_info&quot;</span>, <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Migrator</span>.<span class="ruby-identifier">schema_info_table_name</span>
+<span class="ruby-keyword">ensure</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_prefix</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">table_name_suffix</span> = <span class="ruby-string">&quot;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,2366 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ResourcesTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ResourcesTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/resources_test_rb.html">rails/actionpack/test/controller/resources_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-assert_named_route">assert_named_route</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assert_resource_methods">assert_resource_methods</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assert_restful_named_routes_for">assert_restful_named_routes_for</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assert_restful_routes_for">assert_restful_routes_for</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assert_simply_restful_for">assert_simply_restful_for</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assert_singleton_named_routes_for">assert_singleton_named_routes_for</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assert_singleton_restful_for">assert_singleton_restful_for</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assert_singleton_routes_for">assert_singleton_routes_for</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-distinct_routes-3F">distinct_routes?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_default_restful_routes">test_default_restful_routes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_multiple_default_restful_routes">test_multiple_default_restful_routes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_multiple_with_path_prefix">test_multiple_with_path_prefix</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_nested_restful_routes">test_nested_restful_routes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_new_style_named_routes_for_resource">test_new_style_named_routes_for_resource</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_new_style_named_routes_for_singleton_resource">test_new_style_named_routes_for_singleton_resource</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_override_new_method">test_override_new_method</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_resource_action_separator">test_resource_action_separator</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_restful_routes_dont_generate_duplicates">test_restful_routes_dont_generate_duplicates</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_add_deprecated_formatted_routes">test_should_add_deprecated_formatted_routes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_add_deprecated_named_routes_for_nested_resources">test_should_add_deprecated_named_routes_for_nested_resources</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_add_deprecated_named_routes_for_nested_resources_in_singleton_resource">test_should_add_deprecated_named_routes_for_nested_resources_in_singleton_resource</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resource_in_resources">test_should_add_deprecated_named_routes_for_nested_singleton_resource_in_resources</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resources">test_should_add_deprecated_named_routes_for_nested_singleton_resources</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_add_deprecated_named_routes_for_resource">test_should_add_deprecated_named_routes_for_resource</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_add_deprecated_named_routes_for_singleton_resource">test_should_add_deprecated_named_routes_for_singleton_resource</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_all_singleton_paths_be_the_same">test_should_all_singleton_paths_be_the_same</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_arrange_actions">test_should_arrange_actions</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_create_multiple_singleton_resource_routes">test_should_create_multiple_singleton_resource_routes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_create_nested_singleton_resource_routes">test_should_create_nested_singleton_resource_routes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_create_singleton_resource_routes">test_should_create_singleton_resource_routes</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_nest_resources_in_singleton_resource">test_should_nest_resources_in_singleton_resource</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_nest_resources_in_singleton_resource_with_path_prefix">test_should_nest_resources_in_singleton_resource_with_path_prefix</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_nest_singleton_resource_in_resources">test_should_nest_singleton_resource_in_resources</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_not_allow_delete_or_put_on_collection_path">test_should_not_allow_delete_or_put_on_collection_path</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_resource_controller_name_equal_controller_option">test_should_resource_controller_name_equal_controller_option</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_should_resource_controller_name_equal_resource_name_by_default">test_should_resource_controller_name_equal_resource_name_by_default</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_singleton_resource_with_member_action">test_singleton_resource_with_member_action</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_singleton_resource_with_two_member_actions_with_same_method">test_singleton_resource_with_two_member_actions_with_same_method</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_with_collection_action">test_with_collection_action</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_with_member_action">test_with_member_action</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_with_name_prefix">test_with_name_prefix</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_with_new_action">test_with_new_action</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_with_path_prefix">test_with_path_prefix</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_with_two_member_actions_with_same_method">test_with_two_member_actions_with_same_method</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>W</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-with_restful_routing">with_restful_routing</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-with_singleton_resources">with_singleton_resources</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_default_restful_routes">
+            
+              <a name="method-i-test_default_restful_routes"></a><b>test_default_restful_routes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_default_restful_routes_source')" id="l_method-i-test_default_restful_routes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_default_restful_routes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_default_restful_routes</span>
+  <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_multiple_default_restful_routes">
+            
+              <a name="method-i-test_multiple_default_restful_routes"></a><b>test_multiple_default_restful_routes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_multiple_default_restful_routes_source')" id="l_method-i-test_multiple_default_restful_routes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_multiple_default_restful_routes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 54</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_multiple_default_restful_routes</span>
+  <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:comments</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:comments</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_multiple_with_path_prefix">
+            
+              <a name="method-i-test_multiple_with_path_prefix"></a><b>test_multiple_with_path_prefix</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_multiple_with_path_prefix_source')" id="l_method-i-test_multiple_with_path_prefix_source">show</a>
+                
+              </p>
+              <div id="method-i-test_multiple_with_path_prefix_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_multiple_with_path_prefix</span>
+  <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:comments</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/thread/:thread_id'</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread/5/'</span>, <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'5'</span> }
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:comments</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread/5/'</span>, <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'5'</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_nested_restful_routes">
+            
+              <a name="method-i-test_nested_restful_routes"></a><b>test_nested_restful_routes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_nested_restful_routes_source')" id="l_method-i-test_nested_restful_routes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_nested_restful_routes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 169</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_nested_restful_routes</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:threads</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:comments</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:threads</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>,
+      <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'threads/1/'</span>,
+      <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_'</span>,
+      <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span> }
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:comments</span>,
+      <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'threads/1/messages/2/'</span>,
+      <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_message_'</span>,
+      <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:message_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'2'</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_new_style_named_routes_for_resource">
+            
+              <a name="method-i-test_new_style_named_routes_for_resource"></a><b>test_new_style_named_routes_for_resource</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_new_style_named_routes_for_resource_source')" id="l_method-i-test_new_style_named_routes_for_resource_source">show</a>
+                
+              </p>
+              <div id="method-i-test_new_style_named_routes_for_resource_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 338</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_new_style_named_routes_for_resource</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:collection</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:search</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>}, <span class="ruby-value">:new</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:preview</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:any</span>}, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/threads/:thread_id'</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'threads/1/'</span>, <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span> }
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/1/messages/search&quot;</span>, <span class="ruby-string">&quot;search_thread_messages_path&quot;</span>, {}
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/1/messages/new&quot;</span>, <span class="ruby-string">&quot;new_thread_message_path&quot;</span>, {}
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/1/messages/new/preview&quot;</span>, <span class="ruby-string">&quot;preview_new_thread_message_path&quot;</span>, {}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_new_style_named_routes_for_singleton_resource">
+            
+              <a name="method-i-test_new_style_named_routes_for_singleton_resource"></a><b>test_new_style_named_routes_for_singleton_resource</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_new_style_named_routes_for_singleton_resource_source')" id="l_method-i-test_new_style_named_routes_for_singleton_resource_source">show</a>
+                
+              </p>
+              <div id="method-i-test_new_style_named_routes_for_singleton_resource_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 350</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_new_style_named_routes_for_singleton_resource</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:member</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:login</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>}, <span class="ruby-value">:new</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:preview</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:any</span>}, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/admin'</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin/'</span>
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/admin/account/login&quot;</span>, <span class="ruby-string">&quot;login_admin_account_path&quot;</span>, {}
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/admin/account/new&quot;</span>, <span class="ruby-string">&quot;new_admin_account_path&quot;</span>, {}
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/admin/account/new/preview&quot;</span>, <span class="ruby-string">&quot;preview_new_admin_account_path&quot;</span>, {}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_override_new_method">
+            
+              <a name="method-i-test_override_new_method"></a><b>test_override_new_method</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_override_new_method_source')" id="l_method-i-test_override_new_method_source">show</a>
+                
+              </p>
+              <div id="method-i-test_override_new_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 151</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_override_new_method</span>
+  <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_restful_routes_for</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;new&quot;</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;/messages/new&quot;</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+      <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">RoutingError</span>) <span class="ruby-keyword">do</span>
+        <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">recognize_path</span>(<span class="ruby-string">&quot;/messages/new&quot;</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:new</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:new</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:any</span> } <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_restful_routes_for</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;new&quot;</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;/messages/new&quot;</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>)
+      <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;new&quot;</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;/messages/new&quot;</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_resource_action_separator">
+            
+              <a name="method-i-test_resource_action_separator"></a><b>test_resource_action_separator</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_resource_action_separator_source')" id="l_method-i-test_resource_action_separator_source">show</a>
+                
+              </p>
+              <div id="method-i-test_resource_action_separator_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_resource_action_separator</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:collection</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:search</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>}, <span class="ruby-value">:new</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:preview</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:any</span>}, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/threads/:thread_id'</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:member</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:login</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>}, <span class="ruby-value">:new</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:preview</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:any</span>}, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/admin'</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">action_separator</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>.<span class="ruby-identifier">resource_action_separator</span>
+
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'threads/1/'</span>, <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span> }
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;/threads/1/messages#{action_separator}search&quot;</span>, <span class="ruby-string">&quot;search_thread_messages_path&quot;</span>, {}
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/1/messages/new&quot;</span>, <span class="ruby-string">&quot;new_thread_message_path&quot;</span>, {}
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;/threads/1/messages/new#{action_separator}preview&quot;</span>, <span class="ruby-string">&quot;preview_new_thread_message_path&quot;</span>, {}
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin/'</span>
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;/admin/account#{action_separator}login&quot;</span>, <span class="ruby-string">&quot;login_admin_account_path&quot;</span>, {}
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/admin/account/new&quot;</span>, <span class="ruby-string">&quot;new_admin_account_path&quot;</span>, {}
+    <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;/admin/account/new#{action_separator}preview&quot;</span>, <span class="ruby-string">&quot;preview_new_admin_account_path&quot;</span>, {}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_restful_routes_dont_generate_duplicates">
+            
+              <a name="method-i-test_restful_routes_dont_generate_duplicates"></a><b>test_restful_routes_dont_generate_duplicates</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_restful_routes_dont_generate_duplicates_source')" id="l_method-i-test_restful_routes_dont_generate_duplicates_source">show</a>
+                
+              </p>
+              <div id="method-i-test_restful_routes_dont_generate_duplicates_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_restful_routes_dont_generate_duplicates</span>
+  <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">routes</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">routes</span>
+    <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">route</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">routes</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">r</span><span class="ruby-operator">|</span>
+        <span class="ruby-keyword">next</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">route</span> <span class="ruby-operator">===</span> <span class="ruby-identifier">r</span> <span class="ruby-comment"># skip the comparison instance</span>
+        <span class="ruby-identifier">assert</span> <span class="ruby-identifier">distinct_routes?</span>(<span class="ruby-identifier">route</span>, <span class="ruby-identifier">r</span>), <span class="ruby-node">&quot;Duplicate Route: #{route}&quot;</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_add_deprecated_formatted_routes">
+            
+              <a name="method-i-test_should_add_deprecated_formatted_routes"></a><b>test_should_add_deprecated_formatted_routes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_add_deprecated_formatted_routes_source')" id="l_method-i-test_should_add_deprecated_formatted_routes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_add_deprecated_formatted_routes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 477</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_add_deprecated_formatted_routes</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:products</span>, <span class="ruby-value">:collection</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:specials</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span> }, <span class="ruby-value">:member</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thumbnail</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span> }
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:member</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:icon</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span> }
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">assert_restful_routes_for</span> <span class="ruby-value">:products</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_recognizes</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>({ <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'specials'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span> }), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/products.xml;specials'</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>
+      <span class="ruby-identifier">assert_recognizes</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>({ <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thumbnail'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'jpg'</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span> }), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/products/1.jpg;thumbnail'</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:account</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_recognizes</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>({ <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'icon'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'jpg'</span> }), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/account.jpg;icon'</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_add_deprecated_named_routes_for_nested_resources">
+            
+              <a name="method-i-test_should_add_deprecated_named_routes_for_nested_resources"></a><b>test_should_add_deprecated_named_routes_for_nested_resources</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_add_deprecated_named_routes_for_nested_resources_source')" id="l_method-i-test_should_add_deprecated_named_routes_for_nested_resources_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_add_deprecated_named_routes_for_nested_resources_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 390</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_add_deprecated_named_routes_for_nested_resources</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:threads</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:comments</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:threads</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>,
+      <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'threads/1/'</span>,
+      <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_'</span>,
+      <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span> }
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:comments</span>,
+      <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'threads/1/messages/2/'</span>,
+      <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_message_'</span>,
+      <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:message_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'2'</span> }
+
+    <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/1/messages&quot;</span>, <span class="ruby-string">&quot;messages_path&quot;</span>, {}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/1/messages/1&quot;</span>, <span class="ruby-string">&quot;message_path&quot;</span>, {<span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/1/messages/new&quot;</span>, <span class="ruby-string">&quot;new_message_path&quot;</span>, {<span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/1/messages/1/edit&quot;</span>, <span class="ruby-string">&quot;edit_message_path&quot;</span>, {<span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_add_deprecated_named_routes_for_nested_resources_in_singleton_resource">
+            
+              <a name="method-i-test_should_add_deprecated_named_routes_for_nested_resources_in_singleton_resource"></a><b>test_should_add_deprecated_named_routes_for_nested_resources_in_singleton_resource</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_add_deprecated_named_routes_for_nested_resources_in_singleton_resource_source')" id="l_method-i-test_should_add_deprecated_named_routes_for_nested_resources_in_singleton_resource_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_add_deprecated_named_routes_for_nested_resources_in_singleton_resource_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 438</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_add_deprecated_named_routes_for_nested_resources_in_singleton_resource</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:account</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">account</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">account</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:messages</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:account</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'account/'</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'account_'</span>
+
+    <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/account/messages&quot;</span>, <span class="ruby-string">&quot;messages_path&quot;</span>, {}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/account/messages/1&quot;</span>, <span class="ruby-string">&quot;message_path&quot;</span>, {<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/account/messages/new&quot;</span>, <span class="ruby-string">&quot;new_message_path&quot;</span>, {}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/account/messages/1/edit&quot;</span>, <span class="ruby-string">&quot;edit_message_path&quot;</span>, {<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resource_in_resources">
+            
+              <a name="method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resource_in_resources"></a><b>test_should_add_deprecated_named_routes_for_nested_singleton_resource_in_resources</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resource_in_resources_source')" id="l_method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resource_in_resources_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resource_in_resources_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 458</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_add_deprecated_named_routes_for_nested_singleton_resource_in_resources</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:threads</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">thread</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">thread</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:admin</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:threads</span>
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:admin</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'threads/5/'</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_'</span>, <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'5'</span> }
+
+    <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/5/admin&quot;</span>, <span class="ruby-string">&quot;admin_path&quot;</span>, {}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/5/admin/new&quot;</span>, <span class="ruby-string">&quot;new_admin_path&quot;</span>, {}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/5/admin/edit&quot;</span>, <span class="ruby-string">&quot;edit_admin_path&quot;</span>, {}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resources">
+            
+              <a name="method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resources"></a><b>test_should_add_deprecated_named_routes_for_nested_singleton_resources</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resources_source')" id="l_method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resources_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_add_deprecated_named_routes_for_nested_singleton_resources_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 419</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_add_deprecated_named_routes_for_nested_singleton_resources</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:admin</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">admin</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">admin</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:account</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:admin</span>
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin/'</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin_'</span>
+
+    <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/admin/account&quot;</span>, <span class="ruby-string">&quot;account_path&quot;</span>, {}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/admin/account/new&quot;</span>, <span class="ruby-string">&quot;new_account_path&quot;</span>, {}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/admin/account/edit&quot;</span>, <span class="ruby-string">&quot;edit_account_path&quot;</span>, {}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_add_deprecated_named_routes_for_resource">
+            
+              <a name="method-i-test_should_add_deprecated_named_routes_for_resource"></a><b>test_should_add_deprecated_named_routes_for_resource</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_add_deprecated_named_routes_for_resource_source')" id="l_method-i-test_should_add_deprecated_named_routes_for_resource_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_add_deprecated_named_routes_for_resource_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 362</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_add_deprecated_named_routes_for_resource</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:collection</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:search</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>}, <span class="ruby-value">:new</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:preview</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:any</span>}, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/threads/:thread_id'</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'threads/1/'</span>, <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span> }
+    <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/1/messages/search&quot;</span>, <span class="ruby-string">&quot;thread_search_messages_path&quot;</span>, {}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/1/messages/new&quot;</span>, <span class="ruby-string">&quot;thread_new_message_path&quot;</span>, {}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/threads/1/messages/new/preview&quot;</span>, <span class="ruby-string">&quot;thread_preview_new_message_path&quot;</span>, {}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_add_deprecated_named_routes_for_singleton_resource">
+            
+              <a name="method-i-test_should_add_deprecated_named_routes_for_singleton_resource"></a><b>test_should_add_deprecated_named_routes_for_singleton_resource</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_add_deprecated_named_routes_for_singleton_resource_source')" id="l_method-i-test_should_add_deprecated_named_routes_for_singleton_resource_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_add_deprecated_named_routes_for_singleton_resource_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 376</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_add_deprecated_named_routes_for_singleton_resource</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:member</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:login</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>}, <span class="ruby-value">:new</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:preview</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:any</span>}, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/admin'</span>
+    <span class="ruby-keyword">end</span>
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin_'</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin/'</span>
+    <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/admin/account/login&quot;</span>, <span class="ruby-string">&quot;admin_login_account_path&quot;</span>, {}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/admin/account/new&quot;</span>, <span class="ruby-string">&quot;admin_new_account_path&quot;</span>, {}
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-string">&quot;/admin/account/new/preview&quot;</span>, <span class="ruby-string">&quot;admin_preview_new_account_path&quot;</span>, {}
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_all_singleton_paths_be_the_same">
+            
+              <a name="method-i-test_should_all_singleton_paths_be_the_same"></a><b>test_should_all_singleton_paths_be_the_same</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_all_singleton_paths_be_the_same_source')" id="l_method-i-test_should_all_singleton_paths_be_the_same_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_all_singleton_paths_be_the_same_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 41</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_all_singleton_paths_be_the_same</span>
+  [ <span class="ruby-value">:path</span>, <span class="ruby-value">:nesting_path_prefix</span>, <span class="ruby-value">:member_path</span> ].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">resource</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Resources</span><span class="ruby-operator">::</span><span class="ruby-constant">SingletonResource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:messages</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin'</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'admin/messages'</span>, <span class="ruby-identifier">resource</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_arrange_actions">
+            
+              <a name="method-i-test_should_arrange_actions"></a><b>test_should_arrange_actions</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_arrange_actions_source')" id="l_method-i-test_should_arrange_actions_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_arrange_actions_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 18</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_arrange_actions</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Resources</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:messages</span>,
+    <span class="ruby-value">:collection</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:rss</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>, <span class="ruby-value">:reorder</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>, <span class="ruby-value">:csv</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span> },
+    <span class="ruby-value">:member</span>     =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:rss</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>, <span class="ruby-value">:atom</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>, <span class="ruby-value">:upload</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>, <span class="ruby-value">:fix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span> },
+    <span class="ruby-value">:new</span>        =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:preview</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>, <span class="ruby-value">:draft</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span> })
+
+  <span class="ruby-identifier">assert_resource_methods</span> [<span class="ruby-value">:rss</span>],                   <span class="ruby-identifier">resource</span>, <span class="ruby-value">:collection</span>, <span class="ruby-value">:get</span>
+  <span class="ruby-identifier">assert_resource_methods</span> [<span class="ruby-value">:csv</span>, <span class="ruby-value">:reorder</span>],         <span class="ruby-identifier">resource</span>, <span class="ruby-value">:collection</span>, <span class="ruby-value">:post</span>
+  <span class="ruby-identifier">assert_resource_methods</span> [<span class="ruby-value">:edit</span>, <span class="ruby-value">:rss</span>, <span class="ruby-value">:atom</span>],     <span class="ruby-identifier">resource</span>, <span class="ruby-value">:member</span>,     <span class="ruby-value">:get</span>
+  <span class="ruby-identifier">assert_resource_methods</span> [<span class="ruby-value">:upload</span>, <span class="ruby-value">:fix</span>],          <span class="ruby-identifier">resource</span>, <span class="ruby-value">:member</span>,     <span class="ruby-value">:post</span>
+  <span class="ruby-identifier">assert_resource_methods</span> [<span class="ruby-value">:new</span>, <span class="ruby-value">:preview</span>, <span class="ruby-value">:draft</span>], <span class="ruby-identifier">resource</span>, <span class="ruby-value">:new</span>,        <span class="ruby-value">:get</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_create_multiple_singleton_resource_routes">
+            
+              <a name="method-i-test_should_create_multiple_singleton_resource_routes"></a><b>test_should_create_multiple_singleton_resource_routes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_create_multiple_singleton_resource_routes_source')" id="l_method-i-test_should_create_multiple_singleton_resource_routes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_create_multiple_singleton_resource_routes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 209</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_create_multiple_singleton_resource_routes</span>
+  <span class="ruby-identifier">with_singleton_resources</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:admin</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:account</span>
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:admin</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_create_nested_singleton_resource_routes">
+            
+              <a name="method-i-test_should_create_nested_singleton_resource_routes"></a><b>test_should_create_nested_singleton_resource_routes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_create_nested_singleton_resource_routes_source')" id="l_method-i-test_should_create_nested_singleton_resource_routes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_create_nested_singleton_resource_routes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 216</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_create_nested_singleton_resource_routes</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:admin</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">admin</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">admin</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:account</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:admin</span>
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin/'</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'admin_'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_create_singleton_resource_routes">
+            
+              <a name="method-i-test_should_create_singleton_resource_routes"></a><b>test_should_create_singleton_resource_routes</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_create_singleton_resource_routes_source')" id="l_method-i-test_should_create_singleton_resource_routes_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_create_singleton_resource_routes_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_create_singleton_resource_routes</span>
+  <span class="ruby-identifier">with_singleton_resources</span> <span class="ruby-value">:account</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:account</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_nest_resources_in_singleton_resource">
+            
+              <a name="method-i-test_should_nest_resources_in_singleton_resource"></a><b>test_should_nest_resources_in_singleton_resource</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_nest_resources_in_singleton_resource_source')" id="l_method-i-test_should_nest_resources_in_singleton_resource_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_nest_resources_in_singleton_resource_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 263</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_nest_resources_in_singleton_resource</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:account</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">account</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">account</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:messages</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:account</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'account/'</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'account_'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_nest_resources_in_singleton_resource_with_path_prefix">
+            
+              <a name="method-i-test_should_nest_resources_in_singleton_resource_with_path_prefix"></a><b>test_should_nest_resources_in_singleton_resource_with_path_prefix</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_nest_resources_in_singleton_resource_with_path_prefix_source')" id="l_method-i-test_should_nest_resources_in_singleton_resource_with_path_prefix_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_nest_resources_in_singleton_resource_with_path_prefix_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 276</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_nest_resources_in_singleton_resource_with_path_prefix</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span>(<span class="ruby-value">:account</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">':site_id'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">account</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">account</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:messages</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'7/'</span>, <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:site_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'7'</span> }
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'7/account/'</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'account_'</span>, <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:site_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'7'</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_nest_singleton_resource_in_resources">
+            
+              <a name="method-i-test_should_nest_singleton_resource_in_resources"></a><b>test_should_nest_singleton_resource_in_resources</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_nest_singleton_resource_in_resources_source')" id="l_method-i-test_should_nest_singleton_resource_in_resources_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_nest_singleton_resource_in_resources_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 289</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_nest_singleton_resource_in_resources</span>
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span> <span class="ruby-value">:threads</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">thread</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">thread</span>.<span class="ruby-identifier">resource</span> <span class="ruby-value">:admin</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:threads</span>
+    <span class="ruby-identifier">assert_singleton_restful_for</span> <span class="ruby-value">:admin</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'threads/5/'</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread_'</span>, <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'5'</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_not_allow_delete_or_put_on_collection_path">
+            
+              <a name="method-i-test_should_not_allow_delete_or_put_on_collection_path"></a><b>test_should_not_allow_delete_or_put_on_collection_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_not_allow_delete_or_put_on_collection_path_source')" id="l_method-i-test_should_not_allow_delete_or_put_on_collection_path_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_not_allow_delete_or_put_on_collection_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 302</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_not_allow_delete_or_put_on_collection_path</span>
+  <span class="ruby-identifier">controller_name</span> = <span class="ruby-value">:messages</span>
+  <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-identifier">controller_name</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">options</span> = { <span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">controller_name</span>.<span class="ruby-identifier">to_s</span> }
+    <span class="ruby-identifier">collection_path</span> = <span class="ruby-node">&quot;/#{controller_name}&quot;</span>
+
+    <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">RoutingError</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'update'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">collection_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:put</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_raises</span>(<span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">RoutingError</span>) <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'destroy'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">collection_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:delete</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_resource_controller_name_equal_controller_option">
+            
+              <a name="method-i-test_should_resource_controller_name_equal_controller_option"></a><b>test_should_resource_controller_name_equal_controller_option</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_resource_controller_name_equal_controller_option_source')" id="l_method-i-test_should_resource_controller_name_equal_controller_option_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_resource_controller_name_equal_controller_option_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_resource_controller_name_equal_controller_option</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Resources</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:messages</span>, <span class="ruby-value">:controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'posts'</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'posts'</span>, <span class="ruby-identifier">resource</span>.<span class="ruby-identifier">controller</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_should_resource_controller_name_equal_resource_name_by_default">
+            
+              <a name="method-i-test_should_resource_controller_name_equal_resource_name_by_default"></a><b>test_should_resource_controller_name_equal_resource_name_by_default</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_should_resource_controller_name_equal_resource_name_by_default_source')" id="l_method-i-test_should_resource_controller_name_equal_resource_name_by_default_source">show</a>
+                
+              </p>
+              <div id="method-i-test_should_resource_controller_name_equal_resource_name_by_default_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_should_resource_controller_name_equal_resource_name_by_default</span>
+  <span class="ruby-identifier">resource</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Resources</span><span class="ruby-operator">::</span><span class="ruby-constant">Resource</span>.<span class="ruby-identifier">new</span>(<span class="ruby-value">:messages</span>, {})
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">'messages'</span>, <span class="ruby-identifier">resource</span>.<span class="ruby-identifier">controller</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_singleton_resource_with_member_action">
+            
+              <a name="method-i-test_singleton_resource_with_member_action"></a><b>test_singleton_resource_with_member_action</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_singleton_resource_with_member_action_source')" id="l_method-i-test_singleton_resource_with_member_action_source">show</a>
+                
+              </p>
+              <div id="method-i-test_singleton_resource_with_member_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_singleton_resource_with_member_action</span>
+  [<span class="ruby-value">:put</span>, <span class="ruby-value">:post</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">with_singleton_resources</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:member</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:reset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span> } <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">reset_options</span> = {<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'reset'</span>}
+      <span class="ruby-identifier">reset_path</span>    = <span class="ruby-string">&quot;/account/reset&quot;</span>
+      <span class="ruby-identifier">assert_singleton_routes_for</span> <span class="ruby-value">:account</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">reset_options</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">reset_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>)
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">assert_singleton_named_routes_for</span> <span class="ruby-value">:account</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">assert_named_route</span> <span class="ruby-identifier">reset_path</span>, <span class="ruby-value">:reset_account_path</span>, <span class="ruby-identifier">reset_options</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_singleton_resource_with_two_member_actions_with_same_method">
+            
+              <a name="method-i-test_singleton_resource_with_two_member_actions_with_same_method"></a><b>test_singleton_resource_with_two_member_actions_with_same_method</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_singleton_resource_with_two_member_actions_with_same_method_source')" id="l_method-i-test_singleton_resource_with_two_member_actions_with_same_method_source">show</a>
+                
+              </p>
+              <div id="method-i-test_singleton_resource_with_two_member_actions_with_same_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_singleton_resource_with_two_member_actions_with_same_method</span>
+  [<span class="ruby-value">:put</span>, <span class="ruby-value">:post</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">with_singleton_resources</span> <span class="ruby-value">:account</span>, <span class="ruby-value">:member</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:reset</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>, <span class="ruby-value">:disable</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span> } <span class="ruby-keyword">do</span>
+      <span class="ruby-node">%w(reset disable)</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">action</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">action_options</span> = {<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">action</span>}
+        <span class="ruby-identifier">action_path</span>    = <span class="ruby-node">&quot;/account/#{action}&quot;</span>
+        <span class="ruby-identifier">assert_singleton_routes_for</span> <span class="ruby-value">:account</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">action_options</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">action_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">assert_singleton_named_routes_for</span> <span class="ruby-value">:account</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">assert_named_route</span> <span class="ruby-identifier">action_path</span>, <span class="ruby-node">&quot;#{action}_account_path&quot;</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">action_options</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_with_collection_action">
+            
+              <a name="method-i-test_with_collection_action"></a><b>test_with_collection_action</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_with_collection_action_source')" id="l_method-i-test_with_collection_action_source">show</a>
+                
+              </p>
+              <div id="method-i-test_with_collection_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_with_collection_action</span>
+  <span class="ruby-identifier">rss_options</span> = {<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'rss'</span>}
+  <span class="ruby-identifier">rss_path</span>    = <span class="ruby-string">&quot;/messages/rss&quot;</span>
+  <span class="ruby-identifier">actions</span> = { <span class="ruby-string">'a'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:put</span>, <span class="ruby-string">'b'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>, <span class="ruby-string">'c'</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:delete</span> }
+
+  <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:collection</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:rss</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span> }.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">actions</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_restful_routes_for</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_routing</span> <span class="ruby-identifier">rss_path</span>, <span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">rss_options</span>)
+
+      <span class="ruby-identifier">actions</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">action</span>, <span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">action</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;/messages/#{action}&quot;</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_restful_named_routes_for</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-identifier">rss_path</span>, <span class="ruby-value">:rss_messages_path</span>, <span class="ruby-identifier">rss_options</span>
+      <span class="ruby-identifier">actions</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">action</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;/messages/#{action}&quot;</span>, <span class="ruby-node">&quot;#{action}_messages_path&quot;</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">action</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_with_member_action">
+            
+              <a name="method-i-test_with_member_action"></a><b>test_with_member_action</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_with_member_action_source')" id="l_method-i-test_with_member_action_source">show</a>
+                
+              </p>
+              <div id="method-i-test_with_member_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_with_member_action</span>
+  [<span class="ruby-value">:put</span>, <span class="ruby-value">:post</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:member</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:mark</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span> } <span class="ruby-keyword">do</span>
+      <span class="ruby-identifier">mark_options</span> = {<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'mark'</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>}
+      <span class="ruby-identifier">mark_path</span>    = <span class="ruby-string">&quot;/messages/1/mark&quot;</span>
+      <span class="ruby-identifier">assert_restful_routes_for</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">mark_options</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">mark_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>)
+      <span class="ruby-keyword">end</span>
+
+      <span class="ruby-identifier">assert_restful_named_routes_for</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">assert_named_route</span> <span class="ruby-identifier">mark_path</span>, <span class="ruby-value">:mark_message_path</span>, <span class="ruby-identifier">mark_options</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_with_name_prefix">
+            
+              <a name="method-i-test_with_name_prefix"></a><b>test_with_name_prefix</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_with_name_prefix_source')" id="l_method-i-test_with_name_prefix_source">show</a>
+                
+              </p>
+              <div id="method-i-test_with_name_prefix_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_with_name_prefix</span>
+  <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'post_'</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:name_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'post_'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_with_new_action">
+            
+              <a name="method-i-test_with_new_action"></a><b>test_with_new_action</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_with_new_action_source')" id="l_method-i-test_with_new_action_source">show</a>
+                
+              </p>
+              <div id="method-i-test_with_new_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_with_new_action</span>
+  <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:new</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:preview</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span> } <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">preview_options</span> = {<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'preview'</span>}
+    <span class="ruby-identifier">preview_path</span>    = <span class="ruby-string">&quot;/messages/new/preview&quot;</span>
+    <span class="ruby-identifier">assert_restful_routes_for</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">preview_options</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">preview_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>)
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-identifier">assert_restful_named_routes_for</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">assert_named_route</span> <span class="ruby-identifier">preview_path</span>, <span class="ruby-value">:preview_new_message_path</span>, <span class="ruby-identifier">preview_options</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_with_path_prefix">
+            
+              <a name="method-i-test_with_path_prefix"></a><b>test_with_path_prefix</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_with_path_prefix_source')" id="l_method-i-test_with_path_prefix_source">show</a>
+                
+              </p>
+              <div id="method-i-test_with_path_prefix_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_with_path_prefix</span>
+  <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'/thread/:thread_id'</span> <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">assert_simply_restful_for</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:path_prefix</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'thread/5/'</span>, <span class="ruby-value">:options</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:thread_id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'5'</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_with_two_member_actions_with_same_method">
+            
+              <a name="method-i-test_with_two_member_actions_with_same_method"></a><b>test_with_two_member_actions_with_same_method</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_with_two_member_actions_with_same_method_source')" id="l_method-i-test_with_two_member_actions_with_same_method_source">show</a>
+                
+              </p>
+              <div id="method-i-test_with_two_member_actions_with_same_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 119</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_with_two_member_actions_with_same_method</span>
+  [<span class="ruby-value">:put</span>, <span class="ruby-value">:post</span>].<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">method</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">with_restful_routing</span> <span class="ruby-value">:messages</span>, <span class="ruby-value">:member</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:mark</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>, <span class="ruby-value">:unmark</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span> } <span class="ruby-keyword">do</span>
+      <span class="ruby-node">%w(mark unmark)</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">action</span><span class="ruby-operator">|</span>
+        <span class="ruby-identifier">action_options</span> = {<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">action</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>}
+        <span class="ruby-identifier">action_path</span>    = <span class="ruby-node">&quot;/messages/1/#{action}&quot;</span>
+        <span class="ruby-identifier">assert_restful_routes_for</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">action_options</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">action_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">method</span>)
+        <span class="ruby-keyword">end</span>
+
+        <span class="ruby-identifier">assert_restful_named_routes_for</span> <span class="ruby-value">:messages</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">options</span><span class="ruby-operator">|</span>
+          <span class="ruby-identifier">assert_named_route</span> <span class="ruby-identifier">action_path</span>, <span class="ruby-node">&quot;#{action}_message_path&quot;</span>.<span class="ruby-identifier">to_sym</span>, <span class="ruby-identifier">action_options</span>
+        <span class="ruby-keyword">end</span>
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_named_route">
+            
+              <a name="method-i-assert_named_route"></a><b>assert_named_route</b>(expected, route, options)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_named_route_source')" id="l_method-i-assert_named_route_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_named_route_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 639</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_named_route</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-identifier">route</span>, <span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">actual</span> =  <span class="ruby-ivar">@controller</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">route</span>, <span class="ruby-identifier">options</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">$!</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">name</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>, <span class="ruby-identifier">actual</span>, <span class="ruby-node">&quot;Error on route: #{route}(#{options.inspect})&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_resource_methods">
+            
+              <a name="method-i-assert_resource_methods"></a><b>assert_resource_methods</b>(expected, resource, action_method, method)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_resource_methods_source')" id="l_method-i-assert_resource_methods_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_resource_methods_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 644</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_resource_methods</span>(<span class="ruby-identifier">expected</span>, <span class="ruby-identifier">resource</span>, <span class="ruby-identifier">action_method</span>, <span class="ruby-identifier">method</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">expected</span>.<span class="ruby-identifier">length</span>, <span class="ruby-identifier">resource</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{action_method}_methods&quot;</span>)[<span class="ruby-identifier">method</span>].<span class="ruby-identifier">size</span>, <span class="ruby-node">&quot;#{resource.send(&quot;#{action_method}_methods&quot;)[method].inspect}&quot;</span>
+  <span class="ruby-identifier">expected</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">action</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert</span> <span class="ruby-identifier">resource</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{action_method}_methods&quot;</span>)[<span class="ruby-identifier">method</span>].<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">action</span>),
+      <span class="ruby-node">&quot;#{method} not in #{action_method} methods: #{resource.send(&quot;#{action_method}_methods&quot;)[method].inspect}&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_restful_named_routes_for">
+            
+              <a name="method-i-assert_restful_named_routes_for"></a><b>assert_restful_named_routes_for</b>(controller_name, singular_name = nil, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>test named routes like foo_path and foos_path map to the correct options.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_restful_named_routes_for_source')" id="l_method-i-assert_restful_named_routes_for_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_restful_named_routes_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 559</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_restful_named_routes_for</span>(<span class="ruby-identifier">controller_name</span>, <span class="ruby-identifier">singular_name</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">singular_name</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-identifier">options</span>       = <span class="ruby-identifier">singular_name</span>
+    <span class="ruby-identifier">singular_name</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">singular_name</span> <span class="ruby-operator">||=</span> <span class="ruby-identifier">controller_name</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">singularize</span>
+  (<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-operator">||=</span> {})[<span class="ruby-value">:controller</span>] = <span class="ruby-identifier">controller_name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-node">&quot;#{controller_name.to_s.camelize}Controller&quot;</span>.<span class="ruby-identifier">constantize</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@request</span>    = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@response</span>   = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:index</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">delete</span> <span class="ruby-value">:action</span>
+
+  <span class="ruby-identifier">full_prefix</span> = <span class="ruby-node">&quot;/#{options[:path_prefix]}#{controller_name}&quot;</span>
+  <span class="ruby-identifier">name_prefix</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:name_prefix</span>]
+
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_prefix}&quot;</span>,            <span class="ruby-node">&quot;#{name_prefix}#{controller_name}_path&quot;</span>,              <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_prefix}/new&quot;</span>,        <span class="ruby-node">&quot;new_#{name_prefix}#{singular_name}_path&quot;</span>,            <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_prefix}/1&quot;</span>,          <span class="ruby-node">&quot;#{name_prefix}#{singular_name}_path&quot;</span>,                <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>)
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_prefix}/1/edit&quot;</span>,     <span class="ruby-node">&quot;edit_#{name_prefix}#{singular_name}_path&quot;</span>,           <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>)
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_prefix}.xml&quot;</span>,        <span class="ruby-node">&quot;formatted_#{name_prefix}#{controller_name}_path&quot;</span>,    <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(            <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>)
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_prefix}/new.xml&quot;</span>,    <span class="ruby-node">&quot;formatted_new_#{name_prefix}#{singular_name}_path&quot;</span>,  <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(            <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>)
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_prefix}/1.xml&quot;</span>,      <span class="ruby-node">&quot;formatted_#{name_prefix}#{singular_name}_path&quot;</span>,      <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>)
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_prefix}/1/edit.xml&quot;</span>, <span class="ruby-node">&quot;formatted_edit_#{name_prefix}#{singular_name}_path&quot;</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>)
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_restful_routes_for">
+            
+              <a name="method-i-assert_restful_routes_for"></a><b>assert_restful_routes_for</b>(controller_name, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_restful_routes_for_source')" id="l_method-i-assert_restful_routes_for_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_restful_routes_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 519</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_restful_routes_for</span>(<span class="ruby-identifier">controller_name</span>, <span class="ruby-identifier">options</span> = {})
+  (<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-operator">||=</span> {})[<span class="ruby-value">:controller</span>] = <span class="ruby-identifier">controller_name</span>.<span class="ruby-identifier">to_s</span>
+
+  <span class="ruby-identifier">collection_path</span>            = <span class="ruby-node">&quot;/#{options[:path_prefix]}#{controller_name}&quot;</span>
+  <span class="ruby-identifier">member_path</span>                = <span class="ruby-node">&quot;#{collection_path}/1&quot;</span>
+  <span class="ruby-identifier">new_path</span>                   = <span class="ruby-node">&quot;#{collection_path}/new&quot;</span>
+  <span class="ruby-identifier">edit_member_path</span>           = <span class="ruby-node">&quot;#{member_path}/edit&quot;</span>
+  <span class="ruby-identifier">formatted_edit_member_path</span> = <span class="ruby-node">&quot;#{member_path}/edit.xml&quot;</span>
+
+  <span class="ruby-identifier">with_options</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">controller</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-identifier">collection_path</span>,            <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'index'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-identifier">new_path</span>,                   <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'new'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-identifier">member_path</span>,                <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'show'</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-identifier">edit_member_path</span>,           <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'edit'</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-node">&quot;#{collection_path}.xml&quot;</span>,   <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'index'</span>,            <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-node">&quot;#{new_path}.xml&quot;</span>,          <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'new'</span>,              <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-node">&quot;#{member_path}.xml&quot;</span>,       <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'show'</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-identifier">formatted_edit_member_path</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'edit'</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'index'</span>),               <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">collection_path</span>,  <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'new'</span>),                 <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">new_path</span>,         <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'create'</span>),              <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">collection_path</span>,  <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'show'</span>,    <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">member_path</span>,      <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'edit'</span>,    <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">edit_member_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'update'</span>,  <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">member_path</span>,      <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:put</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'destroy'</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">member_path</span>,      <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:delete</span>)
+
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'index'</span>,               <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{collection_path}.xml&quot;</span>,   <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'new'</span>,                 <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{new_path}.xml&quot;</span>,          <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'create'</span>,              <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{collection_path}.xml&quot;</span>,   <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'show'</span>,    <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{member_path}.xml&quot;</span>,       <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'edit'</span>,    <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">formatted_edit_member_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'update'</span>,  <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{member_path}.xml&quot;</span>,       <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:put</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'destroy'</span>, <span class="ruby-value">:id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'1'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{member_path}.xml&quot;</span>,       <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:delete</span>)
+
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_simply_restful_for">
+            
+              <a name="method-i-assert_simply_restful_for"></a><b>assert_simply_restful_for</b>(controller_name, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>runs <a
+href="ResourcesTest.html#method-i-assert_restful_routes_for">#assert_restful_routes_for</a>
+and assert_restful_named_routes for on the controller_name and options,
+without passing a block.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_simply_restful_for_source')" id="l_method-i-assert_simply_restful_for_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_simply_restful_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 509</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_simply_restful_for</span>(<span class="ruby-identifier">controller_name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">assert_restful_routes_for</span>       <span class="ruby-identifier">controller_name</span>, <span class="ruby-identifier">options</span>
+  <span class="ruby-identifier">assert_restful_named_routes_for</span> <span class="ruby-identifier">controller_name</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_singleton_named_routes_for">
+            
+              <a name="method-i-assert_singleton_named_routes_for"></a><b>assert_singleton_named_routes_for</b>(singleton_name, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_singleton_named_routes_for_source')" id="l_method-i-assert_singleton_named_routes_for_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_singleton_named_routes_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 620</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_singleton_named_routes_for</span>(<span class="ruby-identifier">singleton_name</span>, <span class="ruby-identifier">options</span> = {})
+  (<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-operator">||=</span> {})[<span class="ruby-value">:controller</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">singleton_name</span>.<span class="ruby-identifier">to_s</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-node">&quot;#{options[:options][:controller].camelize}Controller&quot;</span>.<span class="ruby-identifier">constantize</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@request</span>    = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@response</span>   = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">get</span> <span class="ruby-value">:show</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]
+  <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">delete</span> <span class="ruby-value">:action</span>
+
+  <span class="ruby-identifier">full_path</span> = <span class="ruby-node">&quot;/#{options[:path_prefix]}#{singleton_name}&quot;</span>
+  <span class="ruby-identifier">full_name</span> = <span class="ruby-node">&quot;#{options[:name_prefix]}#{singleton_name}&quot;</span>
+
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_path}&quot;</span>,          <span class="ruby-node">&quot;#{full_name}_path&quot;</span>,                <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_path}/new&quot;</span>,      <span class="ruby-node">&quot;new_#{full_name}_path&quot;</span>,            <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_path}/edit&quot;</span>,     <span class="ruby-node">&quot;edit_#{full_name}_path&quot;</span>,           <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>]
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_path}.xml&quot;</span>,      <span class="ruby-node">&quot;formatted_#{full_name}_path&quot;</span>,      <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>)
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_path}/new.xml&quot;</span>,  <span class="ruby-node">&quot;formatted_new_#{full_name}_path&quot;</span>,  <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>)
+  <span class="ruby-identifier">assert_named_route</span> <span class="ruby-node">&quot;#{full_path}/edit.xml&quot;</span>, <span class="ruby-node">&quot;formatted_edit_#{full_name}_path&quot;</span>, <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_singleton_restful_for">
+            
+              <a name="method-i-assert_singleton_restful_for"></a><b>assert_singleton_restful_for</b>(singleton_name, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_singleton_restful_for_source')" id="l_method-i-assert_singleton_restful_for_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_singleton_restful_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 514</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_singleton_restful_for</span>(<span class="ruby-identifier">singleton_name</span>, <span class="ruby-identifier">options</span> = {})
+  <span class="ruby-identifier">assert_singleton_routes_for</span>       <span class="ruby-identifier">singleton_name</span>, <span class="ruby-identifier">options</span>
+  <span class="ruby-identifier">assert_singleton_named_routes_for</span> <span class="ruby-identifier">singleton_name</span>, <span class="ruby-identifier">options</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_singleton_routes_for">
+            
+              <a name="method-i-assert_singleton_routes_for"></a><b>assert_singleton_routes_for</b>(singleton_name, options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_singleton_routes_for_source')" id="l_method-i-assert_singleton_routes_for_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_singleton_routes_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 586</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_singleton_routes_for</span>(<span class="ruby-identifier">singleton_name</span>, <span class="ruby-identifier">options</span> = {})
+  (<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-operator">||=</span> {})[<span class="ruby-value">:controller</span>] <span class="ruby-operator">||=</span> <span class="ruby-identifier">singleton_name</span>.<span class="ruby-identifier">to_s</span>
+
+  <span class="ruby-identifier">full_path</span>           = <span class="ruby-node">&quot;/#{options[:path_prefix]}#{singleton_name}&quot;</span>
+  <span class="ruby-identifier">new_path</span>            = <span class="ruby-node">&quot;#{full_path}/new&quot;</span>
+  <span class="ruby-identifier">edit_path</span>           = <span class="ruby-node">&quot;#{full_path}/edit&quot;</span>
+  <span class="ruby-identifier">formatted_edit_path</span> = <span class="ruby-node">&quot;#{full_path}/edit.xml&quot;</span>
+
+  <span class="ruby-identifier">with_options</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">controller</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-identifier">full_path</span>,           <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'show'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-identifier">new_path</span>,            <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'new'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-identifier">edit_path</span>,           <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'edit'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-node">&quot;#{full_path}.xml&quot;</span>,  <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'show'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-node">&quot;#{new_path}.xml&quot;</span>,   <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'new'</span>,  <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>
+    <span class="ruby-identifier">controller</span>.<span class="ruby-identifier">assert_routing</span> <span class="ruby-identifier">formatted_edit_path</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'edit'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'show'</span>),    <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">full_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'new'</span>),     <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">new_path</span>,  <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'edit'</span>),    <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">edit_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'create'</span>),  <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">full_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'update'</span>),  <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">full_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:put</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'destroy'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">full_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:delete</span>)
+
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'show'</span>,    <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{full_path}.xml&quot;</span>,  <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'new'</span>,     <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{new_path}.xml&quot;</span>,   <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'edit'</span>,    <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">formatted_edit_path</span>, <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:get</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'create'</span>,  <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{full_path}.xml&quot;</span>,  <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:post</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'update'</span>,  <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{full_path}.xml&quot;</span>,  <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:put</span>)
+  <span class="ruby-identifier">assert_recognizes</span>(<span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>].<span class="ruby-identifier">merge</span>(<span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'destroy'</span>, <span class="ruby-value">:format</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'xml'</span>), <span class="ruby-value">:path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{full_path}.xml&quot;</span>,  <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:delete</span>)
+
+  <span class="ruby-keyword">yield</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:options</span>] <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-distinct_routes-3F">
+            
+              <a name="method-i-distinct_routes-3F"></a><b>distinct_routes?</b>(r1, r2)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-distinct_routes-3F_source')" id="l_method-i-distinct_routes-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-distinct_routes-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 652</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">distinct_routes?</span> (<span class="ruby-identifier">r1</span>, <span class="ruby-identifier">r2</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">r1</span>.<span class="ruby-identifier">conditions</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">r2</span>.<span class="ruby-identifier">conditions</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">r1</span>.<span class="ruby-identifier">requirements</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">r2</span>.<span class="ruby-identifier">requirements</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">r1</span>.<span class="ruby-identifier">segments</span>.<span class="ruby-identifier">collect</span>(&amp;<span class="ruby-value">:to_s</span>) <span class="ruby-operator">==</span> <span class="ruby-identifier">r2</span>.<span class="ruby-identifier">segments</span>.<span class="ruby-identifier">collect</span>(&amp;<span class="ruby-value">:to_s</span>) <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-with_restful_routing">
+            
+              <a name="method-i-with_restful_routing"></a><b>with_restful_routing</b>(*args)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-with_restful_routing_source')" id="l_method-i-with_restful_routing_source">show</a>
+                
+              </p>
+              <div id="method-i-with_restful_routing_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 494</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">with_restful_routing</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span> <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resources</span>(*<span class="ruby-identifier">args</span>) }
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-with_singleton_resources">
+            
+              <a name="method-i-with_singleton_resources"></a><b>with_singleton_resources</b>(*args)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-with_singleton_resources_source')" id="l_method-i-with_singleton_resources_source">show</a>
+                
+              </p>
+              <div id="method-i-with_singleton_resources_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/resources_test.rb, line 501</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">with_singleton_resources</span>(*<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">with_routing</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">set</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">set</span>.<span class="ruby-identifier">draw</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">map</span><span class="ruby-operator">|</span> <span class="ruby-identifier">map</span>.<span class="ruby-identifier">resource</span>(*<span class="ruby-identifier">args</span>) }
+    <span class="ruby-keyword">yield</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

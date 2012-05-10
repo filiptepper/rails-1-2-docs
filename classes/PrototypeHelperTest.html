@@ -1,0 +1,714 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>PrototypeHelperTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            PrototypeHelperTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/template/prototype_helper_test_rb.html">rails/actionpack/test/template/prototype_helper_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_form_remote_tag">test_form_remote_tag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_form_remote_tag_with_block">test_form_remote_tag_with_block</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_form_remote_tag_with_method">test_form_remote_tag_with_method</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_link_to_remote">test_link_to_remote</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_observe_field">test_observe_field</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_observe_field_using_function_for_callback">test_observe_field_using_function_for_callback</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_observe_form">test_observe_form</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_observe_form_using_function_for_callback">test_observe_form_using_function_for_callback</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_on_callbacks">test_on_callbacks</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_periodically_call_remote">test_periodically_call_remote</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_submit_to_remote">test_submit_to_remote</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_update_page">test_update_page</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_update_page_tag">test_update_page_tag</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_update_page_tag_with_html_options">test_update_page_tag_with_html_options</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="BaseTest.html">
+              BaseTest
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_form_remote_tag">
+            
+              <a name="method-i-test_form_remote_tag"></a><b>test_form_remote_tag</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_form_remote_tag_source')" id="l_method-i-test_form_remote_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-test_form_remote_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_form_remote_tag</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater('glass_of_beer', 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;\&quot;&gt;)</span>,
+    <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  })
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater({success:'glass_of_beer'}, 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;\&quot;&gt;)</span>,
+    <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:success</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span> }, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  })
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater({failure:'glass_of_water'}, 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;\&quot;&gt;)</span>,
+    <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:failure</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_water&quot;</span> }, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  })
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater({success:'glass_of_beer',failure:'glass_of_water'}, 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;\&quot;&gt;)</span>,
+    <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:success</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'glass_of_beer'</span>, <span class="ruby-value">:failure</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_water&quot;</span> }, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  })
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_form_remote_tag_with_block">
+            
+              <a name="method-i-test_form_remote_tag_with_block"></a><b>test_form_remote_tag_with_block</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_form_remote_tag_with_block_source')" id="l_method-i-test_form_remote_tag_with_block_source">show</a>
+                
+              </p>
+              <div id="method-i-test_form_remote_tag_with_block_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_form_remote_tag_with_block</span>
+  <span class="ruby-identifier">_erbout</span> = <span class="ruby-string">''</span>
+  <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  }) { <span class="ruby-identifier">_erbout</span>.<span class="ruby-identifier">concat</span> <span class="ruby-string">&quot;Hello world!&quot;</span> }
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater('glass_of_beer', 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;\&quot;&gt;Hello world!&lt;/form&gt;)</span>, <span class="ruby-identifier">_erbout</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_form_remote_tag_with_method">
+            
+              <a name="method-i-test_form_remote_tag_with_method"></a><b>test_form_remote_tag_with_method</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_form_remote_tag_with_method_source')" id="l_method-i-test_form_remote_tag_with_method_source">show</a>
+                
+              </p>
+              <div id="method-i-test_form_remote_tag_with_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 71</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_form_remote_tag_with_method</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater('glass_of_beer', 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;\&quot;&gt;&lt;div style='margin:0;padding:0'&gt;&lt;input name='_method' type='hidden' value='put' /&gt;&lt;/div&gt;)</span>,
+    <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  }, <span class="ruby-value">:html</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:method</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:put</span> })
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_link_to_remote">
+            
+              <a name="method-i-test_link_to_remote"></a><b>test_link_to_remote</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_link_to_remote_source')" id="l_method-i-test_link_to_remote_source">show</a>
+                
+              </p>
+              <div id="method-i-test_link_to_remote_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 42</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_link_to_remote</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;a class=\&quot;fine\&quot; href=\&quot;#\&quot; onclick=\&quot;new Ajax.Request('http://www.example.com/whatnot', {asynchronous:true, evalScripts:true}); return false;\&quot;&gt;Remote outpost&lt;/a&gt;)</span>,
+    <span class="ruby-identifier">link_to_remote</span>(<span class="ruby-string">&quot;Remote outpost&quot;</span>, { <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;whatnot&quot;</span>  }}, { <span class="ruby-value">:class</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;fine&quot;</span>  })
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;a href=\&quot;#\&quot; onclick=\&quot;new Ajax.Request('http://www.example.com/whatnot', {asynchronous:true, evalScripts:true, onComplete:function(request){alert(request.reponseText)}}); return false;\&quot;&gt;Remote outpost&lt;/a&gt;)</span>,
+    <span class="ruby-identifier">link_to_remote</span>(<span class="ruby-string">&quot;Remote outpost&quot;</span>, <span class="ruby-value">:complete</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;alert(request.reponseText)&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;whatnot&quot;</span>  })      
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;a href=\&quot;#\&quot; onclick=\&quot;new Ajax.Request('http://www.example.com/whatnot', {asynchronous:true, evalScripts:true, onSuccess:function(request){alert(request.reponseText)}}); return false;\&quot;&gt;Remote outpost&lt;/a&gt;)</span>,
+    <span class="ruby-identifier">link_to_remote</span>(<span class="ruby-string">&quot;Remote outpost&quot;</span>, <span class="ruby-value">:success</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;alert(request.reponseText)&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;whatnot&quot;</span>  })
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;a href=\&quot;#\&quot; onclick=\&quot;new Ajax.Request('http://www.example.com/whatnot', {asynchronous:true, evalScripts:true, onFailure:function(request){alert(request.reponseText)}}); return false;\&quot;&gt;Remote outpost&lt;/a&gt;)</span>,
+    <span class="ruby-identifier">link_to_remote</span>(<span class="ruby-string">&quot;Remote outpost&quot;</span>, <span class="ruby-value">:failure</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;alert(request.reponseText)&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;whatnot&quot;</span>  })
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;a href=\&quot;#\&quot; onclick=\&quot;new Ajax.Request('http://www.example.com/whatnot?a=10&amp;amp;b=20', {asynchronous:true, evalScripts:true, onFailure:function(request){alert(request.reponseText)}}); return false;\&quot;&gt;Remote outpost&lt;/a&gt;)</span>,
+    <span class="ruby-identifier">link_to_remote</span>(<span class="ruby-string">&quot;Remote outpost&quot;</span>, <span class="ruby-value">:failure</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;alert(request.reponseText)&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;whatnot&quot;</span>, <span class="ruby-value">:a</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'10'</span>, <span class="ruby-value">:b</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'20'</span> })
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_observe_field">
+            
+              <a name="method-i-test_observe_field"></a><b>test_observe_field</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_observe_field_source')" id="l_method-i-test_observe_field_source">show</a>
+                
+              </p>
+              <div id="method-i-test_observe_field_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 127</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_observe_field</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;script type=\&quot;text/javascript\&quot;&gt;\n//&lt;![CDATA[\nnew Form.Element.Observer('glass', 300, function(element, value) {new Ajax.Request('http://www.example.com/reorder_if_empty', {asynchronous:true, evalScripts:true, parameters:value})})\n//]]&gt;\n&lt;/script&gt;)</span>,
+    <span class="ruby-identifier">observe_field</span>(<span class="ruby-string">&quot;glass&quot;</span>, <span class="ruby-value">:frequency</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">5</span>.<span class="ruby-identifier">minutes</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;reorder_if_empty&quot;</span> })
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_observe_field_using_function_for_callback">
+            
+              <a name="method-i-test_observe_field_using_function_for_callback"></a><b>test_observe_field_using_function_for_callback</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_observe_field_using_function_for_callback_source')" id="l_method-i-test_observe_field_using_function_for_callback_source">show</a>
+                
+              </p>
+              <div id="method-i-test_observe_field_using_function_for_callback_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 132</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_observe_field_using_function_for_callback</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;script type=\&quot;text/javascript\&quot;&gt;\n//&lt;![CDATA[\nnew Form.Element.Observer('glass', 300, function(element, value) {alert('Element changed')})\n//]]&gt;\n&lt;/script&gt;)</span>,
+    <span class="ruby-identifier">observe_field</span>(<span class="ruby-string">&quot;glass&quot;</span>, <span class="ruby-value">:frequency</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">5</span>.<span class="ruby-identifier">minutes</span>, <span class="ruby-value">:function</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;alert('Element changed')&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_observe_form">
+            
+              <a name="method-i-test_observe_form"></a><b>test_observe_form</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_observe_form_source')" id="l_method-i-test_observe_form_source">show</a>
+                
+              </p>
+              <div id="method-i-test_observe_form_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_observe_form</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;script type=\&quot;text/javascript\&quot;&gt;\n//&lt;![CDATA[\nnew Form.Observer('cart', 2, function(element, value) {new Ajax.Request('http://www.example.com/cart_changed', {asynchronous:true, evalScripts:true, parameters:value})})\n//]]&gt;\n&lt;/script&gt;)</span>,
+    <span class="ruby-identifier">observe_form</span>(<span class="ruby-string">&quot;cart&quot;</span>, <span class="ruby-value">:frequency</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;cart_changed&quot;</span> })
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_observe_form_using_function_for_callback">
+            
+              <a name="method-i-test_observe_form_using_function_for_callback"></a><b>test_observe_form_using_function_for_callback</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_observe_form_using_function_for_callback_source')" id="l_method-i-test_observe_form_using_function_for_callback_source">show</a>
+                
+              </p>
+              <div id="method-i-test_observe_form_using_function_for_callback_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_observe_form_using_function_for_callback</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;script type=\&quot;text/javascript\&quot;&gt;\n//&lt;![CDATA[\nnew Form.Observer('cart', 2, function(element, value) {alert('Form changed')})\n//]]&gt;\n&lt;/script&gt;)</span>,
+    <span class="ruby-identifier">observe_form</span>(<span class="ruby-string">&quot;cart&quot;</span>, <span class="ruby-value">:frequency</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">2</span>, <span class="ruby-value">:function</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;alert('Form changed')&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_on_callbacks">
+            
+              <a name="method-i-test_on_callbacks"></a><b>test_on_callbacks</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_on_callbacks_source')" id="l_method-i-test_on_callbacks_source">show</a>
+                
+              </p>
+              <div id="method-i-test_on_callbacks_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_on_callbacks</span>
+  <span class="ruby-identifier">callbacks</span> = [<span class="ruby-value">:uninitialized</span>, <span class="ruby-value">:loading</span>, <span class="ruby-value">:loaded</span>, <span class="ruby-value">:interactive</span>, <span class="ruby-value">:complete</span>, <span class="ruby-value">:success</span>, <span class="ruby-value">:failure</span>]
+  <span class="ruby-identifier">callbacks</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">callback</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater('glass_of_beer', 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, on#{callback.to_s.capitalize}:function(request){monkeys();}, parameters:Form.serialize(this)}); return false;&quot;&gt;)</span>,
+      <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  }, <span class="ruby-identifier">callback</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;monkeys();&quot;</span>)
+    <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater({success:'glass_of_beer'}, 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, on#{callback.to_s.capitalize}:function(request){monkeys();}, parameters:Form.serialize(this)}); return false;&quot;&gt;)</span>,
+      <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:success</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span> }, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  }, <span class="ruby-identifier">callback</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;monkeys();&quot;</span>)
+    <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater({failure:'glass_of_beer'}, 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, on#{callback.to_s.capitalize}:function(request){monkeys();}, parameters:Form.serialize(this)}); return false;&quot;&gt;)</span>,
+      <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:failure</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span> }, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  }, <span class="ruby-identifier">callback</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;monkeys();&quot;</span>)
+    <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater({success:'glass_of_beer',failure:'glass_of_water'}, 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, on#{callback.to_s.capitalize}:function(request){monkeys();}, parameters:Form.serialize(this)}); return false;&quot;&gt;)</span>,
+      <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:success</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span>, <span class="ruby-value">:failure</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_water&quot;</span> }, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  }, <span class="ruby-identifier">callback</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;monkeys();&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment">#HTTP status codes 200 up to 599 have callbacks</span>
+  <span class="ruby-comment">#these should work</span>
+  <span class="ruby-number">100</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-number">599</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">callback</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-node">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater('glass_of_beer', 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, on#{callback.to_s.capitalize}:function(request){monkeys();}, parameters:Form.serialize(this)}); return false;&quot;&gt;)</span>,
+      <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  }, <span class="ruby-identifier">callback</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;monkeys();&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment">#test 200 and 404</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater('glass_of_beer', 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, on200:function(request){monkeys();}, on404:function(request){bananas();}, parameters:Form.serialize(this)}); return false;&quot;&gt;)</span>,
+    <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  }, <span class="ruby-number">200</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;monkeys();&quot;</span>, <span class="ruby-number">404</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;bananas();&quot;</span>)
+  
+  <span class="ruby-comment">#these shouldn't</span>
+  <span class="ruby-number">1</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-number">99</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">callback</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater('glass_of_beer', 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;&quot;&gt;)</span>,
+      <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  }, <span class="ruby-identifier">callback</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;monkeys();&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-number">600</span>.<span class="ruby-identifier">upto</span>(<span class="ruby-number">999</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">callback</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater('glass_of_beer', 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this)}); return false;&quot;&gt;)</span>,
+      <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  }, <span class="ruby-identifier">callback</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;monkeys();&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-comment">#test ultimate combo</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;form action=\&quot;http://www.example.com/fast\&quot; method=\&quot;post\&quot; onsubmit=\&quot;new Ajax.Updater('glass_of_beer', 'http://www.example.com/fast', {asynchronous:true, evalScripts:true, on200:function(request){monkeys();}, on404:function(request){bananas();}, onComplete:function(request){c();}, onFailure:function(request){f();}, onLoading:function(request){c1()}, onSuccess:function(request){s()}, parameters:Form.serialize(this)}); return false;\&quot;&gt;)</span>,
+    <span class="ruby-identifier">form_remote_tag</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;glass_of_beer&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:fast</span>  }, <span class="ruby-value">:loading</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;c1()&quot;</span>, <span class="ruby-value">:success</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;s()&quot;</span>, <span class="ruby-value">:failure</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;f();&quot;</span>, <span class="ruby-value">:complete</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;c();&quot;</span>, <span class="ruby-number">200</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;monkeys();&quot;</span>, <span class="ruby-number">404</span>=<span class="ruby-operator">&gt;</span><span class="ruby-string">&quot;bananas();&quot;</span>)
+  
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_periodically_call_remote">
+            
+              <a name="method-i-test_periodically_call_remote"></a><b>test_periodically_call_remote</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_periodically_call_remote_source')" id="l_method-i-test_periodically_call_remote_source">show</a>
+                
+              </p>
+              <div id="method-i-test_periodically_call_remote_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_periodically_call_remote</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;script type=&quot;text/javascript&quot;&gt;\n//&lt;![CDATA[\nnew PeriodicalExecuter(function() {new Ajax.Updater('schremser_bier', 'http://www.example.com/mehr_bier', {asynchronous:true, evalScripts:true})}, 10)\n//]]&gt;\n&lt;/script&gt;)</span>,
+    <span class="ruby-identifier">periodically_call_remote</span>(<span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;schremser_bier&quot;</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;mehr_bier&quot;</span> })
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_submit_to_remote">
+            
+              <a name="method-i-test_submit_to_remote"></a><b>test_submit_to_remote</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_submit_to_remote_source')" id="l_method-i-test_submit_to_remote_source">show</a>
+                
+              </p>
+              <div id="method-i-test_submit_to_remote_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 122</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_submit_to_remote</span>
+  <span class="ruby-identifier">assert_dom_equal</span> <span class="ruby-string">%Q(&lt;input name=\&quot;More beer!\&quot; onclick=\&quot;new Ajax.Updater('empty_bottle', 'http://www.example.com/', {asynchronous:true, evalScripts:true, parameters:Form.serialize(this.form)}); return false;\&quot; type=\&quot;button\&quot; value=\&quot;1000000\&quot; /&gt;)</span>,
+    <span class="ruby-identifier">submit_to_remote</span>(<span class="ruby-string">&quot;More beer!&quot;</span>, <span class="ruby-number">1_000_000</span>, <span class="ruby-value">:update</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;empty_bottle&quot;</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_update_page">
+            
+              <a name="method-i-test_update_page"></a><b>test_update_page</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_update_page_source')" id="l_method-i-test_update_page_source">show</a>
+                
+              </p>
+              <div id="method-i-test_update_page_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 147</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_update_page</span>
+  <span class="ruby-identifier">block</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span>(<span class="ruby-string">'foo'</span>, <span class="ruby-string">'bar'</span>) }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">create_generator</span>(&amp;<span class="ruby-identifier">block</span>).<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">update_page</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_update_page_tag">
+            
+              <a name="method-i-test_update_page_tag"></a><b>test_update_page_tag</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_update_page_tag_source')" id="l_method-i-test_update_page_tag_source">show</a>
+                
+              </p>
+              <div id="method-i-test_update_page_tag_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 152</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_update_page_tag</span>
+  <span class="ruby-identifier">block</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span>(<span class="ruby-string">'foo'</span>, <span class="ruby-string">'bar'</span>) }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">javascript_tag</span>(<span class="ruby-identifier">create_generator</span>(&amp;<span class="ruby-identifier">block</span>).<span class="ruby-identifier">to_s</span>), <span class="ruby-identifier">update_page_tag</span>(&amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_update_page_tag_with_html_options">
+            
+              <a name="method-i-test_update_page_tag_with_html_options"></a><b>test_update_page_tag_with_html_options</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_update_page_tag_with_html_options_source')" id="l_method-i-test_update_page_tag_with_html_options_source">show</a>
+                
+              </p>
+              <div id="method-i-test_update_page_tag_with_html_options_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/prototype_helper_test.rb, line 157</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_update_page_tag_with_html_options</span>
+  <span class="ruby-identifier">block</span> = <span class="ruby-constant">Proc</span>.<span class="ruby-identifier">new</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span>(<span class="ruby-string">'foo'</span>, <span class="ruby-string">'bar'</span>) }
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">javascript_tag</span>(<span class="ruby-identifier">create_generator</span>(&amp;<span class="ruby-identifier">block</span>).<span class="ruby-identifier">to_s</span>, {<span class="ruby-value">:defer</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'true'</span>}), <span class="ruby-identifier">update_page_tag</span>({<span class="ruby-value">:defer</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'true'</span>}, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

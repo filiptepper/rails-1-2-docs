@@ -1,0 +1,295 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionWebService::Client::Soap</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActionWebService::Client::Soap 
+            
+                <span class="parent">&lt; 
+                    
+                    ActionWebService::Client::Base
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/actionwebservice/lib/action_web_service/client/soap_client_rb.html">rails/actionwebservice/lib/action_web_service/client/soap_client.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Implements SOAP client support (using RPC encoding for the messages).</p>
+
+<h4 id="label-Example+Usage">Example Usage</h4>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">PersonAPI</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">api_method</span> :<span class="ruby-identifier">find_all</span>, :<span class="ruby-identifier">returns</span> =<span class="ruby-operator">&gt;</span> [[<span class="ruby-constant">Person</span>]]
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">soap_client</span> = <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Soap</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">PersonAPI</span>, <span class="ruby-string">&quot;http://...&quot;</span>)
+<span class="ruby-identifier">persons</span> = <span class="ruby-identifier">soap_client</span>.<span class="ruby-identifier">find_all</span>
+</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-perform_invocation">perform_invocation</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-soap_action">soap_action</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>driver</td>
+            <td class='attr-desc'><p>provides access to the underlying soap driver</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(api, endpoint_uri, options={})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a new web service client using the SOAP RPC protocol.</p>
+
+<p><code>api</code> must be an <a
+href="../API/Base.html">ActionWebService::API::Base</a> derivative, and
+<code>endpoint_uri</code> must point at the relevant URL to which protocol
+requests will be sent with HTTP POST.</p>
+
+<p>Valid options:</p>
+<dl class="rdoc-list label-list"><dt><code>:namespace</code>
+<dd>
+<p>If the remote server has used a custom namespace to declare its custom
+types, you can specify it here. This would be the namespace declared with a
+[WebService(Namespace = “<a href="http://namespace">namespace</a>”)]
+attribute in .NET, for example.</p>
+</dd><dt><code>:driver_options</code>
+<dd>
+<p>If you want to supply any custom SOAP RPC driver options, you can provide
+them as a Hash here</p>
+</dd></dl>
+
+<p>The <code>:driver_options</code> option can be used to configure the
+backend SOAP RPC driver. An example of configuring the SOAP backend to do
+client-certificate authenticated SSL connections to the server:</p>
+
+<pre class="ruby"><span class="ruby-identifier">opts</span> = {}
+<span class="ruby-identifier">opts</span>[<span class="ruby-string">'protocol.http.ssl_config.verify_mode'</span>] = <span class="ruby-string">'OpenSSL::SSL::VERIFY_PEER'</span>
+<span class="ruby-identifier">opts</span>[<span class="ruby-string">'protocol.http.ssl_config.client_cert'</span>] = <span class="ruby-identifier">client_cert_file_path</span>
+<span class="ruby-identifier">opts</span>[<span class="ruby-string">'protocol.http.ssl_config.client_key'</span>] = <span class="ruby-identifier">client_key_file_path</span>
+<span class="ruby-identifier">opts</span>[<span class="ruby-string">'protocol.http.ssl_config.ca_file'</span>] = <span class="ruby-identifier">ca_cert_file_path</span>
+<span class="ruby-identifier">client</span> = <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Soap</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">api</span>, <span class="ruby-string">'https://some/service'</span>, :<span class="ruby-identifier">driver_options</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">opts</span>)
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/client/soap_client.rb, line 46</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">api</span>, <span class="ruby-identifier">endpoint_uri</span>, <span class="ruby-identifier">options</span>={})
+  <span class="ruby-keyword">super</span>(<span class="ruby-identifier">api</span>, <span class="ruby-identifier">endpoint_uri</span>)
+  <span class="ruby-ivar">@namespace</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:namespace</span>] <span class="ruby-operator">||</span> <span class="ruby-string">'urn:ActionWebService'</span>
+  <span class="ruby-ivar">@driver_options</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:driver_options</span>] <span class="ruby-operator">||</span> {}
+  <span class="ruby-ivar">@protocol</span> = <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">Protocol</span><span class="ruby-operator">::</span><span class="ruby-constant">Soap</span><span class="ruby-operator">::</span><span class="ruby-constant">SoapProtocol</span>.<span class="ruby-identifier">new</span> <span class="ruby-ivar">@namespace</span>
+  <span class="ruby-ivar">@soap_action_base</span> = <span class="ruby-identifier">options</span>[<span class="ruby-value">:soap_action_base</span>]
+  <span class="ruby-ivar">@soap_action_base</span> <span class="ruby-operator">||=</span> <span class="ruby-constant">URI</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">endpoint_uri</span>).<span class="ruby-identifier">path</span>
+  <span class="ruby-ivar">@driver</span> = <span class="ruby-identifier">create_soap_rpc_driver</span>(<span class="ruby-identifier">api</span>, <span class="ruby-identifier">endpoint_uri</span>)
+  <span class="ruby-ivar">@driver_options</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@driver</span>.<span class="ruby-identifier">options</span>[<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-identifier">value</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-perform_invocation">
+            
+              <a name="method-i-perform_invocation"></a><b>perform_invocation</b>(method_name, args)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-perform_invocation_source')" id="l_method-i-perform_invocation_source">show</a>
+                
+              </p>
+              <div id="method-i-perform_invocation_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/client/soap_client.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">perform_invocation</span>(<span class="ruby-identifier">method_name</span>, <span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">method</span> = <span class="ruby-ivar">@api</span>.<span class="ruby-identifier">api_methods</span>[<span class="ruby-identifier">method_name</span>.<span class="ruby-identifier">to_sym</span>]
+  <span class="ruby-identifier">args</span> = <span class="ruby-identifier">method</span>.<span class="ruby-identifier">cast_expects</span>(<span class="ruby-identifier">args</span>.<span class="ruby-identifier">dup</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">args</span>
+  <span class="ruby-identifier">return_value</span> = <span class="ruby-ivar">@driver</span>.<span class="ruby-identifier">send</span>(<span class="ruby-identifier">method_name</span>, *<span class="ruby-identifier">args</span>)
+  <span class="ruby-identifier">method</span>.<span class="ruby-identifier">cast_returns</span>(<span class="ruby-identifier">return_value</span>.<span class="ruby-identifier">dup</span>) <span class="ruby-keyword">rescue</span> <span class="ruby-identifier">return_value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-soap_action">
+            
+              <a name="method-i-soap_action"></a><b>soap_action</b>(method_name)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-soap_action_source')" id="l_method-i-soap_action_source">show</a>
+                
+              </p>
+              <div id="method-i-soap_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/client/soap_client.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">soap_action</span>(<span class="ruby-identifier">method_name</span>)
+  <span class="ruby-node">&quot;#{@soap_action_base}/#{method_name}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

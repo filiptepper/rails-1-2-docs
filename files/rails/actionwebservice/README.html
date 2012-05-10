@@ -1,0 +1,449 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>README</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            README
+        </h1>
+        <ul class="files">
+            <li>rails/actionwebservice/README</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h1 id="label-Action+Web+Service+--+Serving+APIs+on+rails">Action Web Service – Serving APIs on rails</h1>
+
+<p>Action Web Service provides a way to publish interoperable web service APIs
+with <a href="../../../classes/Rails.html">Rails</a> without spending a lot
+of time delving into protocol details.</p>
+
+<h2 id="label-Features">Features</h2>
+<ul><li>
+<p>SOAP RPC protocol support</p>
+</li><li>
+<p>Dynamic WSDL generation for APIs</p>
+</li><li>
+<p>XML-RPC protocol support</p>
+</li><li>
+<p>Clients that use the same API definitions as the server for easy
+interoperability with other Action Web Service based applications</p>
+</li><li>
+<p>Type signature hints to improve interoperability with static languages</p>
+</li><li>
+<p>Active Record model class support in signatures</p>
+</li></ul>
+
+<h2 id="label-Defining+your+APIs">Defining your APIs</h2>
+
+<p>You specify the methods you want to make available as API methods in an <a
+href="../../../classes/ActionWebService/API/Base.html">ActionWebService::API::Base</a>
+derivative, and then specify this API definition class wherever you want to
+use that API.</p>
+
+<p>The implementation of the methods is done separately from the API
+specification.</p>
+
+<h4 id="label-Method+name+inflection">Method name inflection</h4>
+
+<p>Action Web Service will camelcase the method names according to <a
+href="../../../classes/Rails.html">Rails</a> <a
+href="../../../classes/Inflector.html">Inflector</a> rules for the API
+visible to public callers. What this means, for example, is that the method
+names in generated WSDL will be camelcased, and callers will have to supply
+the camelcased name in their requests for the request to succeed.</p>
+
+<p>If you do not desire this behaviour, you can turn it off with the <a
+href="../../../classes/ActionWebService/API/Base.html">ActionWebService::API::Base</a>
+<code>inflect_names</code> option.</p>
+
+<h4 id="label-Inflection+examples">Inflection examples</h4>
+
+<pre class="ruby">:<span class="ruby-identifier">add</span>       =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Add</span>
+:<span class="ruby-identifier">find_all</span>  =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">FindAll</span>
+</pre>
+
+<h4 id="label-Disabling+inflection">Disabling inflection</h4>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">PersonAPI</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">inflect_names</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h4 id="label-API+definition+example">API definition example</h4>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">PersonAPI</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">api_method</span> :<span class="ruby-identifier">add</span>, :<span class="ruby-identifier">expects</span> =<span class="ruby-operator">&gt;</span> [:<span class="ruby-identifier">string</span>, :<span class="ruby-identifier">string</span>, :<span class="ruby-identifier">bool</span>], :<span class="ruby-identifier">returns</span> =<span class="ruby-operator">&gt;</span> [:<span class="ruby-identifier">int</span>]
+  <span class="ruby-identifier">api_method</span> :<span class="ruby-identifier">remove</span>, :<span class="ruby-identifier">expects</span> =<span class="ruby-operator">&gt;</span> [:<span class="ruby-identifier">int</span>], :<span class="ruby-identifier">returns</span> =<span class="ruby-operator">&gt;</span> [:<span class="ruby-identifier">bool</span>]
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h4 id="label-API+usage+example">API usage example</h4>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">PersonController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">web_service_api</span> <span class="ruby-constant">PersonAPI</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">remove</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<h2 id="label-Publishing+your+APIs">Publishing your APIs</h2>
+
+<p>Action Web Service uses Action Pack to process protocol requests.  There
+are two modes of dispatching protocol requests, <em>Direct</em>, and
+<em>Delegated</em>.</p>
+
+<h3 id="label-Direct+dispatching">Direct dispatching</h3>
+
+<p>This is the default mode. In this mode, public controller instance methods
+implement the API methods, and parameters are passed through to the methods
+in accordance with the API specification.</p>
+
+<p>The return value of the method is sent back as the return value to the
+caller.</p>
+
+<p>In this mode, a special <code>api</code> action is generated in the target
+controller to unwrap the protocol request, forward it on to the relevant
+method and send back the wrapped return value. <em>This action must not be
+overridden.</em></p>
+
+<h4 id="label-Direct+dispatching+example">Direct dispatching example</h4>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">PersonController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ApplicationController</span>
+  <span class="ruby-identifier">web_service_api</span> <span class="ruby-constant">PersonAPI</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">remove</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">PersonAPI</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>For this example, protocol requests for <code>Add</code> and
+<code>Remove</code> methods sent to <code>/person/api</code> will be routed
+to the controller methods <code>add</code> and <code>remove</code>.</p>
+
+<h3 id="label-Delegated+dispatching">Delegated dispatching</h3>
+
+<p>This mode can be turned on by setting the
+<code>web_service_dispatching_mode</code> option in a controller to
+<code>:delegated</code>.</p>
+
+<p>In this mode, the controller contains one or more web service objects
+(objects that implement an <a
+href="../../../classes/ActionWebService/API/Base.html">ActionWebService::API::Base</a>
+definition). These web service objects are each mapped onto one controller
+action only.</p>
+
+<h4 id="label-Delegated+dispatching+example">Delegated dispatching example</h4>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ApiController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ApplicationController</span>
+  <span class="ruby-identifier">web_service_dispatching_mode</span> :<span class="ruby-identifier">delegated</span>
+
+  <span class="ruby-identifier">web_service</span> :<span class="ruby-identifier">person</span>, <span class="ruby-constant">PersonService</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">PersonService</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">web_service_api</span> <span class="ruby-constant">PersonAPI</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">add</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">remove</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">PersonAPI</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>For this example, all protocol requests for <code>PersonService</code> are
+sent to the <code>/api/person</code> action.</p>
+
+<p>The <code>/api/person</code> action is generated when the
+<code>web_service</code> method is called. <em>This action must not be
+overridden.</em></p>
+
+<p>Other controller actions (actions that aren’t the target of a
+<code>web_service</code> call) are ignored for <a
+href="../../../classes/ActionWebService.html">ActionWebService</a>
+purposes, and can do normal action tasks.</p>
+
+<h3 id="label-Layered+dispatching">Layered dispatching</h3>
+
+<p>This mode can be turned on by setting the
+<code>web_service_dispatching_mode</code> option in a controller to
+<code>:layered</code>.</p>
+
+<p>This mode is similar to <em>delegated</em> mode, in that multiple web
+service objects can be attached to one controller, however, all protocol
+requests are sent to a single endpoint.</p>
+
+<p>Use this mode when you want to share code between XML-RPC and SOAP clients,
+for APIs where the XML-RPC method names have prefixes. An example of such a
+method name would be <code>blogger.newPost</code>.</p>
+
+<h4 id="label-Layered+dispatching+example">Layered dispatching example</h4>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">ApiController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ApplicationController</span>
+  <span class="ruby-identifier">web_service_dispatching_mode</span> :<span class="ruby-identifier">layered</span>
+
+  <span class="ruby-identifier">web_service</span> :<span class="ruby-identifier">mt</span>, <span class="ruby-constant">MovableTypeService</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">web_service</span> :<span class="ruby-identifier">blogger</span>, <span class="ruby-constant">BloggerService</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">web_service</span> :<span class="ruby-identifier">metaWeblog</span>, <span class="ruby-constant">MetaWeblogService</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">MovableTypeService</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">BloggerService</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">MetaWeblogService</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-operator">...</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>For this example, an XML-RPC call for a method with a name like
+<code>mt.getCategories</code> will be sent to the
+<code>getCategories</code> method on the <code>:mt</code> service.</p>
+
+<h2 id="label-Customizing+WSDL+generation">Customizing WSDL generation</h2>
+
+<p>You can customize the names used for the SOAP bindings in the generated
+WSDL by using the wsdl_service_name option in a controller:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">WsController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ApplicationController</span>
+  <span class="ruby-identifier">wsdl_service_name</span> <span class="ruby-string">'MyApp'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>You can also customize the namespace used in the generated WSDL for custom
+types and message definition types:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">WsController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ApplicationController</span>
+  <span class="ruby-identifier">wsdl_namespace</span> <span class="ruby-string">'http://my.company.com/app/wsapi'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>The default namespace used is ‘urn:ActionWebService’, if you don’t supply
+one.</p>
+
+<h2 id="label-ActionWebService+and+UTF-8"><a href="../../../classes/ActionWebService.html">ActionWebService</a> and UTF-8</h2>
+
+<p>If you’re going to be sending back strings containing non-ASCII UTF-8
+characters using the <code>:string</code> data type, you need to make sure
+that Ruby is using UTF-8 as the default encoding for its strings.</p>
+
+<p>The default in Ruby is to use US-ASCII encoding for strings, which causes a
+string validation check in the Ruby SOAP library to fail and your string to
+be sent back as a Base-64 value, which may confuse clients that expected
+strings because of the WSDL.</p>
+
+<p>Two ways of setting the default string encoding are:</p>
+<ul><li>
+<p>Start Ruby using the <code>-Ku</code> command-line option to the Ruby
+executable</p>
+</li><li>
+<p>Set the <code>$KCODE</code> flag in <code>config/environment.rb</code> to
+the string <code>'UTF8'</code></p>
+</li></ul>
+
+<h2 id="label-Testing+your+APIs">Testing your APIs</h2>
+
+<h3 id="label-Functional+testing">Functional testing</h3>
+
+<p>You can perform testing of your APIs by creating a functional test for the
+controller dispatching the API, and calling invoke in the test case to
+perform the invocation.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">PersonApiControllerTest</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">Test</span><span class="ruby-operator">::</span><span class="ruby-constant">Unit</span><span class="ruby-operator">::</span><span class="ruby-constant">TestCase</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">setup</span>
+    <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">PersonController</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@request</span>    = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>
+    <span class="ruby-ivar">@response</span>   = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">test_add</span>
+    <span class="ruby-identifier">result</span> = <span class="ruby-identifier">invoke</span> :<span class="ruby-identifier">remove</span>, <span class="ruby-value">1</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">result</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>This example invokes the API method <code>test</code>, defined on  the
+PersonController, and returns the result.</p>
+
+<h3 id="label-Scaffolding">Scaffolding</h3>
+
+<p>You can also test your APIs with a web browser by attaching scaffolding to
+the controller.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">PersonController</span>
+  <span class="ruby-identifier">web_service_scaffold</span> :<span class="ruby-identifier">invocation</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>This creates an action named <code>invocation</code> on the
+PersonController.</p>
+
+<p>Navigating to this action lets you select the method to invoke, supply the
+parameters, and view the result of the invocation.</p>
+
+<h2 id="label-Using+the+client+support">Using the client support</h2>
+
+<p>Action Web Service includes client classes that can use the same API
+definition as the server. The advantage of this approach is that your
+client will have the same support for Active Record and structured types as
+the server, and can just use them directly, and rely on the marshaling to
+Do The Right Thing.</p>
+
+<p><strong>Note</strong>: The client support is intended for communication
+between Ruby on <a href="../../../classes/Rails.html">Rails</a>
+applications that both use Action Web Service. It may work with other
+servers, but that is not its intended use, and interoperability can't be
+guaranteed, especially not for .NET web services.</p>
+
+<p>Web services protocol specifications are complex, and Action Web Service
+client support can only be guaranteed to work with a subset.</p>
+
+<h4 id="label-Factory+created+client+example">Factory created client example</h4>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">BlogManagerController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ApplicationController</span>
+  <span class="ruby-identifier">web_client_api</span> :<span class="ruby-identifier">blogger</span>, :<span class="ruby-identifier">xmlrpc</span>, <span class="ruby-string">'http://url/to/blog/api/RPC2'</span>, :<span class="ruby-identifier">handler_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'blogger'</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">SearchingController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ApplicationController</span>
+  <span class="ruby-identifier">web_client_api</span> :<span class="ruby-identifier">google</span>, :<span class="ruby-identifier">soap</span>, <span class="ruby-string">'http://url/to/blog/api/beta'</span>, :<span class="ruby-identifier">service_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'GoogleSearch'</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>See ActionWebService::API::ActionController::ClassMethods for more details.</p>
+
+<h4 id="label-Manually+created+client+example">Manually created client example</h4>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">PersonAPI</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">api_method</span> :<span class="ruby-identifier">find_all</span>, :<span class="ruby-identifier">returns</span> =<span class="ruby-operator">&gt;</span> [[<span class="ruby-constant">Person</span>]]
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">soap_client</span> = <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">Soap</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">PersonAPI</span>, <span class="ruby-string">&quot;http://...&quot;</span>)
+<span class="ruby-identifier">persons</span> = <span class="ruby-identifier">soap_client</span>.<span class="ruby-identifier">find_all</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">BloggerAPI</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">API</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">inflect_names</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-identifier">api_method</span> :<span class="ruby-identifier">getRecentPosts</span>, :<span class="ruby-identifier">returns</span> =<span class="ruby-operator">&gt;</span> [[<span class="ruby-constant">Blog</span><span class="ruby-operator">::</span><span class="ruby-constant">Post</span>]]
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">blog</span> = <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">Client</span><span class="ruby-operator">::</span><span class="ruby-constant">XmlRpc</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">BloggerAPI</span>, <span class="ruby-string">&quot;http://.../xmlrpc&quot;</span>, :<span class="ruby-identifier">handler_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;blogger&quot;</span>)
+<span class="ruby-identifier">posts</span> = <span class="ruby-identifier">blog</span>.<span class="ruby-identifier">getRecentPosts</span>
+</pre>
+
+<p>See <a
+href="../../../classes/ActionWebService/Client/Soap.html">ActionWebService::Client::Soap</a>
+and <a
+href="../../../classes/ActionWebService/Client/XmlRpc.html">ActionWebService::Client::XmlRpc</a>
+for more details.</p>
+
+<h2 id="label-Dependencies">Dependencies</h2>
+
+<p>Action Web Service requires that the Action Pack and Active Record are
+either available to be required immediately or are accessible as GEMs.</p>
+
+<p>It also requires a version of Ruby that includes SOAP support in the
+standard library. At least version 1.8.2 final (2004-12-25) of Ruby is
+recommended; this is the version tested against.</p>
+
+<h2 id="label-Download">Download</h2>
+
+<p>The latest Action Web Service version can be downloaded from <a
+href="http://rubyforge.org/projects/actionservice">rubyforge.org/projects/actionservice</a></p>
+
+<h2 id="label-Installation">Installation</h2>
+
+<p>You can install Action Web Service with the following command.</p>
+
+<pre>% [sudo] ruby setup.rb</pre>
+
+<h2 id="label-License">License</h2>
+
+<p>Action Web Service is released under the MIT license.</p>
+
+<h2 id="label-Support">Support</h2>
+
+<p>The Ruby on <a href="../../../classes/Rails.html">Rails</a> mailing list</p>
+
+<p>Or, to contact the author, send mail to bitserf@gmail.com</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

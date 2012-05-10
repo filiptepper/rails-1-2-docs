@@ -1,0 +1,209 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>README</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            README
+        </h1>
+        <ul class="files">
+            <li>rails/actionwebservice/examples/googlesearch/README</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<h1 id="label-Google+Service+example">Google Service example</h1>
+
+<p>This example shows how one would implement an API like Google Search that
+uses lots of structured types.</p>
+
+<p>There are examples for “Direct” and “Delegated” dispatching modes.</p>
+
+<p>There is also an example for API definition file autoloading.</p>
+
+<h1 id="label-Running+the+examples">Running the examples</h1>
+
+<pre class="ruby"><span class="ruby-value">1</span>. <span class="ruby-constant">Add</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">files</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">an</span> <span class="ruby-constant">Action</span> <span class="ruby-constant">Web</span> <span class="ruby-constant">Service</span> <span class="ruby-identifier">enabled</span> <span class="ruby-constant">Rails</span> <span class="ruby-identifier">project</span>.
+
+  <span class="ruby-string">&quot;Direct&quot;</span> <span class="ruby-identifier">example</span><span class="ruby-operator">:</span>
+
+    * <span class="ruby-constant">Copy</span> <span class="ruby-identifier">direct</span><span class="ruby-operator">/</span><span class="ruby-identifier">search_controller</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">to</span> <span class="ruby-string">&quot;app/controllers&quot;</span>
+      <span class="ruby-keyword">in</span> <span class="ruby-identifier">a</span> <span class="ruby-constant">Rails</span> <span class="ruby-identifier">project</span>.
+    * <span class="ruby-constant">Copy</span> <span class="ruby-identifier">direct</span><span class="ruby-operator">/</span><span class="ruby-identifier">google_search_api</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">to</span> <span class="ruby-string">&quot;app/apis&quot;</span>
+      <span class="ruby-keyword">in</span> <span class="ruby-identifier">a</span> <span class="ruby-constant">Rails</span> <span class="ruby-identifier">project</span>
+
+  <span class="ruby-string">&quot;Delegated&quot;</span> <span class="ruby-identifier">example</span><span class="ruby-operator">:</span>
+
+    * <span class="ruby-constant">Copy</span> <span class="ruby-identifier">delegated</span><span class="ruby-operator">/</span><span class="ruby-identifier">search_controller</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">to</span> <span class="ruby-string">&quot;app/controllers&quot;</span>
+      <span class="ruby-keyword">in</span> <span class="ruby-identifier">a</span> <span class="ruby-constant">Rails</span> <span class="ruby-identifier">project</span>.
+    * <span class="ruby-constant">Copy</span> <span class="ruby-identifier">delegated</span><span class="ruby-operator">/</span><span class="ruby-identifier">google_search_service</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">to</span> <span class="ruby-string">&quot;lib&quot;</span>
+      <span class="ruby-keyword">in</span> <span class="ruby-identifier">a</span> <span class="ruby-constant">Rails</span> <span class="ruby-identifier">project</span>.
+
+   <span class="ruby-string">&quot;Autoloading&quot;</span> <span class="ruby-identifier">example</span><span class="ruby-operator">:</span>
+
+    * <span class="ruby-constant">Copy</span> <span class="ruby-identifier">autoloading</span><span class="ruby-operator">/</span><span class="ruby-identifier">google_search_api</span>.<span class="ruby-identifier">rb</span> <span class="ruby-identifier">to</span> <span class="ruby-string">&quot;app/apis&quot;</span> (<span class="ruby-identifier">create</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">directory</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">it</span> <span class="ruby-identifier">doesn</span><span class="ruby-string">'t exist) in a Rails project.
+
+    * Copy autoloading/google_search_controller.rb &quot;app/controllers&quot;
+      in a Rails project.
+
+2. Go to the WSDL url in a browser, and check that it looks correct.
+
+    &quot;Direct&quot; and &quot;Delegated&quot; examples:
+      http://url_to_project/search/wsdl
+
+    &quot;Autoloading&quot; example:
+      http://url_to_project/google_search/wsdl
+
+   You can compare it to Google'</span><span class="ruby-identifier">s</span> <span class="ruby-identifier">hand</span><span class="ruby-operator">-</span><span class="ruby-identifier">coded</span> <span class="ruby-constant">WSDL</span> <span class="ruby-identifier">at</span> <span class="ruby-identifier">http</span>:<span class="ruby-operator">/</span><span class="ruby-regexp">%rapi.google.com/</span><span class="ruby-constant">GoogleSearch</span>.<span class="ruby-identifier">wsdl</span>
+   <span class="ruby-keyword">and</span> <span class="ruby-identifier">see</span> <span class="ruby-identifier">how</span> <span class="ruby-identifier">close</span> (<span class="ruby-keyword">or</span> <span class="ruby-keyword">not</span>) <span class="ruby-identifier">the</span> <span class="ruby-identifier">generated</span> <span class="ruby-identifier">version</span> <span class="ruby-identifier">is</span>. 
+
+   <span class="ruby-constant">Note</span> <span class="ruby-identifier">that</span> <span class="ruby-constant">I</span> <span class="ruby-identifier">used</span> <span class="ruby-constant">GoogleSearch</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">canonical</span> <span class="ruby-string">&quot;best practice&quot;</span>
+   <span class="ruby-identifier">interoperable</span> <span class="ruby-identifier">example</span> <span class="ruby-keyword">when</span> <span class="ruby-identifier">implementing</span> <span class="ruby-constant">WSDL</span><span class="ruby-operator">/</span><span class="ruby-constant">SOAP</span> <span class="ruby-identifier">support</span>, <span class="ruby-identifier">which</span> <span class="ruby-identifier">might</span>
+   <span class="ruby-identifier">explain</span> <span class="ruby-identifier">extreme</span> <span class="ruby-identifier">similarities</span> :)
+
+<span class="ruby-value">3</span>. <span class="ruby-constant">Test</span> <span class="ruby-identifier">that</span> <span class="ruby-identifier">it</span> <span class="ruby-identifier">works</span> <span class="ruby-identifier">with</span> .<span class="ruby-constant">NET</span> (<span class="ruby-constant">Mono</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">this</span> <span class="ruby-identifier">example</span>)<span class="ruby-operator">:</span>
+
+      $ <span class="ruby-identifier">wget</span> <span class="ruby-constant">WSDL_URL</span>
+      $ <span class="ruby-identifier">mv</span> <span class="ruby-identifier">wsdl</span> <span class="ruby-constant">GoogleSearch</span>.<span class="ruby-identifier">wsdl</span>
+      $ <span class="ruby-identifier">wsdl</span> <span class="ruby-operator">-</span><span class="ruby-identifier">out</span>:<span class="ruby-constant">GoogleSearch</span>.<span class="ruby-identifier">cs</span> <span class="ruby-constant">GoogleSearch</span>.<span class="ruby-identifier">wsdl</span>
+
+   <span class="ruby-constant">Add</span> <span class="ruby-identifier">these</span> <span class="ruby-identifier">lines</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">the</span> <span class="ruby-constant">GoogleSearchService</span> <span class="ruby-keyword">class</span> <span class="ruby-identifier">body</span> (<span class="ruby-identifier">be</span> <span class="ruby-identifier">mindful</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">the</span> 
+   <span class="ruby-identifier">wrapping</span>)<span class="ruby-operator">:</span>
+
+      <span class="ruby-identifier">public</span> <span class="ruby-identifier">static</span> <span class="ruby-identifier">void</span> <span class="ruby-constant">Main</span>(<span class="ruby-identifier">string</span>[] <span class="ruby-identifier">args</span>)
+      {
+          <span class="ruby-constant">GoogleSearchResult</span> <span class="ruby-identifier">result</span>;
+          <span class="ruby-constant">GoogleSearchService</span> <span class="ruby-identifier">service</span>;
+
+          <span class="ruby-identifier">service</span> = <span class="ruby-identifier">new</span> <span class="ruby-constant">GoogleSearchService</span>();
+          <span class="ruby-identifier">result</span> = <span class="ruby-identifier">service</span>.<span class="ruby-identifier">doGoogleSearch</span>(<span class="ruby-string">&quot;myApiKey&quot;</span>, <span class="ruby-string">&quot;my query&quot;</span>, <span class="ruby-value">10</span>, <span class="ruby-value">30</span>, <span class="ruby-keyword">true</span>, <span class="ruby-string">&quot;restrict&quot;</span>, <span class="ruby-keyword">false</span>, <span class="ruby-string">&quot;lr&quot;</span>, <span class="ruby-string">&quot;ie&quot;</span>, <span class="ruby-string">&quot;oe&quot;</span>);
+          <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;documentFiltering: {0}&quot;</span>, <span class="ruby-identifier">result</span>.<span class="ruby-identifier">documentFiltering</span>);
+          <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;searchComments: {0}&quot;</span>, <span class="ruby-identifier">result</span>.<span class="ruby-identifier">searchComments</span>);
+          <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;estimatedTotalResultsCount: {0}&quot;</span>, <span class="ruby-identifier">result</span>.<span class="ruby-identifier">estimatedTotalResultsCount</span>);
+          <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;estimateIsExact: {0}&quot;</span>, <span class="ruby-identifier">result</span>.<span class="ruby-identifier">estimateIsExact</span>);
+          <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;resultElements:&quot;</span>);
+          <span class="ruby-identifier">foreach</span> (<span class="ruby-constant">ResultElement</span> <span class="ruby-identifier">element</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">resultElements</span>) {
+            <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;\tsummary: {0}&quot;</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">summary</span>);
+            <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;\tURL: {0}&quot;</span>, <span class="ruby-identifier">element</span>.<span class="ruby-constant">URL</span>);
+            <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;\tsnippet: {0}&quot;</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">snippet</span>);
+            <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;\ttitle: {0}&quot;</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">title</span>);
+            <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;\tcachedSize: {0}&quot;</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">cachedSize</span>);
+            <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;\trelatedInformationPresent: {0}&quot;</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">relatedInformationPresent</span>);
+            <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;\thostName: {0}&quot;</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">hostName</span>);
+            <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;\tdirectoryCategory: {0}&quot;</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">directoryCategory</span>.<span class="ruby-identifier">fullViewableName</span>);
+            <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;\tdirectoryTitle: {0}&quot;</span>, <span class="ruby-identifier">element</span>.<span class="ruby-identifier">directoryTitle</span>);
+          }
+          <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;searchQuery: {0}&quot;</span>, <span class="ruby-identifier">result</span>.<span class="ruby-identifier">searchQuery</span>);
+          <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;startIndex: {0}&quot;</span>, <span class="ruby-identifier">result</span>.<span class="ruby-identifier">startIndex</span>);
+          <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;endIndex: {0}&quot;</span>, <span class="ruby-identifier">result</span>.<span class="ruby-identifier">endIndex</span>);
+          <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;searchTips: {0}&quot;</span>, <span class="ruby-identifier">result</span>.<span class="ruby-identifier">searchTips</span>);
+          <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;directoryCategories:&quot;</span>);
+          <span class="ruby-identifier">foreach</span> (<span class="ruby-constant">DirectoryCategory</span> <span class="ruby-identifier">cat</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">result</span>.<span class="ruby-identifier">directoryCategories</span>) {
+            <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;\t{0} ({1})&quot;</span>, <span class="ruby-identifier">cat</span>.<span class="ruby-identifier">fullViewableName</span>, <span class="ruby-identifier">cat</span>.<span class="ruby-identifier">specialEncoding</span>);
+          }
+          <span class="ruby-constant">System</span>.<span class="ruby-constant">Console</span>.<span class="ruby-constant">WriteLine</span>(<span class="ruby-string">&quot;searchTime: {0}&quot;</span>, <span class="ruby-identifier">result</span>.<span class="ruby-identifier">searchTime</span>);
+      }
+
+  <span class="ruby-constant">Now</span> <span class="ruby-identifier">compile</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">run</span><span class="ruby-operator">:</span>
+
+    $ <span class="ruby-identifier">mcs</span> <span class="ruby-operator">-</span><span class="ruby-identifier">reference</span>:<span class="ruby-constant">System</span>.<span class="ruby-constant">Web</span>.<span class="ruby-constant">Services</span> <span class="ruby-constant">GoogleSearch</span>.<span class="ruby-identifier">cs</span>
+    $ <span class="ruby-identifier">mono</span> <span class="ruby-constant">GoogleSearch</span>.<span class="ruby-identifier">exe</span>
+
+  <span class="ruby-constant">If</span> <span class="ruby-identifier">you</span> <span class="ruby-identifier">had</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">application</span> <span class="ruby-identifier">running</span> (<span class="ruby-identifier">on</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">same</span> <span class="ruby-identifier">host</span> <span class="ruby-identifier">you</span> <span class="ruby-identifier">got</span>
+  <span class="ruby-identifier">the</span> <span class="ruby-constant">WSDL</span> <span class="ruby-identifier">from</span>), <span class="ruby-identifier">you</span> <span class="ruby-identifier">should</span> <span class="ruby-identifier">see</span> <span class="ruby-identifier">something</span> <span class="ruby-identifier">like</span> <span class="ruby-identifier">this</span><span class="ruby-operator">:</span>
+
+      <span class="ruby-identifier">documentFiltering</span><span class="ruby-operator">:</span> <span class="ruby-constant">True</span>
+      <span class="ruby-identifier">searchComments</span><span class="ruby-operator">:</span>
+      <span class="ruby-identifier">estimatedTotalResultsCount</span><span class="ruby-operator">:</span> <span class="ruby-value">322000</span>
+      <span class="ruby-identifier">estimateIsExact</span><span class="ruby-operator">:</span> <span class="ruby-constant">False</span>
+      <span class="ruby-identifier">resultElements</span><span class="ruby-operator">:</span>
+              <span class="ruby-identifier">summary</span><span class="ruby-operator">:</span> <span class="ruby-constant">ONlamp</span>.<span class="ruby-identifier">com</span><span class="ruby-operator">:</span> <span class="ruby-constant">Rolling</span> <span class="ruby-identifier">with</span> <span class="ruby-constant">Ruby</span> <span class="ruby-identifier">on</span> <span class="ruby-constant">Rails</span>
+              <span class="ruby-constant">URL</span><span class="ruby-operator">:</span> <span class="ruby-identifier">http</span>:<span class="ruby-operator">/</span><span class="ruby-regexp">%rwww.onlamp.com/</span><span class="ruby-identifier">pub</span><span class="ruby-operator">/</span><span class="ruby-identifier">a</span><span class="ruby-operator">/</span><span class="ruby-identifier">onlamp</span><span class="ruby-operator">/</span><span class="ruby-value">2005</span><span class="ruby-operator">/</span><span class="ruby-value">01</span><span class="ruby-operator">/</span><span class="ruby-value">20</span><span class="ruby-operator">/</span><span class="ruby-identifier">rails</span>.<span class="ruby-identifier">html</span>
+              <span class="ruby-identifier">snippet</span><span class="ruby-operator">:</span> <span class="ruby-constant">Curt</span> <span class="ruby-constant">Hibbs</span> <span class="ruby-identifier">shows</span> <span class="ruby-identifier">off</span> <span class="ruby-constant">Ruby</span> <span class="ruby-identifier">on</span> <span class="ruby-constant">Rails</span> <span class="ruby-identifier">by</span> <span class="ruby-identifier">building</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">simple</span> <span class="ruby-operator">...</span>
+              <span class="ruby-identifier">title</span><span class="ruby-operator">:</span> <span class="ruby-constant">Teh</span> <span class="ruby-constant">Railz0r</span>
+              <span class="ruby-identifier">cachedSize</span><span class="ruby-operator">:</span> <span class="ruby-constant">Almost</span> <span class="ruby-identifier">no</span> <span class="ruby-identifier">lines</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">code!</span>
+              <span class="ruby-identifier">relatedInformationPresent</span><span class="ruby-operator">:</span> <span class="ruby-constant">True</span>
+              <span class="ruby-identifier">hostName</span><span class="ruby-operator">:</span> <span class="ruby-identifier">rubyonrails</span>.<span class="ruby-identifier">com</span>
+              <span class="ruby-identifier">directoryCategory</span><span class="ruby-operator">:</span> <span class="ruby-constant">Web</span> <span class="ruby-constant">Development</span>
+              <span class="ruby-identifier">directoryTitle</span><span class="ruby-operator">:</span>
+      <span class="ruby-identifier">searchQuery</span><span class="ruby-operator">:</span> <span class="ruby-identifier">http</span>:<span class="ruby-operator">/</span><span class="ruby-regexp">%rwww.google.com/</span><span class="ruby-identifier">earch?</span><span class="ruby-identifier">q</span>=<span class="ruby-identifier">ruby</span><span class="ruby-operator">+</span><span class="ruby-identifier">on</span><span class="ruby-operator">+</span><span class="ruby-identifier">rails</span>
+      <span class="ruby-identifier">startIndex</span><span class="ruby-operator">:</span> <span class="ruby-value">10</span>
+      <span class="ruby-identifier">endIndex</span><span class="ruby-operator">:</span> <span class="ruby-value">40</span>
+      <span class="ruby-identifier">searchTips</span><span class="ruby-operator">:</span> <span class="ruby-string">&quot;on&quot;</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">very</span> <span class="ruby-identifier">common</span> <span class="ruby-identifier">word</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">was</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">included</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">your</span> <span class="ruby-identifier">search</span> [<span class="ruby-identifier">details</span>]
+      <span class="ruby-identifier">directoryCategories</span><span class="ruby-operator">:</span>
+              <span class="ruby-constant">Web</span> <span class="ruby-constant">Development</span> (<span class="ruby-constant">UTF</span><span class="ruby-operator">-</span><span class="ruby-value">8</span>)
+              <span class="ruby-constant">Programming</span> (<span class="ruby-constant">US</span><span class="ruby-operator">-</span><span class="ruby-constant">ASCII</span>)
+      <span class="ruby-identifier">searchTime</span><span class="ruby-operator">:</span> <span class="ruby-value">1E-06</span>
+
+  <span class="ruby-constant">Also</span>, <span class="ruby-keyword">if</span> <span class="ruby-identifier">an</span> <span class="ruby-constant">API</span> <span class="ruby-identifier">method</span> <span class="ruby-identifier">throws</span> <span class="ruby-identifier">an</span> <span class="ruby-identifier">exception</span>, <span class="ruby-identifier">it</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">sent</span> <span class="ruby-identifier">back</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">the</span>
+  <span class="ruby-identifier">caller</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">protocol</span><span class="ruby-string">'s exception format, so they should get an exception
+  thrown on their side with a meaningful error message.
+
+  If you don'</span><span class="ruby-identifier">t</span> <span class="ruby-identifier">like</span> <span class="ruby-identifier">this</span> <span class="ruby-identifier">behaviour</span>, <span class="ruby-identifier">you</span> <span class="ruby-identifier">can</span> <span class="ruby-keyword">do</span><span class="ruby-operator">:</span>
+
+    <span class="ruby-keyword">class</span> <span class="ruby-constant">MyController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+      <span class="ruby-identifier">web_service_exception_reporting</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-keyword">end</span>
+
+<span class="ruby-value">4</span>. <span class="ruby-constant">Crack</span> <span class="ruby-identifier">open</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">beer</span>. <span class="ruby-constant">Publishing</span> <span class="ruby-constant">APIs</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">working</span> <span class="ruby-identifier">with</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">same</span> <span class="ruby-identifier">model</span> <span class="ruby-identifier">as</span>
+   <span class="ruby-identifier">your</span> <span class="ruby-constant">Rails</span> <span class="ruby-identifier">web</span> <span class="ruby-identifier">app</span> <span class="ruby-identifier">should</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">easy</span> <span class="ruby-identifier">from</span> <span class="ruby-identifier">now</span> <span class="ruby-identifier">on</span> :)
+</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

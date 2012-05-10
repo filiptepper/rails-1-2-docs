@@ -1,0 +1,309 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionWebService::Struct</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActionWebService::Struct 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionwebservice/lib/action_web_service/struct_rb.html">rails/actionwebservice/lib/action_web_service/struct.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>To send structured types across the wire, derive from <a
+href="Struct.html">ActionWebService::Struct</a>, and use
+<code>member</code> to declare structure members.</p>
+
+<p><a href="Struct.html">ActionWebService::Struct</a> should be used in method
+signatures when you want to accept or return structured types that have no
+Active Record model class representations, or you don't want to expose your
+entire Active Record model to remote callers.</p>
+
+<h3 id="label-Example">Example</h3>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Person</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">Struct</span>
+  <span class="ruby-identifier">member</span> :<span class="ruby-identifier">id</span>,         :<span class="ruby-identifier">int</span>
+  <span class="ruby-identifier">member</span> :<span class="ruby-identifier">firstnames</span>, [:<span class="ruby-identifier">string</span>]
+  <span class="ruby-identifier">member</span> :<span class="ruby-identifier">lastname</span>,   :<span class="ruby-identifier">string</span>
+  <span class="ruby-identifier">member</span> :<span class="ruby-identifier">email</span>,      :<span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-identifier">person</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>(:<span class="ruby-identifier">id</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">5</span>, :<span class="ruby-identifier">firstname</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'john'</span>, :<span class="ruby-identifier">lastname</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'doe'</span>)
+</pre>
+
+<p>Active Record model classes are already implicitly supported in method
+signatures.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-5B-5D">[]</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-each_pair">each_pair</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-member">member</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-member">
+            
+              <a name="method-c-member"></a><b>member</b>(name, type)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a structure member with the specified <code>name</code> and
+<code>type</code>. Generates accessor methods for reading and writing the
+member value.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-member_source')" id="l_method-c-member_source">show</a>
+                
+              </p>
+              <div id="method-c-member_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/struct.rb, line 49</span>
+      <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">member</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">type</span>)
+        <span class="ruby-identifier">name</span> = <span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_sym</span>
+        <span class="ruby-identifier">type</span> = <span class="ruby-constant">ActionWebService</span><span class="ruby-operator">::</span><span class="ruby-constant">SignatureTypes</span>.<span class="ruby-identifier">canonical_signature_entry</span>({ <span class="ruby-identifier">name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">type</span> }, <span class="ruby-number">0</span>)
+        <span class="ruby-identifier">write_inheritable_hash</span>(<span class="ruby-string">&quot;struct_members&quot;</span>, <span class="ruby-identifier">name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">type</span>)
+        <span class="ruby-identifier">class_eval</span> <span class="ruby-string">&quot;          def #{name}; @#{name}; end
+          def #{name}=(value); @#{name} = value; end
+&quot;</span>
+      <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(values={})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>If a Hash is given as argument to an <a
+href="Struct.html">ActionWebService::Struct</a> constructor, it can contain
+initial values for the structure member.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/struct.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">values</span>={})
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">values</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+    <span class="ruby-identifier">values</span>.<span class="ruby-identifier">map</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">k</span>,<span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">__send__</span>(<span class="ruby-string">'%s='</span> <span class="ruby-operator">%</span> <span class="ruby-identifier">k</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">v</span>)}
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-5B-5D">
+            
+              <a name="method-i-5B-5D"></a><b>[]</b>(name)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>The member with the given name</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-5B-5D_source')" id="l_method-i-5B-5D_source">show</a>
+                
+              </p>
+              <div id="method-i-5B-5D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/struct.rb, line 35</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-keyword ruby-title">name</span>)
+  <span class="ruby-identifier">send</span>(<span class="ruby-identifier">name</span>.<span class="ruby-identifier">to_s</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each_pair">
+            
+              <a name="method-i-each_pair"></a><b>each_pair</b>(&amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Iterates through each member</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-each_pair_source')" id="l_method-i-each_pair_source">show</a>
+                
+              </p>
+              <div id="method-i-each_pair_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/lib/action_web_service/struct.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">each_pair</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">members</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span>, <span class="ruby-identifier">type</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-identifier">name</span>, <span class="ruby-keyword">self</span>.<span class="ruby-identifier">__send__</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

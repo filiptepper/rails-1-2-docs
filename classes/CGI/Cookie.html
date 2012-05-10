@@ -1,0 +1,480 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>CGI::Cookie</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            CGI::Cookie 
+            
+                <span class="parent">&lt; 
+                    
+                    DelegateClass(Array)
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionpack/lib/action_controller/cgi_ext/cookie_performance_fix_rb.html">rails/actionpack/lib/action_controller/cgi_ext/cookie_performance_fix.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>This is a cookie class that fixes the performance problems with the default
+one that ships with 1.8.1 and below. It replaces the inheritance on
+SimpleDelegator with DelegateClass(Array) following the suggestion from
+Matz on <a
+href="http://groups.google.com/groups?th=e3a4e68ba042f842&seekm=c3sioe%241qvm%241%40news.cybercity.dk#link14">groups.google.com/groups?th=e3a4e68ba042f842&seekm=c3sioe%241qvm%241%40news.cybercity.dk#link14</a></p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-__setobj__">__setobj__</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-parse">parse</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-secure-3D">secure=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>domain</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>expires</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>name</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>path</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>secure</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>value</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(name = '', *value)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Create a new <a href="Cookie.html">CGI::Cookie</a> object.</p>
+
+<p>The contents of the cookie can be specified as a <code>name</code> and one
+or more <code>value</code> arguments.  Alternatively, the contents can be
+specified as a single hash argument.  The possible keywords of this hash
+are as follows:</p>
+<dl class="rdoc-list note-list"><dt>name
+<dd>
+<p>the name of the cookie.  Required.</p>
+</dd><dt>value
+<dd>
+<p>the cookie’s value or list of values.</p>
+</dd><dt>path
+<dd>
+<p>the path for which this cookie applies.  Defaults to the base directory of
+the <a href="../CGI.html">CGI</a> script.</p>
+</dd><dt>domain
+<dd>
+<p>the domain for which this cookie applies.</p>
+</dd><dt>expires
+<dd>
+<p>the time at which this cookie expires, as a <code>Time</code> object.</p>
+</dd><dt>secure
+<dd>
+<p>whether this cookie is a secure cookie or not (default to false).  Secure
+cookies are only transmitted to HTTPS  servers.</p>
+</dd></dl>
+
+<p>These keywords correspond to attributes of the cookie object.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/cgi_ext/cookie_performance_fix.rb, line 26</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">name</span> = <span class="ruby-string">''</span>, *<span class="ruby-identifier">value</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">name</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+    <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>
+    <span class="ruby-ivar">@value</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-ivar">@domain</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@expires</span> = <span class="ruby-keyword">nil</span>
+    <span class="ruby-ivar">@secure</span> = <span class="ruby-keyword">false</span>
+    <span class="ruby-ivar">@path</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-ivar">@name</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">'name'</span>]
+    <span class="ruby-ivar">@value</span> = <span class="ruby-constant">Array</span>(<span class="ruby-identifier">name</span>[<span class="ruby-string">'value'</span>])
+    <span class="ruby-ivar">@domain</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">'domain'</span>]
+    <span class="ruby-ivar">@expires</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">'expires'</span>]
+    <span class="ruby-ivar">@secure</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">'secure'</span>] <span class="ruby-operator">||</span> <span class="ruby-keyword">false</span>
+    <span class="ruby-ivar">@path</span> = <span class="ruby-identifier">name</span>[<span class="ruby-string">'path'</span>]
+  <span class="ruby-keyword">end</span>
+  
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@name</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">&quot;`name' required&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># simple support for IE</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@path</span>
+    <span class="ruby-regexp">%r^(.*/)|</span>.<span class="ruby-identifier">match</span>(<span class="ruby-constant">ENV</span>[<span class="ruby-string">'SCRIPT_NAME'</span>])
+    <span class="ruby-ivar">@path</span> = (<span class="ruby-node">$1</span> <span class="ruby-keyword">or</span> <span class="ruby-string">''</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">super</span>(<span class="ruby-ivar">@value</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-parse">
+            
+              <a name="method-c-parse"></a><b>parse</b>(raw_cookie)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Parse a raw cookie string into a hash of cookie-name=&gt;<a
+href="Cookie.html">Cookie</a> pairs.</p>
+
+<pre class="ruby"><span class="ruby-identifier">cookies</span> = <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-constant">Cookie</span><span class="ruby-operator">::</span><span class="ruby-identifier">parse</span>(<span class="ruby-string">&quot;raw_cookie_string&quot;</span>)
+  <span class="ruby-comment"># { &quot;name1&quot; =&gt; cookie1, &quot;name2&quot; =&gt; cookie2, ... }</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-parse_source')" id="l_method-c-parse_source">show</a>
+                
+              </p>
+              <div id="method-c-parse_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/cgi_ext/cookie_performance_fix.rb, line 107</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">parse</span>(<span class="ruby-identifier">raw_cookie</span>)
+  <span class="ruby-identifier">cookies</span> = <span class="ruby-constant">Hash</span>.<span class="ruby-identifier">new</span>([])
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">raw_cookie</span>
+    <span class="ruby-identifier">raw_cookie</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r; ?/</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pairs</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">name</span>, <span class="ruby-identifier">values</span> = <span class="ruby-identifier">pairs</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'='</span>,<span class="ruby-number">2</span>)
+      <span class="ruby-keyword">next</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">name</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">values</span>
+      <span class="ruby-identifier">name</span> = <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">name</span>)
+      <span class="ruby-identifier">values</span> = <span class="ruby-identifier">values</span>.<span class="ruby-identifier">split</span>(<span class="ruby-string">'&amp;'</span>).<span class="ruby-identifier">collect!</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-identifier">unescape</span>(<span class="ruby-identifier">v</span>) }
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">cookies</span>.<span class="ruby-identifier">has_key?</span>(<span class="ruby-identifier">name</span>)
+        <span class="ruby-identifier">cookies</span>[<span class="ruby-identifier">name</span>] = <span class="ruby-identifier">new</span>(<span class="ruby-identifier">name</span>, *<span class="ruby-identifier">values</span>)
+      <span class="ruby-keyword">end</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">cookies</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-__setobj__">
+            
+              <a name="method-i-__setobj__"></a><b>__setobj__</b>(obj)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-__setobj___source')" id="l_method-i-__setobj___source">show</a>
+                
+              </p>
+              <div id="method-i-__setobj___source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/cgi_ext/cookie_performance_fix.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">__setobj__</span>(<span class="ruby-identifier">obj</span>)
+  <span class="ruby-ivar">@_dc_obj</span> = <span class="ruby-identifier">obj</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-secure-3D">
+            
+              <a name="method-i-secure-3D"></a><b>secure=</b>(val)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Set whether the <a href="Cookie.html">Cookie</a> is a secure cookie or not.</p>
+
+<p><code>val</code> must be a boolean.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-secure-3D_source')" id="l_method-i-secure-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-secure-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/cgi_ext/cookie_performance_fix.rb, line 66</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">secure=</span>(<span class="ruby-identifier">val</span>)
+  <span class="ruby-ivar">@secure</span> = <span class="ruby-identifier">val</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">val</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">val</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@secure</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <a name="method-i-to_s"></a><b>to_s</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Convert the <a href="Cookie.html">Cookie</a> to its string representation.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/cgi_ext/cookie_performance_fix.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+  <span class="ruby-identifier">buf</span> = <span class="ruby-string">&quot;&quot;</span>
+  <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@name</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'='</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@value</span>.<span class="ruby-identifier">kind_of?</span>(<span class="ruby-constant">String</span>)
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-identifier">escape</span>(<span class="ruby-ivar">@value</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@value</span>.<span class="ruby-identifier">collect</span>{<span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-identifier">escape</span>(<span class="ruby-identifier">v</span>) }.<span class="ruby-identifier">join</span>(<span class="ruby-string">&quot;&amp;&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@domain</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'; domain='</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@domain</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@path</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'; path='</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-ivar">@path</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@expires</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'; expires='</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">CGI</span><span class="ruby-operator">::</span><span class="ruby-identifier">rfc1123_date</span>(<span class="ruby-ivar">@expires</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-ivar">@secure</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+    <span class="ruby-identifier">buf</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'; secure'</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">buf</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,190 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecord::Acts::List::ClassMethods</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActiveRecord::Acts::List::ClassMethods 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../../files/rails/activerecord/lib/active_record/acts/list_rb.html">rails/activerecord/lib/active_record/acts/list.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>This act provides the capabilities for sorting and reordering a number of
+objects in a list. The class that has this specified needs to have a
+“position” column defined as an integer on the mapped database table.</p>
+
+<p>Todo list example:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">TodoList</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">has_many</span> :<span class="ruby-identifier">todo_items</span>, :<span class="ruby-identifier">order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;position&quot;</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-keyword">class</span> <span class="ruby-constant">TodoItem</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActiveRecord</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-identifier">belongs_to</span> :<span class="ruby-identifier">todo_list</span>
+  <span class="ruby-identifier">acts_as_list</span> :<span class="ruby-identifier">scope</span> =<span class="ruby-operator">&gt;</span> :<span class="ruby-identifier">todo_list</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">todo_list</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">move_to_bottom</span>
+<span class="ruby-identifier">todo_list</span>.<span class="ruby-identifier">last</span>.<span class="ruby-identifier">move_higher</span>
+</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-acts_as_list">acts_as_list</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-acts_as_list">
+            
+              <a name="method-i-acts_as_list"></a><b>acts_as_list</b>(options = {})
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Configuration options are:</p>
+<ul><li>
+<p><code>column</code> - specifies the column name to use for keeping the
+position integer (default: position)</p>
+</li><li>
+<p><code>scope</code> - restricts what is to be considered a list. Given a
+symbol, it'll attach "_id"  (if that hasn't been already) and use that as
+the foreign key restriction. It's also possible  to give it an entire
+string that is interpolated if you need a tighter scope than just a foreign
+key. Example: <code>acts_as_list :scope =&gt; 'todo_list_id =
+#{todo_list_id} AND completed = 0'</code></p>
+</li></ul>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-acts_as_list_source')" id="l_method-i-acts_as_list_source">show</a>
+                
+              </p>
+              <div id="method-i-acts_as_list_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/lib/active_record/acts/list.rb, line 33</span>
+        <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">acts_as_list</span>(<span class="ruby-identifier">options</span> = {})
+          <span class="ruby-identifier">configuration</span> = { <span class="ruby-value">:column</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;position&quot;</span>, <span class="ruby-value">:scope</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;1 = 1&quot;</span> }
+          <span class="ruby-identifier">configuration</span>.<span class="ruby-identifier">update</span>(<span class="ruby-identifier">options</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Hash</span>)
+
+          <span class="ruby-identifier">configuration</span>[<span class="ruby-value">:scope</span>] = <span class="ruby-node">&quot;#{configuration[:scope]}_id&quot;</span>.<span class="ruby-identifier">intern</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-value">:scope</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>) <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-value">:scope</span>].<span class="ruby-identifier">to_s</span> <span class="ruby-operator">!~</span> <span class="ruby-regexp">%r_id$/</span>
+          
+          <span class="ruby-keyword">if</span> <span class="ruby-identifier">configuration</span>[<span class="ruby-value">:scope</span>].<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Symbol</span>)
+            <span class="ruby-identifier">scope_condition_method</span> = <span class="ruby-node">%Q(
+              def scope_condition
+                if #{configuration[:scope].to_s}.nil?
+                  &quot;#{configuration[:scope].to_s} IS NULL&quot;
+                else
+                  &quot;#{configuration[:scope].to_s} = \#{#{configuration[:scope].to_s}}&quot;
+                end
+              end
+            )</span>
+          <span class="ruby-keyword">else</span>
+            <span class="ruby-identifier">scope_condition_method</span> = <span class="ruby-node">&quot;def scope_condition() \&quot;#{configuration[:scope]}\&quot; end&quot;</span>
+          <span class="ruby-keyword">end</span>
+          
+          <span class="ruby-identifier">class_eval</span> <span class="ruby-string">&quot;            include ActiveRecord::Acts::List::InstanceMethods
+
+            def acts_as_list_class
+              ::#{self.name}
+            end
+            
+            def position_column
+              '#{configuration[:column]}'
+            end
+            
+            #{scope_condition_method}
+            
+            before_destroy :remove_from_list
+            before_create  :add_to_list_bottom
+&quot;</span>
+        <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

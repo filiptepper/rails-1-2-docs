@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActiveRecordAssertionsControllerTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActiveRecordAssertionsControllerTest 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="ActiveRecordTestCase.html">ActiveRecordTestCase</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/activerecord/active_record_assertions_test_rb.html">rails/actionpack/test/activerecord/active_record_assertions_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-assert_deprecated_assertion">assert_deprecated_assertion</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-setup">setup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_all_invalid_columns">test_all_invalid_columns</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_invalid_record">test_invalid_record</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_some_invalid_columns">test_some_invalid_columns</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_valid_record">test_valid_record</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-setup">
+            
+              <a name="method-i-setup"></a><b>setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-setup_source')" id="l_method-i-setup_source">show</a>
+                
+              </p>
+              <div id="method-i-setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_assertions_test.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">setup</span>
+  <span class="ruby-ivar">@request</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestRequest</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@response</span> = <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">TestResponse</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-constant">ActiveRecordAssertionsController</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-keyword">super</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_all_invalid_columns">
+            
+              <a name="method-i-test_all_invalid_columns"></a><b>test_all_invalid_columns</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>test for 2 bad apples columns</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_all_invalid_columns_source')" id="l_method-i-test_all_invalid_columns_source">show</a>
+                
+              </p>
+              <div id="method-i-test_all_invalid_columns_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_assertions_test.rb, line 62</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_all_invalid_columns</span>
+  <span class="ruby-identifier">process</span> <span class="ruby-value">:nasty_columns_2</span>
+  <span class="ruby-identifier">assert_response</span> <span class="ruby-value">:success</span>
+
+  <span class="ruby-identifier">assert_deprecated_assertion</span> { <span class="ruby-identifier">assert_invalid_record</span> <span class="ruby-string">'company'</span> }
+  <span class="ruby-identifier">assert_deprecated_assertion</span> { <span class="ruby-identifier">assert_invalid_column_on_record</span> <span class="ruby-string">'company'</span>, <span class="ruby-string">'rating'</span> }
+  <span class="ruby-identifier">assert_deprecated_assertion</span> { <span class="ruby-identifier">assert_invalid_column_on_record</span> <span class="ruby-string">'company'</span>, <span class="ruby-string">'name'</span> }
+  <span class="ruby-identifier">assert_deprecated_assertion</span> { <span class="ruby-identifier">assert_invalid_column_on_record</span> <span class="ruby-string">'company'</span>, <span class="ruby-node">%w(name rating)</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_invalid_record">
+            
+              <a name="method-i-test_invalid_record"></a><b>test_invalid_record</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>ensure we have problems with an <a
+href="ActiveRecord.html">ActiveRecord</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_invalid_record_source')" id="l_method-i-test_invalid_record_source">show</a>
+                
+              </p>
+              <div id="method-i-test_invalid_record_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_assertions_test.rb, line 81</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_invalid_record</span>
+  <span class="ruby-identifier">process</span> <span class="ruby-value">:bad_company</span>
+  <span class="ruby-identifier">assert_response</span> <span class="ruby-value">:success</span>
+
+  <span class="ruby-identifier">assert_deprecated_assertion</span> { <span class="ruby-identifier">assert_invalid_record</span> <span class="ruby-string">'company'</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_some_invalid_columns">
+            
+              <a name="method-i-test_some_invalid_columns"></a><b>test_some_invalid_columns</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>test for 1 bad apple column</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_some_invalid_columns_source')" id="l_method-i-test_some_invalid_columns_source">show</a>
+                
+              </p>
+              <div id="method-i-test_some_invalid_columns_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_assertions_test.rb, line 51</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_some_invalid_columns</span>
+  <span class="ruby-identifier">process</span> <span class="ruby-value">:nasty_columns_1</span>
+  <span class="ruby-identifier">assert_response</span> <span class="ruby-value">:success</span>
+
+  <span class="ruby-identifier">assert_deprecated_assertion</span> { <span class="ruby-identifier">assert_invalid_record</span> <span class="ruby-string">'company'</span> }
+  <span class="ruby-identifier">assert_deprecated_assertion</span> { <span class="ruby-identifier">assert_invalid_column_on_record</span> <span class="ruby-string">'company'</span>, <span class="ruby-string">'rating'</span> }
+  <span class="ruby-identifier">assert_deprecated_assertion</span> { <span class="ruby-identifier">assert_valid_column_on_record</span> <span class="ruby-string">'company'</span>, <span class="ruby-string">'name'</span> }
+  <span class="ruby-identifier">assert_deprecated_assertion</span> { <span class="ruby-identifier">assert_valid_column_on_record</span> <span class="ruby-string">'company'</span>, <span class="ruby-node">%w(name id)</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_valid_record">
+            
+              <a name="method-i-test_valid_record"></a><b>test_valid_record</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>ensure we have no problems with an <a
+href="ActiveRecord.html">ActiveRecord</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_valid_record_source')" id="l_method-i-test_valid_record_source">show</a>
+                
+              </p>
+              <div id="method-i-test_valid_record_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_assertions_test.rb, line 73</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_valid_record</span>
+  <span class="ruby-identifier">process</span> <span class="ruby-value">:good_company</span>
+  <span class="ruby-identifier">assert_response</span> <span class="ruby-value">:success</span>
+
+  <span class="ruby-identifier">assert_deprecated_assertion</span> { <span class="ruby-identifier">assert_valid_record</span> <span class="ruby-string">'company'</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-assert_deprecated_assertion">
+            
+              <a name="method-i-assert_deprecated_assertion"></a><b>assert_deprecated_assertion</b>(message = nil, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_deprecated_assertion_source')" id="l_method-i-assert_deprecated_assertion_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_deprecated_assertion_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/activerecord/active_record_assertions_test.rb, line 89</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert_deprecated_assertion</span>(<span class="ruby-identifier">message</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">assert_deprecated</span>(<span class="ruby-regexp">%rassert_.*from test_/</span>, &amp;<span class="ruby-identifier">block</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

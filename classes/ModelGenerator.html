@@ -1,0 +1,245 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ModelGenerator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ModelGenerator 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="Rails/Generator/NamedBase.html">Rails::Generator::NamedBase</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/railties/lib/rails_generator/generators/components/model/model_generator_rb.html">rails/railties/lib/rails_generator/generators/components/model/model_generator.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-add_options-21">add_options!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-banner">banner</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-manifest">manifest</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-manifest">
+            
+              <a name="method-i-manifest"></a><b>manifest</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-manifest_source')" id="l_method-i-manifest_source">show</a>
+                
+              </p>
+              <div id="method-i-manifest_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/model/model_generator.rb, line 4</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">manifest</span>
+  <span class="ruby-identifier">record</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">m</span><span class="ruby-operator">|</span>
+    <span class="ruby-comment"># Check for class naming collisions.</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">class_collisions</span> <span class="ruby-identifier">class_path</span>, <span class="ruby-identifier">class_name</span>, <span class="ruby-node">&quot;#{class_name}Test&quot;</span>
+
+    <span class="ruby-comment"># Model, test, and fixture directories.</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">directory</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/models'</span>, <span class="ruby-identifier">class_path</span>)
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">directory</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'test/unit'</span>, <span class="ruby-identifier">class_path</span>)
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">directory</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'test/fixtures'</span>, <span class="ruby-identifier">class_path</span>)
+
+    <span class="ruby-comment"># Model class, unit test, and fixtures.</span>
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">'model.rb'</span>,      <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'app/models'</span>, <span class="ruby-identifier">class_path</span>, <span class="ruby-node">&quot;#{file_name}.rb&quot;</span>)
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">'unit_test.rb'</span>,  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'test/unit'</span>, <span class="ruby-identifier">class_path</span>, <span class="ruby-node">&quot;#{file_name}_test.rb&quot;</span>)
+    <span class="ruby-identifier">m</span>.<span class="ruby-identifier">template</span> <span class="ruby-string">'fixtures.yml'</span>,  <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'test/fixtures'</span>, <span class="ruby-identifier">class_path</span>, <span class="ruby-node">&quot;#{table_name}.yml&quot;</span>)
+
+    <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:skip_migration</span>]
+      <span class="ruby-identifier">m</span>.<span class="ruby-identifier">migration_template</span> <span class="ruby-string">'migration.rb'</span>, <span class="ruby-string">'db/migrate'</span>, <span class="ruby-value">:assigns</span> =<span class="ruby-operator">&gt;</span> {
+        <span class="ruby-value">:migration_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Create#{class_name.pluralize.gsub(/::/, '')}&quot;</span>
+      }, <span class="ruby-value">:migration_file_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;create_#{file_path.gsub(/\//, '_').pluralize}&quot;</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-add_options-21">
+            
+              <a name="method-i-add_options-21"></a><b>add_options!</b>(opt)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-add_options-21_source')" id="l_method-i-add_options-21_source">show</a>
+                
+              </p>
+              <div id="method-i-add_options-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/model/model_generator.rb, line 32</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">add_options!</span>(<span class="ruby-identifier">opt</span>)
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">''</span>
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">separator</span> <span class="ruby-string">'Options:'</span>
+  <span class="ruby-identifier">opt</span>.<span class="ruby-identifier">on</span>(<span class="ruby-string">&quot;--skip-migration&quot;</span>, 
+         <span class="ruby-string">&quot;Don't generate a migration file for this model&quot;</span>) { <span class="ruby-operator">|</span><span class="ruby-identifier">v</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:skip_migration</span>] = <span class="ruby-identifier">v</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-banner">
+            
+              <a name="method-i-banner"></a><b>banner</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-banner_source')" id="l_method-i-banner_source">show</a>
+                
+              </p>
+              <div id="method-i-banner_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/rails_generator/generators/components/model/model_generator.rb, line 28</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">banner</span>
+  <span class="ruby-node">&quot;Usage: #{$0} generate ModelName [field:type, field:type]&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

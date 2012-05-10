@@ -1,0 +1,166 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionController::UrlWriter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            ActionController::UrlWriter 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionpack/lib/action_controller/url_rewriter_rb.html">rails/actionpack/lib/action_controller/url_rewriter.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Write URLs from arbitrary places in your codebase, such as your mailers.</p>
+
+<p>Example:</p>
+
+<pre class="ruby"> <span class="ruby-keyword">class</span> <span class="ruby-constant">MyMailer</span>
+   <span class="ruby-identifier">include</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">UrlWriter</span>
+   <span class="ruby-identifier">default_url_options</span>[:<span class="ruby-identifier">host</span>] = <span class="ruby-string">'www.basecamphq.com'</span>
+
+   <span class="ruby-keyword">def</span> <span class="ruby-identifier">signup_url</span>(<span class="ruby-identifier">token</span>)
+     <span class="ruby-identifier">url_for</span>(:<span class="ruby-identifier">controller</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'signup'</span>, <span class="ruby-identifier">action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'index'</span>, :<span class="ruby-identifier">token</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">token</span>)
+   <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>In addition to providing <code>url_for</code>, named routes are also
+accessible after including <a href="UrlWriter.html">UrlWriter</a>.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-url_for">url_for</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-url_for">
+            
+              <a name="method-i-url_for"></a><b>url_for</b>(options)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Generate a url with the provided options. The following special options may
+effect the constructed url:</p>
+
+<pre>* :host Specifies the host the link should be targetted at. This option
+  must be provided either explicitly, or via default_url_options.
+* :protocol The protocol to connect to. Defaults to 'http'
+* :port Optionally specify the port to connect to.</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-url_for_source')" id="l_method-i-url_for_source">show</a>
+                
+              </p>
+              <div id="method-i-url_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/url_rewriter.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">url_for</span>(<span class="ruby-identifier">options</span>)
+  <span class="ruby-identifier">options</span> = <span class="ruby-keyword">self</span>.<span class="ruby-identifier">class</span>.<span class="ruby-identifier">default_url_options</span>.<span class="ruby-identifier">merge</span>(<span class="ruby-identifier">options</span>)
+  
+  <span class="ruby-identifier">url</span> = <span class="ruby-string">''</span>
+  <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span> <span class="ruby-value">:only_path</span>
+    <span class="ruby-identifier">url</span> <span class="ruby-operator">&lt;&lt;</span> (<span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:protocol</span>) <span class="ruby-operator">||</span> <span class="ruby-string">'http'</span>)
+    <span class="ruby-identifier">url</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'://'</span>
+    
+    <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Missing host to link to! Please provide :host parameter or set default_url_options[:host]&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">options</span>[<span class="ruby-value">:host</span>]
+    <span class="ruby-identifier">url</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span>(<span class="ruby-value">:host</span>)
+    <span class="ruby-identifier">url</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-node">&quot;:#{options.delete(:port)}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:port</span>)
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-comment"># Delete the unused options to prevent their appearance in the query string</span>
+    [<span class="ruby-value">:protocol</span>, <span class="ruby-value">:host</span>, <span class="ruby-value">:port</span>].<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">k</span><span class="ruby-operator">|</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">delete</span> <span class="ruby-identifier">k</span> }
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">anchor</span> = <span class="ruby-node">&quot;##{options.delete(:anchor)}&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">options</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-value">:anchor</span>)
+  <span class="ruby-identifier">url</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Routing</span><span class="ruby-operator">::</span><span class="ruby-constant">Routes</span>.<span class="ruby-identifier">generate</span>(<span class="ruby-identifier">options</span>, {})
+  <span class="ruby-keyword">return</span> <span class="ruby-node">&quot;#{url}#{anchor}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

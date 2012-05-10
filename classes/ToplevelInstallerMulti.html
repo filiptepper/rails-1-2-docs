@@ -1,0 +1,771 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ToplevelInstallerMulti</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ToplevelInstallerMulti 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="ToplevelInstaller.html">ToplevelInstaller</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionwebservice/setup_rb.html">rails/actionwebservice/setup.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-declare_packages">declare_packages</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-each_selected_installers">each_selected_installers</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exec_clean">exec_clean</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exec_config">exec_config</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exec_distclean">exec_distclean</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exec_install">exec_install</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-exec_setup">exec_setup</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-extract_selection">extract_selection</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-init_installers">init_installers</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-no_harm-3F">no_harm?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-print_usage">print_usage</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-run_metaconfigs">run_metaconfigs</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>V</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-verbose-3F">verbose?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="HookUtils.html">
+              HookUtils
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="HookScriptAPI.html">
+              HookScriptAPI
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="FileOperations.html">
+              FileOperations
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>packages</td>
+            <td class='attr-desc'><p>multi-package metaconfig API</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(ardir)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 932</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">ardir</span>)
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-ivar">@packages</span> = <span class="ruby-identifier">all_dirs_in</span>(<span class="ruby-node">&quot;#{@ardir}/packages&quot;</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">'no package exists'</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@packages</span>.<span class="ruby-identifier">empty?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-declare_packages">
+            
+              <a name="method-i-declare_packages"></a><b>declare_packages</b>(list)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-declare_packages_source')" id="l_method-i-declare_packages_source">show</a>
+                
+              </p>
+              <div id="method-i-declare_packages_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 982</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">declare_packages</span>(<span class="ruby-identifier">list</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">'package list is empty'</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">empty?</span>
+  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;directory packages/#{name} does not exist&quot;</span>               <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dir?</span>(<span class="ruby-node">&quot;#{@ardir}/packages/#{name}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@packages</span> = <span class="ruby-identifier">list</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each_selected_installers">
+            
+              <a name="method-i-each_selected_installers"></a><b>each_selected_installers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>lib</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-each_selected_installers_source')" id="l_method-i-each_selected_installers_source">show</a>
+                
+              </p>
+              <div id="method-i-each_selected_installers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1032</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">each_selected_installers</span>
+  <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span> <span class="ruby-string">'packages'</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dir?</span>(<span class="ruby-string">'packages'</span>)
+  <span class="ruby-ivar">@selected</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pack</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">$stderr</span>.<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Processing the package `#{pack}' ...&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@options</span>[<span class="ruby-string">'verbose'</span>]
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">mkdir</span> <span class="ruby-node">&quot;packages/#{pack}&quot;</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">dir?</span>(<span class="ruby-node">&quot;packages/#{pack}&quot;</span>)
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-node">&quot;packages/#{pack}&quot;</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-ivar">@installers</span>[<span class="ruby-identifier">pack</span>]
+    <span class="ruby-constant">Dir</span>.<span class="ruby-identifier">chdir</span> <span class="ruby-string">'../..'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_clean">
+            
+              <a name="method-i-exec_clean"></a><b>exec_clean</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_clean_source')" id="l_method-i-exec_clean_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_clean_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1014</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_clean</span>
+  <span class="ruby-identifier">rm_f</span> <span class="ruby-constant">ConfigTable</span>.<span class="ruby-identifier">savefile</span>
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-string">'pre-clean'</span>
+  <span class="ruby-identifier">each_selected_installers</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">inst</span><span class="ruby-operator">|</span> <span class="ruby-identifier">inst</span>.<span class="ruby-identifier">exec_clean</span> }
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-string">'post-clean'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_config">
+            
+              <a name="method-i-exec_config"></a><b>exec_config</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p><a href="Task.html">Task</a> Handlers</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_config_source')" id="l_method-i-exec_config_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_config_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 995</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_config</span>
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-string">'pre-config'</span>
+  <span class="ruby-identifier">each_selected_installers</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">inst</span><span class="ruby-operator">|</span> <span class="ruby-identifier">inst</span>.<span class="ruby-identifier">exec_config</span> }
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-string">'post-config'</span>
+  <span class="ruby-ivar">@config</span>.<span class="ruby-identifier">save</span>   <span class="ruby-comment"># must be final</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_distclean">
+            
+              <a name="method-i-exec_distclean"></a><b>exec_distclean</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_distclean_source')" id="l_method-i-exec_distclean_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_distclean_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1021</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_distclean</span>
+  <span class="ruby-identifier">rm_f</span> <span class="ruby-constant">ConfigTable</span>.<span class="ruby-identifier">savefile</span>
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-string">'pre-distclean'</span>
+  <span class="ruby-identifier">each_selected_installers</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">inst</span><span class="ruby-operator">|</span> <span class="ruby-identifier">inst</span>.<span class="ruby-identifier">exec_distclean</span> }
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-string">'post-distclean'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_install">
+            
+              <a name="method-i-exec_install"></a><b>exec_install</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_install_source')" id="l_method-i-exec_install_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_install_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1008</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_install</span>
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-string">'pre-install'</span>
+  <span class="ruby-identifier">each_selected_installers</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">inst</span><span class="ruby-operator">|</span> <span class="ruby-identifier">inst</span>.<span class="ruby-identifier">exec_install</span> }
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-string">'post-install'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-exec_setup">
+            
+              <a name="method-i-exec_setup"></a><b>exec_setup</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-exec_setup_source')" id="l_method-i-exec_setup_source">show</a>
+                
+              </p>
+              <div id="method-i-exec_setup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1002</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">exec_setup</span>
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-string">'pre-setup'</span>
+  <span class="ruby-identifier">each_selected_installers</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">inst</span><span class="ruby-operator">|</span> <span class="ruby-identifier">inst</span>.<span class="ruby-identifier">exec_setup</span> }
+  <span class="ruby-identifier">run_hook</span> <span class="ruby-string">'post-setup'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-extract_selection">
+            
+              <a name="method-i-extract_selection"></a><b>extract_selection</b>(list)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-extract_selection_source')" id="l_method-i-extract_selection_source">show</a>
+                
+              </p>
+              <div id="method-i-extract_selection_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 961</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">extract_selection</span>(<span class="ruby-identifier">list</span>)
+  <span class="ruby-identifier">a</span> = <span class="ruby-identifier">list</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r,/</span>)
+  <span class="ruby-identifier">a</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">setup_rb_error</span> <span class="ruby-node">&quot;no such package: #{name}&quot;</span>  <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@installers</span>.<span class="ruby-identifier">key?</span>(<span class="ruby-identifier">name</span>)
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">a</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-init_installers">
+            
+              <a name="method-i-init_installers"></a><b>init_installers</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-init_installers_source')" id="l_method-i-init_installers_source">show</a>
+                
+              </p>
+              <div id="method-i-init_installers_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 945</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">init_installers</span>
+  <span class="ruby-ivar">@installers</span> = {}
+  <span class="ruby-ivar">@packages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">pack</span><span class="ruby-operator">|</span>
+    <span class="ruby-ivar">@installers</span>[<span class="ruby-identifier">pack</span>] = <span class="ruby-constant">Installer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-ivar">@config</span>, <span class="ruby-ivar">@options</span>,
+                                     <span class="ruby-node">&quot;#{@ardir}/packages/#{pack}&quot;</span>,
+                                     <span class="ruby-node">&quot;packages/#{pack}&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">with</span>    = <span class="ruby-identifier">extract_selection</span>(<span class="ruby-identifier">config</span>(<span class="ruby-string">'with'</span>))
+  <span class="ruby-identifier">without</span> = <span class="ruby-identifier">extract_selection</span>(<span class="ruby-identifier">config</span>(<span class="ruby-string">'without'</span>))
+  <span class="ruby-ivar">@selected</span> = <span class="ruby-ivar">@installers</span>.<span class="ruby-identifier">keys</span>.<span class="ruby-identifier">select</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+                (<span class="ruby-identifier">with</span>.<span class="ruby-identifier">empty?</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">with</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>))                        <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">without</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">name</span>)
+              }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-no_harm-3F">
+            
+              <a name="method-i-no_harm-3F"></a><b>no_harm?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-no_harm-3F_source')" id="l_method-i-no_harm-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-no_harm-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1047</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">no_harm?</span>
+  <span class="ruby-ivar">@options</span>[<span class="ruby-string">'no-harm'</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-print_usage">
+            
+              <a name="method-i-print_usage"></a><b>print_usage</b>(f)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-print_usage_source')" id="l_method-i-print_usage_source">show</a>
+                
+              </p>
+              <div id="method-i-print_usage_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 969</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">print_usage</span>(<span class="ruby-identifier">f</span>)
+  <span class="ruby-keyword">super</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'Inluded packages:'</span>
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span> <span class="ruby-string">'  '</span> <span class="ruby-operator">+</span> <span class="ruby-ivar">@packages</span>.<span class="ruby-identifier">sort</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">' '</span>)
+  <span class="ruby-identifier">f</span>.<span class="ruby-identifier">puts</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-run_metaconfigs">
+            
+              <a name="method-i-run_metaconfigs"></a><b>run_metaconfigs</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-run_metaconfigs_source')" id="l_method-i-run_metaconfigs_source">show</a>
+                
+              </p>
+              <div id="method-i-run_metaconfigs_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 938</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">run_metaconfigs</span>
+  <span class="ruby-identifier">eval_file_ifexist</span> <span class="ruby-node">&quot;#{@ardir}/metaconfig&quot;</span>
+  <span class="ruby-ivar">@packages</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">name</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">eval_file_ifexist</span> <span class="ruby-node">&quot;#{@ardir}/packages/#{name}/metaconfig&quot;</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-verbose-3F">
+            
+              <a name="method-i-verbose-3F"></a><b>verbose?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-verbose-3F_source')" id="l_method-i-verbose-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-verbose-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionwebservice/setup.rb, line 1043</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">verbose?</span>
+  <span class="ruby-ivar">@options</span>[<span class="ruby-string">'verbose'</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

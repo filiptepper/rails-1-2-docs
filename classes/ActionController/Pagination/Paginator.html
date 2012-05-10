@@ -1,0 +1,697 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ActionController::Pagination::Paginator</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ActionController::Pagination::Paginator 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../../files/rails/actionpack/lib/action_controller/pagination_rb.html">rails/actionpack/lib/action_controller/pagination.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p><a href="../../A.html">A</a> class representing a paginator for an Active
+Record collection.</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Paginator/Page.html">ActionController::Pagination::Paginator::Page</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Paginator/Window.html">ActionController::Pagination::Paginator::Window</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-5B-5D">[]</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-current">current</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-current_page">current_page</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-current_page-3D">current_page=</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-each">each</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-first">first</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-first_page">first_page</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-has_page_number-3F">has_page_number?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-last">last</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-last_page">last_page</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-length">length</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-page_count">page_count</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="../../Enumerable.html">
+              Enumerable
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>controller</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>item_count</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>items_per_page</td>
+            <td class='attr-desc'></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(controller, item_count, items_per_page, current_page=1)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Creates a new <a href="Paginator.html">Paginator</a> on the given
+<code>controller</code> for a set of items of size <code>item_count</code>
+and having <code>items_per_page</code> items per page. Raises ArgumentError
+if <a href="Paginator.html#attribute-i-items_per_page">#items_per_page</a>
+is out of bounds (i.e., less than or equal to zero). The page <a
+href="../../CGI.html">CGI</a> parameter for links defaults to “page” and
+can be overridden with <code>page_parameter</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/pagination.rb, line 221</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">controller</span>, <span class="ruby-identifier">item_count</span>, <span class="ruby-identifier">items_per_page</span>, <span class="ruby-identifier">current_page</span>=<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">'must have at least one item per page'</span> <span class="ruby-keyword">if</span>
+    <span class="ruby-identifier">items_per_page</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-number">0</span>
+
+  <span class="ruby-ivar">@controller</span> = <span class="ruby-identifier">controller</span>
+  <span class="ruby-ivar">@item_count</span> = <span class="ruby-identifier">item_count</span> <span class="ruby-operator">||</span> <span class="ruby-number">0</span>
+  <span class="ruby-ivar">@items_per_page</span> = <span class="ruby-identifier">items_per_page</span>
+  <span class="ruby-ivar">@pages</span> = {}
+  
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">current_page</span> = <span class="ruby-identifier">current_page</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-5B-5D">
+            
+              <a name="method-i-5B-5D"></a><b>[]</b>(number)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a new <a href="Paginator/Page.html">Page</a> representing the page
+with the given index <code>number</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-5B-5D_source')" id="l_method-i-5B-5D_source">show</a>
+                
+              </p>
+              <div id="method-i-5B-5D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/pagination.rb, line 279</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">[]</span>(<span class="ruby-keyword ruby-title">number</span>)
+  <span class="ruby-ivar">@pages</span>[<span class="ruby-identifier">number</span>] <span class="ruby-operator">||=</span> <span class="ruby-constant">Page</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">self</span>, <span class="ruby-identifier">number</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-current">
+            
+              <a name="method-i-current"></a><b>current</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-current_page">
+            
+              <a name="method-i-current_page"></a><b>current_page</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a <a href="Paginator/Page.html">Page</a> object representing this
+paginator’s current page.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Paginator.html#method-i-current">current</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-current_page_source')" id="l_method-i-current_page_source">show</a>
+                
+              </p>
+              <div id="method-i-current_page_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/pagination.rb, line 247</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">current_page</span>
+  <span class="ruby-ivar">@current_page</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">self</span>[<span class="ruby-ivar">@current_page_number</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-current_page-3D">
+            
+              <a name="method-i-current_page-3D"></a><b>current_page=</b>(page)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets the current page number of this paginator. If <code>page</code> is a
+<a href="Paginator/Page.html">Page</a> object, its <code>number</code>
+attribute is used as the value; if the page does  not belong to this <a
+href="Paginator.html">Paginator</a>, an ArgumentError is raised.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-current_page-3D_source')" id="l_method-i-current_page-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-current_page-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/pagination.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">current_page=</span>(<span class="ruby-identifier">page</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">page</span>.<span class="ruby-identifier">is_a?</span> <span class="ruby-constant">Page</span>
+    <span class="ruby-identifier">raise</span> <span class="ruby-constant">ArgumentError</span>, <span class="ruby-string">'Page/Paginator mismatch'</span> <span class="ruby-keyword">unless</span>
+      <span class="ruby-identifier">page</span>.<span class="ruby-identifier">paginator</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">self</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">page</span> = <span class="ruby-identifier">page</span>.<span class="ruby-identifier">to_i</span>
+  <span class="ruby-ivar">@current_page_number</span> = <span class="ruby-identifier">has_page_number?</span>(<span class="ruby-identifier">page</span>) <span class="ruby-operator">?</span> <span class="ruby-identifier">page</span> <span class="ruby-operator">:</span> <span class="ruby-number">1</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-each">
+            
+              <a name="method-i-each"></a><b>each</b>(&amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Successively yields all the paginator’s pages to the given block.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-each_source')" id="l_method-i-each_source">show</a>
+                
+              </p>
+              <div id="method-i-each_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/pagination.rb, line 284</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">each</span>(&amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">page_count</span>.<span class="ruby-identifier">times</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">n</span><span class="ruby-operator">|</span>
+    <span class="ruby-keyword">yield</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">n</span><span class="ruby-operator">+</span><span class="ruby-number">1</span>]
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-first">
+            
+              <a name="method-i-first"></a><b>first</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-first_page">
+            
+              <a name="method-i-first_page"></a><b>first_page</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a new <a href="Paginator/Page.html">Page</a> representing the first
+page in this paginator.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Paginator.html#method-i-first">first</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-first_page_source')" id="l_method-i-first_page_source">show</a>
+                
+              </p>
+              <div id="method-i-first_page_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/pagination.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">first_page</span>
+  <span class="ruby-ivar">@first_page</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">self</span>[<span class="ruby-number">1</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-has_page_number-3F">
+            
+              <a name="method-i-has_page_number-3F"></a><b>has_page_number?</b>(number)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true if this paginator contains the page of index
+<code>number</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-has_page_number-3F_source')" id="l_method-i-has_page_number-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-has_page_number-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/pagination.rb, line 273</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">has_page_number?</span>(<span class="ruby-identifier">number</span>)
+  <span class="ruby-identifier">number</span> <span class="ruby-operator">&gt;=</span> <span class="ruby-number">1</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">number</span> <span class="ruby-operator">&lt;=</span> <span class="ruby-identifier">page_count</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-last">
+            
+              <a name="method-i-last"></a><b>last</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-last_page">
+            
+              <a name="method-i-last_page"></a><b>last_page</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns a new <a href="Paginator/Page.html">Page</a> representing the last
+page in this paginator.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Paginator.html#method-i-last">last</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-last_page_source')" id="l_method-i-last_page_source">show</a>
+                
+              </p>
+              <div id="method-i-last_page_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/pagination.rb, line 259</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">last_page</span>
+  <span class="ruby-ivar">@last_page</span> <span class="ruby-operator">||=</span> <span class="ruby-keyword">self</span>[<span class="ruby-identifier">page_count</span>] 
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-length">
+            
+              <a name="method-i-length"></a><b>length</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-page_count">
+            
+              <a name="method-i-page_count"></a><b>page_count</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the number of pages in this paginator.</p>
+            </div>
+          
+          
+          
+            <div class="aka">
+              Also aliased as: <a href="Paginator.html#method-i-length">length</a>
+            </div>
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-page_count_source')" id="l_method-i-page_count_source">show</a>
+                
+              </p>
+              <div id="method-i-page_count_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/pagination.rb, line 265</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">page_count</span>
+  <span class="ruby-ivar">@page_count</span> <span class="ruby-operator">||=</span> <span class="ruby-ivar">@item_count</span>.<span class="ruby-identifier">zero?</span> <span class="ruby-operator">?</span> <span class="ruby-number">1</span> <span class="ruby-operator">:</span>
+                    (<span class="ruby-identifier">q</span>,<span class="ruby-identifier">r</span>=<span class="ruby-ivar">@item_count</span>.<span class="ruby-identifier">divmod</span>(<span class="ruby-ivar">@items_per_page</span>); <span class="ruby-identifier">r</span><span class="ruby-operator">==</span><span class="ruby-number">0</span><span class="ruby-operator">?</span> <span class="ruby-identifier">q</span> <span class="ruby-operator">:</span> <span class="ruby-identifier">q</span><span class="ruby-operator">+</span><span class="ruby-number">1</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

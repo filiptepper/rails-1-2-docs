@@ -1,0 +1,92 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>USAGE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            USAGE
+        </h1>
+        <ul class="files">
+            <li>rails/railties/lib/rails_generator/generators/components/resource/templates/USAGE</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Description:</p>
+
+<pre>The resource generator creates an empty model and controller for use in a REST-friendly, resource-oriented
+application. Say you want to a resource called post. Normally, you could just call &quot;script/generate model post&quot; and
+&quot;script/generate controller posts&quot;. This generator basically just collapses these two generators into one step.
+
+The generator takes the name of the model as its first argument. This model name is then pluralized to get the 
+controller name. So &quot;resource post&quot; will generate a Post model and a PostsController and will be intended
+for URLs like /posts and /posts/45.
+
+As additional parameters, the generator will take attribute pairs described by name and type. These attributes will
+be used to prepopulate the migration to create the table for the model and give you a set of predefined fixture.    
+You don't have to think up all attributes up front, but it's a good idea of adding just the baseline of what's 
+needed to start really working with the resource.</pre>
+
+<p>Examples:</p>
+
+<pre>./script/generate resource post
+./script/generate resource post title:string created_on:date body:text published:boolean
+./script/generate resource purchase order_id:integer created_at:datetime amount:decimal</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

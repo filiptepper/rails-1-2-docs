@@ -1,0 +1,284 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>TMail::Unquoter</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            TMail::Unquoter 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionmailer/lib/action_mailer/vendor/tmail/quoting_rb.html">rails/actionmailer/lib/action_mailer/vendor/tmail/quoting.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-convert_to">convert_to</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-unquote_and_convert_to">unquote_and_convert_to</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-unquote_base64_and_convert_to">unquote_base64_and_convert_to</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-unquote_quoted_printable_and_convert_to">unquote_quoted_printable_and_convert_to</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-convert_to">
+            
+              <a name="method-c-convert_to"></a><b>convert_to</b>(text, to, from)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-convert_to_source')" id="l_method-c-convert_to_source">show</a>
+                
+              </p>
+              <div id="method-c-convert_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/quoting.rb, line 86</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">convert_to</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">to</span>, <span class="ruby-identifier">from</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">text</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">to</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">from</span>
+  <span class="ruby-identifier">text</span> <span class="ruby-operator">?</span> <span class="ruby-constant">Iconv</span>.<span class="ruby-identifier">iconv</span>(<span class="ruby-identifier">to</span>, <span class="ruby-identifier">from</span>, <span class="ruby-identifier">text</span>).<span class="ruby-identifier">first</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>
+<span class="ruby-keyword">rescue</span> <span class="ruby-constant">Iconv</span><span class="ruby-operator">::</span><span class="ruby-constant">IllegalSequence</span>, <span class="ruby-constant">Iconv</span><span class="ruby-operator">::</span><span class="ruby-constant">InvalidEncoding</span>, <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EINVAL</span>
+  <span class="ruby-comment"># the 'from' parameter specifies a charset other than what the text</span>
+  <span class="ruby-comment"># actually is...not much we can do in this case but just return the</span>
+  <span class="ruby-comment"># unconverted text.</span>
+  <span class="ruby-comment">#</span>
+  <span class="ruby-comment"># Ditto if either parameter represents an unknown charset, like</span>
+  <span class="ruby-comment"># X-UNKNOWN.</span>
+  <span class="ruby-identifier">text</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-unquote_and_convert_to">
+            
+              <a name="method-c-unquote_and_convert_to"></a><b>unquote_and_convert_to</b>(text, to_charset, from_charset = &quot;iso-8859-1&quot;, preserve_underscores=false)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-unquote_and_convert_to_source')" id="l_method-c-unquote_and_convert_to_source">show</a>
+                
+              </p>
+              <div id="method-c-unquote_and_convert_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/quoting.rb, line 50</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">unquote_and_convert_to</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">to_charset</span>, <span class="ruby-identifier">from_charset</span> = <span class="ruby-string">&quot;iso-8859-1&quot;</span>, <span class="ruby-identifier">preserve_underscores</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-string">&quot;&quot;</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">text</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r(.*?)(?:(?:=\?(.*?)\?(.)\?(.*?)\?=)|$)/</span>) <span class="ruby-keyword">do</span>
+    <span class="ruby-identifier">before</span> = <span class="ruby-node">$1</span>
+    <span class="ruby-identifier">from_charset</span> = <span class="ruby-node">$2</span>
+    <span class="ruby-identifier">quoting_method</span> = <span class="ruby-node">$3</span>
+    <span class="ruby-identifier">text</span> = <span class="ruby-node">$4</span>
+
+    <span class="ruby-identifier">before</span> = <span class="ruby-identifier">convert_to</span>(<span class="ruby-identifier">before</span>, <span class="ruby-identifier">to_charset</span>, <span class="ruby-identifier">from_charset</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">before</span>.<span class="ruby-identifier">length</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+    <span class="ruby-identifier">before</span> <span class="ruby-operator">+</span> <span class="ruby-keyword">case</span> <span class="ruby-identifier">quoting_method</span>
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;q&quot;</span>, <span class="ruby-string">&quot;Q&quot;</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">unquote_quoted_printable_and_convert_to</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">to_charset</span>, <span class="ruby-identifier">from_charset</span>, <span class="ruby-identifier">preserve_underscores</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-string">&quot;b&quot;</span>, <span class="ruby-string">&quot;B&quot;</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-identifier">unquote_base64_and_convert_to</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">to_charset</span>, <span class="ruby-identifier">from_charset</span>)
+        <span class="ruby-keyword">when</span> <span class="ruby-keyword">nil</span> <span class="ruby-keyword">then</span>
+          <span class="ruby-comment"># will be nil at the end of the string, due to the nature of</span>
+          <span class="ruby-comment"># the regex used.</span>
+          <span class="ruby-string">&quot;&quot;</span>
+        <span class="ruby-keyword">else</span>
+          <span class="ruby-identifier">raise</span> <span class="ruby-node">&quot;unknown quoting method #{quoting_method.inspect}&quot;</span>
+      <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-unquote_base64_and_convert_to">
+            
+              <a name="method-c-unquote_base64_and_convert_to"></a><b>unquote_base64_and_convert_to</b>(text, to, from)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-unquote_base64_and_convert_to_source')" id="l_method-c-unquote_base64_and_convert_to_source">show</a>
+                
+              </p>
+              <div id="method-c-unquote_base64_and_convert_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/quoting.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">unquote_base64_and_convert_to</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">to</span>, <span class="ruby-identifier">from</span>)
+  <span class="ruby-identifier">convert_to</span>(<span class="ruby-constant">Base64</span>.<span class="ruby-identifier">decode</span>(<span class="ruby-identifier">text</span>).<span class="ruby-identifier">first</span>, <span class="ruby-identifier">to</span>, <span class="ruby-identifier">from</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-unquote_quoted_printable_and_convert_to">
+            
+              <a name="method-c-unquote_quoted_printable_and_convert_to"></a><b>unquote_quoted_printable_and_convert_to</b>(text, to, from, preserve_underscores=false)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-unquote_quoted_printable_and_convert_to_source')" id="l_method-c-unquote_quoted_printable_and_convert_to_source">show</a>
+                
+              </p>
+              <div id="method-c-unquote_quoted_printable_and_convert_to_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionmailer/lib/action_mailer/vendor/tmail/quoting.rb, line 74</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">unquote_quoted_printable_and_convert_to</span>(<span class="ruby-identifier">text</span>, <span class="ruby-identifier">to</span>, <span class="ruby-identifier">from</span>, <span class="ruby-identifier">preserve_underscores</span>=<span class="ruby-keyword">false</span>)
+  <span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r_/</span>, <span class="ruby-string">&quot; &quot;</span>) <span class="ruby-keyword">unless</span> <span class="ruby-identifier">preserve_underscores</span>
+  <span class="ruby-identifier">text</span> = <span class="ruby-identifier">text</span>.<span class="ruby-identifier">gsub</span>(<span class="ruby-regexp">%r\r\n|\r/</span>, <span class="ruby-string">&quot;\n&quot;</span>) <span class="ruby-comment"># normalize newlines</span>
+  <span class="ruby-identifier">convert_to</span>(<span class="ruby-identifier">text</span>.<span class="ruby-identifier">unpack</span>(<span class="ruby-string">&quot;M*&quot;</span>).<span class="ruby-identifier">first</span>, <span class="ruby-identifier">to</span>, <span class="ruby-identifier">from</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                        </div>
+    </div>
+  </body>
+</html>    

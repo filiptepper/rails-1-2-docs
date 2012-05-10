@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Rakefile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            Rakefile
+        </h1>
+        <ul class="files">
+            <li>rails/railties/Rakefile</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>require ‘rake’ require ‘rake/testtask’ require ‘rake/rdoctask’ require
+‘rake/gempackagetask’ require ‘rake/contrib/rubyforgepublisher’</p>
+
+<p>require ‘date’ require ‘rbconfig’</p>
+
+<p>require File.join(File.dirname(__FILE__), ‘lib/rails’, ‘version’)</p>
+
+<p>PKG_BUILD       = <a href="http://'PKG_BUILD'">ENV</a> ? ‘.’ + <a
+href="http://'PKG_BUILD'">ENV</a> : ” PKG_NAME        = ‘rails’ PKG_VERSION
+= Rails::VERSION::STRING + PKG_BUILD PKG_FILE_NAME   =
+“#{PKG_NAME}-#{PKG_VERSION}” PKG_DESTINATION = <a
+href="http://"RAILS_PKG_DESTINATION"">ENV</a> || “../#{PKG_NAME}”</p>
+
+<p>RELEASE_NAME  = “REL #{PKG_VERSION}”</p>
+
+<p>RUBY_FORGE_PROJECT = “rails” RUBY_FORGE_USER    = “webster132”</p>
+
+<p>## This is required until the regular test task ## below passes.  It’s not
+ideal, but at least ## we can see the failures task :test do</p>
+
+<pre class="ruby"><span class="ruby-constant">Dir</span>[<span class="ruby-string">'test     _test.rb'</span>].<span class="ruby-identifier">all?</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">system</span>(<span class="ruby-node">&quot;ruby #{file}&quot;</span>)
+<span class="ruby-keyword">end</span> <span class="ruby-keyword">or</span> <span class="ruby-identifier">raise</span> <span class="ruby-string">&quot;Failures&quot;</span>
+</pre>
+
+<p>end</p>
+
+<p>Rake::TestTask.new(“regular_test”) do |t|</p>
+
+<pre>t.libs &lt;&lt; 'test'
+t.pattern = 'test/   *_test.rb'
+t.warning = true
+t.verbose = true</pre>
+
+<p>end</p>
+
+<p>BASE_DIRS   = %w(</p>
+
+<pre>app config/environments components db doc log lib lib/tasks public script script/performance script/process test vendor vendor/plugins
+tmp/sessions tmp/cache tmp/sockets tmp/pids</pre>
+
+<p>)</p>
+
+<p>APP_DIRS    = %w( models controllers helpers views views/layouts )
+PUBLIC_DIRS = %w( images javascripts stylesheets ) TEST_DIRS   = %w(
+fixtures unit functional mocks mocks/development mocks/test )</p>
+
+<p>LOG_FILES    = %w( server.log development.log test.log production.log )
+HTML_FILES   = %w( 404.html 500.html index.html robots.txt favicon.ico
+images/rails.png</p>
+
+<pre>javascripts/prototype.js javascripts/application.js
+javascripts/effects.js javascripts/dragdrop.js javascripts/controls.js )</pre>
+
+<p>BIN_FILES    = %w( about breakpointer console destroy generate
+performance/benchmarker performance/profiler process/reaper process/spawner
+process/inspector runner server plugin )</p>
+
+<p>VENDOR_LIBS = %w( actionpack activerecord actionmailer activesupport
+actionwebservice railties )</p>
+
+<p>desc “Generates a fresh <a href="../../../classes/Rails.html">Rails</a>
+package with documentation” task :fresh_rails =&gt; [ :clean,
+:make_dir_structure, :initialize_file_stubs, :copy_vendor_libraries,
+:copy_ties_content, :generate_documentation ]</p>
+
+<p>desc “Generates a fresh <a href="../../../classes/Rails.html">Rails</a>
+package using GEMs with documentation” task :fresh_gem_rails =&gt; [
+:clean, :make_dir_structure, :initialize_file_stubs, :copy_ties_content,
+:copy_gem_environment ]</p>
+
+<p>desc “Generates a fresh <a href="../../../classes/Rails.html">Rails</a>
+package without documentation (faster)” task :fresh_rails_without_docs
+=&gt; [ :clean, :make_dir_structure, :initialize_file_stubs,
+:copy_vendor_libraries, :copy_ties_content ]</p>
+
+<p>desc “Generates a fresh <a href="../../../classes/Rails.html">Rails</a>
+package without documentation (faster)” task
+:fresh_rails_without_docs_using_links =&gt; [ :clean, :make_dir_structure,
+:initialize_file_stubs, :link_vendor_libraries, :copy_ties_content ]</p>
+
+<p>desc “Generates minimal <a href="../../../classes/Rails.html">Rails</a>
+package using symlinks” task :dev =&gt; [ :clean, :make_dir_structure,
+:initialize_file_stubs, :link_vendor_libraries, :copy_ties_content ]</p>
+
+<p>desc “Packages the fresh <a href="../../../classes/Rails.html">Rails</a>
+package with documentation” task :package =&gt; [ :clean, :fresh_rails ] do</p>
+
+<pre>system %{cd ..; tar -czvf #{PKG_NAME}-#{PKG_VERSION}.tgz #{PKG_NAME}}
+system %{cd ..; zip -r #{PKG_NAME}-#{PKG_VERSION}.zip #{PKG_NAME}}</pre>
+
+<p>end</p>
+
+<p>task :clean do</p>
+
+<pre>rm_rf PKG_DESTINATION</pre>
+
+<p>end</p>
+
+<p># Get external spinoffs ——————————————————————-</p>
+
+<p>desc “Updates railties to the latest version of the javascript spinoffs”
+task :update_js do</p>
+
+<pre>for js in %w( prototype controls dragdrop effects )
+  rm &quot;html/javascripts/#{js}.js&quot;
+  cp &quot;./../actionpack/lib/action_view/helpers/javascripts/#{js}.js&quot;, &quot;html/javascripts&quot;
+end</pre>
+
+<p>end</p>
+
+<p># Make directory structure —————————————————————-</p>
+
+<p>def make_dest_dirs(dirs, path = ‘.’)</p>
+
+<pre class="ruby"><span class="ruby-identifier">mkdir_p</span> <span class="ruby-identifier">dirs</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">PKG_DESTINATION</span>, <span class="ruby-identifier">path</span>.<span class="ruby-identifier">to_s</span>, <span class="ruby-identifier">dir</span>) }
+</pre>
+
+<p>end</p>
+
+<p>desc “Make the directory structure for the new <a
+href="../../../classes/Rails.html">Rails</a> application” task
+:make_dir_structure =&gt; [ :make_base_dirs, :make_app_dirs,
+:make_public_dirs, :make_test_dirs ]</p>
+
+<p>task(:make_base_dirs)   { make_dest_dirs BASE_DIRS              }
+task(:make_app_dirs)    { make_dest_dirs APP_DIRS,    ‘app’     }
+task(:make_public_dirs) { make_dest_dirs PUBLIC_DIRS, ‘public’  }
+task(:make_test_dirs)   { make_dest_dirs TEST_DIRS,   ‘test’    }</p>
+
+<p># Initialize file stubs ——————————————————————-</p>
+
+<p>desc “Initialize empty file stubs (such as for logging)” task
+:initialize_file_stubs =&gt; [ :initialize_log_files ]</p>
+
+<p>task :initialize_log_files do</p>
+
+<pre class="ruby"><span class="ruby-identifier">log_dir</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">PKG_DESTINATION</span>, <span class="ruby-string">'log'</span>)
+<span class="ruby-identifier">chmod</span> <span class="ruby-value">0777</span>, <span class="ruby-identifier">log_dir</span>
+<span class="ruby-constant">LOG_FILES</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">log_file</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">log_path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-identifier">log_dir</span>, <span class="ruby-identifier">log_file</span>)
+  <span class="ruby-identifier">touch</span> <span class="ruby-identifier">log_path</span>
+  <span class="ruby-identifier">chmod</span> <span class="ruby-value">0666</span>, <span class="ruby-identifier">log_path</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+<p># Copy Vendors —————————————————————————-</p>
+
+<p>desc “Copy in all the <a href="../../../classes/Rails.html">Rails</a>
+packages to vendor” task :copy_vendor_libraries do</p>
+
+<pre class="ruby"><span class="ruby-identifier">mkdir</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">PKG_DESTINATION</span>, <span class="ruby-string">'vendor'</span>, <span class="ruby-string">'rails'</span>)
+<span class="ruby-constant">VENDOR_LIBS</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cp_r</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'..'</span>, <span class="ruby-identifier">dir</span>), <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">PKG_DESTINATION</span>, <span class="ruby-string">'vendor'</span>, <span class="ruby-string">'rails'</span>, <span class="ruby-identifier">dir</span>) }
+<span class="ruby-constant">FileUtils</span>.<span class="ruby-identifier">rm_r</span>(<span class="ruby-constant">Dir</span>.<span class="ruby-identifier">glob</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">PKG_DESTINATION</span>, <span class="ruby-string">'vendor'</span>, <span class="ruby-string">'rails'</span>, <span class="ruby-string">&quot;**&quot;</span>, <span class="ruby-string">&quot;.svn&quot;</span>)))
+</pre>
+
+<p>end</p>
+
+<p>desc “Link in all the <a href="../../../classes/Rails.html">Rails</a>
+packages to vendor” task :link_vendor_libraries do</p>
+
+<pre class="ruby"><span class="ruby-identifier">mkdir</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">PKG_DESTINATION</span>, <span class="ruby-string">'vendor'</span>, <span class="ruby-string">'rails'</span>)
+<span class="ruby-constant">VENDOR_LIBS</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-identifier">ln_s</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'..'</span>, <span class="ruby-string">'..'</span>, <span class="ruby-string">'..'</span>, <span class="ruby-identifier">dir</span>), <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">PKG_DESTINATION</span>, <span class="ruby-string">'vendor'</span>, <span class="ruby-string">'rails'</span>, <span class="ruby-identifier">dir</span>) }
+</pre>
+
+<p>end</p>
+
+<p># Copy Ties Content ———————————————————————–</p>
+
+<p># :link_apache_config desc “Make copies of all the default content of ties”
+task :copy_ties_content =&gt; [</p>
+
+<pre>:copy_rootfiles, :copy_dispatches, :copy_html_files, :copy_application,
+:copy_configs, :copy_binfiles, :copy_test_helpers, :copy_app_doc_readme ]</pre>
+
+<p>task :copy_dispatches do</p>
+
+<pre>copy_with_rewritten_ruby_path(&quot;dispatches/dispatch.rb&quot;, &quot;#{PKG_DESTINATION}/public/dispatch.rb&quot;)
+chmod 0755, &quot;#{PKG_DESTINATION}/public/dispatch.rb&quot;
+
+copy_with_rewritten_ruby_path(&quot;dispatches/dispatch.rb&quot;, &quot;#{PKG_DESTINATION}/public/dispatch.cgi&quot;)
+chmod 0755, &quot;#{PKG_DESTINATION}/public/dispatch.cgi&quot;
+
+copy_with_rewritten_ruby_path(&quot;dispatches/dispatch.fcgi&quot;, &quot;#{PKG_DESTINATION}/public/dispatch.fcgi&quot;)
+chmod 0755, &quot;#{PKG_DESTINATION}/public/dispatch.fcgi&quot;
+
+# copy_with_rewritten_ruby_path(&quot;dispatches/gateway.cgi&quot;, &quot;#{PKG_DESTINATION}/public/gateway.cgi&quot;)
+# chmod 0755, &quot;#{PKG_DESTINATION}/public/gateway.cgi&quot;</pre>
+
+<p>end</p>
+
+<p>task :copy_html_files do</p>
+
+<pre class="ruby"><span class="ruby-constant">HTML_FILES</span>.<span class="ruby-identifier">each</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span> <span class="ruby-identifier">cp</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'html'</span>, <span class="ruby-identifier">file</span>), <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">PKG_DESTINATION</span>, <span class="ruby-string">'public'</span>, <span class="ruby-identifier">file</span>) }
+</pre>
+
+<p>end</p>
+
+<p>task :copy_application do</p>
+
+<pre>cp &quot;helpers/application.rb&quot;, &quot;#{PKG_DESTINATION}/app/controllers/application.rb&quot;
+cp &quot;helpers/application_helper.rb&quot;, &quot;#{PKG_DESTINATION}/app/helpers/application_helper.rb&quot;</pre>
+
+<p>end</p>
+
+<p>task :copy_configs do</p>
+
+<pre class="ruby"><span class="ruby-identifier">app_name</span> = <span class="ruby-string">&quot;rails&quot;</span>
+<span class="ruby-identifier">socket</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-identifier">require</span> <span class="ruby-string">'erb'</span>
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-node">&quot;#{PKG_DESTINATION}/config/database.yml&quot;</span>, <span class="ruby-string">'w'</span>) {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">write</span> <span class="ruby-constant">ERB</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-string">&quot;configs/databases/mysql.yml&quot;</span>), <span class="ruby-keyword">nil</span>, <span class="ruby-string">'-'</span>).<span class="ruby-identifier">result</span>(<span class="ruby-identifier">binding</span>)}
+
+<span class="ruby-identifier">cp</span> <span class="ruby-string">&quot;configs/routes.rb&quot;</span>, <span class="ruby-node">&quot;#{PKG_DESTINATION}/config/routes.rb&quot;</span>
+
+<span class="ruby-identifier">cp</span> <span class="ruby-string">&quot;configs/apache.conf&quot;</span>, <span class="ruby-node">&quot;#{PKG_DESTINATION}/public/.htaccess&quot;</span>
+
+<span class="ruby-identifier">cp</span> <span class="ruby-string">&quot;environments/boot.rb&quot;</span>, <span class="ruby-node">&quot;#{PKG_DESTINATION}/config/boot.rb&quot;</span>
+<span class="ruby-identifier">cp</span> <span class="ruby-string">&quot;environments/environment.rb&quot;</span>, <span class="ruby-node">&quot;#{PKG_DESTINATION}/config/environment.rb&quot;</span>
+<span class="ruby-identifier">cp</span> <span class="ruby-string">&quot;environments/production.rb&quot;</span>, <span class="ruby-node">&quot;#{PKG_DESTINATION}/config/environments/production.rb&quot;</span>
+<span class="ruby-identifier">cp</span> <span class="ruby-string">&quot;environments/development.rb&quot;</span>, <span class="ruby-node">&quot;#{PKG_DESTINATION}/config/environments/development.rb&quot;</span>
+<span class="ruby-identifier">cp</span> <span class="ruby-string">&quot;environments/test.rb&quot;</span>, <span class="ruby-node">&quot;#{PKG_DESTINATION}/config/environments/test.rb&quot;</span>
+</pre>
+
+<p>end</p>
+
+<p>task :copy_binfiles do</p>
+
+<pre class="ruby"><span class="ruby-constant">BIN_FILES</span>.<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">file</span><span class="ruby-operator">|</span>
+  <span class="ruby-identifier">dest_file</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">PKG_DESTINATION</span>, <span class="ruby-string">'script'</span>, <span class="ruby-identifier">file</span>)
+  <span class="ruby-identifier">copy_with_rewritten_ruby_path</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-string">'bin'</span>, <span class="ruby-identifier">file</span>), <span class="ruby-identifier">dest_file</span>)
+  <span class="ruby-identifier">chmod</span> <span class="ruby-value">0755</span>, <span class="ruby-identifier">dest_file</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+<p>end</p>
+
+<p>task :copy_rootfiles do</p>
+
+<pre>cp &quot;fresh_rakefile&quot;, &quot;#{PKG_DESTINATION}/Rakefile&quot;
+cp &quot;README&quot;, &quot;#{PKG_DESTINATION}/README&quot;
+cp &quot;CHANGELOG&quot;, &quot;#{PKG_DESTINATION}/CHANGELOG&quot;</pre>
+
+<p>end</p>
+
+<p>task :copy_test_helpers do</p>
+
+<pre>cp &quot;helpers/test_helper.rb&quot;, &quot;#{PKG_DESTINATION}/test/test_helper.rb&quot;</pre>
+
+<p>end</p>
+
+<p>task :copy_app_doc_readme do</p>
+
+<pre>cp &quot;doc/README_FOR_APP&quot;, &quot;#{PKG_DESTINATION}/doc/README_FOR_APP&quot;</pre>
+
+<p>end</p>
+
+<p>task :link_apache_config do</p>
+
+<pre>chdir(File.join(PKG_DESTINATION, 'config')) {
+  ln_s &quot;../public/.htaccess&quot;, &quot;apache.conf&quot;
+}</pre>
+
+<p>end</p>
+
+<p>def copy_with_rewritten_ruby_path(src_file, dest_file)</p>
+
+<pre class="ruby"><span class="ruby-identifier">ruby</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">'bindir'</span>], <span class="ruby-constant">Config</span><span class="ruby-operator">::</span><span class="ruby-constant">CONFIG</span>[<span class="ruby-string">'ruby_install_name'</span>])
+
+<span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">dest_file</span>, <span class="ruby-string">'w'</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">df</span><span class="ruby-operator">|</span>
+  <span class="ruby-constant">File</span>.<span class="ruby-identifier">open</span>(<span class="ruby-identifier">src_file</span>) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">sf</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">line</span> = <span class="ruby-identifier">sf</span>.<span class="ruby-identifier">gets</span>
+    <span class="ruby-keyword">if</span> (<span class="ruby-identifier">line</span> <span class="ruby-operator">=~</span> <span class="ruby-node">%r#!.+ruby\s  ) != nil
+      df.puts(&quot;#!#{ruby}&quot;)
+    else
+      df.puts(line)
+    end
+    df.write(sf.read)
+  end
+end
+</span></pre>
+
+<p>end</p>
+
+<p># Generate documentation ——————————————————————</p>
+
+<p>desc “Generate documentation for the framework and for the empty
+application” task :generate_documentation =&gt; [ :generate_app_doc,
+:generate_rails_framework_doc ]</p>
+
+<p>task :generate_rails_framework_doc do</p>
+
+<pre>system %{cd #{PKG_DESTINATION}; rake apidoc}</pre>
+
+<p>end</p>
+
+<p>task :generate_app_doc do</p>
+
+<pre>File.cp &quot;doc/README_FOR_APP&quot;, &quot;#{PKG_DESTINATION}/doc/README_FOR_APP&quot;
+system %{cd #{PKG_DESTINATION}; rake appdoc}</pre>
+
+<p>end</p>
+
+<p>Rake::RDocTask.new { |rdoc|</p>
+
+<pre>rdoc.rdoc_dir = 'doc'
+rdoc.title    = &quot;Railties -- Gluing the Engine to the Rails&quot;
+rdoc.options &lt;&lt; '--line-numbers' &lt;&lt; '--inline-source' &lt;&lt; '--accessor' &lt;&lt; 'cattr_accessor=object'
+rdoc.template = &quot;#{ENV['template']}.rb&quot; if ENV['template']
+rdoc.rdoc_files.include('README', 'CHANGELOG')
+rdoc.rdoc_files.include('lib/*.rb')
+rdoc.rdoc_files.include('lib/rails_generator/*.rb')
+rdoc.rdoc_files.include('lib/commands/**/*.rb')</pre>
+
+<p>}</p>
+
+<p># Generate GEM —————————————————————————-</p>
+
+<p>task :copy_gem_environment do</p>
+
+<pre>cp &quot;environments/environment.rb&quot;, &quot;#{PKG_DESTINATION}/config/environment.rb&quot;
+chmod 0755, dest_file</pre>
+
+<p>end</p>
+
+<p>PKG_FILES = FileList[</p>
+
+<pre>'[a-zA-Z]*',
+'bin/**/*', 
+'builtin/**/*',
+'configs/**/*', 
+'doc/**/*', 
+'dispatches/**/*', 
+'environments/**/*', 
+'helpers/**/*', 
+'generators/**/*', 
+'html/**/*', 
+'lib/**/*'</pre>
+
+<p>] - [ ‘test’ ]</p>
+
+<p>spec = Gem::Specification.new do |s|</p>
+
+<pre class="ruby"><span class="ruby-identifier">s</span>.<span class="ruby-identifier">name</span> = <span class="ruby-string">'rails'</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">version</span> = <span class="ruby-constant">PKG_VERSION</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">summary</span> = <span class="ruby-string">&quot;Web-application framework with template engine, control-flow layer, and ORM.&quot;</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">description</span> = <span class="ruby-string">&quot;  Rails is a framework for building web-application using CGI, FCGI, mod_ruby, or WEBrick
+  on top of either MySQL, PostgreSQL, SQLite, DB2, SQL Server, or Oracle with eRuby- or Builder-based templates.
+&quot;</span>
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">'rake'</span>, <span class="ruby-string">'&gt;= 0.7.2'</span>)
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">'activesupport'</span>,    <span class="ruby-string">'= 1.4.4'</span> <span class="ruby-operator">+</span> <span class="ruby-constant">PKG_BUILD</span>)
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">'activerecord'</span>,     <span class="ruby-string">'= 1.15.6'</span> <span class="ruby-operator">+</span> <span class="ruby-constant">PKG_BUILD</span>)
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">'actionpack'</span>,       <span class="ruby-string">'= 1.13.6'</span> <span class="ruby-operator">+</span> <span class="ruby-constant">PKG_BUILD</span>)
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">'actionmailer'</span>,     <span class="ruby-string">'= 1.3.6'</span> <span class="ruby-operator">+</span> <span class="ruby-constant">PKG_BUILD</span>)
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">add_dependency</span>(<span class="ruby-string">'actionwebservice'</span>, <span class="ruby-string">'= 1.2.6'</span> <span class="ruby-operator">+</span> <span class="ruby-constant">PKG_BUILD</span>)
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">rdoc_options</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'--exclude'</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">'.'</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">has_rdoc</span> = <span class="ruby-keyword">false</span>
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">files</span> = <span class="ruby-constant">PKG_FILES</span>.<span class="ruby-identifier">to_a</span>.<span class="ruby-identifier">delete_if</span> {<span class="ruby-operator">|</span><span class="ruby-identifier">f</span><span class="ruby-operator">|</span> <span class="ruby-identifier">f</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-string">'.svn'</span>)}
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">require_path</span> = <span class="ruby-string">'lib'</span>
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">bindir</span> = <span class="ruby-string">&quot;bin&quot;</span>                               <span class="ruby-comment"># Use these for applications.</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">executables</span> = [<span class="ruby-string">&quot;rails&quot;</span>]
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">default_executable</span> = <span class="ruby-string">&quot;rails&quot;</span>
+
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">author</span> = <span class="ruby-string">&quot;David Heinemeier Hansson&quot;</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">email</span> = <span class="ruby-string">&quot;david@loudthinking.com&quot;</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">homepage</span> = <span class="ruby-string">&quot;http://www.rubyonrails.org&quot;</span>
+<span class="ruby-identifier">s</span>.<span class="ruby-identifier">rubyforge_project</span> = <span class="ruby-string">&quot;rails&quot;</span>
+</pre>
+
+<p>end</p>
+
+<p>Rake::GemPackageTask.new(spec) do |pkg|</p>
+
+<pre>pkg.gem_spec = spec</pre>
+
+<p>end</p>
+
+<p># Publishing ——————————————————- desc “Publish the API documentation” task
+:pgem =&gt; [:gem] do</p>
+
+<pre>Rake::SshFilePublisher.new(&quot;davidhh@wrath.rubyonrails.org&quot;, &quot;public_html/gems/gems&quot;, &quot;pkg&quot;, &quot;#{PKG_FILE_NAME}.gem&quot;).upload
+`ssh davidhh@wrath.rubyonrails.org './gemupdate.sh'`</pre>
+
+<p>end</p>
+
+<p>desc “Publish the release files to RubyForge.” task :release =&gt; [
+:package ] do</p>
+
+<pre class="ruby"><span class="ruby-identifier">require</span> <span class="ruby-string">'rubyforge'</span>
+
+<span class="ruby-identifier">packages</span> = <span class="ruby-node">%w( gem )</span>.<span class="ruby-identifier">collect</span>{ <span class="ruby-operator">|</span><span class="ruby-identifier">ext</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;pkg/#{PKG_NAME}-#{PKG_VERSION}.#{ext}&quot;</span> }
+
+<span class="ruby-identifier">rubyforge</span> = <span class="ruby-constant">RubyForge</span>.<span class="ruby-identifier">new</span>
+<span class="ruby-identifier">rubyforge</span>.<span class="ruby-identifier">login</span>
+<span class="ruby-identifier">rubyforge</span>.<span class="ruby-identifier">add_release</span>(<span class="ruby-constant">PKG_NAME</span>, <span class="ruby-constant">PKG_NAME</span>, <span class="ruby-node">&quot;REL #{PKG_VERSION}&quot;</span>, *<span class="ruby-identifier">packages</span>)
+</pre>
+
+<p>end</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

@@ -1,0 +1,806 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Rails::Configuration</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Rails::Configuration 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/railties/lib/initializer_rb.html">rails/railties/lib/initializer.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>The <a href="Configuration.html">Configuration</a> class holds all the
+parameters for the <a href="Initializer.html">Initializer</a> and ships
+with defaults that suites most <a href="../Rails.html">Rails</a>
+applications. But it’s possible to overwrite everything. Usually, you’ll
+create an <a href="Configuration.html">Configuration</a> file implicitly
+through the block running on the <a
+href="Initializer.html">Initializer</a>, but it’s also possible to create
+the <a href="Configuration.html">Configuration</a> instance in advance and
+pass it in like this:</p>
+
+<pre>config = Rails::Configuration.new
+Rails::Initializer.run(:process, config)</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-after_initialize">after_initialize</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-after_initialize_block">after_initialize_block</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-builtin_directories">builtin_directories</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-database_configuration">database_configuration</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-environment">environment</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-environment_path">environment_path</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>F</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-framework_paths">framework_paths</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-set_root_path-21">set_root_path!</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_prepare">to_prepare</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>action_controller</td>
+            <td class='attr-desc'><p><a href="../A.html">A</a> stub for setting options on <a
+href="../ActionController/Base.html">ActionController::Base</a></p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>action_mailer</td>
+            <td class='attr-desc'><p><a href="../A.html">A</a> stub for setting options on <a
+href="../ActionMailer/Base.html">ActionMailer::Base</a></p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>action_view</td>
+            <td class='attr-desc'><p><a href="../A.html">A</a> stub for setting options on <a
+href="../ActionView/Base.html">ActionView::Base</a></p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>action_web_service</td>
+            <td class='attr-desc'><p><a href="../A.html">A</a> stub for setting options on <a
+href="../ActionWebService/Base.html">ActionWebService::Base</a></p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>active_record</td>
+            <td class='attr-desc'><p><a href="../A.html">A</a> stub for setting options on <a
+href="../ActiveRecord/Base.html">ActiveRecord::Base</a></p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>breakpoint_server</td>
+            <td class='attr-desc'><p>Whether or not to use the breakpoint server (boolean)</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>cache_classes</td>
+            <td class='attr-desc'><p>Whether or not classes should be cached (set to false if you want
+application classes to be reloaded on each request)</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>connection_adapters</td>
+            <td class='attr-desc'><p>The list of connection adapters to load. (By default, all connection
+adapters are loaded. You can set this to be just the adapter(s) you will
+use to reduce your application’s load time.)</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>controller_paths</td>
+            <td class='attr-desc'><p>The list of paths that should be searched for controllers. (Defaults to
+<code>app/controllers</code> and <code>components</code>.)</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>database_configuration_file</td>
+            <td class='attr-desc'><p>The path to the database configuration file to use. (Defaults to
+<code>config/database.yml</code>.)</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>frameworks</td>
+            <td class='attr-desc'><p>The list of rails framework components that should be loaded. (Defaults to
+<code>:active_record</code>, <code>:action_controller</code>,
+<code>:action_view</code>, <code>:action_mailer</code>, and
+<code>:action_web_service</code>).</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>load_once_paths</td>
+            <td class='attr-desc'><p>An array of paths from which <a href="../Rails.html">Rails</a> will
+automatically load from only once. All elements of this array must also be
+in <code>load_paths</code>.</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>load_paths</td>
+            <td class='attr-desc'><p>An array of additional paths to prepend to the load path. By default, all
+<code>app</code>, <code>lib</code>, <code>vendor</code> and mock paths are
+included in this list.</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>log_level</td>
+            <td class='attr-desc'><p>The log level to use for the default <a href="../Rails.html">Rails</a>
+logger. In production mode, this defaults to <code>:info</code>. In
+development mode, it defaults to <code>:debug</code>.</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>log_path</td>
+            <td class='attr-desc'><p>The path to the log file to use. Defaults to log/#{environment}.log (e.g.
+log/development.log or log/production.log).</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>logger</td>
+            <td class='attr-desc'><p>The specific logger to use. By default, a logger will be created and
+initialized using <a
+href="Configuration.html#attribute-i-log_path">log_path</a> and <a
+href="Configuration.html#attribute-i-log_level">log_level</a>, but a
+programmer may specifically set the logger to use via this accessor and it
+will be used directly.</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>plugin_paths</td>
+            <td class='attr-desc'><p>The path to the root of the plugins directory. By default, it is in
+<code>vendor/plugins</code>.</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>plugins</td>
+            <td class='attr-desc'><p>The list of plugins to load. If this is set to <code>nil</code>, all
+plugins will be loaded. If this is set to <code>[]</code>, no plugins will
+be loaded. Otherwise, plugins will be loaded in the order specified.</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [R]
+            </td>
+            <td class='attr-name'>root_path</td>
+            <td class='attr-desc'><p>The application’s base directory.</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>view_path</td>
+            <td class='attr-desc'><p>The root of the application’s views. (Defaults to <code>app/views</code>.)</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>whiny_nils</td>
+            <td class='attr-desc'><p>Set to <code>true</code> if you want to be warned (noisily) when you try to
+invoke any method of <code>nil</code>. Set to <code>false</code> for the
+standard Ruby behavior.</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Create a new <a href="Configuration.html">Configuration</a> instance,
+initialized with the default values.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 508</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>
+  <span class="ruby-identifier">set_root_path!</span>
+
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">frameworks</span>                   = <span class="ruby-identifier">default_frameworks</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">load_paths</span>                   = <span class="ruby-identifier">default_load_paths</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">load_once_paths</span>              = <span class="ruby-identifier">default_load_once_paths</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">log_path</span>                     = <span class="ruby-identifier">default_log_path</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">log_level</span>                    = <span class="ruby-identifier">default_log_level</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">view_path</span>                    = <span class="ruby-identifier">default_view_path</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">controller_paths</span>             = <span class="ruby-identifier">default_controller_paths</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">cache_classes</span>                = <span class="ruby-identifier">default_cache_classes</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">breakpoint_server</span>            = <span class="ruby-identifier">default_breakpoint_server</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">whiny_nils</span>                   = <span class="ruby-identifier">default_whiny_nils</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">plugins</span>                      = <span class="ruby-identifier">default_plugins</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">plugin_paths</span>                 = <span class="ruby-identifier">default_plugin_paths</span>
+  <span class="ruby-keyword">self</span>.<span class="ruby-identifier">database_configuration_file</span>  = <span class="ruby-identifier">default_database_configuration_file</span>
+
+  <span class="ruby-keyword">for</span> <span class="ruby-identifier">framework</span> <span class="ruby-keyword">in</span> <span class="ruby-identifier">default_frameworks</span>
+    <span class="ruby-keyword">self</span>.<span class="ruby-identifier">send</span>(<span class="ruby-node">&quot;#{framework}=&quot;</span>, <span class="ruby-constant">Rails</span><span class="ruby-operator">::</span><span class="ruby-constant">OrderedOptions</span>.<span class="ruby-identifier">new</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-after_initialize">
+            
+              <a name="method-i-after_initialize"></a><b>after_initialize</b>(&amp;after_initialize_block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Sets a block which will be executed after rails has been fully initialized.
+Useful for per-environment configuration which depends on the framework
+being fully initialized.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-after_initialize_source')" id="l_method-i-after_initialize_source">show</a>
+                
+              </p>
+              <div id="method-i-after_initialize_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 569</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">after_initialize</span>(&amp;<span class="ruby-identifier">after_initialize_block</span>)
+  <span class="ruby-ivar">@after_initialize_block</span> = <span class="ruby-identifier">after_initialize_block</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-after_initialize_block">
+            
+              <a name="method-i-after_initialize_block"></a><b>after_initialize_block</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns the block set in <a
+href="Configuration.html#method-i-after_initialize">#after_initialize</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-after_initialize_block_source')" id="l_method-i-after_initialize_block_source">show</a>
+                
+              </p>
+              <div id="method-i-after_initialize_block_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 574</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">after_initialize_block</span>
+  <span class="ruby-ivar">@after_initialize_block</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-builtin_directories">
+            
+              <a name="method-i-builtin_directories"></a><b>builtin_directories</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-builtin_directories_source')" id="l_method-i-builtin_directories_source">show</a>
+                
+              </p>
+              <div id="method-i-builtin_directories_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 587</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">builtin_directories</span>
+  <span class="ruby-comment"># Include builtins only in the development environment.</span>
+  (<span class="ruby-identifier">environment</span> <span class="ruby-operator">==</span> <span class="ruby-string">'development'</span>) <span class="ruby-operator">?</span> <span class="ruby-constant">Dir</span>[<span class="ruby-node">&quot;#{RAILTIES_PATH}/builtin/*/&quot;</span>] <span class="ruby-operator">:</span> []
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-database_configuration">
+            
+              <a name="method-i-database_configuration"></a><b>database_configuration</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Loads and returns the contents of the <a
+href="Configuration.html#attribute-i-database_configuration_file">database_configuration_file</a>.
+The contents of the file are processed via ERB before being sent through
+YAML::load.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-database_configuration_source')" id="l_method-i-database_configuration_source">show</a>
+                
+              </p>
+              <div id="method-i-database_configuration_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 550</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">database_configuration</span>
+  <span class="ruby-constant">YAML</span><span class="ruby-operator">::</span><span class="ruby-identifier">load</span>(<span class="ruby-constant">ERB</span>.<span class="ruby-identifier">new</span>(<span class="ruby-constant">IO</span>.<span class="ruby-identifier">read</span>(<span class="ruby-identifier">database_configuration_file</span>)).<span class="ruby-identifier">result</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-environment">
+            
+              <a name="method-i-environment"></a><b>environment</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Return the currently selected environment. By default, it returns the value
+of the <code>RAILS_ENV</code> constant.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-environment_source')" id="l_method-i-environment_source">show</a>
+                
+              </p>
+              <div id="method-i-environment_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 562</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">environment</span>
+  <span class="ruby-operator">::</span><span class="ruby-constant">RAILS_ENV</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-environment_path">
+            
+              <a name="method-i-environment_path"></a><b>environment_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>The path to the current environment’s file (development.rb, etc.). By
+default the file is at <code>config/environments/#{environment}.rb</code>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-environment_path_source')" id="l_method-i-environment_path_source">show</a>
+                
+              </p>
+              <div id="method-i-environment_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 556</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">environment_path</span>
+  <span class="ruby-node">&quot;#{root_path}/config/environments/#{environment}.rb&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-framework_paths">
+            
+              <a name="method-i-framework_paths"></a><b>framework_paths</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-framework_paths_source')" id="l_method-i-framework_paths_source">show</a>
+                
+              </p>
+              <div id="method-i-framework_paths_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 592</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">framework_paths</span>
+  <span class="ruby-comment"># TODO: Don't include dirs for frameworks that are not used</span>
+  <span class="ruby-node">%w(
+    railties
+    railties/lib
+    actionpack/lib
+    activesupport/lib
+    activerecord/lib
+    actionmailer/lib
+    actionwebservice/lib
+  )</span>.<span class="ruby-identifier">map</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{framework_root_path}/#{dir}&quot;</span> }.<span class="ruby-identifier">select</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">dir</span><span class="ruby-operator">|</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-identifier">dir</span>) }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-set_root_path-21">
+            
+              <a name="method-i-set_root_path-21"></a><b>set_root_path!</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Set the <a href="Configuration.html#attribute-i-root_path">#root_path</a>
+to RAILS_ROOT and canonicalize it.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-set_root_path-21_source')" id="l_method-i-set_root_path-21_source">show</a>
+                
+              </p>
+              <div id="method-i-set_root_path-21_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 531</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">set_root_path!</span>
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">'RAILS_ROOT is not set'</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">RAILS_ROOT</span>)
+  <span class="ruby-identifier">raise</span> <span class="ruby-string">'RAILS_ROOT is not a directory'</span> <span class="ruby-keyword">unless</span> <span class="ruby-constant">File</span>.<span class="ruby-identifier">directory?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">RAILS_ROOT</span>)
+
+  <span class="ruby-ivar">@root_path</span> =
+    <span class="ruby-comment"># Pathname is incompatible with Windows, but Windows doesn't have</span>
+    <span class="ruby-comment"># real symlinks so File.expand_path is safe.</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-constant">RUBY_PLATFORM</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r(:?mswin|mingw)/</span>
+      <span class="ruby-constant">File</span>.<span class="ruby-identifier">expand_path</span>(<span class="ruby-operator">::</span><span class="ruby-constant">RAILS_ROOT</span>)
+
+    <span class="ruby-comment"># Otherwise use Pathname#realpath which respects symlinks.</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-constant">Pathname</span>.<span class="ruby-identifier">new</span>(<span class="ruby-operator">::</span><span class="ruby-constant">RAILS_ROOT</span>).<span class="ruby-identifier">realpath</span>.<span class="ruby-identifier">to_s</span>
+    <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_prepare">
+            
+              <a name="method-i-to_prepare"></a><b>to_prepare</b>(&amp;callback)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Add a preparation callback that will run before every request in
+development mode, or before the first request in production.</p>
+
+<p>See Dispatcher#to_prepare.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_prepare_source')" id="l_method-i-to_prepare_source">show</a>
+                
+              </p>
+              <div id="method-i-to_prepare_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/railties/lib/initializer.rb, line 582</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_prepare</span>(&amp;<span class="ruby-identifier">callback</span>)
+  <span class="ruby-identifier">require</span> <span class="ruby-string">'dispatcher'</span> <span class="ruby-keyword">unless</span> <span class="ruby-keyword">defined?</span>(<span class="ruby-operator">::</span><span class="ruby-constant">Dispatcher</span>)
+  <span class="ruby-constant">Dispatcher</span>.<span class="ruby-identifier">to_prepare</span>(&amp;<span class="ruby-identifier">callback</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,175 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>DeprecatedHelperTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            DeprecatedHelperTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/template/deprecated_helper_test_rb.html">rails/actionpack/test/template/deprecated_helper_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_update_element_function">test_update_element_function</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+    <!-- Includes -->
+    <div class="sectiontitle">Included Modules</div>
+    <ul>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/JavaScriptHelper.html">
+              ActionView::Helpers::JavaScriptHelper
+            </a>
+          
+        </li>
+      
+        <li>
+          
+            <a href="ActionView/Helpers/CaptureHelper.html">
+              ActionView::Helpers::CaptureHelper
+            </a>
+          
+        </li>
+      
+    </ul>
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_update_element_function">
+            
+              <a name="method-i-test_update_element_function"></a><b>test_update_element_function</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_update_element_function_source')" id="l_method-i-test_update_element_function_source">show</a>
+                
+              </p>
+              <div id="method-i-test_update_element_function_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/template/deprecated_helper_test.rb, line 7</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_update_element_function</span>
+  <span class="ruby-identifier">assert_deprecated</span> <span class="ruby-string">'update_element_function'</span> <span class="ruby-keyword">do</span>
+    
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q($('myelement').innerHTML = 'blub';\n)</span>,
+      <span class="ruby-identifier">update_element_function</span>(<span class="ruby-string">'myelement'</span>, <span class="ruby-value">:content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'blub'</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q($('myelement').innerHTML = 'blub';\n)</span>,
+      <span class="ruby-identifier">update_element_function</span>(<span class="ruby-string">'myelement'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:update</span>, <span class="ruby-value">:content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'blub'</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q($('myelement').innerHTML = '';\n)</span>,
+      <span class="ruby-identifier">update_element_function</span>(<span class="ruby-string">'myelement'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:empty</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q(Element.remove('myelement');\n)</span>,
+      <span class="ruby-identifier">update_element_function</span>(<span class="ruby-string">'myelement'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:remove</span>)
+      
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q(new Insertion.Bottom('myelement','blub');\n)</span>,
+      <span class="ruby-identifier">update_element_function</span>(<span class="ruby-string">'myelement'</span>, <span class="ruby-value">:position</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'bottom'</span>, <span class="ruby-value">:content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'blub'</span>)
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q(new Insertion.Bottom('myelement','blub');\n)</span>,
+      <span class="ruby-identifier">update_element_function</span>(<span class="ruby-string">'myelement'</span>, <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:update</span>, <span class="ruby-value">:position</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:bottom</span>, <span class="ruby-value">:content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'blub'</span>)
+      
+    <span class="ruby-identifier">_erbout</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q($('myelement').innerHTML = 'test';\n)</span>,
+      <span class="ruby-identifier">update_element_function</span>(<span class="ruby-string">'myelement'</span>) { <span class="ruby-identifier">_erbout</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;test&quot;</span> }
+      
+    <span class="ruby-identifier">_erbout</span> = <span class="ruby-string">&quot;&quot;</span>
+    <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">%Q($('myelement').innerHTML = 'blockstuff';\n)</span>,
+      <span class="ruby-identifier">update_element_function</span>(<span class="ruby-string">'myelement'</span>, <span class="ruby-value">:content</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'paramstuff'</span>) { <span class="ruby-identifier">_erbout</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-string">&quot;blockstuff&quot;</span> }
+    
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

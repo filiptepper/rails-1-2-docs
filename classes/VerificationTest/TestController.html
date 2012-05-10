@@ -1,0 +1,703 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>VerificationTest::TestController</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            VerificationTest::TestController 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../ActionController/Base.html">ActionController::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionpack/test/controller/verification_test_rb.html">rails/actionpack/test/controller/verification_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-guarded_by_method">guarded_by_method</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-guarded_by_not_xhr">guarded_by_not_xhr</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-guarded_by_xhr">guarded_by_xhr</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-guarded_in_session">guarded_in_session</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-guarded_one">guarded_one</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-guarded_one_for_named_route_test">guarded_one_for_named_route_test</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-guarded_two">guarded_two</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-guarded_with_flash">guarded_with_flash</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>M</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-multi_one">multi_one</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-multi_two">multi_two</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-must_be_post">must_be_post</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-rescue_action">rescue_action</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-two_redirects">two_redirects</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-unconditional_redirect">unconditional_redirect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-unguarded">unguarded</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-guarded_by_method">
+            
+              <a name="method-i-guarded_by_method"></a><b>guarded_by_method</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-guarded_by_method_source')" id="l_method-i-guarded_by_method_source">show</a>
+                
+              </p>
+              <div id="method-i-guarded_by_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 68</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">guarded_by_method</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{request.method}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-guarded_by_not_xhr">
+            
+              <a name="method-i-guarded_by_not_xhr"></a><b>guarded_by_not_xhr</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-guarded_by_not_xhr_source')" id="l_method-i-guarded_by_not_xhr_source">show</a>
+                
+              </p>
+              <div id="method-i-guarded_by_not_xhr_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 76</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">guarded_by_not_xhr</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{request.xhr?}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-guarded_by_xhr">
+            
+              <a name="method-i-guarded_by_xhr"></a><b>guarded_by_xhr</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-guarded_by_xhr_source')" id="l_method-i-guarded_by_xhr_source">show</a>
+                
+              </p>
+              <div id="method-i-guarded_by_xhr_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">guarded_by_xhr</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{request.xhr?}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-guarded_in_session">
+            
+              <a name="method-i-guarded_in_session"></a><b>guarded_in_session</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-guarded_in_session_source')" id="l_method-i-guarded_in_session_source">show</a>
+                
+              </p>
+              <div id="method-i-guarded_in_session_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 56</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">guarded_in_session</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{session[&quot;one&quot;]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-guarded_one">
+            
+              <a name="method-i-guarded_one"></a><b>guarded_one</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-guarded_one_source')" id="l_method-i-guarded_one_source">show</a>
+                
+              </p>
+              <div id="method-i-guarded_one_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">guarded_one</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{params[:one]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-guarded_one_for_named_route_test">
+            
+              <a name="method-i-guarded_one_for_named_route_test"></a><b>guarded_one_for_named_route_test</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-guarded_one_for_named_route_test_source')" id="l_method-i-guarded_one_for_named_route_test_source">show</a>
+                
+              </p>
+              <div id="method-i-guarded_one_for_named_route_test_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">guarded_one_for_named_route_test</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{params[:one]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-guarded_two">
+            
+              <a name="method-i-guarded_two"></a><b>guarded_two</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-guarded_two_source')" id="l_method-i-guarded_two_source">show</a>
+                
+              </p>
+              <div id="method-i-guarded_two_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 52</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">guarded_two</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{params[:one]}:#{params[:two]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-guarded_with_flash">
+            
+              <a name="method-i-guarded_with_flash"></a><b>guarded_with_flash</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-guarded_with_flash_source')" id="l_method-i-guarded_with_flash_source">show</a>
+                
+              </p>
+              <div id="method-i-guarded_with_flash_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">guarded_with_flash</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{params[:one]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-multi_one">
+            
+              <a name="method-i-multi_one"></a><b>multi_one</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-multi_one_source')" id="l_method-i-multi_one_source">show</a>
+                
+              </p>
+              <div id="method-i-multi_one_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 60</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">multi_one</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{session[&quot;one&quot;]}:#{session[&quot;two&quot;]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-multi_two">
+            
+              <a name="method-i-multi_two"></a><b>multi_two</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-multi_two_source')" id="l_method-i-multi_two_source">show</a>
+                
+              </p>
+              <div id="method-i-multi_two_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 64</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">multi_two</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{session[&quot;two&quot;]}:#{session[&quot;one&quot;]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-must_be_post">
+            
+              <a name="method-i-must_be_post"></a><b>must_be_post</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-must_be_post_source')" id="l_method-i-must_be_post_source">show</a>
+                
+              </p>
+              <div id="method-i-must_be_post_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 88</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">must_be_post</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Was a post!&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-two_redirects">
+            
+              <a name="method-i-two_redirects"></a><b>two_redirects</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-two_redirects_source')" id="l_method-i-two_redirects_source">show</a>
+                
+              </p>
+              <div id="method-i-two_redirects_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 84</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">two_redirects</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:nothing</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-unguarded">
+            
+              <a name="method-i-unguarded"></a><b>unguarded</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-unguarded_source')" id="l_method-i-unguarded_source">show</a>
+                
+              </p>
+              <div id="method-i-unguarded_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 80</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">unguarded</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;#{params[:one]}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+              
+      <div class="sectiontitle">Instance Protected methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-rescue_action">
+            
+              <a name="method-i-rescue_action"></a><b>rescue_action</b>(e)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rescue_action_source')" id="l_method-i-rescue_action_source">show</a>
+                
+              </p>
+              <div id="method-i-rescue_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 93</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rescue_action</span>(<span class="ruby-identifier">e</span>) <span class="ruby-identifier">raise</span> <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-unconditional_redirect">
+            
+              <a name="method-i-unconditional_redirect"></a><b>unconditional_redirect</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-unconditional_redirect_source')" id="l_method-i-unconditional_redirect_source">show</a>
+                
+              </p>
+              <div id="method-i-unconditional_redirect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/verification_test.rb, line 95</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">unconditional_redirect</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;unguarded&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

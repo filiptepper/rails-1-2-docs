@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Rakefile</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            Rakefile
+        </h1>
+        <ul class="files">
+            <li>rails/railties/lib/rails_generator/generators/components/plugin/templates/Rakefile</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>require ‘rake’ require ‘rake/testtask’ require ‘rake/rdoctask’</p>
+
+<p>desc ‘Default: run unit tests.’ task :default =&gt; :test</p>
+
+<p>desc ‘Test the &lt;%= file_name %&gt; plugin.’ Rake::TestTask.new(:test) do
+|t|</p>
+
+<pre>t.libs &lt;&lt; 'lib'
+t.pattern = 'test   /*_test.rb'
+t.verbose = true</pre>
+
+<p>end</p>
+
+<p>desc ‘Generate documentation for the &lt;%= file_name %&gt; plugin.’
+Rake::RDocTask.new(:rdoc) do |rdoc|</p>
+
+<pre>rdoc.rdoc_dir = 'rdoc'
+rdoc.title    = '&lt;%= class_name %&gt;'
+rdoc.options &lt;&lt; '--line-numbers' &lt;&lt; '--inline-source'
+rdoc.rdoc_files.include('README')
+rdoc.rdoc_files.include('lib/   *.rb')</pre>
+
+<p>end</p>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

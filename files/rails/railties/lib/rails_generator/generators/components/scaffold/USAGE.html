@@ -1,0 +1,108 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>USAGE</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../../../../../../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../../../../../../../css/github.css" type="text/css" media="screen" />
+<script src="../../../../../../../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../../../../../../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            USAGE
+        </h1>
+        <ul class="files">
+            <li>rails/railties/lib/rails_generator/generators/components/scaffold/USAGE</li>
+            <li>Last modified: 2012-05-10 14:51:07 +0200</li>
+        </ul>
+    </div>
+
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Description:</p>
+
+<pre class="ruby"><span class="ruby-constant">The</span> <span class="ruby-identifier">scaffold</span> <span class="ruby-identifier">generator</span> <span class="ruby-identifier">creates</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">controller</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">interact</span> <span class="ruby-identifier">with</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">model</span>.
+<span class="ruby-constant">If</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">model</span> <span class="ruby-identifier">does</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">exist</span>, <span class="ruby-identifier">it</span> <span class="ruby-identifier">creates</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">model</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">well</span>.  <span class="ruby-constant">The</span> <span class="ruby-identifier">generated</span>
+<span class="ruby-identifier">code</span> <span class="ruby-identifier">is</span> <span class="ruby-identifier">equivalent</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">the</span> <span class="ruby-string">&quot;scaffold :model&quot;</span> <span class="ruby-identifier">declaration</span>, <span class="ruby-identifier">making</span> <span class="ruby-identifier">it</span> <span class="ruby-identifier">easy</span>
+<span class="ruby-identifier">to</span> <span class="ruby-identifier">migrate</span> <span class="ruby-keyword">when</span> <span class="ruby-identifier">you</span> <span class="ruby-identifier">wish</span> <span class="ruby-identifier">to</span> <span class="ruby-identifier">customize</span> <span class="ruby-identifier">your</span> <span class="ruby-identifier">controller</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">views</span>.
+
+<span class="ruby-constant">The</span> <span class="ruby-identifier">generator</span> <span class="ruby-identifier">takes</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">model</span> <span class="ruby-identifier">name</span>, <span class="ruby-identifier">an</span> <span class="ruby-identifier">optional</span> <span class="ruby-identifier">controller</span> <span class="ruby-identifier">name</span>, <span class="ruby-keyword">and</span> <span class="ruby-identifier">a</span>
+<span class="ruby-identifier">list</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">views</span> <span class="ruby-identifier">as</span> <span class="ruby-identifier">arguments</span>.  <span class="ruby-constant">Scaffolded</span> <span class="ruby-identifier">actions</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">views</span> <span class="ruby-identifier">are</span> <span class="ruby-identifier">created</span>
+<span class="ruby-identifier">automatically</span>.  <span class="ruby-constant">Any</span> <span class="ruby-identifier">views</span> <span class="ruby-identifier">left</span> <span class="ruby-identifier">over</span> <span class="ruby-identifier">generate</span> <span class="ruby-identifier">empty</span> <span class="ruby-identifier">stubs</span>.
+
+<span class="ruby-constant">The</span> <span class="ruby-identifier">scaffolded</span> <span class="ruby-identifier">actions</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">views</span> <span class="ruby-identifier">are</span><span class="ruby-operator">:</span>
+    <span class="ruby-identifier">index</span>, <span class="ruby-identifier">list</span>, <span class="ruby-identifier">show</span>, <span class="ruby-identifier">new</span>, <span class="ruby-identifier">create</span>, <span class="ruby-identifier">edit</span>, <span class="ruby-identifier">update</span>, <span class="ruby-identifier">destroy</span>
+
+<span class="ruby-constant">If</span> <span class="ruby-identifier">a</span> <span class="ruby-identifier">controller</span> <span class="ruby-identifier">name</span> <span class="ruby-identifier">is</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">given</span>, <span class="ruby-identifier">the</span> <span class="ruby-identifier">plural</span> <span class="ruby-identifier">form</span> <span class="ruby-identifier">of</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">model</span> <span class="ruby-identifier">name</span>
+<span class="ruby-identifier">will</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">used</span>.  <span class="ruby-constant">The</span> <span class="ruby-identifier">model</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">controller</span> <span class="ruby-identifier">names</span> <span class="ruby-identifier">may</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">given</span> <span class="ruby-keyword">in</span> <span class="ruby-constant">CamelCase</span>
+<span class="ruby-keyword">or</span> <span class="ruby-identifier">under_score</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">should</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">suffixed</span> <span class="ruby-identifier">with</span> <span class="ruby-string">'Model'</span> <span class="ruby-keyword">or</span> <span class="ruby-string">'Controller'</span>.
+<span class="ruby-constant">Both</span> <span class="ruby-identifier">model</span> <span class="ruby-keyword">and</span> <span class="ruby-identifier">controller</span> <span class="ruby-identifier">names</span> <span class="ruby-identifier">may</span> <span class="ruby-identifier">be</span> <span class="ruby-identifier">prefixed</span> <span class="ruby-identifier">with</span> <span class="ruby-identifier">a</span> <span class="ruby-keyword">module</span> <span class="ruby-identifier">like</span> <span class="ruby-identifier">a</span>
+<span class="ruby-identifier">file</span> <span class="ruby-identifier">path</span>; <span class="ruby-identifier">see</span> <span class="ruby-identifier">the</span> <span class="ruby-constant">Modules</span> <span class="ruby-constant">Example</span> <span class="ruby-keyword">for</span> <span class="ruby-identifier">usage</span>.
+</pre>
+
+<p>Example:</p>
+
+<pre>./script/generate scaffold Account Bank debit credit
+
+This will generate an Account model and BankController with a full test
+suite and a basic user interface.  Now create the accounts table in your
+database and browse to http://localhost/bank/ -- voila, you're on Rails!</pre>
+
+<p>Modules Example:</p>
+
+<pre class="ruby">.<span class="ruby-operator">/</span><span class="ruby-identifier">script</span><span class="ruby-operator">/</span><span class="ruby-identifier">generate</span> <span class="ruby-identifier">scaffold</span> <span class="ruby-constant">CreditCard</span> <span class="ruby-string">'admin/credit_card'</span> <span class="ruby-identifier">suspend</span> <span class="ruby-identifier">late_fee</span>
+
+<span class="ruby-constant">This</span> <span class="ruby-identifier">will</span> <span class="ruby-identifier">generate</span> <span class="ruby-identifier">a</span> <span class="ruby-constant">CreditCard</span> <span class="ruby-identifier">model</span> <span class="ruby-keyword">and</span> <span class="ruby-constant">CreditCardController</span> <span class="ruby-identifier">controller</span>
+<span class="ruby-keyword">in</span> <span class="ruby-identifier">the</span> <span class="ruby-identifier">admin</span> <span class="ruby-keyword">module</span>.
+</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+              </div>
+    </div>
+  </body>
+</html>

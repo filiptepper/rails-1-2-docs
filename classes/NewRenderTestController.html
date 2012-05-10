@@ -1,0 +1,2785 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>NewRenderTestController</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            NewRenderTestController 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="ActionController/Base.html">ActionController::Base</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionpack/test/controller/new_render_test_rb.html">rails/actionpack/test/controller/new_render_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-accessing_params_in_template">accessing_params_in_template</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-accessing_params_in_template_with_layout">accessing_params_in_template_with_layout</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-action_talk_to_layout">action_talk_to_layout</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-builder_layout_test">builder_layout_test</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>C</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-controller_name">controller_name</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-c-controller_path">controller_path</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-delete_with_js">delete_with_js</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-double_redirect">double_redirect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-double_render">double_render</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>E</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-empty_partial_collection">empty_partial_collection</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-enum_rjs_test">enum_rjs_test</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-greeting">greeting</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>H</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-head_with_custom_header">head_with_custom_header</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-head_with_integer_status">head_with_integer_status</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-head_with_location_header">head_with_location_header</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-head_with_status_code_first">head_with_status_code_first</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-head_with_string_status">head_with_string_status</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-head_with_symbolic_status">head_with_symbolic_status</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hello_in_a_string">hello_in_a_string</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hello_world">hello_world</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hello_world_from_rxml_using_action">hello_world_from_rxml_using_action</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hello_world_from_rxml_using_template">hello_world_from_rxml_using_template</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-hello_world_with_layout_false">hello_world_with_layout_false</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-layout_overriding_layout">layout_overriding_layout</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-layout_test">layout_test</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-layout_test_with_different_layout">layout_test_with_different_layout</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-partial_collection">partial_collection</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-partial_collection_with_locals">partial_collection_with_locals</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-partial_only">partial_only</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-partial_only_with_layout">partial_only_with_layout</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-partial_with_hash_object">partial_with_hash_object</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-partial_with_implicit_local_assignment">partial_with_implicit_local_assignment</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-partial_with_locals">partial_with_locals</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-partials_list">partials_list</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-render_action_hello_world">render_action_hello_world</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_action_hello_world_as_symbol">render_action_hello_world_as_symbol</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_and_redirect">render_and_redirect</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_content_type_from_body">render_content_type_from_body</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_custom_code">render_custom_code</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_file_not_using_full_path">render_file_not_using_full_path</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_file_not_using_full_path_with_dot_in_path">render_file_not_using_full_path_with_dot_in_path</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_file_not_using_full_path_with_relative_path">render_file_not_using_full_path_with_relative_path</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_file_with_instance_variables">render_file_with_instance_variables</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_file_with_locals">render_file_with_locals</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_hello_world">render_hello_world</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_hello_world_from_variable">render_hello_world_from_variable</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_js_with_explicit_action_template">render_js_with_explicit_action_template</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_js_with_explicit_template">render_js_with_explicit_template</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_text_hello_world">render_text_hello_world</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_text_hello_world_with_layout">render_text_hello_world_with_layout</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_text_with_assigns">render_text_with_assigns</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_to_string_and_render">render_to_string_and_render</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_to_string_with_assigns">render_to_string_with_assigns</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_to_string_with_caught_exception">render_to_string_with_caught_exception</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_to_string_with_exception">render_to_string_with_exception</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_to_string_with_partial">render_to_string_with_partial</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_with_explicit_template">render_with_explicit_template</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-render_xml_hello">render_xml_hello</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rendering_nothing_on_layout">rendering_nothing_on_layout</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rendering_with_conflicting_local_vars">rendering_with_conflicting_local_vars</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rendering_without_layout">rendering_without_layout</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rescue_action">rescue_action</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-rjs_helper_method">rjs_helper_method</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-update_page">update_page</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-update_page_with_instance_variables">update_page_with_instance_variables</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>Y</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-yield_content_for">yield_content_for</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-controller_name">
+            
+              <a name="method-c-controller_name"></a><b>controller_name</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-controller_name_source')" id="l_method-c-controller_name_source">show</a>
+                
+              </p>
+              <div id="method-c-controller_name_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 21</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">controller_name</span>; <span class="ruby-string">&quot;test&quot;</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-controller_path">
+            
+              <a name="method-c-controller_path"></a><b>controller_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-controller_path_source')" id="l_method-c-controller_path_source">show</a>
+                
+              </p>
+              <div id="method-c-controller_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 22</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">self</span>.<span class="ruby-identifier">controller_path</span>; <span class="ruby-string">&quot;test&quot;</span>; <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-accessing_params_in_template">
+            
+              <a name="method-i-accessing_params_in_template"></a><b>accessing_params_in_template</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-accessing_params_in_template_source')" id="l_method-i-accessing_params_in_template_source">show</a>
+                
+              </p>
+              <div id="method-i-accessing_params_in_template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 191</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">accessing_params_in_template</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:inline</span> =<span class="ruby-operator">&gt;</span>  <span class="ruby-string">&quot;Hello: &lt;%= params[:name] %&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-accessing_params_in_template_with_layout">
+            
+              <a name="method-i-accessing_params_in_template_with_layout"></a><b>accessing_params_in_template_with_layout</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-accessing_params_in_template_with_layout_source')" id="l_method-i-accessing_params_in_template_with_layout_source">show</a>
+                
+              </p>
+              <div id="method-i-accessing_params_in_template_with_layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 195</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">accessing_params_in_template_with_layout</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">nil</span>, <span class="ruby-value">:inline</span> =<span class="ruby-operator">&gt;</span>  <span class="ruby-string">&quot;Hello: &lt;%= params[:name] %&gt;&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-action_talk_to_layout">
+            
+              <a name="method-i-action_talk_to_layout"></a><b>action_talk_to_layout</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-action_talk_to_layout_source')" id="l_method-i-action_talk_to_layout_source">show</a>
+                
+              </p>
+              <div id="method-i-action_talk_to_layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 309</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">action_talk_to_layout</span>
+  <span class="ruby-comment"># Action template sets variable that's picked up by layout</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-builder_layout_test">
+            
+              <a name="method-i-builder_layout_test"></a><b>builder_layout_test</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-builder_layout_test_source')" id="l_method-i-builder_layout_test_source">show</a>
+                
+              </p>
+              <div id="method-i-builder_layout_test_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">builder_layout_test</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-delete_with_js">
+            
+              <a name="method-i-delete_with_js"></a><b>delete_with_js</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-delete_with_js_source')" id="l_method-i-delete_with_js_source">show</a>
+                
+              </p>
+              <div id="method-i-delete_with_js_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 279</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">delete_with_js</span>
+  <span class="ruby-ivar">@project_id</span> = <span class="ruby-number">4</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-double_redirect">
+            
+              <a name="method-i-double_redirect"></a><b>double_redirect</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-double_redirect_source')" id="l_method-i-double_redirect_source">show</a>
+                
+              </p>
+              <div id="method-i-double_redirect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">double_redirect</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;double_render&quot;</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;double_render&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-double_render">
+            
+              <a name="method-i-double_render"></a><b>double_render</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-double_render_source')" id="l_method-i-double_render_source">show</a>
+                
+              </p>
+              <div id="method-i-double_render_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 203</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">double_render</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello&quot;</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;world&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-empty_partial_collection">
+            
+              <a name="method-i-empty_partial_collection"></a><b>empty_partial_collection</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-empty_partial_collection_source')" id="l_method-i-empty_partial_collection_source">show</a>
+                
+              </p>
+              <div id="method-i-empty_partial_collection_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 146</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">empty_partial_collection</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;customer&quot;</span>, <span class="ruby-value">:collection</span> =<span class="ruby-operator">&gt;</span> []
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-enum_rjs_test">
+            
+              <a name="method-i-enum_rjs_test"></a><b>enum_rjs_test</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-enum_rjs_test_source')" id="l_method-i-enum_rjs_test_source">show</a>
+                
+              </p>
+              <div id="method-i-enum_rjs_test_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 268</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">enum_rjs_test</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:update</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">select</span>(<span class="ruby-string">'.product'</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">value</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">page</span>.<span class="ruby-identifier">rjs_helper_method_from_module</span>
+      <span class="ruby-identifier">page</span>.<span class="ruby-identifier">rjs_helper_method</span>(<span class="ruby-identifier">value</span>)
+      <span class="ruby-identifier">page</span>.<span class="ruby-identifier">sortable</span>(<span class="ruby-identifier">value</span>, <span class="ruby-value">:url</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;order&quot;</span> })
+      <span class="ruby-identifier">page</span>.<span class="ruby-identifier">draggable</span>(<span class="ruby-identifier">value</span>)
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-greeting">
+            
+              <a name="method-i-greeting"></a><b>greeting</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-greeting_source')" id="l_method-i-greeting_source">show</a>
+                
+              </p>
+              <div id="method-i-greeting_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 92</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">greeting</span>
+  <span class="ruby-comment"># let's just rely on the template</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-head_with_custom_header">
+            
+              <a name="method-i-head_with_custom_header"></a><b>head_with_custom_header</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-head_with_custom_header_source')" id="l_method-i-head_with_custom_header_source">show</a>
+                
+              </p>
+              <div id="method-i-head_with_custom_header_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 253</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">head_with_custom_header</span>
+  <span class="ruby-identifier">head</span> <span class="ruby-value">:x_custom_header</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;something&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-head_with_integer_status">
+            
+              <a name="method-i-head_with_integer_status"></a><b>head_with_integer_status</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-head_with_integer_status_source')" id="l_method-i-head_with_integer_status_source">show</a>
+                
+              </p>
+              <div id="method-i-head_with_integer_status_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 245</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">head_with_integer_status</span>
+  <span class="ruby-identifier">head</span> <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:status</span>].<span class="ruby-identifier">to_i</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-head_with_location_header">
+            
+              <a name="method-i-head_with_location_header"></a><b>head_with_location_header</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-head_with_location_header_source')" id="l_method-i-head_with_location_header_source">show</a>
+                
+              </p>
+              <div id="method-i-head_with_location_header_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 237</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">head_with_location_header</span>
+  <span class="ruby-identifier">head</span> <span class="ruby-value">:location</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;/foo&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-head_with_status_code_first">
+            
+              <a name="method-i-head_with_status_code_first"></a><b>head_with_status_code_first</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-head_with_status_code_first_source')" id="l_method-i-head_with_status_code_first_source">show</a>
+                
+              </p>
+              <div id="method-i-head_with_status_code_first_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 257</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">head_with_status_code_first</span>
+  <span class="ruby-identifier">head</span> <span class="ruby-value">:forbidden</span>, <span class="ruby-value">:x_custom_header</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;something&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-head_with_string_status">
+            
+              <a name="method-i-head_with_string_status"></a><b>head_with_string_status</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-head_with_string_status_source')" id="l_method-i-head_with_string_status_source">show</a>
+                
+              </p>
+              <div id="method-i-head_with_string_status_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 249</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">head_with_string_status</span>
+  <span class="ruby-identifier">head</span> <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:status</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-head_with_symbolic_status">
+            
+              <a name="method-i-head_with_symbolic_status"></a><b>head_with_symbolic_status</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-head_with_symbolic_status_source')" id="l_method-i-head_with_symbolic_status_source">show</a>
+                
+              </p>
+              <div id="method-i-head_with_symbolic_status_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">head_with_symbolic_status</span>
+  <span class="ruby-identifier">head</span> <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">params</span>[<span class="ruby-value">:status</span>].<span class="ruby-identifier">intern</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hello_in_a_string">
+            
+              <a name="method-i-hello_in_a_string"></a><b>hello_in_a_string</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hello_in_a_string_source')" id="l_method-i-hello_in_a_string_source">show</a>
+                
+              </p>
+              <div id="method-i-hello_in_a_string_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 159</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hello_in_a_string</span>
+  <span class="ruby-ivar">@customers</span> = [ <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;david&quot;</span>), <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;mary&quot;</span>) ]
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span>  <span class="ruby-node">&quot;How's there? #{render_to_string(&quot;test/list&quot;)}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hello_world">
+            
+              <a name="method-i-hello_world"></a><b>hello_world</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hello_world_source')" id="l_method-i-hello_world_source">show</a>
+                
+              </p>
+              <div id="method-i-hello_world_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 24</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hello_world</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hello_world_from_rxml_using_action">
+            
+              <a name="method-i-hello_world_from_rxml_using_action"></a><b>hello_world_from_rxml_using_action</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hello_world_from_rxml_using_action_source')" id="l_method-i-hello_world_from_rxml_using_action_source">show</a>
+                
+              </p>
+              <div id="method-i-hello_world_from_rxml_using_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 229</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hello_world_from_rxml_using_action</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello_world.rxml&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hello_world_from_rxml_using_template">
+            
+              <a name="method-i-hello_world_from_rxml_using_template"></a><b>hello_world_from_rxml_using_template</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hello_world_from_rxml_using_template_source')" id="l_method-i-hello_world_from_rxml_using_template_source">show</a>
+                
+              </p>
+              <div id="method-i-hello_world_from_rxml_using_template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 233</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hello_world_from_rxml_using_template</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:template</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;test/hello_world.rxml&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-hello_world_with_layout_false">
+            
+              <a name="method-i-hello_world_with_layout_false"></a><b>hello_world_with_layout_false</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-hello_world_with_layout_false_source')" id="l_method-i-hello_world_with_layout_false_source">show</a>
+                
+              </p>
+              <div id="method-i-hello_world_with_layout_false_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">hello_world_with_layout_false</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-layout_overriding_layout">
+            
+              <a name="method-i-layout_overriding_layout"></a><b>layout_overriding_layout</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-layout_overriding_layout_source')" id="l_method-i-layout_overriding_layout_source">show</a>
+                
+              </p>
+              <div id="method-i-layout_overriding_layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">layout_overriding_layout</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello_world&quot;</span>, <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;standard&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-layout_test">
+            
+              <a name="method-i-layout_test"></a><b>layout_test</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-layout_test_source')" id="l_method-i-layout_test_source">show</a>
+                
+              </p>
+              <div id="method-i-layout_test_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 96</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">layout_test</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello_world&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-layout_test_with_different_layout">
+            
+              <a name="method-i-layout_test_with_different_layout"></a><b>layout_test_with_different_layout</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-layout_test_with_different_layout_source')" id="l_method-i-layout_test_with_different_layout_source">show</a>
+                
+              </p>
+              <div id="method-i-layout_test_with_different_layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 100</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">layout_test_with_different_layout</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello_world&quot;</span>, <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;standard&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-partial_collection">
+            
+              <a name="method-i-partial_collection"></a><b>partial_collection</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-partial_collection_source')" id="l_method-i-partial_collection_source">show</a>
+                
+              </p>
+              <div id="method-i-partial_collection_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 138</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">partial_collection</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;customer&quot;</span>, <span class="ruby-value">:collection</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;david&quot;</span>), <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;mary&quot;</span>) ]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-partial_collection_with_locals">
+            
+              <a name="method-i-partial_collection_with_locals"></a><b>partial_collection_with_locals</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-partial_collection_with_locals_source')" id="l_method-i-partial_collection_with_locals_source">show</a>
+                
+              </p>
+              <div id="method-i-partial_collection_with_locals_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 142</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">partial_collection_with_locals</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;customer_greeting&quot;</span>, <span class="ruby-value">:collection</span> =<span class="ruby-operator">&gt;</span> [ <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;david&quot;</span>), <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;mary&quot;</span>) ], <span class="ruby-value">:locals</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:greeting</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Bonjour&quot;</span> }
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-partial_only">
+            
+              <a name="method-i-partial_only"></a><b>partial_only</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-partial_only_source')" id="l_method-i-partial_only_source">show</a>
+                
+              </p>
+              <div id="method-i-partial_only_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 126</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">partial_only</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-partial_only_with_layout">
+            
+              <a name="method-i-partial_only_with_layout"></a><b>partial_only_with_layout</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-partial_only_with_layout_source')" id="l_method-i-partial_only_with_layout_source">show</a>
+                
+              </p>
+              <div id="method-i-partial_only_with_layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 130</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">partial_only_with_layout</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;partial_only&quot;</span>, <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-partial_with_hash_object">
+            
+              <a name="method-i-partial_with_hash_object"></a><b>partial_with_hash_object</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-partial_with_hash_object_source')" id="l_method-i-partial_with_hash_object_source">show</a>
+                
+              </p>
+              <div id="method-i-partial_with_hash_object_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 150</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">partial_with_hash_object</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hash_object&quot;</span>, <span class="ruby-value">:object</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:first_name</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;Sam&quot;</span>}
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-partial_with_implicit_local_assignment">
+            
+              <a name="method-i-partial_with_implicit_local_assignment"></a><b>partial_with_implicit_local_assignment</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-partial_with_implicit_local_assignment_source')" id="l_method-i-partial_with_implicit_local_assignment_source">show</a>
+                
+              </p>
+              <div id="method-i-partial_with_implicit_local_assignment_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 154</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">partial_with_implicit_local_assignment</span>
+  <span class="ruby-ivar">@customer</span> = <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Marcel&quot;</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;customer&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-partial_with_locals">
+            
+              <a name="method-i-partial_with_locals"></a><b>partial_with_locals</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-partial_with_locals_source')" id="l_method-i-partial_with_locals_source">show</a>
+                
+              </p>
+              <div id="method-i-partial_with_locals_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 134</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">partial_with_locals</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;customer&quot;</span>, <span class="ruby-value">:locals</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:customer</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;david&quot;</span>) } 
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-partials_list">
+            
+              <a name="method-i-partials_list"></a><b>partials_list</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-partials_list_source')" id="l_method-i-partials_list_source">show</a>
+                
+              </p>
+              <div id="method-i-partials_list_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">partials_list</span>
+  <span class="ruby-ivar">@test_unchanged</span> = <span class="ruby-string">'hello'</span>
+  <span class="ruby-ivar">@customers</span> = [ <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;david&quot;</span>), <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;mary&quot;</span>) ]
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;list&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_action_hello_world">
+            
+              <a name="method-i-render_action_hello_world"></a><b>render_action_hello_world</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_action_hello_world_source')" id="l_method-i-render_action_hello_world_source">show</a>
+                
+              </p>
+              <div id="method-i-render_action_hello_world_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 36</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_action_hello_world</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello_world&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_action_hello_world_as_symbol">
+            
+              <a name="method-i-render_action_hello_world_as_symbol"></a><b>render_action_hello_world_as_symbol</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_action_hello_world_as_symbol_source')" id="l_method-i-render_action_hello_world_as_symbol_source">show</a>
+                
+              </p>
+              <div id="method-i-render_action_hello_world_as_symbol_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 40</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_action_hello_world_as_symbol</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-value">:hello_world</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_and_redirect">
+            
+              <a name="method-i-render_and_redirect"></a><b>render_and_redirect</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_and_redirect_source')" id="l_method-i-render_and_redirect_source">show</a>
+                
+              </p>
+              <div id="method-i-render_and_redirect_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 213</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_and_redirect</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello&quot;</span>
+  <span class="ruby-identifier">redirect_to</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;double_render&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_content_type_from_body">
+            
+              <a name="method-i-render_content_type_from_body"></a><b>render_content_type_from_body</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_content_type_from_body_source')" id="l_method-i-render_content_type_from_body_source">show</a>
+                
+              </p>
+              <div id="method-i-render_content_type_from_body_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 322</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_content_type_from_body</span>
+  <span class="ruby-identifier">response</span>.<span class="ruby-identifier">content_type</span> = <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">RSS</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello world!&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_custom_code">
+            
+              <a name="method-i-render_custom_code"></a><b>render_custom_code</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_custom_code_source')" id="l_method-i-render_custom_code_source">show</a>
+                
+              </p>
+              <div id="method-i-render_custom_code_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 57</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_custom_code</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-value">:status</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;404 Moved&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_file_not_using_full_path">
+            
+              <a name="method-i-render_file_not_using_full_path"></a><b>render_file_not_using_full_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_file_not_using_full_path_source')" id="l_method-i-render_file_not_using_full_path_source">show</a>
+                
+              </p>
+              <div id="method-i-render_file_not_using_full_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 72</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_file_not_using_full_path</span>
+  <span class="ruby-ivar">@secret</span> = <span class="ruby-string">'in the sauce'</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'test/render_file_with_ivar'</span>, <span class="ruby-value">:use_full_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_file_not_using_full_path_with_dot_in_path">
+            
+              <a name="method-i-render_file_not_using_full_path_with_dot_in_path"></a><b>render_file_not_using_full_path_with_dot_in_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_file_not_using_full_path_with_dot_in_path_source')" id="l_method-i-render_file_not_using_full_path_with_dot_in_path_source">show</a>
+                
+              </p>
+              <div id="method-i-render_file_not_using_full_path_with_dot_in_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 82</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_file_not_using_full_path_with_dot_in_path</span>
+  <span class="ruby-ivar">@secret</span> = <span class="ruby-string">'in the sauce'</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'test/dot.directory/render_file_with_ivar'</span>, <span class="ruby-value">:use_full_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_file_not_using_full_path_with_relative_path">
+            
+              <a name="method-i-render_file_not_using_full_path_with_relative_path"></a><b>render_file_not_using_full_path_with_relative_path</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_file_not_using_full_path_with_relative_path_source')" id="l_method-i-render_file_not_using_full_path_with_relative_path_source">show</a>
+                
+              </p>
+              <div id="method-i-render_file_not_using_full_path_with_relative_path_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 77</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_file_not_using_full_path_with_relative_path</span>
+  <span class="ruby-ivar">@secret</span> = <span class="ruby-string">'in the sauce'</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'test/../test/render_file_with_ivar'</span>, <span class="ruby-value">:use_full_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_file_with_instance_variables">
+            
+              <a name="method-i-render_file_with_instance_variables"></a><b>render_file_with_instance_variables</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_file_with_instance_variables_source')" id="l_method-i-render_file_with_instance_variables_source">show</a>
+                
+              </p>
+              <div id="method-i-render_file_with_instance_variables_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 61</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_file_with_instance_variables</span>
+  <span class="ruby-ivar">@secret</span> = <span class="ruby-string">'in the sauce'</span>
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>), <span class="ruby-string">'../fixtures/test/render_file_with_ivar.rhtml'</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_file_with_locals">
+            
+              <a name="method-i-render_file_with_locals"></a><b>render_file_with_locals</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_file_with_locals_source')" id="l_method-i-render_file_with_locals_source">show</a>
+                
+              </p>
+              <div id="method-i-render_file_with_locals_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 67</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_file_with_locals</span>
+  <span class="ruby-identifier">path</span> = <span class="ruby-constant">File</span>.<span class="ruby-identifier">join</span>(<span class="ruby-constant">File</span>.<span class="ruby-identifier">dirname</span>(<span class="ruby-keyword">__FILE__</span>), <span class="ruby-string">'../fixtures/test/render_file_with_locals.rhtml'</span>)
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">path</span>, <span class="ruby-value">:locals</span> =<span class="ruby-operator">&gt;</span> {<span class="ruby-value">:secret</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'in the sauce'</span>} 
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_hello_world">
+            
+              <a name="method-i-render_hello_world"></a><b>render_hello_world</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_hello_world_source')" id="l_method-i-render_hello_world_source">show</a>
+                
+              </p>
+              <div id="method-i-render_hello_world_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_hello_world</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:template</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;test/hello_world&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_hello_world_from_variable">
+            
+              <a name="method-i-render_hello_world_from_variable"></a><b>render_hello_world_from_variable</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_hello_world_from_variable_source')" id="l_method-i-render_hello_world_from_variable_source">show</a>
+                
+              </p>
+              <div id="method-i-render_hello_world_from_variable_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 31</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_hello_world_from_variable</span>
+  <span class="ruby-ivar">@person</span> = <span class="ruby-string">&quot;david&quot;</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;hello #{@person}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_js_with_explicit_action_template">
+            
+              <a name="method-i-render_js_with_explicit_action_template"></a><b>render_js_with_explicit_action_template</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_js_with_explicit_action_template_source')" id="l_method-i-render_js_with_explicit_action_template_source">show</a>
+                
+              </p>
+              <div id="method-i-render_js_with_explicit_action_template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 288</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_js_with_explicit_action_template</span>
+  <span class="ruby-ivar">@project_id</span> = <span class="ruby-number">4</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'delete_with_js'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_js_with_explicit_template">
+            
+              <a name="method-i-render_js_with_explicit_template"></a><b>render_js_with_explicit_template</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_js_with_explicit_template_source')" id="l_method-i-render_js_with_explicit_template_source">show</a>
+                
+              </p>
+              <div id="method-i-render_js_with_explicit_template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 283</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_js_with_explicit_template</span>
+  <span class="ruby-ivar">@project_id</span> = <span class="ruby-number">4</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:template</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'test/delete_with_js'</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_text_hello_world">
+            
+              <a name="method-i-render_text_hello_world"></a><b>render_text_hello_world</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_text_hello_world_source')" id="l_method-i-render_text_hello_world_source">show</a>
+                
+              </p>
+              <div id="method-i-render_text_hello_world_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 44</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_text_hello_world</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello world&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_text_hello_world_with_layout">
+            
+              <a name="method-i-render_text_hello_world_with_layout"></a><b>render_text_hello_world_with_layout</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_text_hello_world_with_layout_source')" id="l_method-i-render_text_hello_world_with_layout_source">show</a>
+                
+              </p>
+              <div id="method-i-render_text_hello_world_with_layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 48</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_text_hello_world_with_layout</span>
+  <span class="ruby-ivar">@variable_for_layout</span> = <span class="ruby-string">&quot;, I'm here!&quot;</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello world&quot;</span>, <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_text_with_assigns">
+            
+              <a name="method-i-render_text_with_assigns"></a><b>render_text_with_assigns</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_text_with_assigns_source')" id="l_method-i-render_text_with_assigns_source">show</a>
+                
+              </p>
+              <div id="method-i-render_text_with_assigns_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 313</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_text_with_assigns</span>
+  <span class="ruby-ivar">@hello</span> = <span class="ruby-string">&quot;world&quot;</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;foo&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_to_string_and_render">
+            
+              <a name="method-i-render_to_string_and_render"></a><b>render_to_string_and_render</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_to_string_and_render_source')" id="l_method-i-render_to_string_and_render_source">show</a>
+                
+              </p>
+              <div id="method-i-render_to_string_and_render_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 218</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_to_string_and_render</span>
+  <span class="ruby-ivar">@stuff</span> = <span class="ruby-identifier">render_to_string</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;here is some cached stuff&quot;</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-node">&quot;Hi web users! #{@stuff}&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_to_string_with_assigns">
+            
+              <a name="method-i-render_to_string_with_assigns"></a><b>render_to_string_with_assigns</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_to_string_with_assigns_source')" id="l_method-i-render_to_string_with_assigns_source">show</a>
+                
+              </p>
+              <div id="method-i-render_to_string_with_assigns_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 164</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_to_string_with_assigns</span>
+  <span class="ruby-ivar">@before</span> = <span class="ruby-string">&quot;i'm before the render&quot;</span>
+  <span class="ruby-identifier">render_to_string</span> <span class="ruby-value">:text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;foo&quot;</span>
+  <span class="ruby-ivar">@after</span> = <span class="ruby-string">&quot;i'm after the render&quot;</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;test/hello_world&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_to_string_with_caught_exception">
+            
+              <a name="method-i-render_to_string_with_caught_exception"></a><b>render_to_string_with_caught_exception</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_to_string_with_caught_exception_source')" id="l_method-i-render_to_string_with_caught_exception_source">show</a>
+                
+              </p>
+              <div id="method-i-render_to_string_with_caught_exception_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 181</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_to_string_with_caught_exception</span>
+  <span class="ruby-ivar">@before</span> = <span class="ruby-string">&quot;i'm before the render&quot;</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-identifier">render_to_string</span> <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;exception that will be caught- hope my future instance vars still work!&quot;</span>, <span class="ruby-value">:use_full_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+  <span class="ruby-keyword">rescue</span>
+  <span class="ruby-keyword">end</span>
+  <span class="ruby-ivar">@after</span> = <span class="ruby-string">&quot;i'm after the render&quot;</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;test/hello_world&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_to_string_with_exception">
+            
+              <a name="method-i-render_to_string_with_exception"></a><b>render_to_string_with_exception</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_to_string_with_exception_source')" id="l_method-i-render_to_string_with_exception_source">show</a>
+                
+              </p>
+              <div id="method-i-render_to_string_with_exception_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 177</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_to_string_with_exception</span>
+  <span class="ruby-identifier">render_to_string</span> <span class="ruby-value">:file</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;exception that will not be caught - this will certainly not work&quot;</span>, <span class="ruby-value">:use_full_path</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_to_string_with_partial">
+            
+              <a name="method-i-render_to_string_with_partial"></a><b>render_to_string_with_partial</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_to_string_with_partial_source')" id="l_method-i-render_to_string_with_partial_source">show</a>
+                
+              </p>
+              <div id="method-i-render_to_string_with_partial_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 171</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_to_string_with_partial</span>
+   <span class="ruby-ivar">@partial_only</span> = <span class="ruby-identifier">render_to_string</span> <span class="ruby-value">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;partial_only&quot;</span>
+   <span class="ruby-ivar">@partial_with_locals</span> = <span class="ruby-identifier">render_to_string</span> <span class="ruby-value">:partial</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;customer&quot;</span>, <span class="ruby-value">:locals</span> =<span class="ruby-operator">&gt;</span> { <span class="ruby-value">:customer</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Customer</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;david&quot;</span>) }     
+   <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;test/hello_world&quot;</span>  
+ <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_with_explicit_template">
+            
+              <a name="method-i-render_with_explicit_template"></a><b>render_with_explicit_template</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_with_explicit_template_source')" id="l_method-i-render_with_explicit_template_source">show</a>
+                
+              </p>
+              <div id="method-i-render_with_explicit_template_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 199</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_with_explicit_template</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-string">&quot;test/hello_world&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-render_xml_hello">
+            
+              <a name="method-i-render_xml_hello"></a><b>render_xml_hello</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-render_xml_hello_source')" id="l_method-i-render_xml_hello_source">show</a>
+                
+              </p>
+              <div id="method-i-render_xml_hello_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 87</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">render_xml_hello</span>
+  <span class="ruby-ivar">@name</span> = <span class="ruby-string">&quot;David&quot;</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:template</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;test/hello&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rendering_nothing_on_layout">
+            
+              <a name="method-i-rendering_nothing_on_layout"></a><b>rendering_nothing_on_layout</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rendering_nothing_on_layout_source')" id="l_method-i-rendering_nothing_on_layout_source">show</a>
+                
+              </p>
+              <div id="method-i-rendering_nothing_on_layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rendering_nothing_on_layout</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:nothing</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rendering_with_conflicting_local_vars">
+            
+              <a name="method-i-rendering_with_conflicting_local_vars"></a><b>rendering_with_conflicting_local_vars</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rendering_with_conflicting_local_vars_source')" id="l_method-i-rendering_with_conflicting_local_vars_source">show</a>
+                
+              </p>
+              <div id="method-i-rendering_with_conflicting_local_vars_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 223</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rendering_with_conflicting_local_vars</span>
+  <span class="ruby-ivar">@name</span> = <span class="ruby-string">&quot;David&quot;</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">@template</span>.<span class="ruby-identifier">name</span>() <span class="ruby-keyword">nil</span> <span class="ruby-keyword">end</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;potential_conflicts&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rendering_without_layout">
+            
+              <a name="method-i-rendering_without_layout"></a><b>rendering_without_layout</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rendering_without_layout_source')" id="l_method-i-rendering_without_layout_source">show</a>
+                
+              </p>
+              <div id="method-i-rendering_without_layout_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 104</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rendering_without_layout</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;hello_world&quot;</span>, <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-keyword">false</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rescue_action">
+            
+              <a name="method-i-rescue_action"></a><b>rescue_action</b>(e)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rescue_action_source')" id="l_method-i-rescue_action_source">show</a>
+                
+              </p>
+              <div id="method-i-rescue_action_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 327</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rescue_action</span>(<span class="ruby-identifier">e</span>) <span class="ruby-identifier">raise</span> <span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-rjs_helper_method">
+            
+              <a name="method-i-rjs_helper_method"></a><b>rjs_helper_method</b>(value)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-rjs_helper_method_source')" id="l_method-i-rjs_helper_method_source">show</a>
+                
+              </p>
+              <div id="method-i-rjs_helper_method_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 263</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">rjs_helper_method</span>(<span class="ruby-identifier">value</span>)
+  <span class="ruby-identifier">page</span>.<span class="ruby-identifier">visual_effect</span> <span class="ruby-value">:highlight</span>, <span class="ruby-identifier">value</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update_page">
+            
+              <a name="method-i-update_page"></a><b>update_page</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-update_page_source')" id="l_method-i-update_page_source">show</a>
+                
+              </p>
+              <div id="method-i-update_page_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 293</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">update_page</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:update</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-string">'balance'</span>, <span class="ruby-string">'$37,000,000.00'</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">visual_effect</span> <span class="ruby-value">:highlight</span>, <span class="ruby-string">'balance'</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-update_page_with_instance_variables">
+            
+              <a name="method-i-update_page_with_instance_variables"></a><b>update_page_with_instance_variables</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-update_page_with_instance_variables_source')" id="l_method-i-update_page_with_instance_variables_source">show</a>
+                
+              </p>
+              <div id="method-i-update_page_with_instance_variables_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 300</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">update_page_with_instance_variables</span>
+  <span class="ruby-ivar">@money</span> = <span class="ruby-string">'$37,000,000.00'</span>
+  <span class="ruby-ivar">@div_id</span> = <span class="ruby-string">'balance'</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:update</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">page</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">replace_html</span> <span class="ruby-ivar">@div_id</span>, <span class="ruby-ivar">@money</span>
+    <span class="ruby-identifier">page</span>.<span class="ruby-identifier">visual_effect</span> <span class="ruby-value">:highlight</span>, <span class="ruby-ivar">@div_id</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-yield_content_for">
+            
+              <a name="method-i-yield_content_for"></a><b>yield_content_for</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-yield_content_for_source')" id="l_method-i-yield_content_for_source">show</a>
+                
+              </p>
+              <div id="method-i-yield_content_for_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/test/controller/new_render_test.rb, line 318</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">yield_content_for</span>
+  <span class="ruby-identifier">render</span> <span class="ruby-value">:action</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;content_for&quot;</span>, <span class="ruby-value">:layout</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">&quot;yield&quot;</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Enumerable</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Enumerable 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox_rb.html">rails/actionmailer/lib/action_mailer/vendor/tmail/mailbox.rb</a></li>
+            
+            <li><a href="../files/rails/actionwebservice/setup_rb.html">rails/actionwebservice/setup.rb</a></li>
+            
+            <li><a href="../files/rails/activesupport/lib/active_support/core_ext/enumerable_rb.html">rails/activesupport/lib/active_support/core_ext/enumerable.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>G</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-group_by">group_by</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>I</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-index_by">index_by</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>S</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-sum">sum</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-group_by">
+            
+              <a name="method-i-group_by"></a><b>group_by</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Collect an enumerable into sets, grouped by the result of a block. Useful,
+for example, for grouping records by date.</p>
+
+<p>e.g.</p>
+
+<pre class="ruby"><span class="ruby-identifier">latest_transcripts</span>.<span class="ruby-identifier">group_by</span>(&amp;:<span class="ruby-identifier">day</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">day</span>, <span class="ruby-identifier">transcripts</span><span class="ruby-operator">|</span> 
+  <span class="ruby-identifier">p</span> <span class="ruby-node">&quot;#{day} -&gt; #{transcripts.map(&amp;:class) * ', '}&quot;</span>
+<span class="ruby-keyword">end</span>
+<span class="ruby-string">&quot;2006-03-01 -&gt; Transcript&quot;</span>
+<span class="ruby-string">&quot;2006-02-28 -&gt; Transcript&quot;</span>
+<span class="ruby-string">&quot;2006-02-27 -&gt; Transcript, Transcript&quot;</span>
+<span class="ruby-string">&quot;2006-02-26 -&gt; Transcript, Transcript&quot;</span>
+<span class="ruby-string">&quot;2006-02-25 -&gt; Transcript&quot;</span>
+<span class="ruby-string">&quot;2006-02-24 -&gt; Transcript, Transcript&quot;</span>
+<span class="ruby-string">&quot;2006-02-23 -&gt; Transcript&quot;</span>
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-group_by_source')" id="l_method-i-group_by_source">show</a>
+                
+              </p>
+              <div id="method-i-group_by_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/core_ext/enumerable.rb, line 17</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">group_by</span>
+  <span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">groups</span>, <span class="ruby-identifier">element</span><span class="ruby-operator">|</span>
+    (<span class="ruby-identifier">groups</span>[<span class="ruby-keyword">yield</span>(<span class="ruby-identifier">element</span>)] <span class="ruby-operator">||=</span> []) <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-identifier">element</span>
+    <span class="ruby-identifier">groups</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-index_by">
+            
+              <a name="method-i-index_by"></a><b>index_by</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Convert an enumerable to a hash. Examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">people</span>.<span class="ruby-identifier">index_by</span>(&amp;:<span class="ruby-identifier">login</span>)
+  =<span class="ruby-operator">&gt;</span> { <span class="ruby-string">&quot;nextangle&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-operator">&lt;</span><span class="ruby-constant">Person</span> <span class="ruby-operator">...</span><span class="ruby-operator">&gt;</span>, <span class="ruby-string">&quot;chade-&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-operator">&lt;</span><span class="ruby-constant">Person</span> <span class="ruby-operator">...</span><span class="ruby-operator">&gt;</span>, <span class="ruby-operator">...</span>}
+<span class="ruby-identifier">people</span>.<span class="ruby-identifier">index_by</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">person</span><span class="ruby-operator">|</span> <span class="ruby-node">&quot;#{person.first_name} #{person.last_name}&quot;</span> }
+  =<span class="ruby-operator">&gt;</span> { <span class="ruby-string">&quot;Chade- Fowlersburg-e&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-operator">&lt;</span><span class="ruby-constant">Person</span> <span class="ruby-operator">...</span><span class="ruby-operator">&gt;</span>, <span class="ruby-string">&quot;David Heinemeier Hansson&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-operator">&lt;</span><span class="ruby-constant">Person</span> <span class="ruby-operator">...</span><span class="ruby-operator">&gt;</span>, <span class="ruby-operator">...</span>}
+</pre>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-index_by_source')" id="l_method-i-index_by_source">show</a>
+                
+              </p>
+              <div id="method-i-index_by_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/core_ext/enumerable.rb, line 55</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">index_by</span>
+  <span class="ruby-identifier">inject</span>({}) <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">accum</span>, <span class="ruby-identifier">elem</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">accum</span>[<span class="ruby-keyword">yield</span>(<span class="ruby-identifier">elem</span>)] = <span class="ruby-identifier">elem</span>
+    <span class="ruby-identifier">accum</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-sum">
+            
+              <a name="method-i-sum"></a><b>sum</b>(identity = 0, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Calculates a sum from the elements. Examples:</p>
+
+<pre class="ruby"><span class="ruby-identifier">payments</span>.<span class="ruby-identifier">sum</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">p</span><span class="ruby-operator">|</span> <span class="ruby-identifier">p</span>.<span class="ruby-identifier">price</span> * <span class="ruby-identifier">p</span>.<span class="ruby-identifier">tax_rate</span> }
+<span class="ruby-identifier">payments</span>.<span class="ruby-identifier">sum</span>(&amp;:<span class="ruby-identifier">price</span>)
+</pre>
+
+<p>This is instead of payments.inject { |sum, p| sum + p.price }</p>
+
+<p>Also calculates sums without the use of a block:</p>
+
+<pre class="ruby">[<span class="ruby-value">5</span>, <span class="ruby-value">15</span>, <span class="ruby-value">10</span>].<span class="ruby-identifier">sum</span> <span class="ruby-comment"># =&gt; 30</span>
+</pre>
+
+<p>The default identity (sum of an empty list) is zero.  However, you can
+override this default:</p>
+
+<p>[].sum(Payment.new(0)) { |i| i.amount } # =&gt; Payment.new(0)</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-sum_source')" id="l_method-i-sum_source">show</a>
+                
+              </p>
+              <div id="method-i-sum_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/core_ext/enumerable.rb, line 39</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">sum</span>(<span class="ruby-identifier">identity</span> = <span class="ruby-number">0</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-identifier">identity</span> <span class="ruby-keyword">unless</span> <span class="ruby-identifier">size</span> <span class="ruby-operator">&gt;</span> <span class="ruby-number">0</span>
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">block_given?</span>
+    <span class="ruby-identifier">map</span>(&amp;<span class="ruby-identifier">block</span>).<span class="ruby-identifier">sum</span>
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-identifier">inject</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">sum</span>, <span class="ruby-identifier">element</span><span class="ruby-operator">|</span> <span class="ruby-identifier">sum</span> <span class="ruby-operator">+</span> <span class="ruby-identifier">element</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

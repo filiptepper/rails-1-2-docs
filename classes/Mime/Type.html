@@ -1,0 +1,550 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Mime::Type</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../../css/github.css" type="text/css" media="screen" />
+<script src="../../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            Mime::Type 
+            
+                <span class="parent">&lt; 
+                    
+                    <a href="../Object.html">Object</a>
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../../files/rails/actionpack/lib/action_controller/mime_type_rb.html">rails/actionpack/lib/action_controller/mime_type.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+    <div class="description">
+      
+<p>Encapsulates the notion of a mime type. Can be used at render time, for
+example, with:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">PostsController</span> <span class="ruby-operator">&lt;</span> <span class="ruby-constant">ActionController</span><span class="ruby-operator">::</span><span class="ruby-constant">Base</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">show</span>
+    <span class="ruby-ivar">@post</span> = <span class="ruby-constant">Post</span>.<span class="ruby-identifier">find</span>(<span class="ruby-identifier">params</span>[:<span class="ruby-identifier">id</span>])
+
+    <span class="ruby-identifier">respond_to</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">format</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">html</span>
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">ics</span> { <span class="ruby-identifier">render</span> :<span class="ruby-identifier">text</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-identifier">post</span>.<span class="ruby-identifier">to_ics</span>, :<span class="ruby-identifier">mime_type</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span>[<span class="ruby-string">&quot;text/calendar&quot;</span>]  }
+      <span class="ruby-identifier">format</span>.<span class="ruby-identifier">xml</span> { <span class="ruby-identifier">render</span> :<span class="ruby-identifier">xml</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-ivar">@people</span>.<span class="ruby-identifier">to_xml</span> }
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+</pre>
+
+    </div>
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>#</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-3D-3D">==</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-3D-3D-3D">===</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>L</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-lookup">lookup</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>N</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-new">new</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>P</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-parse">parse</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>R</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-c-register">register</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-to_s">to_s</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_str">to_str</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-to_sym">to_sym</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+    
+      <div class="sectiontitle">Class Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-c-lookup">
+            
+              <a name="method-c-lookup"></a><b>lookup</b>(string)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-lookup_source')" id="l_method-c-lookup_source">show</a>
+                
+              </p>
+              <div id="method-c-lookup_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/mime_type.rb, line 43</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">lookup</span>(<span class="ruby-identifier">string</span>)
+  <span class="ruby-constant">LOOKUP</span>[<span class="ruby-identifier">string</span>]
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-new">
+            
+              <a name="method-c-new"></a><b>new</b>(string, symbol = nil, synonyms = [])
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-new_source')" id="l_method-c-new_source">show</a>
+                
+              </p>
+              <div id="method-c-new_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/mime_type.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">initialize</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">symbol</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">synonyms</span> = [])
+  <span class="ruby-ivar">@symbol</span>, <span class="ruby-ivar">@synonyms</span> = <span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">synonyms</span>
+  <span class="ruby-ivar">@string</span> = <span class="ruby-identifier">string</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-parse">
+            
+              <a name="method-c-parse"></a><b>parse</b>(accept_header)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-parse_source')" id="l_method-c-parse_source">show</a>
+                
+              </p>
+              <div id="method-c-parse_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/mime_type.rb, line 53</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">parse</span>(<span class="ruby-identifier">accept_header</span>)
+  <span class="ruby-comment"># keep track of creation order to keep the subsequent sort stable</span>
+  <span class="ruby-identifier">index</span> = <span class="ruby-number">0</span>
+  <span class="ruby-identifier">list</span> = <span class="ruby-identifier">accept_header</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r,/</span>).<span class="ruby-identifier">map!</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> 
+    <span class="ruby-constant">AcceptItem</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">index</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>, *<span class="ruby-identifier">i</span>.<span class="ruby-identifier">split</span>(<span class="ruby-regexp">%r;\s*q=/</span>))
+  <span class="ruby-keyword">end</span>.<span class="ruby-identifier">sort!</span>
+
+  <span class="ruby-comment"># Take care of the broken text/xml entry by renaming or deleting it</span>
+  <span class="ruby-identifier">text_xml</span> = <span class="ruby-identifier">list</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">&quot;text/xml&quot;</span>)
+  <span class="ruby-identifier">app_xml</span> = <span class="ruby-identifier">list</span>.<span class="ruby-identifier">index</span>(<span class="ruby-string">&quot;application/xml&quot;</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">text_xml</span> <span class="ruby-operator">&amp;&amp;</span> <span class="ruby-identifier">app_xml</span>
+    <span class="ruby-comment"># set the q value to the max of the two</span>
+    <span class="ruby-identifier">list</span>[<span class="ruby-identifier">app_xml</span>].<span class="ruby-identifier">q</span> = [<span class="ruby-identifier">list</span>[<span class="ruby-identifier">text_xml</span>].<span class="ruby-identifier">q</span>, <span class="ruby-identifier">list</span>[<span class="ruby-identifier">app_xml</span>].<span class="ruby-identifier">q</span>].<span class="ruby-identifier">max</span>
+
+    <span class="ruby-comment"># make sure app_xml is ahead of text_xml in the list</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">app_xml</span> <span class="ruby-operator">&gt;</span> <span class="ruby-identifier">text_xml</span>
+      <span class="ruby-identifier">list</span>[<span class="ruby-identifier">app_xml</span>], <span class="ruby-identifier">list</span>[<span class="ruby-identifier">text_xml</span>] = <span class="ruby-identifier">list</span>[<span class="ruby-identifier">text_xml</span>], <span class="ruby-identifier">list</span>[<span class="ruby-identifier">app_xml</span>]
+      <span class="ruby-identifier">app_xml</span>, <span class="ruby-identifier">text_xml</span> = <span class="ruby-identifier">text_xml</span>, <span class="ruby-identifier">app_xml</span>
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-comment"># delete text_xml from the list</span>
+    <span class="ruby-identifier">list</span>.<span class="ruby-identifier">delete_at</span>(<span class="ruby-identifier">text_xml</span>)
+  
+  <span class="ruby-keyword">elsif</span> <span class="ruby-identifier">text_xml</span>
+    <span class="ruby-identifier">list</span>[<span class="ruby-identifier">text_xml</span>].<span class="ruby-identifier">name</span> = <span class="ruby-string">&quot;application/xml&quot;</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-comment"># Look for more specific xml-based types and sort them ahead of app/xml</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">app_xml</span>
+    <span class="ruby-identifier">idx</span> = <span class="ruby-identifier">app_xml</span>
+    <span class="ruby-identifier">app_xml_type</span> = <span class="ruby-identifier">list</span>[<span class="ruby-identifier">app_xml</span>]
+
+    <span class="ruby-keyword">while</span>(<span class="ruby-identifier">idx</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">length</span>)
+      <span class="ruby-identifier">type</span> = <span class="ruby-identifier">list</span>[<span class="ruby-identifier">idx</span>]
+      <span class="ruby-keyword">break</span> <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">q</span> <span class="ruby-operator">&lt;</span> <span class="ruby-identifier">app_xml_type</span>.<span class="ruby-identifier">q</span>
+      <span class="ruby-keyword">if</span> <span class="ruby-identifier">type</span>.<span class="ruby-identifier">name</span> <span class="ruby-operator">=~</span> <span class="ruby-regexp">%r\+xml$/</span>
+        <span class="ruby-identifier">list</span>[<span class="ruby-identifier">app_xml</span>], <span class="ruby-identifier">list</span>[<span class="ruby-identifier">idx</span>] = <span class="ruby-identifier">list</span>[<span class="ruby-identifier">idx</span>], <span class="ruby-identifier">list</span>[<span class="ruby-identifier">app_xml</span>]
+        <span class="ruby-identifier">app_xml</span> = <span class="ruby-identifier">idx</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">idx</span> <span class="ruby-operator">+=</span> <span class="ruby-number">1</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">list</span>.<span class="ruby-identifier">map!</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">i</span><span class="ruby-operator">|</span> <span class="ruby-constant">Mime</span><span class="ruby-operator">::</span><span class="ruby-constant">Type</span>.<span class="ruby-identifier">lookup</span>(<span class="ruby-identifier">i</span>.<span class="ruby-identifier">name</span>) }.<span class="ruby-identifier">uniq!</span>
+  <span class="ruby-identifier">list</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-c-register">
+            
+              <a name="method-c-register"></a><b>register</b>(string, symbol, synonyms = [])
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-c-register_source')" id="l_method-c-register_source">show</a>
+                
+              </p>
+              <div id="method-c-register_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/mime_type.rb, line 47</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">register</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">synonyms</span> = [])
+  <span class="ruby-constant">Mime</span>.<span class="ruby-identifier">send</span> <span class="ruby-value">:const_set</span>, <span class="ruby-identifier">symbol</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>, <span class="ruby-constant">Type</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">string</span>, <span class="ruby-identifier">symbol</span>, <span class="ruby-identifier">synonyms</span>)
+  <span class="ruby-constant">SET</span> <span class="ruby-operator">&lt;&lt;</span> <span class="ruby-constant">Mime</span>.<span class="ruby-identifier">send</span>(<span class="ruby-value">:const_get</span>, <span class="ruby-identifier">symbol</span>.<span class="ruby-identifier">to_s</span>.<span class="ruby-identifier">upcase</span>)
+  <span class="ruby-constant">LOOKUP</span>[<span class="ruby-identifier">string</span>] = <span class="ruby-constant">EXTENSION_LOOKUP</span>[<span class="ruby-identifier">symbol</span>.<span class="ruby-identifier">to_s</span>] = <span class="ruby-constant">SET</span>.<span class="ruby-identifier">last</span>        
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                  
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-3D-3D">
+            
+              <a name="method-i-3D-3D"></a><b>==</b>(mime_type)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-3D-3D_source')" id="l_method-i-3D-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-3D-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/mime_type.rb, line 128</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">==</span>(<span class="ruby-keyword ruby-title">mime_type</span>)
+  (<span class="ruby-ivar">@synonyms</span> <span class="ruby-operator">+</span> [ <span class="ruby-keyword">self</span> ]).<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">synonym</span><span class="ruby-operator">|</span> <span class="ruby-identifier">synonym</span>.<span class="ruby-identifier">to_s</span> <span class="ruby-operator">==</span> <span class="ruby-identifier">mime_type</span>.<span class="ruby-identifier">to_s</span> } <span class="ruby-keyword">if</span> <span class="ruby-identifier">mime_type</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-3D-3D-3D">
+            
+              <a name="method-i-3D-3D-3D"></a><b>===</b>(list)
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-3D-3D-3D_source')" id="l_method-i-3D-3D-3D_source">show</a>
+                
+              </p>
+              <div id="method-i-3D-3D-3D_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/mime_type.rb, line 120</span>
+<span class="ruby-keyword">def</span> <span class="ruby-operator">===</span>(<span class="ruby-keyword ruby-title">list</span>)
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">is_a?</span>(<span class="ruby-constant">Array</span>)
+    (<span class="ruby-ivar">@synonyms</span> <span class="ruby-operator">+</span> [ <span class="ruby-keyword">self</span> ]).<span class="ruby-identifier">any?</span> { <span class="ruby-operator">|</span><span class="ruby-identifier">synonym</span><span class="ruby-operator">|</span> <span class="ruby-identifier">list</span>.<span class="ruby-identifier">include?</span>(<span class="ruby-identifier">synonym</span>) }
+  <span class="ruby-keyword">else</span>
+    <span class="ruby-keyword">super</span>
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_s">
+            
+              <a name="method-i-to_s"></a><b>to_s</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_s_source')" id="l_method-i-to_s_source">show</a>
+                
+              </p>
+              <div id="method-i-to_s_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/mime_type.rb, line 108</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_s</span>
+  <span class="ruby-ivar">@string</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_str">
+            
+              <a name="method-i-to_str"></a><b>to_str</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_str_source')" id="l_method-i-to_str_source">show</a>
+                
+              </p>
+              <div id="method-i-to_str_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/mime_type.rb, line 112</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_str</span>
+  <span class="ruby-identifier">to_s</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-to_sym">
+            
+              <a name="method-i-to_sym"></a><b>to_sym</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-to_sym_source')" id="l_method-i-to_sym_source">show</a>
+                
+              </p>
+              <div id="method-i-to_sym_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/actionpack/lib/action_controller/mime_type.rb, line 116</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">to_sym</span>
+  <span class="ruby-ivar">@symbol</span> <span class="ruby-operator">||</span> <span class="ruby-ivar">@string</span>.<span class="ruby-identifier">to_sym</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

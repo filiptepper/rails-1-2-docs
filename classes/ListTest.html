@@ -1,0 +1,743 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>ListTest</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Class</span> 
+            ListTest 
+            
+                <span class="parent">&lt; 
+                    
+                    Test::Unit::TestCase
+                    
+                </span>
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activerecord/test/mixin_test_rb.html">rails/activerecord/test/mixin_test.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>T</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-test_delete_middle">test_delete_middle</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_injection">test_injection</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_insert">test_insert</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_insert_at">test_insert_at</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_move_to_bottom_with_next_to_last_item">test_move_to_bottom_with_next_to_last_item</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_next_prev">test_next_prev</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_nil_scope">test_nil_scope</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_remove_before_destroy_does_not_shift_lower_items_twice">test_remove_before_destroy_does_not_shift_lower_items_twice</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_remove_from_list_should_set_position_to_nil">test_remove_from_list_should_set_position_to_nil</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_remove_from_list_should_then_fail_in_list-3F">test_remove_from_list_should_then_fail_in_list?</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_reordering">test_reordering</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-test_with_string_based_scope">test_with_string_based_scope</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+
+
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-test_delete_middle">
+            
+              <a name="method-i-test_delete_middle"></a><b>test_delete_middle</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_delete_middle_source')" id="l_method-i-test_delete_middle_source">show</a>
+                
+              </p>
+              <div id="method-i-test_delete_middle_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 172</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_delete_middle</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>).<span class="ruby-identifier">destroy</span>
+
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>, <span class="ruby-value">:reload</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>, <span class="ruby-value">:reload</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>, <span class="ruby-value">:reload</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>).<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>).<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>).<span class="ruby-identifier">pos</span>
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>).<span class="ruby-identifier">destroy</span>
+
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>, <span class="ruby-value">:reload</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>, <span class="ruby-value">:reload</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>).<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>).<span class="ruby-identifier">pos</span>
+
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_injection">
+            
+              <a name="method-i-test_injection"></a><b>test_injection</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_injection_source')" id="l_method-i-test_injection_source">show</a>
+                
+              </p>
+              <div id="method-i-test_injection_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 109</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_injection</span>
+  <span class="ruby-identifier">item</span> = <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;parent_id&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-number">1</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;parent_id = 1&quot;</span>, <span class="ruby-identifier">item</span>.<span class="ruby-identifier">scope_condition</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-string">&quot;pos&quot;</span>, <span class="ruby-identifier">item</span>.<span class="ruby-identifier">position_column</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_insert">
+            
+              <a name="method-i-test_insert"></a><b>test_insert</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_insert_source')" id="l_method-i-test_insert_source">show</a>
+                
+              </p>
+              <div id="method-i-test_insert_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 115</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_insert</span>
+  <span class="ruby-identifier">new</span> = <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;parent_id&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-number">20</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">first?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">last?</span>
+
+  <span class="ruby-identifier">new</span> = <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;parent_id&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-number">20</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">new</span>.<span class="ruby-identifier">first?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">last?</span>
+
+  <span class="ruby-identifier">new</span> = <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;parent_id&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-number">20</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-operator">!</span><span class="ruby-identifier">new</span>.<span class="ruby-identifier">first?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">last?</span>
+
+  <span class="ruby-identifier">new</span> = <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;parent_id&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-number">0</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">first?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">last?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_insert_at">
+            
+              <a name="method-i-test_insert_at"></a><b>test_insert_at</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_insert_at_source')" id="l_method-i-test_insert_at_source">show</a>
+                
+              </p>
+              <div id="method-i-test_insert_at_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 137</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_insert_at</span>
+  <span class="ruby-identifier">new</span> = <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;parent_id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">20</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">pos</span>
+
+  <span class="ruby-identifier">new</span> = <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;parent_id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">20</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">pos</span>
+
+  <span class="ruby-identifier">new</span> = <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;parent_id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">20</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">pos</span>
+
+  <span class="ruby-identifier">new4</span> = <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;parent_id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">20</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">4</span>, <span class="ruby-identifier">new4</span>.<span class="ruby-identifier">pos</span>
+
+  <span class="ruby-identifier">new4</span>.<span class="ruby-identifier">insert_at</span>(<span class="ruby-number">3</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">new4</span>.<span class="ruby-identifier">pos</span>
+
+  <span class="ruby-identifier">new</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">4</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">pos</span>
+
+  <span class="ruby-identifier">new</span>.<span class="ruby-identifier">insert_at</span>(<span class="ruby-number">2</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">pos</span>
+
+  <span class="ruby-identifier">new4</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">4</span>, <span class="ruby-identifier">new4</span>.<span class="ruby-identifier">pos</span>
+
+  <span class="ruby-identifier">new5</span> = <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;parent_id&quot;</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-number">20</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">new5</span>.<span class="ruby-identifier">pos</span>
+
+  <span class="ruby-identifier">new5</span>.<span class="ruby-identifier">insert_at</span>(<span class="ruby-number">1</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">new5</span>.<span class="ruby-identifier">pos</span>
+
+  <span class="ruby-identifier">new4</span>.<span class="ruby-identifier">reload</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">5</span>, <span class="ruby-identifier">new4</span>.<span class="ruby-identifier">pos</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_move_to_bottom_with_next_to_last_item">
+            
+              <a name="method-i-test_move_to_bottom_with_next_to_last_item"></a><b>test_move_to_bottom_with_next_to_last_item</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_move_to_bottom_with_next_to_last_item_source')" id="l_method-i-test_move_to_bottom_with_next_to_last_item_source">show</a>
+                
+              </p>
+              <div id="method-i-test_move_to_bottom_with_next_to_last_item_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 85</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_move_to_bottom_with_next_to_last_item</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>).<span class="ruby-identifier">move_to_bottom</span>
+
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_next_prev">
+            
+              <a name="method-i-test_next_prev"></a><b>test_next_prev</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_next_prev_source')" id="l_method-i-test_next_prev_source">show</a>
+                
+              </p>
+              <div id="method-i-test_next_prev_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 101</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_next_prev</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>).<span class="ruby-identifier">lower_item</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>).<span class="ruby-identifier">higher_item</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>), <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>).<span class="ruby-identifier">higher_item</span>
+  <span class="ruby-identifier">assert_nil</span> <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>).<span class="ruby-identifier">lower_item</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_nil_scope">
+            
+              <a name="method-i-test_nil_scope"></a><b>test_nil_scope</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_nil_scope_source')" id="l_method-i-test_nil_scope_source">show</a>
+                
+              </p>
+              <div id="method-i-test_nil_scope_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 208</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_nil_scope</span>
+  <span class="ruby-identifier">new1</span>, <span class="ruby-identifier">new2</span>, <span class="ruby-identifier">new3</span> = <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>, <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>, <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">create</span>
+  <span class="ruby-identifier">new2</span>.<span class="ruby-identifier">move_higher</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">new2</span>, <span class="ruby-identifier">new1</span>, <span class="ruby-identifier">new3</span>], <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id IS NULL'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_remove_before_destroy_does_not_shift_lower_items_twice">
+            
+              <a name="method-i-test_remove_before_destroy_does_not_shift_lower_items_twice"></a><b>test_remove_before_destroy_does_not_shift_lower_items_twice</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_remove_before_destroy_does_not_shift_lower_items_twice_source')" id="l_method-i-test_remove_before_destroy_does_not_shift_lower_items_twice_source">show</a>
+                
+              </p>
+              <div id="method-i-test_remove_before_destroy_does_not_shift_lower_items_twice_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 241</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_remove_before_destroy_does_not_shift_lower_items_twice</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>).<span class="ruby-identifier">remove_from_list</span>
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>).<span class="ruby-identifier">destroy</span>
+
+<span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>, <span class="ruby-value">:reload</span>),
+              <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>, <span class="ruby-value">:reload</span>),
+              <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>, <span class="ruby-value">:reload</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>).<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>).<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>).<span class="ruby-identifier">pos</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_remove_from_list_should_set_position_to_nil">
+            
+              <a name="method-i-test_remove_from_list_should_set_position_to_nil"></a><b>test_remove_from_list_should_set_position_to_nil</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_remove_from_list_should_set_position_to_nil_source')" id="l_method-i-test_remove_from_list_should_set_position_to_nil_source">show</a>
+                
+              </p>
+              <div id="method-i-test_remove_from_list_should_set_position_to_nil_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 220</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_remove_from_list_should_set_position_to_nil</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>).<span class="ruby-identifier">remove_from_list</span>
+
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>, <span class="ruby-value">:reload</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>, <span class="ruby-value">:reload</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>, <span class="ruby-value">:reload</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>, <span class="ruby-value">:reload</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>).<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>).<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">2</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>).<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">3</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>).<span class="ruby-identifier">pos</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_remove_from_list_should_then_fail_in_list-3F">
+            
+              <a name="method-i-test_remove_from_list_should_then_fail_in_list-3F"></a><b>test_remove_from_list_should_then_fail_in_list?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_remove_from_list_should_then_fail_in_list-3F_source')" id="l_method-i-test_remove_from_list_should_then_fail_in_list-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-test_remove_from_list_should_then_fail_in_list-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 214</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_remove_from_list_should_then_fail_in_list?</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">true</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>).<span class="ruby-identifier">in_list?</span>
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>).<span class="ruby-identifier">remove_from_list</span>
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-keyword">false</span>, <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>).<span class="ruby-identifier">in_list?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_reordering">
+            
+              <a name="method-i-test_reordering"></a><b>test_reordering</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_reordering_source')" id="l_method-i-test_reordering_source">show</a>
+                
+              </p>
+              <div id="method-i-test_reordering_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 27</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_reordering</span>
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>).<span class="ruby-identifier">move_lower</span>
+
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>).<span class="ruby-identifier">move_higher</span>
+
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>).<span class="ruby-identifier">move_to_bottom</span>
+
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>).<span class="ruby-identifier">move_to_top</span>
+
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>).<span class="ruby-identifier">move_to_bottom</span>
+
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+  <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>).<span class="ruby-identifier">move_to_top</span>
+
+  <span class="ruby-identifier">assert_equal</span> [<span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_4</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_1</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_3</span>),
+                <span class="ruby-identifier">mixins</span>(<span class="ruby-value">:list_2</span>)],
+                <span class="ruby-constant">ListMixin</span>.<span class="ruby-identifier">find</span>(<span class="ruby-value">:all</span>, <span class="ruby-value">:conditions</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'parent_id = 5'</span>, <span class="ruby-value">:order</span> =<span class="ruby-operator">&gt;</span> <span class="ruby-string">'pos'</span>)
+
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-test_with_string_based_scope">
+            
+              <a name="method-i-test_with_string_based_scope"></a><b>test_with_string_based_scope</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-test_with_string_based_scope_source')" id="l_method-i-test_with_string_based_scope_source">show</a>
+                
+              </p>
+              <div id="method-i-test_with_string_based_scope_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activerecord/test/mixin_test.rb, line 201</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">test_with_string_based_scope</span>
+  <span class="ruby-identifier">new</span> = <span class="ruby-constant">ListWithStringScopeMixin</span>.<span class="ruby-identifier">create</span>(<span class="ruby-string">&quot;parent_id&quot;</span>=<span class="ruby-operator">&gt;</span><span class="ruby-number">500</span>)
+  <span class="ruby-identifier">assert_equal</span> <span class="ruby-number">1</span>, <span class="ruby-identifier">new</span>.<span class="ruby-identifier">pos</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">first?</span>
+  <span class="ruby-identifier">assert</span> <span class="ruby-identifier">new</span>.<span class="ruby-identifier">last?</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    

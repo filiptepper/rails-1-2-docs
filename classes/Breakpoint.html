@@ -1,0 +1,565 @@
+<?xml version="1.0" encoding="utf-8"?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+    "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+    <title>Breakpoint</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <link rel="stylesheet" href="../css/reset.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/main.css" type="text/css" media="screen" />
+<link rel="stylesheet" href="../css/github.css" type="text/css" media="screen" />
+<script src="../js/jquery-1.3.2.min.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/jquery-effect.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/main.js" type="text/javascript" charset="utf-8"></script>
+<script src="../js/highlight.pack.js" type="text/javascript" charset="utf-8"></script>
+
+</head>
+
+<body>     
+    <div class="banner">
+        
+        <h1>
+            <span class="type">Module</span> 
+            Breakpoint 
+            
+        </h1>
+        <ul class="files">
+            
+            <li><a href="../files/rails/activesupport/lib/active_support/breakpoint_rb.html">rails/activesupport/lib/active_support/breakpoint.rb</a></li>
+            
+            <li><a href="../files/rails/railties/lib/breakpoint_rb.html">rails/railties/lib/breakpoint.rb</a></li>
+            
+            <li><a href="../files/rails/railties/test/mocks/stubbed_breakpoint_rb.html">rails/railties/test/mocks/stubbed_breakpoint.rb</a></li>
+            
+        </ul>
+    </div>
+    <div id="bodyContent">
+        <div id="content">
+  
+
+
+  
+
+
+  
+  
+
+
+  
+    <!-- Namespace -->
+    <div class="sectiontitle">Namespace</div>
+    <ul>
+      
+        <li>
+          <span class="type">MODULE</span>
+          <a href="Breakpoint/CommandBundle.html">Breakpoint::CommandBundle</a>
+        </li>
+      
+        <li>
+          <span class="type">CLASS</span>
+          <a href="Breakpoint/FailedAssertError.html">Breakpoint::FailedAssertError</a>
+        </li>
+      
+    </ul>
+  
+
+
+  
+    <!-- Method ref -->
+    <div class="sectiontitle">Methods</div>
+    <dl class="methods">
+      
+        <dt>A</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-activate_drb">activate_drb</a>,
+              </li>
+            
+              
+              <li>
+                <a href="#method-i-assert">assert</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>B</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-breakpoint">breakpoint</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>D</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-deactivate_drb">deactivate_drb</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+        <dt>U</dt>
+        <dd>
+          <ul>
+            
+              
+              <li>
+                <a href="#method-i-use_drb-3F">use_drb?</a>
+              </li>
+            
+          </ul>
+        </dd>
+      
+    </dl>
+  
+
+  
+
+
+
+  
+
+    
+
+    
+
+    
+      <!-- Section constants -->
+      <div class="sectiontitle">Constants</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class="attr-name">Version</td>
+            <td>=</td>
+            <td class="attr-value">id.split(&quot; &quot;)[2].to_i</td>
+          </tr>
+          
+            <tr valign='top'>
+              <td>&nbsp;</td>
+              <td colspan="2" class="attr-desc"></td>
+            </tr>
+          
+        
+      </table>
+    
+
+
+    
+      <!-- Section attributes -->
+      <div class="sectiontitle">Attributes</div>
+      <table border='0' cellpadding='5'>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>asserts_cause_exceptions</td>
+            <td class='attr-desc'><p>Whether an Exception should be raised on failed asserts in non-$DEBUG code
+or not. By default this is disabled.</p></td>
+          </tr>
+        
+          <tr valign='top'>
+            <td class='attr-rw'>
+              [RW]
+            </td>
+            <td class='attr-name'>optimize_asserts</td>
+            <td class='attr-desc'><p>Whether asserts should be ignored if not in debug mode. Debug mode can be
+enabled by running ruby with the -d switch or by setting $DEBUG to true.</p></td>
+          </tr>
+        
+      </table>
+    
+
+
+    <!-- Methods -->
+        
+      <div class="sectiontitle">Instance Public methods</div>
+      
+        <div class="method">
+          <div class="title method-title" id="method-i-activate_drb">
+            
+              <a name="method-i-activate_drb"></a><b>activate_drb</b>(uri = nil, allowed_hosts = ['localhost', '127.0.0.1', '::1'], ignore_collisions = false)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Will run <a href="Breakpoint.html">Breakpoint</a> in DRb mode. This will
+spawn a server that can be attached to via the breakpoint-client command
+whenever a breakpoint is executed. This is useful when you are debugging <a
+href="CGI.html">CGI</a> applications or other applications where you can’t
+access debug sessions via the standard input and output of your
+application.</p>
+
+<p>You can specify an URI where the DRb server will run at. This way you can
+specify the port the server runs on. The default URI is
+druby://localhost:42531.</p>
+
+<p>Please note that breakpoints will be skipped silently in case the DRb
+server can not spawned. (This can happen if the port is already used by
+another instance of your application on <a href="CGI.html">CGI</a> or
+another application.)</p>
+
+<p>Also note that by default this will only allow access from localhost. You
+can however specify a list of allowed hosts or nil (to allow access from
+everywhere). But that will still not protect you from somebody reading the
+data as it goes through the net.</p>
+
+<p><a href="A.html">A</a> good approach for getting security and remote access
+is setting up an SSH tunnel between the DRb service and the client. This is
+usually done like this:</p>
+
+<p>$ ssh -L20000:127.0.0.1:20000 -R10000:127.0.0.1:10000 example.com (This
+will connect port 20000 at the client side to port 20000 at the server
+side, and port 10000 at the server side to port 10000 at the client side.)</p>
+
+<p>After that do this on the server side: (the code being debugged) <a
+href="Breakpoint.html#method-i-activate_drb">#activate_drb</a>(“druby://127.0.0.1:20000”,
+“localhost”)</p>
+
+<p>And at the client side: ruby breakpoint_client.rb -c
+druby://127.0.0.1:10000 -s druby://127.0.0.1:20000</p>
+
+<p>Running through such a SSH proxy will also let you use  breakpoint.rb in
+case you are behind a firewall.</p>
+
+<p>Detailed information about running DRb through firewalls is available at <a
+href="http://www.rubygarden.org/ruby?DrbTutorial">www.rubygarden.org/ruby?DrbTutorial</a></p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-activate_drb_source')" id="l_method-i-activate_drb_source">show</a>
+                
+              </p>
+              <div id="method-i-activate_drb_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/breakpoint.rb, line 354</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">activate_drb</span>(<span class="ruby-identifier">uri</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">allowed_hosts</span> = [<span class="ruby-string">'localhost'</span>, <span class="ruby-string">'127.0.0.1'</span>, <span class="ruby-string">'::1'</span>],
+  <span class="ruby-identifier">ignore_collisions</span> = <span class="ruby-keyword">false</span>)
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">false</span> <span class="ruby-keyword">if</span> <span class="ruby-ivar">@use_drb</span>
+
+  <span class="ruby-identifier">uri</span> <span class="ruby-operator">||=</span> <span class="ruby-string">'druby://localhost:42531'</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">allowed_hosts</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">acl</span> = [<span class="ruby-string">&quot;deny&quot;</span>, <span class="ruby-string">&quot;all&quot;</span>]
+
+    <span class="ruby-constant">Array</span>(<span class="ruby-identifier">allowed_hosts</span>).<span class="ruby-identifier">each</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">host</span><span class="ruby-operator">|</span>
+      <span class="ruby-identifier">acl</span> <span class="ruby-operator">+=</span> [<span class="ruby-string">&quot;allow&quot;</span>, <span class="ruby-identifier">host</span>]
+    <span class="ruby-keyword">end</span>
+
+    <span class="ruby-constant">DRb</span>.<span class="ruby-identifier">install_acl</span>(<span class="ruby-constant">ACL</span>.<span class="ruby-identifier">new</span>(<span class="ruby-identifier">acl</span>))
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-ivar">@use_drb</span> = <span class="ruby-keyword">true</span>
+  <span class="ruby-ivar">@drb_service</span> = <span class="ruby-constant">DRbService</span>.<span class="ruby-identifier">new</span>
+  <span class="ruby-identifier">did_collision</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-keyword">begin</span>
+    <span class="ruby-ivar">@service</span> = <span class="ruby-constant">DRb</span>.<span class="ruby-identifier">start_service</span>(<span class="ruby-identifier">uri</span>, <span class="ruby-ivar">@drb_service</span>)
+  <span class="ruby-keyword">rescue</span> <span class="ruby-constant">Errno</span><span class="ruby-operator">::</span><span class="ruby-constant">EADDRINUSE</span>
+    <span class="ruby-keyword">if</span> <span class="ruby-identifier">ignore_collisions</span> <span class="ruby-keyword">then</span>
+      <span class="ruby-keyword">nil</span>
+    <span class="ruby-keyword">else</span>
+      <span class="ruby-comment"># The port is already occupied by another</span>
+      <span class="ruby-comment"># Breakpoint service. We will try to tell</span>
+      <span class="ruby-comment"># the old service that we want its port.</span>
+      <span class="ruby-comment"># It will then forward that request to the</span>
+      <span class="ruby-comment"># user and retry.</span>
+      <span class="ruby-keyword">unless</span> <span class="ruby-identifier">did_collision</span> <span class="ruby-keyword">then</span>
+        <span class="ruby-constant">DRbObject</span>.<span class="ruby-identifier">new</span>(<span class="ruby-keyword">nil</span>, <span class="ruby-identifier">uri</span>).<span class="ruby-identifier">collision</span>
+        <span class="ruby-identifier">did_collision</span> = <span class="ruby-keyword">true</span>
+      <span class="ruby-keyword">end</span>
+      <span class="ruby-identifier">sleep</span>(<span class="ruby-number">10</span>)
+      <span class="ruby-keyword">retry</span>
+    <span class="ruby-keyword">end</span>
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-assert">
+            
+              <a name="method-i-assert"></a><b>assert</b>(context = nil, &amp;condition)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>This asserts that the block evaluates to true. If it doesn’t evaluate to
+true a breakpoint will automatically be created at that execution point.</p>
+
+<p>You can disable assert checking in production code by setting <a
+href="Breakpoint.html#attribute-i-optimize_asserts">#optimize_asserts</a>
+to true. (It will still be enabled when Ruby is run via the -d argument.)</p>
+
+<p>Example:</p>
+
+<pre>person_name = &quot;Foobar&quot;
+assert { not person_name.nil? }</pre>
+
+<p>Note: If you want to use this method from an unit test, you will have to
+call it by its full name, <a
+href="Breakpoint.html#method-i-assert">#assert</a>.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-assert_source')" id="l_method-i-assert_source">show</a>
+                
+              </p>
+              <div id="method-i-assert_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/breakpoint.rb, line 240</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">assert</span>(<span class="ruby-identifier">context</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">condition</span>)
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-constant">Breakpoint</span>.<span class="ruby-identifier">optimize_asserts</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">$DEBUG</span>
+  <span class="ruby-keyword">return</span> <span class="ruby-keyword">if</span> <span class="ruby-keyword">yield</span>
+
+  <span class="ruby-identifier">callstack</span> = <span class="ruby-identifier">caller</span>
+  <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-number">0</span>, <span class="ruby-number">3</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">first</span>[<span class="ruby-string">&quot;assert&quot;</span>]
+  <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">method</span> = *<span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">%r^(.+?):(\d+)(?::in `(.*?)')?/</span>).<span class="ruby-identifier">captures</span>
+
+  <span class="ruby-identifier">message</span> = <span class="ruby-node">&quot;Assert failed at #{file}:#{line}#{&quot; in `#{method}'&quot; if method}.&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-constant">Breakpoint</span>.<span class="ruby-identifier">asserts_cause_exceptions</span> <span class="ruby-keyword">and</span> <span class="ruby-keyword">not</span> <span class="ruby-identifier">$DEBUG</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-identifier">raise</span>(<span class="ruby-constant">Breakpoint</span><span class="ruby-operator">::</span><span class="ruby-constant">FailedAssertError</span>, <span class="ruby-identifier">message</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">message</span> <span class="ruby-operator">+=</span> <span class="ruby-string">&quot; Executing implicit breakpoint.&quot;</span>
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">context</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">handle_breakpoint</span>(<span class="ruby-identifier">context</span>, <span class="ruby-identifier">message</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Binding</span>.<span class="ruby-identifier">of_caller</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">context</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">handle_breakpoint</span>(<span class="ruby-identifier">context</span>, <span class="ruby-identifier">message</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-breakpoint">
+            
+              <a name="method-i-breakpoint"></a><b>breakpoint</b>(id = nil, context = nil, &amp;block)
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>This will pop up an interactive ruby session at a pre-defined break point
+in a Ruby application. In this session you can examine the environment of
+the break point.</p>
+
+<p>You can get a list of variables in the context using local_variables via
+<code>local_variables</code>. You can then examine their values by typing
+their names.</p>
+
+<p>You can have a look at the call stack via <code>caller</code>.</p>
+
+<p>The source code around the location where the breakpoint was executed can
+be examined via <code>source_lines</code>. Its argument specifies how much
+lines of context to display. The default amount of context is 5 lines. Note
+that the call to <code>source_lines</code> can raise an exception when it
+isn’t able to read in the source code.</p>
+
+<p>breakpoints can also return a value. They will execute a supplied block for
+getting a default return value. <a href="A.html">A</a> custom value can be
+returned from the session by doing +throw(:debug_return, value)+.</p>
+
+<p>You can also give names to break points which will be used in the message
+that is displayed upon execution  of them.</p>
+
+<p>Here’s a sample of how breakpoints should be placed:</p>
+
+<pre class="ruby"><span class="ruby-keyword">class</span> <span class="ruby-constant">Person</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">initialize</span>(<span class="ruby-identifier">name</span>, <span class="ruby-identifier">age</span>)
+    <span class="ruby-ivar">@name</span>, <span class="ruby-ivar">@age</span> = <span class="ruby-identifier">name</span>, <span class="ruby-identifier">age</span>
+    <span class="ruby-identifier">breakpoint</span>(<span class="ruby-node">&quot;Person#initialize&quot;</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-identifier">attr_reader</span> :<span class="ruby-identifier">age</span>
+  <span class="ruby-keyword">def</span> <span class="ruby-identifier">name</span>
+    <span class="ruby-identifier">breakpoint</span>(<span class="ruby-node">&quot;Person#name&quot;</span>) { <span class="ruby-ivar">@name</span> }
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span>
+
+<span class="ruby-identifier">person</span> = <span class="ruby-constant">Person</span>.<span class="ruby-identifier">new</span>(<span class="ruby-string">&quot;Random Person&quot;</span>, <span class="ruby-value">23</span>)
+<span class="ruby-identifier">puts</span> <span class="ruby-node">&quot;Name: #{person.name}&quot;</span>
+</pre>
+
+<p>And here is a sample debug session:</p>
+
+<pre class="ruby"><span class="ruby-constant">Executing</span> <span class="ruby-keyword">break</span> <span class="ruby-identifier">point</span> <span class="ruby-node">&quot;Person#initialize&quot;</span> <span class="ruby-identifier">at</span> <span class="ruby-identifier">file</span>.<span class="ruby-identifier">rb</span>:<span class="ruby-value">4</span> <span class="ruby-keyword">in</span> <span class="ruby-node">%xinitialize'
+irb(#&lt;Person:0x292fbe8&gt;):001:0&gt; local_variables
+=&gt; [&quot;name&quot;, &quot;age&quot;, &quot;_&quot;, &quot;__&quot;]
+irb(#&lt;Person:0x292fbe8&gt;):002:0&gt; [name, age]
+=&gt; [&quot;Random Person&quot;, 23]
+irb(#&lt;Person:0x292fbe8&gt;):003:0&gt; [@name, @age]
+=&gt; [&quot;Random Person&quot;, 23]
+irb(#&lt;Person:0x292fbe8&gt;):004:0&gt; self
+=&gt; #&lt;Person:0x292fbe8 @age=23, @name=&quot;Random Person&quot;&gt;
+irb(#&lt;Person:0x292fbe8&gt;):005:0&gt; @age += 1; self
+=&gt; #&lt;Person:0x292fbe8 @age=24, @name=&quot;Random Person&quot;&gt;
+irb(#&lt;Person:0x292fbe8&gt;):006:0&gt; exit
+Executing break point &quot;Person#name&quot; at file.rb:9 in `</span><span class="ruby-identifier">name</span><span class="ruby-string">'
+irb(#&lt;Person:0x292fbe8&gt;):001:0&gt; throw(:debug_return, &quot;Overriden name&quot;)
+Name: Overriden name
+</span></pre>
+
+<p><a href="Breakpoint.html">Breakpoint</a> sessions will automatically have a
+few convenience methods available. See <a
+href="Breakpoint/CommandBundle.html">Breakpoint::CommandBundle</a> for a
+list of them.</p>
+
+<p>Breakpoints can also be used remotely over sockets. This is implemented by
+running part of the IRB session in the application and part of it in a
+special client. You have to call <a
+href="Breakpoint.html#method-i-activate_drb">#activate_drb</a> to enable
+support for remote breakpoints and then run breakpoint_client.rb which is
+distributed with this library. See the documentation of <a
+href="Breakpoint.html#method-i-activate_drb">#activate_drb</a> for details.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-breakpoint_source')" id="l_method-i-breakpoint_source">show</a>
+                
+              </p>
+              <div id="method-i-breakpoint_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/breakpoint.rb, line 103</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">breakpoint</span>(<span class="ruby-identifier">id</span> = <span class="ruby-keyword">nil</span>, <span class="ruby-identifier">context</span> = <span class="ruby-keyword">nil</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-identifier">callstack</span> = <span class="ruby-identifier">caller</span>
+  <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">slice!</span>(<span class="ruby-number">0</span>, <span class="ruby-number">3</span>) <span class="ruby-keyword">if</span> <span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">first</span>[<span class="ruby-string">&quot;breakpoint&quot;</span>]
+  <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>, <span class="ruby-identifier">method</span> = *<span class="ruby-identifier">callstack</span>.<span class="ruby-identifier">first</span>.<span class="ruby-identifier">match</span>(<span class="ruby-regexp">%r^(.+?):(\d+)(?::in `(.*?)')?/</span>).<span class="ruby-identifier">captures</span>
+
+  <span class="ruby-identifier">message</span> = <span class="ruby-string">&quot;Executing break point &quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">id</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot;#{id.inspect} &quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>) <span class="ruby-operator">+</span>
+            <span class="ruby-node">&quot;at #{file}:#{line}&quot;</span> <span class="ruby-operator">+</span> (<span class="ruby-identifier">method</span> <span class="ruby-operator">?</span> <span class="ruby-node">&quot; in `#{method}'&quot;</span> <span class="ruby-operator">:</span> <span class="ruby-string">&quot;&quot;</span>)
+
+  <span class="ruby-keyword">if</span> <span class="ruby-identifier">context</span> <span class="ruby-keyword">then</span>
+    <span class="ruby-keyword">return</span> <span class="ruby-identifier">handle_breakpoint</span>(<span class="ruby-identifier">context</span>, <span class="ruby-identifier">message</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+
+  <span class="ruby-constant">Binding</span>.<span class="ruby-identifier">of_caller</span> <span class="ruby-keyword">do</span> <span class="ruby-operator">|</span><span class="ruby-identifier">binding_context</span><span class="ruby-operator">|</span>
+    <span class="ruby-identifier">handle_breakpoint</span>(<span class="ruby-identifier">binding_context</span>, <span class="ruby-identifier">message</span>, <span class="ruby-identifier">file</span>, <span class="ruby-identifier">line</span>, &amp;<span class="ruby-identifier">block</span>)
+  <span class="ruby-keyword">end</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-deactivate_drb">
+            
+              <a name="method-i-deactivate_drb"></a><b>deactivate_drb</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Deactivates a running <a href="Breakpoint.html">Breakpoint</a> service.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-deactivate_drb_source')" id="l_method-i-deactivate_drb_source">show</a>
+                
+              </p>
+              <div id="method-i-deactivate_drb_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/breakpoint.rb, line 398</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">deactivate_drb</span>
+  <span class="ruby-ivar">@service</span>.<span class="ruby-identifier">stop_service</span> <span class="ruby-keyword">unless</span> <span class="ruby-ivar">@service</span>.<span class="ruby-identifier">nil?</span>
+  <span class="ruby-ivar">@service</span> = <span class="ruby-keyword">nil</span>
+  <span class="ruby-ivar">@use_drb</span> = <span class="ruby-keyword">false</span>
+  <span class="ruby-ivar">@drb_service</span> = <span class="ruby-keyword">nil</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+        
+        <div class="method">
+          <div class="title method-title" id="method-i-use_drb-3F">
+            
+              <a name="method-i-use_drb-3F"></a><b>use_drb?</b>()
+            
+          </div>
+          
+          
+            <div class="description">
+              <p>Returns true when Breakpoints are used over DRb. <a
+href="Breakpoint.html#method-i-activate_drb">#activate_drb</a> causes this
+to be true.</p>
+            </div>
+          
+          
+          
+          
+          
+            
+            <div class="sourcecode">
+              
+              <p class="source-link">
+                Source: 
+                <a href="javascript:toggleSource('method-i-use_drb-3F_source')" id="l_method-i-use_drb-3F_source">show</a>
+                
+              </p>
+              <div id="method-i-use_drb-3F_source" class="dyn-source">
+                <pre><span class="ruby-comment"># File rails/activesupport/lib/active_support/breakpoint.rb, line 407</span>
+<span class="ruby-keyword">def</span> <span class="ruby-keyword ruby-title">use_drb?</span>
+  <span class="ruby-ivar">@use_drb</span> <span class="ruby-operator">==</span> <span class="ruby-keyword">true</span>
+<span class="ruby-keyword">end</span></pre>
+              </div>
+            </div>
+            
+          </div>
+                    </div>
+    </div>
+  </body>
+</html>    
